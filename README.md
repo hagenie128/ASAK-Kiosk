@@ -36,3 +36,5 @@ data-pipeline/
 팀원이 그대로 세팅할 수 있도록 순서, 명령어, Cursor 프롬프트까지 정리한 문서는 아래 파일에 있습니다.
 
 - `TEAM_SETUP.md`
+- `WORK_LOG_TEMPLATE.md`
+- `PERSONAL_PORTFOLIO_TEMPLATE.md`

@@ -164,10 +164,19 @@ sync_phase1_data_to_front.bat
 
 ## 9. 팀 공통 Git 순서
 
+브랜치 전략:
+
+- 보호 브랜치: `main`
+- 통합 작업 브랜치: `develop`
+- 기능 브랜치: `feature/기능명`
+- 버그 브랜치: `fix/버그명`
+
 작업 시작:
 
 ```powershell
+git checkout develop
 git pull
+git checkout -b feature/기능명
 ```
 
 작업 확인:
@@ -181,7 +190,7 @@ git diff
 
 ```powershell
 git add .
-git commit -m "update ASAK front viewer"
+git commit -m "feat: 작업 내용"
 ```
 
 푸시:
@@ -190,7 +199,53 @@ git commit -m "update ASAK front viewer"
 git push
 ```
 
-## 10. Cursor에서 쓰는 추천 프롬프트
+권장 흐름:
+
+1. `develop`에서 최신 코드를 당긴다.
+2. `feature/...` 또는 `fix/...` 브랜치를 새로 판다.
+3. 작업 후 `develop` 기준으로 PR을 만든다.
+4. 충분히 검증된 내용만 `main`에 반영한다.
+
+## 10. 작업 기록 규칙
+
+디버깅, 기여도 정리, 포트폴리오 정리를 위해 작업 기록을 남기는 것을 권장합니다.
+
+반드시 구분해서 적을 항목:
+
+- 내가 직접 구현한 영역
+- 어떤 구현 로직/방식을 사용했는지
+- AI가 제안하거나 함께 작업한 영역
+- 작업 중 발생한 이슈
+- 이번 작업에서 추가로 배운 점
+- 아직 남아 있는 개선사항
+- 검증 방법과 결과
+
+권장 방식:
+
+- 기능 또는 이슈 단위로 기록 1개 작성
+- PR 본문, Notion, GitHub Issue, 회의록 중 한 곳에는 반드시 남기기
+- 저장소 문서에 남길 때는 템플릿 파일을 복사해서 사용
+- 프로젝트 종료 전에는 개인별로 `PERSONAL_PORTFOLIO_TEMPLATE.md` 기준 요약본을 1회 정리
+
+기록 템플릿:
+
+- `WORK_LOG_TEMPLATE.md`
+- `PERSONAL_PORTFOLIO_TEMPLATE.md`
+
+최소 기록 항목:
+
+1. 작업 날짜
+2. 담당자
+3. 작업 저장소/브랜치
+4. 직접 구현 영역
+5. 구현 로직 / 적용한 방식
+6. AI 활용 영역
+7. 발생 이슈
+8. 이번 작업에서 배운 점
+9. 개선 예정 사항
+10. 검증 내용
+11. 포트폴리오에 쓸 수 있는 한 줄 요약
+## 11. Cursor에서 쓰는 추천 프롬프트
 
 ### 백엔드 작업 요청
 
@@ -224,14 +279,15 @@ ASAK 통합 구조 기준으로 frontend, backend, data-pipeline, 문서 연결 
 팀원이 헷갈릴 부분이 있으면 README까지 정리해줘.
 ```
 
-## 11. 주의사항
+## 12. 주의사항
 
 - PowerShell에서 `Activate.ps1`이 막히면 가상환경 활성화 대신 직접 Python 경로를 호출하세요.
 - 1차 크롤링 데이터 원본은 `c:\ha-team\data-pipeline\phase1\output` 기준으로 관리하는 것을 권장합니다.
 - 프론트는 기본적으로 크롤링 산출물을 포함하지 않으며, 필요할 때만 `ASAK-front\data`로 복사해 사용합니다.
 - 토큰이나 비밀번호는 저장소에 커밋하지 않습니다.
+- AI가 관여한 작업은 PR, 이슈, 작업 기록 중 최소 한 곳에 남겨두는 것을 권장합니다.
 
-## 12. 빠른 복구용 명령
+## 13. 빠른 복구용 명령
 
 데이터 파이프라인 재설치:
 
@@ -249,7 +305,7 @@ cd c:\ASAK-front
 python build_viewer.py
 ```
 
-## 13. 팀원 온보딩 체크리스트
+## 14. 팀원 온보딩 체크리스트
 
 ### Day 1 체크
 
@@ -265,6 +321,7 @@ python build_viewer.py
 ### 작업 시작 전 체크
 
 - 어느 저장소에서 작업할지 정했다.
+- `main`이 아닌 `develop` 또는 작업 브랜치에서 시작했다.
 - `git pull`을 먼저 했다.
 - 변경 범위가 프론트인지 백엔드인지 통합 문서인지 구분했다.
 
@@ -273,3 +330,4 @@ python build_viewer.py
 - `git status`로 불필요한 파일이 없는지 확인했다.
 - 실행 검증을 1회 이상 했다.
 - README 또는 팀 문서 수정이 필요한지 확인했다.
+- 직접 구현 영역과 AI 활용 영역을 구분해 기록했다.
