@@ -44,7 +44,7 @@ WBS (Notion·DevCopilot)  →  GitHub Issue (#번호)  →  worklog/entries/ 상
 1. **Issue 생성**: `task.yml`에 WBS ID·요구사항 ID·완료 조건·저장소를 작성
 2. **라벨**: 저장소(`frontend`/`backend`), 유형(`feature`/`bug`), 해당 주차(`week-N`) 추가
 3. **워크로그**: 구현·디버깅 상세는 `worklog/entries/` (12섹션)에 작성하고 이슈 본문에 경로 링크
-4. **일일 요약**: `worklog/daily/YYYY-MM-DD.md` — **오늘 요약** 표에 이슈·상태, **오늘 작업** 미니 카드에 entries 링크
+4. **일일 요약**: `worklog/daily/{이름}/YYYY-MM-DD.md` — **오늘 요약** 표에 이슈·상태, **오늘 작업** 미니 카드에 `entries/{이름}/` 링크
 
 자세한 워크로그 구조는 [`worklog/README.md`](../../worklog/README.md)를 참고하세요.
 

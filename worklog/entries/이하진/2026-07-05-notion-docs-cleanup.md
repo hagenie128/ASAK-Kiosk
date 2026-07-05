@@ -1,6 +1,6 @@
 # 2026-07-05 Notion·문서·DevCopilot 일괄 정리
 
-> **템플릿:** [03-work-log-template.md](../../docs/guides/03-work-log-template.md) · **일일:** [2026-07-05.md](../daily/2026-07-05.md)
+> **템플릿:** [03-work-log-template.md](../../../docs/guides/03-work-log-template.md) · **일일:** [2026-07-05.md](../../daily/이하진/2026-07-05.md)
 
 ---
 
@@ -26,12 +26,12 @@
 - `ApiResponse`·`GlobalExceptionHandler`·`api_format.py`, asak-data seed·static assets
 - Notion QA 48건 수동·스크립트 수정, Day10 DB 47건 일괄 치환
 - DevCopilot Wiki/16·SCR 19건 업로드, Git push (`1982a02`~`2f05f54`)
-- `2026-07-05.md` 표 11행·미니 카드 5개 재작성, redirect stub·일회성 스크립트 삭제
+- `daily/이하진/2026-07-05.md` 표·미니 카드 재작성, redirect stub·일회성 스크립트 삭제
 
 ## 4. 구현 로직 / 적용한 방식
 
 - Notion: 허브→하위 페이지 순서로 읽기 경로 고정, 중복 가이드는 archive
-- Git: `worklog/daily/` 정본 → `sync_daily_to_notion.py`가 표만 Notion DB 업로드
+- Git: `worklog/daily/{이름}/` 정본 → `sync_daily_to_notion.py`가 표만 Notion DB 업로드
 - DevCopilot: Day10 잔여 검증 후 upload 스크립트 실행
 - 워크로그: daily 미니 카드 6필드 ↔ entries §2·§3·§5·§6·§10·§11 동일 어휘
 
@@ -60,8 +60,8 @@
 - 의심했던 지점: Notion DB 중복 행, daily md 파싱, entries 섹션 번호 불일치
 - 실제 원인: Notion은 구형 요약만 반영·중복 생성, entries는 §8~12 이름이 템플릿과 달랐음
 - 다시 같은 문제가 생기면 먼저 볼 파일/명령어:
-  - `worklog/daily/2026-07-05.md`
-  - `python worklog/scripts/sync_daily_to_notion.py --date 2026-07-05 --json`
+  - `worklog/daily/이하진/2026-07-05.md`
+  - `python worklog/scripts/sync_daily_to_notion.py --date 2026-07-05 --person 이하진 --json`
   - Notion 📅 일일 워크로그 캘린더 뷰
 
 ## 8. 이번 작업에서 배운 점
@@ -79,13 +79,13 @@
 ## 10. 검증 내용
 
 - 실행한 명령어:
-  - `python worklog/scripts/sync_daily_to_notion.py --date 2026-07-05 --json`
+  - `python worklog/scripts/sync_daily_to_notion.py --date 2026-07-05 --person 이하진 --json`
   - `python worklog/scripts/init_daily.py`
 - 테스트한 시나리오:
   - Notion 허브·01 일정·디자인 5종·워크로그 DB UI 수동 열람
   - DevCopilot workspace/2 요구·시나리오·API·WBS·QA·DB·Wiki 카운트 대조
 - 확인 결과:
-  - daily 표 11행·미니 카드 5개 파싱 정상
+  - daily 표 4행·미니 카드 4개 파싱 정상
   - `git log`·origin/main push 확인
 
 ## 11. 포트폴리오용 요약
@@ -97,4 +97,4 @@
 - [Notion 허브](https://app.notion.com/p/39151ef04f0b808f99f8ea068efb5790)
 - [일일 워크로그 DB](https://app.notion.com/p/eeae4beb07ad4051928a87de0ea4c8f9)
 - [DevCopilot Wiki/16](https://devcopilot.ai.kr/workspace/2/wiki/16)
-- Git daily: `worklog/daily/2026-07-05.md`
+- Git daily: `worklog/daily/이하진/2026-07-05.md`

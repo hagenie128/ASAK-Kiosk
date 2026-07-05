@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Create today's daily markdown from template if missing.
+"""Create today's personal daily markdown from template if missing.
 
 Usage:
   python worklog/scripts/init_daily.py
-  python worklog/scripts/init_daily.py --date 2026-07-05
-  python worklog/scripts/init_daily.py --template auto
+  python worklog/scripts/init_daily.py --person 이하진
+  python worklog/scripts/init_daily.py --date 2026-07-05 --person 김나연
+  python worklog/scripts/init_daily.py --person team   # _team/ shared infra
 """
 
 from __future__ import annotations
@@ -12,12 +13,15 @@ from __future__ import annotations
 import argparse
 import re
 import shutil
+import sys
 from datetime import date
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-DAILY_DIR = ROOT / "daily"
-TEMPLATES_DIR = ROOT / "templates"
+SCRIPT_DIR = Path(__file__).resolve().parent
+sys.path.insert(0, str(SCRIPT_DIR))
+
+from worklog_paths import DAILY_DIR, TEMPLATES_DIR, resolve_person, team_dir_name  # noqa: E402
+
 DEFAULT_TEMPLATE = TEMPLATES_DIR / "template-daily-manual.md"
 AUTO_TEMPLATE = TEMPLATES_DIR / "template-daily-auto.md"
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
@@ -41,13 +45,10 @@ def pick_template(name: str) -> Path:
     path = Path(name)
     if path.is_file():
         return path
-    candidate = DAILY_DIR / name
-    if candidate.is_file():
-        return candidate
     raise FileNotFoundError(f"Template not found: {name}")
 
 
-def render_template(template_path: Path, day: str) -> str:
+def render_template(template_path: Path, day: str, person: str) -> str:
     text = template_path.read_text(encoding="utf-8")
     return (
         text.replace("YYYY-MM-DD", day)
@@ -55,12 +56,18 @@ def render_template(template_path: Path, day: str) -> str:
         .replace("{{YEAR}}", day[:4])
         .replace("{{MONTH}}", day[5:7])
         .replace("{{DAY}}", day[8:10])
+        .replace("{{PERSON}}", person)
     )
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Initialize daily worklog markdown")
+    parser = argparse.ArgumentParser(description="Initialize personal daily worklog markdown")
     parser.add_argument("--date", default="today", help="YYYY-MM-DD or 'today'")
+    parser.add_argument(
+        "--person",
+        default=None,
+        help="담당자 실명 (이하진|김나연|박유진|강민준) 또는 team/_team. 생략 시 git user → team_config.json",
+    )
     parser.add_argument(
         "--template",
         default="auto",
@@ -69,24 +76,31 @@ def main() -> int:
     parser.add_argument("--force", action="store_true", help="Overwrite existing file")
     args = parser.parse_args()
 
-    day = resolve_date(args.date)
-    target = DAILY_DIR / f"{day}.md"
+    try:
+        day = resolve_date(args.date)
+        person = resolve_person(args.person)
+    except ValueError as exc:
+        print(f"Error: {exc}", file=sys.stderr)
+        return 1
+
+    target = DAILY_DIR / person / f"{day}.md"
     if target.is_file() and not args.force:
         print(f"Exists: {target}")
         return 0
 
     template = pick_template(args.template)
-    DAILY_DIR.mkdir(parents=True, exist_ok=True)
+    target.parent.mkdir(parents=True, exist_ok=True)
 
     if template == DEFAULT_TEMPLATE and "{{DATE}}" not in template.read_text(encoding="utf-8"):
         shutil.copy2(template, target)
         content = target.read_text(encoding="utf-8")
-        content = content.replace("YYYY-MM-DD", day)
+        content = content.replace("YYYY-MM-DD", day).replace("{{PERSON}}", person)
         target.write_text(content, encoding="utf-8")
     else:
-        target.write_text(render_template(template, day), encoding="utf-8")
+        target.write_text(render_template(template, day, person), encoding="utf-8")
 
-    print(f"Created: {target}")
+    label = "팀 공통" if person == team_dir_name() else person
+    print(f"Created: {target} ({label})")
     return 0
 
 

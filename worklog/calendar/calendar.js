@@ -91,8 +91,27 @@
     return out.join("\n");
   }
 
+  function getDayEntries(dateKey) {
+    const days = calendarData?.days || {};
+    return Object.entries(days)
+      .filter(([k]) => k === dateKey || k.startsWith(`${dateKey}:`))
+      .map(([, v]) => v);
+  }
+
   function getDayMeta(dateKey) {
-    return calendarData?.days?.[dateKey] || null;
+    const entries = getDayEntries(dateKey);
+    if (!entries.length) return null;
+    const members = [...new Set(entries.flatMap((e) => e.members || []))];
+    return {
+      title: `${dateKey} 일일 워크로그`,
+      members,
+      rows: entries.flatMap((e) => e.rows || []),
+      row_count: entries.reduce((s, e) => s + (e.row_count || 0), 0),
+      summary: entries.map((e) => e.summary).filter(Boolean).join(" · "),
+      has_blocker: entries.some((e) => e.has_blocker),
+      files: entries.map((e) => e.file).filter(Boolean),
+      entries,
+    };
   }
 
   function memberColor(name) {
@@ -207,7 +226,7 @@
     if (!meta) {
       els.detailPanel.innerHTML = `
         <h2>${dateKey}</h2>
-        <p class="placeholder">이 날짜의 daily 기록이 없습니다.<br><code>worklog/daily/${dateKey}.md</code>를 작성한 뒤 build 스크립트를 실행하세요.</p>
+        <p class="placeholder">이 날짜의 daily 기록이 없습니다.<br><code>worklog/daily/{이름}/${dateKey}.md</code>를 작성한 뒤 build 스크립트를 실행하세요.</p>
       `;
       return;
     }
@@ -221,10 +240,17 @@
     `;
 
     try {
-      const res = await fetch(`${DAILY_BASE}${dateKey}.md`);
-      if (!res.ok) throw new Error("not found");
-      const md = await res.text();
-      document.getElementById("detail-body").innerHTML = renderMarkdown(md);
+      const files = meta.files?.length ? meta.files : [`daily/${dateKey}.md`];
+      const parts = [];
+      for (const file of files) {
+        const res = await fetch(`../${file}`);
+        if (!res.ok) continue;
+        const md = await res.text();
+        parts.push(`<section class="person-daily"><h3>${escapeHtml(file)}</h3>${renderMarkdown(md)}</section>`);
+      }
+      document.getElementById("detail-body").innerHTML = parts.length
+        ? parts.join("")
+        : '<p class="placeholder">daily 파일을 불러오지 못했습니다.</p>';
     } catch {
       document.getElementById("detail-body").innerHTML =
         '<p class="placeholder">daily 파일을 불러오지 못했습니다.</p>';
@@ -261,7 +287,10 @@
       renderStatusBar();
       renderCalendar();
 
-      const keys = Object.keys(calendarData.days || {}).sort();
+      const keys = Object.keys(calendarData.days || {})
+        .map((k) => k.split(":")[0])
+        .filter((v, i, a) => a.indexOf(v) === i)
+        .sort();
       if (keys.length) {
         const latest = keys[keys.length - 1];
         const [y, mo] = latest.split("-").map(Number);

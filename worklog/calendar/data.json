@@ -1,65 +1,108 @@
 {
-  "generated_at": "2026-07-05T13:16:00.823381+00:00",
+  "generated_at": "2026-07-05T17:03:34.663804+00:00",
   "project": "ASAK",
   "team_size": 4,
   "weeks": 8,
   "daily_dir": "daily",
+  "layout": "daily/{person}/YYYY-MM-DD.md",
   "members": [
-    "팀 공통",
-    "(담당자A)",
-    "(담당자B)",
-    "(담당자C)"
+    "이하진",
+    "미지정"
   ],
   "member_colors": {
-    "팀 공통": "#2d8a4e",
-    "(담당자A)": "#2d8a4e",
-    "(담당자B)": "#2563eb",
-    "(담당자C)": "#b45309"
+    "이하진": "#2563eb",
+    "미지정": "#2d8a4e"
   },
   "days": {
-    "2026-07-05": {
+    "2026-07-05:이하진": {
       "date": "2026-07-05",
-      "title": "2026-07-05 일일 워크로그",
-      "summary": "worklog 폴더 구조 및 캘린더 뷰 초기 세팅 · (오늘 작업 요약) · (오늘 작업 요약) 외 1건",
+      "person": "이하진",
+      "title": "2026-07-05 일일 워크로그 — 이하진",
+      "summary": "Notion·문서 정리 — 허브 TOC·QA 48·Day10 치환 47·디자인 hub·docs/guides·용어 통일 · 워크로그 시스템 — 가이드·템플릿 통합(`68e4631`)·daily 재작성·담당자 매핑 · DevCopilot·화면설계 — Wiki/16·SCR 19 업로드 workspace/2 외 1건",
       "members": [
-        "팀 공통",
-        "(담당자A)",
-        "(담당자B)",
-        "(담당자C)"
+        "이하진"
       ],
       "rows": [
         {
-          "담당자": "팀 공통",
+          "담당자": "이하진",
           "저장소": "ASAK",
-          "작업": "worklog 폴더 구조 및 캘린더 뷰 초기 세팅",
+          "작업": "Notion·문서 정리 — 허브 TOC·QA 48·Day10 치환 47·디자인 hub·docs/guides·용어 통일",
+          "WBS / Issue": "Notion / docs",
           "상태": "✅ 완료",
           "블로커": "-"
         },
         {
-          "담당자": "(담당자A)",
-          "저장소": "ASAK-front",
-          "작업": "(오늘 작업 요약)",
-          "상태": "🔄 진행",
+          "담당자": "이하진",
+          "저장소": "ASAK",
+          "작업": "워크로그 시스템 — 가이드·템플릿 통합(`68e4631`)·daily 재작성·담당자 매핑",
+          "WBS / Issue": "worklog / docs",
+          "상태": "✅ 완료",
           "블로커": "-"
         },
         {
-          "담당자": "(담당자B)",
-          "저장소": "ASAK-back",
-          "작업": "(오늘 작업 요약)",
-          "상태": "🔄 진행",
-          "블로커": "-"
+          "담당자": "이하진",
+          "저장소": "ASAK",
+          "작업": "DevCopilot·화면설계 — Wiki/16·SCR 19 업로드 workspace/2",
+          "WBS / Issue": "DevCopilot / docs/screens",
+          "상태": "✅ 완료",
+          "블로커": "학원 Screens localStorage"
         },
         {
-          "담당자": "(담당자C)",
-          "저장소": "data-pipeline",
-          "작업": "(오늘 작업 요약)",
-          "상태": "🔄 진행",
+          "담당자": "이하진",
+          "저장소": "ASAK-back / ASAK",
+          "작업": "Git·코드·seed — API envelope·asak-data seed·리포 정리(`2f05f54`)·push",
+          "WBS / Issue": "WBS / API · asak-data",
+          "상태": "✅ 완료",
           "블로커": "-"
         }
       ],
       "row_count": 4,
+      "has_blocker": true,
+      "file": "daily/이하진/2026-07-05.md"
+    },
+    "2026-07-06:이하진": {
+      "date": "2026-07-06",
+      "person": "이하진",
+      "title": "2026-07-06 일일 워크로그 — 이하진",
+      "summary": "(한 줄 요약)",
+      "members": [
+        "이하진"
+      ],
+      "rows": [
+        {
+          "담당자": "이하진",
+          "저장소": "ASAK / ASAK-front / ASAK-back",
+          "작업": "(한 줄 요약)",
+          "WBS / Issue": "WBS-000 / #이슈",
+          "상태": "🔄 진행 / ✅ 완료",
+          "블로커": "-"
+        }
+      ],
+      "row_count": 1,
       "has_blocker": false,
-      "file": "daily/2026-07-05.md"
+      "file": "daily/이하진/2026-07-06.md"
+    },
+    "2026-07-05:_team": {
+      "date": "2026-07-05",
+      "person": "_team",
+      "title": "2026-07-05 일일 워크로그 — 팀 공통",
+      "summary": "worklog 폴더 구조·캘린더 초기 세팅 — `daily/`·`entries/`·`build_calendar.py`",
+      "members": [
+        "미지정"
+      ],
+      "rows": [
+        {
+          "담당자": "미지정",
+          "저장소": "ASAK",
+          "작업": "worklog 폴더 구조·캘린더 초기 세팅 — `daily/`·`entries/`·`build_calendar.py`",
+          "WBS / Issue": "worklog",
+          "상태": "✅ 완료",
+          "블로커": "-"
+        }
+      ],
+      "row_count": 1,
+      "has_blocker": false,
+      "file": "daily/_team/2026-07-05.md"
     }
   }
 }

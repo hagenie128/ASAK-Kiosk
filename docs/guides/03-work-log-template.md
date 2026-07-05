@@ -14,7 +14,7 @@
 
 ## 일일 워크로그와의 관계
 
-| 구분 | 일일 (`worklog/daily/`) | 상세 (`worklog/entries/` + 이 템플릿) |
+| 구분 | 일일 (`worklog/daily/{이름}/`) | 상세 (`worklog/entries/{이름}/` + 이 템플릿) |
 |---|---|---|
 | **단위** | 하루 (팀·개인 요약) | 기능·이슈·PR 하나 |
 | **목적** | 오늘 뭘 했는지 팀 캘린더·Notion에 공유 | 구현·디버깅·AI·면접용 깊은 기록 |
@@ -24,7 +24,7 @@
 **권장 흐름**
 
 1. 하루 중 — `entries/`에 이 템플릿으로 상세 작성 (또는 작업 끝날 때 한꺼번에)
-2. 퇴근 전 — `daily/YYYY-MM-DD.md` **오늘 요약** 표에 한 줄 + **오늘 작업** 미니 카드에 핵심만 적고 entries 링크
+2. 퇴근 전 — `daily/{이름}/YYYY-MM-DD.md` **오늘 요약** 표에 한 줄 + **오늘 작업** 미니 카드에 핵심만 적고 `entries/{이름}/` 링크
 3. Notion — `sync_daily_to_notion.py`가 **표 행**만 캘린더 DB에 올림 (미니 카드·상세는 Git 정본)
 
 예시: [`04-sample-work-log-example.md`](04-sample-work-log-example.md) (상세 12섹션) · daily 연결 예시는 [`worklog/guide-team-daily.md`](../../worklog/guide-team-daily.md) 「daily ↔ entries 예시」

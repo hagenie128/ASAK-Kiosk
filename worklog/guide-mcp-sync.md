@@ -15,7 +15,7 @@ Git `worklog/daily/` 정본을 Cursor + Notion MCP로 Notion DB에 반영하는 
 
 ```mermaid
 flowchart LR
-  A[daily/YYYY-MM-DD.md] --> B[sync_daily_to_notion.py]
+  A[daily/{이름}/YYYY-MM-DD.md] --> B[sync_daily_to_notion.py]
   B -->|NOTION_TOKEN| C[Notion REST API]
   B -->|--json| D[Cursor Notion MCP]
   D --> E[notion-create-pages / notion-update-page]
@@ -33,7 +33,7 @@ flowchart LR
 3. 실행:
 
 ```powershell
-python worklog/scripts/sync_daily_to_notion.py --date today
+python worklog/scripts/sync_daily_to_notion.py --date today --person 이하진
 ```
 
 - 같은 **날짜 + 담당** 조합이 있으면 **update** (idempotent)
@@ -46,7 +46,7 @@ python worklog/scripts/sync_daily_to_notion.py --date today
 ### 1. daily 파싱 → JSON
 
 ```powershell
-python worklog/scripts/sync_daily_to_notion.py --date today --json
+python worklog/scripts/sync_daily_to_notion.py --date today --person 이하진 --json
 ```
 
 출력 예시 구조:
@@ -63,7 +63,7 @@ python worklog/scripts/sync_daily_to_notion.py --date today --json
       "담당": "이하진",
       "WBS": "WBS-015",
       "요약": "주문 API (ASAK-back) #42",
-      "Git daily": "https://github.com/hagenie128/ASAK/blob/main/worklog/daily/2026-07-05.md",
+      "Git daily": "https://github.com/hagenie128/ASAK/blob/main/worklog/daily/이하진/2026-07-05.md",
       "블로커": "__NO__"
     }
   ]
@@ -90,7 +90,7 @@ python worklog/scripts/sync_daily_to_notion.py --date today --json
       "담당": "이하진",
       "WBS": "WBS-015",
       "요약": "주문 API (ASAK-back) #42",
-      "Git daily": "https://github.com/hagenie128/ASAK/blob/main/worklog/daily/2026-07-05.md",
+      "Git daily": "https://github.com/hagenie128/ASAK/blob/main/worklog/daily/이하진/2026-07-05.md",
       "블로커": "__NO__"
     }
   }]
@@ -118,10 +118,10 @@ Notion MCP로 📅 일일 워크로그 DB에 upsert 해줘.
 |---|---|---|---|
 | 제목 | title | sync 자동 | `{날짜} {담당} 일일` |
 | 날짜 | date | daily 파일명 | Calendar 뷰 키 |
-| 담당 | select | **오늘 요약** 표 | 이하진, 김나연, 박유진, 미지정 |
+| 담당 | select | **오늘 요약** 표 | 이하진, 김나연, 박유진, 강민준, 미지정 |
 | WBS | text | **오늘 요약** 표 | WBS-xxx 추출 |
 | 요약 | text | **오늘 요약** 표 `작업` 열 | 팀 캘린더용 한 줄 |
-| Git daily | url | sync 자동 | `worklog/daily/YYYY-MM-DD.md` — **오늘 작업** 미니 카드·`entries/` 링크 포함 |
+| Git daily | url | sync 자동 | `worklog/daily/{이름}/YYYY-MM-DD.md` — **오늘 작업** 미니 카드·`entries/{이름}/` 링크 포함 |
 | 블로커 | checkbox | 표 `블로커` 열 + `## 블로커 / 공유 사항` | |
 
 > **오늘 작업** 미니 카드(작업 목적 · 직접 구현 · AI · 이슈 · 검증 · 포트폴리오 요약)와 `entries/` 12섹션 상세는 **Notion DB에 올라가지 않습니다.** Git daily·entries가 정본입니다. 필드 설명은 Notion [팀 가이드](https://app.notion.com/p/39451ef04f0b81c0a018e8fe6ea9fb95)와 동기화하세요.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Sync worklog/daily/YYYY-MM-DD.md rows to Notion Daily 워크로그 DB.
+"""Sync worklog/daily/{person}/YYYY-MM-DD.md rows to Notion Daily 워크로그 DB.
 
 Supports:
   - Notion REST API when NOTION_TOKEN is set (recommended for CI/local sync)
@@ -7,8 +7,9 @@ Supports:
 
 Usage:
   python worklog/scripts/sync_daily_to_notion.py --date today
+  python worklog/scripts/sync_daily_to_notion.py --date today --person 이하진
+  python worklog/scripts/sync_daily_to_notion.py --date 2026-07-05 --all
   python worklog/scripts/sync_daily_to_notion.py --date 2026-07-05 --dry-run
-  python worklog/scripts/sync_daily_to_notion.py --date 2026-07-05 --json
 """
 
 from __future__ import annotations
@@ -20,26 +21,32 @@ import re
 import sys
 import urllib.error
 import urllib.request
-from datetime import date, datetime
+from datetime import date
 from pathlib import Path
 from typing import Any
 
-ROOT = Path(__file__).resolve().parents[1]
-DAILY_DIR = ROOT / "daily"
+SCRIPT_DIR = Path(__file__).resolve().parent
+sys.path.insert(0, str(SCRIPT_DIR))
+
+from worklog_paths import (  # noqa: E402
+    DAILY_DIR,
+    ROOT,
+    daily_path,
+    git_daily_url,
+    list_daily_persons,
+    load_team_config,
+    map_assignee,
+    resolve_person,
+    team_dir_name,
+)
+
 CONFIG_PATH = ROOT / "notion_config.json"
 
 TABLE_ROW_RE = re.compile(r"^\|(.+)\|$")
 WBS_RE = re.compile(r"WBS-\d+", re.IGNORECASE)
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
-NOTION_ASSIGNEES = {"이하진", "김나연", "박유진", "미지정"}
 SKIP_ASSIGNEE_MARKERS = ("담당자", "(이름)", "(담당", "이름)")
-
-MEMBER_ALIASES: dict[str, str] = {
-    "팀 공통": "미지정",
-    "공통": "미지정",
-    "team": "미지정",
-}
 
 
 def load_config() -> dict[str, Any]:
@@ -131,18 +138,6 @@ def should_skip_row(row: dict[str, str]) -> bool:
     return False
 
 
-def map_assignee(raw: str) -> str:
-    name = raw.strip()
-    if name in NOTION_ASSIGNEES:
-        return name
-    if name in MEMBER_ALIASES:
-        return MEMBER_ALIASES[name]
-    for notion_name in NOTION_ASSIGNEES - {"미지정"}:
-        if notion_name in name:
-            return notion_name
-    return "미지정"
-
-
 def extract_wbs(*parts: str) -> str:
     found: list[str] = []
     for part in parts:
@@ -180,28 +175,22 @@ def parse_tomorrow_plan(text: str) -> str:
     return " / ".join(items)
 
 
-def git_daily_url(config: dict[str, Any], day: str) -> str:
-    base = config.get("git_daily_base_url", "").rstrip("/")
-    return f"{base}/{day}.md"
-
-
 def build_row_payload(
     day: str,
     row: dict[str, str],
     config: dict[str, Any],
     *,
+    folder_person: str,
     section_blocker: bool,
     tomorrow: str,
 ) -> dict[str, Any]:
-    assignee = map_assignee(row.get("담당자", ""))
+    assignee = map_assignee(row.get("담당자", ""), folder_person)
     work = row.get("작업", row.get("요약", "")).strip()
     repo = row.get("저장소", "").strip()
     pr = row.get("PR", "").strip()
     wbs = row.get("WBS", "").strip() or extract_wbs(work, repo, pr)
     summary_parts = [p for p in (work, f"({repo})" if repo else "", pr) if p]
     summary = " ".join(summary_parts).strip()
-    if tomorrow and assignee != "미지정":
-        summary = summary  # keep one-line; tomorrow stays in Git daily only
 
     has_blocker = section_blocker or row_has_blocker(row)
     title = f"{day} {assignee} 일일" if assignee != "미지정" else f"{day} 팀 일일"
@@ -213,16 +202,17 @@ def build_row_payload(
         "담당": assignee,
         "WBS": wbs,
         "요약": summary,
-        "Git daily": git_daily_url(config, day),
+        "Git daily": git_daily_url(config, folder_person, day),
         "블로커": "__YES__" if has_blocker else "__NO__",
         "_meta": {
             "assignee_key": assignee,
             "date": day,
+            "folder_person": folder_person,
         },
     }
 
 
-def parse_daily_file(path: Path, config: dict[str, Any]) -> list[dict[str, Any]]:
+def parse_daily_file(path: Path, config: dict[str, Any], folder_person: str) -> list[dict[str, Any]]:
     text = path.read_text(encoding="utf-8")
     day = path.stem
     section_blocker = parse_blocker_section(text)
@@ -237,11 +227,28 @@ def parse_daily_file(path: Path, config: dict[str, Any]) -> list[dict[str, Any]]
                 day,
                 row,
                 config,
+                folder_person=folder_person,
                 section_blocker=section_blocker,
                 tomorrow=tomorrow,
             )
         )
     return payloads
+
+
+def collect_sources(day: str, person: str | None, sync_all: bool) -> list[tuple[str, Path]]:
+    sources: list[tuple[str, Path]] = []
+    if sync_all:
+        for folder_person in list_daily_persons():
+            path = daily_path(folder_person, day)
+            if path.is_file():
+                sources.append((folder_person, path))
+        return sources
+
+    resolved = resolve_person(person)
+    path = daily_path(resolved, day)
+    if not path.is_file():
+        raise FileNotFoundError(f"Missing {path}")
+    return [(resolved, path)]
 
 
 class NotionClient:
@@ -333,8 +340,23 @@ class NotionClient:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Sync worklog daily markdown to Notion")
+    if hasattr(sys.stdout, "reconfigure"):
+        try:
+            sys.stdout.reconfigure(encoding="utf-8")
+        except Exception:
+            pass
+    parser = argparse.ArgumentParser(description="Sync personal worklog daily markdown to Notion")
     parser.add_argument("--date", required=True, help="YYYY-MM-DD or 'today'")
+    parser.add_argument(
+        "--person",
+        default=None,
+        help="담당자 실명 또는 team. 생략 시 git user → team_config.json",
+    )
+    parser.add_argument(
+        "--all",
+        action="store_true",
+        help="해당 날짜에 존재하는 모든 daily/{person}/ 파일 동기화",
+    )
     parser.add_argument("--dry-run", action="store_true", help="Parse only; do not write")
     parser.add_argument("--json", action="store_true", help="Print MCP-ready JSON payload")
     args = parser.parse_args()
@@ -342,27 +364,39 @@ def main() -> int:
     try:
         day = resolve_date(args.date)
         config = load_config()
+        sources = collect_sources(day, args.person, args.all)
     except (ValueError, FileNotFoundError) as exc:
         print(f"Error: {exc}", file=sys.stderr)
         return 1
 
-    daily_path = DAILY_DIR / f"{day}.md"
-    if not daily_path.is_file():
-        print(f"Error: missing {daily_path}", file=sys.stderr)
+    if not sources:
+        print(f"Error: no daily files for {day} under {DAILY_DIR}", file=sys.stderr)
         return 1
 
-    payloads = parse_daily_file(daily_path, config)
-    if not payloads:
-        print(f"No syncable rows in {daily_path}", file=sys.stderr)
+    all_payloads: list[dict[str, Any]] = []
+    source_meta: list[dict[str, str]] = []
+    for folder_person, path in sources:
+        rows = parse_daily_file(path, config, folder_person)
+        all_payloads.extend(rows)
+        source_meta.append(
+            {
+                "person": folder_person,
+                "path": str(path.relative_to(ROOT.parent)),
+            }
+        )
+
+    if not all_payloads:
+        paths = ", ".join(str(p) for _, p in sources)
+        print(f"No syncable rows in {paths}", file=sys.stderr)
         return 1
 
     output = {
         "date": day,
-        "source": str(daily_path.relative_to(ROOT.parent)),
+        "sources": source_meta,
         "database_id": config["database_id"],
         "data_source_id": config["data_source_id"],
         "database_url": config["database_url"],
-        "rows": payloads,
+        "rows": all_payloads,
         "mcp_hint": {
             "tool": "notion-create-pages / notion-update-page",
             "parent": {"data_source_id": config["data_source_id"], "type": "data_source_id"},
@@ -372,7 +406,7 @@ def main() -> int:
     if args.json or args.dry_run:
         print(json.dumps(output, ensure_ascii=False, indent=2))
         if args.dry_run:
-            print(f"\n[dry-run] {len(payloads)} row(s) parsed; no Notion write.", file=sys.stderr)
+            print(f"\n[dry-run] {len(all_payloads)} row(s) from {len(sources)} file(s); no Notion write.", file=sys.stderr)
             return 0
 
     token = os.environ.get("NOTION_TOKEN", "").strip()
@@ -387,13 +421,12 @@ def main() -> int:
 
     client = NotionClient(token, config["database_id"])
     results = []
-    for payload in payloads:
-        # copy so _meta remains for upsert
+    for payload in all_payloads:
         row = dict(payload)
         results.append(client.upsert(row))
 
     print(json.dumps({"date": day, "results": results}, ensure_ascii=False, indent=2))
-    print(f"Synced {len(results)} row(s) to Notion.", file=sys.stderr)
+    print(f"Synced {len(results)} row(s) to Notion from {len(sources)} file(s).", file=sys.stderr)
     return 0
 
 

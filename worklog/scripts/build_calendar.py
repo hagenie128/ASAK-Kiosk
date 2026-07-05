@@ -1,24 +1,28 @@
 #!/usr/bin/env python3
-"""Scan worklog/daily/*.md and emit worklog/calendar/data.json for the calendar viewer."""
+"""Scan worklog/daily/{person}/*.md and emit worklog/calendar/data.json for the calendar viewer."""
 
 from __future__ import annotations
 
 import json
 import re
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-DAILY_DIR = ROOT / "daily"
+SCRIPT_DIR = Path(__file__).resolve().parent
+sys.path.insert(0, str(SCRIPT_DIR))
+
+from worklog_paths import DAILY_DIR, ROOT, list_daily_persons, team_dir_name  # noqa: E402
+
 OUTPUT = ROOT / "calendar" / "data.json"
 
 MEMBER_COLORS = {
     "팀 공통": "#2d8a4e",
-    "담당자A": "#2563eb",
-    "담당자B": "#b45309",
-    "담당자C": "#7c3aed",
-    "담당자D": "#db2777",
-    "홍길동": "#2563eb",
+    "미지정": "#2d8a4e",
+    "이하진": "#2563eb",
+    "김나연": "#b45309",
+    "박유진": "#7c3aed",
+    "강민준": "#db2777",
 }
 
 DEFAULT_COLORS = ["#2d8a4e", "#2563eb", "#b45309", "#7c3aed", "#db2777", "#0d9488"]
@@ -108,12 +112,14 @@ def parse_blocker_section(text: str) -> bool:
     return False
 
 
-def collect_members(rows: list[dict[str, str]]) -> list[str]:
+def collect_members(rows: list[dict[str, str]], folder_person: str) -> list[str]:
     seen: list[str] = []
     for row in rows:
         name = row.get("담당자", row.get("member", "")).strip()
         if name and name not in seen:
             seen.append(name)
+    if not seen and folder_person != team_dir_name():
+        seen.append(folder_person)
     return seen
 
 
@@ -129,9 +135,9 @@ def assign_colors(members: list[str]) -> dict[str, str]:
     return colors
 
 
-def build_day_entry(path: Path, text: str) -> dict:
+def build_day_entry(path: Path, text: str, folder_person: str) -> dict:
     rows = parse_summary_table(text)
-    members = collect_members(rows)
+    members = collect_members(rows, folder_person)
     has_blocker = parse_blocker_section(text) or any(row_has_blocker(r) for r in rows)
     summaries = [r.get("작업", "").strip() for r in rows if r.get("작업", "").strip()]
     summary = " · ".join(summaries[:3])
@@ -140,13 +146,14 @@ def build_day_entry(path: Path, text: str) -> dict:
 
     return {
         "date": path.stem,
+        "person": folder_person,
         "title": parse_title(text) or f"{path.stem} 일일 워크로그",
         "summary": summary,
         "members": members,
         "rows": rows,
         "row_count": len(rows),
         "has_blocker": has_blocker,
-        "file": f"daily/{path.name}",
+        "file": f"daily/{folder_person}/{path.name}",
     }
 
 
@@ -155,17 +162,23 @@ def main() -> None:
     all_members: list[str] = []
 
     if DAILY_DIR.is_dir():
-        for path in sorted(DAILY_DIR.glob("*.md")):
-            if path.name.startswith("_"):
+        persons = list_daily_persons()
+        for folder_person in persons:
+            person_dir = DAILY_DIR / folder_person
+            if not person_dir.is_dir():
                 continue
-            if not DATE_RE.match(path.name):
-                continue
-            text = path.read_text(encoding="utf-8")
-            entry = build_day_entry(path, text)
-            days[entry["date"]] = entry
-            for m in entry["members"]:
-                if m not in all_members:
-                    all_members.append(m)
+            for path in sorted(person_dir.glob("*.md")):
+                if path.name.startswith("_"):
+                    continue
+                if not DATE_RE.match(path.name):
+                    continue
+                text = path.read_text(encoding="utf-8")
+                entry = build_day_entry(path, text, folder_person)
+                key = f"{entry['date']}:{folder_person}"
+                days[key] = entry
+                for m in entry["members"]:
+                    if m not in all_members:
+                        all_members.append(m)
 
     payload = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
@@ -173,6 +186,7 @@ def main() -> None:
         "team_size": 4,
         "weeks": 8,
         "daily_dir": "daily",
+        "layout": "daily/{person}/YYYY-MM-DD.md",
         "members": all_members,
         "member_colors": assign_colors(all_members),
         "days": days,
@@ -180,7 +194,7 @@ def main() -> None:
 
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"Wrote {OUTPUT} ({len(days)} day(s))")
+    print(f"Wrote {OUTPUT} ({len(days)} day/person file(s))")
 
 
 if __name__ == "__main__":

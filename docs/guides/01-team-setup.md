@@ -280,7 +280,7 @@ git push
 
 ## 12. 작업 기록 규칙
 
-일일 팀 요약은 Git [`worklog/daily/`](../../worklog/daily/) 정본 + Notion [📅 일일 워크로그 DB](https://app.notion.com/p/eeae4beb07ad4051928a87de0ea4c8f9) Calendar (`sync_daily_to_notion.py`) 하이브리드로 관리합니다.
+일일 개인 요약은 Git [`worklog/daily/{이름}/`](../../worklog/daily/) 정본 + Notion [📅 일일 워크로그 DB](https://app.notion.com/p/eeae4beb07ad4051928a87de0ea4c8f9) Calendar (`sync_daily_to_notion.py --person` 또는 `--all`) 하이브리드로 관리합니다. 공유 인프라는 선택적으로 `daily/_team/` (담당 **미지정**).
 
 - Notion 사용법: [📅 일일 워크로그 — 팀 가이드](https://app.notion.com/p/39451ef04f0b81c0a018e8fe6ea9fb95)
 - 팀 공유 Quick Start: [`worklog/guide-team-daily.md`](../../worklog/guide-team-daily.md)
