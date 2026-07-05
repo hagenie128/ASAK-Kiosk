@@ -1,0 +1,51 @@
+[
+  {
+    "id": 240,
+    "name": "드레싱 선택",
+    "group_type_id": 21,
+    "min_select": 1,
+    "max_select": 1
+  },
+  {
+    "id": 241,
+    "name": "드레싱 추가",
+    "group_type_id": 21,
+    "min_select": 0,
+    "max_select": 2
+  },
+  {
+    "id": 242,
+    "name": "토핑 추가",
+    "group_type_id": 20,
+    "min_select": 0,
+    "max_select": 5
+  },
+  {
+    "id": 243,
+    "name": "베이스 변경",
+    "group_type_id": 22,
+    "min_select": 0,
+    "max_select": 1
+  },
+  {
+    "id": 244,
+    "name": "세트 사이드",
+    "group_type_id": 23,
+    "min_select": 1,
+    "max_select": 1
+  },
+  {
+    "id": 245,
+    "name": "세트 음료",
+    "group_type_id": 24,
+    "min_select": 1,
+    "max_select": 1
+  },
+  {
+    "id": 246,
+    "name": "재료 빼기",
+    "group_type_id": 25,
+    "min_select": 0,
+    "max_select": 10
+  }
+]

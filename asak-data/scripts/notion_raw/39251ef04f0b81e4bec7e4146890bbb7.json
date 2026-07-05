@@ -1,0 +1,5 @@
+{
+  "title": "관리자 메뉴 목록 조회",
+  "url": "https://app.notion.com/p/39251ef04f0b81e4bec7e4146890bbb7",
+  "text": "<page url=\"https://app.notion.com/p/39251ef04f0b81e4bec7e4146890bbb7\">\n<properties>\n{\"API ID\": \"API-011\", \"API명\": \"관리자 메뉴 목록 조회\", \"Method\": \"GET\", \"userDefined:URL\": \"/api/admin/menus\", \"Request\": \"Query: categoryId, keyword, isSoldOut\", \"Response\": \"{\\\"code\\\":\\\"ADMIN_MENU_LIST_SUCCESS\\\"}\", \"Error\": \"{\\\"code\\\":\\\"ADMIN_MENU_LIST_FAILED\\\"}\", \"처리 내용\": \"관리자 메뉴 목록 조회\"}\n</properties>\n</page>"
+}

@@ -1,0 +1,5 @@
+{
+  "title": "프론트: 결제 실패/재시도 화면 구현",
+  "url": "https://app.notion.com/p/39251ef04f0b8124bb8afcb5934676fe",
+  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39251ef04f0b8124bb8afcb5934676fe.\n<page url=\"https://app.notion.com/p/39251ef04f0b8124bb8afcb5934676fe\">\n<properties>\n{\"date:시작일:is_datetime\":0,\"date:시작일:start\":\"2026-07-09\",\"date:종료일:is_datetime\":0,\"date:종료일:start\":\"2026-07-12\",\"url\":\"https://app.notion.com/p/39251ef04f0b8124bb8afcb5934676fe\",\"관련 산출물\":\"SCR-012, API-006 실패 응답 처리\",\"구분\":\"프론트엔드\",\"단계\":\"FWD\",\"담당자\":\"강민준, 박유진\",\"비고\":\"결제 실패/금액 불일치/재시도 흐름이 화면에서 확인되면 완료\",\"상태\":\"예정\",\"우선순위\":\"중\",\"작업 ID\":\"WBS-027\",\"작업명\":\"프론트: 결제 실패/재시도 화면 구현\",\"진척률\":0}\n</properties>\n</page>"
+}

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: GitHub Issues 가이드
+    url: https://github.com/hagenie128/ASAK/blob/main/docs/guides/02-github-issues-guide.md
+    about: 라벨·WBS·워크로그 연동 방법
+  - name: 팀 세팅 가이드
+    url: https://github.com/hagenie128/ASAK/blob/main/docs/guides/01-team-setup.md
+    about: 저장소 구조·브랜치·온보딩

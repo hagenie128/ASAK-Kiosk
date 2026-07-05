@@ -1,0 +1,5 @@
+{
+  "title": "품절 판매 항목이 정상적으로 비활성화되는지 확인",
+  "url": "https://app.notion.com/p/39151ef04f0b81fea37de99c63accdae",
+  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39151ef04f0b81fea37de99c63accdae.\n<page url=\"https://app.notion.com/p/39151ef04f0b81fea37de99c63accdae\">\n<properties>\n{\"테스트 ID\": \"TC-003\", \"테스트명\": \"품절 판매 항목이 정상적으로 비활성화되는지 확인\", \"전제조건\": \"품절 항목이 1개 이상 존재\", \"수행 절차\": \"1) 메뉴 목록 진입 2) 품절 메뉴 선택 시도 3) 비활성 표시 확인\", \"기대 결과\": \"품절 메뉴는 선택 불가 또는 품절 배지 표시\", \"비고\": \"SC-008 연결, LMIS-MENU-001\", \"상태\": \"예정\"}\n</properties>\n</page>"
+}

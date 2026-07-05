@@ -1,0 +1,5 @@
+{
+  "title": "먹고가기/포장 선택 및 orderType 유지 검증",
+  "url": "https://app.notion.com/p/39451ef04f0b81aebdc8d7bc3b49eb30",
+  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39451ef04f0b81aebdc8d7bc3b49eb30.\n<page url=\"https://app.notion.com/p/39451ef04f0b81aebdc8d7bc3b49eb30\">\n<properties>\n{\"테스트 ID\": \"TC-001\", \"테스트명\": \"먹고가기/포장 선택 및 orderType 유지 검증\", \"전제조건\": \"키오스크 홈 화면 접근 가능\", \"수행 절차\": \"1) 홈에서 주문시작 2) 먹고가기 선택 3) 메뉴 1건 장바구니 담기 4) 주문확인 화면에서 orderType 확인 5) 주문 생성 API 요청 body의 orderType 확인\", \"기대 결과\": \"먹고가기/포장 선택 후 장바구니·주문확인·주문 생성까지 orderType(EAT_IN/TAKE_OUT)이 유지되고 API-005 요청에 반영된다.\", \"비고\": \"SC-014 연결, FWD-ORDER-001\", \"상태\": \"예정\"}\n</properties>\n</page>"
+}

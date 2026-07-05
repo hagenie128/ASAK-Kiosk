@@ -1,0 +1,5 @@
+{
+  "title": "매장/포장 여부 선택",
+  "url": "https://app.notion.com/p/39151ef04f0b81a8aba7e755a9ce72c4",
+  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39151ef04f0b81a8aba7e755a9ce72c4.\n<page url=\"https://app.notion.com/p/39151ef04f0b81a8aba7e755a9ce72c4\">\n<properties>\n{\"url\": \"https://app.notion.com/p/39151ef04f0b81a8aba7e755a9ce72c4\", \"시나리오 ID\": \"SC-014\", \"시나리오명\": \"매장/포장 여부 선택\", \"시작 조건\": \"홈 화면에서 주문시작 버튼 클릭\", \"종료 조건\": \"주문에 orderType(EAT_IN/TAKE_OUT) 구분값이 저장되어 장바구니로 이동\", \"기본 흐름\": \"홈 화면에서 주문시작 클릭 → 먹고가기/포장 선택 → 선택값(orderType)을 장바구니와 주문확인 단계까지 유지 → 주문 생성 시 orderType에 반영\", \"예외 흐름\": \"선택 없이 다음 단계로 진행 불가(필수 선택)\", \"상태\": \"초안\"}\n</properties>\n<content>\n```mermaid\nflowchart TD\n    A[Home] --> B[Start button click]\n    B --> C[EatIn TakeOut select]\n    C --> D[orderType kept through cart and order confirm]\n    D --> E[Order create sends orderType]\n```\n</content>\n</page>"
+}

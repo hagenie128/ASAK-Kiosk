@@ -1,0 +1,418 @@
+:root {
+  --bg: #f4f7f2;
+  --panel: #ffffff;
+  --text: #1a2e1a;
+  --muted: #5c6b5c;
+  --line: #dde6d8;
+  --accent: #2d8a4e;
+  --accent-soft: #e8f5ec;
+  --warn: #b45309;
+  --danger: #dc2626;
+  --shadow: 0 8px 24px rgba(26, 46, 26, 0.08);
+  --radius: 14px;
+  --font: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--bg);
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: #16361f;
+  color: #eaf3eb;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.brand-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--accent);
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+}
+
+.brand small {
+  display: block;
+  opacity: 0.75;
+  margin-top: 2px;
+}
+
+.sidebar-section h3 {
+  margin: 0 0 10px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  opacity: 0.7;
+}
+
+.legend-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.sidebar-foot {
+  margin-top: auto;
+  font-size: 12px;
+  opacity: 0.65;
+  line-height: 1.5;
+}
+
+.main {
+  padding: 24px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.month-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.month-label {
+  min-width: 140px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.btn {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.05);
+  color: #fff;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 20px;
+  align-items: start;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.weekday {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+  padding: 6px 0;
+}
+
+.weekday.sun {
+  color: #dc2626;
+}
+
+.weekday.sat {
+  color: #2563eb;
+}
+
+.day-cell {
+  aspect-ratio: 1;
+  min-height: 72px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 8px;
+  cursor: pointer;
+  background: #fafcf9;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.day-cell:hover {
+  border-color: var(--accent);
+}
+
+.day-cell.other-month {
+  opacity: 0.35;
+  background: #f0f3ee;
+}
+
+.day-cell.today {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.day-cell.selected {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+
+.day-cell.has-log {
+  background: #fff;
+}
+
+.day-num {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.day-dots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: auto;
+}
+
+.member-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.blocker-badge {
+  font-size: 10px;
+  color: var(--danger);
+  font-weight: 700;
+}
+
+.detail-panel h2 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.detail-meta {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+.detail-summary {
+  background: var(--accent-soft);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 14px;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.detail-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.detail-table th,
+.detail-table td {
+  border: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: left;
+}
+
+.detail-table th {
+  background: #f6faf7;
+}
+
+.detail-body {
+  font-size: 14px;
+  line-height: 1.65;
+  max-height: 420px;
+  overflow: auto;
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+}
+
+.detail-body h1,
+.detail-body h2,
+.detail-body h3 {
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+.detail-body h1 { font-size: 1.25em; }
+.detail-body h2 { font-size: 1.1em; }
+.detail-body h3 { font-size: 1em; }
+
+.detail-body table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 12px 0;
+}
+
+.detail-body th,
+.detail-body td {
+  border: 1px solid var(--line);
+  padding: 6px 8px;
+}
+
+.detail-body blockquote {
+  margin: 0 0 12px;
+  padding: 8px 12px;
+  border-left: 3px solid var(--accent);
+  background: #f6faf7;
+  color: var(--muted);
+}
+
+.detail-body ul {
+  padding-left: 1.2em;
+}
+
+.placeholder {
+  color: var(--muted);
+  font-size: 14px;
+  text-align: center;
+  padding: 48px 16px;
+}
+
+.status-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.chip {
+  background: #eef3ea;
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+.chip.warn {
+  background: #fef3c7;
+  color: var(--warn);
+}
+
+@media (max-width: 960px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .sidebar-foot {
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1712;
+    --panel: #162019;
+    --text: #e8f0ea;
+    --muted: #93a893;
+    --line: #2a3d2e;
+    --accent-soft: #1a3324;
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  }
+
+  .day-cell {
+    background: #121c15;
+  }
+
+  .day-cell.other-month {
+    background: #0c120e;
+  }
+
+  .detail-table th {
+    background: #1a2820;
+  }
+
+  .chip {
+    background: #1f2e24;
+  }
+}

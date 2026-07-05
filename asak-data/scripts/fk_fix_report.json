@@ -1,0 +1,79 @@
+{
+  "before_numeric_or_bad": 35,
+  "after_bad": 0,
+  "fixed": 35,
+  "deleted": [],
+  "failed": [],
+  "samples": [
+    {
+      "table": "common_code",
+      "column": "code_group_id",
+      "before": {
+        "name": "code_group_id",
+        "fk_target": "42",
+        "is_fk": true
+      },
+      "after": {
+        "name": "code_group_id",
+        "fk_target": "code_group.id",
+        "is_fk": true
+      }
+    },
+    {
+      "table": "menu_tag",
+      "column": "menu_id",
+      "before": {
+        "name": "menu_id",
+        "fk_target": "45",
+        "is_fk": true
+      },
+      "after": {
+        "name": "menu_id",
+        "fk_target": "menu.id",
+        "is_fk": true
+      }
+    },
+    {
+      "table": "menu_tag",
+      "column": "tag_id",
+      "before": {
+        "name": "tag_id",
+        "fk_target": "44",
+        "is_fk": true
+      },
+      "after": {
+        "name": "tag_id",
+        "fk_target": "tag.id",
+        "is_fk": true
+      }
+    },
+    {
+      "table": "menu_nutrition",
+      "column": "source_id",
+      "before": {
+        "name": "source_id",
+        "fk_target": "43",
+        "is_fk": true
+      },
+      "after": {
+        "name": "source_id",
+        "fk_target": "common_code.id",
+        "is_fk": true
+      }
+    },
+    {
+      "table": "menu_nutrition",
+      "column": "menu_id",
+      "before": {
+        "name": "menu_id",
+        "fk_target": "45",
+        "is_fk": true
+      },
+      "after": {
+        "name": "menu_id",
+        "fk_target": "menu.id",
+        "is_fk": true
+      }
+    }
+  ]
+}

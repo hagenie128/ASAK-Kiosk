@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ASAK Design Color Swatches</title>
+  <style>
+    :root {
+      --bg: #f4f7f2;
+      --panel: #ffffff;
+      --text: #1a2e1a;
+      --muted: #5c6b5c;
+      --line: #dde6d8;
+      --accent: #2d8a4e;
+      --accent-soft: #e8f5ec;
+      --shadow: 0 8px 24px rgba(26, 46, 26, 0.08);
+      --radius: 14px;
+      --font: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.5;
+    }
+    .app {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      min-height: 100vh;
+    }
+    .sidebar {
+      background: #16361f;
+      color: #eaf3eb;
+      padding: 20px 14px;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+    }
+    .brand { display: flex; gap: 10px; align-items: center; margin-bottom: 20px; }
+    .brand-mark {
+      width: 36px; height: 36px; border-radius: 10px;
+      background: var(--accent); display: grid; place-items: center; font-weight: 800;
+    }
+    .brand small { display: block; opacity: 0.75; font-size: 11px; }
+    .nav { display: flex; flex-direction: column; gap: 4px; }
+    .nav a {
+      color: inherit; text-decoration: none; padding: 8px 10px;
+      border-radius: 8px; font-size: 13px;
+    }
+    .nav a:hover, .nav a.active { background: rgba(255,255,255,0.12); }
+    .nav .ref { opacity: 0.55; font-style: italic; }
+    main { padding: 24px 28px 48px; max-width: 960px; }
+    h1 { margin: 0 0 8px; font-size: 1.6rem; }
+    .lead { color: var(--muted); margin: 0 0 24px; font-size: 14px; }
+    .toast {
+      position: fixed; bottom: 24px; right: 24px; background: #16361f; color: #fff;
+      padding: 10px 16px; border-radius: 10px; font-size: 14px; opacity: 0;
+      transition: opacity 0.2s; pointer-events: none; z-index: 99;
+    }
+    .toast.show { opacity: 1; }
+    section {
+      background: var(--panel); border-radius: var(--radius);
+      box-shadow: var(--shadow); padding: 20px; margin-bottom: 20px;
+      border: 1px solid var(--line);
+    }
+    section.recommended { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-soft); }
+    section.reference-only { opacity: 0.72; border-style: dashed; }
+    section h2 { margin: 0 0 4px; font-size: 1.15rem; }
+    .mood { color: var(--muted); font-size: 13px; margin: 0 0 14px; }
+    .badge {
+      display: inline-block; font-size: 11px; font-weight: 600;
+      padding: 2px 8px; border-radius: 6px; margin-left: 8px; vertical-align: middle;
+    }
+    .badge-rec { background: var(--accent-soft); color: var(--accent); }
+    .badge-ref { background: #eee; color: #888; }
+    .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
+    .swatch {
+      border: 1px solid var(--line); border-radius: 10px; overflow: hidden; cursor: pointer;
+      transition: transform 0.12s, box-shadow 0.12s;
+    }
+    .swatch:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+    .swatch-color { height: 64px; }
+    .swatch-info { padding: 8px 10px; font-size: 12px; background: #fafcfa; }
+    .swatch-role { font-weight: 600; display: block; }
+    .swatch-hex { font-family: ui-monospace, monospace; color: var(--muted); font-size: 11px; }
+    .meta { margin-top: 12px; font-size: 13px; color: var(--muted); }
+    .meta strong { color: var(--text); }
+    @media (max-width: 720px) {
+      .app { grid-template-columns: 1fr; }
+      .sidebar { position: static; height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-mark">A</span>
+        <div><strong>ASAK</strong><small>Color Swatches</small></div>
+      </div>
+      <nav class="nav" id="nav"></nav>
+    </aside>
+    <main>
+      <h1>ASAK 디자인 컬러 스와치</h1>
+      <p class="lead">클릭하면 hex 복사 · <a href="./BRAND_DESIGN_OPTIONS.md">BRAND_DESIGN_OPTIONS.md</a> 정본</p>
+      <div id="panels"></div>
+    </main>
+  </div>
+  <div class="toast" id="toast">복사됨</div>
+  <script>
+    const PALETTES = [
+      {
+        id: "asak-trend-1",
+        title: "Trend-1 Pink-Green",
+        recommended: true,
+        mood: "프로틴·프레시, 핑크+세이지 듀오 (ASAK 오리지널)",
+        scr: "SCR-001, SCR-003, SCR-004",
+        font: "Pretendard",
+        colors: [
+          { role: "Primary", hex: "#E85D75" },
+          { role: "Secondary", hex: "#7CB69A" },
+          { role: "Accent", hex: "#F4A896" },
+          { role: "Background", hex: "#FDF8F6" },
+          { role: "Text", hex: "#2A2D34" }
+        ]
+      },
+      {
+        id: "asak-trend-2",
+        title: "Trend-2 Warm Coral + Cream",
+        mood: "버거킹 photo hero 류, warm appetite, dominant green 없음",
+        scr: "SCR-001, SCR-003",
+        font: "Pretendard + DM Sans",
+        colors: [
+          { role: "Primary", hex: "#C45C3E" },
+          { role: "Secondary", hex: "#FFF5E8" },
+          { role: "Accent", hex: "#E8A87C" },
+          { role: "Background", hex: "#FFFBF5" },
+          { role: "Text", hex: "#3D2C29" }
+        ]
+      },
+      {
+        id: "asak-trend-3",
+        title: "Trend-3 Electric Lime + Charcoal",
+        mood: "Gen-Z 키오스크, bold, green monotony 탈피",
+        scr: "SCR-001, SCR-008",
+        font: "Pretendard + Space Grotesk",
+        colors: [
+          { role: "Primary", hex: "#2B2D33" },
+          { role: "Secondary", hex: "#4A4E57" },
+          { role: "Accent", hex: "#C8F135" },
+          { role: "Background", hex: "#F0F1ED" },
+          { role: "Text", hex: "#1A1C20" }
+        ]
+      },
+      {
+        id: "asak-trend-4",
+        title: "Trend-4 Blush + Forest",
+        recommended: true,
+        mood: "soft blush + deep forest, 핑크그린 무드 ASAK 톤",
+        scr: "SCR-001, SCR-004, SCR-005",
+        font: "Pretendard",
+        colors: [
+          { role: "Primary", hex: "#1E4D3A" },
+          { role: "Secondary", hex: "#F9E8EC" },
+          { role: "Accent", hex: "#E8A0B4" },
+          { role: "Background", hex: "#FDF6F8" },
+          { role: "Text", hex: "#1E4D3A" }
+        ]
+      },
+      {
+        id: "asak-trend-5",
+        title: "Trend-5 Citrus Navy",
+        mood: "Subway yellow energy, green primary 없음",
+        scr: "SCR-002, SCR-003, SCR-007",
+        font: "Noto Sans KR + Nunito Sans",
+        colors: [
+          { role: "Primary", hex: "#1A2B4A" },
+          { role: "Secondary", hex: "#F5C518" },
+          { role: "Accent", hex: "#4A90D9" },
+          { role: "Background", hex: "#F8F9FC" },
+          { role: "Text", hex: "#1A2B4A" }
+        ]
+      },
+      {
+        id: "option-a",
+        title: "Option A — Salady Green (benchmark)",
+        mood: "Green-heavy 벤치마크 · Figma Variables 비교용",
+        scr: "SCR-003 (green grid)",
+        font: "Pretendard",
+        colors: [
+          { role: "Primary", hex: "#00A651" },
+          { role: "Secondary", hex: "#E8F5E9" },
+          { role: "Accent", hex: "#FF6B35" },
+          { role: "Background", hex: "#FAFBFA" },
+          { role: "Text", hex: "#1A2E1A" }
+        ]
+      },
+      {
+        id: "courses-kit",
+        title: "Courses Dashboard UI KIT",
+        mood: "Admin SCR-015~019 · node 14-410 placeholder",
+        scr: "SCR-015~019",
+        font: "Inter + Pretendard",
+        colors: [
+          { role: "Primary", hex: "#6C5CE7" },
+          { role: "Secondary", hex: "#A29BFE" },
+          { role: "Surface", hex: "#FFFFFF" },
+          { role: "Surface Alt", hex: "#F8F9FC" },
+          { role: "Text", hex: "#1A1D26" }
+        ]
+      },
+      {
+        id: "ref-proteinner",
+        title: "참고: 프로티너(Proteinner)",
+        referenceOnly: true,
+        mood: "mood/trend reference only — 색상 복제 금지",
+        scr: "—",
+        font: "—",
+        colors: [
+          { role: "(참고)", hex: "#CCCCCC", note: "브랜드 hex 미사용" }
+        ]
+      }
+    ];
+
+    const nav = document.getElementById("nav");
+    const panels = document.getElementById("panels");
+    const toast = document.getElementById("toast");
+
+    function copyHex(hex) {
+      if (hex === "#CCCCCC") return;
+      navigator.clipboard.writeText(hex).then(() => {
+        toast.textContent = hex + " 복사됨";
+        toast.classList.add("show");
+        setTimeout(() => toast.classList.remove("show"), 1600);
+      });
+    }
+
+    PALETTES.forEach((p) => {
+      const a = document.createElement("a");
+      a.href = "#" + p.id;
+      a.textContent = p.title;
+      if (p.referenceOnly) a.classList.add("ref");
+      nav.appendChild(a);
+
+      const sec = document.createElement("section");
+      sec.id = p.id;
+      if (p.recommended) sec.classList.add("recommended");
+      if (p.referenceOnly) sec.classList.add("reference-only");
+
+      let badge = "";
+      if (p.recommended) badge = '<span class="badge badge-rec">추천</span>';
+      if (p.referenceOnly) badge = '<span class="badge badge-ref">reference only</span>';
+
+      const swatchHtml = p.colors.map((c) => `
+        <div class="swatch" data-hex="${c.hex}" title="클릭하여 복사">
+          <div class="swatch-color" style="background:${c.hex}"></div>
+          <div class="swatch-info">
+            <span class="swatch-role">${c.role}</span>
+            <span class="swatch-hex">${c.note || c.hex}</span>
+          </div>
+        </div>`).join("");
+
+      sec.innerHTML = `
+        <h2>${p.title}${badge}</h2>
+        <p class="mood">${p.mood}</p>
+        <div class="swatches">${swatchHtml}</div>
+        <p class="meta"><strong>SCR:</strong> ${p.scr} · <strong>Font:</strong> ${p.font}</p>`;
+      panels.appendChild(sec);
+    });
+
+    panels.addEventListener("click", (e) => {
+      const sw = e.target.closest(".swatch");
+      if (sw) copyHex(sw.dataset.hex);
+    });
+
+    const links = nav.querySelectorAll("a");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) {
+          links.forEach((l) => l.classList.toggle("active", l.getAttribute("href") === "#" + en.target.id));
+        }
+      });
+    }, { rootMargin: "-20% 0px -70% 0px" });
+    document.querySelectorAll("section").forEach((s) => observer.observe(s));
+  </script>
+</body>
+</html>

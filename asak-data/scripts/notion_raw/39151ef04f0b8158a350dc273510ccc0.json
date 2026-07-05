@@ -1,0 +1,5 @@
+{
+  "title": "피크타임 다중 주문 동시처리",
+  "url": "https://app.notion.com/p/39151ef04f0b8158a350dc273510ccc0",
+  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39151ef04f0b8158a350dc273510ccc0.\n<page url=\"https://app.notion.com/p/39151ef04f0b8158a350dc273510ccc0\">\n<properties>\n{\"url\": \"https://app.notion.com/p/39151ef04f0b8158a350dc273510ccc0\", \"시나리오 ID\": \"SC-019\", \"시나리오명\": \"피크타임 다중 주문 동시처리\", \"시작 조건\": \"점심시간대 다수 고객 동시 접근 가정\", \"종료 조건\": \"동시 요청이 목표 응답시간 내에 처리됨\", \"기본 흐름\": \"동일 시간대에 여러 고객이 동시에 메뉴 조회/주문 진행 → 응답 지연 없이 처리\", \"예외 흐름\": \"부하 증가 시 응답 지연이 발생하면 로딩 인디케이터로 안내\", \"상태\": \"초안\"}\n</properties>\n<content>\n```mermaid\nflowchart TD\n    A[점심시간 다수 고객 동시 접속] --> B[메뉴조회/주문 동시 요청]\n    B --> C{응답 목표시간 이내?}\n    C -->|예| D[정상 처리]\n    C -->|아니오| E[로깅 및 지연 안내]\n```\n</content>\n</page>"
+}

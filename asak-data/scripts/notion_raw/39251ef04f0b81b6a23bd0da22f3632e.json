@@ -1,0 +1,5 @@
+{
+  "title": "메뉴 상세 조회",
+  "url": "https://app.notion.com/p/39251ef04f0b81b6a23bd0da22f3632e",
+  "text": "<page url=\"https://app.notion.com/p/39251ef04f0b81b6a23bd0da22f3632e\">\n<properties>\n{\"API ID\": \"API-003\", \"API명\": \"메뉴 상세 조회\", \"Method\": \"GET\", \"userDefined:URL\": \"/api/menus/{menuId}\", \"Request\": \"Path: menuId(Long, required)\", \"Response\": \"{\\\"code\\\":\\\"MENU_DETAIL_SUCCESS\\\"}\", \"Error\": \"{\\\"code\\\":\\\"MENU_NOT_FOUND\\\"}\", \"처리 내용\": \"menuId로 메뉴 조회\"}\n</properties>\n</page>"
+}

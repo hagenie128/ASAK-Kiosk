@@ -1,0 +1,5 @@
+{
+  "title": "주문 생성",
+  "url": "https://app.notion.com/p/30b51ef04f0b8358af2f01c096421506",
+  "text": "<page url=\"https://app.notion.com/p/30b51ef04f0b8358af2f01c096421506\">\n<properties>\n{\"API ID\": \"API-005\", \"API명\": \"주문 생성\", \"Method\": \"POST\", \"userDefined:URL\": \"/api/orders\", \"Request\": \"orderType, items[]\", \"Response\": \"{\\\"code\\\":\\\"ORDER_CREATE_SUCCESS\\\"}\", \"Error\": \"{\\\"code\\\":\\\"ORDER_INVALID\\\"}\", \"처리 내용\": \"장바구니 내용을 기준으로 주문을 생성한다.\"}\n</properties>\n</page>"
+}

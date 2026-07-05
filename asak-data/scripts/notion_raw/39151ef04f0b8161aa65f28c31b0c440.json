@@ -1,0 +1,5 @@
+{
+  "title": "재방문 고객의 빠른 주문(속도 중심)",
+  "url": "https://app.notion.com/p/39151ef04f0b8161aa65f28c31b0c440",
+  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39151ef04f0b8161aa65f28c31b0c440.\n<page url=\"https://app.notion.com/p/39151ef04f0b8161aa65f28c31b0c440\">\n<properties>\n{\"url\": \"https://app.notion.com/p/39151ef04f0b8161aa65f28c31b0c440\", \"시나리오 ID\": \"SC-002\", \"시나리오명\": \"재방문 고객의 빠른 주문(속도 중심)\", \"시작 조건\": \"재방문 고객이 키오스크 사용 시작\", \"종료 조건\": \"결제 완료 및 주문번호 표시, 화면 전환 5회 이내 목표 (2026-07-05 수정: 4단계→5회, 주문확인 화면 반영)\", \"기본 흐름\": \"메뉴 선택 → 자주 베스트/이전 조합 바로 재사용(추천조합 기본값) → 장바구니 담기 → 결제수단 확인 후 결제 → 완료\", \"예외 흐름\": \"없음\", \"상태\": \"초안\"}\n</properties>\n<content>\n```mermaid\nflowchart TD\n    A[menu_select] --> B[keep_default_recommended_combo]\n    B --> C[add_to_cart]\n    C --> D[order_confirm]\n    D --> E[select_payment_method]\n    E --> F[payment_complete]\n    F --> G[screen_transitions_5_or_fewer_verified]\n```\n</content>\n</page>"
+}

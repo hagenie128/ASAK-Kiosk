@@ -1,0 +1,5 @@
+{
+  "title": "알레르기/비건 태그 확인 후 주문",
+  "url": "https://app.notion.com/p/39151ef04f0b814bbbbdc963ec6b8096",
+  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39151ef04f0b814bbbbdc963ec6b8096.\n<page url=\"https://app.notion.com/p/39151ef04f0b814bbbbdc963ec6b8096\">\n<properties>\n{\"url\": \"https://app.notion.com/p/39151ef04f0b814bbbbdc963ec6b8096\", \"시나리오 ID\": \"SC-010\", \"시나리오명\": \"알레르기/비건 태그 확인 후 주문\", \"시작 조건\": \"견과류 알레르기가 있는 고객이 메뉴 탐색 중\", \"종료 조건\": \"고객이 안전하게 메뉴를 선택하거나 회피함\", \"기본 흐름\": \"알레르기/비건 태그 확인 → 해당 재료 포함 여부 인지 → 태그 기준으로 메뉴 선택/회피\", \"예외 흐름\": \"태그 미표시 재료가 있을 경우 고객이 직접 문의하도록 안내 문구 필요\", \"상태\": \"초안\"}\n</properties>\n<content>\n```mermaid\nflowchart TD\n    A[옵션선택 단계 진입] --> B[알레르기/비건 태그 확인]\n    B --> C{해당 재료 포함?}\n    C -->|예| D[메뉴 회피 또는 옵션 조정]\n    C -->|아니오| E[정상 진행]\n```\n</content>\n</page>"
+}

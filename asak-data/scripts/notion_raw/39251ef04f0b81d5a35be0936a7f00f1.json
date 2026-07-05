@@ -1,0 +1,5 @@
+{
+  "title": "결제 수단 설정 관리",
+  "url": "https://app.notion.com/p/39251ef04f0b81d5a35be0936a7f00f1",
+  "text": "<page url=\"https://app.notion.com/p/39251ef04f0b81d5a35be0936a7f00f1\">\n<properties>\n{\"요구사항 ID\": \"LMIS-PAY-001\", \"요구사항명\": \"결제 수단 설정 관리\", \"상세 설명\": \"관리자는 키오스크에서 노출할 결제 수단을 설정할 수 있어야 한다.\", \"우선순위\": \"중\", \"상태\": \"예정\", \"구분\": \"관리자\"}\n</properties>\n</page>"
+}

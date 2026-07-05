@@ -1,0 +1,1798 @@
+{
+  "requirements": [
+    {
+      "id": "LMIS-ORDER-003",
+      "title": "관리자 주문 상태 변경",
+      "description": "관리자는 주문 상태를 RECEIVED, PREPARING, COMPLETED 흐름에 맞게 변경할 수 있어야 한다.",
+      "priority": "상",
+      "status_notion": "예정",
+      "category": "관리자"
+    },
+    {
+      "id": "RTOS-DEVICE-002",
+      "title": "영수증 출력 요청",
+      "description": "사용자가 영수증 출력을 선택하면 주문 정보를 기반으로 영수증 출력 요청을 생성한다.",
+      "priority": "중",
+      "status_notion": "예정",
+      "category": "장치"
+    },
+    {
+      "id": "RTOS-SYS-001",
+      "title": "CMS 실시간 원격 모니터링",
+      "description": "웹 기반 CMS를 통한 실시간 장치 모니터링 및 원격 제어.",
+      "priority": "하",
+      "status_notion": "제외",
+      "category": "장치"
+    },
+    {
+      "id": "FWD-MENU-009",
+      "title": "실시간 가격/영양정보 합산",
+      "description": "옵션 추가 또는 제외 시 화면의 가격과 칼로리/단백질 등 요약 정보가 갱신되어야 한다.",
+      "priority": "중",
+      "status_notion": "예정",
+      "category": "기능"
+    },
+    {
+      "id": "FWD-UI-003",
+      "title": "한국어/영어 언어 전환 UI",
+      "description": "키오스크 상단에서 한국어와 영어 표시를 전환할 수 있는 UI를 제공한다.",
+      "priority": "하",
+      "status_notion": "예정",
+      "category": "화면"
+    },
+    {
+      "id": "FWD-CART-003",
+      "title": "장바구니 수량 변경/삭제",
+      "description": "사용자는 장바구니에서 담은 메뉴의 수량을 변경하거나 삭제할 수 있어야 한다.",
+      "priority": "상",
+      "status_notion": "제외",
+      "category": "기능"
+    },
+    {
+      "id": "FWD-UI-001",
+      "title": "접근성을 고려한 UI 제공",
+      "description": "키오스크 사용자가 화면을 쉽게 읽고 조작할 수 있도록 글자 크기, 버튼 크기, 대비, 간격을 고려한 UI를 제공한다.",
+      "priority": "중",
+      "status_notion": "예정",
+      "category": "화면"
+    },
+    {
+      "id": "DEV-SYS-001",
+      "title": "피크타임 응답 지연 최소화",
+      "description": "주문이 몰리는 상황에서도 메뉴 조회, 주문 생성, 결제 처리 응답이 과도하게 지연되지 않도록 구현한다.",
+      "priority": "중",
+      "status_notion": "예정",
+      "category": "비기능"
+    },
+    {
+      "id": "LMIS-ORDER-001",
+      "title": "관리자 주문 목록 조회",
+      "description": "관리자는 접수된 주문 목록을 조회하고 주문번호, 주문유형, 결제상태, 주문상태, 주문금액, 주문일시를 확인할 수 있어야 한다.",
+      "priority": "상",
+      "status_notion": "예정",
+      "category": "관리자"
+    },
+    {
+      "id": "LMIS-MENU-005",
+      "title": "인기 토핑 통계/발주 예측",
+      "description": "관리자는 요일/시간대별 인기 토핑 통계와 발주 예측 데이터를 확인할 수 있다.",
+      "priority": "하",
+      "status_notion": "예정",
+      "category": "관리자"
+    },
+    {
+      "id": "LMIS-ORDER-006",
+      "title": "주문서 추가/제외 재료 강조 표시",
+      "description": "관리자 주문 상세에서 추가 옵션과 제외 재료를 조리자가 쉽게 구분할 수 있도록 표시한다.",
+      "priority": "상",
+      "status_notion": "예정",
+      "category": "관리자"
+    },
+    {
+      "id": "LMIS-ORDER-004",
+      "title": "주문번호 자동 생성/저장",
+      "description": "주문 생성 시 사용자가 확인할 수 있는 고유 주문번호를 자동 생성하고 주문 데이터에 저장한다.",
+      "priority": "상",
+      "status_notion": "예정",
+      "category": "기능"
+    },
+    {
+      "id": "KSD-MEMBER-001",
+      "title": "스탬프 1회 확인 후 자동 적립",
+      "description": "사용자가 적립 여부를 한 번만 확인하면 결제 후 스탬프가 자동 적립되도록 한다.",
+      "priority": "하",
+      "status_notion": "제외",
+      "category": "기능"
+    },
+    {
+      "id": "FWD-PAY-001",
+      "title": "결제 수단 노출",
+      "description": "주문 확인 후 사용자가 결제 수단을 선택하거나 확인할 수 있는 결제 화면을 제공한다.",
+      "priority": "상",
+      "status_notion": "예정",
+      "category": "화면"
+    },
+    {
+      "id": "LMIS-MENU-001",
+      "title": "판매 항목 품절 처리",
+      "description": "관리자는 메뉴, 재료, 옵션항목 단위로 품절 여부를 변경할 수 있어야 한다.",
+      "priority": "상",
+      "status_notion": "예정",
+      "category": "관리자"
+    },
+    {
+      "id": "FWD-MENU-003",
+      "title": "메뉴 대표 이미지 제공",
+      "description": "메뉴 목록과 메뉴 상세 화면에서 메뉴를 식별할 수 있는 대표 이미지를 제공한다.",
+      "priority": "중",
+      "status_notion": "예정",
+      "category": "화면"
+    },
+    {
+      "id": "FWD-MENU-002",
+      "title": "드레싱 별도포장 추가 옵션",
+      "description": "사용자는 메뉴 옵션 선택 시 드레싱 별도포장 여부를 선택할 수 있어야 한다.",
+      "priority": "중",
+      "status_notion": "예정",
+      "category": "기능"
+    },
+    {
+      "id": "KSD-PAY-001",
+      "title": "결제 데이터 무결성 보장",
+      "description": "결제 처리 중 실패 또는 중단 상황이 발생해도 주문과 결제 데이터가 서로 불일치하지 않도록 관리한다.",
+      "priority": "중",
+      "status_notion": "예정",
+      "category": "비기능"
+    },
+    {
+      "id": "RTOS-DEVICE-005",
+      "title": "QR/바코드 스캔(쿠폰/멤버십)",
+      "description": "QR/바코드 스캔을 통해 쿠폰 또는 멤버십 정보를 인식한다.",
+      "priority": "하",
+      "status_notion": "제외",
+      "category": "장치"
+    },
+    {
+      "id": "FWD-MENU-008",
+      "title": "알레르기/비건 태그 표시",
+      "description": "메뉴 또는 재료에 연결된 알레르기 유발 정보와 비건 여부를 태그로 표시한다.",
+      "priority": "중",
+      "status_notion": "예정",
+      "category": "화면"
+    },
+    {
+      "id": "FWD-PAY-002",
+      "title": "결제 성공/실패 처리",
+      "description": "결제 성공 시 주문 완료 화면으로 이동하고, 결제 실패 시 실패 원인을 안내한다.",
+      "priority": "상",
+      "status_notion": "예정",
+      "category": "기능"
+    },
+    {
+      "id": "FWD-MENU-010",
+      "title": "토핑 개별 수량 조절",
+      "description": "사용자는 토핑 옵션 항목별로 수량을 개별 조절할 수 있어야 한다.",
+      "priority": "중",
+      "status_notion": "예정",
+      "category": "기능"
+    },
+    {
+      "id": "DEV-SYS-002",
+      "title": "핵심 API 응답속도 목표치 구체화",
+      "description": "메뉴 목록, 옵션 조회, 주문 생성, 결제 처리 등 핵심 API의 응답 목표 시간을 정한다.",
+      "priority": "중",
+      "status_notion": "예정",
+      "category": "비기능"
+    },
+    {
+      "id": "RTOS-DEVICE-001",
+      "title": "영수증 출력 처리",
+      "description": "고객이 영수증 출력 여부를 선택하면 주문/결제 내역을 기반으로 영수증을 출력한다.",
+      "priority": "중",
+      "status_notion": "예정",
+      "category": "장치"
+    },
+    {
+      "id": "FWD-MENU-006",
+      "title": "카테고리별 메뉴 조회",
+      "description": "사용자는 카테고리 탭을 선택해 해당 카테고리의 메뉴만 조회할 수 있어야 한다.",
+      "priority": "상",
+      "status_notion": "예정",
+      "category": "기능"
+    },
+    {
+      "id": "LMIS-MENU-004",
+      "title": "메뉴 등록/수정/삭제",
+      "description": "관리자는 메뉴 정보를 등록, 수정, 삭제할 수 있어야 한다.",
+      "priority": "중",
+      "status_notion": "예정",
+      "category": "관리자"
+    },
+    {
+      "id": "FWD-ORDER-002",
+      "title": "주문번호/대기시간 표시",
+      "description": "주문 완료 후 사용자에게 주문번호와 대기 안내 정보를 표시한다.",
+      "priority": "중",
+      "status_notion": "예정",
+      "category": "화면"
+    },
+    {
+      "id": "FWD-MENU-007",
+      "title": "재료 제외 옵션",
+      "description": "사용자는 기본 메뉴에 포함된 재료 중 원하지 않는 재료를 제외할 수 있어야 한다.",
+      "priority": "상",
+      "status_notion": "예정",
+      "category": "기능"
+    },
+    {
+      "id": "FWD-CART-001",
+      "title": "선택 옵션 텍스트 요약 표시",
+      "description": "장바구니와 주문 확인 화면에서 사용자가 선택한 옵션과 제외 재료를 텍스트로 요약 표시한다.",
+      "priority": "상",
+      "status_notion": "예정",
+      "category": "화면"
+    },
+    {
+      "id": "LMIS-ORDER-005",
+      "title": "일별 매출/판매량 조회",
+      "description": "일별 매출 및 메뉴별 판매량을 조회할 수 있어야 한다.",
+      "priority": "중",
+      "status_notion": "예정",
+      "category": "관리자"
+    },
+    {
+      "id": "FWD-SYS-001",
+      "title": "일정 시간 미입력 시 초기화면 자동 복귀",
+      "description": "사용자가 일정 시간 동안 조작하지 않으면 키오스크 화면을 초기 상태로 되돌린다.",
+      "priority": "중",
+      "status_notion": "예정",
+      "category": "기능"
+    },
+    {
+      "id": "FWD-ORDER-001",
+      "title": "매장/포장 구분 표시",
+      "description": "사용자가 주문 시작 시 매장 식사와 포장 중 하나를 선택하고, 선택값이 주문 정보에 반영되어야 한다.",
+      "priority": "상",
+      "status_notion": "예정",
+      "category": "기능"
+    },
+    {
+      "id": "LMIS-MEMBER-001",
+      "title": "멤버십 스탬프 자동 적립",
+      "description": "고객은 결제 진행 중 멤버십 적립 여부를 1회 확인받고, 결제 완료 시 자동으로 스탬프가 적립되어야 한다.",
+      "priority": "중",
+      "status_notion": "예정",
+      "category": "기능"
+    },
+    {
+      "id": "LMIS-MENU-006",
+      "title": "세트 구성 관리",
+      "description": "관리자는 메인 메뉴, 사이드, 음료를 묶은 세트 구성을 관리할 수 있어야 한다.",
+      "priority": "중",
+      "status_notion": "예정",
+      "category": "관리자"
+    },
+    {
+      "id": "FWD-MENU-014",
+      "title": "추가량/단백질 정보 표시",
+      "description": "토핑 옵션 선택 시 g 단위 추가량과 단백질 등 주요 영양 정보를 표시할 수 있어야 한다.",
+      "priority": "중",
+      "status_notion": "예정",
+      "category": "화면"
+    },
+    {
+      "id": "FWD-MENU-013",
+      "title": "베스트/신규 메뉴 태그 표시",
+      "description": "메뉴 목록과 상세 화면에서 베스트, 신규 등 메뉴 태그를 표시할 수 있어야 한다.",
+      "priority": "중",
+      "status_notion": "예정",
+      "category": "화면"
+    },
+    {
+      "id": "DEV-PAY-002",
+      "title": "사이드메뉴 세트 할인 적용",
+      "description": "메인 메뉴와 사이드 메뉴를 함께 구매할 때 세트 할인 금액을 적용할 수 있어야 한다.",
+      "priority": "중",
+      "status_notion": "예정",
+      "category": "기능"
+    },
+    {
+      "id": "LMIS-PAY-001",
+      "title": "결제 수단 설정 관리",
+      "description": "관리자는 키오스크에서 노출할 결제 수단을 설정할 수 있어야 한다.",
+      "priority": "중",
+      "status_notion": "예정",
+      "category": "관리자"
+    },
+    {
+      "id": "LMIS-MENU-002",
+      "title": "품절 상태 고객 화면 반영",
+      "description": "관리자가 판매 항목 품절 상태를 변경하면 키오스크 고객 화면에 품절 뱃지·비활성 상태가 즉시 반영되어야 한다.",
+      "priority": "상",
+      "status_notion": "예정",
+      "category": "화면"
+    },
+    {
+      "id": "FWD-MENU-004",
+      "title": "알레르기/비건 태그 확인",
+      "description": "고객이 알레르기 유발 재료·비건 여부를 태그로 확인하고 안전하게 주문할 수 있어야 한다.",
+      "priority": "중",
+      "status_notion": "예정",
+      "category": "화면"
+    },
+    {
+      "id": "FWD-MENU-015",
+      "title": "메뉴별 추천 드레싱 표시",
+      "description": "메뉴 상세/옵션 선택 화면에서 메뉴별로 다른 추천 드레싱을 menu_option.is_recommended 기준으로 표시한다.",
+      "priority": "상",
+      "status_notion": "예정",
+      "category": "화면"
+    },
+    {
+      "id": "FWD-UI-002",
+      "title": "키오스크 시작 화면 및 빠른 주문 UX",
+      "description": "ASAK 키오스크 시작 화면에서 브랜드 안내와 주문 시작 CTA를 제공하고, 재방문 고객은 불필요한 단계 없이 메뉴 선택→장바구니→결제로 빠르게 이동할 수 있는 UI 흐름을 제공한다.",
+      "priority": "상",
+      "status_notion": "예정",
+      "category": "화면"
+    },
+    {
+      "id": "FWD-CART-002",
+      "title": "장바구니 수량 변경/삭제",
+      "description": "사용자는 장바구니에서 담은 메뉴 수량을 변경하거나 항목을 삭제할 수 있어야 한다.",
+      "priority": "상",
+      "status_notion": "예정",
+      "category": "기능"
+    },
+    {
+      "id": "DEV-PAY-001",
+      "title": "가상 결제 처리",
+      "description": "실제 결제 연동 없이 주문 금액을 기준으로 가상 결제 성공 처리를 수행한다.",
+      "priority": "상",
+      "status_notion": "예정",
+      "category": "API"
+    },
+    {
+      "id": "KSD-ARCH-001",
+      "title": "데이터는 Spring Boot를 통해서만 접근",
+      "description": "React와 모의 장치/RTOS Simulator는 DB에 직접 접근하지 않고 Spring Boot API를 통해서만 데이터를 처리해야 한다.",
+      "priority": "상",
+      "status_notion": "예정",
+      "category": "비기능"
+    },
+    {
+      "id": "FWD-MENU-001",
+      "title": "키오스크 메뉴 목록 조회",
+      "description": "사용자는 키오스크에서 카테고리별 메뉴 목록을 조회할 수 있어야 한다.",
+      "priority": "상",
+      "status_notion": "예정",
+      "category": "기능"
+    },
+    {
+      "id": "RTOS-DEVICE-004",
+      "title": "QR/바코드 스캔 처리",
+      "description": "QR 또는 바코드 스캔을 통해 쿠폰, 멤버십, 주문 식별 정보를 처리한다.",
+      "priority": "하",
+      "status_notion": "제외",
+      "category": "장치"
+    },
+    {
+      "id": "LMIS-ORDER-002",
+      "title": "관리자 주문 상세 조회",
+      "description": "관리자는 특정 주문의 메뉴, 수량, 선택 옵션, 제외 재료, 결제 상태, 주문 상태를 상세 확인할 수 있어야 한다.",
+      "priority": "상",
+      "status_notion": "예정",
+      "category": "관리자"
+    },
+    {
+      "id": "DEV-ORDER-001",
+      "title": "주문 생성",
+      "description": "고객이 선택한 메뉴, 수량, 옵션, 제외 재료, 먹고가기/포장 정보를 주문 데이터로 등록할 수 있어야 한다.",
+      "priority": "상",
+      "status_notion": "예정",
+      "category": "API"
+    },
+    {
+      "id": "RTOS-DEVICE-003",
+      "title": "장치 이벤트 로그 조회",
+      "description": "관리자는 영수증 출력, QR/바코드 스캔 등 장치 이벤트 처리 내역을 조회할 수 있어야 한다.",
+      "priority": "중",
+      "status_notion": "예정",
+      "category": "장치"
+    },
+    {
+      "id": "FWD-UI-005",
+      "title": "키오스크 터치 친화 UI",
+      "description": "키오스크 화면은 터치 사용을 고려하여 버튼과 글자를 크게 배치해야 한다.",
+      "priority": "중",
+      "status_notion": "예정",
+      "category": "비기능"
+    },
+    {
+      "id": "LMIS-AUTH-001",
+      "title": "관리자 로그인",
+      "description": "관리자는 계정 정보를 이용해 관리자 시스템에 로그인할 수 있어야 한다.",
+      "priority": "중",
+      "status_notion": "제외",
+      "category": "관리자"
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "WBS-008",
+      "title": "[FWD-MENU-002][FWD-MENU-003][FWD-MENU-009][FWD-MENU-010][FWD-MENU-014] 프론트: 옵션선택 화면 구현",
+      "base_title": "프론트: 옵션선택 화면 구현",
+      "req_ids": [
+        "FWD-MENU-002",
+        "FWD-MENU-003",
+        "FWD-MENU-009",
+        "FWD-MENU-010",
+        "FWD-MENU-014"
+      ],
+      "assignee": "유진, 민준",
+      "start_date": "2026-07-06",
+      "end_date": "2026-07-09",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-013",
+      "title": "[LMIS-MENU-001][LMIS-MENU-002] 백엔드: 판매 항목 품절 상태 변경 API",
+      "base_title": "백엔드: 판매 항목 품절 상태 변경 API",
+      "req_ids": [
+        "LMIS-MENU-001",
+        "LMIS-MENU-002"
+      ],
+      "assignee": "하진, 나연",
+      "start_date": "2026-07-10",
+      "end_date": "2026-07-15",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-003",
+      "title": "[DEV-SYS-001] 기술스택 확정 · 역할분담",
+      "base_title": "기술스택 확정 · 역할분담",
+      "req_ids": [
+        "DEV-SYS-001"
+      ],
+      "assignee": "하진, 나연",
+      "start_date": "2026-07-03",
+      "end_date": "2026-07-03",
+      "status_notion": "완료"
+    },
+    {
+      "task_id": "WBS-006",
+      "title": "[DEV-SYS-001] Git 전략 · 백로그 티켓화",
+      "base_title": "Git 전략 · 백로그 티켓화",
+      "req_ids": [
+        "DEV-SYS-001"
+      ],
+      "assignee": "하진, 나연",
+      "start_date": "2026-07-03",
+      "end_date": "2026-07-04",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-005",
+      "title": "[FWD-UI-001][FWD-UI-002][FWD-UI-003][FWD-UI-005] 와이어프레임 · 컴포넌트 구조",
+      "base_title": "와이어프레임 · 컴포넌트 구조",
+      "req_ids": [
+        "FWD-UI-001",
+        "FWD-UI-002",
+        "FWD-UI-003",
+        "FWD-UI-005"
+      ],
+      "assignee": "유진, 나연",
+      "start_date": "2026-07-03",
+      "end_date": "2026-07-06",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-004",
+      "title": "[KSD-ARCH-001][LMIS-ORDER-001] ERD · API 명세서 작성",
+      "base_title": "ERD · API 명세서 작성",
+      "req_ids": [
+        "KSD-ARCH-001",
+        "LMIS-ORDER-001"
+      ],
+      "assignee": "하진",
+      "start_date": "2026-07-03",
+      "end_date": "2026-07-05",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-021",
+      "title": "[FWD-SYS-001] 프론트: 타임아웃 정책/카운트다운 기준 확정",
+      "base_title": "프론트: 타임아웃 정책/카운트다운 기준 확정",
+      "req_ids": [
+        "FWD-SYS-001"
+      ],
+      "assignee": "민준, 유진",
+      "start_date": "2026-07-14",
+      "end_date": "2026-07-17",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-014",
+      "title": "[DEV-SYS-001] 주간 데모 & 회고",
+      "base_title": "주간 데모 & 회고",
+      "req_ids": [
+        "DEV-SYS-001"
+      ],
+      "assignee": "전원",
+      "start_date": "2026-07-10",
+      "end_date": "2026-08-21",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-017",
+      "title": "[DEV-SYS-002] 시나리오 기반 QA",
+      "base_title": "시나리오 기반 QA",
+      "req_ids": [
+        "DEV-SYS-002"
+      ],
+      "assignee": "나연, 민준",
+      "start_date": "2026-07-11",
+      "end_date": "2026-07-17",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-011",
+      "title": "[FWD-MENU-001][FWD-MENU-003][FWD-MENU-006] 백엔드: 메뉴/옵션 API",
+      "base_title": "백엔드: 메뉴/옵션 API",
+      "req_ids": [
+        "FWD-MENU-001",
+        "FWD-MENU-003",
+        "FWD-MENU-006"
+      ],
+      "assignee": "하진",
+      "start_date": "2026-07-05",
+      "end_date": "2026-07-08",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-002",
+      "title": "[FWD-UI-001][LMIS-ORDER-001] 화면 흐름도 · 기능 정의서",
+      "base_title": "화면 흐름도 · 기능 정의서",
+      "req_ids": [
+        "FWD-UI-001",
+        "LMIS-ORDER-001"
+      ],
+      "assignee": "나연, 유진",
+      "start_date": "2026-07-03",
+      "end_date": "2026-07-04",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-015",
+      "title": "[DEV-SYS-001][FWD-MENU-001] 프론트-백엔드 연동 테스트",
+      "base_title": "프론트-백엔드 연동 테스트",
+      "req_ids": [
+        "DEV-SYS-001",
+        "FWD-MENU-001"
+      ],
+      "assignee": "하진, 유진, 나연",
+      "start_date": "2026-07-10",
+      "end_date": "2026-07-13",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-018",
+      "title": "[DEV-SYS-002][FWD-UI-001] 성능 · UX 개선",
+      "base_title": "성능 · UX 개선",
+      "req_ids": [
+        "DEV-SYS-002",
+        "FWD-UI-001"
+      ],
+      "assignee": "유진, 나연",
+      "start_date": "2026-07-17",
+      "end_date": "2026-08-07",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-016",
+      "title": "[DEV-PAY-001][DEV-SYS-001][FWD-PAY-002][FWD-SYS-001] 키오스크 예외처리(결제/터치/타임아웃)",
+      "base_title": "키오스크 예외처리(결제/터치/타임아웃)",
+      "req_ids": [
+        "FWD-PAY-002",
+        "FWD-SYS-001",
+        "DEV-SYS-001",
+        "DEV-PAY-001"
+      ],
+      "assignee": "하진, 민준",
+      "start_date": "2026-07-11",
+      "end_date": "2026-07-16",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-012",
+      "title": "[DEV-ORDER-001][FWD-ORDER-001][LMIS-ORDER-001] 백엔드: 주문 생성 API",
+      "base_title": "백엔드: 주문 생성 API",
+      "req_ids": [
+        "FWD-ORDER-001",
+        "LMIS-ORDER-001",
+        "DEV-ORDER-001"
+      ],
+      "assignee": "하진",
+      "start_date": "2026-07-07",
+      "end_date": "2026-07-10",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-007",
+      "title": "[FWD-MENU-001][FWD-MENU-006][LMIS-MENU-002] 프론트: 메뉴선택 화면 구현",
+      "base_title": "프론트: 메뉴선택 화면 구현",
+      "req_ids": [
+        "FWD-MENU-001",
+        "FWD-MENU-006",
+        "LMIS-MENU-002"
+      ],
+      "assignee": "유진",
+      "start_date": "2026-07-05",
+      "end_date": "2026-07-08",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-010",
+      "title": "[DEV-PAY-001][FWD-ORDER-002][FWD-PAY-001][FWD-PAY-002] 프론트: 결제 화면 구현",
+      "base_title": "프론트: 결제 화면 구현",
+      "req_ids": [
+        "FWD-PAY-001",
+        "FWD-PAY-002",
+        "DEV-PAY-001",
+        "FWD-ORDER-002"
+      ],
+      "assignee": "나연, 민준",
+      "start_date": "2026-07-08",
+      "end_date": "2026-07-11",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-019",
+      "title": "[DEV-SYS-002][PRESENT-001] 배포 · 발표자료 · 시연 시나리오",
+      "base_title": "배포 · 발표자료 · 시연 시나리오",
+      "req_ids": [
+        "PRESENT-001",
+        "DEV-SYS-002"
+      ],
+      "assignee": "나연, 하진",
+      "start_date": "2026-08-17",
+      "end_date": "2026-08-27",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-020",
+      "title": "[DEV-SYS-002] 최종 리허설",
+      "base_title": "최종 리허설",
+      "req_ids": [
+        "DEV-SYS-002"
+      ],
+      "assignee": "전원",
+      "start_date": "2026-08-27",
+      "end_date": "2026-08-28",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-001",
+      "title": "[KSD-ARCH-001][LMIS-MENU-003] 메뉴 구조 · 옵션 트리 설계",
+      "base_title": "메뉴 구조 · 옵션 트리 설계",
+      "req_ids": [
+        "LMIS-MENU-003",
+        "KSD-ARCH-001"
+      ],
+      "assignee": "하진, 나연",
+      "start_date": "2026-07-03",
+      "end_date": "2026-07-04",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-022",
+      "title": "[FWD-UI-001][FWD-UI-005] 프론트: 접근성 UI 적용(글자크기/대비)",
+      "base_title": "프론트: 접근성 UI 적용(글자크기/대비)",
+      "req_ids": [
+        "FWD-UI-001",
+        "FWD-UI-005"
+      ],
+      "assignee": "민준, 나연",
+      "start_date": "2026-07-21",
+      "end_date": "2026-08-07",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-009",
+      "title": "[FWD-CART-001][FWD-CART-002][FWD-ORDER-001] 프론트: 장바구니 화면 구현",
+      "base_title": "프론트: 장바구니 화면 구현",
+      "req_ids": [
+        "FWD-CART-001",
+        "FWD-CART-002",
+        "FWD-ORDER-001"
+      ],
+      "assignee": "민준, 유진",
+      "start_date": "2026-07-07",
+      "end_date": "2026-07-10",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-028",
+      "title": "[FWD-SYS-001] 프론트: 타임아웃 안내/자동 초기화 구현",
+      "base_title": "프론트: 타임아웃 안내/자동 초기화 구현",
+      "req_ids": [
+        "FWD-SYS-001"
+      ],
+      "assignee": "강민준",
+      "start_date": "2026-07-14",
+      "end_date": "2026-07-17",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-027",
+      "title": "[DEV-PAY-002][DEV-SYS-001][FWD-PAY-002][KSD-PAY-001] 프론트: 결제 실패/재시도 화면 구현",
+      "base_title": "프론트: 결제 실패/재시도 화면 구현",
+      "req_ids": [
+        "DEV-PAY-002",
+        "DEV-SYS-001",
+        "FWD-PAY-002",
+        "KSD-PAY-001"
+      ],
+      "assignee": "강민준, 박유진",
+      "start_date": "2026-07-09",
+      "end_date": "2026-07-12",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-032",
+      "title": "[FWD-UI-001][FWD-UI-003] 프론트: 접근성 설정 화면 초안",
+      "base_title": "프론트: 접근성 설정 화면 초안",
+      "req_ids": [
+        "FWD-UI-001",
+        "FWD-UI-003"
+      ],
+      "assignee": "박유진",
+      "start_date": "2026-07-21",
+      "end_date": "2026-08-07",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-024",
+      "title": "[FWD-MENU-001][LMIS-MENU-003] DB: ASAK 샘플 메뉴/재료/옵션 데이터 구성",
+      "base_title": "DB: ASAK 샘플 메뉴/재료/옵션 데이터 구성",
+      "req_ids": [
+        "FWD-MENU-001",
+        "LMIS-MENU-003"
+      ],
+      "assignee": "하진, 나연",
+      "start_date": "2026-07-05",
+      "end_date": "2026-07-09",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-030",
+      "title": "[LMIS-PAY-001] 관리자: 결제수단 설정 화면/API 설계",
+      "base_title": "관리자: 결제수단 설정 화면/API 설계",
+      "req_ids": [
+        "LMIS-PAY-001"
+      ],
+      "assignee": "나연",
+      "start_date": "2026-07-27",
+      "end_date": "2026-08-07",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-023",
+      "title": "[KSD-ARCH-001] DB: schema.sql 제약조건 반영",
+      "base_title": "DB: schema.sql 제약조건 반영",
+      "req_ids": [
+        "KSD-ARCH-001"
+      ],
+      "assignee": "하진",
+      "start_date": "2026-07-04",
+      "end_date": "2026-07-07",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-026",
+      "title": "[FWD-MENU-004][FWD-MENU-015] 백엔드: 추천 드레싱 menu_option 반영",
+      "base_title": "백엔드: 추천 드레싱 menu_option 반영",
+      "req_ids": [
+        "FWD-MENU-004",
+        "FWD-MENU-015"
+      ],
+      "assignee": "하진",
+      "start_date": "2026-07-06",
+      "end_date": "2026-07-09",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-025",
+      "title": "[FWD-CART-001] 백엔드: 장바구니 검증 API",
+      "base_title": "백엔드: 장바구니 검증 API",
+      "req_ids": [
+        "FWD-CART-001"
+      ],
+      "assignee": "하진",
+      "start_date": "2026-07-08",
+      "end_date": "2026-07-11",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-031",
+      "title": "[DEV-SYS-002] 테스트: 요구사항-시나리오-화면-API 추적성 점검",
+      "base_title": "테스트: 요구사항-시나리오-화면-API 추적성 점검",
+      "req_ids": [
+        "DEV-SYS-002"
+      ],
+      "assignee": "전원",
+      "start_date": "2026-07-10",
+      "end_date": "2026-07-17",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-029",
+      "title": "[LMIS-MENU-004][LMIS-MENU-005][LMIS-MENU-006] 관리자: 메뉴 관리 화면/API 설계",
+      "base_title": "관리자: 메뉴 관리 화면/API 설계",
+      "req_ids": [
+        "LMIS-MENU-004",
+        "LMIS-MENU-005",
+        "LMIS-MENU-006"
+      ],
+      "assignee": "나연, 하진",
+      "start_date": "2026-07-20",
+      "end_date": "2026-07-31",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-EXT-001",
+      "title": "[FWD-CART-001] [삭제요망] 장바구니 서버 검증",
+      "base_title": "[삭제요망] 장바구니 서버 검증",
+      "req_ids": [
+        "FWD-CART-001"
+      ],
+      "assignee": "",
+      "start_date": "2026-07-15",
+      "end_date": "2026-07-18",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-EXT-002",
+      "title": "[LMIS-PAY-001] [삭제요망] 관리자 결제수단 설정",
+      "base_title": "[삭제요망] 관리자 결제수단 설정",
+      "req_ids": [
+        "LMIS-PAY-001"
+      ],
+      "assignee": "",
+      "start_date": "2026-08-05",
+      "end_date": "2026-08-08",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-036",
+      "title": "[LMIS-ORDER-001][LMIS-ORDER-002][LMIS-ORDER-003][LMIS-ORDER-006] 프론트: 관리자 주문 관리/상세 화면 구현",
+      "base_title": "프론트: 관리자 주문 관리/상세 화면 구현",
+      "req_ids": [
+        "LMIS-ORDER-001",
+        "LMIS-ORDER-002",
+        "LMIS-ORDER-003",
+        "LMIS-ORDER-006"
+      ],
+      "assignee": "박유진",
+      "start_date": "2026-07-10",
+      "end_date": "2026-07-12",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-035",
+      "title": "[LMIS-ORDER-001][LMIS-ORDER-002][LMIS-ORDER-003] 백엔드: 관리자 주문 목록/상태변경 API (API-007/008)",
+      "base_title": "백엔드: 관리자 주문 목록/상태변경 API (API-007/008)",
+      "req_ids": [
+        "LMIS-ORDER-001",
+        "LMIS-ORDER-002",
+        "LMIS-ORDER-003"
+      ],
+      "assignee": "하진, 나연",
+      "start_date": "2026-07-09",
+      "end_date": "2026-07-11",
+      "status_notion": "예정"
+    },
+    {
+      "task_id": "WBS-034",
+      "title": "[RTOS-DEVICE-001][RTOS-DEVICE-002][RTOS-DEVICE-003] 장치: 영수증 출력 모의 구현 (RTOS-DEVICE-001)",
+      "base_title": "장치: 영수증 출력 모의 구현 (RTOS-DEVICE-001)",
+      "req_ids": [
+        "RTOS-DEVICE-001",
+        "RTOS-DEVICE-002",
+        "RTOS-DEVICE-003"
+      ],
+      "assignee": "",
+      "start_date": "2026-08-12",
+      "end_date": "2026-08-15",
+      "status_notion": "예정"
+    }
+  ],
+  "apis": [
+    {
+      "api_id": "API-008",
+      "title": "API-008 관리자 주문 상태 변경 (LMIS-ORDER-003)",
+      "base_title": "관리자 주문 상태 변경",
+      "req_ids": [
+        "LMIS-ORDER-003"
+      ],
+      "method": "PATCH",
+      "endpoint": "/api/admin/orders/{orderId}/status",
+      "request_params": "orderId=1",
+      "request_body": "{\n  \"orderStatus\": \"PREPARING\"\n}",
+      "response_success": "{\n  \"success\": true,\n  \"status\": 200,\n  \"code\": \"ORDER_STATUS_UPDATE_SUCCESS\",\n  \"message\": \"주문 상태 변경 성공\",\n  \"data\": {\n    \"orderId\": 1,\n    \"orderNo\": \"ASAK-20260703-001\",\n    \"orderStatus\": \"PREPARING\"\n  }\n}",
+      "response_error": "{\n  \"success\": false,\n  \"status\": 400,\n  \"code\": \"ORDER_STATUS_INVALID\",\n  \"message\": \"변경할 수 없는 주문 상태입니다.\",\n  \"data\": null\n}",
+      "description": "관리자가 주문 상태를 변경한다."
+    },
+    {
+      "api_id": "API-002",
+      "title": "API-002 메뉴 목록 조회 (FWD-MENU-001)",
+      "base_title": "메뉴 목록 조회",
+      "req_ids": [
+        "FWD-MENU-001"
+      ],
+      "method": "GET",
+      "endpoint": "/api/menus",
+      "request_params": "categoryId=1",
+      "request_body": "",
+      "response_success": "{\n  \"success\": true,\n  \"status\": 200,\n  \"code\": \"MENU_LIST_SUCCESS\",\n  \"message\": \"메뉴 목록 조회 성공\",\n  \"data\": [\n    {\n      \"menuId\": 364,\n      \"categoryId\": 231,\n      \"name\": \"스파이시 쉬림프 샌드위치\",\n      \"price\": 8900,\n      \"imageUrl\": \"/assets/menu/364.png\",\n      \"baseKcal\": 464,\n      \"isSoldOut\": false,\n      \"hasSoldOutIngredient\": false,\n      \"soldOutReason\": null,\n      \"soldOutBadges\": []\n    }\n  ]\n}",
+      "response_error": "{\n  \"success\": false,\n  \"status\": 404,\n  \"code\": \"CATEGORY_NOT_FOUND\",\n  \"message\": \"존재하지 않는 카테고리입니다.\",\n  \"data\": null\n}",
+      "description": "카테고리 조건에 따라 ASAK 메뉴 목록을 조회한다."
+    },
+    {
+      "api_id": "API-005",
+      "title": "API-005 주문 생성 (FWD-ORDER-001)",
+      "base_title": "주문 생성",
+      "req_ids": [
+        "FWD-ORDER-001"
+      ],
+      "method": "POST",
+      "endpoint": "/api/orders",
+      "request_params": "",
+      "request_body": "{\n  \"orderType\": \"EAT_IN\",\n  \"items\": [\n    {\n      \"menuId\": 364,\n      \"quantity\": 1,\n      \"optionItems\": [\n        {\n          \"optionItemId\": 269,\n          \"quantity\": 1\n        }\n      ],\n      \"excludedIngredientIds\": []\n    }\n  ]\n}",
+      "response_success": "{\n  \"success\": true,\n  \"status\": 201,\n  \"code\": \"ORDER_CREATE_SUCCESS\",\n  \"message\": \"주문 생성 성공\",\n  \"data\": {\n    \"orderId\": 1,\n    \"orderNo\": \"ASAK-20260703-001\",\n    \"orderType\": \"TAKE_OUT\",\n    \"totalPrice\": 8900,\n    \"orderStatus\": \"RECEIVED\",\n    \"paymentStatus\": \"READY\"\n  }\n}",
+      "response_error": "{\n  \"success\": false,\n  \"status\": 400,\n  \"code\": \"ORDER_INVALID\",\n  \"message\": \"주문 정보가 올바르지 않습니다.\",\n  \"data\": null\n}",
+      "description": "장바구니 내용을 기준으로 주문을 생성한다."
+    },
+    {
+      "api_id": "API-006",
+      "title": "API-006 가상 결제 처리 (FWD-PAY-001)",
+      "base_title": "가상 결제 처리",
+      "req_ids": [
+        "FWD-PAY-001"
+      ],
+      "method": "POST",
+      "endpoint": "/api/payments",
+      "request_params": "",
+      "request_body": "{\n  \"orderId\": 1,\n  \"paymentMethod\": \"CARD\",\n  \"amount\": 8900\n}",
+      "response_success": "{\n  \"success\": true,\n  \"status\": 200,\n  \"code\": \"PAYMENT_APPROVED\",\n  \"message\": \"가상 결제가 승인되었습니다.\",\n  \"data\": {\n    \"paymentId\": 1,\n    \"orderId\": 1,\n    \"orderNo\": \"ASAK-20260703-001\",\n    \"amount\": 8900,\n    \"paymentStatus\": \"APPROVED\",\n    \"paidAt\": \"2026-07-03T13:30:00\"\n  }\n}",
+      "response_error": "{\n  \"success\": false,\n  \"status\": 400,\n  \"code\": \"PAYMENT_AMOUNT_MISMATCH\",\n  \"message\": \"결제 금액이 주문 금액과 일치하지 않습니다.\",\n  \"data\": null\n}",
+      "description": "결제 승인 처리 및 결제 정보 저장"
+    },
+    {
+      "api_id": "API-004",
+      "title": "API-004 메뉴 옵션 조회 (FWD-MENU-003)",
+      "base_title": "메뉴 옵션 조회",
+      "req_ids": [
+        "FWD-MENU-003"
+      ],
+      "method": "GET",
+      "endpoint": "/api/menus/{menuId}/options",
+      "request_params": "menuId=364",
+      "request_body": "",
+      "response_success": "{\n  \"success\": true,\n  \"status\": 200,\n  \"code\": \"MENU_OPTIONS_SUCCESS\",\n  \"message\": \"메뉴 옵션 조회 성공\",\n  \"data\": [\n    {\n      \"optionGroupId\": 240,\n      \"name\": \"드레싱 선택\",\n      \"groupType\": \"DRESSING\",\n      \"selectType\": \"SINGLE\",\n      \"minSelect\": 1,\n      \"maxSelect\": 1,\n      \"sortOrder\": 1,\n      \"isRequired\": true,\n      \"items\": [\n        {\n          \"optionItemId\": 269,\n          \"ingredientId\": 105,\n          \"name\": \"크리미칠리\",\n          \"extraPrice\": 0,\n          \"originalPrice\": null,\n          \"extraKcal\": 235,\n          \"servingAmount\": 50,\n          \"servingUnit\": \"g\",\n          \"proteinG\": 0,\n          \"iconUrl\": null,\n          \"colorHex\": null,\n          \"isRecommended\": true,\n          \"isDefault\": true,\n          \"isSoldOut\": false\n        },\n        {\n          \"optionItemId\": 247,\n          \"ingredientId\": 219,\n          \"name\": \"(저당) 들기름소이\",\n          \"extraPrice\": 0,\n          \"originalPrice\": null,\n          \"extraKcal\": null,\n          \"servingAmount\": 50,\n          \"servingUnit\": \"g\",\n          \"isRecommended\": false,\n          \"isDefault\": false,\n          \"isSoldOut\": false\n        }\n      ]\n    }\n  ]\n}",
+      "response_error": "{\n  \"success\": false,\n  \"status\": 404,\n  \"code\": \"MENU_NOT_FOUND\",\n  \"message\": \"존재하지 않는 메뉴입니다.\",\n  \"data\": null\n}",
+      "description": "베이스/드레싱/토핑/세트 옵션 목록 조회"
+    },
+    {
+      "api_id": "API-009",
+      "title": "API-009 판매 항목 품절 상태 변경 (LMIS-MENU-001)",
+      "base_title": "판매 항목 품절 상태 변경",
+      "req_ids": [
+        "LMIS-MENU-001"
+      ],
+      "method": "PATCH",
+      "endpoint": "/api/admin/sold-out-items",
+      "request_params": "",
+      "request_body": "{\n  \"targetType\": \"MENU\",\n  \"targetId\": 364,\n  \"isSoldOut\": true\n}",
+      "response_success": "{\n  \"success\": true,\n  \"status\": 200,\n  \"code\": \"SOLD_OUT_UPDATE_SUCCESS\",\n  \"message\": \"판매 항목 품절 상태 변경 성공\",\n  \"data\": {\n    \"targetType\": \"INGREDIENT\",\n    \"targetId\": 155,\n    \"name\": \"케이준쉬림프\",\n    \"isSoldOut\": true\n  }\n}",
+      "response_error": "{\n  \"success\": false,\n  \"status\": 404,\n  \"code\": \"SOLD_OUT_TARGET_NOT_FOUND\",\n  \"message\": \"존재하지 않는 판매 항목입니다.\",\n  \"data\": null\n}",
+      "description": "메뉴/재료/옵션 품절 상태 변경"
+    },
+    {
+      "api_id": "API-016",
+      "title": "API-016 장바구니 검증 (FWD-CART-001)",
+      "base_title": "장바구니 검증",
+      "req_ids": [
+        "FWD-CART-001"
+      ],
+      "method": "POST",
+      "endpoint": "/api/cart/validate",
+      "request_params": "",
+      "request_body": "{\n  \"items\": [\n    {\n      \"menuId\": 364,\n      \"quantity\": 1,\n      \"optionItems\": [],\n      \"excludedIngredientIds\": []\n    }\n  ]\n}",
+      "response_success": "{\n  \"success\": true,\n  \"status\": 200,\n  \"code\": \"CART_VALIDATE_SUCCESS\",\n  \"message\": \"장바구니 검증 성공\",\n  \"data\": {\n    \"valid\": true,\n    \"totalPrice\": 8900,\n    \"items\": [\n      {\n        \"menuId\": 364,\n        \"menuName\": \"스파이시 쉬림프 샌드위치\",\n        \"quantity\": 1,\n        \"unitPrice\": 8900,\n        \"isAvailable\": true\n      }\n    ]\n  }\n}",
+      "response_error": "{\n  \"success\": false,\n  \"status\": 400,\n  \"code\": \"CART_INVALID\",\n  \"message\": \"장바구니 검증 실패\",\n  \"data\": null\n}",
+      "description": "장바구니 주문 가능 여부 검증"
+    },
+    {
+      "api_id": "API-013",
+      "title": "API-013 활성 결제수단 조회 (FWD-PAY-001)",
+      "base_title": "활성 결제수단 조회",
+      "req_ids": [
+        "FWD-PAY-001"
+      ],
+      "method": "GET",
+      "endpoint": "/api/payment-methods",
+      "request_params": "",
+      "request_body": "",
+      "response_success": "{\n  \"success\": true,\n  \"status\": 200,\n  \"code\": \"PAYMENT_METHOD_LIST_SUCCESS\",\n  \"message\": \"결제수단 목록 조회 성공\",\n  \"data\": [\n    {\n      \"methodId\": 19,\n      \"code\": \"CARD\",\n      \"name\": \"카드\",\n      \"isActive\": true,\n      \"sortOrder\": 1\n    }\n  ]\n}",
+      "response_error": "{\n  \"success\": false,\n  \"status\": 500,\n  \"code\": \"PAYMENT_METHOD_LIST_FAILED\",\n  \"message\": \"결제수단 목록 조회 실패\",\n  \"data\": null\n}",
+      "description": "키오스크 결제수단 목록 조회"
+    },
+    {
+      "api_id": "API-001",
+      "title": "API-001 카테고리 목록 조회 (FWD-MENU-001)",
+      "base_title": "카테고리 목록 조회",
+      "req_ids": [
+        "FWD-MENU-001"
+      ],
+      "method": "GET",
+      "endpoint": "/api/categories",
+      "request_params": "",
+      "request_body": "",
+      "response_success": "{\n  \"success\": true,\n  \"status\": 200,\n  \"code\": \"CATEGORY_LIST_SUCCESS\",\n  \"message\": \"카테고리 목록 조회 성공\",\n  \"data\": [\n    {\n      \"categoryId\": 231,\n      \"name\": \"신메뉴\",\n      \"sortOrder\": 0\n    },\n    {\n      \"categoryId\": 236,\n      \"name\": \"샌드위치\",\n      \"sortOrder\": 1\n    },\n    {\n      \"categoryId\": 233,\n      \"name\": \"샐러디·볼\",\n      \"sortOrder\": 2\n    },\n    {\n      \"categoryId\": 235,\n      \"name\": \"랩\",\n      \"sortOrder\": 3\n    },\n    {\n      \"categoryId\": 234,\n      \"name\": \"프로틴\",\n      \"sortOrder\": 5\n    },\n    {\n      \"categoryId\": 232,\n      \"name\": \"기타\",\n      \"sortOrder\": 8\n    }\n  ]\n}",
+      "response_error": "{\n  \"success\": false,\n  \"status\": 500,\n  \"code\": \"CATEGORY_LIST_FAILED\",\n  \"message\": \"카테고리 목록 조회 중 오류가 발생했습니다.\",\n  \"data\": null\n}",
+      "description": "category 테이블에서 sort_order 기준으로 카테고리 목록 조회"
+    },
+    {
+      "api_id": "API-015",
+      "title": "API-015 관리자 일별 매출 조회 (LMIS-ORDER-005)",
+      "base_title": "관리자 일별 매출 조회",
+      "req_ids": [
+        "LMIS-ORDER-005"
+      ],
+      "method": "GET",
+      "endpoint": "/api/admin/sales/daily",
+      "request_params": "from=2026-07-01&to=2026-07-31",
+      "request_body": "",
+      "response_success": "{\n  \"success\": true,\n  \"status\": 200,\n  \"code\": \"ADMIN_DAILY_SALES_SUCCESS\",\n  \"message\": \"일별 매출 조회 성공\",\n  \"data\": [\n    {\n      \"date\": \"2026-07-03\",\n      \"orderCount\": 1,\n      \"totalAmount\": 8900\n    },\n    {\n      \"date\": \"2026-07-04\",\n      \"orderCount\": 0,\n      \"totalAmount\": 0\n    }\n  ]\n}",
+      "response_error": "{\n  \"success\": false,\n  \"status\": 500,\n  \"code\": \"SALES_DAILY_FAILED\",\n  \"message\": \"일별 매출 조회 실패\",\n  \"data\": null\n}",
+      "description": "일자별 주문수와 결제금액 조회"
+    },
+    {
+      "api_id": "API-014",
+      "title": "API-014 관리자 결제수단 설정 변경 (LMIS-PAY-001)",
+      "base_title": "관리자 결제수단 설정 변경",
+      "req_ids": [
+        "LMIS-PAY-001"
+      ],
+      "method": "PATCH",
+      "endpoint": "/api/admin/payment-methods/{methodId}",
+      "request_params": "methodId=1",
+      "request_body": "{\n  \"isActive\": true,\n  \"sortOrder\": 1\n}",
+      "response_success": "{\n  \"success\": true,\n  \"status\": 200,\n  \"code\": \"PAYMENT_METHOD_UPDATE_SUCCESS\",\n  \"message\": \"결제수단 설정 변경 성공\",\n  \"data\": {\n    \"methodId\": 19,\n    \"code\": \"CARD\",\n    \"name\": \"카드\",\n    \"isActive\": true,\n    \"sortOrder\": 1\n  }\n}",
+      "response_error": "{\n  \"success\": false,\n  \"status\": 500,\n  \"code\": \"PAYMENT_METHOD_UPDATE_FAILED\",\n  \"message\": \"결제수단 설정 변경 실패\",\n  \"data\": null\n}",
+      "description": "결제수단 노출/정렬 변경"
+    },
+    {
+      "api_id": "API-010",
+      "title": "API-010 관리자 판매 항목 목록 조회 (LMIS-MENU-001)",
+      "base_title": "관리자 판매 항목 목록 조회",
+      "req_ids": [
+        "LMIS-MENU-001"
+      ],
+      "method": "GET",
+      "endpoint": "/api/admin/sold-out-items",
+      "request_params": "targetType=MENU&keyword=",
+      "request_body": "",
+      "response_success": "{\n  \"success\": true,\n  \"status\": 200,\n  \"code\": \"SOLD_OUT_ITEM_LIST_SUCCESS\",\n  \"message\": \"품절 항목 목록 조회 성공\",\n  \"data\": {\n    \"content\": [\n      {\n        \"targetType\": \"MENU\",\n        \"targetId\": 364,\n        \"name\": \"스파이시 쉬림프 샌드위치\",\n        \"isSoldOut\": false\n      },\n      {\n        \"targetType\": \"INGREDIENT\",\n        \"targetId\": 155,\n        \"name\": \"케이준쉬림프\",\n        \"isSoldOut\": false\n      }\n    ],\n    \"totalElements\": 2\n  }\n}",
+      "response_error": "{\n  \"success\": false,\n  \"status\": 500,\n  \"code\": \"SOLD_OUT_ITEM_LIST_FAILED\",\n  \"message\": \"품절 항목 목록 조회 실패\",\n  \"data\": null\n}",
+      "description": "품절 처리 대상 목록 조회"
+    },
+    {
+      "api_id": "API-003",
+      "title": "API-003 메뉴 상세 조회 (FWD-MENU-002)",
+      "base_title": "메뉴 상세 조회",
+      "req_ids": [
+        "FWD-MENU-002"
+      ],
+      "method": "GET",
+      "endpoint": "/api/menus/{menuId}",
+      "request_params": "menuId=364",
+      "request_body": "",
+      "response_success": "{\n  \"success\": true,\n  \"status\": 200,\n  \"code\": \"MENU_DETAIL_SUCCESS\",\n  \"message\": \"메뉴 상세 조회 성공\",\n  \"data\": {\n    \"menuId\": 364,\n    \"categoryId\": 231,\n    \"name\": \"스파이시 쉬림프 샌드위치\",\n    \"price\": 8900,\n    \"imageUrl\": \"/assets/menu/364.png\",\n    \"description\": \"케이준 쉬림프, 할라피뇨, 토마토, 슈레드치즈, 화이트치즈 · 기본 드레싱: 크리미칠리\",\n    \"baseKcal\": 464,\n    \"ingredients\": [\n      {\n        \"ingredientId\": 155,\n        \"name\": \"케이준쉬림프\",\n        \"canRemove\": false,\n        \"isSoldOut\": false\n      },\n      {\n        \"ingredientId\": 105,\n        \"name\": \"크리미칠리\",\n        \"canRemove\": true,\n        \"isSoldOut\": false\n      },\n      {\n        \"ingredientId\": 377,\n        \"name\": \"화이트치즈\",\n        \"canRemove\": true,\n        \"isSoldOut\": false\n      }\n    ],\n    \"allergens\": [],\n    \"allergyText\": \"\",\n    \"isSoldOut\": false,\n    \"hasSoldOutIngredient\": false,\n    \"isOrderable\": true,\n    \"soldOutReason\": null,\n    \"soldOutBadges\": []\n  }\n}",
+      "response_error": "{\n  \"success\": false,\n  \"status\": 404,\n  \"code\": \"MENU_NOT_FOUND\",\n  \"message\": \"존재하지 않는 메뉴입니다.\",\n  \"data\": null\n}",
+      "description": "menuId로 메뉴 조회"
+    },
+    {
+      "api_id": "API-012",
+      "title": "API-012 관리자 메뉴 등록/수정 (LMIS-MENU-004)",
+      "base_title": "관리자 메뉴 등록/수정",
+      "req_ids": [
+        "LMIS-MENU-004"
+      ],
+      "method": "POST",
+      "endpoint": "/api/admin/menus",
+      "request_params": "",
+      "request_body": "{\n  \"categoryId\": 1,\n  \"name\": \"새 메뉴\",\n  \"price\": 8900,\n  \"imageUrl\": null,\n  \"description\": \"\",\n  \"optionGroupIds\": [\n    240\n  ]\n}",
+      "response_success": "{\n  \"success\": true,\n  \"status\": 200,\n  \"code\": \"ADMIN_MENU_UPSERT_SUCCESS\",\n  \"message\": \"메뉴 저장 성공\",\n  \"data\": {\n    \"menuId\": 364,\n    \"categoryId\": 231,\n    \"name\": \"스파이시 쉬림프 샌드위치\",\n    \"price\": 8900,\n    \"imageUrl\": \"/assets/menu/364.png\",\n    \"isSoldOut\": false\n  }\n}",
+      "response_error": "{\n  \"success\": false,\n  \"status\": 500,\n  \"code\": \"ADMIN_MENU_SAVE_FAILED\",\n  \"message\": \"메뉴 저장 실패\",\n  \"data\": null\n}",
+      "description": "관리자 메뉴 등록/수정"
+    },
+    {
+      "api_id": "API-011",
+      "title": "API-011 관리자 메뉴 목록 조회 (LMIS-MENU-004)",
+      "base_title": "관리자 메뉴 목록 조회",
+      "req_ids": [
+        "LMIS-MENU-004"
+      ],
+      "method": "GET",
+      "endpoint": "/api/admin/menus",
+      "request_params": "categoryId=1&keyword=&isSoldOut=false",
+      "request_body": "",
+      "response_success": "{\n  \"success\": true,\n  \"status\": 200,\n  \"code\": \"ADMIN_MENU_LIST_SUCCESS\",\n  \"message\": \"관리자 메뉴 목록 조회 성공\",\n  \"data\": {\n    \"content\": [\n      {\n        \"menuId\": 364,\n        \"categoryId\": 231,\n        \"name\": \"스파이시 쉬림프 샌드위치\",\n        \"price\": 8900,\n        \"isSoldOut\": false\n      }\n    ],\n    \"totalElements\": 1\n  }\n}",
+      "response_error": "{\n  \"success\": false,\n  \"status\": 500,\n  \"code\": \"ADMIN_MENU_LIST_FAILED\",\n  \"message\": \"관리자 메뉴 목록 조회 실패\",\n  \"data\": null\n}",
+      "description": "관리자 메뉴 목록 조회"
+    },
+    {
+      "api_id": "API-017",
+      "title": "API-017 접근성 설정 조회 (FWD-UI-001)",
+      "base_title": "접근성 설정 조회",
+      "req_ids": [
+        "FWD-UI-001"
+      ],
+      "method": "GET",
+      "endpoint": "/api/ui/accessibility-options",
+      "request_params": "",
+      "request_body": "",
+      "response_success": "{\n  \"success\": true,\n  \"status\": 200,\n  \"code\": \"ACCESSIBILITY_SETTINGS_SUCCESS\",\n  \"message\": \"접근성 설정 조회 성공\",\n  \"data\": [\n    {\n      \"code\": \"HIGH_CONTRAST\",\n      \"name\": \"고대비\",\n      \"isEnabled\": true\n    },\n    {\n      \"code\": \"LARGE_TEXT\",\n      \"name\": \"큰 글씨\",\n      \"isEnabled\": false\n    }\n  ]\n}",
+      "response_error": "{\n  \"success\": false,\n  \"status\": 500,\n  \"code\": \"ACCESSIBILITY_OPTION_FAILED\",\n  \"message\": \"접근성 설정 조회 실패\",\n  \"data\": null\n}",
+      "description": "접근성 옵션 목록 조회"
+    },
+    {
+      "api_id": "API-007",
+      "title": "API-007 관리자 주문 목록/상세 조회 (LMIS-ORDER-001)",
+      "base_title": "관리자 주문 목록/상세 조회",
+      "req_ids": [
+        "LMIS-ORDER-001"
+      ],
+      "method": "GET",
+      "endpoint": "/api/admin/orders",
+      "request_params": "status=PAID",
+      "request_body": "",
+      "response_success": "{\n  \"success\": true,\n  \"status\": 200,\n  \"code\": \"ADMIN_ORDER_LIST_SUCCESS\",\n  \"message\": \"관리자 주문 목록 조회 성공\",\n  \"data\": {\n    \"content\": [\n      {\n        \"orderId\": 1,\n        \"orderNo\": \"ASAK-20260703-001\",\n        \"orderType\": \"TAKE_OUT\",\n        \"totalPrice\": 8900,\n        \"orderStatus\": \"RECEIVED\",\n        \"paymentStatus\": \"PAID\",\n        \"createdAt\": \"2026-07-03T13:00:00\",\n        \"items\": [\n          {\n            \"menuId\": 364,\n            \"menuName\": \"스파이시 쉬림프 샌드위치\",\n            \"quantity\": 1,\n            \"unitPrice\": 8900,\n            \"optionItems\": [\n              {\n                \"optionItemId\": 269,\n                \"name\": \"크리미칠리\",\n                \"quantity\": 1\n              }\n            ],\n            \"excludedIngredients\": [\n              {\n                \"ingredientId\": 169,\n                \"name\": \"양파\"\n              }\n            ]\n          }\n        ]\n      }\n    ],\n    \"totalElements\": 1\n  }\n}",
+      "response_error": "{\n  \"success\": false,\n  \"status\": 400,\n  \"code\": \"ORDER_STATUS_INVALID\",\n  \"message\": \"주문 상태값이 올바르지 않습니다.\",\n  \"data\": null\n}",
+      "description": "관리자용 주문 목록과 상세 조회"
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "SC-007",
+      "title": "관리자의 판매 항목 품절 처리 (FWD-MENU-007)",
+      "base_title": "관리자의 판매 항목 품절 처리",
+      "req_ids": [
+        "FWD-MENU-007",
+        "FWD-MENU-003",
+        "FWD-MENU-010",
+        "FWD-MENU-009"
+      ],
+      "pre_condition": "재료 또는 메뉴 구성 항목 소진으로 품절 발생",
+      "post_condition": "키오스크 화면에 판매 항목 품절 상태가 반영됨",
+      "normal_flow": "관리자 품절 관리 화면 진입(Week 5 MVP에서는 인증 없이 바로 접근) → 품절 처리할 메뉴/재료 선택 → 품절 토글 ON → 관련 메뉴 목록/메뉴 상세/옵션 선택 화면에 즉시 반영",
+      "alternative_flow": "같은 재료가 기본 구성과 추가 토핑에 모두 쓰이면 메뉴/상세/옵션 품절 상태에 함께 반영됨",
+      "mermaid_script": "flowchart TD\n    A[관리자 판매 항목 품절 토글 ON] --> B[관련 메뉴와 옵션 표시 갱신]\n    B --> C[고객 화면 즉시 반영]",
+      "status_notion": "초안"
+    },
+    {
+      "id": "SC-013",
+      "title": "접근성 옵션으로 저시력 고객 주문 (FWD-SYS-001)",
+      "base_title": "접근성 옵션으로 저시력 고객 주문",
+      "req_ids": [
+        "FWD-SYS-001",
+        "DEV-SYS-001"
+      ],
+      "pre_condition": "저시력 고객이 키오스크 이용 시작",
+      "post_condition": "안내 없이 주문 완료(성공기준 첫방문고객 기준과 동일)",
+      "normal_flow": "저시력 고객이 초기화면 진입 → 글자크기 확대 옵션 인지 → 큰 글자/높은 대비로 메뉴 탐색 → 주문 완료",
+      "alternative_flow": "없음",
+      "mermaid_script": "flowchart TD\n    A[저시력 고객 진입] --> B[글자크기 확대 옵션 인지]\n    B --> C[큰 글자/고대비로 메뉴 탐색]\n    C --> D[안내 없이 주문 완료]",
+      "status_notion": "초안"
+    },
+    {
+      "id": "SC-005",
+      "title": "결제 실패 흐름 (FWD-PAY-002)",
+      "base_title": "결제 실패 흐름",
+      "req_ids": [
+        "FWD-PAY-002",
+        "KSD-PAY-001",
+        "FWD-CART-001",
+        "LMIS-MEMBER-001",
+        "DEV-PAY-002",
+        "FWD-PAY-001"
+      ],
+      "pre_condition": "결제 진행 중",
+      "post_condition": "재시도 성공 또는 직원 호출 안내",
+      "normal_flow": "결제 진행 → 승인 실패 응답 수신(금액 불일치/주문 만료 등) → 실패 원인 화면 안내 → 결제 재시도 유도",
+      "alternative_flow": "장바구니 내용은 유지되며 사용자가 다시 결제를 시도할 수 있음",
+      "mermaid_script": "flowchart TD\n    A[결제 진행] --> B{결제 승인?}\n    B -->|실패| C[실패 원인 화면 안내]\n    C --> D[장바구니 내용 유지]\n    D --> E[결제 재시도 유도]\n    E --> A",
+      "status_notion": "초안"
+    },
+    {
+      "id": "SC-003",
+      "title": "품절 판매 항목이 포함된 상황에서의 주문 (FWD-PAY-002)",
+      "base_title": "품절 판매 항목이 포함된 상황에서의 주문",
+      "req_ids": [
+        "FWD-PAY-002",
+        "KSD-PAY-001",
+        "FWD-CART-001",
+        "DEV-PAY-001"
+      ],
+      "pre_condition": "관리자가 특정 재료 또는 옵션 항목을 품절 처리한 상태",
+      "post_condition": "고객이 품절되지 않은 항목으로 주문 진행",
+      "normal_flow": "품절된 판매 항목은 회색 처리된 채 SOLD OUT 표시됨 → 선택 불가 → 고객이 다른 항목으로 대체 선택",
+      "alternative_flow": "핵심 재료 또는 베이스 재료가 품절된 경우 해당 메뉴 또는 관련 카테고리 메뉴가 품절 표시됨",
+      "mermaid_script": "flowchart TD\n    A[관리자 판매 항목 품절 처리] --> B[메뉴 상세와 옵션 목록에 SOLD OUT 표시]\n    B --> C[고객 선택 불가]\n    C --> D[다른 항목으로 대체 선택]",
+      "status_notion": "초안"
+    },
+    {
+      "id": "SC-010",
+      "title": "알레르기/비건 태그 확인 후 주문 (LMIS-MENU-001)",
+      "base_title": "알레르기/비건 태그 확인 후 주문",
+      "req_ids": [
+        "LMIS-MENU-001",
+        "LMIS-MENU-002",
+        "FWD-MENU-001"
+      ],
+      "pre_condition": "견과류 알레르기가 있는 고객이 메뉴 탐색 중",
+      "post_condition": "고객이 안전하게 메뉴를 선택하거나 회피함",
+      "normal_flow": "알레르기/비건 태그 확인 → 해당 재료 포함 여부 인지 → 태그 기준으로 메뉴 선택/회피",
+      "alternative_flow": "태그 미표시 재료가 있을 경우 고객이 직접 문의하도록 안내 문구 필요",
+      "mermaid_script": "flowchart TD\n    A[옵션선택 단계 진입] --> B[알레르기/비건 태그 확인]\n    B --> C{해당 재료 포함?}\n    C -->|예| D[메뉴 회피 또는 옵션 조정]\n    C -->|아니오| E[정상 진행]",
+      "status_notion": "초안"
+    },
+    {
+      "id": "SC-019",
+      "title": "피크타임 다중 주문 동시처리 (LMIS-MENU-001)",
+      "base_title": "피크타임 다중 주문 동시처리",
+      "req_ids": [
+        "LMIS-MENU-001",
+        "LMIS-MENU-005"
+      ],
+      "pre_condition": "점심시간대 다수 고객 동시 접근 가정",
+      "post_condition": "동시 요청이 목표 응답시간 내에 처리됨",
+      "normal_flow": "동일 시간대에 여러 고객이 동시에 메뉴 조회/주문 진행 → 응답 지연 없이 처리",
+      "alternative_flow": "부하 증가 시 응답 지연이 발생하면 로딩 인디케이터로 안내",
+      "mermaid_script": "flowchart TD\n    A[점심시간 다수 고객 동시 접속] --> B[메뉴조회/주문 동시 요청]\n    B --> C{응답 목표시간 이내?}\n    C -->|예| D[정상 처리]\n    C -->|아니오| E[로깅 및 지연 안내]",
+      "status_notion": "초안"
+    },
+    {
+      "id": "SC-002",
+      "title": "재방문 고객의 빠른 주문(속도 중심) (FWD-UI-001)",
+      "base_title": "재방문 고객의 빠른 주문(속도 중심)",
+      "req_ids": [
+        "FWD-UI-001",
+        "FWD-UI-002",
+        "FWD-MENU-001",
+        "FWD-CART-001",
+        "FWD-PAY-001"
+      ],
+      "pre_condition": "재방문 고객이 키오스크 사용 시작",
+      "post_condition": "결제 완료 및 주문번호 표시, 화면 전환 5회 이내 목표 (2026-07-05 수정: 4단계→5회, 주문확인 화면 반영)",
+      "normal_flow": "메뉴 선택 → 자주 베스트/이전 조합 바로 재사용(추천조합 기본값) → 장바구니 담기 → 결제수단 확인 후 결제 → 완료",
+      "alternative_flow": "없음",
+      "mermaid_script": "flowchart TD\n    A[menu_select] --> B[keep_default_recommended_combo]\n    B --> C[add_to_cart]\n    C --> D[order_confirm]\n    D --> E[select_payment_method]\n    E --> F[payment_complete]\n    F --> G[screen_transitions_5_or_fewer_verified]",
+      "status_notion": "초안"
+    },
+    {
+      "id": "SC-012",
+      "title": "일정시간 미입력 시 자동 초기화 (LMIS-ORDER-003)",
+      "base_title": "일정시간 미입력 시 자동 초기화",
+      "req_ids": [
+        "LMIS-ORDER-003",
+        "LMIS-ORDER-001",
+        "LMIS-ORDER-002"
+      ],
+      "pre_condition": "주문 진행 중 고객이 자리를 비움",
+      "post_condition": "초기화면으로 전환되고 다음 고객이 깨끗한 상태로 이용 가능",
+      "normal_flow": "고객이 주문 진행 중 자리를 뜨 → 일정시간(예 30초) 동안 입력 없음 → 경고 없이 초기화면으로 자동 복귀 → 장바구니 초기화",
+      "alternative_flow": "타임아웃 직전 다시 터치하면 타이머 리셋(앞팀 사례 참고)",
+      "mermaid_script": "flowchart TD\n    A[주문 진행 중 입력 없음] --> B{일정시간 경과?}\n    B -->|예| C[경고 없이 초기화면 자동 복귀]\n    B -->|아니오| D[대기 지속]\n    C --> E[장바구니 초기화]",
+      "status_notion": "초안"
+    },
+    {
+      "id": "SC-017",
+      "title": "관리자의 신규 메뉴 등록 (FWD-PAY-001)",
+      "base_title": "관리자의 신규 메뉴 등록",
+      "req_ids": [
+        "FWD-PAY-001",
+        "FWD-PAY-002",
+        "KSD-PAY-001",
+        "LMIS-MEMBER-001"
+      ],
+      "pre_condition": "관리자가 신규 메뉴를 추가하려는 상황",
+      "post_condition": "신규 메뉴가 키오스크 메뉴선택 화면에 즉시 노출",
+      "normal_flow": "관리자 로그인 → 신규 메뉴 등록(이름/가격/이미지/카테고리) → 옵션그룹 연결 → 저장",
+      "alternative_flow": "필수값 누락 시 저장 불가 안내",
+      "mermaid_script": "flowchart TD\n    A[관리자 로그인] --> B[신규 메뉴 등록: 이름/가격/이미지/카테고리]\n    B --> C[옵션그룹 연결]\n    C --> D[저장]\n    D --> E[키오스크 메뉴선택 화면에 즉시 노출]",
+      "status_notion": "초안"
+    },
+    {
+      "id": "SC-018",
+      "title": "관리자의 일별 매출 조회 (FWD-UI-001)",
+      "base_title": "관리자의 일별 매출 조회",
+      "req_ids": [
+        "FWD-UI-001",
+        "FWD-UI-003"
+      ],
+      "pre_condition": "관리자가 매출 현황을 확인하려는 상황",
+      "post_condition": "기간별 매출/판매량이 화면에 표시됨",
+      "normal_flow": "관리자 로그인 → 기간 선택 → 일별 매출/메뉴별 판매량 조회",
+      "alternative_flow": "해당 기간에 데이터가 없을 경우 공백 상태 안내",
+      "mermaid_script": "flowchart TD\n    A[관리자 로그인] --> B[기간 선택]\n    B --> C[일별 매출/메뉴별 판매량 조회]\n    C --> D{데이터 존재?}\n    D -->|없음| E[공백 상태 안내]\n    D -->|있음| F[표/그래프 표시]",
+      "status_notion": "초안"
+    },
+    {
+      "id": "SC-015",
+      "title": "영수증 출력 여부 선택 (RTOS-DEVICE-001)",
+      "base_title": "영수증 출력 여부 선택",
+      "req_ids": [
+        "RTOS-DEVICE-001",
+        "RTOS-DEVICE-002",
+        "FWD-PAY-001"
+      ],
+      "pre_condition": "결제 승인 완료 직후",
+      "post_condition": "영수증 출력 완료 또는 화면 주문번호 표시",
+      "normal_flow": "결제 완료 화면에서 영수증 출력 여부 선택 → 출력 선택 시 모의 프린터 요청 → 미선택 시 화면 주문번호로 대체",
+      "alternative_flow": "프린터 오류 시 화면 주문번호로 자동 대체",
+      "mermaid_script": "flowchart TD\n    A[결제완료 화면] --> B{영수증 출력 선택?}\n    B -->|예| C[모의 프린터 요청]\n    B -->|아니오| D[화면 주문번호로 대체]\n    C --> E[출력 결과 확인]",
+      "status_notion": "초안"
+    },
+    {
+      "id": "SC-008",
+      "title": "관리자의 주문 상태 관리 (LMIS-MENU-001)",
+      "base_title": "관리자의 주문 상태 관리",
+      "req_ids": [
+        "LMIS-MENU-001",
+        "LMIS-MENU-002",
+        "FWD-MENU-001"
+      ],
+      "pre_condition": "고객이 결제를 완료함",
+      "post_condition": "주문 상태가 완료로 변경되고 관리자 화면에 반영됨",
+      "normal_flow": "주문 접수 → 관리자 주문 목록에 노출 → 주문 상세 확인 → 준비중으로 상태 변경 → 조리 완료 후 완료로 변경",
+      "alternative_flow": "없음",
+      "mermaid_script": "flowchart TD\n    A[고객 결제 완료] --> B[관리자 화면에 주문 실시간 노출]\n    B --> C[접수 상태]\n    C --> D[준비중으로 변경]\n    D --> E[완료로 변경]\n    E --> F[매장/포장 구분 함께 표시]",
+      "status_notion": "초안"
+    },
+    {
+      "id": "SC-001",
+      "title": "신규 고객의 기본 주문 흐름 (FWD-UI-001)",
+      "base_title": "신규 고객의 기본 주문 흐름",
+      "req_ids": [
+        "FWD-UI-001",
+        "FWD-UI-002",
+        "FWD-UI-005",
+        "FWD-MENU-001",
+        "FWD-MENU-002",
+        "FWD-CART-001",
+        "FWD-MENU-003",
+        "FWD-PAY-001",
+        "FWD-PAY-002"
+      ],
+      "pre_condition": "ASAK 키오스크 화면 진입(처음 방문 고객)",
+      "post_condition": "결제 완료 후 주문번호가 화면에 표시됨",
+      "normal_flow": "카테고리 탐색 → 메뉴 선택 → 베이스/드레싱/토핑 옵션 선택(추천조합 기본값) → 옵션 설명 확인 → 장바구니 담기 → 결제수단 선택 → 결제 → 주문번호 확인",
+      "alternative_flow": "옵션이 헷갈려 이전 단계로 돌아가도 선택 내용이 유지됨 (사용자가 지적한 키오스크 취소 시 초기화 문제 개선)",
+      "mermaid_script": "flowchart TD\n    A[키오스크 초기화면] --> B[카테고리 탐색]\n    B --> C[메뉴 선택]\n    C --> D[베이스/드레싱/토핑 옵션 선택 - 추천조합 기본값]\n    D --> E[옵션 설명 확인]\n    E --> F[장바구니 담기]\n    F --> G[결제수단 선택]\n    G --> H[결제 진행]\n    H --> I[주문번호 화면 표시]",
+      "status_notion": "초안"
+    },
+    {
+      "id": "SC-014",
+      "title": "매장/포장 여부 선택 (FWD-ORDER-001)",
+      "base_title": "매장/포장 여부 선택",
+      "req_ids": [
+        "FWD-ORDER-001",
+        "FWD-ORDER-002"
+      ],
+      "pre_condition": "홈 화면에서 주문시작 버튼 클릭",
+      "post_condition": "주문에 orderType(EAT_IN/TAKE_OUT) 구분값이 저장되어 장바구니로 이동",
+      "normal_flow": "홈 화면에서 주문시작 클릭 → 먹고가기/포장 선택 → 선택값(orderType)을 장바구니와 주문확인 단계까지 유지 → 주문 생성 시 orderType에 반영",
+      "alternative_flow": "선택 없이 다음 단계로 진행 불가(필수 선택)",
+      "mermaid_script": "flowchart TD\n    A[Home] --> B[Start button click]\n    B --> C[EatIn TakeOut select]\n    C --> D[orderType kept through cart and order confirm]\n    D --> E[Order create sends orderType]",
+      "status_notion": "초안"
+    },
+    {
+      "id": "SC-009",
+      "title": "장바구니 수정(수량변경/삭제) (FWD-CART-002)",
+      "base_title": "장바구니 수정(수량변경/삭제)",
+      "req_ids": [
+        "FWD-CART-002"
+      ],
+      "pre_condition": "장바구니에 1개 이상 메뉴가 담겨있음",
+      "post_condition": "수정된 내용이 즉시 반영됨",
+      "normal_flow": "장바구니 진입 → 담은 항목 수량 -/+ 조정 → 특정 항목 삭제 → 총금액 자동 재계산",
+      "alternative_flow": "마지막 1개 삭제 시 장바구니 빈 상태로 메뉴선택 화면으로 유도",
+      "mermaid_script": "flowchart TD\n    A[장바구니 진입] --> B[수량 -/+ 조정]\n    B --> C[개별 항목 삭제]\n    C --> D[총금액 자동 재계산]",
+      "status_notion": "초안"
+    },
+    {
+      "id": "SC-004",
+      "title": "결제 성공 흐름(수단 노출 포함) (FWD-MENU-001)",
+      "base_title": "결제 성공 흐름(수단 노출 포함)",
+      "req_ids": [
+        "FWD-MENU-001",
+        "FWD-MENU-002",
+        "FWD-MENU-003",
+        "FWD-MENU-006",
+        "FWD-MENU-010",
+        "DEV-PAY-001"
+      ],
+      "pre_condition": "장바구니에 1개 이상 메뉴가 담겨있음",
+      "post_condition": "결제 승인 완료 및 주문번호 표시",
+      "normal_flow": "장바구니에서 결제하기 → CARD 가상 결제수단 노출 → 결제 진행 → 승인 → 주문번호 생성",
+      "alternative_flow": "없음(정상 흐름)",
+      "mermaid_script": "flowchart TD\n    A[장바구니 확인] --> B[결제하기 버튼]\n    B --> C[CARD 가상 결제수단 확인 화면]\n    C --> D[결제 진행]\n    D --> E{결제 승인?}\n    E -->|성공| F[주문번호 생성]\n    F --> G[결제완료 화면 표시]",
+      "status_notion": "초안"
+    },
+    {
+      "id": "SC-011",
+      "title": "재료 제외(-) 옵션으로 커스텀 주문 (FWD-CART-001)",
+      "base_title": "재료 제외(-) 옵션으로 커스텀 주문",
+      "req_ids": [
+        "FWD-CART-001",
+        "FWD-ORDER-001",
+        "DEV-ORDER-001"
+      ],
+      "pre_condition": "특정 재료를 못 먹는 고객이 옵션선택 단계 진입",
+      "post_condition": "장바구니/주문서에 제외 재료가 명시됨",
+      "normal_flow": "기본 포함 재료 중 특정 항목 \"빼기\" 선택 → 가격 변동 없이 장바구니에 반영 → 주문서에 제외 항목 표시",
+      "alternative_flow": "없음(가격 차감 로직 없음을 명확히 확인, 선생님 피드백 6번 반영)",
+      "mermaid_script": "flowchart TD\n    A[기본 포함 재료 확인] --> B[특정 재료 '빼기' 선택]\n    B --> C[가격 변동 없이 반영]\n    C --> D[장바구니/주문서에 제외 항목 표시]",
+      "status_notion": "초안"
+    },
+    {
+      "id": "SC-006",
+      "title": "멤버십 스탬프 1회 확인 후 자동 적립 (LMIS-MENU-004)",
+      "base_title": "멤버십 스탬프 1회 확인 후 자동 적립",
+      "req_ids": [
+        "LMIS-MENU-004",
+        "LMIS-MENU-006"
+      ],
+      "pre_condition": "결제 단계 진입",
+      "post_condition": "결제완료 화면에 적립 여부가 표시됨(결제 전/후 이중 확인 없음)",
+      "normal_flow": "결제 진행 중 멤버십 적립 여부 1회 확인 → 결제 완료 시 자동 적립 처리 → 결제완료 화면에 적립 결과 표시",
+      "alternative_flow": "멤버십 미가입 고객은 적립 단계 생략하고 바로 결제 진행",
+      "mermaid_script": "flowchart TD\n    A[멤버십 보유 고객 결제 진행] --> B[적립 확인창 1회 노출]\n    B --> C[결제 완료]\n    C --> D[적립 결과 자동 표시]",
+      "status_notion": "초안"
+    },
+    {
+      "id": "SC-016",
+      "title": "QR/바코드로 쿠폰 인식 후 결제 (LMIS-ORDER-005)",
+      "base_title": "QR/바코드로 쿠폰 인식 후 결제",
+      "req_ids": [
+        "LMIS-ORDER-005",
+        "LMIS-ORDER-006"
+      ],
+      "pre_condition": "고객이 모바일 쿠폰을 보유하고 있음",
+      "post_condition": "할인 적용된 금액으로 결제 완료",
+      "normal_flow": "결제 단계 진입 → 모바일 쿠폰/멤버십 바코드 스캔 → 할인 자동 적용 → 잔액 결제 진행",
+      "alternative_flow": "스캔 실패/만료된 쿠폰 시 오류 메시지 안내 후 일반결제로 진행",
+      "mermaid_script": "flowchart TD\n    A[결제 단계 진입] --> B[모바일 쿠폰 QR/바코드 스캔]\n    B --> C{유효 코드?}\n    C -->|예| D[할인 자동 적용]\n    C -->|아니오| E[오류 안내 후 일반결제 진행]\n    D --> F[잔액 결제]",
+      "status_notion": "초안"
+    },
+    {
+      "id": "SC-022",
+      "title": "관리자의 주문서 추가/제외 재료 확인 (FWD-MENU-008)",
+      "base_title": "관리자의 주문서 추가/제외 재료 확인",
+      "req_ids": [
+        "FWD-MENU-008",
+        "FWD-MENU-009",
+        "LMIS-ORDER-006"
+      ],
+      "pre_condition": "커스텀 옵션이 포함된 주문이 접수된 상황",
+      "post_condition": "관리자가 선택 옵션과 제외 재료를 구분해 조리 준비할 수 있음",
+      "normal_flow": "커스텀 옵션이 포함된 주문 생성 → 관리자 주문 목록에서 해당 주문 선택 → 주문 상세에서 선택 옵션과 제외 재료 확인 → 조리 준비",
+      "alternative_flow": "없음",
+      "mermaid_script": "flowchart TD\n    A[커스텀 옵션 포함 주문 접수] --> B[관리자 주문목록에서 확인]\n    B --> C[추가 재료 색상 강조]\n    C --> D[제외 재료 색상 강조]\n    D --> E[조리 준비]",
+      "status_notion": "초안"
+    },
+    {
+      "id": "SC-021",
+      "title": "토핑 개별 수량 조절 주문 (FWD-UI-001)",
+      "base_title": "토핑 개별 수량 조절 주문",
+      "req_ids": [
+        "FWD-UI-001",
+        "FWD-UI-003"
+      ],
+      "pre_condition": "특정 토핑(예: 에그)을 더 많이 원하는 고객이 토핑선택 단계 진입",
+      "post_condition": "선택한 수량만큼 장바구니에 가격이 반영됨",
+      "normal_flow": "토핑 목록에서 특정 토핑 + 버튼으로 수량 증가 → 가격이 수량만큼 배수로 자동 재계산 → 같은 토핑을 최대 5개까지 중복 담을 수 있음",
+      "alternative_flow": "최대치 도달 시 + 버튼 비활성화 및 안내",
+      "mermaid_script": "flowchart TD\n    A[토핑 선택] --> B[+ 버튼으로 수량 증가]\n    B --> C[가격 수량만큼 자동 재계산]\n    C --> D{최대 5개 도달?}\n    D -->|예| E[버튼 비활성화 안내]\n    D -->|아니오| F[계속 담기 가능]",
+      "status_notion": "초안"
+    },
+    {
+      "id": "SC-020",
+      "title": "드레싱 별도포장 추가 주문 (LMIS-ORDER-001)",
+      "base_title": "드레싱 별도포장 추가 주문",
+      "req_ids": [
+        "LMIS-ORDER-001",
+        "LMIS-ORDER-003",
+        "LMIS-ORDER-002"
+      ],
+      "pre_condition": "옵션선택 단계에서 드레싱을 하나 더 맛보고 싶은 고객",
+      "post_condition": "장바구니에 기본 드레싱과 별도포장 드레싱이 각각 표시됨",
+      "normal_flow": "기본 드레싱 선택 → 드레싱 별도포장 추가 선택(균일가) → 장바구니에 드레싱 2개(기본+추가) 반영 → 주문서에 별도포장 표시",
+      "alternative_flow": "없음",
+      "mermaid_script": "flowchart TD\n    A[기본 드레싱 선택] --> B[별도포장 드레싱 추가 선택 - 균일가]\n    B --> C[장바구니에 드레싱 2개 표시]\n    C --> D[주문서에 별도포장 안내]",
+      "status_notion": "초안"
+    },
+    {
+      "id": "SC-024",
+      "title": "최종 통합 리허설에서 주문-결제-관리자 확인 (RTOS-DEVICE-003)",
+      "base_title": "최종 통합 리허설에서 주문-결제-관리자 확인",
+      "req_ids": [
+        "RTOS-DEVICE-003",
+        "DEV-SYS-002",
+        "FWD-CART-001",
+        "FWD-PAY-001",
+        "LMIS-ORDER-001"
+      ],
+      "pre_condition": "1차 발표 또는 최종 발표 전 전체 데모 환경이 준비되어 있음",
+      "post_condition": "고객 주문 완료와 관리자 주문 확인/상태 변경까지 한 번에 시연 가능",
+      "normal_flow": "1. 고객이 홈에서 주문을 시작한다. 2. 먹고가기/포장을 선택한다. 3. 메뉴를 선택하고 옵션을 구성한다. 4. 장바구니와 주문 확인을 거쳐 결제한다. 5. 주문 완료 화면을 확인한다. 6. 관리자가 주문 목록/상세에서 주문 상태와 선택 옵션/제외 재료를 확인한다.",
+      "alternative_flow": "결제 실패, 품절 항목 포함, 필수 옵션 미선택, 관리자 상태 변경 실패 시 해당 화면과 API 오류 응답을 기준으로 재시도 또는 오류 안내를 확인한다.",
+      "mermaid_script": "",
+      "status_notion": "확정"
+    },
+    {
+      "id": "SC-023",
+      "title": "핵심 API 응답속도 검증 (FWD-SYS-001)",
+      "base_title": "핵심 API 응답속도 검증",
+      "req_ids": [
+        "FWD-SYS-001"
+      ],
+      "pre_condition": "개발 완료 후 부하테스트 진행 시점",
+      "post_condition": "각 API가 명시된 목표 응답시간 내에 응답함",
+      "normal_flow": "메뉴목록/옵션조회/결제 각 API 호출 → 목표 응답시간(2초/1초/3초) 내 응답 확인",
+      "alternative_flow": "목표시간 초과 시 병목 구간(DB 인덱스, 쿼리문) 점검",
+      "mermaid_script": "flowchart TD\n    A[개발 완료 후 부하테스트] --> B[메뉴목록 API 호출 - 목표 2초]\n    B --> C[옵션조회 API 호출 - 목표 1초]\n    C --> D[결제 API 호출 - 목표 3초]\n    D --> E{목표시간 내 응답?}\n    E -->|아니오| F[병목 구간 점검]",
+      "status_notion": "초안"
+    }
+  ],
+  "qa": [
+    {
+      "id": "TC-005",
+      "title": "TC-005 스탬프 적립 확인이 결제 전후로 중복되지 않는지 검증 (FWD-CART-002)",
+      "base_title": "스탬프 적립 확인이 결제 전후로 중복되지 않는지 검증",
+      "req_ids": [
+        "FWD-CART-002",
+        "LMIS-MEMBER-001"
+      ],
+      "scenario_id": "SC-009",
+      "purpose": "스탬프 적립이 1회만 처리됨",
+      "pre_condition": "멤버십 스탬프 기능 활성",
+      "steps": "1) 결제 전 스탬프 확인 2) 결제 완료 3) 적립 1회만 반영 확인",
+      "expected_result": "스탬프 적립이 1회만 처리됨",
+      "status_notion": "예정"
+    },
+    {
+      "id": "TC-006",
+      "title": "TC-006 관리자 품절 처리가 관련 메뉴 전체에 즉시 반영되는지 검증 (FWD-MENU-001)",
+      "base_title": "관리자 품절 처리가 관련 메뉴 전체에 즉시 반영되는지 검증",
+      "req_ids": [
+        "FWD-MENU-001",
+        "LMIS-MENU-001",
+        "LMIS-MENU-002"
+      ],
+      "scenario_id": "SC-010",
+      "purpose": "관리자 품절 변경이 키오스크에 즉시 반영",
+      "pre_condition": "관리자 로그인 및 품절 대상 메뉴 존재",
+      "steps": "1) 관리자 품절 처리 2) 키오스크 메뉴 화면 새로고침 3) 품절 반영 확인",
+      "expected_result": "관리자 품절 변경이 키오스크에 즉시 반영",
+      "status_notion": "예정"
+    },
+    {
+      "id": "TC-004",
+      "title": "TC-004 결제 실패 시 원인 안내 및 장바구니 유지 확인 (DEV-PAY-001)",
+      "base_title": "결제 실패 시 원인 안내 및 장바구니 유지 확인",
+      "req_ids": [
+        "DEV-PAY-001",
+        "FWD-CART-001",
+        "FWD-PAY-002",
+        "KSD-PAY-001"
+      ],
+      "scenario_id": "SC-003",
+      "purpose": "실패 원인이 화면에 명확히 표시되고 장바구니 내용은 유지됨",
+      "pre_condition": "결제 실패를 의도적으로 유발할 수 있는 테스트 모드 필요",
+      "steps": "1) 장바구니에 메뉴 담기 2) 결제 진행 3) 결제 실패 응답 강제 발생 4) 화면 안내 문구 확인 5) 장바구니 유지 여부 확인",
+      "expected_result": "실패 원인이 화면에 명확히 표시되고 장바구니 내용은 유지됨",
+      "status_notion": "예정"
+    },
+    {
+      "id": "TC-002",
+      "title": "TC-002 화면 전환 5회 이내 주문 완료 흐름 검증 (FWD-CART-001)",
+      "base_title": "화면 전환 5회 이내 주문 완료 흐름 검증",
+      "req_ids": [
+        "FWD-CART-001",
+        "FWD-MENU-001",
+        "FWD-ORDER-002",
+        "FWD-PAY-001",
+        "FWD-UI-001",
+        "FWD-UI-002"
+      ],
+      "scenario_id": "SC-002",
+      "purpose": "5회 이내 화면 전환으로 주문 완료",
+      "pre_condition": "키오스크 정상 구동",
+      "steps": "1) 홈 진입 2) 추천 메뉴 선택 3) 기본 옵션 확인 4) 장바구니 5) 결제 완료",
+      "expected_result": "5회 이내 화면 전환으로 주문 완료",
+      "status_notion": "예정"
+    },
+    {
+      "id": "TC-003",
+      "title": "TC-003 품절 판매 항목이 정상적으로 비활성화되는지 확인 (FWD-MENU-001)",
+      "base_title": "품절 판매 항목이 정상적으로 비활성화되는지 확인",
+      "req_ids": [
+        "FWD-MENU-001",
+        "LMIS-MENU-001",
+        "LMIS-MENU-002"
+      ],
+      "scenario_id": "SC-008",
+      "purpose": "품절 메뉴는 선택 불가 또는 품절 배지 표시",
+      "pre_condition": "품절 항목이 1개 이상 존재",
+      "steps": "1) 메뉴 목록 진입 2) 품절 메뉴 선택 시도 3) 비활성 표시 확인",
+      "expected_result": "품절 메뉴는 선택 불가 또는 품절 배지 표시",
+      "status_notion": "예정"
+    },
+    {
+      "id": "TC-010",
+      "title": "TC-010 관리자 메뉴 관리 목록/품절 상태 검증 (LMIS-MENU-001)",
+      "base_title": "관리자 메뉴 관리 목록/품절 상태 검증",
+      "req_ids": [
+        "LMIS-MENU-001",
+        "LMIS-MENU-004",
+        "LMIS-MENU-005"
+      ],
+      "scenario_id": "SC-019",
+      "purpose": "메뉴 목록과 품절 상태가 정확히 표시/변경됨",
+      "pre_condition": "관리자 로그인 완료",
+      "steps": "1) 메뉴 관리 목록 조회 2) 품절 상태 필터 3) 상태 변경",
+      "expected_result": "메뉴 목록과 품절 상태가 정확히 표시/변경됨",
+      "status_notion": "예정"
+    },
+    {
+      "id": "TC-008",
+      "title": "TC-008 접근성 설정 적용 검증 (FWD-UI-001)",
+      "base_title": "접근성 설정 적용 검증",
+      "req_ids": [
+        "FWD-UI-001",
+        "FWD-UI-003"
+      ],
+      "scenario_id": "SC-018",
+      "purpose": "접근성 옵션이 전체 화면에 적용",
+      "pre_condition": "접근성 설정 화면 접근 가능",
+      "steps": "1) 글자크기/고대비 설정 2) 메뉴 화면 이동 3) 설정 유지 확인",
+      "expected_result": "접근성 옵션이 전체 화면에 적용",
+      "status_notion": "예정"
+    },
+    {
+      "id": "TC-007",
+      "title": "TC-007 타임아웃 안내 후 자동 초기화 검증 (DEV-SYS-001)",
+      "base_title": "타임아웃 안내 후 자동 초기화 검증",
+      "req_ids": [
+        "DEV-SYS-001",
+        "FWD-SYS-001"
+      ],
+      "scenario_id": "SC-013",
+      "purpose": "타임아웃 후 홈 화면으로 자동 초기화",
+      "pre_condition": "주문 중 화면",
+      "steps": "1) 주문 중 입력 없이 대기 2) 타임아웃 안내 표시 3) 홈 복귀 확인",
+      "expected_result": "타임아웃 후 홈 화면으로 자동 초기화",
+      "status_notion": "예정"
+    },
+    {
+      "id": "TC-011",
+      "title": "TC-011 관리자 메뉴 등록/수정 검증 (FWD-MENU-014)",
+      "base_title": "관리자 메뉴 등록/수정 검증",
+      "req_ids": [
+        "FWD-MENU-014",
+        "FWD-MENU-015",
+        "LMIS-MENU-004",
+        "LMIS-MENU-006"
+      ],
+      "scenario_id": "SC-006",
+      "purpose": "등록/수정 내용이 목록에 반영",
+      "pre_condition": "관리자 메뉴 관리 화면",
+      "steps": "1) 신규 메뉴 등록 2) 저장 3) 수정 후 재조회",
+      "expected_result": "등록/수정 내용이 목록에 반영",
+      "status_notion": "예정"
+    },
+    {
+      "id": "TC-009",
+      "title": "TC-009 관리자 로그인 검증 (LMIS-ORDER-001)",
+      "base_title": "관리자 로그인 검증",
+      "req_ids": [
+        "LMIS-ORDER-001",
+        "LMIS-ORDER-002",
+        "LMIS-ORDER-003",
+        "LMIS-ORDER-005"
+      ],
+      "scenario_id": "SC-020",
+      "purpose": "유효한 계정으로 관리자 화면 진입",
+      "pre_condition": "관리자 계정 존재",
+      "steps": "1) 관리자 로그인 화면 2) 자격 증명 입력 3) 대시보드 진입",
+      "expected_result": "유효한 계정으로 관리자 화면 진입",
+      "status_notion": "예정"
+    },
+    {
+      "id": "TC-013",
+      "title": "TC-013 관리자 매출 요약 조회 검증 (LMIS-ORDER-005)",
+      "base_title": "관리자 매출 요약 조회 검증",
+      "req_ids": [
+        "LMIS-ORDER-005",
+        "LMIS-ORDER-006"
+      ],
+      "scenario_id": "SC-016",
+      "purpose": "선택 기간의 주문수/매출이 표시됨",
+      "pre_condition": "주문/결제 데이터 존재",
+      "steps": "1) 매출 화면 진입 2) 기간 선택 3) 일별 매출 조회",
+      "expected_result": "선택 기간의 주문수/매출이 표시됨",
+      "status_notion": "예정"
+    },
+    {
+      "id": "TC-012",
+      "title": "TC-012 관리자 결제수단 설정 검증 (FWD-UI-001)",
+      "base_title": "관리자 결제수단 설정 검증",
+      "req_ids": [
+        "FWD-UI-001",
+        "FWD-UI-003",
+        "LMIS-PAY-001"
+      ],
+      "scenario_id": "SC-018",
+      "purpose": "설정 변경이 키오스크 결제수단 목록에 반영",
+      "pre_condition": "관리자 결제수단 설정 화면",
+      "steps": "1) 결제수단 노출/순서 변경 2) 저장 3) 키오스크 결제 화면 확인",
+      "expected_result": "설정 변경이 키오스크 결제수단 목록에 반영",
+      "status_notion": "예정"
+    },
+    {
+      "id": "TC-001",
+      "title": "TC-001 먹고가기/포장 선택 및 orderType 유지 검증 (DEV-ORDER-001)",
+      "base_title": "먹고가기/포장 선택 및 orderType 유지 검증",
+      "req_ids": [
+        "DEV-ORDER-001",
+        "FWD-CART-001",
+        "FWD-MENU-001",
+        "FWD-MENU-002",
+        "FWD-MENU-003",
+        "FWD-ORDER-001",
+        "FWD-PAY-001",
+        "FWD-PAY-002",
+        "FWD-UI-001",
+        "FWD-UI-002",
+        "FWD-UI-005"
+      ],
+      "scenario_id": "SC-014",
+      "purpose": "먹고가기/포장 선택 후 장바구니·주문확인·주문 생성까지 orderType(EAT_IN/TAKE_OUT)이 유지되고 API-005 요청에 반영된다.",
+      "pre_condition": "키오스크 홈 화면 접근 가능",
+      "steps": "1) 홈에서 주문시작 2) 먹고가기 선택 3) 메뉴 1건 장바구니 담기 4) 주문확인 화면에서 orderType 확인 5) 주문 생성 API 요청 body의 orderType 확인",
+      "expected_result": "먹고가기/포장 선택 후 장바구니·주문확인·주문 생성까지 orderType(EAT_IN/TAKE_OUT)이 유지되고 API-005 요청에 반영된다.",
+      "status_notion": "예정"
+    },
+    {
+      "id": "TC-014",
+      "title": "TC-014 관리자 주문 목록 조회 및 상태 변경 검증 (LMIS-ORDER-001)",
+      "base_title": "관리자 주문 목록 조회 및 상태 변경 검증",
+      "req_ids": [
+        "LMIS-ORDER-001",
+        "LMIS-ORDER-002",
+        "LMIS-ORDER-003",
+        "LMIS-ORDER-006"
+      ],
+      "scenario_id": "SC-020",
+      "purpose": "주문 상태 변경이 정상 처리됨",
+      "pre_condition": "관리자 로그인, 주문 데이터 존재",
+      "steps": "1) 주문 목록 조회 2) 주문 상세 3) 상태 변경 4) 키오스크 반영 확인",
+      "expected_result": "주문 상태 변경이 정상 처리됨",
+      "status_notion": "예정"
+    }
+  ]
+}

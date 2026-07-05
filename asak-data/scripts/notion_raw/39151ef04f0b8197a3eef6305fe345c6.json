@@ -1,0 +1,5 @@
+{
+  "title": "관리자의 일별 매출 조회",
+  "url": "https://app.notion.com/p/39151ef04f0b8197a3eef6305fe345c6",
+  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39151ef04f0b8197a3eef6305fe345c6.\n<page url=\"https://app.notion.com/p/39151ef04f0b8197a3eef6305fe345c6\">\n<properties>\n{\"url\": \"https://app.notion.com/p/39151ef04f0b8197a3eef6305fe345c6\", \"시나리오 ID\": \"SC-018\", \"시나리오명\": \"관리자의 일별 매출 조회\", \"시작 조건\": \"관리자가 매출 현황을 확인하려는 상황\", \"종료 조건\": \"기간별 매출/판매량이 화면에 표시됨\", \"기본 흐름\": \"관리자 로그인 → 기간 선택 → 일별 매출/메뉴별 판매량 조회\", \"예외 흐름\": \"해당 기간에 데이터가 없을 경우 공백 상태 안내\", \"상태\": \"초안\"}\n</properties>\n<content>\n```mermaid\nflowchart TD\n    A[관리자 로그인] --> B[기간 선택]\n    B --> C[일별 매출/메뉴별 판매량 조회]\n    C --> D{데이터 존재?}\n    D -->|없음| E[공백 상태 안내]\n    D -->|있음| F[표/그래프 표시]\n```\n</content>\n</page>"
+}

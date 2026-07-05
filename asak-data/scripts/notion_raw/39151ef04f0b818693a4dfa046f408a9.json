@@ -1,0 +1,5 @@
+{
+  "title": "QR/바코드 스캔(쿠폰/멤버십)",
+  "url": "https://app.notion.com/p/39151ef04f0b818693a4dfa046f408a9",
+  "text": "<page url=\"https://app.notion.com/p/39151ef04f0b818693a4dfa046f408a9\">\n<properties>\n{\"요구사항 ID\": \"RTOS-DEVICE-005\", \"요구사항명\": \"QR/바코드 스캔(쿠폰/멤버십)\", \"상세 설명\": \"QR/바코드 스캔을 통해 쿠폰 또는 멤버십 정보를 인식한다.\", \"우선순위\": \"하\", \"상태\": \"제외\", \"구분\": \"장치\"}\n</properties>\n</page>"
+}

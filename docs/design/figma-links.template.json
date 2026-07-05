@@ -1,0 +1,397 @@
+{
+  "team_file": {
+    "name": "kiosk_design",
+    "file_key": "iqaoVwFjFE6Zq1WpOVgjeG",
+    "url": "https://www.figma.com/design/iqaoVwFjFE6Zq1WpOVgjeG/kiosk_design",
+    "url_pattern": "https://www.figma.com/design/{file_key}/kiosk_design?node-id={node_id}",
+    "orientation": "portrait",
+    "frame_size": {
+      "primary": {"width": 834, "height": 1194},
+      "fallback": {"width": 768, "height": 1024}
+    },
+    "safe_area": {"top": 24, "bottom": 24, "left": 16, "right": 16},
+    "touch_target_min_px": 48,
+    "pages": [
+      {"name": "📐 Specs", "scr_range": null},
+      {"name": "🎨 Design System", "scr_range": null},
+      {"name": "📱 Customer", "scr_range": "SCR-001~014"},
+      {"name": "🛠 Admin", "scr_range": "SCR-015~019"}
+    ]
+  },
+  "meeting": {
+    "date": "2026-07-03",
+    "title": "키오스크 컨셉 회의",
+    "notion_url": "https://app.notion.com/p/39251ef04f0b81c9a6dfc3c81ae6a3c0",
+    "palette": {
+      "primary": "#16A34A",
+      "primary_dark": "#15803D",
+      "fresh_lime": "#A3E635",
+      "crunch_yellow": "#FACC15",
+      "cream": "#FFFDF3",
+      "text": "#1F2937"
+    },
+    "mvp_customer": "SCR-001~008",
+    "mvp_admin": "SCR-009~011",
+    "deferred": ["KVS", "매출", "멤버십", "메뉴등록전체", "재고수량"]
+  },
+  "screens": [
+    {
+      "scr_id": "SCR-001",
+      "name": "홈 화면",
+      "figma_page": "📱 Customer",
+      "figma_url": "",
+      "node_id": "",
+      "meeting_notes": ["단일 CTA", "Cream 배경", "히어로 optional", "친근·건강메이트"],
+      "figma_refs": [
+        {"name": "kiosk_design", "url": "https://www.figma.com/design/iqaoVwFjFE6Zq1WpOVgjeG/kiosk_design", "copy": "Customer Page frame"},
+        {"name": "Kiosk Prototype", "url": "https://www.figma.com/community/file/784444951689918956/kiosk-prototype", "copy": "시작 화면 flow"},
+        {"name": "Kiosk Case Study", "url": "https://www.figma.com/community/file/1497969269675579774/kiosk-ui-ux-case-study", "copy": "세로 브랜드 영역"}
+      ],
+      "franchise_refs": [
+        {"brand": "맥도날드", "pattern": "큰 시작 CTA"},
+        {"brand": "샐러디", "pattern": "밝은 프레시 톤"}
+      ],
+      "trend": "Trend-4"
+    },
+    {
+      "scr_id": "SCR-002",
+      "name": "먹고가기 / 포장 선택",
+      "figma_page": "📱 Customer",
+      "figma_url": "",
+      "node_id": "",
+      "meeting_notes": ["1탭 빠른 선택", "food photo 과다 금지", "화면 단순"],
+      "figma_refs": [
+        {"name": "kiosk_design", "url": "https://www.figma.com/design/iqaoVwFjFE6Zq1WpOVgjeG/kiosk_design", "copy": "주문유형 frame"},
+        {"name": "Kiosk Prototype", "url": "https://www.figma.com/community/file/784444951689918956/kiosk-prototype", "copy": "dine-in/takeaway 분기"}
+      ],
+      "franchise_refs": [
+        {"brand": "맥도날드", "pattern": "먹고가기/포장 카드"},
+        {"brand": "써브웨이", "pattern": "order type 분기"}
+      ],
+      "trend": "Trend-5"
+    },
+    {
+      "scr_id": "SCR-003",
+      "name": "메뉴 선택",
+      "figma_page": "📱 Customer",
+      "figma_url": "",
+      "node_id": "",
+      "meeting_notes": ["photo-first 카드", "카테고리별", "품절 표시", "장바구니 바"],
+      "figma_refs": [
+        {"name": "kiosk_design", "url": "https://www.figma.com/design/iqaoVwFjFE6Zq1WpOVgjeG/kiosk_design", "copy": "메뉴 grid"},
+        {"name": "Kiosk Prototype", "url": "https://www.figma.com/community/file/784444951689918956/kiosk-prototype", "copy": "category tabs"},
+        {"name": "Courses kit 14-410", "url": "https://www.figma.com/design/MZ7cCNaum5g4nAspeuENgn/Courses---Courses-Dashboard-UI-KIT?node-id=14-410", "copy": "card shadow/radius"}
+      ],
+      "franchise_refs": [
+        {"brand": "버거킹", "pattern": "photo-card 풀블리드"},
+        {"brand": "맥도날드", "pattern": "2열 grid + cart bar"},
+        {"brand": "샐러디", "pattern": "샐러드·볼·랩 카테고리"}
+      ],
+      "trend": "Trend-1",
+      "photo": "/assets/menu/{id}.png"
+    },
+    {
+      "scr_id": "SCR-004",
+      "name": "메뉴 상세 / 옵션 선택",
+      "figma_page": "📱 Customer",
+      "figma_url": "",
+      "node_id": "",
+      "meeting_notes": ["3단 옵션 트리", "추천조합 기본값", "칼로리 표시"],
+      "figma_refs": [
+        {"name": "kiosk_design", "url": "https://www.figma.com/design/iqaoVwFjFE6Zq1WpOVgjeG/kiosk_design", "copy": "옵션 step UI"},
+        {"name": "Kiosk Prototype", "url": "https://www.figma.com/community/file/784444951689918956/kiosk-prototype", "copy": "customization"}
+      ],
+      "franchise_refs": [
+        {"brand": "공차", "pattern": "option-list + 합계"},
+        {"brand": "써브웨이", "pattern": "builder 단계"},
+        {"brand": "샐러디", "pattern": "ingredient chips"}
+      ],
+      "trend": "Trend-4",
+      "photo": "/assets/menu/{id}.png"
+    },
+    {
+      "scr_id": "SCR-005",
+      "name": "장바구니",
+      "figma_page": "📱 Customer",
+      "figma_url": "",
+      "node_id": "",
+      "meeting_notes": ["포장 시 봉투 추가", "알레르기 안내", "sticky CTA"],
+      "figma_refs": [
+        {"name": "kiosk_design", "url": "https://www.figma.com/design/iqaoVwFjFE6Zq1WpOVgjeG/kiosk_design", "copy": "cart list"},
+        {"name": "Kiosk Prototype", "url": "https://www.figma.com/community/file/784444951689918956/kiosk-prototype", "copy": "quantity controls"}
+      ],
+      "franchise_refs": [
+        {"brand": "맥도날드", "pattern": "cart list + total"},
+        {"brand": "스타벅스", "pattern": "order summary"}
+      ],
+      "trend": "Trend-4"
+    },
+    {
+      "scr_id": "SCR-006",
+      "name": "주문 확인",
+      "figma_page": "📱 Customer",
+      "figma_url": "",
+      "node_id": "",
+      "meeting_notes": ["최종 확인", "upsell 없음"],
+      "figma_refs": [
+        {"name": "kiosk_design", "url": "https://www.figma.com/design/iqaoVwFjFE6Zq1WpOVgjeG/kiosk_design", "copy": "order review"},
+        {"name": "Kiosk Prototype", "url": "https://www.figma.com/community/file/784444951689918956/kiosk-prototype", "copy": "confirm screen"}
+      ],
+      "franchise_refs": [
+        {"brand": "스타벅스", "pattern": "order confirm"}
+      ],
+      "trend": "Trend-4"
+    },
+    {
+      "scr_id": "SCR-007",
+      "name": "결제",
+      "figma_page": "📱 Customer",
+      "figma_url": "",
+      "node_id": "",
+      "meeting_notes": ["가상 결제 only", "멤버십 보류"],
+      "figma_refs": [
+        {"name": "kiosk_design", "url": "https://www.figma.com/design/iqaoVwFjFE6Zq1WpOVgjeG/kiosk_design", "copy": "payment methods"},
+        {"name": "Kiosk Prototype", "url": "https://www.figma.com/community/file/784444951689918956/kiosk-prototype", "copy": "pay flow"}
+      ],
+      "franchise_refs": [
+        {"brand": "맥도날드", "pattern": "결제수단 대형 카드"}
+      ],
+      "trend": "Trend-5"
+    },
+    {
+      "scr_id": "SCR-008",
+      "name": "주문 완료",
+      "figma_page": "📱 Customer",
+      "figma_url": "",
+      "node_id": "",
+      "meeting_notes": ["주문번호 크게", "픽업 안내", "자동 초기화 검토"],
+      "figma_refs": [
+        {"name": "kiosk_design", "url": "https://www.figma.com/design/iqaoVwFjFE6Zq1WpOVgjeG/kiosk_design", "copy": "success state"},
+        {"name": "Kiosk Case Study", "url": "https://www.figma.com/community/file/1497969269675579774/kiosk-ui-ux-case-study", "copy": "completion UI"}
+      ],
+      "franchise_refs": [
+        {"brand": "스타벅스", "pattern": "pickup + order number"}
+      ],
+      "trend": "Trend-4"
+    },
+    {
+      "scr_id": "SCR-009",
+      "name": "관리자 주문 관리",
+      "figma_page": "📱 Customer",
+      "figma_url": "",
+      "node_id": "",
+      "meeting_notes": ["Week 5 MVP", "표·필터·상태", "photo 없음"],
+      "figma_refs": [
+        {"name": "kiosk_design", "url": "https://www.figma.com/design/iqaoVwFjFE6Zq1WpOVgjeG/kiosk_design", "copy": "order list"},
+        {"name": "Courses kit 14-410", "url": "https://www.figma.com/design/MZ7cCNaum5g4nAspeuENgn/Courses---Courses-Dashboard-UI-KIT?node-id=14-410", "copy": "list row, filter, badge"}
+      ],
+      "franchise_refs": [],
+      "trend": "Courses + Trend-5"
+    },
+    {
+      "scr_id": "SCR-010",
+      "name": "관리자 주문 상세",
+      "figma_page": "📱 Customer",
+      "figma_url": "",
+      "node_id": "",
+      "meeting_notes": ["상태 변경", "KVS 보류"],
+      "figma_refs": [
+        {"name": "kiosk_design", "url": "https://www.figma.com/design/iqaoVwFjFE6Zq1WpOVgjeG/kiosk_design", "copy": "order detail"},
+        {"name": "Courses kit 14-410", "url": "https://www.figma.com/design/MZ7cCNaum5g4nAspeuENgn/Courses---Courses-Dashboard-UI-KIT?node-id=14-410", "copy": "detail card, dropdown"}
+      ],
+      "franchise_refs": [],
+      "trend": "Courses"
+    },
+    {
+      "scr_id": "SCR-011",
+      "name": "관리자 판매 항목 품절 관리",
+      "figma_page": "📱 Customer",
+      "figma_url": "",
+      "node_id": "",
+      "meeting_notes": ["품절 토글→SCR-003 반영", "재고수량 보류"],
+      "figma_refs": [
+        {"name": "kiosk_design", "url": "https://www.figma.com/design/iqaoVwFjFE6Zq1WpOVgjeG/kiosk_design", "copy": "toggle list"},
+        {"name": "Courses kit 14-410", "url": "https://www.figma.com/design/MZ7cCNaum5g4nAspeuENgn/Courses---Courses-Dashboard-UI-KIT?node-id=14-410", "copy": "toggle row"}
+      ],
+      "franchise_refs": [],
+      "trend": "Courses"
+    },
+    {
+      "scr_id": "SCR-012",
+      "name": "결제 실패 / 재시도",
+      "figma_page": "📱 Customer",
+      "figma_url": "",
+      "node_id": "",
+      "meeting_notes": ["Week 5 MVP 최소 안내", "친근한 톤"],
+      "figma_refs": [
+        {"name": "kiosk_design", "url": "https://www.figma.com/design/iqaoVwFjFE6Zq1WpOVgjeG/kiosk_design", "copy": "error overlay"},
+        {"name": "Kiosk Prototype", "url": "https://www.figma.com/community/file/784444951689918956/kiosk-prototype", "copy": "retry flow"}
+      ],
+      "franchise_refs": [],
+      "trend": "Trend-3 accent"
+    },
+    {
+      "scr_id": "SCR-013",
+      "name": "타임아웃 안내 / 자동 초기화",
+      "figma_page": "📱 Customer",
+      "figma_url": "",
+      "node_id": "",
+      "meeting_notes": ["취소 시 초기화 개선", "카운트다운"],
+      "figma_refs": [
+        {"name": "kiosk_design", "url": "https://www.figma.com/design/iqaoVwFjFE6Zq1WpOVgjeG/kiosk_design", "copy": "timeout modal"},
+        {"name": "Kiosk Case Study", "url": "https://www.figma.com/community/file/1497969269675579774/kiosk-ui-ux-case-study", "copy": "idle pattern"}
+      ],
+      "franchise_refs": [],
+      "trend": "Trend-4"
+    },
+    {
+      "scr_id": "SCR-014",
+      "name": "접근성 설정",
+      "figma_page": "📱 Customer",
+      "figma_url": "",
+      "node_id": "",
+      "meeting_notes": ["글자크기·고대비", "SCR-001 진입"],
+      "figma_refs": [
+        {"name": "kiosk_design", "url": "https://www.figma.com/design/iqaoVwFjFE6Zq1WpOVgjeG/kiosk_design", "copy": "a11y settings"},
+        {"name": "Moja UI", "url": "https://www.figma.com/community/file/1108679668074690379/moja-ui-ultimate-ui-kit-design-system-variables-darkmode", "copy": "toggle, segmented"}
+      ],
+      "franchise_refs": [],
+      "trend": "Trend-4"
+    },
+    {
+      "scr_id": "SCR-015",
+      "name": "관리자 로그인",
+      "figma_page": "🛠 Admin",
+      "figma_url": "",
+      "node_id": "",
+      "meeting_notes": ["후반 확장", "Week 5 MVP 제외"],
+      "figma_refs": [
+        {"name": "kiosk_design", "url": "https://www.figma.com/design/iqaoVwFjFE6Zq1WpOVgjeG/kiosk_design", "copy": "Admin login"},
+        {"name": "Courses kit 14-410", "url": "https://www.figma.com/design/MZ7cCNaum5g4nAspeuENgn/Courses---Courses-Dashboard-UI-KIT?node-id=14-410", "copy": "form fields"}
+      ],
+      "franchise_refs": [],
+      "trend": "Courses"
+    },
+    {
+      "scr_id": "SCR-016",
+      "name": "관리자 메뉴 관리",
+      "figma_page": "🛠 Admin",
+      "figma_url": "",
+      "node_id": "",
+      "meeting_notes": ["메뉴 CRUD 보류"],
+      "figma_refs": [
+        {"name": "kiosk_design", "url": "https://www.figma.com/design/iqaoVwFjFE6Zq1WpOVgjeG/kiosk_design", "copy": "menu table"},
+        {"name": "Courses kit 14-410", "url": "https://www.figma.com/design/MZ7cCNaum5g4nAspeuENgn/Courses---Courses-Dashboard-UI-KIT?node-id=14-410", "copy": "data table"}
+      ],
+      "franchise_refs": [],
+      "trend": "Courses"
+    },
+    {
+      "scr_id": "SCR-017",
+      "name": "관리자 메뉴 등록/수정",
+      "figma_page": "🛠 Admin",
+      "figma_url": "",
+      "node_id": "",
+      "meeting_notes": ["후반", "3단 옵션 구조"],
+      "figma_refs": [
+        {"name": "kiosk_design", "url": "https://www.figma.com/design/iqaoVwFjFE6Zq1WpOVgjeG/kiosk_design", "copy": "menu form"},
+        {"name": "Courses kit 14-410", "url": "https://www.figma.com/design/MZ7cCNaum5g4nAspeuENgn/Courses---Courses-Dashboard-UI-KIT?node-id=14-410", "copy": "long form"}
+      ],
+      "franchise_refs": [
+        {"brand": "공차", "pattern": "option group 구조 (관리자 폼)"}
+      ],
+      "trend": "Courses"
+    },
+    {
+      "scr_id": "SCR-018",
+      "name": "관리자 결제수단 설정",
+      "figma_page": "🛠 Admin",
+      "figma_url": "",
+      "node_id": "",
+      "meeting_notes": ["실결제수단 설정 보류"],
+      "figma_refs": [
+        {"name": "kiosk_design", "url": "https://www.figma.com/design/iqaoVwFjFE6Zq1WpOVgjeG/kiosk_design", "copy": "pay config"},
+        {"name": "Courses kit 14-410", "url": "https://www.figma.com/design/MZ7cCNaum5g4nAspeuENgn/Courses---Courses-Dashboard-UI-KIT?node-id=14-410", "copy": "toggle list"}
+      ],
+      "franchise_refs": [],
+      "trend": "Courses"
+    },
+    {
+      "scr_id": "SCR-019",
+      "name": "관리자 매출 요약",
+      "figma_page": "🛠 Admin",
+      "figma_url": "",
+      "node_id": "",
+      "meeting_notes": ["매출 보류", "Week 5 MVP 제외"],
+      "figma_refs": [
+        {"name": "kiosk_design", "url": "https://www.figma.com/design/iqaoVwFjFE6Zq1WpOVgjeG/kiosk_design", "copy": "sales chart"},
+        {"name": "Courses kit 14-410", "url": "https://www.figma.com/design/MZ7cCNaum5g4nAspeuENgn/Courses---Courses-Dashboard-UI-KIT?node-id=14-410", "copy": "chart card"}
+      ],
+      "franchise_refs": [],
+      "trend": "Courses + Trend-5"
+    }
+  ],
+  "design_options": [
+    "option-a-salady",
+    "asak-trend-1-pink-green",
+    "asak-trend-2-warm-coral",
+    "asak-trend-3-electric-lime",
+    "asak-trend-4-blush-forest",
+    "asak-trend-5-citrus-navy"
+  ],
+  "meeting_palette": {
+    "primary": "#16A34A",
+    "primary_dark": "#15803D",
+    "fresh_lime": "#A3E635",
+    "crunch_yellow": "#FACC15",
+    "cream": "#FFFDF3",
+    "text": "#1F2937"
+  },
+  "courses_kit_ref": {
+    "name": "Courses Dashboard UI KIT",
+    "file_key": "MZ7cCNaum5g4nAspeuENgn",
+    "url": "https://www.figma.com/design/MZ7cCNaum5g4nAspeuENgn/Courses---Courses-Dashboard-UI-KIT",
+    "node_id": "14-410",
+    "figma_url": "https://www.figma.com/design/MZ7cCNaum5g4nAspeuENgn/Courses---Courses-Dashboard-UI-KIT?node-id=14-410",
+    "purpose": "Admin dashboard card palette · Variables secondary 토큰"
+  },
+  "brand_design_doc": "docs/design/BRAND_DESIGN_OPTIONS.md",
+  "scr_guide_doc": "docs/design/SCR_TABLET_PORTRAIT_FRAMES.md",
+  "references": [
+    {
+      "id": "C1",
+      "name": "Kiosk Prototype",
+      "url": "https://www.figma.com/community/file/784444951689918956/kiosk-prototype",
+      "purpose": "주문 flow · SCR-001~008",
+      "duplicate_to_team_file": true
+    },
+    {
+      "id": "C2",
+      "name": "Kiosk UI/UX Case Study",
+      "url": "https://www.figma.com/community/file/1497969269675579774/kiosk-ui-ux-case-study",
+      "purpose": "세로 UX · SCR-001, 008, 013",
+      "duplicate_to_team_file": false
+    },
+    {
+      "id": "C3",
+      "name": "Moja UI — Variables + Dark Mode",
+      "url": "https://www.figma.com/community/file/1108679668074690379/moja-ui-ultimate-ui-kit-design-system-variables-darkmode",
+      "purpose": "Design System · SCR-014, Variables",
+      "duplicate_to_team_file": true
+    },
+    {
+      "id": "C4",
+      "name": "Design Systems Checklist",
+      "url": "https://www.figma.com/community/file/1152167555200057574/design-systems-checklist",
+      "purpose": "DS QA",
+      "duplicate_to_team_file": false
+    },
+    {
+      "id": "KIT",
+      "name": "Courses Dashboard UI KIT",
+      "url": "https://www.figma.com/design/MZ7cCNaum5g4nAspeuENgn/Courses---Courses-Dashboard-UI-KIT?node-id=14-410",
+      "purpose": "Admin · SCR-009~011, 015~019",
+      "duplicate_to_team_file": true
+    }
+  ]
+}

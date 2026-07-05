@@ -1,0 +1,5 @@
+{
+  "title": "관리자 품절 처리가 관련 메뉴 전체에 즉시 반영되는지 검증",
+  "url": "https://app.notion.com/p/39151ef04f0b8126a9dbf87b5241c60e",
+  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39151ef04f0b8126a9dbf87b5241c60e.\n<page url=\"https://app.notion.com/p/39151ef04f0b8126a9dbf87b5241c60e\">\n<properties>\n{\"테스트 ID\": \"TC-006\", \"테스트명\": \"관리자 품절 처리가 관련 메뉴 전체에 즉시 반영되는지 검증\", \"전제조건\": \"관리자 로그인 및 품절 대상 메뉴 존재\", \"수행 절차\": \"1) 관리자 품절 처리 2) 키오스크 메뉴 화면 새로고침 3) 품절 반영 확인\", \"기대 결과\": \"관리자 품절 변경이 키오스크에 즉시 반영\", \"비고\": \"SC-010 연결, LMIS-MENU-001\", \"상태\": \"예정\"}\n</properties>\n</page>"
+}

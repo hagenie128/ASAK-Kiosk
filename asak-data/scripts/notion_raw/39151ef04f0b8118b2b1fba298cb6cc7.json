@@ -1,0 +1,5 @@
+{
+  "title": "스탬프 적립 확인이 결제 전후로 중복되지 않는지 검증",
+  "url": "https://app.notion.com/p/39151ef04f0b8118b2b1fba298cb6cc7",
+  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39151ef04f0b8118b2b1fba298cb6cc7.\n<page url=\"https://app.notion.com/p/39151ef04f0b8118b2b1fba298cb6cc7\">\n<properties>\n{\"테스트 ID\": \"TC-005\", \"테스트명\": \"스탬프 적립 확인이 결제 전후로 중복되지 않는지 검증\", \"전제조건\": \"멤버십 스탬프 기능 활성\", \"수행 절차\": \"1) 결제 전 스탬프 확인 2) 결제 완료 3) 적립 1회만 반영 확인\", \"기대 결과\": \"스탬프 적립이 1회만 처리됨\", \"비고\": \"SC-009 연결, LMIS-MEMBER-001\", \"상태\": \"예정\"}\n</properties>\n</page>"
+}

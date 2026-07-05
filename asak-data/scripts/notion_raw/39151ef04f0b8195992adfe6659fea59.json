@@ -1,0 +1,5 @@
+{
+  "title": "화면 전환 5회 이내 주문 완료 흐름 검증",
+  "url": "https://app.notion.com/p/39151ef04f0b8195992adfe6659fea59",
+  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39151ef04f0b8195992adfe6659fea59.\n<page url=\"https://app.notion.com/p/39151ef04f0b8195992adfe6659fea59\">\n<properties>\n{\"테스트 ID\": \"TC-002\", \"테스트명\": \"화면 전환 5회 이내 주문 완료 흐름 검증\", \"전제조건\": \"키오스크 정상 구동\", \"수행 절차\": \"1) 홈 진입 2) 추천 메뉴 선택 3) 기본 옵션 확인 4) 장바구니 5) 결제 완료\", \"기대 결과\": \"5회 이내 화면 전환으로 주문 완료\", \"비고\": \"SC-002 연결, FWD-UI-001\", \"상태\": \"예정\"}\n</properties>\n</page>"
+}

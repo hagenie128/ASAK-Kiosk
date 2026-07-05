@@ -1,0 +1,5 @@
+{
+  "title": "스탬프 1회 확인 후 자동 적립",
+  "url": "https://app.notion.com/p/39151ef04f0b81508cb1eef44ea7173b",
+  "text": "<page url=\"https://app.notion.com/p/39151ef04f0b81508cb1eef44ea7173b\">\n<properties>\n{\"요구사항 ID\": \"KSD-MEMBER-001\", \"요구사항명\": \"스탬프 1회 확인 후 자동 적립\", \"상세 설명\": \"사용자가 적립 여부를 한 번만 확인하면 결제 후 스탬프가 자동 적립되도록 한다.\", \"우선순위\": \"하\", \"상태\": \"제외\", \"구분\": \"기능\"}\n</properties>\n</page>"
+}

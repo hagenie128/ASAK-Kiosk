@@ -1,0 +1,5 @@
+{
+  "title": "QR/바코드로 쿠폰 인식 후 결제",
+  "url": "https://app.notion.com/p/39151ef04f0b81f5892ce9384de4f834",
+  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39151ef04f0b81f5892ce9384de4f834.\n<page url=\"https://app.notion.com/p/39151ef04f0b81f5892ce9384de4f834\">\n<properties>\n{\"url\": \"https://app.notion.com/p/39151ef04f0b81f5892ce9384de4f834\", \"시나리오 ID\": \"SC-016\", \"시나리오명\": \"QR/바코드로 쿠폰 인식 후 결제\", \"시작 조건\": \"고객이 모바일 쿠폰을 보유하고 있음\", \"종료 조건\": \"할인 적용된 금액으로 결제 완료\", \"기본 흐름\": \"결제 단계 진입 → 모바일 쿠폰/멤버십 바코드 스캔 → 할인 자동 적용 → 잔액 결제 진행\", \"예외 흐름\": \"스캔 실패/만료된 쿠폰 시 오류 메시지 안내 후 일반결제로 진행\", \"상태\": \"초안\"}\n</properties>\n<content>\n```mermaid\nflowchart TD\n    A[결제 단계 진입] --> B[모바일 쿠폰 QR/바코드 스캔]\n    B --> C{유효 코드?}\n    C -->|예| D[할인 자동 적용]\n    C -->|아니오| E[오류 안내 후 일반결제 진행]\n    D --> F[잔액 결제]\n```\n</content>\n</page>"
+}

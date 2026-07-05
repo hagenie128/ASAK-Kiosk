@@ -1,0 +1,5 @@
+{
+  "title": "타임아웃 안내 후 자동 초기화 검증",
+  "url": "https://app.notion.com/p/39251ef04f0b814ebbc7c4457ca36a0e",
+  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39251ef04f0b814ebbc7c4457ca36a0e.\n<page url=\"https://app.notion.com/p/39251ef04f0b814ebbc7c4457ca36a0e\">\n<properties>\n{\"테스트 ID\": \"TC-007\", \"테스트명\": \"타임아웃 안내 후 자동 초기화 검증\", \"전제조건\": \"주문 중 화면\", \"수행 절차\": \"1) 주문 중 입력 없이 대기 2) 타임아웃 안내 표시 3) 홈 복귀 확인\", \"기대 결과\": \"타임아웃 후 홈 화면으로 자동 초기화\", \"비고\": \"SC-013 연결, FWD-SYS-001\", \"상태\": \"예정\"}\n</properties>\n</page>"
+}

@@ -1,0 +1,5 @@
+{
+  "title": "장바구니 검증",
+  "url": "https://app.notion.com/p/39251ef04f0b8127a34be3534f376a63",
+  "text": "<page url=\"https://app.notion.com/p/39251ef04f0b8127a34be3534f376a63\">\n<properties>\n{\"API ID\": \"API-016\", \"API명\": \"장바구니 검증\", \"Method\": \"POST\", \"userDefined:URL\": \"/api/cart/validate\", \"Request\": \"items[]\", \"Response\": \"{\\\"code\\\":\\\"CART_VALIDATE_SUCCESS\\\"}\", \"Error\": \"{\\\"code\\\":\\\"CART_INVALID\\\"}\", \"처리 내용\": \"장바구니 주문 가능 여부 검증\"}\n</properties>\n</page>"
+}

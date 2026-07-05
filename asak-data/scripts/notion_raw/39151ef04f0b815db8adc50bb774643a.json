@@ -1,0 +1,5 @@
+{
+  "title": "시나리오 기반 QA",
+  "url": "https://app.notion.com/p/39151ef04f0b815db8adc50bb774643a",
+  "text": "<page url=\"https://app.notion.com/p/39151ef04f0b815db8adc50bb774643a\">\n<properties>\n{\"date:시작일:is_datetime\": 0, \"date:시작일:start\": \"2026-07-11\", \"date:종료일:is_datetime\": 0, \"date:종료일:start\": \"2026-07-17\", \"url\": \"https://app.notion.com/p/39151ef04f0b815db8adc50bb774643a\", \"관련 산출물\": \"03 시나리오, 09 테스트 시나리오, 버그 DB\", \"구분\": \"테스트\", \"담당자\": \"나연, 민준\", \"비고\": \"핵심 시나리오별 실제 수행 결과와 버그가 기록되면 완료\", \"상태\": \"예정\", \"우선순위\": \"상\", \"작업 ID\": \"WBS-017\", \"작업명\": \"시나리오 기반 QA\"}\n</properties>\n</page>"
+}

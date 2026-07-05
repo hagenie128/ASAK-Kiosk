@@ -1,0 +1,5 @@
+{
+  "title": "데이터는 Spring Boot를 통해서만 접근",
+  "url": "https://app.notion.com/p/4e051ef04f0b83e19daf01c73117bd67",
+  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/4e051ef04f0b83e19daf01c73117bd67.\n<page url=\"https://app.notion.com/p/4e051ef04f0b83e19daf01c73117bd67\">\n<properties>\n{\"요구사항 ID\": \"KSD-ARCH-001\", \"요구사항명\": \"데이터는 Spring Boot를 통해서만 접근\", \"상세 설명\": \"React와 모의 장치/RTOS Simulator는 DB에 직접 접근하지 않고 Spring Boot API를 통해서만 데이터를 처리해야 한다.\", \"우선순위\": \"상\", \"상태\": \"예정\", \"구분\": \"비기능\"}\n</properties>\n</page>"
+}

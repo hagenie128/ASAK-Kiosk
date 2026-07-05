@@ -1,0 +1,5 @@
+{
+  "title": "판매 항목 품절 처리",
+  "url": "https://app.notion.com/p/39151ef04f0b81629399f3f05cd380f6",
+  "text": "<page url=\"https://app.notion.com/p/39151ef04f0b81629399f3f05cd380f6\">\n<properties>\n{\"요구사항 ID\": \"LMIS-MENU-001\", \"요구사항명\": \"판매 항목 품절 처리\", \"상세 설명\": \"관리자는 메뉴, 재료, 옵션항목 단위로 품절 여부를 변경할 수 있어야 한다.\", \"우선순위\": \"상\", \"상태\": \"예정\", \"구분\": \"관리자\"}\n</properties>\n</page>"
+}

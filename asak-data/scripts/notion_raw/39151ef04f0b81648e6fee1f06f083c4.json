@@ -1,0 +1,5 @@
+{
+  "title": "메뉴 대표 이미지 제공",
+  "url": "https://app.notion.com/p/39151ef04f0b81648e6fee1f06f083c4",
+  "text": "<page url=\"https://app.notion.com/p/39151ef04f0b81648e6fee1f06f083c4\">\n<properties>\n{\"요구사항 ID\": \"FWD-MENU-003\", \"요구사항명\": \"메뉴 대표 이미지 제공\", \"상세 설명\": \"메뉴 목록과 메뉴 상세 화면에서 메뉴를 식별할 수 있는 대표 이미지를 제공한다.\", \"우선순위\": \"중\", \"상태\": \"예정\", \"구분\": \"화면\"}\n</properties>\n</page>"
+}

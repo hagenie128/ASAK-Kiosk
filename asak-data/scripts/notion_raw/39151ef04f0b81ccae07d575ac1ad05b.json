@@ -1,0 +1,5 @@
+{
+  "title": "프론트: 메뉴선택 화면 구현",
+  "url": "https://app.notion.com/p/39151ef04f0b81ccae07d575ac1ad05b",
+  "text": "<page url=\"https://app.notion.com/p/39151ef04f0b81ccae07d575ac1ad05b\">\n<properties>\n{\"date:시작일:is_datetime\": 0, \"date:시작일:start\": \"2026-07-05\", \"date:종료일:is_datetime\": 0, \"date:종료일:start\": \"2026-07-08\", \"url\": \"https://app.notion.com/p/39151ef04f0b81ccae07d575ac1ad05b\", \"관련 산출물\": \"SCR 메뉴 선택, API-001, API-002\", \"구분\": \"프론트엔드\", \"단계\": \"FWD\", \"담당자\": \"유진\", \"비고\": \"카테고리 탭, 메뉴 카드, 품절/태그/가격 표시가 API 응답 기준으로 동작하면 완료\", \"상태\": \"예정\", \"우선순위\": \"상\", \"작업 ID\": \"WBS-007\", \"작업명\": \"프론트: 메뉴선택 화면 구현\"}\n</properties>\n</page>"
+}

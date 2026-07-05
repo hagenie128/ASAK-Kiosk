@@ -1,0 +1,5 @@
+{
+  "title": "QR/바코드 스캔 인식",
+  "url": "https://app.notion.com/p/39451ef04f0b81baa1cfe9a6a08c1a1f",
+  "text": "<page url=\"https://app.notion.com/p/39451ef04f0b81baa1cfe9a6a08c1a1f\">\n<properties>\n{\"요구사항 ID\": \"RTOS-DEVICE-002\", \"요구사항명\": \"QR/바코드 스캔 인식\", \"상세 설명\": \"결제 단계에서 모바일 쿠폰/멤버십 바코드를 스캔해 할인을 적용한다.\", \"우선순위\": \"중\", \"상태\": \"예정\", \"구분\": \"장치\"}\n</properties>\n</page>"
+}

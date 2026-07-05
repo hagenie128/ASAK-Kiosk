@@ -1,0 +1,5 @@
+{
+  "title": "관리자 매출 요약 조회 검증",
+  "url": "https://app.notion.com/p/39251ef04f0b81ef8cf6ce46b4f313bd",
+  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39251ef04f0b81ef8cf6ce46b4f313bd.\n<page url=\"https://app.notion.com/p/39251ef04f0b81ef8cf6ce46b4f313bd\">\n<properties>\n{\"테스트 ID\": \"TC-013\", \"테스트명\": \"관리자 매출 요약 조회 검증\", \"전제조건\": \"주문/결제 데이터 존재\", \"수행 절차\": \"1) 매출 화면 진입 2) 기간 선택 3) 일별 매출 조회\", \"기대 결과\": \"선택 기간의 주문수/매출이 표시됨\", \"비고\": \"SC-016 연결, LMIS-ORDER-005\", \"상태\": \"예정\"}\n</properties>\n</page>"
+}

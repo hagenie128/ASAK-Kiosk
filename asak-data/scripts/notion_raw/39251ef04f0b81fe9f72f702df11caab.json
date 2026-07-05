@@ -1,0 +1,5 @@
+{
+  "title": "관리자 결제수단 설정 검증",
+  "url": "https://app.notion.com/p/39251ef04f0b81fe9f72f702df11caab",
+  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39251ef04f0b81fe9f72f702df11caab.\n<page url=\"https://app.notion.com/p/39251ef04f0b81fe9f72f702df11caab\">\n<properties>\n{\"테스트 ID\": \"TC-012\", \"테스트명\": \"관리자 결제수단 설정 검증\", \"전제조건\": \"관리자 결제수단 설정 화면\", \"수행 절차\": \"1) 결제수단 노출/순서 변경 2) 저장 3) 키오스크 결제 화면 확인\", \"기대 결과\": \"설정 변경이 키오스크 결제수단 목록에 반영\", \"비고\": \"SC-018 연결, LMIS-PAY-001\", \"상태\": \"예정\"}\n</properties>\n</page>"
+}

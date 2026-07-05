@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ASAK 워크로그 캘린더</title>
+  <link rel="stylesheet" href="calendar.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-mark">W</span>
+        <div>
+          <strong>ASAK Worklog</strong>
+          <small>8주 · 4인 팀</small>
+        </div>
+      </div>
+      <div class="sidebar-section">
+        <h3>팀원 색상</h3>
+        <ul class="legend-list" id="legend-list"></ul>
+      </div>
+      <div class="sidebar-foot" id="load-status">데이터 로딩 중…</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <h1>워크로그 캘린더</h1>
+        <div class="month-nav">
+          <button type="button" class="btn" id="btn-prev" aria-label="이전 달">◀</button>
+          <span class="month-label" id="month-label">—</span>
+          <button type="button" class="btn" id="btn-next" aria-label="다음 달">▶</button>
+          <button type="button" class="btn btn-primary" id="btn-today">오늘</button>
+        </div>
+      </header>
+
+      <div class="status-bar" id="status-bar"></div>
+
+      <div class="layout">
+        <section class="panel">
+          <div class="calendar-grid" id="calendar-grid"></div>
+        </section>
+        <section class="panel" id="detail-panel">
+          <p class="placeholder">날짜를 선택하면 daily 워크로그가 표시됩니다.</p>
+        </section>
+      </div>
+    </main>
+  </div>
+  <script src="calendar.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+{
+  "title": "주문 생성",
+  "url": "https://app.notion.com/p/aa551ef04f0b8204a9ef0112c1fef4cc",
+  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/aa551ef04f0b8204a9ef0112c1fef4cc.\n<page url=\"https://app.notion.com/p/aa551ef04f0b8204a9ef0112c1fef4cc\">\n<properties>\n{\"요구사항 ID\": \"DEV-ORDER-001\", \"요구사항명\": \"주문 생성\", \"상세 설명\": \"고객이 선택한 메뉴, 수량, 옵션, 제외 재료, 먹고가기/포장 정보를 주문 데이터로 등록할 수 있어야 한다.\", \"우선순위\": \"상\", \"상태\": \"예정\", \"구분\": \"API\"}\n</properties>\n</page>"
+}

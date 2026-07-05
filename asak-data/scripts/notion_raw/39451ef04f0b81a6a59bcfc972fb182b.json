@@ -1,0 +1,5 @@
+{
+  "title": "메뉴별 추천 드레싱 표시",
+  "url": "https://app.notion.com/p/39451ef04f0b81a6a59bcfc972fb182b",
+  "text": "<page url=\"https://app.notion.com/p/39451ef04f0b81a6a59bcfc972fb182b\">\n<properties>\n{\"요구사항 ID\": \"FWD-MENU-015\", \"요구사항명\": \"메뉴별 추천 드레싱 표시\", \"상세 설명\": \"메뉴 상세/옵션 선택 화면에서 메뉴별로 다른 추천 드레싱을 menu_option.is_recommended 기준으로 표시한다.\", \"우선순위\": \"상\", \"상태\": \"예정\", \"구분\": \"화면\"}\n</properties>\n</page>"
+}

@@ -1,0 +1,5 @@
+{
+  "title": "관리자의 신규 메뉴 등록",
+  "url": "https://app.notion.com/p/39151ef04f0b81758d4cdaca3d3aedfc",
+  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39151ef04f0b81758d4cdaca3d3aedfc.\n<page url=\"https://app.notion.com/p/39151ef04f0b81758d4cdaca3d3aedfc\">\n<properties>\n{\"url\": \"https://app.notion.com/p/39151ef04f0b81758d4cdaca3d3aedfc\", \"시나리오 ID\": \"SC-017\", \"시나리오명\": \"관리자의 신규 메뉴 등록\", \"시작 조건\": \"관리자가 신규 메뉴를 추가하려는 상황\", \"종료 조건\": \"신규 메뉴가 키오스크 메뉴선택 화면에 즉시 노출\", \"기본 흐름\": \"관리자 로그인 → 신규 메뉴 등록(이름/가격/이미지/카테고리) → 옵션그룹 연결 → 저장\", \"예외 흐름\": \"필수값 누락 시 저장 불가 안내\", \"상태\": \"초안\"}\n</properties>\n<content>\n```mermaid\nflowchart TD\n    A[관리자 로그인] --> B[신규 메뉴 등록: 이름/가격/이미지/카테고리]\n    B --> C[옵션그룹 연결]\n    C --> D[저장]\n    D --> E[키오스크 메뉴선택 화면에 즉시 노출]\n```\n</content>\n</page>"
+}

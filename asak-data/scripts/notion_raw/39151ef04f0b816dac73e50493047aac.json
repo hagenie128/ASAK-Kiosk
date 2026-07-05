@@ -1,0 +1,5 @@
+{
+  "title": "일정시간 미입력 시 자동 초기화",
+  "url": "https://app.notion.com/p/39151ef04f0b816dac73e50493047aac",
+  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39151ef04f0b816dac73e50493047aac.\n<page url=\"https://app.notion.com/p/39151ef04f0b816dac73e50493047aac\">\n<properties>\n{\"url\": \"https://app.notion.com/p/39151ef04f0b816dac73e50493047aac\", \"시나리오 ID\": \"SC-012\", \"시나리오명\": \"일정시간 미입력 시 자동 초기화\", \"시작 조건\": \"주문 진행 중 고객이 자리를 비움\", \"종료 조건\": \"초기화면으로 전환되고 다음 고객이 깨끗한 상태로 이용 가능\", \"기본 흐름\": \"고객이 주문 진행 중 자리를 뜨 → 일정시간(예 30초) 동안 입력 없음 → 경고 없이 초기화면으로 자동 복귀 → 장바구니 초기화\", \"예외 흐름\": \"타임아웃 직전 다시 터치하면 타이머 리셋(앞팀 사례 참고)\", \"상태\": \"초안\"}\n</properties>\n<content>\n```mermaid\nflowchart TD\n    A[주문 진행 중 입력 없음] --> B{일정시간 경과?}\n    B -->|예| C[경고 없이 초기화면 자동 복귀]\n    B -->|아니오| D[대기 지속]\n    C --> E[장바구니 초기화]\n```\n</content>\n</page>"
+}

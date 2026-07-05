@@ -1,0 +1,5 @@
+{
+  "title": "판매 항목 품절 상태 변경",
+  "url": "https://app.notion.com/p/39151ef04f0b81809b72c1daaac09498",
+  "text": "<page url=\"https://app.notion.com/p/39151ef04f0b81809b72c1daaac09498\">\n<properties>\n{\"API ID\": \"API-009\", \"API명\": \"판매 항목 품절 상태 변경\", \"Method\": \"PATCH\", \"userDefined:URL\": \"/api/admin/sold-out-items\", \"Request\": \"targetType, targetId, isSoldOut\", \"Response\": \"{\\\"code\\\":\\\"SOLD_OUT_UPDATE_SUCCESS\\\"}\", \"Error\": \"{\\\"code\\\":\\\"SOLD_OUT_TARGET_NOT_FOUND\\\"}\", \"처리 내용\": \"메뉴/재료/옵션 품절 상태 변경\"}\n</properties>\n</page>"
+}

@@ -1,0 +1,5 @@
+{
+  "title": "핵심 API 응답속도 검증",
+  "url": "https://app.notion.com/p/39251ef04f0b81cfa42be317f935c85b",
+  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39251ef04f0b81cfa42be317f935c85b.\n<page url=\"https://app.notion.com/p/39251ef04f0b81cfa42be317f935c85b\">\n<properties>\n{\"url\": \"https://app.notion.com/p/39251ef04f0b81cfa42be317f935c85b\", \"시나리오 ID\": \"SC-023\", \"시나리오명\": \"핵심 API 응답속도 검증\", \"시작 조건\": \"개발 완료 후 부하테스트 진행 시점\", \"종료 조건\": \"각 API가 명시된 목표 응답시간 내에 응답함\", \"기본 흐름\": \"메뉴목록/옵션조회/결제 각 API 호출 → 목표 응답시간(2초/1초/3초) 내 응답 확인\", \"예외 흐름\": \"목표시간 초과 시 병목 구간(DB 인덱스, 쿼리문) 점검\", \"상태\": \"초안\"}\n</properties>\n<content>\n```mermaid\nflowchart TD\n    A[개발 완료 후 부하테스트] --> B[메뉴목록 API 호출 - 목표 2초]\n    B --> C[옵션조회 API 호출 - 목표 1초]\n    C --> D[결제 API 호출 - 목표 3초]\n    D --> E{목표시간 내 응답?}\n    E -->|아니오| F[병목 구간 점검]\n```\n</content>\n</page>"
+}

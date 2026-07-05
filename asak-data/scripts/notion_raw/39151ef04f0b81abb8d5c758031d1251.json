@@ -1,0 +1,5 @@
+{
+  "title": "결제 성공 흐름(수단 노출 포함)",
+  "url": "https://app.notion.com/p/39151ef04f0b81abb8d5c758031d1251",
+  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39151ef04f0b81abb8d5c758031d1251.\n<page url=\"https://app.notion.com/p/39151ef04f0b81abb8d5c758031d1251\">\n<properties>\n{\"url\": \"https://app.notion.com/p/39151ef04f0b81abb8d5c758031d1251\", \"시나리오 ID\": \"SC-004\", \"시나리오명\": \"결제 성공 흐름(수단 노출 포함)\", \"시작 조건\": \"장바구니에 1개 이상 메뉴가 담겨있음\", \"종료 조건\": \"결제 승인 완료 및 주문번호 표시\", \"기본 흐름\": \"장바구니에서 결제하기 → CARD 가상 결제수단 노출 → 결제 진행 → 승인 → 주문번호 생성\", \"예외 흐름\": \"없음(정상 흐름)\", \"상태\": \"초안\"}\n</properties>\n<content>\n```mermaid\nflowchart TD\n    A[장바구니 확인] --> B[결제하기 버튼]\n    B --> C[CARD 가상 결제수단 확인 화면]\n    C --> D[결제 진행]\n    D --> E{결제 승인?}\n    E -->|성공| F[주문번호 생성]\n    F --> G[결제완료 화면 표시]\n```\n</content>\n</page>"
+}

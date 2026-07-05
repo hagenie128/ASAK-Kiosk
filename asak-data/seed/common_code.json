@@ -1,0 +1,258 @@
+[
+  {
+    "id": 11,
+    "code_group_id": 1,
+    "code": "RECEIVED",
+    "name": "접수",
+    "sort_order": 1,
+    "is_active": true
+  },
+  {
+    "id": 12,
+    "code_group_id": 1,
+    "code": "PREPARING",
+    "name": "준비중",
+    "sort_order": 2,
+    "is_active": true
+  },
+  {
+    "id": 13,
+    "code_group_id": 1,
+    "code": "COMPLETED",
+    "name": "완료",
+    "sort_order": 3,
+    "is_active": true
+  },
+  {
+    "id": 14,
+    "code_group_id": 2,
+    "code": "READY",
+    "name": "결제 대기",
+    "sort_order": 4,
+    "is_active": true
+  },
+  {
+    "id": 15,
+    "code_group_id": 2,
+    "code": "APPROVED",
+    "name": "결제 승인",
+    "sort_order": 5,
+    "is_active": true
+  },
+  {
+    "id": 16,
+    "code_group_id": 2,
+    "code": "FAILED",
+    "name": "결제 실패",
+    "sort_order": 6,
+    "is_active": true
+  },
+  {
+    "id": 17,
+    "code_group_id": 3,
+    "code": "EAT_IN",
+    "name": "먹고가기",
+    "sort_order": 7,
+    "is_active": true
+  },
+  {
+    "id": 18,
+    "code_group_id": 3,
+    "code": "TAKE_OUT",
+    "name": "포장",
+    "sort_order": 8,
+    "is_active": true
+  },
+  {
+    "id": 19,
+    "code_group_id": 4,
+    "code": "CARD",
+    "name": "카드",
+    "sort_order": 9,
+    "is_active": true
+  },
+  {
+    "id": 20,
+    "code_group_id": 5,
+    "code": "TOPPING",
+    "name": "토핑 추가",
+    "sort_order": 10,
+    "is_active": true
+  },
+  {
+    "id": 21,
+    "code_group_id": 5,
+    "code": "DRESSING",
+    "name": "드레싱 선택",
+    "sort_order": 11,
+    "is_active": true
+  },
+  {
+    "id": 22,
+    "code_group_id": 5,
+    "code": "BASE",
+    "name": "베이스 선택/추가",
+    "sort_order": 12,
+    "is_active": true
+  },
+  {
+    "id": 23,
+    "code_group_id": 5,
+    "code": "SET_SIDE",
+    "name": "세트 사이드 선택",
+    "sort_order": 13,
+    "is_active": true
+  },
+  {
+    "id": 24,
+    "code_group_id": 5,
+    "code": "SET_DRINK",
+    "name": "세트 음료 선택",
+    "sort_order": 14,
+    "is_active": true
+  },
+  {
+    "id": 25,
+    "code_group_id": 5,
+    "code": "REQUEST",
+    "name": "빼기/요청사항",
+    "sort_order": 15,
+    "is_active": true
+  },
+  {
+    "id": 26,
+    "code_group_id": 6,
+    "code": "VEGGIE",
+    "name": "채소",
+    "sort_order": 16,
+    "is_active": true
+  },
+  {
+    "id": 27,
+    "code_group_id": 6,
+    "code": "PROTEIN",
+    "name": "단백질",
+    "sort_order": 17,
+    "is_active": true
+  },
+  {
+    "id": 28,
+    "code_group_id": 6,
+    "code": "DRESSING",
+    "name": "드레싱",
+    "sort_order": 18,
+    "is_active": true
+  },
+  {
+    "id": 29,
+    "code_group_id": 6,
+    "code": "BASE",
+    "name": "베이스",
+    "sort_order": 19,
+    "is_active": true
+  },
+  {
+    "id": 30,
+    "code_group_id": 6,
+    "code": "SIDE",
+    "name": "사이드",
+    "sort_order": 20,
+    "is_active": true
+  },
+  {
+    "id": 31,
+    "code_group_id": 6,
+    "code": "BEVERAGE",
+    "name": "음료",
+    "sort_order": 21,
+    "is_active": true
+  },
+  {
+    "id": 32,
+    "code_group_id": 7,
+    "code": "CORE",
+    "name": "핵심 재료",
+    "sort_order": 22,
+    "is_active": true
+  },
+  {
+    "id": 33,
+    "code_group_id": 7,
+    "code": "BASE",
+    "name": "베이스 재료",
+    "sort_order": 23,
+    "is_active": true
+  },
+  {
+    "id": 34,
+    "code_group_id": 7,
+    "code": "DEFAULT",
+    "name": "일반 기본 재료",
+    "sort_order": 24,
+    "is_active": true
+  },
+  {
+    "id": 35,
+    "code_group_id": 8,
+    "code": "G",
+    "name": "g",
+    "sort_order": 25,
+    "is_active": true
+  },
+  {
+    "id": 36,
+    "code_group_id": 8,
+    "code": "ML",
+    "name": "ml",
+    "sort_order": 26,
+    "is_active": true
+  },
+  {
+    "id": 37,
+    "code_group_id": 8,
+    "code": "EA",
+    "name": "개",
+    "sort_order": 27,
+    "is_active": true
+  },
+  {
+    "id": 38,
+    "code_group_id": 9,
+    "code": "BEST",
+    "name": "베스트",
+    "sort_order": 28,
+    "is_active": true
+  },
+  {
+    "id": 39,
+    "code_group_id": 9,
+    "code": "NEW",
+    "name": "신규",
+    "sort_order": 29,
+    "is_active": true
+  },
+  {
+    "id": 40,
+    "code_group_id": 9,
+    "code": "LOW_SUGAR",
+    "name": "저당",
+    "sort_order": 30,
+    "is_active": true
+  },
+  {
+    "id": 41,
+    "code_group_id": 10,
+    "code": "SALADY_REFERENCE",
+    "name": "샐러디 참고 데이터",
+    "sort_order": 31,
+    "is_active": true
+  },
+  {
+    "id": 42,
+    "code_group_id": 10,
+    "code": "ASAK_CURATED",
+    "name": "ASAK 큐레이션",
+    "sort_order": 32,
+    "is_active": true
+  }
+]

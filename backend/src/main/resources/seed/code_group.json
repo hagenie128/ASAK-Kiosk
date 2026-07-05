@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "group_code": "ORDER_STATUS",
+    "name": "주문 상태"
+  },
+  {
+    "id": 2,
+    "group_code": "PAYMENT_STATUS",
+    "name": "결제 상태"
+  },
+  {
+    "id": 3,
+    "group_code": "ORDER_TYPE",
+    "name": "주문 유형"
+  },
+  {
+    "id": 4,
+    "group_code": "PAYMENT_METHOD",
+    "name": "결제 수단"
+  },
+  {
+    "id": 5,
+    "group_code": "OPTION_GROUP_TYPE",
+    "name": "옵션 그룹 유형"
+  },
+  {
+    "id": 6,
+    "group_code": "INGREDIENT_TYPE",
+    "name": "재료 유형"
+  },
+  {
+    "id": 7,
+    "group_code": "MENU_INGREDIENT_ROLE",
+    "name": "메뉴 재료 역할"
+  },
+  {
+    "id": 8,
+    "group_code": "UNIT_TYPE",
+    "name": "단위"
+  },
+  {
+    "id": 9,
+    "group_code": "TAG_TYPE",
+    "name": "태그 유형"
+  },
+  {
+    "id": 10,
+    "group_code": "DATA_SOURCE",
+    "name": "데이터 출처"
+  }
+]

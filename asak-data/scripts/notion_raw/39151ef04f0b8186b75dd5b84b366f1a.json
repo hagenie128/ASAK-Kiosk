@@ -1,0 +1,5 @@
+{
+  "title": "결제 실패 시 원인 안내 및 장바구니 유지 확인",
+  "url": "https://app.notion.com/p/39151ef04f0b8186b75dd5b84b366f1a",
+  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39151ef04f0b8186b75dd5b84b366f1a.\n<page url=\"https://app.notion.com/p/39151ef04f0b8186b75dd5b84b366f1a\">\n<properties>\n{\"테스트 ID\": \"TC-004\", \"테스트명\": \"결제 실패 시 원인 안내 및 장바구니 유지 확인\", \"전제조건\": \"결제 실패를 의도적으로 유발할 수 있는 테스트 모드 필요\", \"수행 절차\": \"1) 장바구니에 메뉴 담기 2) 결제 진행 3) 결제 실패 응답 강제 발생 4) 화면 안내 문구 확인 5) 장바구니 유지 여부 확인\", \"기대 결과\": \"실패 원인이 화면에 명확히 표시되고 장바구니 내용은 유지됨\", \"비고\": \"SC-003 연결, FWD-PAY-002, KSD-PAY-001\", \"상태\": \"예정\"}\n</properties>\n</page>"
+}

@@ -1,0 +1,5 @@
+{
+  "title": "관리자 결제수단 설정 변경",
+  "url": "https://app.notion.com/p/39251ef04f0b8159a4c3dedb4949e4e4",
+  "text": "<page url=\"https://app.notion.com/p/39251ef04f0b8159a4c3dedb4949e4e4\">\n<properties>\n{\"API ID\": \"API-014\", \"API명\": \"관리자 결제수단 설정 변경\", \"Method\": \"PATCH\", \"userDefined:URL\": \"/api/admin/payment-methods/{methodId}\", \"Request\": \"isActive, sortOrder\", \"Response\": \"{\\\"code\\\":\\\"PAYMENT_METHOD_UPDATE_SUCCESS\\\"}\", \"Error\": \"{\\\"code\\\":\\\"PAYMENT_METHOD_UPDATE_FAILED\\\"}\", \"처리 내용\": \"결제수단 노출/정렬 변경\"}\n</properties>\n</page>"
+}

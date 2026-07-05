@@ -1,0 +1,71 @@
+name: 버그
+description: 재현 가능한 버그 리포트
+title: "[bug] "
+labels:
+  - bug
+body:
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 재현 방법
+      description: 단계별로 적어주세요
+      placeholder: |
+        1. 키오스크 홈에서 메뉴 선택
+        2. 옵션 2개 선택 후 장바구니 추가
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 기대 동작
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: 실제 동작
+    validations:
+      required: true
+
+  - type: dropdown
+    id: repo
+    attributes:
+      label: 저장소
+      options:
+        - ASAK-front
+        - ASAK-back
+        - ASAK(통합)
+    validations:
+      required: true
+
+  - type: input
+    id: wbs_id
+    attributes:
+      label: 관련 WBS ID
+      description: "선택. 예: WBS-010"
+      placeholder: WBS-010
+    validations:
+      required: false
+
+  - type: input
+    id: related_issue
+    attributes:
+      label: 관련 Issue 번호
+      description: "선택. 예: #42"
+      placeholder: "#42"
+    validations:
+      required: false
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: 환경
+      description: 브라우저, OS, 브랜치, 실행 명령 등
+      placeholder: |
+        - 브랜치: feature/menu-option
+        - Chrome 125 / Windows 11
+    validations:
+      required: false

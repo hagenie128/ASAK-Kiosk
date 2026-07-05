@@ -1,0 +1,5 @@
+{
+  "title": "관리자 주문 상세 조회",
+  "url": "https://app.notion.com/p/7da51ef04f0b82e6ba58013ea6a75043",
+  "text": "<page url=\"https://app.notion.com/p/7da51ef04f0b82e6ba58013ea6a75043\">\n<properties>\n{\"요구사항 ID\": \"LMIS-ORDER-002\", \"요구사항명\": \"관리자 주문 상세 조회\", \"상세 설명\": \"관리자는 특정 주문의 메뉴, 수량, 선택 옵션, 제외 재료, 결제 상태, 주문 상태를 상세 확인할 수 있어야 한다.\", \"우선순위\": \"상\", \"상태\": \"예정\", \"구분\": \"관리자\"}\n</properties>\n</page>"
+}

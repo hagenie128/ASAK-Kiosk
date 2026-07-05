@@ -1,0 +1,64 @@
+name: 작업 / 기능
+description: WBS 연동 기능·작업 티켓
+title: "[WBS-XXX] "
+labels:
+  - wbs
+  - feature
+body:
+  - type: input
+    id: wbs_id
+    attributes:
+      label: WBS ID
+      description: "예: WBS-010"
+      placeholder: WBS-010
+    validations:
+      required: true
+
+  - type: input
+    id: req_id
+    attributes:
+      label: 요구사항 ID
+      description: "선택. 예: FWD-MENU-001"
+      placeholder: FWD-MENU-001
+    validations:
+      required: false
+
+  - type: dropdown
+    id: repo
+    attributes:
+      label: 저장소
+      description: 작업 대상 Git 저장소
+      options:
+        - ASAK-front
+        - ASAK-back
+        - ASAK(통합)
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 완료 조건
+      description: 이 이슈가 완료되었다고 볼 수 있는 기준
+      placeholder: |
+        - [ ] API 응답 200 확인
+        - [ ] 옵션 선택 UI 동작
+    validations:
+      required: true
+
+  - type: input
+    id: worklog_link
+    attributes:
+      label: 상세 워크로그 링크
+      description: "선택. 예: worklog/entries/2026-07-05-menu-option.md"
+      placeholder: worklog/entries/...
+    validations:
+      required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 작업 내용
+      description: 구현 범위, 참고 링크, 블로커 등
+    validations:
+      required: false

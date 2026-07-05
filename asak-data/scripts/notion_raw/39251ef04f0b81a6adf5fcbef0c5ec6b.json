@@ -1,0 +1,5 @@
+{
+  "title": "관리자 메뉴 등록/수정 검증",
+  "url": "https://app.notion.com/p/39251ef04f0b81a6adf5fcbef0c5ec6b",
+  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39251ef04f0b81a6adf5fcbef0c5ec6b.\n<page url=\"https://app.notion.com/p/39251ef04f0b81a6adf5fcbef0c5ec6b\">\n<properties>\n{\"테스트 ID\": \"TC-011\", \"테스트명\": \"관리자 메뉴 등록/수정 검증\", \"전제조건\": \"관리자 메뉴 관리 화면\", \"수행 절차\": \"1) 신규 메뉴 등록 2) 저장 3) 수정 후 재조회\", \"기대 결과\": \"등록/수정 내용이 목록에 반영\", \"비고\": \"SC-006 연결, LMIS-MENU-004\", \"상태\": \"예정\"}\n</properties>\n</page>"
+}

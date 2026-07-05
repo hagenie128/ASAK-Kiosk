@@ -1,0 +1,5 @@
+{
+  "title": "결제 성공/실패 처리",
+  "url": "https://app.notion.com/p/39151ef04f0b818dbe40fc1496384d37",
+  "text": "<page url=\"https://app.notion.com/p/39151ef04f0b818dbe40fc1496384d37\">\n<properties>\n{\"요구사항 ID\": \"FWD-PAY-002\", \"요구사항명\": \"결제 성공/실패 처리\", \"상세 설명\": \"결제 성공 시 주문 완료 화면으로 이동하고, 결제 실패 시 실패 원인을 안내한다.\", \"우선순위\": \"상\", \"상태\": \"예정\", \"구분\": \"기능\"}\n</properties>\n</page>"
+}

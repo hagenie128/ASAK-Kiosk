@@ -1,0 +1,5 @@
+{
+  "title": "영수증 출력 여부 선택",
+  "url": "https://app.notion.com/p/39151ef04f0b81b3a1aaee4aff0e2951",
+  "text": "<page url=\"https://app.notion.com/p/39151ef04f0b81b3a1aaee4aff0e2951\">\n<properties>\n{\"요구사항 ID\": \"RTOS-DEVICE-001\", \"요구사항명\": \"영수증 출력 여부 선택\", \"상세 설명\": \"결제 완료 후 사용자가 영수증 출력 여부를 선택할 수 있어야 한다.\", \"우선순위\": \"중\", \"상태\": \"예정\", \"구분\": \"장치\"}\n</properties>\n</page>"
+}
