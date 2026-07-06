@@ -1,6 +1,6 @@
 @echo off
 echo Copy phase1 JSON files into frontend\data
-set SRC=c:\greens\data-pipeline\phase1\output
+set SRC=%~dp0..\data-pipeline\phase1\output
 set DST=%~dp0data
 
 if not exist "%DST%" mkdir "%DST%"
