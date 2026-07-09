@@ -11,8 +11,8 @@ export default function App() {
         <p className="eyebrow">ASAK Frontend</p>
         <h1>Kiosk UI workspace</h1>
         <p className="summary">
-          Clean frontend setup for the ASAK kiosk. Data pipeline assets stay in
-          the root data folders.
+          Clean frontend setup for the ASAK kiosk. Data pipeline assets stay in the root data
+          folders.
         </p>
       </section>
 
