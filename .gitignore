@@ -6,6 +6,9 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
+*.db
+*.sqlite
+*.sqlite3
 data-pipeline/phase1/output/
 frontend/docs/
 frontend/data/
