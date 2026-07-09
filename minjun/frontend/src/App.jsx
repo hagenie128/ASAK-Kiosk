@@ -1,7 +1,7 @@
 const setupItems = [
-  "React + Vite workspace is ready.",
-  "No pipeline output is stored in frontend.",
-  "Connect API calls through backend endpoints as features are added.",
+  'React + Vite workspace is ready.',
+  'No pipeline output is stored in frontend.',
+  'Connect API calls through backend endpoints as features are added.',
 ];
 
 export default function App() {
