@@ -730,9 +730,169 @@
       }
     ]
   },
+  "salesAnalytics": {
+    "salesDaily": [
+      {
+        "salesDate": "2026-07-08",
+        "orderCount": 28,
+        "customerCount": 28,
+        "canceledOrderCount": 1,
+        "grossSalesAmount": 312800,
+        "canceledAmount": 8900,
+        "netSalesAmount": 303900
+      },
+      {
+        "salesDate": "2026-07-09",
+        "orderCount": 42,
+        "customerCount": 42,
+        "canceledOrderCount": 2,
+        "grossSalesAmount": 481600,
+        "canceledAmount": 21300,
+        "netSalesAmount": 460300
+      },
+      {
+        "salesDate": "2026-07-10",
+        "orderCount": 36,
+        "customerCount": 36,
+        "canceledOrderCount": 1,
+        "grossSalesAmount": 392500,
+        "canceledAmount": 10400,
+        "netSalesAmount": 382100
+      }
+    ],
+    "salesHourly": [
+      {
+        "salesDate": "2026-07-10",
+        "salesHour": 10,
+        "orderCount": 4,
+        "customerCount": 4,
+        "canceledOrderCount": 0,
+        "grossSalesAmount": 42100,
+        "canceledAmount": 0,
+        "netSalesAmount": 42100
+      },
+      {
+        "salesDate": "2026-07-10",
+        "salesHour": 11,
+        "orderCount": 7,
+        "customerCount": 7,
+        "canceledOrderCount": 0,
+        "grossSalesAmount": 76800,
+        "canceledAmount": 0,
+        "netSalesAmount": 76800
+      },
+      {
+        "salesDate": "2026-07-10",
+        "salesHour": 12,
+        "orderCount": 12,
+        "customerCount": 12,
+        "canceledOrderCount": 1,
+        "grossSalesAmount": 138400,
+        "canceledAmount": 10400,
+        "netSalesAmount": 128000
+      },
+      {
+        "salesDate": "2026-07-10",
+        "salesHour": 13,
+        "orderCount": 8,
+        "customerCount": 8,
+        "canceledOrderCount": 0,
+        "grossSalesAmount": 89600,
+        "canceledAmount": 0,
+        "netSalesAmount": 89600
+      },
+      {
+        "salesDate": "2026-07-10",
+        "salesHour": 14,
+        "orderCount": 5,
+        "customerCount": 5,
+        "canceledOrderCount": 0,
+        "grossSalesAmount": 45600,
+        "canceledAmount": 0,
+        "netSalesAmount": 45600
+      }
+    ],
+    "topMenusDaily": [
+      {
+        "salesDate": "2026-07-10",
+        "menuId": 101,
+        "menuName": "탄단지 샐러디",
+        "quantity": 11,
+        "orderCount": 10,
+        "salesAmount": 97900
+      },
+      {
+        "salesDate": "2026-07-10",
+        "menuId": 103,
+        "menuName": "우삼겹 포케볼",
+        "quantity": 8,
+        "orderCount": 8,
+        "salesAmount": 87200
+      },
+      {
+        "salesDate": "2026-07-10",
+        "menuId": 105,
+        "menuName": "시저치킨 랩",
+        "quantity": 7,
+        "orderCount": 7,
+        "salesAmount": 53200
+      },
+      {
+        "salesDate": "2026-07-10",
+        "menuId": 108,
+        "menuName": "우삼겹 메밀면 누들볼",
+        "quantity": 5,
+        "orderCount": 5,
+        "salesAmount": 49500
+      }
+    ],
+    "topMenusHourly": [
+      {
+        "salesDate": "2026-07-10",
+        "salesHour": 12,
+        "menuId": 101,
+        "menuName": "탄단지 샐러디",
+        "quantity": 5,
+        "orderCount": 5,
+        "salesAmount": 44500
+      },
+      {
+        "salesDate": "2026-07-10",
+        "salesHour": 12,
+        "menuId": 103,
+        "menuName": "우삼겹 포케볼",
+        "quantity": 4,
+        "orderCount": 4,
+        "salesAmount": 43600
+      },
+      {
+        "salesDate": "2026-07-10",
+        "salesHour": 13,
+        "menuId": 105,
+        "menuName": "시저치킨 랩",
+        "quantity": 3,
+        "orderCount": 3,
+        "salesAmount": 22800
+      },
+      {
+        "salesDate": "2026-07-10",
+        "salesHour": 13,
+        "menuId": 108,
+        "menuName": "우삼겹 메밀면 누들볼",
+        "quantity": 2,
+        "orderCount": 2,
+        "salesAmount": 19800
+      }
+    ]
+  },
   "adminSummary": {
     "todayOrderCount": 36,
     "todaySalesAmount": 392500,
+    "todayNetSalesAmount": 382100,
+    "todayCanceledAmount": 10400,
+    "todayCanceledOrderCount": 1,
+    "todayCustomerCount": 36,
+    "todayTopMenuName": "탄단지 샐러디",
     "activeMenuCount": 7,
     "soldOutCount": 2,
     "pendingOrderCount": 1
