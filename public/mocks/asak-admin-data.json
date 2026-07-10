@@ -1,0 +1,740 @@
+{
+  "meta": {
+    "version": "2026-07-10.frontend-mock.1",
+    "description": "ASAK frontend mock data for menu, option policy, order, payment, and admin data management before backend implementation.",
+    "currency": "KRW",
+    "generatedAt": "2026-07-10T00:00:00+09:00"
+  },
+  "categories": [
+    {
+      "id": 1,
+      "name": "샐러디",
+      "sortOrder": 1,
+      "isActive": true
+    },
+    {
+      "id": 2,
+      "name": "포케볼",
+      "sortOrder": 2,
+      "isActive": true
+    },
+    {
+      "id": 3,
+      "name": "랩",
+      "sortOrder": 3,
+      "isActive": true
+    },
+    {
+      "id": 4,
+      "name": "샌드위치",
+      "sortOrder": 4,
+      "isActive": true
+    },
+    {
+      "id": 5,
+      "name": "누들볼",
+      "sortOrder": 5,
+      "isActive": true
+    },
+    {
+      "id": 6,
+      "name": "음료",
+      "sortOrder": 6,
+      "isActive": true
+    }
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "name": "BEST",
+      "color": "#E64545"
+    },
+    {
+      "id": 2,
+      "name": "NEW",
+      "color": "#2B7DE9"
+    },
+    {
+      "id": 3,
+      "name": "PROTEIN",
+      "color": "#0F8A5F"
+    },
+    {
+      "id": 4,
+      "name": "SPICY",
+      "color": "#D94A1E"
+    },
+    {
+      "id": 5,
+      "name": "LIGHT",
+      "color": "#4B9E43"
+    }
+  ],
+  "allergens": [
+    {
+      "id": 1,
+      "name": "난류"
+    },
+    {
+      "id": 2,
+      "name": "우유"
+    },
+    {
+      "id": 3,
+      "name": "대두"
+    },
+    {
+      "id": 4,
+      "name": "밀"
+    },
+    {
+      "id": 5,
+      "name": "닭고기"
+    },
+    {
+      "id": 6,
+      "name": "쇠고기"
+    },
+    {
+      "id": 7,
+      "name": "새우"
+    },
+    {
+      "id": 8,
+      "name": "토마토"
+    }
+  ],
+  "ingredients": [
+    {
+      "id": 1,
+      "name": "로메인",
+      "allergenIds": []
+    },
+    {
+      "id": 2,
+      "name": "닭다리살",
+      "allergenIds": [5]
+    },
+    {
+      "id": 3,
+      "name": "우삼겹",
+      "allergenIds": [3, 6]
+    },
+    {
+      "id": 4,
+      "name": "연어",
+      "allergenIds": []
+    },
+    {
+      "id": 5,
+      "name": "쉬림프",
+      "allergenIds": [7]
+    },
+    {
+      "id": 6,
+      "name": "에그마요",
+      "allergenIds": [1, 2]
+    },
+    {
+      "id": 7,
+      "name": "또띠아",
+      "allergenIds": [4]
+    },
+    {
+      "id": 8,
+      "name": "그레인",
+      "allergenIds": [3]
+    }
+  ],
+  "optionGroups": [
+    {
+      "id": 1,
+      "name": "드레싱 선택",
+      "sortOrder": 1
+    },
+    {
+      "id": 2,
+      "name": "토핑 추가",
+      "sortOrder": 2
+    },
+    {
+      "id": 3,
+      "name": "베이스 선택",
+      "sortOrder": 3
+    },
+    {
+      "id": 4,
+      "name": "세트 선택",
+      "sortOrder": 4
+    },
+    {
+      "id": 5,
+      "name": "음료 선택",
+      "sortOrder": 5
+    }
+  ],
+  "optionItems": [
+    {
+      "id": 1,
+      "optionGroupId": 1,
+      "name": "시저 드레싱",
+      "priceDelta": 0,
+      "isActive": true
+    },
+    {
+      "id": 2,
+      "optionGroupId": 1,
+      "name": "오리엔탈 드레싱",
+      "priceDelta": 0,
+      "isActive": true
+    },
+    {
+      "id": 3,
+      "optionGroupId": 1,
+      "name": "스위트 칠리 드레싱",
+      "priceDelta": 0,
+      "isActive": true
+    },
+    {
+      "id": 4,
+      "optionGroupId": 2,
+      "name": "닭다리살 추가",
+      "priceDelta": 2500,
+      "isActive": true
+    },
+    {
+      "id": 5,
+      "optionGroupId": 2,
+      "name": "에그마요 추가",
+      "priceDelta": 1800,
+      "isActive": true
+    },
+    {
+      "id": 6,
+      "optionGroupId": 2,
+      "name": "아보카도 추가",
+      "priceDelta": 2000,
+      "isActive": true
+    },
+    {
+      "id": 7,
+      "optionGroupId": 3,
+      "name": "채소 베이스",
+      "priceDelta": 0,
+      "isActive": true
+    },
+    {
+      "id": 8,
+      "optionGroupId": 3,
+      "name": "그레인 베이스",
+      "priceDelta": 900,
+      "isActive": true
+    },
+    {
+      "id": 9,
+      "optionGroupId": 4,
+      "name": "단품",
+      "priceDelta": 0,
+      "isActive": true
+    },
+    {
+      "id": 10,
+      "optionGroupId": 4,
+      "name": "음료 세트",
+      "priceDelta": 2500,
+      "isActive": true
+    },
+    {
+      "id": 11,
+      "optionGroupId": 5,
+      "name": "제로 콜라",
+      "priceDelta": 0,
+      "isActive": true
+    },
+    {
+      "id": 12,
+      "optionGroupId": 5,
+      "name": "아이스 아메리카노",
+      "priceDelta": 500,
+      "isActive": true
+    }
+  ],
+  "optionPolicies": [
+    {
+      "id": 1,
+      "policyKey": "dressing-single",
+      "name": "드레싱 1개 선택",
+      "optionGroupId": 1,
+      "isRequired": true,
+      "minSelect": 1,
+      "maxSelect": 1,
+      "sortOrder": 1,
+      "itemIds": [1, 2, 3],
+      "defaultItemIds": [2],
+      "recommendedItemIds": [1]
+    },
+    {
+      "id": 2,
+      "policyKey": "topping-multiple",
+      "name": "토핑 추가 선택",
+      "optionGroupId": 2,
+      "isRequired": false,
+      "minSelect": 0,
+      "maxSelect": 3,
+      "sortOrder": 2,
+      "itemIds": [4, 5, 6],
+      "defaultItemIds": [],
+      "recommendedItemIds": [4]
+    },
+    {
+      "id": 3,
+      "policyKey": "base-single",
+      "name": "베이스 1개 선택",
+      "optionGroupId": 3,
+      "isRequired": true,
+      "minSelect": 1,
+      "maxSelect": 1,
+      "sortOrder": 3,
+      "itemIds": [7, 8],
+      "defaultItemIds": [7],
+      "recommendedItemIds": [8]
+    },
+    {
+      "id": 4,
+      "policyKey": "set-single",
+      "name": "세트 여부 선택",
+      "optionGroupId": 4,
+      "isRequired": true,
+      "minSelect": 1,
+      "maxSelect": 1,
+      "sortOrder": 4,
+      "itemIds": [9, 10],
+      "defaultItemIds": [9],
+      "recommendedItemIds": [10]
+    },
+    {
+      "id": 5,
+      "policyKey": "set-drink-single",
+      "name": "세트 음료 선택",
+      "optionGroupId": 5,
+      "isRequired": false,
+      "minSelect": 0,
+      "maxSelect": 1,
+      "sortOrder": 5,
+      "itemIds": [11, 12],
+      "defaultItemIds": [11],
+      "recommendedItemIds": [12]
+    }
+  ],
+  "menus": [
+    {
+      "id": 101,
+      "categoryId": 1,
+      "name": "탄단지 샐러디",
+      "price": 8900,
+      "imageUrl": "/assets/menu/1978.png",
+      "description": "단백질과 채소를 균형 있게 담은 대표 샐러디 메뉴",
+      "isSoldOut": false,
+      "isActive": true,
+      "sortOrder": 1,
+      "tagIds": [1, 3],
+      "ingredientIds": [1, 2, 6],
+      "nutrition": {
+        "kcal": 412,
+        "proteinG": 29,
+        "carbG": 36,
+        "fatG": 17,
+        "sodiumMg": 720
+      },
+      "optionPolicyIds": [1, 2, 3, 4, 5]
+    },
+    {
+      "id": 102,
+      "categoryId": 1,
+      "name": "랜치 콥 샐러디",
+      "price": 9400,
+      "imageUrl": "/assets/menu/2114.png",
+      "description": "에그마요와 닭다리살을 곁들인 든든한 샐러드",
+      "isSoldOut": false,
+      "isActive": true,
+      "sortOrder": 2,
+      "tagIds": [1],
+      "ingredientIds": [1, 2, 6],
+      "nutrition": {
+        "kcal": 486,
+        "proteinG": 31,
+        "carbG": 30,
+        "fatG": 25,
+        "sodiumMg": 810
+      },
+      "optionPolicyIds": [1, 2, 3, 4, 5]
+    },
+    {
+      "id": 103,
+      "categoryId": 2,
+      "name": "우삼겹 포케볼",
+      "price": 10900,
+      "imageUrl": "/assets/menu/2678.png",
+      "description": "고소한 우삼겹과 그레인을 담은 포케볼",
+      "isSoldOut": false,
+      "isActive": true,
+      "sortOrder": 1,
+      "tagIds": [1],
+      "ingredientIds": [1, 3, 8],
+      "nutrition": {
+        "kcal": 638,
+        "proteinG": 27,
+        "carbG": 71,
+        "fatG": 28,
+        "sodiumMg": 1020
+      },
+      "optionPolicyIds": [1, 2, 3, 4, 5]
+    },
+    {
+      "id": 104,
+      "categoryId": 2,
+      "name": "타코 쉬림프 포케볼",
+      "price": 10400,
+      "imageUrl": "/assets/menu/2393.png",
+      "description": "매콤한 쉬림프와 타코 스타일 소스를 더한 포케볼",
+      "isSoldOut": true,
+      "isActive": true,
+      "sortOrder": 2,
+      "tagIds": [4],
+      "ingredientIds": [1, 5, 8],
+      "nutrition": {
+        "kcal": 552,
+        "proteinG": 24,
+        "carbG": 68,
+        "fatG": 20,
+        "sodiumMg": 1180
+      },
+      "optionPolicyIds": [1, 2, 3, 4, 5]
+    },
+    {
+      "id": 105,
+      "categoryId": 3,
+      "name": "시저치킨 랩",
+      "price": 7600,
+      "imageUrl": "/assets/menu/10069.png",
+      "description": "닭다리살과 시저 드레싱을 또띠아에 감싼 랩",
+      "isSoldOut": false,
+      "isActive": true,
+      "sortOrder": 1,
+      "tagIds": [3],
+      "ingredientIds": [2, 7],
+      "nutrition": {
+        "kcal": 498,
+        "proteinG": 30,
+        "carbG": 48,
+        "fatG": 19,
+        "sodiumMg": 920
+      },
+      "optionPolicyIds": [2, 4, 5]
+    },
+    {
+      "id": 106,
+      "categoryId": 3,
+      "name": "멕시칸 랩",
+      "price": 7900,
+      "imageUrl": "/assets/menu/1036.png",
+      "description": "매콤한 소스와 채소를 넣은 멕시칸 스타일 랩",
+      "isSoldOut": false,
+      "isActive": true,
+      "sortOrder": 2,
+      "tagIds": [4],
+      "ingredientIds": [1, 7],
+      "nutrition": {
+        "kcal": 514,
+        "proteinG": 21,
+        "carbG": 55,
+        "fatG": 22,
+        "sodiumMg": 990
+      },
+      "optionPolicyIds": [2, 4, 5]
+    },
+    {
+      "id": 107,
+      "categoryId": 4,
+      "name": "클래식 치킨 샌드위치",
+      "price": 6900,
+      "imageUrl": "/assets/menu/638.png",
+      "description": "담백한 치킨과 채소를 넣은 기본 샌드위치",
+      "isSoldOut": false,
+      "isActive": true,
+      "sortOrder": 1,
+      "tagIds": [5],
+      "ingredientIds": [1, 2],
+      "nutrition": {
+        "kcal": 421,
+        "proteinG": 25,
+        "carbG": 45,
+        "fatG": 15,
+        "sodiumMg": 760
+      },
+      "optionPolicyIds": [2, 4, 5]
+    },
+    {
+      "id": 108,
+      "categoryId": 5,
+      "name": "우삼겹 메밀면 누들볼",
+      "price": 9900,
+      "imageUrl": "/assets/menu/1568.png",
+      "description": "우삼겹과 메밀면을 함께 담은 누들볼",
+      "isSoldOut": false,
+      "isActive": true,
+      "sortOrder": 1,
+      "tagIds": [1],
+      "ingredientIds": [3],
+      "nutrition": {
+        "kcal": 612,
+        "proteinG": 26,
+        "carbG": 78,
+        "fatG": 22,
+        "sodiumMg": 1100
+      },
+      "optionPolicyIds": [1, 2, 4, 5]
+    }
+  ],
+  "menuOptionPolicies": [
+    {
+      "id": 1,
+      "menuId": 101,
+      "policyId": 1,
+      "sortOrder": 1,
+      "isRequired": true
+    },
+    {
+      "id": 2,
+      "menuId": 101,
+      "policyId": 2,
+      "sortOrder": 2,
+      "isRequired": false
+    },
+    {
+      "id": 3,
+      "menuId": 101,
+      "policyId": 3,
+      "sortOrder": 3,
+      "isRequired": true
+    },
+    {
+      "id": 4,
+      "menuId": 103,
+      "policyId": 1,
+      "sortOrder": 1,
+      "isRequired": true
+    },
+    {
+      "id": 5,
+      "menuId": 103,
+      "policyId": 3,
+      "sortOrder": 2,
+      "isRequired": true
+    },
+    {
+      "id": 6,
+      "menuId": 105,
+      "policyId": 2,
+      "sortOrder": 1,
+      "isRequired": false
+    },
+    {
+      "id": 7,
+      "menuId": 105,
+      "policyId": 4,
+      "sortOrder": 2,
+      "isRequired": true
+    },
+    {
+      "id": 8,
+      "menuId": 108,
+      "policyId": 1,
+      "sortOrder": 1,
+      "isRequired": true
+    }
+  ],
+  "soldOutItems": [
+    {
+      "id": 1,
+      "targetType": "MENU",
+      "targetId": 104,
+      "targetName": "타코 쉬림프 포케볼",
+      "reason": "쉬림프 재고 부족",
+      "startedAt": "2026-07-10T10:30:00+09:00",
+      "endedAt": null,
+      "isActive": true
+    },
+    {
+      "id": 2,
+      "targetType": "OPTION_ITEM",
+      "targetId": 6,
+      "targetName": "아보카도 추가",
+      "reason": "입고 대기",
+      "startedAt": "2026-07-10T11:10:00+09:00",
+      "endedAt": null,
+      "isActive": true
+    }
+  ],
+  "paymentMethods": [
+    {
+      "id": 1,
+      "code": "CARD",
+      "name": "카드 결제",
+      "isActive": true,
+      "sortOrder": 1
+    },
+    {
+      "id": 2,
+      "code": "KAKAO_PAY",
+      "name": "카카오페이",
+      "isActive": true,
+      "sortOrder": 2
+    },
+    {
+      "id": 3,
+      "code": "NAVER_PAY",
+      "name": "네이버페이",
+      "isActive": false,
+      "sortOrder": 3
+    }
+  ],
+  "orders": [
+    {
+      "id": 9001,
+      "orderNo": "A20260710-001",
+      "orderType": "TAKE_OUT",
+      "status": "PAID",
+      "totalAmount": 11400,
+      "paymentMethodCode": "CARD",
+      "createdAt": "2026-07-10T12:04:12+09:00",
+      "items": [
+        {
+          "id": 1,
+          "menuId": 101,
+          "menuName": "탄단지 샐러디",
+          "quantity": 1,
+          "unitPrice": 8900,
+          "selectedOptions": [
+            {
+              "optionItemId": 2,
+              "name": "오리엔탈 드레싱",
+              "priceDelta": 0
+            },
+            {
+              "optionItemId": 10,
+              "name": "음료 세트",
+              "priceDelta": 2500
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9002,
+      "orderNo": "A20260710-002",
+      "orderType": "STORE",
+      "status": "PREPARING",
+      "totalAmount": 13400,
+      "paymentMethodCode": "KAKAO_PAY",
+      "createdAt": "2026-07-10T12:18:40+09:00",
+      "items": [
+        {
+          "id": 2,
+          "menuId": 103,
+          "menuName": "우삼겹 포케볼",
+          "quantity": 1,
+          "unitPrice": 10900,
+          "selectedOptions": [
+            {
+              "optionItemId": 8,
+              "name": "그레인 베이스",
+              "priceDelta": 900
+            },
+            {
+              "optionItemId": 5,
+              "name": "에그마요 추가",
+              "priceDelta": 1800
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9003,
+      "orderNo": "A20260710-003",
+      "orderType": "TAKE_OUT",
+      "status": "COMPLETED",
+      "totalAmount": 7600,
+      "paymentMethodCode": "CARD",
+      "createdAt": "2026-07-10T12:32:05+09:00",
+      "items": [
+        {
+          "id": 3,
+          "menuId": 105,
+          "menuName": "시저치킨 랩",
+          "quantity": 1,
+          "unitPrice": 7600,
+          "selectedOptions": [
+            {
+              "optionItemId": 9,
+              "name": "단품",
+              "priceDelta": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "commonCodes": {
+    "orderStatus": [
+      {
+        "code": "CREATED",
+        "label": "주문 생성"
+      },
+      {
+        "code": "PAID",
+        "label": "결제 완료"
+      },
+      {
+        "code": "PREPARING",
+        "label": "준비 중"
+      },
+      {
+        "code": "COMPLETED",
+        "label": "완료"
+      },
+      {
+        "code": "CANCELED",
+        "label": "취소"
+      }
+    ],
+    "orderType": [
+      {
+        "code": "STORE",
+        "label": "매장"
+      },
+      {
+        "code": "TAKE_OUT",
+        "label": "포장"
+      }
+    ],
+    "targetType": [
+      {
+        "code": "MENU",
+        "label": "메뉴"
+      },
+      {
+        "code": "OPTION_ITEM",
+        "label": "옵션 항목"
+      }
+    ]
+  },
+  "adminSummary": {
+    "todayOrderCount": 36,
+    "todaySalesAmount": 392500,
+    "activeMenuCount": 7,
+    "soldOutCount": 2,
+    "pendingOrderCount": 1
+  }
+}
