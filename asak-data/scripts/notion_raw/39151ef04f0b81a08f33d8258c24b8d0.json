@@ -1,5 +1,0 @@
-{
-  "title": "영수증 출력 여부 선택",
-  "url": "https://app.notion.com/p/39151ef04f0b81a08f33d8258c24b8d0",
-  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39151ef04f0b81a08f33d8258c24b8d0.\n<page url=\"https://app.notion.com/p/39151ef04f0b81a08f33d8258c24b8d0\">\n<properties>\n{\"url\": \"https://app.notion.com/p/39151ef04f0b81a08f33d8258c24b8d0\", \"시나리오 ID\": \"SC-015\", \"시나리오명\": \"영수증 출력 여부 선택\", \"시작 조건\": \"결제 승인 완료 직후\", \"종료 조건\": \"영수증 출력 완료 또는 화면 주문번호 표시\", \"기본 흐름\": \"결제 완료 화면에서 영수증 출력 여부 선택 → 출력 선택 시 모의 프린터 요청 → 미선택 시 화면 주문번호로 대체\", \"예외 흐름\": \"프린터 오류 시 화면 주문번호로 자동 대체\", \"상태\": \"초안\"}\n</properties>\n<content>\n```mermaid\nflowchart TD\n    A[결제완료 화면] --> B{영수증 출력 선택?}\n    B -->|예| C[모의 프린터 요청]\n    B -->|아니오| D[화면 주문번호로 대체]\n    C --> E[출력 결과 확인]\n```\n</content>\n</page>"
-}

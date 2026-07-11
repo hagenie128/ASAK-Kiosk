@@ -1,5 +1,0 @@
-{
-  "title": "일별 매출/판매량 조회",
-  "url": "https://app.notion.com/p/39451ef04f0b813696b0f5c52635cafc",
-  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39451ef04f0b813696b0f5c52635cafc.\n<page url=\"https://app.notion.com/p/39451ef04f0b813696b0f5c52635cafc\">\n<properties>\n{\"요구사항 ID\": \"ARCHIVE-LMIS-ORDER-005\", \"요구사항명\": \"일별 매출/판매량 조회\", \"상세 설명\": \"관리자는 기간을 선택해 일별 매출과 메뉴별 판매량을 조회할 수 있어야 한다.\", \"우선순위\": \"중\", \"상태\": \"제외\", \"구분\": \"관리자\", \"비고\": \"중복 아카이브 — 정본은 LMIS-ORDER-005 (39151ef04f0b81dc9b7ae0a6c3f9df3f). LMIS-ORDER-003은 관리자 주문 상태 변경 전용.\"}\n</properties>\n</page>"
-}

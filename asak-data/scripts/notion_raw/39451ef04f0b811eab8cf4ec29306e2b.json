@@ -1,5 +1,0 @@
-{
-  "title": "영수증 출력 처리",
-  "url": "https://app.notion.com/p/39451ef04f0b811eab8cf4ec29306e2b",
-  "text": "<page url=\"https://app.notion.com/p/39451ef04f0b811eab8cf4ec29306e2b\">\n<properties>\n{\"요구사항 ID\": \"RTOS-DEVICE-001\", \"요구사항명\": \"영수증 출력 처리\", \"상세 설명\": \"고객이 영수증 출력 여부를 선택하면 주문/결제 내역을 기반으로 영수증을 출력한다.\", \"우선순위\": \"중\", \"상태\": \"예정\", \"구분\": \"장치\"}\n</properties>\n</page>"
-}

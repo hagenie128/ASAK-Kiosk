@@ -1,5 +1,0 @@
-{
-  "title": "관리자 주문 상태 변경",
-  "url": "https://app.notion.com/p/00651ef04f0b8271a4ea81150b3039be",
-  "text": "<page url=\"https://app.notion.com/p/00651ef04f0b8271a4ea81150b3039be\">\n<properties>\n{\"요구사항 ID\": \"LMIS-ORDER-003\", \"요구사항명\": \"관리자 주문 상태 변경\", \"상세 설명\": \"관리자는 주문 상태를 RECEIVED, PREPARING, COMPLETED 흐름에 맞게 변경할 수 있어야 한다.\", \"우선순위\": \"상\", \"상태\": \"예정\", \"구분\": \"관리자\"}\n</properties>\n</page>"
-}

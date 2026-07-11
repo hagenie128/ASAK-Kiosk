@@ -1,5 +1,0 @@
-{
-  "title": "멤버십 스탬프 1회 확인 후 자동 적립",
-  "url": "https://app.notion.com/p/39151ef04f0b81ebb344fed659c7976a",
-  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39151ef04f0b81ebb344fed659c7976a.\n<page url=\"https://app.notion.com/p/39151ef04f0b81ebb344fed659c7976a\">\n<properties>\n{\"url\": \"https://app.notion.com/p/39151ef04f0b81ebb344fed659c7976a\", \"시나리오 ID\": \"SC-006\", \"시나리오명\": \"멤버십 스탬프 1회 확인 후 자동 적립\", \"시작 조건\": \"결제 단계 진입\", \"종료 조건\": \"결제완료 화면에 적립 여부가 표시됨(결제 전/후 이중 확인 없음)\", \"기본 흐름\": \"결제 진행 중 멤버십 적립 여부 1회 확인 → 결제 완료 시 자동 적립 처리 → 결제완료 화면에 적립 결과 표시\", \"예외 흐름\": \"멤버십 미가입 고객은 적립 단계 생략하고 바로 결제 진행\", \"상태\": \"초안\"}\n</properties>\n<content>\n```mermaid\nflowchart TD\n    A[멤버십 보유 고객 결제 진행] --> B[적립 확인창 1회 노출]\n    B --> C[결제 완료]\n    C --> D[적립 결과 자동 표시]\n```\n</content>\n</page>"
-}

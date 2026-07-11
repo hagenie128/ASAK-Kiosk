@@ -1,5 +1,0 @@
-{
-  "title": "일정 시간 미입력 시 초기화면 자동 복귀",
-  "url": "https://app.notion.com/p/39151ef04f0b81e0bdbff92f1af5098d",
-  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39151ef04f0b81e0bdbff92f1af5098d.\n<page url=\"https://app.notion.com/p/39151ef04f0b81e0bdbff92f1af5098d\">\n<properties>\n{\"요구사항 ID\": \"FWD-SYS-001\", \"요구사항명\": \"일정 시간 미입력 시 초기화면 자동 복귀\", \"상세 설명\": \"사용자가 일정 시간 동안 조작하지 않으면 키오스크 화면을 초기 상태로 되돌린다.\", \"우선순위\": \"중\", \"상태\": \"예정\", \"구분\": \"기능\"}\n</properties>\n</page>"
-}

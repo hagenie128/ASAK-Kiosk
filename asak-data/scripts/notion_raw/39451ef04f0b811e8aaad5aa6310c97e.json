@@ -1,5 +1,0 @@
-{
-  "title": "접근성 UI 옵션",
-  "url": "https://app.notion.com/p/39451ef04f0b811e8aaad5aa6310c97e",
-  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39451ef04f0b811e8aaad5aa6310c97e.\n<page url=\"https://app.notion.com/p/39451ef04f0b811e8aaad5aa6310c97e\">\n<properties>\n{\"요구사항 ID\": \"FWD-UI-004\", \"요구사항명\": \"접근성 UI 옵션\", \"상세 설명\": \"저시력 고객을 위해 글자크기 확대·고대비·큰 터치 영역 등 접근성 옵션을 제공한다.\", \"우선순위\": \"중\", \"상태\": \"예정\", \"구분\": \"화면\", \"비고\": \"ID 재할당 (2026-07-06): FWD-UI-001 정본(접근성 UI 제공)과 충돌. 접근성 설정 옵션은 FWD-UI-004.\"}\n</properties>\n</page>"
-}

@@ -1,5 +1,0 @@
-{
-  "title": "관리자 메뉴 등록/수정",
-  "url": "https://app.notion.com/p/39251ef04f0b81c38e86e9521d37502a",
-  "text": "<page url=\"https://app.notion.com/p/39251ef04f0b81c38e86e9521d37502a\">\n<properties>\n{\"API ID\": \"API-012\", \"API명\": \"관리자 메뉴 등록/수정\", \"Method\": \"POST\", \"userDefined:URL\": \"/api/admin/menus\", \"Request\": \"categoryId, name, price, imageUrl, description, optionGroupIds\", \"Response\": \"{\\\"code\\\":\\\"ADMIN_MENU_UPSERT_SUCCESS\\\"}\", \"Error\": \"{\\\"code\\\":\\\"ADMIN_MENU_SAVE_FAILED\\\"}\", \"처리 내용\": \"관리자 메뉴 등록/수정\"}\n</properties>\n</page>"
-}

@@ -1,5 +1,0 @@
-{
-  "title": "관리자 주문 상태 변경",
-  "url": "https://app.notion.com/p/02751ef04f0b827cb7e781935cb20a90",
-  "text": "<page url=\"https://app.notion.com/p/02751ef04f0b827cb7e781935cb20a90\">\n<properties>\n{\"API ID\": \"API-008\", \"API명\": \"관리자 주문 상태 변경\", \"Method\": \"PATCH\", \"userDefined:URL\": \"/api/admin/orders/{orderId}/status\", \"Request\": \"orderStatus\", \"Response\": \"{\\\"code\\\":\\\"ORDER_STATUS_UPDATE_SUCCESS\\\"}\", \"Error\": \"{\\\"code\\\":\\\"ORDER_STATUS_INVALID\\\"}\", \"처리 내용\": \"관리자가 주문 상태를 변경한다.\"}\n</properties>\n</page>"
-}

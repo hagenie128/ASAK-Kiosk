@@ -1,5 +1,0 @@
-{
-  "title": "선택 옵션 텍스트 요약 표시",
-  "url": "https://app.notion.com/p/39151ef04f0b81dbbda0ce087e82d555",
-  "text": "<page url=\"https://app.notion.com/p/39151ef04f0b81dbbda0ce087e82d555\">\n<properties>\n{\"요구사항 ID\": \"FWD-CART-001\", \"요구사항명\": \"선택 옵션 텍스트 요약 표시\", \"상세 설명\": \"장바구니와 주문 확인 화면에서 사용자가 선택한 옵션과 제외 재료를 텍스트로 요약 표시한다.\", \"우선순위\": \"상\", \"상태\": \"예정\", \"구분\": \"화면\"}\n</properties>\n</page>"
-}

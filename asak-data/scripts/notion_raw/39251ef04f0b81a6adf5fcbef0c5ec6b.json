@@ -1,5 +1,0 @@
-{
-  "title": "관리자 메뉴 등록/수정 검증",
-  "url": "https://app.notion.com/p/39251ef04f0b81a6adf5fcbef0c5ec6b",
-  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39251ef04f0b81a6adf5fcbef0c5ec6b.\n<page url=\"https://app.notion.com/p/39251ef04f0b81a6adf5fcbef0c5ec6b\">\n<properties>\n{\"테스트 ID\": \"TC-011\", \"테스트명\": \"관리자 메뉴 등록/수정 검증\", \"전제조건\": \"관리자 권한으로 로그인되어 있음\", \"수행 절차\": \"1. 메뉴 등록/수정 화면을 연다. 2. 메뉴명, 가격, 태그, 기본재료, 추천드레싱을 입력한다. 3. 저장 후 키오스크 메뉴 상세에서 확인한다.\", \"기대 결과\": \"메뉴 기본정보와 연결 데이터가 저장되고 API-003/API-004 응답에 반영된다.\", \"비고\": \"SC-017 연결, LMIS-MENU-004\", \"상태\": \"예정\"}\n</properties>\n</page>"
-}

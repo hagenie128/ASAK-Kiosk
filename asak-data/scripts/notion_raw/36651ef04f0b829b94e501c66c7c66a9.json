@@ -1,5 +1,0 @@
-{
-  "title": "가상 결제 처리",
-  "url": "https://app.notion.com/p/36651ef04f0b829b94e501c66c7c66a9",
-  "text": "<page url=\"https://app.notion.com/p/36651ef04f0b829b94e501c66c7c66a9\">\n<properties>\n{\"API ID\": \"API-006\", \"API명\": \"가상 결제 처리\", \"Method\": \"POST\", \"userDefined:URL\": \"/api/payments\", \"Request\": \"orderId, paymentMethod, amount\", \"Response\": \"{\\\"code\\\":\\\"PAYMENT_APPROVED\\\"}\", \"Error\": \"{\\\"code\\\":\\\"PAYMENT_AMOUNT_MISMATCH\\\"}\", \"처리 내용\": \"결제 승인 처리 및 결제 정보 저장\"}\n</properties>\n</page>"
-}

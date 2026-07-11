@@ -1,5 +1,0 @@
-{
-  "title": "포인트·쿠폰 적립 및 QR 할인 적용",
-  "url": "https://app.notion.com/p/39551ef04f0b812baac1f0180bab7906",
-  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39551ef04f0b812baac1f0180bab7906.\n<page url=\"https://app.notion.com/p/39551ef04f0b812baac1f0180bab7906\">\n<properties>\n{\"테스트 ID\": \"TC-016\", \"테스트명\": \"포인트·쿠폰 적립 및 QR 할인 적용\", \"전제조건\": \"멤버십 회원 또는 유효 쿠폰 QR 보유\", \"수행 절차\": \"1. 결제(SCR-007) 진입 2. 멤버십 적립 확인(SCR-021) 1회 3. 쿠폰 QR 스캔(선택) 4. 가상 결제 승인 5. SCR-008에서 적립 결과 확인\", \"기대 결과\": \"스탬프 적립 1회 확인 후 결제 완료, 쿠폰 스캔 시 할인 반영·최종 금액 표시\", \"비고\": \"SC-016 연결, KSD-MEMBER-001, RTOS-DEVICE-004\", \"상태\": \"예정\"}\n</properties>\n</page>"
-}

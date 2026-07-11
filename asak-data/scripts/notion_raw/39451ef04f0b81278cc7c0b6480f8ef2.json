@@ -1,5 +1,0 @@
-{
-  "title": "미입력 시 자동 초기화",
-  "url": "https://app.notion.com/p/39451ef04f0b81278cc7c0b6480f8ef2",
-  "text": "<page url=\"https://app.notion.com/p/39451ef04f0b81278cc7c0b6480f8ef2\">\n<properties>\n{\"요구사항 ID\": \"FWD-SYS-001\", \"요구사항명\": \"미입력 시 자동 초기화\", \"상세 설명\": \"고객이 주문 중 자리를 비우면 타임아웃 후 자동으로 초기 화면으로 복귀한다.\", \"우선순위\": \"중\", \"상태\": \"예정\", \"구분\": \"비기능\"}\n</properties>\n</page>"
-}

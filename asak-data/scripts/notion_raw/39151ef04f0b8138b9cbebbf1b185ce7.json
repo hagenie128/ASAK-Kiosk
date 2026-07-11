@@ -1,5 +1,0 @@
-{
-  "title": "품절 판매 항목이 포함된 상황에서의 주문",
-  "url": "https://app.notion.com/p/39151ef04f0b8138b9cbebbf1b185ce7",
-  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39151ef04f0b8138b9cbebbf1b185ce7.\n<page url=\"https://app.notion.com/p/39151ef04f0b8138b9cbebbf1b185ce7\">\n<properties>\n{\"url\": \"https://app.notion.com/p/39151ef04f0b8138b9cbebbf1b185ce7\", \"시나리오 ID\": \"SC-003\", \"시나리오명\": \"품절 판매 항목이 포함된 상황에서의 주문\", \"시작 조건\": \"관리자가 특정 재료 또는 옵션 항목을 품절 처리한 상태\", \"종료 조건\": \"고객이 품절되지 않은 항목으로 주문 진행\", \"기본 흐름\": \"품절된 판매 항목은 회색 처리된 채 SOLD OUT 표시됨 → 선택 불가 → 고객이 다른 항목으로 대체 선택\", \"예외 흐름\": \"핵심 재료 또는 베이스 재료가 품절된 경우 해당 메뉴 또는 관련 카테고리 메뉴가 품절 표시됨\", \"상태\": \"초안\"}\n</properties>\n<content>\n```mermaid\nflowchart TD\n    A[관리자 판매 항목 품절 처리] --> B[메뉴 상세와 옵션 목록에 SOLD OUT 표시]\n    B --> C[고객 선택 불가]\n    C --> D[다른 항목으로 대체 선택]\n```\n</content>\n</page>"
-}

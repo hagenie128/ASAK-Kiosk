@@ -1,5 +1,0 @@
-{
-  "title": "토핑 개별 수량 조절 주문",
-  "url": "https://app.notion.com/p/39251ef04f0b81718105dab254a1954c",
-  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39251ef04f0b81718105dab254a1954c.\n<page url=\"https://app.notion.com/p/39251ef04f0b81718105dab254a1954c\">\n<properties>\n{\"url\": \"https://app.notion.com/p/39251ef04f0b81718105dab254a1954c\", \"시나리오 ID\": \"SC-021\", \"시나리오명\": \"토핑 개별 수량 조절 주문\", \"시작 조건\": \"특정 토핑(예: 에그)을 더 많이 원하는 고객이 토핑선택 단계 진입\", \"종료 조건\": \"선택한 수량만큼 장바구니에 가격이 반영됨\", \"기본 흐름\": \"토핑 목록에서 특정 토핑 + 버튼으로 수량 증가 → 가격이 수량만큼 배수로 자동 재계산 → 같은 토핑을 최대 5개까지 중복 담을 수 있음\", \"예외 흐름\": \"최대치 도달 시 + 버튼 비활성화 및 안내\", \"상태\": \"초안\"}\n</properties>\n<content>\n```mermaid\nflowchart TD\n    A[토핑 선택] --> B[+ 버튼으로 수량 증가]\n    B --> C[가격 수량만큼 자동 재계산]\n    C --> D{최대 5개 도달?}\n    D -->|예| E[버튼 비활성화 안내]\n    D -->|아니오| F[계속 담기 가능]\n```\n</content>\n</page>"
-}

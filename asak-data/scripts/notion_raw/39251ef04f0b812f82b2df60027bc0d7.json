@@ -1,5 +1,0 @@
-{
-  "title": "관리자 메뉴 관리 목록/품절 상태 검증",
-  "url": "https://app.notion.com/p/39251ef04f0b812f82b2df60027bc0d7",
-  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39251ef04f0b812f82b2df60027bc0d7.\n<page url=\"https://app.notion.com/p/39251ef04f0b812f82b2df60027bc0d7\">\n<properties>\n{\"테스트 ID\": \"TC-010\", \"테스트명\": \"관리자 메뉴 관리 목록/품절 상태 검증\", \"전제조건\": \"메뉴/재료/옵션 샘플 데이터가 등록되어 있음\", \"수행 절차\": \"1. 관리자 메뉴 관리 화면을 연다. 2. 메뉴 목록과 판매 상태를 확인한다. 3. 재료 또는 메뉴 품절 상태를 변경한다.\", \"기대 결과\": \"메뉴/재료/옵션 상태가 화면에 표시되고 품절 변경 결과가 키오스크 메뉴/옵션 화면에 반영된다.\", \"비고\": \"SC-017 연결, LMIS-MENU-004\", \"상태\": \"예정\"}\n</properties>\n</page>"
-}

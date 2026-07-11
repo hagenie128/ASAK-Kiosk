@@ -1,5 +1,0 @@
-{
-  "title": "프론트: 장바구니 화면 구현",
-  "url": "https://app.notion.com/p/39151ef04f0b81f69a0ec0c865e1ad0d",
-  "text": "<page url=\"https://app.notion.com/p/39151ef04f0b81f69a0ec0c865e1ad0d\">\n<properties>\n{\"date:시작일:is_datetime\": 0, \"date:시작일:start\": \"2026-07-07\", \"date:종료일:is_datetime\": 0, \"date:종료일:start\": \"2026-07-10\", \"url\": \"https://app.notion.com/p/39151ef04f0b81f69a0ec0c865e1ad0d\", \"관련 산출물\": \"SCR 장바구니, API-005\", \"구분\": \"프론트엔드\", \"단계\": \"FWD\", \"담당자\": \"민준, 유진\", \"비고\": \"수량 변경/삭제, 옵션 요약이 가능하면 완료.\", \"상태\": \"예정\", \"우선순위\": \"상\", \"작업 ID\": \"WBS-009\", \"작업명\": \"프론트: 장바구니 화면 구현\"}\n</properties>\n</page>"
-}

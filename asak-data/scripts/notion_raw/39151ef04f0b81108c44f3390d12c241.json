@@ -1,5 +1,0 @@
-{
-  "title": "관리자의 판매 항목 품절 처리",
-  "url": "https://app.notion.com/p/39151ef04f0b81108c44f3390d12c241",
-  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39151ef04f0b81108c44f3390d12c241.\n<page url=\"https://app.notion.com/p/39151ef04f0b81108c44f3390d12c241\">\n<properties>\n{\"url\": \"https://app.notion.com/p/39151ef04f0b81108c44f3390d12c241\", \"시나리오 ID\": \"SC-007\", \"시나리오명\": \"관리자의 판매 항목 품절 처리\", \"시작 조건\": \"재료 또는 메뉴 구성 항목 소진으로 품절 발생\", \"종료 조건\": \"키오스크 화면에 판매 항목 품절 상태가 반영됨\", \"기본 흐름\": \"관리자 품절 관리 화면 진입(Week 5 MVP에서는 인증 없이 바로 접근) → 품절 처리할 메뉴/재료 선택 → 품절 토글 ON → 관련 메뉴 목록/메뉴 상세/옵션 선택 화면에 즉시 반영\", \"예외 흐름\": \"같은 재료가 기본 구성과 추가 토핑에 모두 쓰이면 메뉴/상세/옵션 품절 상태에 함께 반영됨\", \"상태\": \"초안\"}\n</properties>\n<content>\n```mermaid\nflowchart TD\n    A[관리자 판매 항목 품절 토글 ON] --> B[관련 메뉴와 옵션 표시 갱신]\n    B --> C[고객 화면 즉시 반영]\n```\n</content>\n</page>"
-}

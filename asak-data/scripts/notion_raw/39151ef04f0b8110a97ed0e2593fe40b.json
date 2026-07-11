@@ -1,5 +1,0 @@
-{
-  "title": "접근성 옵션으로 저시력 고객 주문 (FWD-UI-001)",
-  "url": "https://app.notion.com/p/39151ef04f0b8110a97ed0e2593fe40b",
-  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39151ef04f0b8110a97ed0e2593fe40b.\n<page url=\"https://app.notion.com/p/39151ef04f0b8110a97ed0e2593fe40b\">\n<properties>\n{\"url\":\"https://app.notion.com/p/39151ef04f0b8110a97ed0e2593fe40b\",\"관련 API\":\"API-017\",\"관련 요구사항\":\"FWD-UI-004\",\"관련 화면\":\"SCR-014\",\"시나리오 ID\":\"SC-013\",\"시나리오명\":\"접근성 옵션으로 저시력 고객 주문 (FWD-UI-001)\",\"시작 조건\":\"저시력 고객이 키오스크 이용 시작\",\"종료 조건\":\"안내 없이 주문 완료\",\"기본 흐름\":\"저시력 고객이 초기화면 진입 → 글자크기 확대 옵션 인지 → 큰 글자/높은 대비로 메뉴 탐색 → 주문 완료\",\"예외 흐름\":\"없음\",\"상태\":\"초안\"}\n</properties>\n<content>\n```mermaid\nflowchart TD\n    A[저시력 고객 진입 SCR-001] --> B[접근성 설정 SCR-014]\n    B --> C[큰 글자/고대비 메뉴 탐색 SCR-003~SCR-008]\n    C --> D[안내 없이 주문 완료 SCR-008]\n```\n</content>\n</page>"
-}

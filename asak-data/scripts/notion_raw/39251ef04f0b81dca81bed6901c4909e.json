@@ -1,5 +1,0 @@
-{
-  "title": "관리자 로그인 검증",
-  "url": "https://app.notion.com/p/39251ef04f0b81dca81bed6901c4909e",
-  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39251ef04f0b81dca81bed6901c4909e.\n<page url=\"https://app.notion.com/p/39251ef04f0b81dca81bed6901c4909e\">\n<properties>\n{\"테스트 ID\": \"TC-009\", \"테스트명\": \"관리자 로그인 검증\", \"전제조건\": \"관리자 계정과 role_id가 준비되어 있음\", \"수행 절차\": \"1. 관리자 로그인 화면에 진입한다. 2. 정상 계정으로 로그인한다. 3. 잘못된 계정으로도 시도한다.\", \"기대 결과\": \"정상 계정은 관리자 화면으로 이동하고, 잘못된 계정은 오류 메시지를 표시한다.\", \"비고\": \"SC-008 연결, LMIS-AUTH-001\", \"상태\": \"예정\"}\n</properties>\n</page>"
-}

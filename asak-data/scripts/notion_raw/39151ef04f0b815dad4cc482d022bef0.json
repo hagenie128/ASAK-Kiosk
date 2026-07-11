@@ -1,5 +1,0 @@
-{
-  "title": "주간 데모 & 회고",
-  "url": "https://app.notion.com/p/39151ef04f0b815dad4cc482d022bef0",
-  "text": "<page url=\"https://app.notion.com/p/39151ef04f0b815dad4cc482d022bef0\">\n<properties>\n{\"date:시작일:is_datetime\": 0, \"date:시작일:start\": \"2026-07-10\", \"date:종료일:is_datetime\": 0, \"date:종료일:start\": \"2026-08-21\", \"url\": \"https://app.notion.com/p/39151ef04f0b815dad4cc482d022bef0\", \"관련 산출물\": \"주간 데모 기록, 회고 메모, 다음 주 액션 아이템\", \"구분\": \"협업\", \"담당자\": \"전원\", \"비고\": \"매주 구현된 화면/API를 시연하고 막힌 점과 다음 주 작업을 WBS에 반영하면 완료\", \"상태\": \"예정\", \"우선순위\": \"중\", \"작업 ID\": \"WBS-014\", \"작업명\": \"주간 데모 & 회고\"}\n</properties>\n</page>"
-}

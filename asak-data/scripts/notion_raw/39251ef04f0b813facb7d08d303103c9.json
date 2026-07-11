@@ -1,5 +1,0 @@
-{
-  "title": "접근성 설정 적용 검증",
-  "url": "https://app.notion.com/p/39251ef04f0b813facb7d08d303103c9",
-  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39251ef04f0b813facb7d08d303103c9.\n<page url=\"https://app.notion.com/p/39251ef04f0b813facb7d08d303103c9\">\n<properties>\n{\"테스트 ID\": \"TC-008\", \"테스트명\": \"접근성 설정 적용 검증\", \"전제조건\": \"접근성 설정 화면 진입 가능\", \"수행 절차\": \"1. 접근성 설정 화면을 연다. 2. 글자 크기 또는 대비 옵션을 변경한다. 3. 메뉴/옵션/결제 화면으로 이동해 적용 여부를 확인한다.\", \"기대 결과\": \"선택한 접근성 설정이 주요 화면의 텍스트와 버튼 스타일에 일관되게 반영된다.\", \"비고\": \"SC-013 연결, FWD-UI-004\", \"상태\": \"예정\"}\n</properties>\n</page>"
-}

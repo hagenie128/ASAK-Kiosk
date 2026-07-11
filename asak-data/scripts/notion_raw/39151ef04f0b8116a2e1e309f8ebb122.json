@@ -1,5 +1,0 @@
-{
-  "title": "Git 전략 · 백로그 티켓화",
-  "url": "https://app.notion.com/p/39151ef04f0b8116a2e1e309f8ebb122",
-  "text": "<page url=\"https://app.notion.com/p/39151ef04f0b8116a2e1e309f8ebb122\">\n<properties>\n{\"date:시작일:is_datetime\": 0, \"date:시작일:start\": \"2026-07-03\", \"date:종료일:is_datetime\": 0, \"date:종료일:start\": \"2026-07-04\", \"url\": \"https://app.notion.com/p/39151ef04f0b8116a2e1e309f8ebb122\", \"관련 산출물\": \"Git 전략, 07 WBS, GitHub Projects\", \"구분\": \"협업\", \"단계\": \"DEV\", \"담당자\": \"하진, 나연\", \"비고\": \"브랜치/커밋/PR 규칙과 WBS 작업 단위가 팀 내 합의되면 완료\", \"상태\": \"예정\", \"우선순위\": \"중\", \"작업 ID\": \"WBS-006\", \"작업명\": \"Git 전략 · 백로그 티켓화\"}\n</properties>\n</page>"
-}

@@ -1,5 +1,0 @@
-{
-  "title": "피크타임 응답 지연 최소화",
-  "url": "https://app.notion.com/p/39151ef04f0b8124a71bfda33c8245a0",
-  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39151ef04f0b8124a71bfda33c8245a0.\n<page url=\"https://app.notion.com/p/39151ef04f0b8124a71bfda33c8245a0\">\n<properties>\n{\"요구사항 ID\": \"DEV-SYS-001\", \"요구사항명\": \"피크타임 응답 지연 최소화\", \"상세 설명\": \"주문이 몰리는 상황에서도 메뉴 조회, 주문 생성, 결제 처리 응답이 과도하게 지연되지 않도록 구현한다.\", \"우선순위\": \"중\", \"상태\": \"예정\", \"구분\": \"비기능\"}\n</properties>\n</page>"
-}

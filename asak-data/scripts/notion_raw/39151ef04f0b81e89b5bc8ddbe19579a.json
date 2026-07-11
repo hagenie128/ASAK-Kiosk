@@ -1,5 +1,0 @@
-{
-  "title": "매장/포장 구분 표시",
-  "url": "https://app.notion.com/p/39151ef04f0b81e89b5bc8ddbe19579a",
-  "text": "<page url=\"https://app.notion.com/p/39151ef04f0b81e89b5bc8ddbe19579a\">\n<properties>\n{\"요구사항 ID\": \"FWD-ORDER-001\", \"요구사항명\": \"매장/포장 구분 표시\", \"상세 설명\": \"사용자가 주문 시작 시 매장 식사와 포장 중 하나를 선택하고, 선택값이 주문 정보에 반영되어야 한다.\", \"우선순위\": \"상\", \"상태\": \"예정\", \"구분\": \"기능\"}\n</properties>\n</page>"
-}

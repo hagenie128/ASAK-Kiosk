@@ -1,5 +1,0 @@
-{
-  "title": "관리자의 주문서 추가/제외 재료 확인",
-  "url": "https://app.notion.com/p/39251ef04f0b8108ad32dc1eeae1e201",
-  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39251ef04f0b8108ad32dc1eeae1e201.\n<page url=\"https://app.notion.com/p/39251ef04f0b8108ad32dc1eeae1e201\">\n<properties>\n{\"url\": \"https://app.notion.com/p/39251ef04f0b8108ad32dc1eeae1e201\", \"시나리오 ID\": \"SC-022\", \"시나리오명\": \"관리자의 주문서 추가/제외 재료 확인\", \"시작 조건\": \"커스텀 옵션이 포함된 주문이 접수된 상황\", \"종료 조건\": \"관리자가 선택 옵션과 제외 재료를 구분해 조리 준비할 수 있음\", \"기본 흐름\": \"커스텀 옵션이 포함된 주문 생성 → 관리자 주문 목록에서 해당 주문 선택 → 주문 상세에서 선택 옵션과 제외 재료 확인 → 조리 준비\", \"예외 흐름\": \"없음\", \"상태\": \"초안\"}\n</properties>\n<content>\n```mermaid\nflowchart TD\n    A[커스텀 옵션 포함 주문 접수] --> B[관리자 주문목록에서 확인]\n    B --> C[추가 재료 색상 강조]\n    C --> D[제외 재료 색상 강조]\n    D --> E[조리 준비]\n```\n</content>\n</page>"
-}

@@ -1,5 +1,0 @@
-{
-  "title": "카테고리 목록 조회",
-  "url": "https://app.notion.com/p/39251ef04f0b813f9b8af829584c450b",
-  "text": "<page url=\"https://app.notion.com/p/39251ef04f0b813f9b8af829584c450b\">\n<properties>\n{\"API ID\": \"API-001\", \"API명\": \"카테고리 목록 조회\", \"Method\": \"GET\", \"userDefined:URL\": \"/api/categories\", \"Request\": \"없음\", \"Response\": \"{\\\"code\\\":\\\"CATEGORY_LIST_SUCCESS\\\"}\", \"Error\": \"{\\\"code\\\":\\\"CATEGORY_LIST_FAILED\\\"}\", \"처리 내용\": \"category 테이블에서 sort_order 기준으로 카테고리 목록 조회\"}\n</properties>\n</page>"
-}

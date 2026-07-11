@@ -1,5 +1,0 @@
-{
-  "title": "QR/바코드 스캔 처리",
-  "url": "https://app.notion.com/p/64651ef04f0b82db845881e5e4344821",
-  "text": "<page url=\"https://app.notion.com/p/64651ef04f0b82db845881e5e4344821\">\n<properties>\n{\"요구사항 ID\": \"RTOS-DEVICE-004\", \"요구사항명\": \"QR/바코드 스캔 처리\", \"상세 설명\": \"QR 또는 바코드 스캔을 통해 쿠폰, 멤버십, 주문 식별 정보를 처리한다.\", \"우선순위\": \"하\", \"상태\": \"제외\", \"구분\": \"장치\"}\n</properties>\n</page>"
-}

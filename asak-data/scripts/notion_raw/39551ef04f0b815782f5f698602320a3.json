@@ -1,5 +1,0 @@
-{
-  "title": "영수증 출력 여부 선택 및 모의 프린터 요청",
-  "url": "https://app.notion.com/p/39551ef04f0b815782f5f698602320a3",
-  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39551ef04f0b815782f5f698602320a3.\n<page url=\"https://app.notion.com/p/39551ef04f0b815782f5f698602320a3\">\n<properties>\n{\"테스트 ID\": \"TC-015\", \"테스트명\": \"영수증 출력 여부 선택 및 모의 프린터 요청\", \"전제조건\": \"결제 승인 완료, orderId·orderNo 존재\", \"수행 절차\": \"1. 결제 완료(SCR-008) 진입 2. 영수증 출력 선택 3. API-019 호출 4. 출력 결과 또는 주문번호 확인\", \"기대 결과\": \"영수증 출력 선택 시 모의 프린터 요청 성공, 미선택 시 화면 주문번호 표시\", \"비고\": \"SC-015 연결, RTOS-DEVICE-001\", \"상태\": \"예정\"}\n</properties>\n</page>"
-}

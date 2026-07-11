@@ -1,5 +1,0 @@
-{
-  "title": "관리자 품절 처리가 관련 메뉴 전체에 즉시 반영되는지 검증",
-  "url": "https://app.notion.com/p/39151ef04f0b8126a9dbf87b5241c60e",
-  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39151ef04f0b8126a9dbf87b5241c60e.\n<page url=\"https://app.notion.com/p/39151ef04f0b8126a9dbf87b5241c60e\">\n<properties>\n{\"테스트 ID\": \"TC-006\", \"테스트명\": \"관리자 품절 처리가 관련 메뉴 전체에 즉시 반영되는지 검증\", \"전제조건\": \"동일 판매 항목이 2개 이상 메뉴 또는 옵션에 공통으로 존재\", \"수행 절차\": \"1) 관리자 화면에서 특정 판매 항목 품절 토글 ON 2) 키오스크에서 해당 항목이 포함된 메뉴와 옵션 목록 확인\", \"기대 결과\": \"품절 처리 즉시 해당 판매 항목을 사용하는 모든 메뉴/옵션 표시가 함께 변경됨\", \"비고\": \"SC-007 연결, LMIS-MENU-002\", \"상태\": \"예정\"}\n</properties>\n</page>"
-}

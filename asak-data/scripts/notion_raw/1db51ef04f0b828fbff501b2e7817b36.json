@@ -1,5 +1,0 @@
-{
-  "title": "영수증 출력 요청",
-  "url": "https://app.notion.com/p/1db51ef04f0b828fbff501b2e7817b36",
-  "text": "<page url=\"https://app.notion.com/p/1db51ef04f0b828fbff501b2e7817b36\">\n<properties>\n{\"요구사항 ID\": \"RTOS-DEVICE-002\", \"요구사항명\": \"영수증 출력 요청\", \"상세 설명\": \"사용자가 영수증 출력을 선택하면 주문 정보를 기반으로 영수증 출력 요청을 생성한다.\", \"우선순위\": \"중\", \"상태\": \"예정\", \"구분\": \"장치\"}\n</properties>\n</page>"
-}

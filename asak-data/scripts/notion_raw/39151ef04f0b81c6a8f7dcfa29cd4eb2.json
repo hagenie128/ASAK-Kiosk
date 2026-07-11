@@ -1,5 +1,0 @@
-{
-  "title": "재료 제외(-) 옵션으로 커스텀 주문",
-  "url": "https://app.notion.com/p/39151ef04f0b81c6a8f7dcfa29cd4eb2",
-  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39151ef04f0b81c6a8f7dcfa29cd4eb2.\n<page url=\"https://app.notion.com/p/39151ef04f0b81c6a8f7dcfa29cd4eb2\">\n<properties>\n{\"url\": \"https://app.notion.com/p/39151ef04f0b81c6a8f7dcfa29cd4eb2\", \"시나리오 ID\": \"SC-011\", \"시나리오명\": \"재료 제외(-) 옵션으로 커스텀 주문\", \"시작 조건\": \"특정 재료를 못 먹는 고객이 옵션선택 단계 진입\", \"종료 조건\": \"장바구니/주문서에 제외 재료가 명시됨\", \"기본 흐름\": \"기본 포함 재료 중 특정 항목 \\\"빼기\\\" 선택 → 가격 변동 없이 장바구니에 반영 → 주문서에 제외 항목 표시\", \"예외 흐름\": \"없음(가격 차감 로직 없음을 명확히 확인, 선생님 피드백 6번 반영)\", \"상태\": \"초안\"}\n</properties>\n<content>\n```mermaid\nflowchart TD\n    A[기본 포함 재료 확인] --> B[특정 재료 '빼기' 선택]\n    B --> C[가격 변동 없이 반영]\n    C --> D[장바구니/주문서에 제외 항목 표시]\n```\n</content>\n</page>"
-}

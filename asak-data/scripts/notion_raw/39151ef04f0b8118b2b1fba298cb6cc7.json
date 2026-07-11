@@ -1,5 +1,0 @@
-{
-  "title": "스탬프 적립 확인이 결제 전후로 중복되지 않는지 검증",
-  "url": "https://app.notion.com/p/39151ef04f0b8118b2b1fba298cb6cc7",
-  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39151ef04f0b8118b2b1fba298cb6cc7.\n<page url=\"https://app.notion.com/p/39151ef04f0b8118b2b1fba298cb6cc7\">\n<properties>\n{\"테스트 ID\": \"TC-005\", \"테스트명\": \"스탬프 적립 확인이 결제 전후로 중복되지 않는지 검증\", \"전제조건\": \"테스트용 멤버십 계정 존재\", \"수행 절차\": \"1) 멤버십 보유 고객으로 결제 진행 2) 결제 과정 중 적립 확인창 1회만 뜨는지 확인 3) 결제 완료 후 적립 결과 표시 확인\", \"기대 결과\": \"결제 과정 중 1회만 확인되고 결제완료 화면에 적립결과가 표시됨\", \"비고\": \"SC-006 연결, LMIS-MEMBER-001\", \"상태\": \"보류\"}\n</properties>\n</page>"
-}

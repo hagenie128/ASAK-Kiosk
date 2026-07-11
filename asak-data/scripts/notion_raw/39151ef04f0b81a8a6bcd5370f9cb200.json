@@ -1,5 +1,0 @@
-{
-  "title": "신규 고객의 기본 주문 흐름",
-  "url": "https://app.notion.com/p/39151ef04f0b81a8a6bcd5370f9cb200",
-  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39151ef04f0b81a8a6bcd5370f9cb200.\n<page url=\"https://app.notion.com/p/39151ef04f0b81a8a6bcd5370f9cb200\">\n<properties>\n{\"관련 요구사항\":\"FWD-UI-001,FWD-MENU-001,FWD-MENU-002,FWD-CART-001,FWD-MENU-003,FWD-PAY-001,FWD-PAY-002\",\"시나리오 ID\":\"SC-001\",\"시나리오명\":\"신규 고객의 기본 주문 흐름\",\"시작 조건\":\"ASAK 키오스크 화면 진입(처음 방문 고객)\",\"종료 조건\":\"결제 완료 후 주문번호가 화면에 표시됨\",\"기본 흐름\":\"카테고리 탐색 → 메뉴 선택 → 베이스/드레싱/토핑 옵션 선택(추천조합 기본값) → 옵션 설명 확인 → 장바구니 담기 → 결제수단 선택 → 결제 → 주문번호 확인\",\"예외 흐름\":\"옵션이 헷갈려 이전 단계로 돌아가도 선택 내용이 유지됨 (사용자가 지적한 키오스크 취소 시 초기화 문제 개선)\",\"상태\":\"초안\"}\n</properties>\n<content>\n```mermaid\nflowchart TD\n    A[키오스크 초기화면] --> B[카테고리 탐색]\n    B --> C[메뉴 선택]\n    C --> D[베이스/드레싱/토핑 옵션 선택 - 추천조합 기본값]\n    D --> E[옵션 설명 확인]\n    E --> F[장바구니 담기]\n    F --> G[결제수단 선택]\n    G --> H[결제 진행]\n    H --> I[주문번호 화면 표시]\n```\n</content>\n</page>"
-}

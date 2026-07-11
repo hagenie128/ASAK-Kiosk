@@ -1,5 +1,0 @@
-{
-  "title": "접근성을 고려한 UI 제공",
-  "url": "https://app.notion.com/p/39151ef04f0b81249e6deded5ece01bc",
-  "text": "<page url=\"https://app.notion.com/p/39151ef04f0b81249e6deded5ece01bc\">\n<properties>\n{\"요구사항 ID\": \"FWD-UI-001\", \"요구사항명\": \"접근성을 고려한 UI 제공\", \"상세 설명\": \"키오스크 사용자가 화면을 쉽게 읽고 조작할 수 있도록 글자 크기, 버튼 크기, 대비, 간격을 고려한 UI를 제공한다.\", \"우선순위\": \"중\", \"상태\": \"예정\", \"구분\": \"화면\"}\n</properties>\n</page>"
-}

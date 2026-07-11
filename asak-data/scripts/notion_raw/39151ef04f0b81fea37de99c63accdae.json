@@ -1,5 +1,0 @@
-{
-  "title": "품절 판매 항목이 정상적으로 비활성화되는지 확인",
-  "url": "https://app.notion.com/p/39151ef04f0b81fea37de99c63accdae",
-  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39151ef04f0b81fea37de99c63accdae.\n<page url=\"https://app.notion.com/p/39151ef04f0b81fea37de99c63accdae\">\n<properties>\n{\"테스트 ID\": \"TC-003\", \"테스트명\": \"품절 판매 항목이 정상적으로 비활성화되는지 확인\", \"전제조건\": \"특정 판매 항목이 품절 상태로 사전 설정됨\", \"수행 절차\": \"1) 관리자에서 특정 판매 항목 품절 처리 2) 키오스크에서 해당 항목이 포함된 메뉴 진입 3) 메뉴 상세/옵션 목록 확인 4) 해당 항목 선택 시도\", \"기대 결과\": \"품절 항목이 회색+SOLD OUT 표시되고 선택 불가\", \"비고\": \"SC-003 연결, LMIS-MENU-002\", \"상태\": \"예정\"}\n</properties>\n</page>"
-}

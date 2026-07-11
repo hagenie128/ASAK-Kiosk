@@ -1,5 +1,0 @@
-{
-  "title": "주문번호/대기시간 표시",
-  "url": "https://app.notion.com/p/39151ef04f0b81d392baccb5a5b35d27",
-  "text": "<page url=\"https://app.notion.com/p/39151ef04f0b81d392baccb5a5b35d27\">\n<properties>\n{\"요구사항 ID\": \"FWD-ORDER-002\", \"요구사항명\": \"주문번호/대기시간 표시\", \"상세 설명\": \"주문 완료 후 사용자에게 주문번호와 대기 안내 정보를 표시한다.\", \"우선순위\": \"중\", \"상태\": \"예정\", \"구분\": \"화면\"}\n</properties>\n</page>"
-}

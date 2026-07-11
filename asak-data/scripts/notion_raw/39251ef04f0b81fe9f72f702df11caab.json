@@ -1,5 +1,0 @@
-{
-  "title": "관리자 결제수단 설정 검증",
-  "url": "https://app.notion.com/p/39251ef04f0b81fe9f72f702df11caab",
-  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39251ef04f0b81fe9f72f702df11caab.\n<page url=\"https://app.notion.com/p/39251ef04f0b81fe9f72f702df11caab\">\n<properties>\n{\"테스트 ID\": \"TC-012\", \"테스트명\": \"관리자 결제수단 설정 검증\", \"전제조건\": \"결제수단 코드가 등록되어 있음\", \"수행 절차\": \"1. 결제수단 설정 화면을 연다. 2. 노출 여부와 정렬 순서를 변경한다. 3. 고객 결제 화면에서 노출 결과를 확인한다.\", \"기대 결과\": \"활성 결제수단만 고객 결제 화면에 표시되고 정렬 순서가 유지된다.\", \"비고\": \"SC-017 연결, LMIS-PAY-001\", \"상태\": \"예정\"}\n</properties>\n</page>"
-}

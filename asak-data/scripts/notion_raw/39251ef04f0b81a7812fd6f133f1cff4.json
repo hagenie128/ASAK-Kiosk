@@ -1,5 +1,0 @@
-{
-  "title": "드레싱 별도포장 추가 주문",
-  "url": "https://app.notion.com/p/39251ef04f0b81a7812fd6f133f1cff4",
-  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39251ef04f0b81a7812fd6f133f1cff4.\n<page url=\"https://app.notion.com/p/39251ef04f0b81a7812fd6f133f1cff4\">\n<properties>\n{\"url\": \"https://app.notion.com/p/39251ef04f0b81a7812fd6f133f1cff4\", \"시나리오 ID\": \"SC-020\", \"시나리오명\": \"드레싱 별도포장 추가 주문\", \"시작 조건\": \"옵션선택 단계에서 드레싱을 하나 더 맛보고 싶은 고객\", \"종료 조건\": \"장바구니에 기본 드레싱과 별도포장 드레싱이 각각 표시됨\", \"기본 흐름\": \"기본 드레싱 선택 → 드레싱 별도포장 추가 선택(균일가) → 장바구니에 드레싱 2개(기본+추가) 반영 → 주문서에 별도포장 표시\", \"예외 흐름\": \"없음\", \"상태\": \"초안\"}\n</properties>\n<content>\n```mermaid\nflowchart TD\n    A[기본 드레싱 선택] --> B[별도포장 드레싱 추가 선택 - 균일가]\n    B --> C[장바구니에 드레싱 2개 표시]\n    C --> D[주문서에 별도포장 안내]\n```\n</content>\n</page>"
-}

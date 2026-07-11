@@ -1,5 +1,0 @@
-{
-  "title": "실시간 가격/영양정보 합산",
-  "url": "https://app.notion.com/p/39151ef04f0b810f8628d3ed1363a8b5",
-  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39151ef04f0b810f8628d3ed1363a8b5.\n<page url=\"https://app.notion.com/p/39151ef04f0b810f8628d3ed1363a8b5\">\n<properties>\n{\"요구사항 ID\": \"FWD-MENU-009\", \"요구사항명\": \"실시간 가격/영양정보 합산\", \"상세 설명\": \"옵션 추가 또는 제외 시 화면의 가격과 칼로리/단백질 등 요약 정보가 갱신되어야 한다.\", \"우선순위\": \"중\", \"상태\": \"예정\", \"구분\": \"기능\"}\n</properties>\n</page>"
-}

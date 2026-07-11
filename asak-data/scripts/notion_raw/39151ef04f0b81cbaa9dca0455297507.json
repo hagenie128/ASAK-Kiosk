@@ -1,5 +1,0 @@
-{
-  "title": "카테고리별 메뉴 조회",
-  "url": "https://app.notion.com/p/39151ef04f0b81cbaa9dca0455297507",
-  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39151ef04f0b81cbaa9dca0455297507.\n<page url=\"https://app.notion.com/p/39151ef04f0b81cbaa9dca0455297507\">\n<properties>\n{\"요구사항 ID\": \"FWD-MENU-006\", \"요구사항명\": \"카테고리별 메뉴 조회\", \"상세 설명\": \"사용자는 카테고리 탭을 선택해 해당 카테고리의 메뉴만 조회할 수 있어야 한다.\", \"우선순위\": \"상\", \"상태\": \"예정\", \"구분\": \"기능\"}\n</properties>\n</page>"
-}

@@ -1,5 +1,0 @@
-{
-  "title": "관리자 주문 목록/상세 조회",
-  "url": "https://app.notion.com/p/67a51ef04f0b821c9d77811c4e813c41",
-  "text": "<page url=\"https://app.notion.com/p/67a51ef04f0b821c9d77811c4e813c41\">\n<properties>\n{\"API ID\": \"API-007\", \"API명\": \"관리자 주문 목록/상세 조회\", \"Method\": \"GET\", \"userDefined:URL\": \"/api/admin/orders\", \"Request\": \"Query: status(String, optional)\", \"Response\": \"{\\\"code\\\":\\\"ADMIN_ORDER_LIST_SUCCESS\\\"}\", \"Error\": \"{\\\"code\\\":\\\"ORDER_STATUS_INVALID\\\"}\", \"처리 내용\": \"관리자용 주문 목록과 상세 조회\"}\n</properties>\n</page>"
-}

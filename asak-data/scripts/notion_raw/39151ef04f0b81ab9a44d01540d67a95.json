@@ -1,5 +1,0 @@
-{
-  "title": "장바구니 수정(수량변경/삭제)",
-  "url": "https://app.notion.com/p/39151ef04f0b81ab9a44d01540d67a95",
-  "text": "Here is the result of \"view\" for the Page with URL https://app.notion.com/p/39151ef04f0b81ab9a44d01540d67a95.\n<page url=\"https://app.notion.com/p/39151ef04f0b81ab9a44d01540d67a95\">\n<properties>\n{\"url\": \"https://app.notion.com/p/39151ef04f0b81ab9a44d01540d67a95\", \"시나리오 ID\": \"SC-009\", \"시나리오명\": \"장바구니 수정(수량변경/삭제)\", \"시작 조건\": \"장바구니에 1개 이상 메뉴가 담겨있음\", \"종료 조건\": \"수정된 내용이 즉시 반영됨\", \"기본 흐름\": \"장바구니 진입 → 담은 항목 수량 -/+ 조정 → 특정 항목 삭제 → 총금액 자동 재계산\", \"예외 흐름\": \"마지막 1개 삭제 시 장바구니 빈 상태로 메뉴선택 화면으로 유도\", \"상태\": \"초안\"}\n</properties>\n<content>\n```mermaid\nflowchart TD\n    A[장바구니 진입] --> B[수량 -/+ 조정]\n    B --> C[개별 항목 삭제]\n    C --> D[총금액 자동 재계산]\n```\n</content>\n</page>"
-}

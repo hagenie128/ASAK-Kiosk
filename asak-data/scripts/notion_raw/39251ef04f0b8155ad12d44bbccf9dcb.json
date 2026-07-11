@@ -1,5 +1,0 @@
-{
-  "title": "관리자 일별 매출 조회",
-  "url": "https://app.notion.com/p/39251ef04f0b8155ad12d44bbccf9dcb",
-  "text": "<page url=\"https://app.notion.com/p/39251ef04f0b8155ad12d44bbccf9dcb\">\n<properties>\n{\"API ID\": \"API-015\", \"API명\": \"관리자 일별 매출 조회\", \"Method\": \"GET\", \"userDefined:URL\": \"/api/admin/sales/daily\", \"Request\": \"Query: from, to\", \"Response\": \"{\\\"code\\\":\\\"ADMIN_DAILY_SALES_SUCCESS\\\"}\", \"Error\": \"{\\\"code\\\":\\\"SALES_DAILY_FAILED\\\"}\", \"처리 내용\": \"일자별 주문수와 결제금액 조회\"}\n</properties>\n</page>"
-}

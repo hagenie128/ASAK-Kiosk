@@ -1,5 +1,0 @@
-{
-  "title": "주문서 추가/제외 재료 강조 표시",
-  "url": "https://app.notion.com/p/39151ef04f0b814194a2ebfb310b149b",
-  "text": "<page url=\"https://app.notion.com/p/39151ef04f0b814194a2ebfb310b149b\">\n<properties>\n{\"요구사항 ID\": \"LMIS-ORDER-006\", \"요구사항명\": \"주문서 추가/제외 재료 강조 표시\", \"상세 설명\": \"관리자 주문 상세에서 추가 옵션과 제외 재료를 조리자가 쉽게 구분할 수 있도록 표시한다.\", \"우선순위\": \"상\", \"상태\": \"예정\", \"구분\": \"관리자\"}\n</properties>\n</page>"
-}
