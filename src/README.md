@@ -2,6 +2,8 @@
 
 이 폴더에는 구현 코드를 넣지 않았습니다. 각 파일은 역할을 알려 주는 자리표시자입니다.
 
+시작 전에는 상위 [`../README.md`](../README.md)의 **먼저 볼 파일** 표와 [`../IMPLEMENTATION_PLAN.md`](../IMPLEMENTATION_PLAN.md)을 먼저 읽습니다. 이 파일은 폴더별 역할을 찾을 때 사용합니다.
+
 - `main.jsx` → React 앱을 브라우저에 연결
 - `App.jsx` → 라우터 또는 최상위 화면 렌더링
 - `api/` → 백엔드 HTTP 요청
