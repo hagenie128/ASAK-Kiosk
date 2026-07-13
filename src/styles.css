@@ -1,6 +1,8 @@
-:root { font-family: Inter, ui-sans-serif, system-ui, sans-serif; color: #183024; background: #f6f4ed; }
+/* 160de28: 키오스크 캔버스 레이아웃 가이드 */
+:root { font-family: Inter, ui-sans-serif, system-ui, sans-serif; color: #183024; background: #d3d3d3; }
 * { box-sizing: border-box; }
-body { margin: 0; min-width: 320px; }
+body { margin: 0; min-width: 320px; background: #d3d3d3; }
+.kiosk-viewport { width: 1080px; height: 1920px; margin: 0 auto; overflow: hidden; position: relative; background: #f6f4ed; outline: 1px solid red; }
 .site-shell { width: min(1120px, calc(100% - 40px)); margin: auto; }
 .nav { height: 80px; display: flex; align-items: center; gap: 14px; border-bottom: 1px solid #dbe2d5; }
 .nav strong { font-size: 1.5rem; letter-spacing: .08em; }.nav span { color: #718174; font-size: .72rem; letter-spacing: .12em; }.nav a { margin-left: auto; color: #285c3c; text-decoration: none; font-weight: 700; }

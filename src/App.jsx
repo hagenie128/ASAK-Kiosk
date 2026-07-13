@@ -1,3 +1,5 @@
+import { Link, Route, Routes } from "react-router-dom";
+
 const flow = [
   ["01", "주문 시작", "매장/포장을 선택합니다.", "SCR-001 · API-001"],
   ["02", "메뉴·옵션 선택", "메뉴 상세, 재료 제외, 토핑을 구성합니다.", "SCR-003~004 · API-002~004"],
@@ -14,14 +16,22 @@ const metrics = [
 
 export default function App() {
   return (
-    <main className="site-shell">
-      <nav className="nav">
-        <strong>ASAK</strong>
-        <span>SMART SALAD KIOSK</span>
-        <a href="#admin">관리자 기능</a>
-      </nav>
+    <div className="kiosk-viewport">
+      <main className="site-shell">
+        <nav className="nav">
+          <strong>ASAK</strong>
+          <span>SMART SALAD KIOSK</span>
+          <Link to="/admin">관리자 기능</Link>
+        </nav>
 
-      <section className="hero">
+        {/* 160de28에서 추가된 키오스크 화면 경로 뼈대 */}
+        <Routes>
+          <Route path="/" />
+          <Route path="/menu" />
+          <Route path="/admin" />
+        </Routes>
+
+        <section className="hero">
         <p className="eyebrow">KIOSK ORDER EXPERIENCE</p>
         <h1>빠르게 고르고,<br />정확하게 주문하는 ASAK</h1>
         <p className="summary">
@@ -32,9 +42,9 @@ export default function App() {
           <button type="button">주문 흐름 보기</button>
           <a href="#flow">시나리오 기준 확인</a>
         </div>
-      </section>
+        </section>
 
-      <section id="flow" className="section">
+        <section id="flow" className="section">
         <div className="section-title">
           <p className="eyebrow">CUSTOMER FLOW</p>
           <h2>고객 주문 흐름</h2>
@@ -49,9 +59,9 @@ export default function App() {
             </article>
           ))}
         </div>
-      </section>
+        </section>
 
-      <section className="feature-band">
+        <section className="feature-band">
         <div>
           <p className="eyebrow">OPTION & SOLD OUT</p>
           <h2>재료는 빼고, 옵션은 더하고.<br />품절은 즉시 반영합니다.</h2>
@@ -61,9 +71,9 @@ export default function App() {
           <li>메뉴·재료·옵션 항목별 SOLD OUT 표시</li>
           <li>결제 실패 시 장바구니 유지 및 재시도 안내</li>
         </ul>
-      </section>
+        </section>
 
-      <section id="admin" className="section admin">
+        <section id="admin" className="section admin">
         <div className="section-title">
           <p className="eyebrow">ADMIN CONSOLE</p>
           <h2>관리자는 주문과 매출을 한눈에</h2>
@@ -78,9 +88,10 @@ export default function App() {
           ))}
         </div>
         <p className="admin-note">매출은 일별·시간대별 매출과 인기 메뉴를 기준으로 조회합니다. · API-015</p>
-      </section>
+        </section>
 
-      <footer>ASAK · 이하진 & 김나연 · Scenario-driven kiosk project</footer>
-    </main>
+        <footer>ASAK · 이하진 & 김나연 · Scenario-driven kiosk project</footer>
+      </main>
+    </div>
   );
 }
