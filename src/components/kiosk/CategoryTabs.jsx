@@ -1,16 +1,1 @@
-export default function CategoryTabs({ categories, activeId, onSelect }) {
-  return (
-    <nav className="category-tabs">
-      {categories.map((c) => (
-        <button
-          type="button"
-          key={c.categoryId}
-          className={c.categoryId === activeId ? "category-tabs__item is-active" : "category-tabs__item"}
-          onClick={() => onSelect(c.categoryId)}
-        >
-          {c.name}
-        </button>
-      ))}
-    </nav>
-  );
-}
+// 학습용 자리표시자: 카테고리를 고르는 탭 UI입니다.

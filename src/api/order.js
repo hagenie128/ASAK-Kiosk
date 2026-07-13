@@ -1,13 +1,1 @@
-import { apiClient } from "./client";
-
-// API-005 POST /api/orders — 백엔드 준비 전까지는 자리만 잡아둠
-export async function createOrder(payload) {
-  const res = await apiClient.post("/api/orders", payload);
-  return res.data.data;
-}
-
-// API-006 POST /api/orders/{orderId}/payment
-export async function requestPayment(orderId, payload) {
-  const res = await apiClient.post(`/api/orders/${orderId}/payment`, payload);
-  return res.data.data;
-}
+// 학습용 자리표시자: 주문 생성·결제(API-005~006)를 둡니다.

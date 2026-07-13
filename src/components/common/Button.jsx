@@ -1,7 +1,1 @@
-export default function Button({ variant = "primary", children, ...props }) {
-  return (
-    <button type="button" className={`btn btn--${variant}`} {...props}>
-      {children}
-    </button>
-  );
-}
+// 학습용 자리표시자: 공통 버튼 컴포넌트입니다.
