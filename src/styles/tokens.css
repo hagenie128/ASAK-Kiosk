@@ -1,0 +1,18 @@
+/* 브랜드 컬러/타이포 변수. 04 화면 설계 > 디자인 & 화면 > 브랜드 · Trend 컬러 문서에서
+   최종 팔레트(DS-01~07 중 확정안)가 정해지면 값만 채워 넣으면 됨. 지금은 임시값. */
+:root {
+  --color-primary: #16a34a;
+  --color-primary-dark: #15803d;
+  --color-bg: #ffffff;
+  --color-surface: #f5f5f4;
+  --color-text: #1f2937;
+  --color-muted: #6b7280;
+  --color-danger: #dc2626;
+  --color-sold-out: #9ca3af;
+
+  --radius-card: 16px;
+  --radius-button: 12px;
+
+  /* 키오스크는 터치 대상이 크게 — 최소 88px 권장 */
+  --touch-target-min: 88px;
+}
