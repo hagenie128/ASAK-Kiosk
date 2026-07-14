@@ -2,6 +2,8 @@
 
 이 폴더에는 구현 코드를 넣지 않았습니다. 각 파일은 역할을 알려 주는 자리표시자입니다.
 
+처음 구조가 낯설다면 먼저 [STRUCTURE_GUIDE.md](STRUCTURE_GUIDE.md)를 읽습니다. 기존에 배운 `App → pages → components → api` 구조를 현재 Kiosk 폴더에 어떻게 옮기는지, 화면 하나를 만드는 순서로 설명합니다.
+
 시작 전에는 상위 [`../README.md`](../README.md)의 **먼저 볼 파일** 표와 [`../IMPLEMENTATION_PLAN.md`](../IMPLEMENTATION_PLAN.md)을 먼저 읽습니다. 이 파일은 폴더별 역할을 찾을 때 사용합니다.
 
 - `main.jsx` → React 앱을 브라우저에 연결
