@@ -1,1 +1,4 @@
-// 학습용 자리표시자: 결제수단 조회·가상 결제(API-006, API-013)를 둡니다.
+import { API_ENDPOINTS } from "../constants/api";
+import { apiClient, unwrapResponse } from "./client";
+
+export const approvePayment = (payload) => apiClient.post(API_ENDPOINTS.payments, payload).then(unwrapResponse);

@@ -1,1 +1,8 @@
-// 학습용 자리표시자: 카테고리·메뉴·옵션 조회(API-001~004)를 둡니다.
+import { API_ENDPOINTS } from "../constants/api";
+import { apiClient, unwrapResponse } from "./client";
+
+export const getMenus = (categoryId) =>
+  apiClient.get(API_ENDPOINTS.menus, { params: { categoryId } }).then(unwrapResponse);
+
+export const getMenu = (menuId) => apiClient.get(API_ENDPOINTS.menu(menuId)).then(unwrapResponse);
+export const getMenuOptions = (menuId) => apiClient.get(API_ENDPOINTS.menuOptions(menuId)).then(unwrapResponse);

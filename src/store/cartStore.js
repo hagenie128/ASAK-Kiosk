@@ -1,1 +1,2 @@
-// 학습용 자리표시자: Zustand로 장바구니 항목·수량·합계를 관리합니다.
+// Compatibility export: cart is part of the one order session, not a second store.
+export { useOrderSessionStore as useCartStore } from "./orderSessionStore";

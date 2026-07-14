@@ -1,1 +1,2 @@
-// 학습용 자리표시자: 주문 유형·주문 완료 정보처럼 주문 흐름 상태를 관리합니다.
+// Compatibility export: order type, order, and payment belong to one session.
+export { useOrderSessionStore as useOrderStore } from "./orderSessionStore";

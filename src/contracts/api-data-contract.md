@@ -2,6 +2,8 @@
 
 > 정본: `06 API 명세.md` · API 구현 전 이 문서를 먼저 확인한다. 이 파일은 구현 코드가 아니라 프론트가 **받고 보내야 하는 데이터**를 정리한 학습용 계약이다.
 
+> **2026-07-14 변경:** 서비스 URL은 아래처럼 `/api/...`를 사용한다. JSON 필드는 `camelCase`를 사용하며, 실제 구현의 endpoint 상수는 `src/constants/api.js`가 단일 기준이다. DevCopilot MCP URL은 서비스 API가 아니다.
+
 ## 공통 응답과 상태값
 
 모든 응답은 `{ success, status, code, message, data }` 형식이다. `success=false`이면 `data`는 `null`이며, 화면은 `code`를 기준으로 안내를 분기한다.
@@ -25,7 +27,7 @@
 
 ### 장바구니에서 반드시 보관할 데이터
 
-`cartStore.js`에는 API 응답 전체가 아니라 주문 생성에 필요한 다음 데이터를 저장한다.
+`orderSessionStore.js`에는 API 응답 전체가 아니라 주문 생성에 필요한 다음 데이터를 저장한다.
 
 ```text
 orderType

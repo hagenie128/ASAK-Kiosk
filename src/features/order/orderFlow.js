@@ -1,1 +1,8 @@
-// 학습용 자리표시자: 주문 생성 → 결제 → 주문 완료 흐름 규칙입니다.
+export const ORDER_SESSION_RESET_REASON = Object.freeze({
+  PAYMENT_APPROVED: "PAYMENT_APPROVED",
+  TIMEOUT_CONFIRMED: "TIMEOUT_CONFIRMED",
+});
+
+export function shouldResetOrderSession({ paymentStatus, timeoutConfirmed }) {
+  return paymentStatus === "APPROVED" || timeoutConfirmed === true;
+}

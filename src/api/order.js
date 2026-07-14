@@ -1,1 +1,4 @@
-// 학습용 자리표시자: 주문 생성·결제(API-005~006)를 둡니다.
+import { API_ENDPOINTS } from "../constants/api";
+import { apiClient, unwrapResponse } from "./client";
+
+export const createOrder = (payload) => apiClient.post(API_ENDPOINTS.orders, payload).then(unwrapResponse);
