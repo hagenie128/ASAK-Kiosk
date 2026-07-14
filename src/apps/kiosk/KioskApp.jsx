@@ -1,4 +1,5 @@
 import { Link, NavLink, Route, Routes } from "react-router-dom";
+import HomePage from "../../pages/kiosk/HomePage.jsx";
 import "../../styles/app-shell.css";
 
 const screens = [
@@ -14,21 +15,9 @@ function KioskScreen({ title, description, screenId }) {
       <p className="screen-id">{screenId}</p>
       <h1>{title}</h1>
       <p>{description}</p>
-      <p className="screen-note">화면 기능은 키오스크 작업 범위에서 이 위치에 구현합니다.</p>
-    </section>
-  );
-}
-
-function KioskHome() {
-  return (
-    <section className="kiosk-screen">
-      <p className="screen-id">ASAK KIOSK</p>
-      <h1>주문을 시작할까요?</h1>
-      <p>고객 주문 흐름만 제공하는 전용 키오스크 앱입니다.</p>
-      <div className="action-row">
-        <Link className="primary-action" to="/menu">주문 시작</Link>
-        <Link className="secondary-action" to="/accessibility">접근성 안내</Link>
-      </div>
+      <p className="screen-note">
+        화면 기능은 키오스크 작업 범위에서 이 위치에 구현합니다.
+      </p>
     </section>
   );
 }
@@ -37,19 +26,45 @@ export default function KioskApp() {
   return (
     <div className="kiosk-app">
       <header className="kiosk-header">
-        <Link to="/" className="brand">ASAK</Link>
+        <Link to="/" className="brand">
+          ASAK
+        </Link>
         <nav aria-label="키오스크 화면">
-          {screens.map(([path, label]) => <NavLink key={path} to={path} end={path === "/"}>{label}</NavLink>)}
+          {screens.map(([path, label]) => (
+            <NavLink key={path} to={path} end={path === "/"}>
+              {label}
+            </NavLink>
+          ))}
         </nav>
       </header>
       <main>
         <Routes>
-          <Route path="/" element={<KioskHome />} />
+          <Route path="/" element={<HomePage />} />
           {screens.slice(1).map(([path, title, description, screenId]) => (
-            <Route key={path} path={path} element={<KioskScreen title={title} description={description} screenId={screenId} />} />
+            <Route
+              key={path}
+              path={path}
+              element={
+                <KioskScreen
+                  title={title}
+                  description={description}
+                  screenId={screenId}
+                />
+              }
+            />
           ))}
-          <Route path="/accessibility" element={<KioskScreen title="접근성 안내" description="큰 글자와 도움 기능을 제공합니다." screenId="SCR-013" />} />
-          <Route path="*" element={<KioskHome />} />
+          <Route
+            path="/accessibility"
+            element={
+              <KioskScreen
+                title="접근성 안내"
+                description="큰 글자와 도움 기능을 제공합니다."
+                screenId="SCR-013"
+              />
+            }
+          />
+          {/* 홈화면 연결 */}
+          <Route path="*" element={<HomePage />} />
         </Routes>
       </main>
     </div>

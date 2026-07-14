@@ -1,39 +1,48 @@
 import { create } from "zustand";
 
-const emptySession = () => ({
-  orderType: null,
-  items: [],
-  order: null,
-  payment: null,
-  paymentError: null,
-});
+const initialState = {
+  orderType: null, // 'EAT_IN' | 'TAKE_OUT'
+  items: [], // { menuId, menuName, unitPrice, quantity, optionItems[], excludedIngredientIds[] }
+  order: {
+    // API-005 주문 생성 응답:
+    orderId: null,
+    orderNo: null,
+    orderType: null,
+    totalPrice: 0,
+    orderStatus: null, // RECEIVED | PREPARING | COMPLETED
+    paymentStatus: null, // READY | APPROVED | FAILED
+  },
+  payment: {
+    // API-006 결제 처리 응답:
+    paymentId: null,
+    orderId: null,
+    orderNo: null,
+    amount: 0,
+    paymentStatus: null,
+    paidAt: null,
+  },
+  paymentError: null, // 실패 code/message (SCR-012용)
+};
 
-/** Only customer order-session state belongs in a global store. */
-export const useOrderSessionStore = create((set, get) => ({
-  ...emptySession(),
-  lastCompletedOrder: null,
+export const useOrderSession = create((set) => ({
+  ...initialState,
+
   setOrderType: (orderType) => set({ orderType }),
-  setItems: (items) => set({ items }),
+
+  addItem: (item) => set((state) => ({ items: [...state.items, item] })),
+  updateItemQuantity: (index, quantity) =>
+    set((state) => ({
+      items: state.items.map((it, i) =>
+        i === index ? { ...it, quantity } : it,
+      ),
+    })),
+  removeItem: (index) =>
+    set((state) => ({ items: state.items.filter((_, i) => i !== index) })),
+
   setOrder: (order) => set({ order }),
+  setPayment: (payment) => set({ payment, paymentError: null }),
   setPaymentError: (paymentError) => set({ paymentError }),
 
-  resetOrderSession: (reason, completedOrder = null) => {
-    if (reason !== "PAYMENT_APPROVED" && reason !== "TIMEOUT_CONFIRMED") {
-      throw new Error(`Order session reset is not allowed for: ${reason}`);
-    }
-    set({ ...emptySession(), lastCompletedOrder: completedOrder ?? get().lastCompletedOrder });
-  },
-
-  handlePaymentResult: (payment) => {
-    if (payment?.paymentStatus !== "APPROVED") {
-      // A failed payment retains cart, selected options, order type, and order.
-      set({ paymentError: payment });
-      return false;
-    }
-    get().resetOrderSession("PAYMENT_APPROVED", { order: get().order, payment });
-    return true;
-  },
-
-  confirmTimeout: () => get().resetOrderSession("TIMEOUT_CONFIRMED"),
-  clearCompletedOrder: () => set({ lastCompletedOrder: null }),
+  // 결제 APPROVED 뒤에만 호출
+  resetSession: () => set(initialState),
 }));
