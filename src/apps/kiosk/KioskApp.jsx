@@ -9,6 +9,8 @@ const screens = [
   ["/payment", "결제", "결제 진행 및 실패 복구를 처리합니다.", "SCR-007"],
 ];
 
+// 아직 페이지별 기능을 만들기 전의 임시 화면입니다.
+// 실제 구현을 시작하면 각 URL에 해당하는 pages/kiosk의 Page 컴포넌트로 바꿉니다.
 function KioskScreen({ title, description, screenId }) {
   return (
     <section className="kiosk-screen">
@@ -38,6 +40,11 @@ export default function KioskApp() {
         </nav>
       </header>
       <main>
+        {/*
+          예제 프로젝트의 App.js에 있던 Routes와 같은 역할입니다.
+          URL 하나는 pages/kiosk 안의 페이지 컴포넌트 하나와 연결합니다.
+          예: /menu -> MenuListPage
+        */}
         <Routes>
           <Route path="/" element={<HomePage />} />
           {screens.slice(1).map(([path, title, description, screenId]) => (
