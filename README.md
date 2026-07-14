@@ -33,3 +33,8 @@ src/
   store/       주문 초안·장바구니 상태
   mocks/       mock API fixture
 ```
+
+## Figma · MCP 구현 가이드
+
+Figma 프로토타입을 MCP로 반영한 뒤의 화면 구현 범위, 주문 상태·API 연결 작업,
+CSS 분리 기준, 화면별 체크리스트는 [docs/figma-mcp-implementation-guide.md](docs/figma-mcp-implementation-guide.md)를 참고합니다.
