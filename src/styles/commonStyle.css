@@ -1,0 +1,26 @@
+/* -----------------------캔버스 레이아웃 가이드 ---------------- */
+/* --------- 화면 구성을 위한 키오스크 레이아웃 ----------- */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: #d3d3d3;
+    /* 여백 티 안 나게 검정 배경 */
+}
+
+/* 키오스크 고정 캔버스 */
+.kiosk-viewport {
+    width: 1080px;
+    height: 1920px;
+    margin: 0 auto;
+    /* 화면 중앙 정렬 */
+    overflow: hidden;
+    position: relative;
+    /* 수정 가능 */
+    background: #f6f4ed;
+    outline: 1px solid red;
+    /* 실제 키오스크 배경색 */
+}
+
+/* -----------------------캔버스 레이아웃 가이드 ---------------- */
