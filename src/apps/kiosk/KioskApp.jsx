@@ -1,5 +1,6 @@
 import { Link, NavLink, Route, Routes } from "react-router-dom";
 import HomePage from "../../pages/kiosk/HomePage.jsx";
+import MenuListPage from "../../pages/kiosk/MenuListPage.jsx";
 import "../../styles/commonStyle.css";
 
 // const screens = [
@@ -29,9 +30,7 @@ export default function KioskApp() {
     <div className="kiosk-viewport">
       <Routes>
         <Route path="/" element={<HomePage />} />
-        {/* <Route path="/menu" element={<MenuListPage />} />
-        <Route path="/cart" element={<CartPage />} />
-        <Route path="/payment" element={<PaymentPage />} /> */}
+        <Route path="/menu" element={<MenuListPage />} />
       </Routes>
     </div>
   );
