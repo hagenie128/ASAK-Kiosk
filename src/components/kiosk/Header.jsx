@@ -7,10 +7,10 @@ export default function Header() {
 
   return (
     <>
-      <header className="kiosk-header">
+      <header>
         <button onClick={() => navigate(-1)}>뒤로가기 아이콘</button>
-        <div className="header-logo">LOGO</div>
-        <Link to={"/"} className="header-home">
+        <div >LOGO</div>
+        <Link to={"/"}>
           집
         </Link>
       </header>
