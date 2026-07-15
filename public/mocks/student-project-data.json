@@ -1,0 +1,146 @@
+{
+  "meta": {
+    "version": "2026-07-15.student-project.1",
+    "description": "학생 프로젝트 발표 및 화면 확인용 확장 목업 데이터",
+    "currency": "KRW",
+    "generatedAt": "2026-07-15T09:00:00+09:00",
+    "recordCounts": { "categories": 8, "menus": 28, "orders": 15, "salesDays": 14 }
+  },
+  "categories": [
+    { "id": 1, "categoryId": 1, "name": "샐러드", "sortOrder": 1, "isActive": true },
+    { "id": 2, "categoryId": 2, "name": "포케", "sortOrder": 2, "isActive": true },
+    { "id": 3, "categoryId": 3, "name": "샌드위치", "sortOrder": 3, "isActive": true },
+    { "id": 4, "categoryId": 4, "name": "랩", "sortOrder": 4, "isActive": true },
+    { "id": 5, "categoryId": 5, "name": "덮밥", "sortOrder": 5, "isActive": true },
+    { "id": 6, "categoryId": 6, "name": "스프", "sortOrder": 6, "isActive": true },
+    { "id": 7, "categoryId": 7, "name": "사이드", "sortOrder": 7, "isActive": true },
+    { "id": 8, "categoryId": 8, "name": "음료", "sortOrder": 8, "isActive": true }
+  ],
+  "tags": [
+    { "id": 1, "name": "BEST", "color": "#E85D4A" },
+    { "id": 2, "name": "NEW", "color": "#3B82F6" },
+    { "id": 3, "name": "고단백", "color": "#16845B" },
+    { "id": 4, "name": "매콤한맛", "color": "#D94841" },
+    { "id": 5, "name": "가벼운식사", "color": "#699C43" },
+    { "id": 6, "name": "학생추천", "color": "#8B5CF6" }
+  ],
+  "menus": [
+    { "id": 201, "categoryId": 1, "name": "닭가슴살 시저 샐러드", "price": 8900, "imageUrl": "/assets/menu/201.png", "description": "담백한 닭가슴살과 신선한 채소에 시저 드레싱을 곁들인 샐러드", "isSoldOut": false, "isActive": true, "sortOrder": 1, "tagIds": [1, 3], "nutrition": { "kcal": 412, "proteinG": 29, "carbG": 23, "fatG": 19, "sodiumMg": 720 } },
+    { "id": 202, "categoryId": 1, "name": "연어 아보카도 샐러드", "price": 10900, "imageUrl": "/assets/menu/202.png", "description": "구운 연어와 아보카도, 어린잎 채소의 산뜻한 조합", "isSoldOut": false, "isActive": true, "sortOrder": 2, "tagIds": [1, 5], "nutrition": { "kcal": 486, "proteinG": 27, "carbG": 24, "fatG": 28, "sodiumMg": 680 } },
+    { "id": 203, "categoryId": 1, "name": "두부 버섯 샐러드", "price": 7600, "imageUrl": "/assets/menu/203.png", "description": "구운 두부와 버섯을 듬뿍 담은 부담 없는 채식 샐러드", "isSoldOut": false, "isActive": true, "sortOrder": 3, "tagIds": [5, 6], "nutrition": { "kcal": 328, "proteinG": 18, "carbG": 31, "fatG": 14, "sodiumMg": 590 } },
+    { "id": 204, "categoryId": 1, "name": "리코타 토마토 샐러드", "price": 8200, "imageUrl": "/assets/menu/204.png", "description": "리코타 치즈와 방울토마토를 곁들인 산뜻한 샐러드", "isSoldOut": false, "isActive": true, "sortOrder": 4, "tagIds": [2], "nutrition": { "kcal": 365, "proteinG": 16, "carbG": 29, "fatG": 21, "sodiumMg": 610 } },
+    { "id": 205, "categoryId": 2, "name": "참치 김치 포케", "price": 9800, "imageUrl": "/assets/menu/205.png", "description": "참치와 현미밥, 매콤한 김치를 함께 즐기는 든든한 포케", "isSoldOut": false, "isActive": true, "sortOrder": 1, "tagIds": [1, 4, 3], "nutrition": { "kcal": 568, "proteinG": 34, "carbG": 67, "fatG": 17, "sodiumMg": 1080 } },
+    { "id": 206, "categoryId": 2, "name": "연어 간장 포케", "price": 11500, "imageUrl": "/assets/menu/206.png", "description": "간장 소스에 버무린 연어와 현미밥, 채소 토핑", "isSoldOut": false, "isActive": true, "sortOrder": 2, "tagIds": [1, 3], "nutrition": { "kcal": 602, "proteinG": 31, "carbG": 72, "fatG": 20, "sodiumMg": 990 } },
+    { "id": 207, "categoryId": 2, "name": "불고기 포케", "price": 10500, "imageUrl": "/assets/menu/207.png", "description": "달콤짭짤한 불고기와 아삭한 채소를 올린 포케", "isSoldOut": false, "isActive": true, "sortOrder": 3, "tagIds": [6], "nutrition": { "kcal": 645, "proteinG": 29, "carbG": 76, "fatG": 23, "sodiumMg": 1150 } },
+    { "id": 208, "categoryId": 2, "name": "새우 망고 포케", "price": 10700, "imageUrl": "/assets/menu/208.png", "description": "탱글한 새우와 망고 살사를 담은 상큼한 포케", "isSoldOut": false, "isActive": true, "sortOrder": 4, "tagIds": [2, 5], "nutrition": { "kcal": 534, "proteinG": 26, "carbG": 70, "fatG": 15, "sodiumMg": 830 } },
+    { "id": 209, "categoryId": 3, "name": "에그 치킨 샌드위치", "price": 7200, "imageUrl": "/assets/menu/209.png", "description": "부드러운 에그 스프레드와 치킨을 넣은 클래식 샌드위치", "isSoldOut": false, "isActive": true, "sortOrder": 1, "tagIds": [1, 3], "nutrition": { "kcal": 455, "proteinG": 25, "carbG": 47, "fatG": 18, "sodiumMg": 790 } },
+    { "id": 210, "categoryId": 3, "name": "햄 치즈 통밀 샌드위치", "price": 6900, "imageUrl": "/assets/menu/210.png", "description": "통밀빵, 햄, 치즈와 신선한 채소로 만든 샌드위치", "isSoldOut": false, "isActive": true, "sortOrder": 2, "tagIds": [6], "nutrition": { "kcal": 438, "proteinG": 22, "carbG": 51, "fatG": 16, "sodiumMg": 930 } },
+    { "id": 211, "categoryId": 3, "name": "바질 모짜렐라 샌드위치", "price": 7900, "imageUrl": "/assets/menu/211.png", "description": "바질 페스토와 모짜렐라, 토마토의 조화", "isSoldOut": false, "isActive": true, "sortOrder": 3, "tagIds": [2, 5], "nutrition": { "kcal": 420, "proteinG": 19, "carbG": 49, "fatG": 18, "sodiumMg": 670 } },
+    { "id": 212, "categoryId": 3, "name": "참치마요 샌드위치", "price": 6500, "imageUrl": "/assets/menu/212.png", "description": "학생들이 좋아하는 참치마요와 계란 샌드위치", "isSoldOut": false, "isActive": true, "sortOrder": 4, "tagIds": [6], "nutrition": { "kcal": 472, "proteinG": 23, "carbG": 43, "fatG": 23, "sodiumMg": 880 } },
+    { "id": 213, "categoryId": 4, "name": "치킨 시저 랩", "price": 7500, "imageUrl": "/assets/menu/213.png", "description": "닭가슴살과 로메인, 시저 소스를 또띠아에 돌돌 말았어요", "isSoldOut": false, "isActive": true, "sortOrder": 1, "tagIds": [1, 3], "nutrition": { "kcal": 428, "proteinG": 30, "carbG": 42, "fatG": 15, "sodiumMg": 810 } },
+    { "id": 214, "categoryId": 4, "name": "스파이시 쉬림프 랩", "price": 8200, "imageUrl": "/assets/menu/214.png", "description": "매콤한 새우와 아삭한 채소를 넣은 인기 랩", "isSoldOut": false, "isActive": true, "sortOrder": 2, "tagIds": [2, 4], "nutrition": { "kcal": 405, "proteinG": 24, "carbG": 44, "fatG": 14, "sodiumMg": 900 } },
+    { "id": 215, "categoryId": 4, "name": "팔라펠 허브 랩", "price": 7000, "imageUrl": "/assets/menu/215.png", "description": "고소한 팔라펠과 허브 채소를 담은 채식 랩", "isSoldOut": false, "isActive": true, "sortOrder": 3, "tagIds": [5], "nutrition": { "kcal": 390, "proteinG": 17, "carbG": 53, "fatG": 13, "sodiumMg": 740 } },
+    { "id": 216, "categoryId": 4, "name": "불고기 치즈 랩", "price": 7900, "imageUrl": "/assets/menu/216.png", "description": "불고기와 체다치즈를 넣어 든든하게 만든 랩", "isSoldOut": true, "isActive": true, "sortOrder": 4, "tagIds": [6], "nutrition": { "kcal": 525, "proteinG": 27, "carbG": 49, "fatG": 24, "sodiumMg": 1050 } },
+    { "id": 217, "categoryId": 5, "name": "닭가슴살 현미 덮밥", "price": 8900, "imageUrl": "/assets/menu/217.png", "description": "현미밥 위에 닭가슴살과 반숙 계란을 올린 한 그릇", "isSoldOut": false, "isActive": true, "sortOrder": 1, "tagIds": [1, 3, 6], "nutrition": { "kcal": 610, "proteinG": 39, "carbG": 72, "fatG": 16, "sodiumMg": 870 } },
+    { "id": 218, "categoryId": 5, "name": "두부 데리야키 덮밥", "price": 7900, "imageUrl": "/assets/menu/218.png", "description": "바삭하게 구운 두부와 데리야키 소스의 덮밥", "isSoldOut": false, "isActive": true, "sortOrder": 2, "tagIds": [5], "nutrition": { "kcal": 575, "proteinG": 23, "carbG": 82, "fatG": 15, "sodiumMg": 1010 } },
+    { "id": 219, "categoryId": 5, "name": "매콤 제육 덮밥", "price": 8500, "imageUrl": "/assets/menu/219.png", "description": "매콤한 양념 제육과 밥, 계란을 함께 담았어요", "isSoldOut": false, "isActive": true, "sortOrder": 3, "tagIds": [4, 6], "nutrition": { "kcal": 688, "proteinG": 32, "carbG": 79, "fatG": 25, "sodiumMg": 1240 } },
+    { "id": 220, "categoryId": 5, "name": "연어 스테이크 덮밥", "price": 11900, "imageUrl": "/assets/menu/220.png", "description": "촉촉하게 구운 연어와 레몬 소스의 프리미엄 덮밥", "isSoldOut": false, "isActive": true, "sortOrder": 4, "tagIds": [2, 3], "nutrition": { "kcal": 642, "proteinG": 35, "carbG": 68, "fatG": 24, "sodiumMg": 820 } },
+    { "id": 221, "categoryId": 6, "name": "단호박 크림스프", "price": 4500, "imageUrl": "/assets/menu/221.png", "description": "달콤한 단호박을 부드럽게 끓인 따뜻한 스프", "isSoldOut": false, "isActive": true, "sortOrder": 1, "tagIds": [5], "nutrition": { "kcal": 245, "proteinG": 6, "carbG": 34, "fatG": 9, "sodiumMg": 540 } },
+    { "id": 222, "categoryId": 6, "name": "토마토 바질스프", "price": 4300, "imageUrl": "/assets/menu/222.png", "description": "토마토의 산뜻함과 바질 향이 어우러진 스프", "isSoldOut": false, "isActive": true, "sortOrder": 2, "tagIds": [2, 5], "nutrition": { "kcal": 210, "proteinG": 7, "carbG": 29, "fatG": 8, "sodiumMg": 620 } },
+    { "id": 223, "categoryId": 7, "name": "구운 고구마", "price": 2800, "imageUrl": "/assets/menu/223.png", "description": "간식으로도 좋은 달콤한 구운 고구마", "isSoldOut": false, "isActive": true, "sortOrder": 1, "tagIds": [5, 6], "nutrition": { "kcal": 180, "proteinG": 3, "carbG": 41, "fatG": 1, "sodiumMg": 40 } },
+    { "id": 224, "categoryId": 7, "name": "미니 닭가슴살", "price": 3500, "imageUrl": "/assets/menu/224.png", "description": "단백질을 보충하기 좋은 미니 사이드", "isSoldOut": false, "isActive": true, "sortOrder": 2, "tagIds": [3], "nutrition": { "kcal": 140, "proteinG": 26, "carbG": 2, "fatG": 3, "sodiumMg": 260 } },
+    { "id": 225, "categoryId": 8, "name": "아이스 아메리카노", "price": 2500, "imageUrl": "/assets/menu/225.png", "description": "깔끔하고 진한 원두의 아이스 아메리카노", "isSoldOut": false, "isActive": true, "sortOrder": 1, "tagIds": [1], "nutrition": { "kcal": 10, "proteinG": 0, "carbG": 1, "fatG": 0, "sodiumMg": 5 } },
+    { "id": 226, "categoryId": 8, "name": "레몬 민트 에이드", "price": 3900, "imageUrl": "/assets/menu/226.png", "description": "레몬과 민트로 상쾌하게 만든 에이드", "isSoldOut": false, "isActive": true, "sortOrder": 2, "tagIds": [2], "nutrition": { "kcal": 128, "proteinG": 0, "carbG": 32, "fatG": 0, "sodiumMg": 15 } },
+    { "id": 227, "categoryId": 8, "name": "딸기 요거트", "price": 4200, "imageUrl": "/assets/menu/227.png", "description": "상큼한 딸기와 요거트를 곱게 갈은 음료", "isSoldOut": false, "isActive": true, "sortOrder": 3, "tagIds": [5], "nutrition": { "kcal": 220, "proteinG": 8, "carbG": 35, "fatG": 6, "sodiumMg": 95 } },
+    { "id": 228, "categoryId": 8, "name": "무가당 아이스티", "price": 2900, "imageUrl": "/assets/menu/228.png", "description": "가볍게 마시기 좋은 무가당 복숭아 아이스티", "isSoldOut": false, "isActive": true, "sortOrder": 4, "tagIds": [5, 6], "nutrition": { "kcal": 18, "proteinG": 0, "carbG": 4, "fatG": 0, "sodiumMg": 10 } }
+  ],
+  "optionGroups": [
+    { "id": 11, "name": "드레싱 선택", "groupType": "DRESSING", "selectType": "SINGLE", "isRequired": true, "minSelect": 1, "maxSelect": 1, "items": [ { "id": 101, "name": "시저 드레싱", "priceDelta": 0, "isDefault": true }, { "id": 102, "name": "발사믹 소스", "priceDelta": 0, "isDefault": false }, { "id": 103, "name": "오리엔탈 소스", "priceDelta": 0, "isDefault": false } ] },
+    { "id": 12, "name": "토핑 추가", "groupType": "TOPPING", "selectType": "MULTIPLE", "isRequired": false, "minSelect": 0, "maxSelect": 3, "items": [ { "id": 104, "name": "아보카도 추가", "priceDelta": 1800, "isDefault": false }, { "id": 105, "name": "반숙 계란 추가", "priceDelta": 1000, "isDefault": false }, { "id": 106, "name": "닭가슴살 추가", "priceDelta": 2500, "isDefault": false } ] },
+    { "id": 13, "name": "밥 종류", "groupType": "BASE", "selectType": "SINGLE", "isRequired": true, "minSelect": 1, "maxSelect": 1, "items": [ { "id": 107, "name": "현미밥", "priceDelta": 0, "isDefault": true }, { "id": 108, "name": "곤약밥", "priceDelta": 500, "isDefault": false } ] },
+    { "id": 14, "name": "음료 사이즈", "groupType": "SIZE", "selectType": "SINGLE", "isRequired": true, "minSelect": 1, "maxSelect": 1, "items": [ { "id": 109, "name": "Regular", "priceDelta": 0, "isDefault": true }, { "id": 110, "name": "Large", "priceDelta": 700, "isDefault": false } ] }
+  ],
+  "soldOutItems": [
+    { "id": 1, "targetType": "MENU", "targetId": 216, "targetName": "불고기 치즈 랩", "reason": "오늘 준비 수량 소진", "startedAt": "2026-07-15T11:20:00+09:00", "endedAt": null, "isActive": true },
+    { "id": 2, "targetType": "OPTION_ITEM", "targetId": 104, "targetName": "아보카도 추가", "reason": "재료 입고 대기", "startedAt": "2026-07-15T10:00:00+09:00", "endedAt": null, "isActive": true }
+  ],
+  "paymentMethods": [
+    { "id": 1, "code": "CARD", "name": "카드 결제", "isActive": true, "sortOrder": 1 },
+    { "id": 2, "code": "KAKAO_PAY", "name": "카카오페이", "isActive": true, "sortOrder": 2 },
+    { "id": 3, "code": "NAVER_PAY", "name": "네이버페이", "isActive": true, "sortOrder": 3 },
+    { "id": 4, "code": "CASH", "name": "현금 결제", "isActive": true, "sortOrder": 4 }
+  ],
+  "orders": [
+    { "id": 9701, "orderNo": "ST20260715-001", "orderType": "TAKE_OUT", "status": "PAID", "totalAmount": 11400, "paymentMethodCode": "CARD", "createdAt": "2026-07-15T11:04:12+09:00", "items": [ { "id": 1, "menuId": 201, "menuName": "닭가슴살 시저 샐러드", "quantity": 1, "unitPrice": 8900, "selectedOptions": [ { "optionItemId": 101, "name": "시저 드레싱", "priceDelta": 0 }, { "optionItemId": 105, "name": "반숙 계란 추가", "priceDelta": 1000 } ] } ] },
+    { "id": 9702, "orderNo": "ST20260715-002", "orderType": "STORE", "status": "PREPARING", "totalAmount": 12300, "paymentMethodCode": "KAKAO_PAY", "createdAt": "2026-07-15T11:18:40+09:00", "items": [ { "id": 2, "menuId": 205, "menuName": "참치 김치 포케", "quantity": 1, "unitPrice": 9800, "selectedOptions": [ { "optionItemId": 108, "name": "곤약밥", "priceDelta": 500 }, { "optionItemId": 106, "name": "닭가슴살 추가", "priceDelta": 2500 } ] } ] },
+    { "id": 9703, "orderNo": "ST20260715-003", "orderType": "TAKE_OUT", "status": "COMPLETED", "totalAmount": 6500, "paymentMethodCode": "NAVER_PAY", "createdAt": "2026-07-15T11:32:05+09:00", "items": [ { "id": 3, "menuId": 212, "menuName": "참치마요 샌드위치", "quantity": 1, "unitPrice": 6500, "selectedOptions": [] } ] },
+    { "id": 9704, "orderNo": "ST20260715-004", "orderType": "STORE", "status": "READY", "totalAmount": 9000, "paymentMethodCode": "CARD", "createdAt": "2026-07-15T11:41:19+09:00", "items": [ { "id": 4, "menuId": 217, "menuName": "닭가슴살 현미 덮밥", "quantity": 1, "unitPrice": 8900, "selectedOptions": [] } ] },
+    { "id": 9705, "orderNo": "ST20260715-005", "orderType": "TAKE_OUT", "status": "CANCELED", "totalAmount": 8200, "paymentMethodCode": "CARD", "createdAt": "2026-07-15T12:02:01+09:00", "items": [ { "id": 5, "menuId": 214, "menuName": "스파이시 쉬림프 랩", "quantity": 1, "unitPrice": 8200, "selectedOptions": [] } ] },
+    { "id": 9706, "orderNo": "ST20260715-006", "orderType": "STORE", "status": "PAID", "totalAmount": 16400, "paymentMethodCode": "CASH", "createdAt": "2026-07-15T12:08:44+09:00", "items": [ { "id": 6, "menuId": 202, "menuName": "연어 아보카도 샐러드", "quantity": 1, "unitPrice": 10900, "selectedOptions": [] }, { "id": 7, "menuId": 225, "menuName": "아이스 아메리카노", "quantity": 2, "unitPrice": 2500, "selectedOptions": [] } ] },
+    { "id": 9707, "orderNo": "ST20260715-007", "orderType": "TAKE_OUT", "status": "PREPARING", "totalAmount": 13800, "paymentMethodCode": "KAKAO_PAY", "createdAt": "2026-07-15T12:15:26+09:00", "items": [ { "id": 8, "menuId": 209, "menuName": "에그 치킨 샌드위치", "quantity": 2, "unitPrice": 7200, "selectedOptions": [] } ] },
+    { "id": 9708, "orderNo": "ST20260715-008", "orderType": "STORE", "status": "COMPLETED", "totalAmount": 14800, "paymentMethodCode": "CARD", "createdAt": "2026-07-15T12:24:11+09:00", "items": [ { "id": 9, "menuId": 207, "menuName": "불고기 포케", "quantity": 1, "unitPrice": 10500, "selectedOptions": [] }, { "id": 10, "menuId": 221, "menuName": "단호박 크림스프", "quantity": 1, "unitPrice": 4500, "selectedOptions": [] } ] },
+    { "id": 9709, "orderNo": "ST20260715-009", "orderType": "TAKE_OUT", "status": "PAID", "totalAmount": 11800, "paymentMethodCode": "NAVER_PAY", "createdAt": "2026-07-15T12:37:50+09:00", "items": [ { "id": 11, "menuId": 206, "menuName": "연어 간장 포케", "quantity": 1, "unitPrice": 11500, "selectedOptions": [] } ] },
+    { "id": 9710, "orderNo": "ST20260715-010", "orderType": "STORE", "status": "READY", "totalAmount": 12100, "paymentMethodCode": "CARD", "createdAt": "2026-07-15T12:45:03+09:00", "items": [ { "id": 12, "menuId": 213, "menuName": "치킨 시저 랩", "quantity": 1, "unitPrice": 7500, "selectedOptions": [] }, { "id": 13, "menuId": 226, "menuName": "레몬 민트 에이드", "quantity": 1, "unitPrice": 3900, "selectedOptions": [] } ] },
+    { "id": 9711, "orderNo": "ST20260715-011", "orderType": "TAKE_OUT", "status": "PAID", "totalAmount": 7900, "paymentMethodCode": "CARD", "createdAt": "2026-07-15T13:01:18+09:00", "items": [ { "id": 14, "menuId": 218, "menuName": "두부 데리야키 덮밥", "quantity": 1, "unitPrice": 7900, "selectedOptions": [] } ] },
+    { "id": 9712, "orderNo": "ST20260715-012", "orderType": "STORE", "status": "PREPARING", "totalAmount": 22900, "paymentMethodCode": "KAKAO_PAY", "createdAt": "2026-07-15T13:14:22+09:00", "items": [ { "id": 15, "menuId": 220, "menuName": "연어 스테이크 덮밥", "quantity": 1, "unitPrice": 11900, "selectedOptions": [] }, { "id": 16, "menuId": 206, "menuName": "연어 간장 포케", "quantity": 1, "unitPrice": 11500, "selectedOptions": [] } ] },
+    { "id": 9713, "orderNo": "ST20260715-013", "orderType": "TAKE_OUT", "status": "COMPLETED", "totalAmount": 10100, "paymentMethodCode": "CASH", "createdAt": "2026-07-15T13:22:07+09:00", "items": [ { "id": 17, "menuId": 211, "menuName": "바질 모짜렐라 샌드위치", "quantity": 1, "unitPrice": 7900, "selectedOptions": [] }, { "id": 18, "menuId": 223, "menuName": "구운 고구마", "quantity": 1, "unitPrice": 2800, "selectedOptions": [] } ] },
+    { "id": 9714, "orderNo": "ST20260715-014", "orderType": "STORE", "status": "PAID", "totalAmount": 12900, "paymentMethodCode": "NAVER_PAY", "createdAt": "2026-07-15T13:35:45+09:00", "items": [ { "id": 19, "menuId": 219, "menuName": "매콤 제육 덮밥", "quantity": 1, "unitPrice": 8500, "selectedOptions": [] }, { "id": 20, "menuId": 227, "menuName": "딸기 요거트", "quantity": 1, "unitPrice": 4200, "selectedOptions": [] } ] },
+    { "id": 9715, "orderNo": "ST20260715-015", "orderType": "TAKE_OUT", "status": "PAID", "totalAmount": 10100, "paymentMethodCode": "CARD", "createdAt": "2026-07-15T13:48:12+09:00", "items": [ { "id": 21, "menuId": 203, "menuName": "두부 버섯 샐러드", "quantity": 1, "unitPrice": 7600, "selectedOptions": [] }, { "id": 22, "menuId": 225, "menuName": "아이스 아메리카노", "quantity": 1, "unitPrice": 2500, "selectedOptions": [] } ] }
+  ],
+  "salesAnalytics": {
+    "salesDaily": [
+      { "salesDate": "2026-07-02", "orderCount": 31, "customerCount": 29, "canceledOrderCount": 1, "grossSalesAmount": 285400, "canceledAmount": 7600, "netSalesAmount": 277800 },
+      { "salesDate": "2026-07-03", "orderCount": 38, "customerCount": 35, "canceledOrderCount": 2, "grossSalesAmount": 354900, "canceledAmount": 17200, "netSalesAmount": 337700 },
+      { "salesDate": "2026-07-04", "orderCount": 45, "customerCount": 41, "canceledOrderCount": 1, "grossSalesAmount": 421800, "canceledAmount": 8900, "netSalesAmount": 412900 },
+      { "salesDate": "2026-07-05", "orderCount": 27, "customerCount": 25, "canceledOrderCount": 0, "grossSalesAmount": 248500, "canceledAmount": 0, "netSalesAmount": 248500 },
+      { "salesDate": "2026-07-06", "orderCount": 34, "customerCount": 31, "canceledOrderCount": 1, "grossSalesAmount": 319700, "canceledAmount": 6500, "netSalesAmount": 313200 },
+      { "salesDate": "2026-07-07", "orderCount": 42, "customerCount": 38, "canceledOrderCount": 2, "grossSalesAmount": 398200, "canceledAmount": 18900, "netSalesAmount": 379300 },
+      { "salesDate": "2026-07-08", "orderCount": 46, "customerCount": 43, "canceledOrderCount": 1, "grossSalesAmount": 437600, "canceledAmount": 8200, "netSalesAmount": 429400 },
+      { "salesDate": "2026-07-09", "orderCount": 51, "customerCount": 47, "canceledOrderCount": 2, "grossSalesAmount": 492300, "canceledAmount": 16100, "netSalesAmount": 476200 },
+      { "salesDate": "2026-07-10", "orderCount": 48, "customerCount": 45, "canceledOrderCount": 1, "grossSalesAmount": 456800, "canceledAmount": 10500, "netSalesAmount": 446300 },
+      { "salesDate": "2026-07-11", "orderCount": 39, "customerCount": 36, "canceledOrderCount": 1, "grossSalesAmount": 361400, "canceledAmount": 7200, "netSalesAmount": 354200 },
+      { "salesDate": "2026-07-12", "orderCount": 29, "customerCount": 27, "canceledOrderCount": 0, "grossSalesAmount": 265700, "canceledAmount": 0, "netSalesAmount": 265700 },
+      { "salesDate": "2026-07-13", "orderCount": 43, "customerCount": 40, "canceledOrderCount": 1, "grossSalesAmount": 402900, "canceledAmount": 7900, "netSalesAmount": 395000 },
+      { "salesDate": "2026-07-14", "orderCount": 56, "customerCount": 51, "canceledOrderCount": 2, "grossSalesAmount": 536500, "canceledAmount": 17400, "netSalesAmount": 519100 },
+      { "salesDate": "2026-07-15", "orderCount": 15, "customerCount": 14, "canceledOrderCount": 1, "grossSalesAmount": 157100, "canceledAmount": 8200, "netSalesAmount": 148900 }
+    ],
+    "salesHourly": [
+      { "salesDate": "2026-07-15", "salesHour": 10, "orderCount": 8, "customerCount": 8, "canceledOrderCount": 0, "grossSalesAmount": 68400, "canceledAmount": 0, "netSalesAmount": 68400 },
+      { "salesDate": "2026-07-15", "salesHour": 11, "orderCount": 18, "customerCount": 17, "canceledOrderCount": 0, "grossSalesAmount": 162900, "canceledAmount": 0, "netSalesAmount": 162900 },
+      { "salesDate": "2026-07-15", "salesHour": 12, "orderCount": 29, "customerCount": 27, "canceledOrderCount": 1, "grossSalesAmount": 281600, "canceledAmount": 8200, "netSalesAmount": 273400 },
+      { "salesDate": "2026-07-15", "salesHour": 13, "orderCount": 21, "customerCount": 20, "canceledOrderCount": 0, "grossSalesAmount": 210500, "canceledAmount": 0, "netSalesAmount": 210500 },
+      { "salesDate": "2026-07-15", "salesHour": 14, "orderCount": 12, "customerCount": 11, "canceledOrderCount": 0, "grossSalesAmount": 112300, "canceledAmount": 0, "netSalesAmount": 112300 }
+    ],
+    "topMenusDaily": [
+      { "salesDate": "2026-07-15", "menuId": 201, "menuName": "닭가슴살 시저 샐러드", "quantity": 18, "orderCount": 16, "salesAmount": 160200 },
+      { "salesDate": "2026-07-15", "menuId": 205, "menuName": "참치 김치 포케", "quantity": 15, "orderCount": 14, "salesAmount": 147000 },
+      { "salesDate": "2026-07-15", "menuId": 209, "menuName": "에그 치킨 샌드위치", "quantity": 13, "orderCount": 11, "salesAmount": 93600 },
+      { "salesDate": "2026-07-15", "menuId": 217, "menuName": "닭가슴살 현미 덮밥", "quantity": 11, "orderCount": 11, "salesAmount": 97900 },
+      { "salesDate": "2026-07-15", "menuId": 225, "menuName": "아이스 아메리카노", "quantity": 24, "orderCount": 20, "salesAmount": 60000 }
+    ]
+  },
+  "adminSummary": {
+    "todayOrderCount": 15,
+    "todaySalesAmount": 157100,
+    "todayNetSalesAmount": 148900,
+    "todayCanceledAmount": 8200,
+    "todayCanceledOrderCount": 1,
+    "todayCustomerCount": 14,
+    "todayTopMenuName": "닭가슴살 시저 샐러드",
+    "activeMenuCount": 27,
+    "soldOutCount": 2,
+    "pendingOrderCount": 5
+  },
+  "commonCodes": {
+    "orderStatus": [
+      { "code": "CREATED", "label": "주문 생성" },
+      { "code": "PAID", "label": "결제 완료" },
+      { "code": "PREPARING", "label": "준비 중" },
+      { "code": "READY", "label": "준비 완료" },
+      { "code": "COMPLETED", "label": "수령 완료" },
+      { "code": "CANCELED", "label": "주문 취소" }
+    ],
+    "orderType": [ { "code": "STORE", "label": "매장 식사" }, { "code": "TAKE_OUT", "label": "포장" } ],
+    "targetType": [ { "code": "MENU", "label": "메뉴" }, { "code": "OPTION_ITEM", "label": "옵션 항목" } ]
+  }
+}
