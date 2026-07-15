@@ -3,6 +3,7 @@ import HomePage from "../../pages/kiosk/HomePage.jsx";
 import MenuListPage from "../../pages/kiosk/MenuListPage.jsx";
 import "../../styles/commonStyle.css";
 import "../../styles/reset.css";
+import MenuDetailPage from "@/pages/kiosk/MenuDetailPage.jsx";
 
 
 // 아직 페이지별 기능을 만들기 전의 임시 화면입니다.
@@ -14,6 +15,7 @@ export default function KioskApp() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/menu" element={<MenuListPage />} />
+        <Route path="/menu/:menuId" element={<MenuDetailPage/>} />
       </Routes>
     </div>
   );
