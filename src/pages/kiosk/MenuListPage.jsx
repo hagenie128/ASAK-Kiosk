@@ -4,11 +4,13 @@ import Header from "@/components/kiosk/Header";
 import CategoryTabs from "@/components/kiosk/CategoryTabs";
 import React, { useState } from "react";
 import kioskMock from "../../../public/mocks/kiosk.json";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 import MenuCard from "@/components/kiosk/MenuCard";
 
 
 export default function MenuListPage() {
+  const navigate = useNavigate();
+
   //-----카테고리-----
 
   //카테고리 데이터 연결
