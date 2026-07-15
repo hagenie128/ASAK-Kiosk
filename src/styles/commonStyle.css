@@ -24,3 +24,15 @@ body {
 }
 
 /* -----------------------캔버스 레이아웃 가이드 ---------------- */
+
+
+/* 임시 적용 */
+
+.menuGrid{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
