@@ -1,23 +1,21 @@
 // 학습용 자리표시자: 카테고리를 고르는 탭 UI입니다.
-import React, { useState } from "react";
+import React from "react";
 
-export default function CategoryTabs({ categories, onSelectCategory }) {
-  const [selectedId, setSelectedId] = useState(categories[0]?.categoryId);
-
-  const handleSelect = (categoryId) => {
-    setSelectedId(categoryId);
-    onSelectCategory(categoryId); // 부모에 알림
-  };
-
+export default function CategoryTabs({
+  categories,
+  selectedCategoryId,
+  onSelectCategory,
+}) {
   return (
     <div className="category-tabs">
-      {categories.map((cat) => (
+      {categories.map((category) => (
         <button
-          key={cat.categoryId}
-          className={selectedId === cat.categoryId ? "active" : ""}
-          onClick={() => handleSelect(cat.categoryId)}
+          key={category.categoryId}
+          type="button"
+          className={selectedCategoryId === category.categoryId ? "active" : ""}
+          onClick={() => onSelectCategory(category.categoryId)}
         >
-          {cat.name}
+          {category.name}
         </button>
       ))}
     </div>

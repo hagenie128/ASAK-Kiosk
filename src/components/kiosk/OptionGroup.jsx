@@ -28,27 +28,19 @@ export default function OptionGroup({ group, selectedValue, onSelectItem }) {
           {isRequired ? `최소 ${minSelect}개 선택` : `최대 ${maxSelect}개 선택`}
         </span>
         {/* 옵션 선택 item map영역 */}
-        <ul>
-            {
-                group.map((item, index)=>{
-                    <li>
-                        <OptionItem key={item.optionItemId}
-                                    item={item}
-                                    isSingleSelect={isSingleSelect}
-                                    isSelected={isItemSelected(item.optionItemId)}
-                                    onSelect={() => onSelectItem(item.optionItemId)}
-                        ></OptionItem>
 
-
-                    </li>
-
-                })
-            }
-
-
+        <ul className="option-group__list">
+          {items.map((item) => (
+            <li key={item.optionItemId}>
+              <OptionItem  groupName={`option-group-${group.optionGroupId}`}
+                item={item}
+                isSingleSelect={isSingleSelect}
+                isSelected={isItemSelected(item.optionItemId)}
+                onSelect={() => onSelectItem(item.optionItemId)}
+              />
+            </li>
+          ))}
         </ul>
-
-
       </div>
     </>
   );
