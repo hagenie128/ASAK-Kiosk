@@ -35,7 +35,7 @@ export default function MenuListPage() {
   //menuId에 따른 상세 페이지 이동
   const handleSelectMenu = (menuId) => {
     setSelectedMenuId(menuId);
-    navigate(`/menu/${menuId}`);
+    navigate(`/menu/${menuId}?category=${selectedCategoryId}`);
   };
 
   return (

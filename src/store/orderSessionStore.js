@@ -24,25 +24,48 @@ const initialState = {
   paymentError: null, // 실패 code/message (SCR-012용)
 };
 
+// cartItemId
+// → 프론트 임시 장바구니 항목 ID
+
+// orderItemId
+// → 서버 주문 생성 후 받을 가능성이 있는 주문 항목 ID
+
 export const useOrderSession = create((set) => ({
   ...initialState,
 
   setOrderType: (orderType) => set({ orderType }),
 
-  addItem: (item) => set((state) => ({ items: [...state.items, item] })),
-  updateItemQuantity: (index, quantity) =>
+  addItem: (item) =>
     set((state) => ({
-      items: state.items.map((it, i) =>
-        i === index ? { ...it, quantity } : it,
+      items: [...state.items, item],
+    })),
+
+  updateItemQuantity: (cartItemId, quantity) =>
+    set((state) => ({
+      items: state.items.map((item) =>
+        item.cartItemId === cartItemId
+          ? { ...item, quantity }
+          : item,
       ),
     })),
-  removeItem: (index) =>
-    set((state) => ({ items: state.items.filter((_, i) => i !== index) })),
+
+  removeItem: (cartItemId) =>
+    set((state) => ({
+      items: state.items.filter(
+        (item) => item.cartItemId !== cartItemId,
+      ),
+    })),
 
   setOrder: (order) => set({ order }),
-  setPayment: (payment) => set({ payment, paymentError: null }),
-  setPaymentError: (paymentError) => set({ paymentError }),
 
-  // 결제 APPROVED 뒤에만 호출
+  setPayment: (payment) =>
+    set({
+      payment,
+      paymentError: null,
+    }),
+
+  setPaymentError: (paymentError) =>
+    set({ paymentError }),
+
   resetSession: () => set(initialState),
 }));

@@ -45,3 +45,35 @@ export function canIncreaseQuantity({ items, menuId, draftQuantity }) {
 
   return { allowed: true, reason: null };
 }
+
+// 메뉴 목록의 주문 목록 또는 장바구니에서
+// 이미 저장된 항목의 수량을 1개 늘릴 수 있는지 검사
+export function canIncreaseCartItemQuantity({
+  items,
+  menuId,
+}) {
+  const menuTotal =
+    getMenuQuantityInCart(items, menuId) + 1;
+
+  if (menuTotal > MAX_QUANTITY_PER_MENU) {
+    return {
+      allowed: false,
+      reason: "MENU_LIMIT",
+    };
+  }
+
+  const cartTotal =
+    getCartTotalQuantity(items) + 1;
+
+  if (cartTotal > MAX_CART_QUANTITY) {
+    return {
+      allowed: false,
+      reason: "CART_LIMIT",
+    };
+  }
+
+  return {
+    allowed: true,
+    reason: null,
+  };
+}

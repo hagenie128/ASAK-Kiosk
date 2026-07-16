@@ -3,7 +3,7 @@
 import Header from '@/components/kiosk/Header';
 import { useOrderSession } from '@/store/orderSessionStore';
 import React, { useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import kioskMock from "../../../public/mocks/kiosk.json";
 import { TOAST_MESSAGES, canIncreaseQuantity } from '@/utils/quantityLimits';
 import { priceCalculation } from '@/utils/priceCalculation';
@@ -12,6 +12,10 @@ import OptionGroup from '@/components/kiosk/OptionGroup';
 import MenuDetailFooter from '@/components/kiosk/MenuDetailFooter';
 
 export default function MenuDetailPage() {
+
+  //상세페이지 categoryId 들어오도록 연결
+  const [searchParams] = useSearchParams();
+  const categoryId = searchParams.get("category");
 
   //상세페이지 menuId를 기준으로 들어오도록 연결
   const { menuId } = useParams();
@@ -40,7 +44,7 @@ export default function MenuDetailPage() {
     return initial;
   });
 
-  // --- ① 수량 증가 시 제한 판단 ---
+  // --- 수량 증가 시 제한 판단 ---
   const handleIncreaseQuantity = () => {
     const result = canIncreaseQuantity({
       items,
@@ -82,14 +86,33 @@ export default function MenuDetailPage() {
       return (selected?.length ?? 0) >= group.minSelect;
     });
 
-  const selectedOptionItems = optionGroups.flatMap((group) => {
-    const selected = selectedOptions[group.optionGroupId];
-    if (!selected) return [];
-    const ids = Array.isArray(selected) ? selected : [selected];
-    return group.items.filter((item) => ids.includes(item.optionItemId));
-  });
+  // --- 선택 옵션 저장 --- 
+  const selectedOptionItems = optionGroups.flatMap(
+    (group) => {
+      const selected =
+        selectedOptions[group.optionGroupId];
 
-  // --- ② 금액 계산 (화면 표시용) ---
+      if (!selected) {
+        return [];
+      }
+
+      const selectedIds = Array.isArray(selected)
+        ? selected
+        : [selected];
+
+      return group.items
+        .filter((item) =>
+          selectedIds.includes(item.optionItemId),
+        )
+        .map((item) => ({
+          ...item,
+          optionGroupId: group.optionGroupId,
+          optionGroupName: group.name,
+        }));
+    },
+  );
+
+  // --- 금액 계산 (화면 표시용) ---
   const expectedPrice = menuDetail
     ? priceCalculation({
         unitPrice: menuDetail.price,
@@ -98,24 +121,38 @@ export default function MenuDetailPage() {
       })
     : 0;
 
-  // --- ③ 저장 (버튼 눌렀을 때 딱 한 번) ---
+  // --- 저장 (버튼 눌렀을 때 딱 한 번) ---
   const handleConfirm = () => {
-    if (!isRequiredSatisfied) return;
+    if (!isRequiredSatisfied || !menuDetail) {
+      return;
+    }
 
-    addItem({ 
+    addItem({
+      cartItemId: crypto.randomUUID(),
+
       menuId: menuDetail.menuId,
       menuName: menuDetail.name,
-      unitPrice: menuDetail.price,
+      imageUrl: menuDetail.imageUrl,
+      unitPrice: Number(menuDetail.price ?? 0),
       quantity,
+
       optionItems: selectedOptionItems.map((item) => ({
         optionItemId: item.optionItemId,
+        optionGroupId: item.optionGroupId,
+        optionGroupName: item.optionGroupName,
         name: item.name,
+        extraPrice: Number(item.extraPrice ?? 0),
         quantity: 1,
       })),
+
       excludedIngredientIds: [],
     });
 
-    navigate("/cart");
+    const menuListPath = categoryId ? `/menu?category=${categoryId}` : "/menu";
+
+    navigate(menuListPath, {
+      replace: true,
+    });
   };
 
   return (
