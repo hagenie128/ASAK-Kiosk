@@ -1,5 +1,15 @@
 # ASAK Kiosk
 
+## Central documentation
+
+- [ASAK docs index](../ASAK/docs/README.md)
+- [Product Bible Pack 12 — Frontend Implementation](../ASAK/docs/product_bible/12_Frontend_Implementation/README.md)
+- [Product Bible Pack 11 — Backend Implementation](../ASAK/docs/product_bible/11_Backend_Implementation/README.md)
+- [Current Implementation Map](../ASAK/docs/CURRENT_IMPLEMENTATION_MAP.md)
+- [Implementation Priority](../ASAK/docs/IMPLEMENTATION_PRIORITY.md)
+
+Customer-facing React JavaScript is owned here. Admin scaffolds here are Legacy Reference; canonical administrator implementation is in `ASAK-Admin`.
+
 ASAK 주문 키오스크 전용 React/Vite 프로젝트입니다. 관리자 운영 화면은 별도 `ASAK_Admin` 저장소에서 개발합니다.
 
 > 이 프로젝트는 독립 Git 저장소입니다. 변경사항을 올릴 때는 반드시 `ASAK-Kiosk` 폴더에서 커밋·push합니다. 상위 작업공간의 Git 구조는 [작업공간 안내](../README.md)를 참고합니다.

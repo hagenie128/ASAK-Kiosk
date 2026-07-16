@@ -14,3 +14,10 @@
 | 접근성·QR·멤버십 | 확장 화면 | fontScale/highContrast, scan code, stamps | 확장 |
 
 중복 요구사항은 구현하지 않는다. 예를 들어 `FWD-CART-003`은 제외된 중복 항목이므로 `FWD-CART-002`만 구현·테스트 기준으로 사용한다.
+
+## Canonical contract relationship
+
+- Status: Needs Review — current Frontend screen expectation map.
+- Canonical Screen/API decisions: [ASAK docs](../../../ASAK/docs/README.md) and [Canonical Contract Decisions](../../../ASAK/docs/CANONICAL_CONTRACT_DECISIONS.md).
+- Current Admin references in this Kiosk contract are Legacy Reference; administrator implementation is canonical in ASAK-Admin.
+- Actual implementation requires Screen Registry/route confirmation before code changes.

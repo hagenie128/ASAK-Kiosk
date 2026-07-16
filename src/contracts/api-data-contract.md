@@ -66,3 +66,11 @@ items[]: menuId, menuName, unitPrice, quantity,
 2. `api/`에는 HTTP 요청만, `components/`에는 표시만 둔다.
 3. `pages/`에서 로딩·빈 상태·오류 상태를 모두 연결한다.
 4. 품절, 필수 옵션, 결제 실패는 성공 화면으로 이동시키지 않는다.
+
+## Canonical contract relationship
+
+- Status: Conflict — this document records current Frontend expected shape, not the canonical API contract.
+- Canonical paths and response fields: [Canonical Contract Decisions](../../../ASAK/docs/CANONICAL_CONTRACT_DECISIONS.md).
+- Differences include `/api/kiosk/...` paths and `totalAmount`, `approvedAmount`, `approvedAt`, `waitingOrderCount`.
+- Adapter required: yes. Preserve current store fields (`totalPrice`, `amount`, `paidAt`) and map at the API adapter boundary.
+- Actual implementation requires final Backend DTO confirmation before code changes.
