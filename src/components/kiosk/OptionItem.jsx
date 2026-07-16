@@ -2,19 +2,21 @@
 
 //1) OptionItem (그룹 안의 옵션 선택 카드 한 장) json menuOptions -> data ->  optionGroupId -> items
 
-import React from 'react'
+import React from "react";
 
-export default function OptionItem({ item,
+export default function OptionItem({
+  item,
   groupName,
   isSelected,
   isSingleSelect,
-  onSelect }) {
-
+  onSelect,
+}) {
   const {
+    optionItemId,
     name,
     extraPrice,
     extraKcal,
-    servingAmount, //섭취량 기준
+    servingAmount,
     servingUnit,
     proteinG,
     iconUrl,
@@ -22,41 +24,63 @@ export default function OptionItem({ item,
     isSoldOut,
   } = item;
 
-  return (
-    <>
-      <label
-        className={[
-          "option-item",
-          isSelected && "option-item--selected",
-          isSoldOut && "option-item--sold-out",
-        ]
-          .filter(Boolean)
-          .join(" ")}
-        >
-        <img src={iconUrl} alt={name} />
-        <input
-          type={isSingleSelect ? "radio" : "checkbox"}
-          checked={isSelected}
-          disabled={isSoldOut}
-          onChange={() => !isSoldOut && onSelect()}
-        />
+  const optionItemClassName = [
+    "option-item",
+    isSelected && "option-item--selected",
+    isSoldOut && "option-item--sold-out",
+  ]
+    .filter(Boolean)
+    .join(" ");
 
-        <p>
+  return (
+    <label className={optionItemClassName}>
+      <img className="option-item__image" src={iconUrl} alt={name} />
+
+      <input
+        className="option-item__input"
+        type={isSingleSelect ? "radio" : "checkbox"}
+        name={isSingleSelect ? groupName : undefined}
+        value={optionItemId}
+        checked={isSelected}
+        disabled={isSoldOut}
+        onChange={() => {
+          if (!isSoldOut) {
+            onSelect();
+          }
+        }}
+      />
+
+      <div className="option-item__content">
+        <p className="option-item__name">
           {name}
-          {isRecommended && <span>추천</span>}
-          {isSoldOut && <span>SOLD OUT</span>}
+
+          {isRecommended && (
+            <span className="option-item__badge option-item__badge--recommended">
+              추천
+            </span>
+          )}
+
+          {isSoldOut && (
+            <span className="option-item__badge option-item__badge--sold-out">
+              SOLD OUT
+            </span>
+          )}
         </p>
 
-        {(servingAmount != null || extraKcal != null) && (
-          <p>
+        {(servingAmount != null || extraKcal != null || proteinG != null) && (
+          <p className="option-item__description">
             {servingAmount != null && `${servingAmount}${servingUnit ?? ""}`}
-            {extraKcal != null && ` ${extraKcal}kcal`}
+
+            {extraKcal != null && ` · ${extraKcal}kcal`}
+
             {proteinG != null && ` · 단백질 ${proteinG}g`}
           </p>
         )}
 
-        {extraPrice > 0 && <p>{extraPrice.toLocaleString()}원 추가</p>}
-      </label>
-    </>
+        {extraPrice > 0 && (
+          <p className="option-item__price">+{extraPrice.toLocaleString()}원</p>
+        )}
+      </div>
+    </label>
   );
 }
