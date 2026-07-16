@@ -70,7 +70,7 @@ items[]: menuId, menuName, unitPrice, quantity,
 ## Canonical contract relationship
 
 - Status: Conflict — this document records current Frontend expected shape, not the canonical API contract.
-- Canonical paths and response fields: [Canonical Contract Decisions](../../../ASAK/docs/CANONICAL_CONTRACT_DECISIONS.md).
+- Canonical paths and response fields: [Canonical Contract Decisions](../../../ASAK/docs/governance/CANONICAL_CONTRACT_DECISIONS.md).
 - Differences include `/api/kiosk/...` paths and `totalAmount`, `approvedAmount`, `approvedAt`, `waitingOrderCount`.
 - Adapter required: yes. Preserve current store fields (`totalPrice`, `amount`, `paidAt`) and map at the API adapter boundary.
 - Actual implementation requires final Backend DTO confirmation before code changes.

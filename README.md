@@ -5,8 +5,8 @@
 - [ASAK docs index](../ASAK/docs/README.md)
 - [Product Bible Pack 12 — Frontend Implementation](../ASAK/docs/product_bible/12_Frontend_Implementation/README.md)
 - [Product Bible Pack 11 — Backend Implementation](../ASAK/docs/product_bible/11_Backend_Implementation/README.md)
-- [Current Implementation Map](../ASAK/docs/CURRENT_IMPLEMENTATION_MAP.md)
-- [Implementation Priority](../ASAK/docs/IMPLEMENTATION_PRIORITY.md)
+- [Current Implementation Map](../ASAK/docs/planning/CURRENT_IMPLEMENTATION_MAP.md)
+- [Implementation Priority](../ASAK/docs/planning/IMPLEMENTATION_PRIORITY.md)
 
 Customer-facing React JavaScript is owned here. Admin scaffolds here are Legacy Reference; canonical administrator implementation is in `ASAK-Admin`.
 

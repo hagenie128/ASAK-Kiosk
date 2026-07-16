@@ -169,6 +169,6 @@ docs(kiosk): align API-005 mock fields with contract
 - Status: Needs Review
 - Written-at context: pre-canonical Kiosk mock implementation plan.
 - Product Bible relationship: [Pack 12](../ASAK/docs/product_bible/12_Frontend_Implementation/README.md).
-- Latest implementation baseline: [Current Implementation Map](../ASAK/docs/CURRENT_IMPLEMENTATION_MAP.md).
-- Central canonical contract: [Canonical Contract Decisions](../ASAK/docs/CANONICAL_CONTRACT_DECISIONS.md).
+- Latest implementation baseline: [Current Implementation Map](../ASAK/docs/planning/CURRENT_IMPLEMENTATION_MAP.md).
+- Central canonical contract: [Canonical Contract Decisions](../ASAK/docs/governance/CANONICAL_CONTRACT_DECISIONS.md).
 - Potential conflict: endpoint, route, and store-field assumptions may differ; do not rename source in this phase.
