@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import kioskMock from "../../../public/mocks/kiosk.json";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import MenuCard from "@/components/kiosk/MenuCard";
-
+import OrderList from "@/components/kiosk/OrderList";
 
 export default function MenuListPage() {
   const navigate = useNavigate();
@@ -39,37 +39,41 @@ export default function MenuListPage() {
   };
 
   return (
-    <>
-      {/* 해더영역 */}
-      <Header></Header>
-      {/* 카테고리 영역 */}
+    <div className="menu-list-page">
+      {/* 헤더: 고정 영역 */}
+      <Header />
+
+      {/* 카테고리: 고정 영역 */}
       <CategoryTabs
         categories={categories}
-        selectedCategoryId={selectedCategoryId} // 선택한 카테고리
+        selectedCategoryId={selectedCategoryId}
         onSelectCategory={handleSelectCategory}
-      ></CategoryTabs>
+      />
 
-      {/* 메뉴 카드 영역 */}
-      {/* 나열된 항목 구조라 ul > li 구조로 변경 */}
-      {menus.length === 0 ? (
-        <p className="empty-state">이 카테고리에는 메뉴가 없습니다.</p>
-      ) : (
-        <ul className="menuGrid">
-          {menus.map((menu) => (
-            <li key={menu.menuId}>
-              <MenuCard
-                menu={menu}
-                isSelected={selectedMenuId === menu.menuId}
-                onSelect={handleSelectMenu}
-              />
-            </li>
-          ))}
-        </ul>
-      )}
+      {/* 메뉴 카드만 스크롤 */}
+      <main className="menu-grid-scroll-area">
+        {menus.length === 0 ? (
+          <p className="empty-state">이 카테고리에는 메뉴가 없습니다.</p>
+        ) : (
+          <ul className="menuGrid">
+            {menus.map((menu) => (
+              <li key={menu.menuId}>
+                <MenuCard
+                  menu={menu}
+                  isSelected={selectedMenuId === menu.menuId}
+                  onSelect={handleSelectMenu}
+                />
+              </li>
+            ))}
+          </ul>
+        )}
+      </main>
 
+      {/* 주문 목록 */}
+      <OrderList />
 
-
-
-    </>
+      {/* 추후 Footer */}
+      {/* <MenuListFooter /> */}
+    </div>
   );
 }
