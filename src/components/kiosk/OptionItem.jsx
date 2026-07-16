@@ -4,7 +4,11 @@
 
 import React from 'react'
 
-export default function OptionItem({ item, isSelected, isSingleSelect, onSelect }) {
+export default function OptionItem({ item,
+  groupName,
+  isSelected,
+  isSingleSelect,
+  onSelect }) {
 
   const {
     name,
@@ -20,7 +24,15 @@ export default function OptionItem({ item, isSelected, isSingleSelect, onSelect 
 
   return (
     <>
-      <label>
+      <label
+        className={[
+          "option-item",
+          isSelected && "option-item--selected",
+          isSoldOut && "option-item--sold-out",
+        ]
+          .filter(Boolean)
+          .join(" ")}
+        >
         <img src={iconUrl} alt={name} />
         <input
           type={isSingleSelect ? "radio" : "checkbox"}
