@@ -3,6 +3,7 @@
 //1) OptionItem (그룹 안의 옵션 선택 카드 한 장) json menuOptions -> data ->  optionGroupId -> items
 
 import React from "react";
+import { formatCurrency } from '@/utils/currency';
 
 export default function OptionItem({
   item,
@@ -78,7 +79,7 @@ export default function OptionItem({
         )}
 
         {extraPrice > 0 && (
-          <p className="option-item__price">+{extraPrice.toLocaleString()}원</p>
+          <p className="option-item__price">+{formatCurrency(extraPrice)}</p>
         )}
       </div>
     </label>
