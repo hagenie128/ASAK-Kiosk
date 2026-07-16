@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none"
+  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+  aria-hidden="true">
+  <ellipse cx="24" cy="28" rx="12" ry="10"/>
+  <path d="M16 24c2-8 6-12 8-14 2 2 6 6 8 14"/>
+  <path d="M24 14v4"/>
+</svg>

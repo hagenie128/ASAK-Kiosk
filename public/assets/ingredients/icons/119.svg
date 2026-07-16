@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none"
+  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+  aria-hidden="true">
+  <path d="M24 40c0-14 10-24 20-24-2 12-10 20-20 24Z"/>
+  <path d="M24 40C24 26 14 16 4 16c2 12 10 20 20 24Z"/>
+  <path d="M24 40V22"/>
+</svg>
