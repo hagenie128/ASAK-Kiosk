@@ -90,17 +90,19 @@ export default function MenuDetailPage() {
   });
 
   // --- ② 금액 계산 (화면 표시용) ---
-  const expectedPrice = priceCalculation({
-    unitPrice: menuDetail.price,
-    optionItems: selectedOptionItems,
-    quantity,
-  });
+  const expectedPrice = menuDetail
+    ? priceCalculation({
+        unitPrice: menuDetail.price,
+        optionItems: selectedOptionItems,
+        quantity,
+      })
+    : 0;
 
   // --- ③ 저장 (버튼 눌렀을 때 딱 한 번) ---
   const handleConfirm = () => {
     if (!isRequiredSatisfied) return;
 
-    addItem({
+    addItem({ 
       menuId: menuDetail.menuId,
       menuName: menuDetail.name,
       unitPrice: menuDetail.price,
@@ -142,8 +144,8 @@ export default function MenuDetailPage() {
 
       <MenuDetailFooter
         disabled={!isRequiredSatisfied}
-        onBack={() => navigate(-1)}
         onConfirm={handleConfirm}
+        totalPrice={expectedPrice}
       />
     </div>
   );

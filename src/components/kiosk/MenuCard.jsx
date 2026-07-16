@@ -1,5 +1,6 @@
 // 학습용 자리표시자: 메뉴 한 개를 보여 주는 카드 UI입니다.
 import React from "react";
+import { formatCurrency } from '@/utils/currency';
 
 // menu 객체, isSelected 클릭시 스타일용(클릭이벤트), onSelect 상세페이지 이동
 export default function MenuCard({ menu, isSelected, onSelect }) {
@@ -30,7 +31,7 @@ export default function MenuCard({ menu, isSelected, onSelect }) {
 
         <img src={imageUrl} alt={name} />
         <p className="menuName">{name}</p>
-        <p className="menuPrice">{price.toLocaleString()}원</p>
+        <p className="menuPrice">{formatCurrency(price)}</p>
         <p className="menuKcal">{baseKcal} kcal</p>
 
         {/* 일반 재료 품절은 카드 비활성화가 아니라 뱃지만 표시 */}
