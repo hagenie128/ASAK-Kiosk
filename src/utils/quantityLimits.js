@@ -12,6 +12,9 @@ export const MAX_QUANTITY_PER_MENU = 9; //1개의 메뉴
 export const MAX_CART_QUANTITY = 30; // 장바구니의 최대수량
 
 
+// [학습·정책] 직원 문의 문구는 "전체 30개 초과 시도"에만 쓰는 것이 제품 정책이다.
+// 아래 MENU_LIMIT 문장에 직원 문의가 들어가 있으면 정책과 충돌한다.
+// 직접 고칠 때: MENU_LIMIT / CART_LIMIT 문구를 분리하고, UI는 reason 코드만 받게 유지한다.
 export const TOAST_MESSAGES = {
   MENU_LIMIT: "메뉴당 최대 9개까지 주문할 수 있습니다. 대량 주문은 직원에게 문의해 주세요.",
   CART_LIMIT: "한 번에 최대 30개까지 주문할 수 있습니다. 장바구니 수량을 확인해 주세요.",

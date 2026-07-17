@@ -1,5 +1,12 @@
 // 학습용 자리표시자: SCR-004 메뉴 상세·옵션 선택 화면입니다.
 // -- MenuDetailPage & CartPage 로직이 참고해야하는 페이지 (수량 제한 체크 가격...등)
+//
+// [학습] Page 책임 경계
+// - Page는 "흐름 조립자"다: 데이터 준비 → draft 상태 → 검증 → Store 저장 → 이동.
+// - 가격 숫자의 단일 기준은 priceCalculation.js, 수량 제한은 quantityLimits.js에 둔다.
+// - mock를 페이지에서 깊게 파지하기보다 adapters/menuDetailAdapter.js로 옮기는 편이 안전하다.
+// - quantity/selectedOptions는 장기적으로 hooks/useMenuDetailDraft.js로 모은다.
+// - AllergenAccordion은 스크롤 본문에만 두고, Footer(BottomCTA)는 고정한다.
 import Header from '@/components/kiosk/Header';
 import { useOrderSession } from '@/store/orderSessionStore';
 import React, { useState } from 'react'
@@ -24,10 +31,14 @@ export default function MenuDetailPage() {
   //useOrderSession 아이템 확인& 추가
   const items = useOrderSession((state) => state.items); // 읽기 (조회) -- 장바구니 수량 체크
   const addItem = useOrderSession((state) => state.addItem); // 쓰기 (저장)
+  // [학습] edit 흐름이 생기면 updateItem(옵션·수량)이 필요하다.
+  // 지금은 addItem만 있어 "수정"도 새 줄 추가로 끝날 위험이 있다. cartItemId 기준 분기를 먼저 설계한다.
 
   const menuDetail = kioskMock.menuDetail[menuId]?.data;
   const optionGroups = kioskMock.menuOptions[menuId]?.data ?? [];
 
+  // [학습] 아래 draft 상태들은 "확정 전 초안"이다. Store(items)와 섞지 않는다.
+  // 확정 버튼에서만 Store에 쓴다. 그래야 뒤로가기·취소 시 장바구니가 오염되지 않는다.
   const [quantity, setQuantity] = useState(1);
   const [toastMessage, setToastMessage] = useState(null);
 
@@ -122,6 +133,10 @@ export default function MenuDetailPage() {
     : 0;
 
   // --- 저장 (버튼 눌렀을 때 딱 한 번) ---
+  // [학습] Add vs Edit
+  // - 신규: addItem + 새 cartItemId
+  // - 수정: 기존 cartItemId로 update (옵션·수량). 여기서 다시 addItem 하면 줄이 늘어난다.
+  // - 주문방식(orderType)은 Home에서 정한 세션 값이다. 상세 저장 시 건드리지 않는다.
   const handleConfirm = () => {
     if (!isRequiredSatisfied || !menuDetail) {
       return;

@@ -35,11 +35,13 @@ export const useOrderSession = create((set) => ({
 
   setOrderType: (orderType) => set({ orderType }),
 
+  // [학습] 신규 담기 전용. Edit 화면에서 이 함수를 다시 호출하지 않는다.
   addItem: (item) =>
     set((state) => ({
       items: [...state.items, item],
     })),
 
+  // [학습] 수량만 바꾼다. 옵션·제외재료 수정은 별도 updateItem(cartItemId, patch)가 필요하다.
   updateItemQuantity: (cartItemId, quantity) =>
     set((state) => ({
       items: state.items.map((item) =>
@@ -48,6 +50,10 @@ export const useOrderSession = create((set) => ({
           : item,
       ),
     })),
+
+  // TODO(학습): updateItem(cartItemId, nextItemFields) — 옵션/제외재료 수정용. addItem과 경로를 섞지 말 것.
+  // TODO(학습): clearItems() — 장바구니 전체 비우기. 개별 removeItem과 목적을 구분할 것.
+  // TODO(학습): 품절이 된 뒤에도 자동 remove 하지 말 것. 결제 차단 + 수정/삭제 UI만 제공한다.
 
   removeItem: (cartItemId) =>
     set((state) => ({
