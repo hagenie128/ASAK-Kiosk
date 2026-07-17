@@ -1,9 +1,6 @@
-// 학습용 자리표시자: 메뉴 상세에서 옵션 그룹과 항목을 고르는 UI입니다.
-
-//1) OptionItem (그룹 안의 옵션 선택 카드 한 장) json menuOptions -> data ->  optionGroupId -> items
-
+// OptionItem — Figma OptionCard 방향 (3열·Lime selected·이름 2줄)
 import React from "react";
-import { formatCurrency } from '@/utils/currency';
+import { formatCurrency } from "@/utils/currency";
 
 export default function OptionItem({
   item,
@@ -33,9 +30,14 @@ export default function OptionItem({
     .filter(Boolean)
     .join(" ");
 
+  const hasSecondary =
+    servingAmount != null || extraKcal != null || proteinG != null;
+
   return (
     <label className={optionItemClassName}>
-      <img className="option-item__image" src={iconUrl} alt={name} />
+      {iconUrl ? (
+        <img className="option-item__image" src={iconUrl} alt="" />
+      ) : null}
 
       <input
         className="option-item__input"
@@ -52,31 +54,30 @@ export default function OptionItem({
       />
 
       <div className="option-item__content">
-        <p className="option-item__name">
-          {name}
+        <div className="option-item__top">
+          <div className="option-item__info">
+            <p className="option-item__name">{name}</p>
+            {hasSecondary && (
+              <p className="option-item__description">
+                {servingAmount != null &&
+                  `${servingAmount}${servingUnit ?? ""}`}
+                {extraKcal != null && ` · ${extraKcal}kcal`}
+                {proteinG != null && ` · 단백질 ${proteinG}g`}
+              </p>
+            )}
+          </div>
 
-          {isRecommended && (
+          {isRecommended && !isSoldOut && (
             <span className="option-item__badge option-item__badge--recommended">
               추천
             </span>
           )}
-
           {isSoldOut && (
             <span className="option-item__badge option-item__badge--sold-out">
-              SOLD OUT
+              품절
             </span>
           )}
-        </p>
-
-        {(servingAmount != null || extraKcal != null || proteinG != null) && (
-          <p className="option-item__description">
-            {servingAmount != null && `${servingAmount}${servingUnit ?? ""}`}
-
-            {extraKcal != null && ` · ${extraKcal}kcal`}
-
-            {proteinG != null && ` · 단백질 ${proteinG}g`}
-          </p>
-        )}
+        </div>
 
         {extraPrice > 0 && (
           <p className="option-item__price">+{formatCurrency(extraPrice)}</p>

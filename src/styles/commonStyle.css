@@ -1,38 +1,660 @@
-/* -----------------------캔버스 레이아웃 가이드 ---------------- */
-/* --------- 화면 구성을 위한 키오스크 레이아웃 ----------- */
+/* ASAK Kiosk — 기존 화면에 Figma 방향 CSS 적용 */
 
+/* ----------------------- 캔버스 ----------------------- */
 html,
 body {
-    margin: 0;
-    padding: 0;
-    background: #d3d3d3;
-    /* 여백 티 안 나게 검정 배경 */
+  margin: 0;
+  padding: 0;
+  background: var(--asak-bg-canvas);
 }
 
-/* 키오스크 고정 캔버스 */
 .kiosk-viewport {
-    width: 1080px;
-    height: 1920px;
-    margin: 0 auto;
-    /* 화면 중앙 정렬 */
-    overflow: hidden;
-    position: relative;
-    /* 수정 가능 */
-    background: #f6f4ed;
-    outline: 1px solid red;
-    /* 실제 키오스크 배경색 */
+  width: var(--asak-kiosk-w);
+  height: var(--asak-kiosk-h);
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  background: var(--asak-bg-kiosk);
+  font-family: var(--asak-font);
+  color: var(--asak-text);
 }
 
-/* -----------------------캔버스 레이아웃 가이드 ---------------- */
+/* ----------------------- Header ----------------------- */
+.kiosk-header {
+  height: var(--asak-header-h);
+  padding: 0 var(--asak-page-pad-x);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--asak-bg-kiosk);
+  border-bottom: 1px solid var(--asak-divider);
+  flex-shrink: 0;
+}
 
+.kiosk-header__back,
+.kiosk-header__home {
+  min-width: 72px;
+  min-height: 56px;
+  padding: 12px 16px;
+  border: 1px solid var(--asak-border);
+  border-radius: var(--asak-radius-md);
+  background: var(--asak-surface);
+  color: var(--asak-text);
+  font-size: 18px;
+  font-weight: 600;
+}
 
-/* 임시 적용 */
+.kiosk-header__logo {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
 
-.menuGrid{
+/* ----------------------- Home (SCR-001) ----------------------- */
+.home-page {
+  height: 100%;
+  padding: 120px var(--asak-page-pad-x) 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 28px;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(198, 232, 74, 0.18), transparent 60%),
+    var(--asak-bg-kiosk);
+}
+
+.home-page .screen-id {
+  color: var(--asak-text-muted);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.home-page h1 {
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+}
+
+.home-page > p {
+  max-width: 640px;
+  font-size: 24px;
+  line-height: 1.5;
+  color: var(--asak-text-secondary);
+}
+
+.order-type-selector {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.order-type-selector__btn {
+  min-height: 200px;
+  padding: 40px 32px;
+  border: 2px solid var(--asak-border);
+  border-radius: var(--asak-radius-lg);
+  background: var(--asak-surface);
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.order-type-selector__btn:hover,
+.order-type-selector__btn:focus-visible {
+  border-color: var(--asak-lime-border);
+  background: var(--asak-surface-lime);
+  outline: none;
+}
+
+/* ----------------------- Menu List ----------------------- */
+.menu-list-page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--asak-bg-kiosk);
+}
+
+.category-tabs {
+  display: flex;
+  gap: 12px;
+  padding: 20px var(--asak-page-pad-x);
+  overflow-x: auto;
+  flex-shrink: 0;
+  border-bottom: 1px solid var(--asak-divider);
+}
+
+.category-tabs button {
+  flex: 0 0 auto;
+  min-height: 56px;
+  padding: 12px 28px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--asak-text-secondary);
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.category-tabs button.active {
+  background: var(--asak-lime);
+  color: var(--asak-text);
+  border-color: var(--asak-lime-border);
+  font-weight: 800;
+}
+
+.menu-grid-scroll-area {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 28px var(--asak-page-pad-x) 24px;
+}
+
+.menuGrid {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+}
+
+.menu-card {
+  position: relative;
+  width: 100%;
+  padding: 0 0 20px;
+  border: 1px solid var(--asak-border);
+  border-radius: var(--asak-radius-md);
+  background: var(--asak-surface);
+  text-align: left;
+  overflow: hidden;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.menu-card.isSelected {
+  border-color: var(--asak-lime-border);
+  border-width: 2px;
+  box-shadow: 0 0 0 2px rgba(198, 232, 74, 0.35);
+}
+
+.menu-card.isSoldOut {
+  opacity: 0.72;
+  background: var(--asak-surface-muted);
+}
+
+.menu-card.isSoldOut img {
+  filter: grayscale(0.35);
+}
+
+.menu-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  background: var(--asak-surface-muted);
+}
+
+.menu-card .menuName {
+  margin: 16px 18px 8px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.menu-card .menuPrice {
+  margin: 0 18px 6px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.menu-card .menuKcal {
+  margin: 0 18px;
+  font-size: 16px;
+  color: var(--asak-text-muted);
+}
+
+.menu-card .soldOutBadge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 1;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--asak-danger);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.menu-card .sold-out-notice {
+  margin: 12px 18px 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+  color: var(--asak-warning);
+}
+
+.menu-list-page .empty-state {
+  padding: 80px 24px;
+  text-align: center;
+  color: var(--asak-text-secondary);
+  font-size: 22px;
+}
+
+/* ----------------------- Order List ----------------------- */
+.order-list {
+  flex-shrink: 0;
+  max-height: 420px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px var(--asak-page-pad-x) 28px;
+  border-top: 1px solid var(--asak-divider);
+  background: var(--asak-surface);
+}
+
+.order-list__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.order-list__title {
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.order-list__count {
+  font-size: 20px;
+  color: var(--asak-text-secondary);
+}
+
+.order-list__empty {
+  padding: 28px;
+  border-radius: var(--asak-radius-md);
+  background: var(--asak-surface-muted);
+  color: var(--asak-text-muted);
+  font-size: 18px;
+  text-align: center;
+}
+
+.order-list__items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.order-list-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 16px;
+  border: 1px solid var(--asak-border);
+  border-radius: var(--asak-radius-md);
+  background: var(--asak-bg-kiosk);
+}
+
+.order-list-item__menu {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.order-list-item__image,
+.order-list-item__image-placeholder {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--asak-radius-sm);
+  object-fit: cover;
+  background: var(--asak-surface-muted);
+  flex-shrink: 0;
+}
+
+.order-list-item__name {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.order-list-item__options {
+  font-size: 15px;
+  color: var(--asak-text-muted);
+  line-height: 1.35;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.order-list-item__price {
+  font-size: 20px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.order-list-item__remove {
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--asak-border);
+  border-radius: var(--asak-radius-sm);
+  background: var(--asak-surface);
+  font-size: 18px;
+}
+
+/* ----------------------- Quantity Stepper ----------------------- */
+.quantity-stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.quantity-stepper__btn {
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--asak-border-strong);
+  border-radius: var(--asak-radius-sm);
+  background: var(--asak-surface);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.quantity-stepper__btn:disabled {
+  opacity: 0.35;
+  background: var(--asak-surface-muted);
+}
+
+.quantity-stepper__value {
+  min-width: 36px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.quantity-stepper__alert {
+  margin: 8px 0 0;
+  color: var(--asak-danger);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* ----------------------- Menu Detail ----------------------- */
+.menu-detail-page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--asak-bg-kiosk);
+}
+
+.menu-detail-summary {
+  flex-shrink: 0;
+  padding: 24px var(--asak-page-pad-x) 20px;
+  border-bottom: 1px solid var(--asak-divider);
+}
+
+.menu-detail-summary__row {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.menu-detail-summary__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.menu-detail-summary__name {
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+}
+
+.menu-detail-summary__desc {
+  font-size: 20px;
+  line-height: 1.45;
+  color: var(--asak-text-secondary);
+  margin-bottom: 16px;
+}
+
+.menu-detail-summary__price {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.menu-detail-summary__image {
+  width: 280px;
+  height: 280px;
+  border-radius: var(--asak-radius-md);
+  object-fit: cover;
+  background: var(--asak-surface-muted);
+  flex-shrink: 0;
+}
+
+.menu-detail-page > [role="alert"] {
+  margin: 0 var(--asak-page-pad-x);
+  padding: 12px 16px;
+  border-radius: var(--asak-radius-sm);
+  background: var(--asak-danger-soft);
+  color: var(--asak-danger);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.menu-detail-options {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 28px var(--asak-page-pad-x) 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+/* Option Group — 3열 912px 정렬 */
+.option-group {
+  width: min(100%, var(--asak-option-grid-w));
+}
+
+.option-group__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.option-group__title {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 34px;
+}
+
+.option-group__required {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: 6px;
+  background: var(--asak-text);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.option-group__rule {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--asak-text-muted);
+  font-weight: 500;
+}
+
+.option-group__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, var(--asak-option-card-w));
+  gap: var(--asak-option-gap-row) var(--asak-option-gap-col);
+}
+
+/* Option Card — D1-B 근사 */
+.option-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: var(--asak-option-card-w);
+  height: var(--asak-option-card-h);
+  padding: 16px 18px;
+  border: 1px solid var(--asak-border);
+  border-radius: var(--asak-radius-md);
+  background: var(--asak-surface);
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.option-item--selected {
+  border: 2px solid var(--asak-lime-border);
+  background: var(--asak-surface-lime);
+  padding: 15px 17px; /* border 2px 보정 */
+}
+
+.option-item--sold-out {
+  background: var(--asak-surface-soldout);
+  opacity: 0.85;
+  cursor: not-allowed;
+}
+
+.option-item__image {
+  display: none; /* Figma OptionCard는 아이콘 없이 텍스트 중심. 있으면 숨겨 레이아웃 유지 */
+}
+
+.option-item__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.option-item__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  min-height: 0;
+}
+
+.option-item__top {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.option-item__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.option-item__name {
+  flex: 1;
+  min-width: 0;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+  letter-spacing: -0.02em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.option-item__description {
+  margin-top: 4px;
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--asak-text-muted);
+  font-weight: 400;
+}
+
+.option-item__price {
+  margin-top: auto;
+  align-self: flex-end;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.option-item__badge {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  height: 24px;
+  padding: 0 8px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.option-item__badge--recommended {
+  background: var(--asak-surface-lime);
+  color: #4a6b10;
+  border: 1px solid var(--asak-lime-border);
+}
+
+.option-item__badge--sold-out {
+  background: var(--asak-danger);
+  color: #fff;
+}
+
+/* Bottom CTA — 고정 */
+.menu-detail-footer {
+  flex-shrink: 0;
+  height: var(--asak-bottom-cta-h);
+  padding: 28px var(--asak-page-pad-x) 36px;
+  display: flex;
+  align-items: stretch;
+  background: var(--asak-surface);
+  border-top: 1px solid var(--asak-divider);
+  box-sizing: border-box;
+}
+
+.menu-detail-footer button {
+  width: 100%;
+  border: none;
+  border-radius: var(--asak-radius-md);
+  background: var(--asak-lime);
+  color: var(--asak-text);
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.menu-detail-footer button:disabled {
+  background: var(--asak-border-strong);
+  color: var(--asak-text-muted);
+}
+
+.menu-detail-footer button:not(:disabled):active {
+  background: var(--asak-lime-strong);
+}
+
+/* 레거시 클래스 호환 */
+.flexBoxWrap {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  justify-content: space-between;
 }

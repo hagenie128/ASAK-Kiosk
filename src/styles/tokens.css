@@ -1,1 +1,53 @@
-/* 학습용 자리표시자: 색상, 글꼴, 여백, 그림자 같은 디자인 토큰을 정의합니다. */
+/* ASAK Kiosk design tokens — Figma 01-C / D1 방향 기준 (완성 Variable bind 전 근사값) */
+:root {
+  /* Surface */
+  --asak-bg-canvas: #d3d3d3;
+  --asak-bg-kiosk: #f6f4ed;
+  --asak-surface: #ffffff;
+  --asak-surface-muted: #f0eee6;
+  --asak-surface-lime: #f3f9e8;
+  --asak-surface-soldout: #f5f0ee;
+  --asak-surface-allergy: #fff5ed;
+
+  /* Text */
+  --asak-text: #1a1a1a;
+  --asak-text-secondary: #5c5c5c;
+  --asak-text-muted: #8a8a8a;
+  --asak-text-on-primary: #1a1a1a;
+
+  /* Accent — Lime은 Selected / Primary CTA에만 */
+  --asak-lime: #c6e84a;
+  --asak-lime-strong: #b5d63a;
+  --asak-lime-border: #9fc92e;
+
+  /* Neutral / Border */
+  --asak-border: #e4e0d6;
+  --asak-border-strong: #cfc9bb;
+  --asak-divider: #ebe7de;
+
+  /* Status */
+  --asak-danger: #d64545;
+  --asak-danger-soft: #fce8e8;
+  --asak-allergy-border: #d97326;
+  --asak-warning: #d97326;
+
+  /* Layout (1080×1920) */
+  --asak-kiosk-w: 1080px;
+  --asak-kiosk-h: 1920px;
+  --asak-page-pad-x: 84px;
+  --asak-header-h: 96px;
+  --asak-bottom-cta-h: 180px;
+  --asak-radius-sm: 8px;
+  --asak-radius-md: 12px;
+  --asak-radius-lg: 20px;
+
+  /* Option card grid (D1-B) */
+  --asak-option-grid-w: 912px;
+  --asak-option-card-w: 292px;
+  --asak-option-card-h: 128px;
+  --asak-option-gap-col: 18px;
+  --asak-option-gap-row: 16px;
+
+  /* Type */
+  --asak-font: "Pretendard Variable", Pretendard, "Noto Sans KR", sans-serif;
+}

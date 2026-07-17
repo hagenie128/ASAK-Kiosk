@@ -1,31 +1,40 @@
 // 메뉴 디테일 & 장바구니에서 수량 카운터링 컴포넌트 ui
+import React from "react";
 
-import React from 'react'
-
-//quantity : 수량 minQuantity: 최소 수량
-
-export default function QuantityStepper({ quantity, minQuantity = 1, limitReason, onDecrease, onIncrease }) {
-
-    const isMinusDisabled = quantity <= minQuantity;
-
-    //     const state =
-    // limitReason === "MENU_LIMIT" ? "MenuLimitReached" :
-    // limitReason === "CART_LIMIT" ? "CartLimitReached" :
-    // isMinusDisabled ? "MinusDisabled" : "Default";
-
+export default function QuantityStepper({
+  quantity,
+  minQuantity = 1,
+  limitReason,
+  onDecrease,
+  onIncrease,
+}) {
+  const isMinusDisabled = quantity <= minQuantity;
 
   return (
-    <>
-      <div>
-        <button type="button" onClick={onDecrease} disabled={isMinusDisabled}>
-          -
-        </button>
-        <span>{quantity}</span>
-        <button type="button" onClick={onIncrease}>
-          +
-        </button>
-        {limitReason && <p role="alert">{limitReason}</p>}
-      </div>
-    </>
+    <div className="quantity-stepper">
+      <button
+        type="button"
+        className="quantity-stepper__btn"
+        onClick={onDecrease}
+        disabled={isMinusDisabled}
+        aria-label="수량 감소"
+      >
+        −
+      </button>
+      <span className="quantity-stepper__value">{quantity}</span>
+      <button
+        type="button"
+        className="quantity-stepper__btn"
+        onClick={onIncrease}
+        aria-label="수량 증가"
+      >
+        +
+      </button>
+      {limitReason && (
+        <p className="quantity-stepper__alert" role="alert">
+          {limitReason}
+        </p>
+      )}
+    </div>
   );
 }

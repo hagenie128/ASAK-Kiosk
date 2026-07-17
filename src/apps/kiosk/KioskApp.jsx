@@ -1,8 +1,10 @@
-import { Link, NavLink, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import HomePage from "../../pages/kiosk/HomePage.jsx";
 import MenuListPage from "../../pages/kiosk/MenuListPage.jsx";
-import "../../styles/commonStyle.css";
+import "../../styles/tokens.css";
 import "../../styles/reset.css";
+import "../../styles/global.css";
+import "../../styles/commonStyle.css";
 import MenuDetailPage from "@/pages/kiosk/MenuDetailPage.jsx";
 
 
