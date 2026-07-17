@@ -1,5 +1,8 @@
 # Figma Prototype → MCP → Kiosk 구현 가이드
 
+> **중앙 Figma QA 정본:** [`ASAK/docs/design/FIGMA_QA_UNIFIED_COMPLETE_2026-07-17.md`](../../ASAK/docs/design/FIGMA_QA_UNIFIED_COMPLETE_2026-07-17.md)  
+> 이 문서는 **Kiosk 저장소**에서 MCP→코드 연결용입니다. Admin은 `ASAK-Admin/docs/07-figma-mcp-implementation-guide.md`.
+
 ## 목적과 범위
 
 Figma 키오스크 화면과 프로토타입은 React 구현의 기준이다. MCP는 화면 구조·스타일·인터랙션 의도를 가져오는 데 도움을 주지만, 주문 데이터와 결제 같은 실제 동작을 자동으로 완성하지는 않는다.
