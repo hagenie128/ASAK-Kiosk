@@ -6,6 +6,7 @@ import "../../styles/reset.css";
 import "../../styles/global.css";
 import "../../styles/commonStyle.css";
 import MenuDetailPage from "@/pages/kiosk/MenuDetailPage.jsx";
+import CartPage from "@/pages/kiosk/CartPage.jsx";
 
 
 // 아직 페이지별 기능을 만들기 전의 임시 화면입니다.
@@ -18,6 +19,7 @@ export default function KioskApp() {
         <Route path="/" element={<HomePage />} />
         <Route path="/menu" element={<MenuListPage />} />
         <Route path="/menu/:menuId" element={<MenuDetailPage/>} />
+        <Route path="/cart" element={<CartPage />} />
       </Routes>
     </div>
   );

@@ -8,7 +8,7 @@ import { useSearchParams, useNavigate } from "react-router-dom";
 import MenuCard from "@/components/kiosk/MenuCard";
 import OrderList from "@/components/kiosk/OrderList";
 import MenuListFooter from "@/components/kiosk/MenuListFooter";
-import { useOrderSession } from "@/store/orderSessionStore";
+import { useCartStore } from "@/store/cartStore";
 import { getCartTotalQuantity } from "@/utils/quantityLimits";
 import { calculateCartTotal } from "@/utils/priceCalculation";
 
@@ -44,7 +44,7 @@ export default function MenuListPage() {
 
   //-----푸터-----
 
-  const items = useOrderSession((state)=> state.items);
+  const items = useCartStore((state)=> state.items);
   const itemCount = getCartTotalQuantity(items);
   const totalPrice = calculateCartTotal(items);
 

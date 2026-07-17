@@ -8,7 +8,7 @@
 // - quantity/selectedOptions는 장기적으로 hooks/useMenuDetailDraft.js로 모은다.
 // - AllergenAccordion은 스크롤 본문에만 두고, Footer(BottomCTA)는 고정한다.
 import Header from '@/components/kiosk/Header';
-import { useOrderSession } from '@/store/orderSessionStore';
+import { useCartStore } from '@/store/cartStore';
 import React, { useState } from 'react'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import kioskMock from "../../../public/mocks/kiosk.json";
@@ -28,9 +28,9 @@ export default function MenuDetailPage() {
   const { menuId } = useParams();
   const navigate = useNavigate();
 
-  //useOrderSession 아이템 확인& 추가
-  const items = useOrderSession((state) => state.items); // 읽기 (조회) -- 장바구니 수량 체크
-  const addItem = useOrderSession((state) => state.addItem); // 쓰기 (저장)
+  // cartStore 기준으로 장바구니 상태를 읽고 저장한다.
+  const items = useCartStore((state) => state.items); // 읽기 (조회) -- 장바구니 수량 체크
+  const addItem = useCartStore((state) => state.addItem); // 쓰기 (저장)
   // [학습] edit 흐름이 생기면 updateItem(옵션·수량)이 필요하다.
   // 지금은 addItem만 있어 "수정"도 새 줄 추가로 끝날 위험이 있다. cartItemId 기준 분기를 먼저 설계한다.
 
@@ -148,6 +148,7 @@ export default function MenuDetailPage() {
       menuId: menuDetail.menuId,
       menuName: menuDetail.name,
       imageUrl: menuDetail.imageUrl,
+      baseKcal: menuDetail.baseKcal,
       unitPrice: Number(menuDetail.price ?? 0),
       quantity,
 
