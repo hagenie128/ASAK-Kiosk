@@ -12,3 +12,18 @@ export function priceCalculation({
   );
   return (Number(unitPrice ?? 0) + optionExtraSum) * Number(quantity ?? 0);
 }
+
+
+// 장바구니 전체 합계 (여러 항목의 priceCalculation 결과를 합산)
+export function calculateCartTotal(items = []) {
+  return items.reduce(
+    (sum, item) =>
+      sum +
+      priceCalculation({
+        unitPrice: item.unitPrice,
+        optionItems: item.optionItems,
+        quantity: item.quantity,
+      }),
+    0,
+  );
+}

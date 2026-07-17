@@ -27,7 +27,7 @@ function getMenuQuantityInCart(items, menuId) {
     .reduce((sum, item) => sum + item.quantity, 0);
 }
 // 장바구니에 total 몇개씩 누적됐는지 확인 로직
-function getCartTotalQuantity(items) {
+export function getCartTotalQuantity(items) {
   return items.reduce((sum, item) => sum + item.quantity, 0);
 }
 

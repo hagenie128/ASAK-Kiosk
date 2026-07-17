@@ -7,6 +7,10 @@ import kioskMock from "../../../public/mocks/kiosk.json";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import MenuCard from "@/components/kiosk/MenuCard";
 import OrderList from "@/components/kiosk/OrderList";
+import MenuListFooter from "@/components/kiosk/MenuListFooter";
+import { useOrderSession } from "@/store/orderSessionStore";
+import { getCartTotalQuantity } from "@/utils/quantityLimits";
+import { calculateCartTotal } from "@/utils/priceCalculation";
 
 export default function MenuListPage() {
   const navigate = useNavigate();
@@ -37,6 +41,16 @@ export default function MenuListPage() {
     setSelectedMenuId(menuId);
     navigate(`/menu/${menuId}?category=${selectedCategoryId}`);
   };
+
+  //-----푸터-----
+
+  const items = useOrderSession((state)=> state.items);
+  const itemCount = getCartTotalQuantity(items);
+  const totalPrice = calculateCartTotal(items);
+
+  const handleCheckout = ()=>{
+    navigate("/cart");
+  }
 
   return (
     <div className="menu-list-page">
@@ -72,8 +86,8 @@ export default function MenuListPage() {
       {/* 주문 목록 */}
       <OrderList />
 
-      {/* 추후 Footer */}
-      {/* <MenuListFooter /> */}
+        <MenuListFooter itemCount={itemCount} totalPrice={totalPrice} onCheckout={handleCheckout}/>
+        
     </div>
   );
 }

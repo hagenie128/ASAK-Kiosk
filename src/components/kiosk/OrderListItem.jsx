@@ -4,6 +4,7 @@
 import React from "react";
 import QuantityStepper from "./QuantityStepper";
 import { priceCalculation } from "@/utils/priceCalculation";
+import { formatCurrency } from "@/utils/currency";
 
 export default function OrderListItem({
   item,
@@ -71,7 +72,7 @@ export default function OrderListItem({
         className="order-list-item__price"
         aria-live="polite"
       >
-        {itemTotalPrice.toLocaleString()}원
+        {formatCurrency(itemTotalPrice)}
       </strong>
 
       <button
