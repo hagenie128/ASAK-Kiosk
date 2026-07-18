@@ -167,7 +167,7 @@ body {
   width: 100%;
   padding: 0 0 20px;
   border: 1px solid var(--asak-border);
-  border-radius: var(--asak-radius-md);
+  border-radius: var(--asak-radius-card);
   background: var(--asak-surface);
   text-align: left;
   overflow: hidden;
@@ -225,7 +225,8 @@ body {
   border-radius: 6px;
   background: var(--asak-danger);
   color: #fff;
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 24px;
   font-weight: 700;
 }
 
@@ -242,6 +243,66 @@ body {
   text-align: center;
   color: var(--asak-text-secondary);
   font-size: 22px;
+}
+
+.empty-state-panel,
+.error-state-panel,
+.loading-state-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 320px;
+  padding: 48px 32px;
+  text-align: center;
+}
+
+.empty-state-panel__title,
+.error-state-panel__title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 36px;
+  color: var(--asak-text);
+}
+
+.empty-state-panel__description,
+.error-state-panel__message,
+.loading-state-panel__label {
+  margin: 0;
+  font-size: 20px;
+  line-height: 28px;
+  color: var(--asak-text-secondary);
+}
+
+.empty-state-panel__action,
+.error-state-panel__retry {
+  margin-top: 12px;
+  min-height: 48px;
+  padding: 12px 28px;
+  border: none;
+  border-radius: var(--asak-radius-md);
+  background: var(--asak-lime);
+  color: var(--asak-text);
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.loading-state-panel__spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid var(--asak-border);
+  border-top-color: var(--asak-lime);
+  border-radius: 50%;
+  animation: asak-spin 0.8s linear infinite;
+}
+
+@keyframes asak-spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* ----------------------- Order List ----------------------- */
@@ -619,7 +680,65 @@ body {
   color: #fff;
 }
 
-/* Bottom CTA — 고정 */
+/* Bottom CTA — 메뉴 목록 (Figma Kiosk/BottomCTA 1080×180) */
+.menu-list-footer {
+  flex-shrink: 0;
+  height: var(--asak-bottom-cta-h);
+  padding: 28px var(--asak-page-pad-x) 36px;
+  display: flex;
+  align-items: stretch;
+  gap: 24px;
+  background: var(--asak-surface);
+  border-top: 1px solid var(--asak-divider);
+  box-sizing: border-box;
+}
+
+.menu-list-footer__summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  min-width: 200px;
+}
+
+.menu-list-footer__count {
+  font-size: 22px;
+  line-height: 28px;
+  color: var(--asak-text-secondary);
+  font-weight: 600;
+}
+
+.menu-list-footer__price {
+  font-size: 38px;
+  line-height: 46px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.menu-list-footer__cta {
+  flex: 1;
+  border: none;
+  border-radius: 16px;
+  background: var(--asak-lime);
+  color: var(--asak-text);
+  font-size: 34px;
+  line-height: 44px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  cursor: pointer;
+}
+
+.menu-list-footer__cta:disabled {
+  background: var(--asak-border-strong);
+  color: var(--asak-text-muted);
+  cursor: not-allowed;
+}
+
+.menu-list-footer__cta:not(:disabled):active {
+  background: var(--asak-lime-strong);
+}
+
+/* Bottom CTA — 메뉴 상세 */
 .menu-detail-footer {
   flex-shrink: 0;
   height: var(--asak-bottom-cta-h);
@@ -634,10 +753,11 @@ body {
 .menu-detail-footer button {
   width: 100%;
   border: none;
-  border-radius: var(--asak-radius-md);
+  border-radius: 16px;
   background: var(--asak-lime);
   color: var(--asak-text);
-  font-size: 28px;
+  font-size: 34px;
+  line-height: 44px;
   font-weight: 800;
   letter-spacing: -0.02em;
 }

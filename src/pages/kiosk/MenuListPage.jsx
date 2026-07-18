@@ -1,73 +1,99 @@
-// 학습용 자리표시자: SCR-002 메뉴 목록 화면입니다.
+// SCR-003 메뉴 목록 — Loading / Empty / Error / 품절 카드
 
 import Header from "@/components/kiosk/Header";
 import CategoryTabs from "@/components/kiosk/CategoryTabs";
 import React, { useState } from "react";
-import kioskMock from "../../../public/mocks/kiosk.json";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import MenuCard from "@/components/kiosk/MenuCard";
 import OrderList from "@/components/kiosk/OrderList";
 import MenuListFooter from "@/components/kiosk/MenuListFooter";
+import EmptyState from "@/components/common/EmptyState";
+import ErrorMessage from "@/components/common/ErrorMessage";
+import LoadingSpinner from "@/components/common/LoadingSpinner";
 import { useCartStore } from "@/store/cartStore";
 import { getCartTotalQuantity } from "@/utils/quantityLimits";
 import { calculateCartTotal } from "@/utils/priceCalculation";
+import { useMenuCategories, useMenuList } from "@/hooks/useMenu";
 
 export default function MenuListPage() {
   const navigate = useNavigate();
-
-  //-----카테고리-----
-
-  //카테고리 데이터 연결
-  const categories = kioskMock.categories.data;
-
-  //페이지 이동시, 카테고리 초기화 방지
   const [searchParams, setSearchParams] = useSearchParams();
+
+  const {
+    status: categoryStatus,
+    categories,
+    reload: reloadCategories,
+  } = useMenuCategories();
+
   const selectedCategoryId =
     Number(searchParams.get("category")) || categories[0]?.categoryId;
 
-  const handleSelectCategory = (categoryId) => {
-    setSearchParams({ category: categoryId });
-  };
-
-  //-----메뉴-----
-  // json에 해당 데이터 없으면, undefined 에러 발생 방지 차원, 빈 배열 값 반환
-  const menus =
-    kioskMock.menusByCategory[String(selectedCategoryId)]?.data ?? [];
+  const {
+    status: menuStatus,
+    menus,
+    reload: reloadMenus,
+  } = useMenuList(selectedCategoryId);
 
   const [selectedMenuId, setSelectedMenuId] = useState(null);
 
-  //menuId에 따른 상세 페이지 이동
+  const handleSelectCategory = (categoryId) => {
+    setSearchParams({ category: String(categoryId) });
+  };
+
   const handleSelectMenu = (menuId) => {
     setSelectedMenuId(menuId);
     navigate(`/menu/${menuId}?category=${selectedCategoryId}`);
   };
 
-  //-----푸터-----
-
-  const items = useCartStore((state)=> state.items);
+  const items = useCartStore((state) => state.items);
   const itemCount = getCartTotalQuantity(items);
   const totalPrice = calculateCartTotal(items);
 
-  const handleCheckout = ()=>{
+  const handleCheckout = () => {
     navigate("/cart");
-  }
+  };
+
+  const showCategoryLoading = categoryStatus === "loading";
+  const showCategoryError = categoryStatus === "error";
+  const showMenuLoading = menuStatus === "loading";
+  const showMenuError = menuStatus === "error";
+  const showMenuEmpty = menuStatus === "empty";
 
   return (
     <div className="menu-list-page">
-      {/* 헤더: 고정 영역 */}
       <Header />
 
-      {/* 카테고리: 고정 영역 */}
-      <CategoryTabs
-        categories={categories}
-        selectedCategoryId={selectedCategoryId}
-        onSelectCategory={handleSelectCategory}
-      />
+      {showCategoryLoading ? (
+        <div className="category-tabs category-tabs--loading">
+          <LoadingSpinner label="카테고리 불러오는 중…" />
+        </div>
+      ) : showCategoryError ? (
+        <div className="category-tabs category-tabs--error">
+          <ErrorMessage
+            title="카테고리를 불러오지 못했어요"
+            onRetry={reloadCategories}
+          />
+        </div>
+      ) : (
+        <CategoryTabs
+          categories={categories}
+          selectedCategoryId={selectedCategoryId}
+          onSelectCategory={handleSelectCategory}
+        />
+      )}
 
-      {/* 메뉴 카드만 스크롤 */}
       <main className="menu-grid-scroll-area">
-        {menus.length === 0 ? (
-          <p className="empty-state">이 카테고리에는 메뉴가 없습니다.</p>
+        {showMenuLoading || showCategoryLoading ? (
+          <LoadingSpinner label="메뉴 불러오는 중…" />
+        ) : showMenuError ? (
+          <ErrorMessage onRetry={reloadMenus} />
+        ) : showMenuEmpty ? (
+          <EmptyState
+            title="표시할 메뉴가 없어요"
+            description="다른 카테고리를 선택해 보세요."
+            actionLabel="새로고침"
+            onAction={reloadMenus}
+          />
         ) : (
           <ul className="menuGrid">
             {menus.map((menu) => (
@@ -83,11 +109,13 @@ export default function MenuListPage() {
         )}
       </main>
 
-      {/* 주문 목록 */}
       <OrderList />
 
-        <MenuListFooter itemCount={itemCount} totalPrice={totalPrice} onCheckout={handleCheckout}/>
-        
+      <MenuListFooter
+        itemCount={itemCount}
+        totalPrice={totalPrice}
+        onCheckout={handleCheckout}
+      />
     </div>
   );
 }
