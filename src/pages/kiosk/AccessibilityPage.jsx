@@ -1,29 +1,11 @@
-// 학습용 자리표시자: 접근성 설정 화면입니다.
 export default function AccessibilityPage() {
-  return (
-    <main className="accessibility-page">
-      <header className="accessibility-page__header">
-        <span aria-hidden="true">←</span>
-        <h1>접근성 설정</h1>
-        <span aria-hidden="true" />
-      </header>
-      <section className="accessibility-page__content">
-        <p>모든 고객이 편하게 주문할 수 있도록 화면을 설정합니다.</p>
-        <div className="accessibility-page__setting">
-          <div>
-            <strong>고대비 모드</strong>
-            <span>텍스트와 배경의 대비를 높입니다.</span>
-          </div>
-          <button type="button" disabled aria-label="고대비 모드 준비 중" />
-        </div>
-        <div className="accessibility-page__setting">
-          <div>
-            <strong>큰 글자</strong>
-            <span>화면의 글자 크기를 크게 표시합니다.</span>
-          </div>
-          <button type="button" disabled aria-label="큰 글자 준비 중" />
-        </div>
-      </section>
-    </main>
-  );
+  return <main className="accessibility-page">
+    <header className="accessibility-page__header"><span aria-hidden="true">←</span><h1>접근성 설정</h1><span aria-hidden="true">⌂</span></header>
+    <section className="accessibility-page__content">
+      <section className="accessibility-page__font"><h2>글자 크기</h2><p>화면의 글자 크기를 조절합니다.</p><div><button type="button" disabled className="is-selected">기본</button><button type="button" disabled>크게</button><button type="button" disabled>아주 크게</button></div></section>
+      <section className="accessibility-page__contrast"><div><h2>고대비 모드</h2><p>텍스트와 배경의 대비를 높여<br />가독성을 개선합니다.</p></div><button type="button" disabled aria-label="고대비 모드 꺼짐" /></section>
+      <section className="accessibility-page__preview"><h2>미리보기</h2><p>로스트닭다리살 샐러드<br />9,900원</p></section>
+    </section>
+    <footer className="accessibility-page__footer"><button type="button" disabled>되돌리기</button><button type="button" disabled>적용하기</button></footer>
+  </main>;
 }
