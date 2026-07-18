@@ -12,12 +12,20 @@ export default function CartPage() {
   const totalPrice = calculateCartTotal(items);
 
   return (
-    <>
+    <div className="cart-page">
       <Header />
 
-      <main>
+      <main className="cart-page__content">
 
-        <ul>
+        <div className="kiosk-step-indicator" aria-label="주문 3단계 중 장바구니">
+          <span />
+          <span />
+          <span className="is-current" />
+          <span />
+        </div>
+        <h1 className="cart-page__title">장바구니</h1>
+
+        <ul className="cart-page__items">
             {items.map((item) => (
                 <li key={item.cartItemId}>
                     <CartItem item={item} />
@@ -27,17 +35,20 @@ export default function CartPage() {
 
       </main>
 
-      <section>
+      <section className="cart-page__footer">
         <div>
           <span>합계</span>
           <span>{totalQuantity}개</span>
           <span>{formatCurrency(totalPrice)}</span>
         </div>
+        <button type="button" disabled>
+          결제하기
+        </button>
       </section>
 
 
         {/* 추후 footer추가 예정 */}
 
-    </>
+    </div>
   );
 }
