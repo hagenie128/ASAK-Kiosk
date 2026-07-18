@@ -12,3 +12,9 @@
 ## Implementation note
 
 `HomePage` uses an `<img>` rather than a text wordmark so the supplied identity, cut-outs, and fragment details are not approximated with CSS. The image width is responsive (`min(520px, 72vw)`) while preserving its aspect ratio.
+
+## Visual verification
+
+- Screenshot: `docs/screenshots/2026-07-18-kiosk-home-1080x1920.png`.
+- Verified at the Kiosk target viewport: `1080 × 1920`.
+- Result: transparent logo background, lime detail preservation, and white dark-wordmark portions confirmed.
