@@ -4,14 +4,12 @@ import { formatCurrency } from '@/utils/currency';
 import React from 'react'
 
 export default function MenuListFooter({ itemCount, totalPrice, onCheckout }) {
-
     const hasItems = itemCount > 0;
-
 
 
   return (
     <>
-        <footer>
+        <footer className="menu-list-footer">
             <div>
                 <span>
                     담은 메뉴 {itemCount}개
@@ -20,7 +18,7 @@ export default function MenuListFooter({ itemCount, totalPrice, onCheckout }) {
                     {hasItems ? formatCurrency(totalPrice) : "0원"}
                 </span>
             </div>
-            <button type="button" disabled={!hasItems} onClick={onCheckout}>
+            <button className="menu-list-footer__cta" type="button" disabled={!hasItems} onClick={onCheckout}>
                 결제하기
             </button>
         </footer>

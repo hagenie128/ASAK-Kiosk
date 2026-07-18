@@ -1,6 +1,6 @@
 # Figma Prototype → MCP → Kiosk 구현 가이드
 
-> **중앙 Figma QA 정본:** [`ASAK/docs/design/FIGMA_QA_UNIFIED_COMPLETE_2026-07-17.md`](../../ASAK/docs/design/FIGMA_QA_UNIFIED_COMPLETE_2026-07-17.md)  
+> **디자인 현재 상태:** [`ASAK/docs/design/README.md`](../../ASAK/docs/design/README.md)  
 > 이 문서는 **Kiosk 저장소**에서 MCP→코드 연결용입니다. Admin은 `ASAK-Admin/docs/07-figma-mcp-implementation-guide.md`.
 
 ## 목적과 범위

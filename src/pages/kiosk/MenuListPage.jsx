@@ -15,56 +15,45 @@ import { calculateCartTotal } from "@/utils/priceCalculation";
 export default function MenuListPage() {
   const navigate = useNavigate();
 
-  //-----카테고리-----
-
-  //카테고리 데이터 연결
+  // 카테고리 데이터는 현재 임시 목업만 사용합니다.
   const categories = kioskMock.categories.data;
 
-  //페이지 이동시, 카테고리 초기화 방지
   const [searchParams, setSearchParams] = useSearchParams();
   const selectedCategoryId =
     Number(searchParams.get("category")) || categories[0]?.categoryId;
 
-  const handleSelectCategory = (categoryId) => {
-    setSearchParams({ category: categoryId });
-  };
-
-  //-----메뉴-----
-  // json에 해당 데이터 없으면, undefined 에러 발생 방지 차원, 빈 배열 값 반환
   const menus =
     kioskMock.menusByCategory[String(selectedCategoryId)]?.data ?? [];
 
   const [selectedMenuId, setSelectedMenuId] = useState(null);
 
-  //menuId에 따른 상세 페이지 이동
+  const handleSelectCategory = (categoryId) => {
+    setSearchParams({ category: categoryId });
+  };
+
   const handleSelectMenu = (menuId) => {
     setSelectedMenuId(menuId);
     navigate(`/menu/${menuId}?category=${selectedCategoryId}`);
   };
 
-  //-----푸터-----
-
-  const items = useCartStore((state)=> state.items);
+  const items = useCartStore((state) => state.items);
   const itemCount = getCartTotalQuantity(items);
   const totalPrice = calculateCartTotal(items);
 
-  const handleCheckout = ()=>{
+  const handleCheckout = () => {
     navigate("/cart");
-  }
+  };
 
   return (
     <div className="menu-list-page">
-      {/* 헤더: 고정 영역 */}
       <Header />
 
-      {/* 카테고리: 고정 영역 */}
       <CategoryTabs
         categories={categories}
         selectedCategoryId={selectedCategoryId}
         onSelectCategory={handleSelectCategory}
       />
 
-      {/* 메뉴 카드만 스크롤 */}
       <main className="menu-grid-scroll-area">
         {menus.length === 0 ? (
           <p className="empty-state">이 카테고리에는 메뉴가 없습니다.</p>
@@ -83,11 +72,13 @@ export default function MenuListPage() {
         )}
       </main>
 
-      {/* 주문 목록 */}
       <OrderList />
 
-        <MenuListFooter itemCount={itemCount} totalPrice={totalPrice} onCheckout={handleCheckout}/>
-        
+      <MenuListFooter
+        itemCount={itemCount}
+        totalPrice={totalPrice}
+        onCheckout={handleCheckout}
+      />
     </div>
   );
 }

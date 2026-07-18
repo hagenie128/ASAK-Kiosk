@@ -7,6 +7,10 @@ import "../../styles/global.css";
 import "../../styles/commonStyle.css";
 import MenuDetailPage from "@/pages/kiosk/MenuDetailPage.jsx";
 import CartPage from "@/pages/kiosk/CartPage.jsx";
+import PaymentPage from "@/pages/kiosk/PaymentPage.jsx";
+import OrderCompletePage from "@/pages/kiosk/OrderCompletePage.jsx";
+import AccessibilityPage from "@/pages/kiosk/AccessibilityPage.jsx";
+import UiStatePreviewPage from "@/pages/kiosk/UiStatePreviewPage.jsx";
 
 
 // 아직 페이지별 기능을 만들기 전의 임시 화면입니다.
@@ -20,6 +24,10 @@ export default function KioskApp() {
         <Route path="/menu" element={<MenuListPage />} />
         <Route path="/menu/:menuId" element={<MenuDetailPage/>} />
         <Route path="/cart" element={<CartPage />} />
+        <Route path="/payment" element={<PaymentPage />} />
+        <Route path="/complete" element={<OrderCompletePage />} />
+        <Route path="/accessibility" element={<AccessibilityPage />} />
+        <Route path="/ui-preview/:screen/:state" element={<UiStatePreviewPage />} />
       </Routes>
     </div>
   );

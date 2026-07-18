@@ -1,5 +1,7 @@
 # ASAK Kiosk
 
+> **작업 시작점:** [ASAK 프로젝트 작업 허브](../ASAK/PROJECT_HUB.md) → 기능 한 개 선택 → 이 저장소 코드 수정 → 워크로그 기록.
+
 ## Central documentation
 
 - [ASAK docs index](../ASAK/docs/README.md)

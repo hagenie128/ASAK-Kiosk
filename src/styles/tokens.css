@@ -15,9 +15,9 @@
   --asak-text-muted: #8a8a8a;
   --asak-text-on-primary: #1a1a1a;
 
-  /* Accent — Lime은 Selected / Primary CTA에만 */
-  --asak-lime: #c6e84a;
-  --asak-lime-strong: #b5d63a;
+  /* Accent — Brand Primary #B5E30F (Figma 0718 Semantic/Brand/Primary) */
+  --asak-lime: #b5e30f;
+  --asak-lime-strong: #a4cc0d;
   --asak-lime-border: #9fc92e;
 
   /* Neutral / Border */
@@ -40,6 +40,7 @@
   --asak-radius-sm: 8px;
   --asak-radius-md: 12px;
   --asak-radius-lg: 20px;
+  --asak-radius-card: 24px;
 
   /* Option card grid (D1-B) */
   --asak-option-grid-w: 912px;
