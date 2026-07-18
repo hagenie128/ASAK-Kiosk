@@ -21,6 +21,15 @@
 - Behavior preserved: the existing back navigation and home route were not changed; only their text-glyph presentation was replaced with local SVG assets.
 - External dependency: none at runtime. The temporary Figma MCP URLs were downloaded as repository assets and are not referenced by the app.
 
+## Payment static UI — 2026-07-18
+
+- Figma source: `SCR-007 / Payment / Summary Collapsed` (`134:7861`).
+- Local assets: `icon-kiosk-card.svg`, `logo-kakaopay.png`. The latter was delivered by Figma as PNG despite its original asset URL, so it is deliberately stored/imported with the correct `.png` extension.
+- Screen code: `src/pages/kiosk/PaymentPage.jsx`.
+- UI scope: four-step progress, total area, two 920px payment cards, collapsed order summary, and two disabled footer buttons at 1080×1920.
+- Deliberately omitted: payment selection, payment request, order total binding, and navigation state changes.
+- Screenshot: `docs/screenshots/2026-07-18-kiosk-payment-1080x1920.png` (built preview verified).
+
 ## Visual verification
 
 - Screenshot: `docs/screenshots/2026-07-18-kiosk-home-1080x1920.png`.
