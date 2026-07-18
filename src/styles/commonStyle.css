@@ -1140,9 +1140,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 112px;
+  padding: 28px 60px 24px;
   text-align: center;
 }
+
+.order-complete-page .kiosk-step-indicator { width:432px; margin:0 auto 8px; justify-content:space-between; }.order-complete-page h1 { margin:0 0 24px; font-size:56px; line-height:72px; }.receipt-card { width:420px; padding:32px 28px 28px; display:grid; justify-items:center; gap:16px; border:1px solid #e5e7eb; border-radius:4px; background:#fff; color:#292d30; }.receipt-card>i { width:100%; height:12px; border-radius:2px; background:var(--asak-lime); }.receipt-card>span { color:#888; font-size:20px; line-height:28px; }.receipt-card>strong { font-size:64px; line-height:72px; letter-spacing:-.04em; }.receipt-card hr { width:100%; margin:0; border:0; border-top:1px solid #e5e7eb; }.receipt-card ul { width:100%; min-height:30px; margin:0; padding:0; list-style:none; font-size:16px; line-height:24px; }.receipt-card li,.receipt-card p { width:100%; margin:0; display:flex; justify-content:space-between; gap:8px; }.receipt-card p { font-size:20px; font-weight:700; line-height:28px; }.receipt-card em { width:180px; height:48px; display:block; background:repeating-linear-gradient(90deg,#292d30 0 3px,transparent 3px 6px,#292d30 6px 8px,transparent 8px 11px); }.receipt-card small { color:#888; font-size:12px; line-height:16px; }.order-complete-page__queue { margin:20px 0 0 !important; color:#292d30 !important; font-size:20px !important; line-height:28px !important; }.order-complete-page__return { margin:8px 0 0 !important; color:#737373 !important; font-size:18px !important; line-height:24px !important; }
 
 .order-complete-page__number {
   display: grid;
