@@ -39,6 +39,31 @@
 
 위 항목은 이 UI 반영 커밋의 범위 밖이며, 구현자가 데이터 계약을 정한 뒤 연결한다.
 
+## 상태별 Figma 화면 확인 방식
+
+기본 화면과 상태 화면을 운영용 route로 분리하지 않는다. 실제 구현에서는 Page가 API/store 결과를 받아 `loading`, `empty`, `error`, `confirm`, `progress`, `success`, `selection` 중 하나의 `viewState`를 표시한다.
+
+기능을 연결하지 않는 현재 단계에서는 아래 **UI 전용 preview route**로 상태 화면을 확인한다.
+
+```text
+/ui-preview/:screen/:state
+예) /ui-preview/menu/loading
+예) /ui-preview/cart/confirm
+예) /ui-preview/payment/error
+```
+
+| Figma 상태 묶음 | preview screen | state 예 |
+| --- | --- | --- |
+| Home high contrast | `home` | `selected` |
+| Menu List loading, empty, error, item added, sold-out, toast | `menu` | `loading`, `empty`, `error`, `success`, `selection` |
+| Menu Detail option selected, loading, error, allergy, sold-out, edit, limit toast | `detail` | `selection`, `loading`, `error`, `confirm`, `success` |
+| Cart empty, delete/clear confirm, quantity changed, sold-out, toast | `cart` | `empty`, `confirm`, `selection`, `success` |
+| Payment expanded, processing, declined, network failure, retry, all disabled | `payment` | `selection`, `progress`, `error` |
+| Timeout expired, warning, continue | `timeout` | `error`, `confirm`, `progress` |
+| Accessibility high contrast/reverted | `accessibility` | `selection`, `success` |
+
+preview route는 기능 검증 경로가 아니라 Figma 상태 UI를 확인하는 개발용 경로다. 실제 API/state 구현이 끝나면 같은 화면 컴포넌트 내부 상태 렌더링으로 흡수하고 preview route는 제거한다.
+
 ## Foundation token 확인 결과와 Figma 정리 제안
 
 변수 정의를 다시 읽어보니 이 파일 안에는 `Semantic/*`뿐 아니라 `Color/White`, `Color/Green/50`, `Color/Green/600`, `Green/800`, `Gray/200`, `Yellow/1500`, `Number/Spacing/24`와 `ASAK/Body/L`이 있다. 즉 Foundation이 완전히 없는 상태는 아니다. 다만 이름·scale·semantic 연결이 일부만 보이고, mode와 전체 typography/elevation scale은 확인되지 않아 “부분적으로 존재하고 정리가 필요한 상태”로 기록한다.
