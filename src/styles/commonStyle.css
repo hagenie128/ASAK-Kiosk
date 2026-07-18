@@ -43,7 +43,19 @@ body {
   place-items: center;
 }
 
-.kiosk-header__back img,.kiosk-header__home img { width:60px; height:60px; display:block; }.kiosk-header__logo { width:200px; height:68px; display:block; object-fit:contain; }
+.kiosk-header__back img,
+.kiosk-header__home img {
+  width: 60px;
+  height: 60px;
+  display: block;
+}
+
+.kiosk-header__logo {
+  width: 200px;
+  height: 68px;
+  display: block;
+  object-fit: contain;
+}
 
 /* ----------------------- Home (SCR-001) ----------------------- */
 .home-page {
@@ -1051,7 +1063,39 @@ body {
   letter-spacing: -0.04em;
 }
 
-.payment-page .kiosk-step-indicator { width:432px; margin:0 auto; justify-content:space-between; }.payment-page__hero { margin:104px 0 72px; display:grid; justify-items:center; gap:32px; text-align:center; }.payment-page__hero>span { color:var(--asak-text-secondary); font-size:32px; line-height:40px; }.payment-page__hero strong { font-size:100px; line-height:1.35; letter-spacing:-.05em; }.payment-page__hero p { margin:0; color:var(--asak-text-secondary); font-size:32px; font-weight:700; line-height:46px; }
+.payment-page .kiosk-step-indicator {
+  width: 432px;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.payment-page__hero {
+  margin: 104px 0 72px;
+  display: grid;
+  justify-items: center;
+  gap: 32px;
+  text-align: center;
+}
+
+.payment-page__hero > span {
+  color: var(--asak-text-secondary);
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.payment-page__hero strong {
+  font-size: 100px;
+  line-height: 1.35;
+  letter-spacing: -0.05em;
+}
+
+.payment-page__hero p {
+  margin: 0;
+  color: var(--asak-text-secondary);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 46px;
+}
 
 .payment-page__summary {
   display: flex;
@@ -1144,7 +1188,17 @@ body {
   font-weight: 800;
 }
 
-.payment-page__footer button:first-child { border:2px solid #e5e7eb; background:#fff; color:var(--asak-text); }.payment-page__footer button:last-child { background:var(--asak-lime); color:var(--asak-text); opacity:.4; }
+.payment-page__footer button:first-child {
+  border: 2px solid #e5e7eb;
+  background: #fff;
+  color: var(--asak-text);
+}
+
+.payment-page__footer button:last-child {
+  background: var(--asak-lime);
+  color: var(--asak-text);
+  opacity: 0.4;
+}
 
 .order-complete-page__content {
   display: flex;
