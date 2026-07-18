@@ -39,20 +39,11 @@ body {
   border: 0;
   border-radius: 12px;
   background: transparent;
-  color: var(--asak-text);
-  font-size: 44px;
-  font-weight: 500;
-  line-height: 1;
   display: grid;
   place-items: center;
 }
 
-.kiosk-header__logo {
-  font-size: 52px;
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  color: #4a7a00;
-}
+.kiosk-header__back img,.kiosk-header__home img { width:60px; height:60px; display:block; }.kiosk-header__logo { width:200px; height:68px; display:block; object-fit:contain; }
 
 /* ----------------------- Home (SCR-001) ----------------------- */
 .home-page {

@@ -13,6 +13,14 @@
 
 `HomePage` uses an `<img>` rather than a text wordmark so the supplied identity, cut-outs, and fragment details are not approximated with CSS. The image width is responsive (`min(520px, 72vw)`) while preserving its aspect ratio.
 
+## Shared kiosk header — 2026-07-18
+
+- Figma source: `ASAK — Design System Product UI 0718` node `134:7792` (`SCR-003 / Menu List / Default`).
+- Local assets: `src/assets/figma/kiosk-header-logo.svg`, `icon-kiosk-back.svg`, `icon-kiosk-home.svg`.
+- Consumer: `src/components/kiosk/Header.jsx`, therefore Menu List, Menu Detail, Cart and Payment screens reuse the same 60px controls and 200×68 logo.
+- Behavior preserved: the existing back navigation and home route were not changed; only their text-glyph presentation was replaced with local SVG assets.
+- External dependency: none at runtime. The temporary Figma MCP URLs were downloaded as repository assets and are not referenced by the app.
+
 ## Visual verification
 
 - Screenshot: `docs/screenshots/2026-07-18-kiosk-home-1080x1920.png`.

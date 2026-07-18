@@ -1,5 +1,8 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import backIcon from "../../assets/figma/icon-kiosk-back.svg";
+import homeIcon from "../../assets/figma/icon-kiosk-home.svg";
+import headerLogo from "../../assets/figma/kiosk-header-logo.svg";
 
 export default function Header() {
   const navigate = useNavigate();
@@ -12,11 +15,11 @@ export default function Header() {
         onClick={() => navigate(-1)}
         aria-label="이전 화면"
       >
-        ←
+        <img alt="" src={backIcon} />
       </button>
-      <div className="kiosk-header__logo">ASAK</div>
+      <img className="kiosk-header__logo" alt="ASAK" src={headerLogo} />
       <Link className="kiosk-header__home" to="/" aria-label="홈으로 이동">
-        ⌂
+        <img alt="" src={homeIcon} />
       </Link>
     </header>
   );
