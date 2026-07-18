@@ -8,6 +8,13 @@
 - Verified layout: the accessibility footer remains at the bottom of the 1080×1920 screen; its three type choices, off contrast toggle, preview, and CTAs are visual-only. The completion receipt is likewise a static 0-won / no-order-data placeholder with disabled actions.
 - No runtime Figma URL, external image URL, API request, mock JSON change, or Zustand state mutation was added for either screen.
 
+## Existing-flow screen verification — 2026-07-19
+
+- Rendered at `1080×1920`: `docs/screenshots/2026-07-19-kiosk-menu-list-1080x1920.png`, `docs/screenshots/2026-07-19-kiosk-menu-detail-1080x1920.png`, and `docs/screenshots/2026-07-19-kiosk-cart-1080x1920.png`.
+- Menu List, Menu Detail, and Cart retain the team's existing `kiosk.json` reads and Zustand cart behavior. No menu data was fabricated: the current mock returns one menu for the selected category, so the Figma three-column card layout intentionally renders with one populated card.
+- Menu Detail resets the browser scroll position when the route opens and keeps the shared header above detail content. This is layout protection only; option selection, quantity limits, total calculation, and add-to-cart behavior remain unchanged.
+- Cart is captured in its existing empty state. It preserves the Figma step indicator and disabled payment CTA; item cards will render from the existing cart store after the team connects the order flow.
+
 ## Home logo — 2026-07-18
 
 - Source supplied by the project owner: `C:\Users\하지니\Downloads\image 2.png`.

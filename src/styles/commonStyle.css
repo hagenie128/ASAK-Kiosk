@@ -518,6 +518,12 @@ body {
   background: var(--asak-bg-kiosk);
 }
 
+.menu-detail-page > .kiosk-header {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
 .menu-detail-summary {
   flex-shrink: 0;
   min-height: 320px;

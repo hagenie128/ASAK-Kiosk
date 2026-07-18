@@ -9,7 +9,7 @@
 // - AllergenAccordion은 스크롤 본문에만 두고, Footer(BottomCTA)는 고정한다.
 import Header from '@/components/kiosk/Header';
 import { useCartStore } from '@/store/cartStore';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import kioskMock from "../../../public/mocks/kiosk.json";
 import { TOAST_MESSAGES, canIncreaseQuantity } from '@/utils/quantityLimits';
@@ -19,6 +19,12 @@ import OptionGroup from '@/components/kiosk/OptionGroup';
 import MenuDetailFooter from '@/components/kiosk/MenuDetailFooter';
 
 export default function MenuDetailPage() {
+
+  // 화면 전환 뒤 이전 페이지의 스크롤 위치가 상세 헤더를 가리지 않도록
+  // 뷰포트만 맨 위로 되돌린다. 메뉴/옵션/장바구니 데이터는 변경하지 않는다.
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   //상세페이지 categoryId 들어오도록 연결
   const [searchParams] = useSearchParams();
