@@ -17,7 +17,6 @@ import { priceCalculation } from '@/utils/priceCalculation';
 import MenuDetailSummary from '@/components/kiosk/MenuDetailSummary';
 import OptionGroup from '@/components/kiosk/OptionGroup';
 import MenuDetailFooter from '@/components/kiosk/MenuDetailFooter';
-import ErrorMessage from '@/components/common/ErrorMessage';
 
 export default function MenuDetailPage() {
 
@@ -55,22 +54,6 @@ export default function MenuDetailPage() {
     });
     return initial;
   });
-
-  if (!menuDetail) {
-    return (
-      <div className="menu-detail-page">
-        <Header />
-        <ErrorMessage
-          title="메뉴를 찾을 수 없어요"
-          message="목록으로 돌아가 다른 메뉴를 선택해 주세요."
-          canRetry
-          onRetry={() =>
-            navigate(categoryId ? `/menu?category=${categoryId}` : "/menu")
-          }
-        />
-      </div>
-    );
-  }
 
   // --- 수량 증가 시 제한 판단 ---
   const handleIncreaseQuantity = () => {
