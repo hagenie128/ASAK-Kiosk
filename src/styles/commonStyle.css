@@ -92,13 +92,10 @@ body {
 }
 
 .home-page__logo {
-  margin: 0;
-  color: #fff;
-  font-size: 108px;
-  font-weight: 900;
-  letter-spacing: -0.08em;
-  line-height: 1;
-  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+  width: min(520px, 72vw);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.28));
 }
 
 .home-page__intro {
