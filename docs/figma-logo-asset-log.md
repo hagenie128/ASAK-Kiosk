@@ -1,5 +1,13 @@
 # Kiosk logo asset log
 
+## Completion and accessibility verification — 2026-07-19
+
+- Figma sources: `SCR-008 / Order Complete / Default` (`134:7926`) and `SCR-014 / Accessibility / Default` (`134:7972`) from **ASAK — Design System Product UI 0718**.
+- Screen code: `src/pages/kiosk/OrderCompletePage.jsx`, `src/pages/kiosk/AccessibilityPage.jsx`; shared styles are kept in `src/styles/commonStyle.css`.
+- Verification screenshots: `docs/screenshots/2026-07-19-kiosk-complete-1080x1920.png` and `docs/screenshots/2026-07-19-kiosk-accessibility-1080x1920.png`.
+- Verified layout: the accessibility footer remains at the bottom of the 1080×1920 screen; its three type choices, off contrast toggle, preview, and CTAs are visual-only. The completion receipt is likewise a static 0-won / no-order-data placeholder with disabled actions.
+- No runtime Figma URL, external image URL, API request, mock JSON change, or Zustand state mutation was added for either screen.
+
 ## Home logo — 2026-07-18
 
 - Source supplied by the project owner: `C:\Users\하지니\Downloads\image 2.png`.

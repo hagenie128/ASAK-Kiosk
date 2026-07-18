@@ -1193,7 +1193,9 @@ body {
 
 /* ----------------------- Accessibility (SCR-014) ----------------------- */
 .accessibility-page {
-  min-height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background: var(--asak-surface);
 }
 
@@ -1212,62 +1214,134 @@ body {
   font-size: 36px;
 }
 
-.accessibility-page__header span { font-size:48px; line-height:1; }.accessibility-page__content { flex:1; padding:80px 60px; display:flex; flex-direction:column; gap:60px; }.accessibility-page__content h2,.accessibility-page__content p { margin:0; }.accessibility-page__content h2 { color:#222; font-size:40px; line-height:48px; }.accessibility-page__content>section>p,.accessibility-page__contrast p { margin-top:32px; color:#51585e; font-size:28px; line-height:36px; }.accessibility-page__font>div { margin-top:32px; display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }.accessibility-page__font button { min-height:100px; border:2px solid #d4d4d4; border-radius:12px; background:#fff; color:#222; font:inherit; font-size:28px; font-weight:700; }.accessibility-page__font button:nth-child(2) { font-size:34px; }.accessibility-page__font button:nth-child(3) { font-size:40px; }.accessibility-page__font button.is-selected { border-color:var(--asak-lime); background:var(--asak-lime); }.accessibility-page__contrast { display:flex; align-items:center; justify-content:space-between; gap:24px; }.accessibility-page__contrast button { width:120px; height:64px; flex:0 0 120px; padding:4px; border:0; border-radius:999px; background:#d4d4d4; }.accessibility-page__contrast button::after { width:56px; height:56px; display:block; border-radius:50%; background:#fff; content:""; }.accessibility-page__preview { padding:48px; border:1px solid #e5e5e5; border-radius:12px; background:#f3f6f6; }.accessibility-page__preview h2 { color:#51585e; font-size:32px; line-height:40px; }.accessibility-page__preview p { margin-top:32px; color:#222; font-size:28px; font-weight:600; line-height:36px; }.accessibility-page__footer { padding:32px 60px 64px; display:grid; grid-template-columns:1fr 1fr; gap:24px; border-top:1px solid #e5e5e5; background:#fff; }.accessibility-page__footer button { min-height:112px; border:2px solid #d4d4d4; border-radius:12px; background:#fff; color:#222; font:inherit; font-size:32px; font-weight:700; }.accessibility-page__footer button:last-child { border-color:var(--asak-lime); background:var(--asak-lime); }
-
 .accessibility-page__header span {
   font-size: 48px;
+  line-height: 1;
 }
 
 .accessibility-page__content {
+  flex: 1;
   padding: 80px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
 }
 
-.accessibility-page__content > p {
-  margin: 0 0 48px;
+.accessibility-page__content h2,
+.accessibility-page__content p {
+  margin: 0;
+}
+
+.accessibility-page__content h2 {
+  color: var(--asak-text-primary);
+  font-size: 40px;
+  line-height: 48px;
+}
+
+.accessibility-page__font > p,
+.accessibility-page__contrast p {
+  margin-top: 32px;
   color: var(--asak-text-secondary);
-  font-size: 26px;
-  line-height: 38px;
+  font-size: 28px;
+  line-height: 36px;
 }
 
-.accessibility-page__setting {
-  min-height: 144px;
-  padding: 28px 32px;
+.accessibility-page__font > div {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.accessibility-page__font button {
+  min-height: 100px;
+  border: 2px solid #d4d4d4;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--asak-text-primary);
+  font: inherit;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.accessibility-page__font button:nth-child(2) { font-size: 34px; }
+.accessibility-page__font button:nth-child(3) { font-size: 40px; }
+
+.accessibility-page__font button.is-selected {
+  border-color: var(--asak-lime);
+  background: var(--asak-lime);
+}
+
+.accessibility-page__contrast {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid #e5e5e5;
+  gap: 24px;
 }
 
-.accessibility-page__setting div {
-  display: grid;
-  gap: 10px;
-}
-
-.accessibility-page__setting strong {
-  font-size: 28px;
-}
-
-.accessibility-page__setting span {
-  color: var(--asak-text-secondary);
-  font-size: 20px;
-}
-
-.accessibility-page__setting button {
-  width: 72px;
-  height: 40px;
+.accessibility-page__contrast button {
+  width: 120px;
+  height: 64px;
+  flex: 0 0 120px;
   padding: 4px;
   border: 0;
   border-radius: 999px;
-  background: #d9dee0;
+  background: #d4d4d4;
 }
 
-.accessibility-page__setting button::before {
+.accessibility-page__contrast button::after {
   display: block;
-  width: 32px;
-  height: 32px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   background: #fff;
   content: "";
+}
+
+.accessibility-page__preview {
+  padding: 48px;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  background: #f3f6f6;
+}
+
+.accessibility-page__preview h2 {
+  color: var(--asak-text-secondary);
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.accessibility-page__preview p {
+  margin-top: 32px;
+  color: var(--asak-text-primary);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 36px;
+}
+
+.accessibility-page__footer {
+  padding: 32px 60px 64px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  border-top: 1px solid #e5e5e5;
+  background: #fff;
+}
+
+.accessibility-page__footer button {
+  min-height: 112px;
+  border: 2px solid #d4d4d4;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--asak-text-primary);
+  font: inherit;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.accessibility-page__footer button:last-child {
+  border-color: var(--asak-lime);
+  background: var(--asak-lime);
 }
 
 /* ----------------------- Figma state previews ----------------------- */
