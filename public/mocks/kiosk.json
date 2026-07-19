@@ -151,6 +151,272 @@
           "hasSoldOutIngredient": false,
           "soldOutReason": null,
           "soldOutBadges": []
+        },
+        {
+          "baseKcal": 540,
+          "isSoldOut": false,
+          "hasSoldOutIngredient": false,
+          "soldOutReason": null,
+          "soldOutBadges": [],
+          "imageUrl": "/assets/menu/901.png",
+          "menuId": 901,
+          "categoryId": 231,
+          "name": "피넛 치킨 크런치",
+          "price": 10500
+        },
+        {
+          "baseKcal": 580,
+          "isSoldOut": true,
+          "hasSoldOutIngredient": false,
+          "soldOutReason": "MENU",
+          "soldOutBadges": [
+            "품절"
+          ],
+          "imageUrl": "/assets/menu/902.png",
+          "menuId": 902,
+          "categoryId": 231,
+          "name": "기간 한정 트러플 볼",
+          "price": 15800
+        }
+      ]
+    },
+    "232": {
+      "success": true,
+      "status": 200,
+      "code": "MENU_LIST_SUCCESS",
+      "message": "메뉴 목록 조회 성공",
+      "data": []
+    },
+    "233": {
+      "success": true,
+      "status": 200,
+      "code": "MENU_LIST_SUCCESS",
+      "message": "메뉴 목록 조회 성공",
+      "data": [
+        {
+          "baseKcal": 450,
+          "isSoldOut": false,
+          "hasSoldOutIngredient": false,
+          "soldOutReason": null,
+          "soldOutBadges": [],
+          "imageUrl": "/assets/menu/3664.png",
+          "menuId": 3664,
+          "categoryId": 233,
+          "name": "로스트닭다리살 샐러드",
+          "price": 12800
+        },
+        {
+          "baseKcal": 380,
+          "isSoldOut": false,
+          "hasSoldOutIngredient": false,
+          "soldOutReason": null,
+          "soldOutBadges": [],
+          "imageUrl": "/assets/menu/1167.png",
+          "menuId": 1167,
+          "categoryId": 233,
+          "name": "클래식 시저 샐러드",
+          "price": 9800
+        },
+        {
+          "baseKcal": 410,
+          "isSoldOut": false,
+          "hasSoldOutIngredient": false,
+          "soldOutReason": null,
+          "soldOutBadges": [],
+          "imageUrl": "/assets/menu/1833.png",
+          "menuId": 1833,
+          "categoryId": 233,
+          "name": "베이컨 아보카도 샐러드",
+          "price": 9800
+        },
+        {
+          "baseKcal": 330,
+          "isSoldOut": false,
+          "hasSoldOutIngredient": false,
+          "soldOutReason": null,
+          "soldOutBadges": [],
+          "imageUrl": "/assets/menu/2820.png",
+          "menuId": 2820,
+          "categoryId": 233,
+          "name": "단호박 무스 샐러드",
+          "price": 8500
+        },
+        {
+          "baseKcal": 360,
+          "isSoldOut": false,
+          "hasSoldOutIngredient": false,
+          "soldOutReason": null,
+          "soldOutBadges": [],
+          "imageUrl": "/assets/menu/3388.png",
+          "menuId": 3388,
+          "categoryId": 233,
+          "name": "두부 소보로 샐러드",
+          "price": 9200
+        },
+        {
+          "baseKcal": 470,
+          "isSoldOut": false,
+          "hasSoldOutIngredient": false,
+          "soldOutReason": null,
+          "soldOutBadges": [],
+          "imageUrl": "/assets/menu/4581.png",
+          "menuId": 4581,
+          "categoryId": 233,
+          "name": "리코타 치즈 샐러드",
+          "price": 10800
+        },
+        {
+          "baseKcal": 510,
+          "isSoldOut": true,
+          "hasSoldOutIngredient": false,
+          "soldOutReason": "MENU",
+          "soldOutBadges": [
+            "품절"
+          ],
+          "imageUrl": "/assets/menu/601.png",
+          "menuId": 601,
+          "categoryId": 233,
+          "name": "타코 쉬림프 포케볼",
+          "price": 13500
+        },
+        {
+          "baseKcal": 530,
+          "isSoldOut": false,
+          "hasSoldOutIngredient": true,
+          "soldOutReason": "INGREDIENT",
+          "soldOutBadges": [
+            "아보카도 품절"
+          ],
+          "imageUrl": "/assets/menu/602.png",
+          "menuId": 602,
+          "categoryId": 233,
+          "name": "연어 아보카도 볼",
+          "price": 14200
+        }
+      ]
+    },
+    "234": {
+      "success": true,
+      "status": 200,
+      "code": "MENU_LIST_SUCCESS",
+      "message": "메뉴 목록 조회 성공",
+      "data": [
+        {
+          "baseKcal": 420,
+          "isSoldOut": false,
+          "hasSoldOutIngredient": false,
+          "soldOutReason": null,
+          "soldOutBadges": [],
+          "imageUrl": "/assets/menu/801.png",
+          "menuId": 801,
+          "categoryId": 234,
+          "name": "고단백 치킨 볼",
+          "price": 11900
+        },
+        {
+          "baseKcal": 390,
+          "isSoldOut": false,
+          "hasSoldOutIngredient": false,
+          "soldOutReason": null,
+          "soldOutBadges": [],
+          "imageUrl": "/assets/menu/802.png",
+          "menuId": 802,
+          "categoryId": 234,
+          "name": "튜나 프로틴 샐러드",
+          "price": 10900
+        }
+      ]
+    },
+    "235": {
+      "success": true,
+      "status": 200,
+      "code": "MENU_LIST_SUCCESS",
+      "message": "메뉴 목록 조회 성공",
+      "data": [
+        {
+          "baseKcal": 560,
+          "isSoldOut": false,
+          "hasSoldOutIngredient": false,
+          "soldOutReason": null,
+          "soldOutBadges": [],
+          "imageUrl": "/assets/menu/2254.png",
+          "menuId": 2254,
+          "categoryId": 235,
+          "name": "멕시칸 랩",
+          "price": 8400
+        },
+        {
+          "baseKcal": 490,
+          "isSoldOut": false,
+          "hasSoldOutIngredient": false,
+          "soldOutReason": null,
+          "soldOutBadges": [],
+          "imageUrl": "/assets/menu/701.png",
+          "menuId": 701,
+          "categoryId": 235,
+          "name": "시저치킨 랩",
+          "price": 7600
+        },
+        {
+          "baseKcal": 380,
+          "isSoldOut": false,
+          "hasSoldOutIngredient": false,
+          "soldOutReason": null,
+          "soldOutBadges": [],
+          "imageUrl": "/assets/menu/702.png",
+          "menuId": 702,
+          "categoryId": 235,
+          "name": "베지 허브 랩",
+          "price": 7200
+        }
+      ]
+    },
+    "236": {
+      "success": true,
+      "status": 200,
+      "code": "MENU_LIST_SUCCESS",
+      "message": "메뉴 목록 조회 성공",
+      "data": [
+        {
+          "baseKcal": 464,
+          "isSoldOut": false,
+          "hasSoldOutIngredient": false,
+          "soldOutReason": null,
+          "soldOutBadges": [],
+          "imageUrl": "/assets/menu/364.png",
+          "menuId": 364,
+          "categoryId": 236,
+          "name": "스파이시 쉬림프 샌드위치",
+          "price": 8900,
+          "badges": [
+            "BEST"
+          ]
+        },
+        {
+          "baseKcal": 520,
+          "isSoldOut": false,
+          "hasSoldOutIngredient": false,
+          "soldOutReason": null,
+          "soldOutBadges": [],
+          "imageUrl": "/assets/menu/501.png",
+          "menuId": 501,
+          "categoryId": 236,
+          "name": "치킨 클럽 샌드위치",
+          "price": 9200
+        },
+        {
+          "baseKcal": 480,
+          "isSoldOut": true,
+          "hasSoldOutIngredient": false,
+          "soldOutReason": "MENU",
+          "soldOutBadges": [
+            "품절"
+          ],
+          "imageUrl": "/assets/menu/502.png",
+          "menuId": 502,
+          "categoryId": 236,
+          "name": "에그마요 샌드위치",
+          "price": 6900
         }
       ]
     }
@@ -200,6 +466,222 @@
           "BEST",
           "NEW",
           "Vegan"
+        ]
+      }
+    },
+    "602": {
+      "success": true,
+      "status": 200,
+      "code": "MENU_DETAIL_SUCCESS",
+      "message": "메뉴 상세 조회 성공",
+      "data": {
+        "menuId": 602,
+        "categoryId": 233,
+        "name": "연어 아보카도 볼",
+        "price": 14200,
+        "imageUrl": "/assets/menu/602.png",
+        "description": "재료 품절로 주문 불가 케이스",
+        "baseKcal": 530,
+        "ingredients": [
+          {
+            "ingredientId": 301,
+            "name": "연어",
+            "canRemove": false,
+            "isSoldOut": false
+          },
+          {
+            "ingredientId": 9201,
+            "name": "아보카도",
+            "canRemove": true,
+            "isSoldOut": true
+          }
+        ],
+        "allergens": [
+          "생선"
+        ],
+        "allergyText": "생선 함유",
+        "isSoldOut": false,
+        "hasSoldOutIngredient": true,
+        "isOrderable": false,
+        "soldOutReason": "INGREDIENT",
+        "soldOutBadges": [
+          "아보카도 품절"
+        ],
+        "badges": []
+      }
+    },
+    "701": {
+      "success": true,
+      "status": 200,
+      "code": "MENU_DETAIL_SUCCESS",
+      "message": "메뉴 상세 조회 성공",
+      "data": {
+        "menuId": 701,
+        "categoryId": 235,
+        "name": "시저치킨 랩",
+        "price": 7600,
+        "imageUrl": "/assets/menu/701.png",
+        "description": "필수 옵션 미선택 검증용 (기본 드레싱 없음)",
+        "baseKcal": 490,
+        "ingredients": [
+          {
+            "ingredientId": 501,
+            "name": "치킨",
+            "canRemove": false,
+            "isSoldOut": false
+          },
+          {
+            "ingredientId": 502,
+            "name": "또띠아",
+            "canRemove": false,
+            "isSoldOut": false
+          }
+        ],
+        "allergens": [
+          "밀",
+          "닭고기"
+        ],
+        "allergyText": "밀, 닭고기 함유",
+        "isSoldOut": false,
+        "hasSoldOutIngredient": false,
+        "isOrderable": true,
+        "soldOutReason": null,
+        "soldOutBadges": [],
+        "badges": []
+      }
+    },
+    "901": {
+      "success": true,
+      "status": 200,
+      "code": "MENU_DETAIL_SUCCESS",
+      "message": "메뉴 상세 조회 성공",
+      "data": {
+        "menuId": 901,
+        "categoryId": 231,
+        "name": "피넛 치킨 크런치",
+        "price": 10500,
+        "imageUrl": "/assets/menu/901.png",
+        "description": "땅콩 소스 치킨과 크런치 토핑 · 알레르기 고지 테스트용",
+        "baseKcal": 540,
+        "ingredients": [
+          {
+            "ingredientId": 201,
+            "name": "치킨",
+            "canRemove": false,
+            "isSoldOut": false
+          },
+          {
+            "ingredientId": 202,
+            "name": "땅콩소스",
+            "canRemove": true,
+            "isSoldOut": false
+          },
+          {
+            "ingredientId": 203,
+            "name": "양파",
+            "canRemove": true,
+            "isSoldOut": false
+          }
+        ],
+        "allergens": [
+          "땅콩",
+          "대두",
+          "밀",
+          "닭고기"
+        ],
+        "allergyText": "땅콩, 대두, 밀, 닭고기 함유. 교차오염 가능성 있음.",
+        "isSoldOut": false,
+        "hasSoldOutIngredient": false,
+        "isOrderable": true,
+        "soldOutReason": null,
+        "soldOutBadges": [],
+        "badges": [
+          "NEW"
+        ]
+      }
+    },
+    "1167": {
+      "success": true,
+      "status": 200,
+      "code": "MENU_DETAIL_SUCCESS",
+      "message": "메뉴 상세 조회 성공",
+      "data": {
+        "menuId": 1167,
+        "categoryId": 233,
+        "name": "클래식 시저 샐러드",
+        "price": 9800,
+        "imageUrl": "/assets/menu/1167.png",
+        "description": "시저 드레싱 · 베이스 일부 품절 케이스",
+        "baseKcal": 380,
+        "ingredients": [
+          {
+            "ingredientId": 401,
+            "name": "로메인",
+            "canRemove": false,
+            "isSoldOut": false
+          },
+          {
+            "ingredientId": 402,
+            "name": "파마산",
+            "canRemove": true,
+            "isSoldOut": false
+          }
+        ],
+        "allergens": [
+          "우유",
+          "달걀",
+          "밀",
+          "생선"
+        ],
+        "allergyText": "우유, 달걀, 밀, 생선(멸치) 함유",
+        "isSoldOut": false,
+        "hasSoldOutIngredient": false,
+        "isOrderable": true,
+        "soldOutReason": null,
+        "soldOutBadges": [],
+        "badges": [
+          "BEST"
+        ]
+      }
+    },
+    "3664": {
+      "success": true,
+      "status": 200,
+      "code": "MENU_DETAIL_SUCCESS",
+      "message": "메뉴 상세 조회 성공",
+      "data": {
+        "menuId": 3664,
+        "categoryId": 233,
+        "name": "로스트닭다리살 샐러드",
+        "price": 12800,
+        "imageUrl": "/assets/menu/3664.png",
+        "description": "로스트 닭다리살과 믹스 그린",
+        "baseKcal": 450,
+        "ingredients": [
+          {
+            "ingredientId": 601,
+            "name": "닭다리살",
+            "canRemove": false,
+            "isSoldOut": false
+          },
+          {
+            "ingredientId": 602,
+            "name": "토마토",
+            "canRemove": true,
+            "isSoldOut": false
+          }
+        ],
+        "allergens": [
+          "닭고기"
+        ],
+        "allergyText": "닭고기 함유",
+        "isSoldOut": false,
+        "hasSoldOutIngredient": false,
+        "isOrderable": true,
+        "soldOutReason": null,
+        "soldOutBadges": [],
+        "badges": [
+          "BEST"
         ]
       }
     }
@@ -501,6 +983,1249 @@
           ]
         }
       ]
+    },
+    "602": {
+      "success": true,
+      "status": 200,
+      "code": "MENU_OPTIONS_SUCCESS",
+      "message": "메뉴 옵션 조회 성공",
+      "data": [
+        {
+          "optionGroupId": 9001,
+          "name": "베이스",
+          "groupType": "BASE",
+          "selectType": "SINGLE",
+          "minSelect": 1,
+          "maxSelect": 1,
+          "sortOrder": 0,
+          "isRequired": true,
+          "items": [
+            {
+              "optionItemId": 9101,
+              "ingredientId": 9101,
+              "name": "양배추라이스",
+              "extraPrice": 0,
+              "originalPrice": null,
+              "extraKcal": 40,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 0,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": true,
+              "isDefault": true,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 9102,
+              "ingredientId": 9102,
+              "name": "현미밥",
+              "extraPrice": 0,
+              "originalPrice": null,
+              "extraKcal": 55,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 1,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 9105,
+              "ingredientId": 9105,
+              "name": "샐러드믹스",
+              "extraPrice": 0,
+              "originalPrice": null,
+              "extraKcal": 100,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 1,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            }
+          ]
+        },
+        {
+          "optionGroupId": 240,
+          "name": "드레싱 선택",
+          "groupType": "DRESSING",
+          "selectType": "SINGLE",
+          "minSelect": 1,
+          "maxSelect": 1,
+          "sortOrder": 1,
+          "isRequired": true,
+          "items": [
+            {
+              "optionItemId": 269,
+              "ingredientId": 105,
+              "name": "크리미칠리",
+              "extraPrice": 0,
+              "originalPrice": null,
+              "extraKcal": 235,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 0,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": true,
+              "isDefault": true,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 247,
+              "ingredientId": 219,
+              "name": "(저당) 들기름소이",
+              "extraPrice": 0,
+              "originalPrice": null,
+              "extraKcal": null,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 248,
+              "ingredientId": 220,
+              "name": "발사믹",
+              "extraPrice": 0,
+              "originalPrice": null,
+              "extraKcal": 80,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            }
+          ]
+        },
+        {
+          "optionGroupId": 9002,
+          "name": "토핑",
+          "groupType": "TOPPING",
+          "selectType": "MULTI",
+          "minSelect": 0,
+          "maxSelect": 5,
+          "sortOrder": 2,
+          "isRequired": false,
+          "items": [
+            {
+              "optionItemId": 9201,
+              "ingredientId": 9201,
+              "name": "아보카도",
+              "extraPrice": 1500,
+              "originalPrice": null,
+              "extraKcal": 40,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 0,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": true,
+              "isDefault": false,
+              "isSoldOut": true
+            },
+            {
+              "optionItemId": 9202,
+              "ingredientId": 9202,
+              "name": "훈제연어",
+              "extraPrice": 2500,
+              "originalPrice": null,
+              "extraKcal": 55,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 1,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 9203,
+              "ingredientId": 9203,
+              "name": "반숙달걀",
+              "extraPrice": 800,
+              "originalPrice": null,
+              "extraKcal": 70,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 2,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 9204,
+              "ingredientId": 9204,
+              "name": "크루통",
+              "extraPrice": 500,
+              "originalPrice": null,
+              "extraKcal": 85,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 0,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            }
+          ]
+        }
+      ]
+    },
+    "701": {
+      "success": true,
+      "status": 200,
+      "code": "MENU_OPTIONS_SUCCESS",
+      "message": "메뉴 옵션 조회 성공",
+      "data": [
+        {
+          "optionGroupId": 9001,
+          "name": "베이스",
+          "groupType": "BASE",
+          "selectType": "SINGLE",
+          "minSelect": 1,
+          "maxSelect": 1,
+          "sortOrder": 0,
+          "isRequired": true,
+          "items": [
+            {
+              "optionItemId": 9101,
+              "ingredientId": 9101,
+              "name": "양배추라이스",
+              "extraPrice": 0,
+              "originalPrice": null,
+              "extraKcal": 40,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 0,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": true,
+              "isDefault": true,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 9102,
+              "ingredientId": 9102,
+              "name": "현미밥",
+              "extraPrice": 0,
+              "originalPrice": null,
+              "extraKcal": 55,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 1,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 9105,
+              "ingredientId": 9105,
+              "name": "샐러드믹스",
+              "extraPrice": 0,
+              "originalPrice": null,
+              "extraKcal": 100,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 1,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            }
+          ]
+        },
+        {
+          "optionGroupId": 240,
+          "name": "드레싱 선택",
+          "groupType": "DRESSING",
+          "selectType": "SINGLE",
+          "minSelect": 1,
+          "maxSelect": 1,
+          "sortOrder": 1,
+          "isRequired": true,
+          "items": [
+            {
+              "optionItemId": 269,
+              "ingredientId": 105,
+              "name": "크리미칠리",
+              "extraPrice": 0,
+              "originalPrice": null,
+              "extraKcal": 235,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 0,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 247,
+              "ingredientId": 219,
+              "name": "(저당) 들기름소이",
+              "extraPrice": 0,
+              "originalPrice": null,
+              "extraKcal": null,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 248,
+              "ingredientId": 220,
+              "name": "발사믹",
+              "extraPrice": 0,
+              "originalPrice": null,
+              "extraKcal": 80,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            }
+          ]
+        },
+        {
+          "optionGroupId": 9002,
+          "name": "토핑",
+          "groupType": "TOPPING",
+          "selectType": "MULTI",
+          "minSelect": 0,
+          "maxSelect": 5,
+          "sortOrder": 2,
+          "isRequired": false,
+          "items": [
+            {
+              "optionItemId": 9201,
+              "ingredientId": 9201,
+              "name": "아보카도",
+              "extraPrice": 1500,
+              "originalPrice": null,
+              "extraKcal": 40,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 0,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": true,
+              "isDefault": false,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 9202,
+              "ingredientId": 9202,
+              "name": "훈제연어",
+              "extraPrice": 2500,
+              "originalPrice": null,
+              "extraKcal": 55,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 1,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 9203,
+              "ingredientId": 9203,
+              "name": "반숙달걀",
+              "extraPrice": 800,
+              "originalPrice": null,
+              "extraKcal": 70,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 2,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 9204,
+              "ingredientId": 9204,
+              "name": "크루통",
+              "extraPrice": 500,
+              "originalPrice": null,
+              "extraKcal": 85,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 0,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            }
+          ]
+        }
+      ]
+    },
+    "901": {
+      "success": true,
+      "status": 200,
+      "code": "MENU_OPTIONS_SUCCESS",
+      "message": "메뉴 옵션 조회 성공",
+      "data": [
+        {
+          "optionGroupId": 9001,
+          "name": "베이스",
+          "groupType": "BASE",
+          "selectType": "SINGLE",
+          "minSelect": 1,
+          "maxSelect": 1,
+          "sortOrder": 0,
+          "isRequired": true,
+          "items": [
+            {
+              "optionItemId": 9101,
+              "ingredientId": 9101,
+              "name": "양배추라이스",
+              "extraPrice": 0,
+              "originalPrice": null,
+              "extraKcal": 40,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 0,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": true,
+              "isDefault": true,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 9102,
+              "ingredientId": 9102,
+              "name": "현미밥",
+              "extraPrice": 0,
+              "originalPrice": null,
+              "extraKcal": 55,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 1,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 9105,
+              "ingredientId": 9105,
+              "name": "샐러드믹스",
+              "extraPrice": 0,
+              "originalPrice": null,
+              "extraKcal": 100,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 1,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            }
+          ]
+        },
+        {
+          "optionGroupId": 240,
+          "name": "드레싱 선택",
+          "groupType": "DRESSING",
+          "selectType": "SINGLE",
+          "minSelect": 1,
+          "maxSelect": 1,
+          "sortOrder": 1,
+          "isRequired": true,
+          "items": [
+            {
+              "optionItemId": 269,
+              "ingredientId": 105,
+              "name": "크리미칠리",
+              "extraPrice": 0,
+              "originalPrice": null,
+              "extraKcal": 235,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 0,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": true,
+              "isDefault": true,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 247,
+              "ingredientId": 219,
+              "name": "(저당) 들기름소이",
+              "extraPrice": 0,
+              "originalPrice": null,
+              "extraKcal": null,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 248,
+              "ingredientId": 220,
+              "name": "발사믹",
+              "extraPrice": 0,
+              "originalPrice": null,
+              "extraKcal": 80,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            }
+          ]
+        },
+        {
+          "optionGroupId": 9002,
+          "name": "토핑",
+          "groupType": "TOPPING",
+          "selectType": "MULTI",
+          "minSelect": 0,
+          "maxSelect": 5,
+          "sortOrder": 2,
+          "isRequired": false,
+          "items": [
+            {
+              "optionItemId": 9201,
+              "ingredientId": 9201,
+              "name": "아보카도",
+              "extraPrice": 1500,
+              "originalPrice": null,
+              "extraKcal": 40,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 0,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": true,
+              "isDefault": false,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 9202,
+              "ingredientId": 9202,
+              "name": "훈제연어",
+              "extraPrice": 2500,
+              "originalPrice": null,
+              "extraKcal": 55,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 1,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 9203,
+              "ingredientId": 9203,
+              "name": "반숙달걀",
+              "extraPrice": 800,
+              "originalPrice": null,
+              "extraKcal": 70,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 2,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 9204,
+              "ingredientId": 9204,
+              "name": "크루통",
+              "extraPrice": 500,
+              "originalPrice": null,
+              "extraKcal": 85,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 0,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            }
+          ]
+        },
+        {
+          "optionGroupId": 9003,
+          "name": "세트 추가",
+          "groupType": "SET",
+          "selectType": "MULTI",
+          "minSelect": 0,
+          "maxSelect": 2,
+          "sortOrder": 3,
+          "isRequired": false,
+          "items": [
+            {
+              "optionItemId": 9301,
+              "ingredientId": 9301,
+              "name": "콜라",
+              "extraPrice": 2000,
+              "originalPrice": null,
+              "extraKcal": 140,
+              "servingAmount": 1,
+              "servingUnit": "잔",
+              "proteinG": 0,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 9302,
+              "ingredientId": 9302,
+              "name": "수프",
+              "extraPrice": 2500,
+              "originalPrice": null,
+              "extraKcal": 120,
+              "servingAmount": 1,
+              "servingUnit": "컵",
+              "proteinG": 3,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": true
+            }
+          ]
+        }
+      ]
+    },
+    "1167": {
+      "success": true,
+      "status": 200,
+      "code": "MENU_OPTIONS_SUCCESS",
+      "message": "메뉴 옵션 조회 성공",
+      "data": [
+        {
+          "optionGroupId": 9001,
+          "name": "베이스",
+          "groupType": "BASE",
+          "selectType": "SINGLE",
+          "minSelect": 1,
+          "maxSelect": 1,
+          "sortOrder": 0,
+          "isRequired": true,
+          "items": [
+            {
+              "optionItemId": 9101,
+              "ingredientId": 9101,
+              "name": "양배추라이스",
+              "extraPrice": 0,
+              "originalPrice": null,
+              "extraKcal": 40,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 0,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": true,
+              "isDefault": true,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 9102,
+              "ingredientId": 9102,
+              "name": "현미밥",
+              "extraPrice": 0,
+              "originalPrice": null,
+              "extraKcal": 55,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 1,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": true
+            },
+            {
+              "optionItemId": 9105,
+              "ingredientId": 9105,
+              "name": "샐러드믹스",
+              "extraPrice": 0,
+              "originalPrice": null,
+              "extraKcal": 100,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 1,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            }
+          ]
+        },
+        {
+          "optionGroupId": 240,
+          "name": "드레싱 선택",
+          "groupType": "DRESSING",
+          "selectType": "SINGLE",
+          "minSelect": 1,
+          "maxSelect": 1,
+          "sortOrder": 1,
+          "isRequired": true,
+          "items": [
+            {
+              "optionItemId": 269,
+              "ingredientId": 105,
+              "name": "크리미칠리",
+              "extraPrice": 0,
+              "originalPrice": null,
+              "extraKcal": 235,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 0,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": true,
+              "isDefault": true,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 247,
+              "ingredientId": 219,
+              "name": "(저당) 들기름소이",
+              "extraPrice": 0,
+              "originalPrice": null,
+              "extraKcal": null,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 248,
+              "ingredientId": 220,
+              "name": "발사믹",
+              "extraPrice": 0,
+              "originalPrice": null,
+              "extraKcal": 80,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            }
+          ]
+        },
+        {
+          "optionGroupId": 9002,
+          "name": "토핑",
+          "groupType": "TOPPING",
+          "selectType": "MULTI",
+          "minSelect": 0,
+          "maxSelect": 5,
+          "sortOrder": 2,
+          "isRequired": false,
+          "items": [
+            {
+              "optionItemId": 9201,
+              "ingredientId": 9201,
+              "name": "아보카도",
+              "extraPrice": 1500,
+              "originalPrice": null,
+              "extraKcal": 40,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 0,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": true,
+              "isDefault": false,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 9202,
+              "ingredientId": 9202,
+              "name": "훈제연어",
+              "extraPrice": 2500,
+              "originalPrice": null,
+              "extraKcal": 55,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 1,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 9203,
+              "ingredientId": 9203,
+              "name": "반숙달걀",
+              "extraPrice": 800,
+              "originalPrice": null,
+              "extraKcal": 70,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 2,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": true
+            },
+            {
+              "optionItemId": 9204,
+              "ingredientId": 9204,
+              "name": "크루통",
+              "extraPrice": 500,
+              "originalPrice": null,
+              "extraKcal": 85,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 0,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            }
+          ]
+        },
+        {
+          "optionGroupId": 9003,
+          "name": "세트 추가",
+          "groupType": "SET",
+          "selectType": "MULTI",
+          "minSelect": 0,
+          "maxSelect": 2,
+          "sortOrder": 3,
+          "isRequired": false,
+          "items": [
+            {
+              "optionItemId": 9301,
+              "ingredientId": 9301,
+              "name": "콜라",
+              "extraPrice": 2000,
+              "originalPrice": null,
+              "extraKcal": 140,
+              "servingAmount": 1,
+              "servingUnit": "잔",
+              "proteinG": 0,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 9302,
+              "ingredientId": 9302,
+              "name": "수프",
+              "extraPrice": 2500,
+              "originalPrice": null,
+              "extraKcal": 120,
+              "servingAmount": 1,
+              "servingUnit": "컵",
+              "proteinG": 3,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": true
+            }
+          ]
+        }
+      ]
+    },
+    "3664": {
+      "success": true,
+      "status": 200,
+      "code": "MENU_OPTIONS_SUCCESS",
+      "message": "메뉴 옵션 조회 성공",
+      "data": [
+        {
+          "optionGroupId": 9001,
+          "name": "베이스",
+          "groupType": "BASE",
+          "selectType": "SINGLE",
+          "minSelect": 1,
+          "maxSelect": 1,
+          "sortOrder": 0,
+          "isRequired": true,
+          "items": [
+            {
+              "optionItemId": 9101,
+              "ingredientId": 9101,
+              "name": "양배추라이스",
+              "extraPrice": 0,
+              "originalPrice": null,
+              "extraKcal": 40,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 0,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": true,
+              "isDefault": true,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 9102,
+              "ingredientId": 9102,
+              "name": "현미밥",
+              "extraPrice": 0,
+              "originalPrice": null,
+              "extraKcal": 55,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 1,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 9105,
+              "ingredientId": 9105,
+              "name": "샐러드믹스",
+              "extraPrice": 0,
+              "originalPrice": null,
+              "extraKcal": 100,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 1,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            }
+          ]
+        },
+        {
+          "optionGroupId": 240,
+          "name": "드레싱 선택",
+          "groupType": "DRESSING",
+          "selectType": "SINGLE",
+          "minSelect": 1,
+          "maxSelect": 1,
+          "sortOrder": 1,
+          "isRequired": true,
+          "items": [
+            {
+              "optionItemId": 269,
+              "ingredientId": 105,
+              "name": "크리미칠리",
+              "extraPrice": 0,
+              "originalPrice": null,
+              "extraKcal": 235,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 0,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": true,
+              "isDefault": true,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 247,
+              "ingredientId": 219,
+              "name": "(저당) 들기름소이",
+              "extraPrice": 0,
+              "originalPrice": null,
+              "extraKcal": null,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 248,
+              "ingredientId": 220,
+              "name": "발사믹",
+              "extraPrice": 0,
+              "originalPrice": null,
+              "extraKcal": 80,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            }
+          ]
+        },
+        {
+          "optionGroupId": 9002,
+          "name": "토핑",
+          "groupType": "TOPPING",
+          "selectType": "MULTI",
+          "minSelect": 0,
+          "maxSelect": 5,
+          "sortOrder": 2,
+          "isRequired": false,
+          "items": [
+            {
+              "optionItemId": 9201,
+              "ingredientId": 9201,
+              "name": "아보카도",
+              "extraPrice": 1500,
+              "originalPrice": null,
+              "extraKcal": 40,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 0,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": true,
+              "isDefault": false,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 9202,
+              "ingredientId": 9202,
+              "name": "훈제연어",
+              "extraPrice": 2500,
+              "originalPrice": null,
+              "extraKcal": 55,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 1,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 9203,
+              "ingredientId": 9203,
+              "name": "반숙달걀",
+              "extraPrice": 800,
+              "originalPrice": null,
+              "extraKcal": 70,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 2,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 9204,
+              "ingredientId": 9204,
+              "name": "크루통",
+              "extraPrice": 500,
+              "originalPrice": null,
+              "extraKcal": 85,
+              "servingAmount": 50,
+              "servingUnit": "g",
+              "proteinG": 0,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            }
+          ]
+        },
+        {
+          "optionGroupId": 9003,
+          "name": "세트 추가",
+          "groupType": "SET",
+          "selectType": "MULTI",
+          "minSelect": 0,
+          "maxSelect": 2,
+          "sortOrder": 3,
+          "isRequired": false,
+          "items": [
+            {
+              "optionItemId": 9301,
+              "ingredientId": 9301,
+              "name": "콜라",
+              "extraPrice": 2000,
+              "originalPrice": null,
+              "extraKcal": 140,
+              "servingAmount": 1,
+              "servingUnit": "잔",
+              "proteinG": 0,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": false
+            },
+            {
+              "optionItemId": 9302,
+              "ingredientId": 9302,
+              "name": "수프",
+              "extraPrice": 2500,
+              "originalPrice": null,
+              "extraKcal": 120,
+              "servingAmount": 1,
+              "servingUnit": "컵",
+              "proteinG": 3,
+              "iconUrl": null,
+              "colorHex": null,
+              "isRecommended": false,
+              "isDefault": false,
+              "isSoldOut": true
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "paymentMethods": {
+    "success": true,
+    "status": 200,
+    "code": "PAYMENT_METHOD_LIST_SUCCESS",
+    "message": "결제수단 목록 조회 성공",
+    "data": [
+      {
+        "methodId": "card",
+        "name": "카드/삼성페이",
+        "description": "신용·체크카드",
+        "isActive": true,
+        "isMaintenance": false,
+        "sortOrder": 1
+      },
+      {
+        "methodId": "kakao",
+        "name": "카카오페이",
+        "description": "모바일 간편결제",
+        "isActive": true,
+        "isMaintenance": false,
+        "sortOrder": 2
+      },
+      {
+        "methodId": "cash",
+        "name": "현금",
+        "description": "카운터 결제",
+        "isActive": false,
+        "isMaintenance": false,
+        "sortOrder": 3
+      },
+      {
+        "methodId": "payco",
+        "name": "페이코",
+        "description": "점검 중",
+        "isActive": true,
+        "isMaintenance": true,
+        "sortOrder": 4
+      }
+    ]
+  },
+  "paymentScenarios": {
+    "approve": {
+      "success": true,
+      "status": 200,
+      "code": "PAYMENT_APPROVED",
+      "message": "가상 결제가 승인되었습니다.",
+      "data": {
+        "paymentId": 9001,
+        "orderId": 1,
+        "orderNo": "ASAK-20260720-001",
+        "amount": 8900,
+        "paymentStatus": "APPROVED",
+        "paidAt": "2026-07-20T12:00:00"
+      }
+    },
+    "declined": {
+      "success": false,
+      "status": 402,
+      "code": "PAYMENT_DECLINED",
+      "message": "카드사에서 결제를 거절했습니다.",
+      "data": {
+        "paymentStatus": "FAILED",
+        "reason": "DECLINED"
+      }
+    },
+    "network": {
+      "success": false,
+      "status": 503,
+      "code": "PAYMENT_NETWORK_ERROR",
+      "message": "결제 서버에 연결할 수 없습니다.",
+      "data": {
+        "paymentStatus": "FAILED",
+        "reason": "NETWORK"
+      }
+    }
+  },
+  "scenarios": {
+    "description": "프론트 테스트용 케이스 인덱스",
+    "menuList": {
+      "emptyCategory": {
+        "categoryId": 232,
+        "expect": "empty-state"
+      },
+      "soldOutMenu": {
+        "menuId": 502,
+        "expect": "품절 뱃지·클릭 불가"
+      },
+      "ingredientSoldOut": {
+        "menuId": 602,
+        "expect": "hasSoldOutIngredient"
+      }
+    },
+    "menuDetail": {
+      "allergy": {
+        "menuId": 901
+      },
+      "requiredNoDefault": {
+        "menuId": 701
+      },
+      "baseSoldOut": {
+        "menuId": 1167,
+        "optionItemId": 9102
+      },
+      "toppingSoldOut": {
+        "menuId": 1167,
+        "optionItemId": 9203
+      },
+      "setSoldOut": {
+        "menuId": 901,
+        "optionItemId": 9302
+      }
+    },
+    "payment": {
+      "selectRequired": true,
+      "approve": "paymentScenarios.approve",
+      "declined": "paymentScenarios.declined",
+      "network": "paymentScenarios.network",
+      "inactiveMethod": "cash",
+      "maintenanceMethod": "payco"
     }
   }
 }
