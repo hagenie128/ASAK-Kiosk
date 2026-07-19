@@ -1,8 +1,9 @@
-// SCR-008 / Order Complete — Figma 0714 정본 (VXKyzoNdsgM4oN57mrECxb / 2:4877)
+// SCR-008 / Order Complete — 0718 `134:7926` (0714 레이아웃을 0718 스타일로 녹임)
 import Header from "@/components/kiosk/Header";
 import KioskToast from "@/components/kiosk/KioskToast";
 import ticketShape from "@/assets/figma/order-complete-ticket.svg";
 import asakSLogo from "@/assets/figma/asak-s-logo.svg";
+import barcodeMark from "@/assets/figma/order-complete-barcode.svg";
 import { STATIC_COMPLETE } from "@/data/staticUi";
 
 const TOAST_BY_STATE = {
@@ -20,8 +21,8 @@ export default function OrderCompletePage({ viewState = "default" } = {}) {
   return (
     <div
       className="order-complete-page"
-      data-figma-file="VXKyzoNdsgM4oN57mrECxb"
-      data-figma-node="2:4877"
+      data-figma-file="yHhvn5RKjBd91U8BJUQz7F"
+      data-figma-node="134:7926"
       data-view-state={viewState}
     >
       <Header />
@@ -43,11 +44,7 @@ export default function OrderCompletePage({ viewState = "default" } = {}) {
           <div className="order-complete-page__ticket-body">
             <img className="order-complete-page__ticket-shape" src={ticketShape} alt="" />
             <img className="order-complete-page__ticket-logo" src={asakSLogo} alt="" />
-            <div className="order-complete-page__barcode">
-              {Array.from({ length: 28 }, (_, i) => (
-                <span key={i} style={{ width: `${2 + (i % 3)}px` }} />
-              ))}
-            </div>
+            <img className="order-complete-page__barcode" src={barcodeMark} alt="" />
           </div>
         </div>
 
