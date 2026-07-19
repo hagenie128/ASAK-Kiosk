@@ -1,4 +1,9 @@
 // SCR-023 / Receipt — Figma 3014:40926 계열
+/**
+ * [FIGMA-AI] Figma 영수증 프레임과 printing/error/success 상태를 옮긴 화면입니다.
+ * [AI-LOGIC] LINES와 viewState는 영수증 출력 상태 QA 미리보기용 목업입니다.
+ * 실제 주문 항목과 프린터 연동은 아직 연결하지 않은 상태입니다.
+ */
 import Header from "@/components/kiosk/Header";
 import { formatWon } from "@/data/staticUi";
 

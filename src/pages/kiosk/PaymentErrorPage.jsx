@@ -1,4 +1,9 @@
 // SCR-012 / Payment Error — Figma 134:7900 계열
+/**
+ * [FIGMA-AI] Figma 결제 실패 모달과 오류 문구 상태를 옮긴 화면입니다.
+ * [AI-LOGIC] COPY와 viewState는 거절/네트워크 등 오류 상태 QA 미리보기용입니다.
+ * 실제 결제 실패 응답과 재시도 요청은 아직 연결하지 않은 상태입니다.
+ */
 import Header from "@/components/kiosk/Header";
 import { formatWon, STATIC_PAYMENT } from "@/data/staticUi";
 

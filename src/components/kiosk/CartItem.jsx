@@ -18,7 +18,7 @@ function PlusIcon() {
   );
 }
 
-export default function CartItem({ item }) {
+export default function CartItem({ item, onDecrease, onIncrease, onDelete }) {
   if (!item) return null;
 
   return (
@@ -42,13 +42,14 @@ export default function CartItem({ item }) {
               <button
                 type="button"
                 className={`cart-item__step${item.minusDisabled ? " is-disabled" : ""}`}
-                disabled
+                disabled={item.quantity <= 1}
+                onClick={onDecrease}
                 aria-label="수량 감소"
               >
                 <MinusIcon />
               </button>
               <span className="cart-item__qty">{item.quantity}</span>
-              <button type="button" className="cart-item__step" disabled aria-label="수량 증가">
+              <button type="button" className="cart-item__step" onClick={onIncrease} aria-label="수량 증가">
                 <PlusIcon />
               </button>
             </div>
@@ -61,7 +62,7 @@ export default function CartItem({ item }) {
           <button type="button" disabled>
             옵션 수정
           </button>
-          <button type="button" disabled className="is-delete">
+          <button type="button" onClick={onDelete} className="is-delete">
             삭제
           </button>
         </div>

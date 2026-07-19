@@ -1,4 +1,9 @@
 // SCR-013 / Timeout — Figma 134:7913 계열
+/**
+ * [FIGMA-AI] Figma 주문 타임아웃 안내·확인 모달 상태를 옮긴 화면입니다.
+ * [AI-LOGIC] COPY, ALIAS, viewState는 timeout QA 미리보기용 상태 제어입니다.
+ * 실제 카운트다운·세션 초기화·연장 요청은 아직 연결하지 않은 상태입니다.
+ */
 import Header from "@/components/kiosk/Header";
 import { formatWon, STATIC_PAYMENT } from "@/data/staticUi";
 

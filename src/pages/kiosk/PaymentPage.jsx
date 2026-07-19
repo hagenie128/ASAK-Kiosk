@@ -1,4 +1,9 @@
 // SCR-007 / Payment — Figma 134:7861 계열
+/**
+ * [FIGMA-AI] Figma 결제 프레임, 결제 수단·에셋·상태별 레이아웃을 옮긴 화면입니다.
+ * [AI-LOGIC] viewState 분기는 selected/loading/processing/error QA 미리보기용입니다.
+ * 실제 결제 API, 결제수단 선택 저장, 주문 확정은 아직 연결하지 않은 상태입니다.
+ */
 import Header from "@/components/kiosk/Header";
 import cardIcon from "@/assets/figma/icon-kiosk-card.svg";
 import kakaoPayLogo from "@/assets/figma/logo-kakaopay.png";

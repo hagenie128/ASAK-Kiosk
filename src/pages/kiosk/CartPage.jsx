@@ -1,9 +1,18 @@
 // SCR-005 / Cart — Figma 134:7835 + Clear Cart Confirm 272:19493
+/**
+ * [FIGMA-AI] Figma SCR-005 레이아웃, 확인 다이얼로그·토스트와 viewState 미리보기 상태를 옮긴 화면입니다.
+ * [AI-LOGIC] STATIC_CART는 미리보기용 목업 데이터이며 기본 화면에서는 사용하지 않습니다.
+ * [KIM-RESTORED] 실제 장바구니 조회, 수량 증감·삭제, 합계 계산, 메뉴/결제 이동을 복구했습니다.
+ */
 import Header from "@/components/kiosk/Header";
 import CartItem from "@/components/kiosk/CartItem";
 import KioskToast from "@/components/kiosk/KioskToast";
 import KioskConfirmDialog from "@/components/kiosk/KioskConfirmDialog";
 import { STATIC_CART, formatWon } from "@/data/staticUi";
+import { useNavigate } from "react-router-dom";
+import { useCartStore } from "@/store/cartStore";
+import { calculateCartTotal, priceCalculation } from "@/utils/priceCalculation";
+import { canIncreaseCartItemQuantity, getCartTotalQuantity } from "@/utils/quantityLimits";
 
 const TOAST_BY_STATE = {
   success: "장바구니를 비웠어요",
@@ -13,14 +22,42 @@ const TOAST_BY_STATE = {
 };
 
 export default function CartPage({ viewState = "default" } = {}) {
-  const empty = viewState === "empty" || viewState === "success";
-  const items = empty ? [] : STATIC_CART.items;
-  const itemCount = empty ? 0 : STATIC_CART.itemCount;
-  const totalPrice = empty ? 0 : STATIC_CART.totalPrice;
-  const quantityTotal = empty ? 0 : STATIC_CART.quantityTotal;
+  const navigate = useNavigate();
+  const storedItems = useCartStore((state) => state.items);
+  const updateItemQuantity = useCartStore((state) => state.updateItemQuantity);
+  const removeItem = useCartStore((state) => state.removeItem);
+  const isPreview = viewState !== "default";
+  const empty = isPreview && (viewState === "empty" || viewState === "success");
+  const sourceItems = isPreview ? (empty ? [] : STATIC_CART.items) : storedItems;
+  const items = sourceItems.map((item) => ({
+    ...item,
+    lineTotal: item.lineTotal ?? priceCalculation({
+      unitPrice: item.unitPrice,
+      optionItems: item.optionItems,
+      quantity: item.quantity,
+    }),
+    kcal: item.kcal ?? item.baseKcal,
+    optionSummary: item.optionSummary ?? item.optionItems?.map((option) => option.name).join(", "),
+  }));
+  const itemCount = isPreview ? (empty ? 0 : STATIC_CART.itemCount) : items.length;
+  const totalPrice = isPreview ? (empty ? 0 : STATIC_CART.totalPrice) : calculateCartTotal(items);
+  const quantityTotal = isPreview ? (empty ? 0 : STATIC_CART.quantityTotal) : getCartTotalQuantity(items);
   const showClearConfirm = viewState === "confirm" || viewState === "clear-confirm";
   const showDeleteConfirm = viewState === "delete-confirm";
   const toastMessage = TOAST_BY_STATE[viewState] ?? null;
+
+  const handleIncrease = (item) => {
+    const result = canIncreaseCartItemQuantity({ items, menuId: item.menuId });
+    if (result.allowed) {
+      updateItemQuantity(item.cartItemId, item.quantity + 1);
+    }
+  };
+
+  const handleDecrease = (item) => {
+    if (item.quantity > 1) {
+      updateItemQuantity(item.cartItemId, item.quantity - 1);
+    }
+  };
 
   return (
     <div className="cart-page" data-figma-node="134:7835" data-view-state={viewState}>
@@ -50,7 +87,12 @@ export default function CartPage({ viewState = "default" } = {}) {
             <ul className="cart-page__items">
               {items.map((item) => (
                 <li key={item.cartItemId}>
-                  <CartItem item={item} />
+                  <CartItem
+                    item={item}
+                    onDecrease={() => handleDecrease(item)}
+                    onIncrease={() => handleIncrease(item)}
+                    onDelete={() => removeItem(item.cartItemId)}
+                  />
                 </li>
               ))}
             </ul>
@@ -73,10 +115,15 @@ export default function CartPage({ viewState = "default" } = {}) {
       </main>
 
       <footer className="cart-page__footer">
-        <button type="button" disabled>
+        <button type="button" onClick={() => navigate("/menu")}>
           + 메뉴 더 담기
         </button>
-        <button type="button" disabled className="is-primary">
+        <button
+          type="button"
+          disabled={items.length === 0}
+          onClick={() => navigate("/payment")}
+          className="is-primary"
+        >
           주문하기 · {formatWon(totalPrice)}
         </button>
       </footer>

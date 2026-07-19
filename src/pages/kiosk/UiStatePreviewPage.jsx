@@ -1,4 +1,9 @@
 // /ui-preview/:screen/:state — Figma 상태 화면을 실제 페이지 컴포넌트로 표시
+/**
+ * [FIGMA-AI] Figma Screen State Matrix 확인을 위한 AI 보조 QA 라우터입니다.
+ * [AI-LOGIC] URL의 screen/state 값을 Page의 viewState로 전달해 정적 화면 상태를 재현합니다.
+ * 주문·결제 비즈니스 로직에는 사용하지 않습니다.
+ */
 import { useParams } from "react-router-dom";
 import HomePage from "./HomePage.jsx";
 import MenuListPage from "./MenuListPage.jsx";

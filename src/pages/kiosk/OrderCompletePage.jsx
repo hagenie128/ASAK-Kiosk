@@ -1,4 +1,9 @@
 // SCR-008 / Order Complete — 0718 `134:7926` (0714 레이아웃을 0718 스타일로 녹임)
+/**
+ * [FIGMA-AI] Figma 주문 완료 프레임, 티켓·바코드 에셋과 영수증 상태 UI를 옮긴 화면입니다.
+ * [AI-LOGIC] viewState와 TOAST_BY_STATE는 성공/영수증 오류 QA 미리보기용입니다.
+ * 실제 주문 응답 데이터와 영수증 출력기는 아직 연결하지 않은 상태입니다.
+ */
 import Header from "@/components/kiosk/Header";
 import KioskToast from "@/components/kiosk/KioskToast";
 import ticketShape from "@/assets/figma/order-complete-ticket.svg";

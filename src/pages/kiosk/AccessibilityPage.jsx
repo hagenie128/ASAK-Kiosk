@@ -1,4 +1,9 @@
 // SCR-014 / Accessibility — Figma 134:7972
+/**
+ * [FIGMA-AI] Figma 접근성 설정 화면과 고대비 상태 레이아웃을 옮긴 화면입니다.
+ * [AI-LOGIC] viewState는 default/high-contrast/reverted 상태를 보여 주는 QA 미리보기용입니다.
+ * 실제 접근성 설정 저장과 전역 테마 적용은 아직 연결하지 않은 상태입니다.
+ */
 export default function AccessibilityPage({ viewState = "default" } = {}) {
   const highContrast = viewState === "high-contrast" || viewState === "selection";
   const reverted = viewState === "reverted" || viewState === "success";
