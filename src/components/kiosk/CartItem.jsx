@@ -1,80 +1,79 @@
-// 학습용 자리표시자: 장바구니의 메뉴·수량·옵션 한 줄 UI입니다.
-// 주문한 메뉴 1개의 표시 card
-import React from 'react';
-import { formatCurrency } from '@/utils/currency';
-import { priceCalculation } from '@/utils/priceCalculation';
-import QuantityStepper from './QuantityStepper';
-import { useCartStore } from '@/store/cartStore';
+// Kiosk/CartItemCard — Figma 150:404 / SCR-005
+// 수량·옵션 수정·삭제는 표시만. store/API 없음.
+import { formatWon } from "@/data/staticUi";
 
-export default function CartItem({ item }) {
-
-  if (!item) return null;
-
-  const itemPrice = priceCalculation({
-  unitPrice: item.unitPrice,
-  optionItems: item.optionItems,
-  quantity: item.quantity,
-    });
-
-    const updateItemQuantity = useCartStore(
-        (state) => state.updateItemQuantity
-    );
-
-    const handleIncrease = () => {
-        updateItemQuantity(
-            item.cartItemId,
-            item.quantity + 1
-        );
-    };
-
-    const handleDecrease = () => {
-        if (item.quantity <= 1) return;
-
-        updateItemQuantity(
-            item.cartItemId,
-            item.quantity - 1
-        );
-    };
-
-
+function MinusIcon() {
   return (
-    <>
-      <div>
-        <img src={item.imageUrl} alt={item.menuName} />
-      </div>
-        <ul>
-            <li>
-                <h2>{item.menuName}</h2>
-                <strong>{formatCurrency(item.unitPrice)}</strong>
-            </li>
-            <li>
-                <span>옵션 추가 항목</span>
-                {
-                    item.optionItems?.map((option)=>
-                     <div key={option.optionItemId}>
-                        <span>{option.name}</span>
-                        <span>+{formatCurrency(option.extraPrice)}</span>
-                     </div>
-                    
-                    )
-                }
-            </li>
-            <li>
-                <span>수량</span>
-                <QuantityStepper quantity={item.quantity} onDecrease={handleDecrease} onIncrease={handleIncrease} ></QuantityStepper> 개
-            </li>
-        </ul>
-
-      <div>
-        <span>
-            상품별 합계
-        </span>
-        <span>
-            {formatCurrency(itemPrice)}
-        </span>
-        <span>{item.baseKcal} kcal</span>
-      </div>
-    </>
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+      <path d="M3.375 9H14.625" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+    </svg>
   );
 }
 
+function PlusIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+      <path d="M9 3.375V14.625M3.375 9H14.625" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+export default function CartItem({ item }) {
+  if (!item) return null;
+
+  return (
+    <article className="cart-item">
+      <div className="cart-item__main">
+        <div className="cart-item__image-wrap">
+          <img className="cart-item__image" src={item.imageUrl} alt="" />
+        </div>
+
+        <div className="cart-item__body">
+          <div className="cart-item__title-row">
+            <p className="cart-item__name">{item.menuName}</p>
+            <strong className="cart-item__price">{formatWon(item.unitPrice)}</strong>
+          </div>
+
+          {item.optionSummary ? <p className="cart-item__summary">{item.optionSummary}</p> : null}
+
+          <div className="cart-item__quantity">
+            <span>수량</span>
+            <div className="cart-item__stepper">
+              <button
+                type="button"
+                className={`cart-item__step${item.minusDisabled ? " is-disabled" : ""}`}
+                disabled
+                aria-label="수량 감소"
+              >
+                <MinusIcon />
+              </button>
+              <span className="cart-item__qty">{item.quantity}</span>
+              <button type="button" className="cart-item__step" disabled aria-label="수량 증가">
+                <PlusIcon />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer className="cart-item__footer">
+        <div className="cart-item__actions">
+          <button type="button" disabled>
+            옵션 수정
+          </button>
+          <button type="button" disabled className="is-delete">
+            삭제
+          </button>
+        </div>
+        <div className="cart-item__total">
+          <span className="cart-item__total-label">상품별 합계</span>
+          <div className="cart-item__total-values">
+            <b>{formatWon(item.lineTotal)}</b>
+            <i aria-hidden="true" />
+            <span>{item.kcal}kcal</span>
+          </div>
+        </div>
+      </footer>
+    </article>
+  );
+}

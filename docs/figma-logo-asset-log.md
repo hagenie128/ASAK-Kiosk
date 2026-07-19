@@ -1,5 +1,7 @@
 # Kiosk logo asset log
 
+> 화면 단위 진입점은 워크스페이스 루트의 **[UI-INDEX.md](../../UI-INDEX.md)** 다.
+
 ## Completion and accessibility verification — 2026-07-19
 
 - Figma sources: `SCR-008 / Order Complete / Default` (`134:7926`) and `SCR-014 / Accessibility / Default` (`134:7972`) from **ASAK — Design System Product UI 0718**.

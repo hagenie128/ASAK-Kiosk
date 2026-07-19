@@ -1,4 +1,13 @@
 /* 전역 기본 — tokens 위에 올림 */
+
+/* Figma의 프레임 크기는 padding·border를 포함한 바깥 치수다.
+   border-box가 없으면 height 140px 헤더가 213px로 렌더링되어 화면 전체가 밀린다. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html,
 body,
 #root {

@@ -1,5 +1,21 @@
 # Kiosk Figma UI 적용 기록
 
+> 화면 단위로 무엇을 고쳐야 하는지 찾고 있다면 먼저 워크스페이스 루트의 **[UI-INDEX.md](../../UI-INDEX.md)** 를 본다.
+> 화면명 → Figma 노드 → 코드 파일 → 에셋 → 스크린샷 → 미구현이 한 표에 정리되어 있다.
+
+> **파일 키 주의 (2026-07-19 정정).** 아래 `JSrjOy668zhfkiLplCkreh`는 0715 구버전이다.
+> 현재 기준은 `yHhvn5RKjBd91U8BJUQz7F` (`ASAK — Design System & Product UI 0718`)이고 Kiosk 캔버스는 `134:7720`이다.
+> 두 파일은 노드 ID가 겹치므로 파일 키를 확인하지 않고 노드 번호만 보면 옛 시안을 이식하게 된다.
+
+## 2026-07-19 — 레이아웃이 전반적으로 어긋나던 원인
+
+`src/styles/global.css`에 전역 `box-sizing: border-box`가 없었다. Figma의 프레임 크기는 padding과 border를
+포함한 바깥 치수인데, `border-box`가 없으면 `height: 140px` 헤더가 `140 + padding 72 + border 1 = 213px`로
+렌더링된다. CSS의 수치 자체는 Figma와 맞았지만 화면마다 그만큼씩 밀려서 "구현이 덜 된 것처럼" 보였다.
+
+전역 규칙을 넣은 뒤 메뉴 상세 기준으로 헤더 140 / 요약 320 / 옵션영역 1280 / BottomCTA 180이 되어
+Figma `134:7810`의 좌표와 일치한다. 앞으로 화면 수치가 안 맞으면 이 규칙이 살아 있는지부터 확인한다.
+
 ## 원칙
 
 - 기준 파일: Figma `JSrjOy668zhfkiLplCkreh` / `05-C. Screens / Kiosk (Implementation Final)`.
