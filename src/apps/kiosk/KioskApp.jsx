@@ -13,7 +13,6 @@ import AccessibilityPage from "@/pages/kiosk/AccessibilityPage.jsx";
 import PaymentErrorPage from "@/pages/kiosk/PaymentErrorPage.jsx";
 import TimeoutPage from "@/pages/kiosk/TimeoutPage.jsx";
 import ReceiptPage from "@/pages/kiosk/ReceiptPage.jsx";
-import UiStatePreviewPage from "@/pages/kiosk/UiStatePreviewPage.jsx";
 
 export default function KioskApp() {
   return (
@@ -29,7 +28,7 @@ export default function KioskApp() {
         <Route path="/payment-error" element={<PaymentErrorPage />} />
         <Route path="/timeout" element={<TimeoutPage />} />
         <Route path="/receipt" element={<ReceiptPage />} />
-        <Route path="/ui-preview/:screen/:state" element={<UiStatePreviewPage />} />
+        {/* /ui-preview 는 AI QA용 — 라우트 제거. 파일은 힌트만 유지 */}
       </Routes>
     </div>
   );

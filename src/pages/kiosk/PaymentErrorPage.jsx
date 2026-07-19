@@ -1,50 +1,23 @@
-// SCR-012 / Payment Error — Figma 134:7900 계열
-/**
- * [FIGMA-AI] Figma 결제 실패 모달과 오류 문구 상태를 옮긴 화면입니다.
- * [AI-LOGIC] COPY와 viewState는 거절/네트워크 등 오류 상태 QA 미리보기용입니다.
- * 실제 결제 실패 응답과 재시도 요청은 아직 연결하지 않은 상태입니다.
- */
+// SCR-012 / Payment Error — Figma 134:7900
+// UI 뼈대: 결제 화면 위 Confirm 모달 (거절/네트워크)
+// 연결 예정: 결제 실패 응답 · 재시도 · 장바구니 복귀
+// 금지: 금액 목업, 화면 전체 자동생성 React
 import Header from "@/components/kiosk/Header";
-import { formatWon, STATIC_PAYMENT } from "@/data/staticUi";
+import { useCartStore } from "@/store/cartStore";
+import { formatCurrency } from "@/utils/currency";
+import { calculateCartTotal } from "@/utils/priceCalculation";
 
-const COPY = {
-  declined: {
-    title: "결제 실패",
-    lines: ["결제 중 오류가 발생했습니다.", "다시 시도해 주세요."],
-    secondary: "취소",
-    primary: "다시 시도",
-  },
-  "network-failure": {
-    title: "네트워크 오류",
-    lines: ["네트워크 연결을 확인한 뒤", "다시 시도해 주세요."],
-    secondary: "취소",
-    primary: "다시 시도",
-  },
-  network: {
-    title: "네트워크 오류",
-    lines: ["네트워크 연결을 확인한 뒤", "다시 시도해 주세요."],
-    secondary: "취소",
-    primary: "다시 시도",
-  },
-  retry: {
-    title: "재시도 중",
-    lines: ["결제를 다시 요청하고 있습니다.", "잠시만 기다려 주세요."],
-    secondary: "취소",
-    primary: "확인",
-  },
-  error: {
-    title: "결제 실패",
-    lines: ["결제 중 오류가 발생했습니다.", "다시 시도해 주세요."],
-    secondary: "취소",
-    primary: "다시 시도",
-  },
-};
-
-export default function PaymentErrorPage({ viewState = "declined" } = {}) {
-  const copy = COPY[viewState] ?? COPY.declined;
+export default function PaymentErrorPage({
+  title = "결제 실패",
+  lines = ["결제 중 오류가 발생했습니다.", "다시 시도해 주세요."],
+  secondaryLabel = "취소",
+  primaryLabel = "다시 시도",
+} = {}) {
+  const items = useCartStore((state) => state.items);
+  const totalPrice = calculateCartTotal(items);
 
   return (
-    <div className="kiosk-modal-page" data-figma-node="134:7900" data-view-state={viewState}>
+    <div className="kiosk-modal-page">
       <Header />
       <main className="kiosk-modal-page__content">
         <div className="kiosk-step-indicator" aria-label="주문 4단계 중 결제">
@@ -55,7 +28,7 @@ export default function PaymentErrorPage({ viewState = "declined" } = {}) {
         </div>
         <section className="kiosk-modal-page__hero">
           <span>총 결제금액</span>
-          <strong>{formatWon(STATIC_PAYMENT.totalPrice)}</strong>
+          <strong>{formatCurrency(totalPrice)}</strong>
           <p>
             승인 요청중입니다
             <br />
@@ -73,10 +46,15 @@ export default function PaymentErrorPage({ viewState = "declined" } = {}) {
       </footer>
 
       <div className="kiosk-modal-overlay" aria-hidden="true" />
-      <div className="kiosk-modal" role="dialog" aria-modal="true" aria-labelledby="payment-error-title">
-        <h2 id="payment-error-title">{copy.title}</h2>
+      <div
+        className="kiosk-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="payment-error-title"
+      >
+        <h2 id="payment-error-title">{title}</h2>
         <p>
-          {copy.lines.map((line) => (
+          {lines.map((line) => (
             <span key={line}>
               {line}
               <br />
@@ -85,10 +63,10 @@ export default function PaymentErrorPage({ viewState = "declined" } = {}) {
         </p>
         <div className="kiosk-modal__actions">
           <button type="button" disabled>
-            {copy.secondary}
+            {secondaryLabel}
           </button>
           <button type="button" disabled className="is-primary">
-            {copy.primary}
+            {primaryLabel}
           </button>
         </div>
       </div>

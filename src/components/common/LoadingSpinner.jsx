@@ -1,1 +1,2 @@
-// 학습용 자리표시자: 데이터를 불러오는 중임을 표시하는 공통 UI입니다.
+// 학습용 자리표시자: Loading — Figma Shared/Loading
+// 상태: spinner + 라벨. BottomCTA loading은 Brand/Subtle(#f5fbe0) 배경.

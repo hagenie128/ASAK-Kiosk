@@ -1,38 +1,26 @@
-// SCR-008 / Order Complete — 0718 `134:7926` (0714 레이아웃을 0718 스타일로 녹임)
-/**
- * [FIGMA-AI] Figma 주문 완료 프레임, 티켓·바코드 에셋과 영수증 상태 UI를 옮긴 화면입니다.
- * [AI-LOGIC] viewState와 TOAST_BY_STATE는 성공/영수증 오류 QA 미리보기용입니다.
- * 실제 주문 응답 데이터와 영수증 출력기는 아직 연결하지 않은 상태입니다.
- */
+// SCR-008 / Order Complete — Figma 134:7926
+// UI 뼈대: 완료 카피 · 티켓/바코드 에셋 · twoCTA · Toast
+// 연결 예정: 주문 응답(orderNumber) · 홈 복귀 타이머 · 영수증 출력
+// 금지: 주문번호 하드코딩, 화면 전체 자동생성 React
 import Header from "@/components/kiosk/Header";
 import KioskToast from "@/components/kiosk/KioskToast";
 import ticketShape from "@/assets/figma/order-complete-ticket.svg";
 import asakSLogo from "@/assets/figma/asak-s-logo.svg";
 import barcodeMark from "@/assets/figma/order-complete-barcode.svg";
-import { STATIC_COMPLETE } from "@/data/staticUi";
 
-const TOAST_BY_STATE = {
-  receiptPrint: "영수증을 출력하고 있습니다",
-  "receipt-print": "영수증을 출력하고 있습니다",
-  receiptError: "영수증 출력에 실패했습니다",
-  "receipt-error": "영수증 출력에 실패했습니다",
-};
-
-export default function OrderCompletePage({ viewState = "default" } = {}) {
-  const toastMessage = TOAST_BY_STATE[viewState] ?? null;
-  const toastTone =
-    viewState === "receiptError" || viewState === "receipt-error" ? "warning" : "success";
-
+export default function OrderCompletePage({
+  orderNumber = null,
+  toastMessage = null,
+  toastTone = "success",
+} = {}) {
   return (
-    <div
-      className="order-complete-page"
-      data-figma-file="yHhvn5RKjBd91U8BJUQz7F"
-      data-figma-node="134:7926"
-      data-view-state={viewState}
-    >
+    <div className="order-complete-page">
       <Header />
       <main className="order-complete-page__content">
-        <div className="kiosk-step-indicator order-complete-page__steps" aria-label="주문 4단계 중 완료">
+        <div
+          className="kiosk-step-indicator order-complete-page__steps"
+          aria-label="주문 4단계 중 완료"
+        >
           <span className="is-done" />
           <span className="is-done" />
           <span className="is-done" />
@@ -42,7 +30,7 @@ export default function OrderCompletePage({ viewState = "default" } = {}) {
         <h1>주문이 완료되었습니다!</h1>
 
         <p className="order-complete-page__label">주문번호</p>
-        <p className="order-complete-page__order-no">{STATIC_COMPLETE.orderNumber}</p>
+        <p className="order-complete-page__order-no">{orderNumber ?? "—"}</p>
 
         <div className="order-complete-page__ticket" aria-hidden="true">
           <i className="order-complete-page__rail" />
@@ -53,7 +41,9 @@ export default function OrderCompletePage({ viewState = "default" } = {}) {
           </div>
         </div>
 
-        <p className="order-complete-page__hint">영수증이 필요하신 경우 하단 출력 버튼을 눌러주세요</p>
+        <p className="order-complete-page__hint">
+          영수증이 필요하신 경우 하단 출력 버튼을 눌러주세요
+        </p>
         <p className="order-complete-page__return">
           <em>5</em> 초 후 초기화면으로 돌아갑니다
         </p>

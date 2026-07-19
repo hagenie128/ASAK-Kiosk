@@ -1,5 +1,5 @@
-// Shared/CartFooterBar 요약 — Figma BottomCTA cartSummary
-import { formatWon } from "@/data/staticUi";
+// 메뉴리스트 footer — Figma Shared/CartFooterBar
+import { formatCurrency } from "@/utils/currency";
 
 export default function MenuListFooter({ itemCount = 0, totalPrice = 0, onCheckout }) {
   const hasItems = itemCount > 0;
@@ -8,7 +8,9 @@ export default function MenuListFooter({ itemCount = 0, totalPrice = 0, onChecko
     <footer className="menu-list-footer">
       <div>
         <span>담은 메뉴 {itemCount}개</span>
-        <span className="menu-list-footer__summary">{formatWon(hasItems ? totalPrice : 0)}</span>
+        <span className="menu-list-footer__summary">
+          {formatCurrency(hasItems ? totalPrice : 0)}
+        </span>
       </div>
       <button
         className="menu-list-footer__cta"

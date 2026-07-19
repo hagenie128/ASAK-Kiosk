@@ -1,53 +1,55 @@
-// SCR-005 / Cart — Figma 134:7835 + Clear Cart Confirm 272:19493
-/**
- * [FIGMA-AI] Figma SCR-005 레이아웃, 확인 다이얼로그·토스트와 viewState 미리보기 상태를 옮긴 화면입니다.
- * [AI-LOGIC] STATIC_CART는 미리보기용 목업 데이터이며 기본 화면에서는 사용하지 않습니다.
- * [KIM-RESTORED] 실제 장바구니 조회, 수량 증감·삭제, 합계 계산, 메뉴/결제 이동을 복구했습니다.
- */
+// SCR-005 / Cart — Figma 134:7835
+// store 장바구니 기준. 가격·수량 제한은 utils 단일 기준.
+import { useState } from "react";
 import Header from "@/components/kiosk/Header";
 import CartItem from "@/components/kiosk/CartItem";
-import KioskToast from "@/components/kiosk/KioskToast";
 import KioskConfirmDialog from "@/components/kiosk/KioskConfirmDialog";
-import { STATIC_CART, formatWon } from "@/data/staticUi";
 import { useNavigate } from "react-router-dom";
 import { useCartStore } from "@/store/cartStore";
+import { formatCurrency } from "@/utils/currency";
 import { calculateCartTotal, priceCalculation } from "@/utils/priceCalculation";
-import { canIncreaseCartItemQuantity, getCartTotalQuantity } from "@/utils/quantityLimits";
+import {
+  canIncreaseCartItemQuantity,
+  getCartTotalQuantity,
+} from "@/utils/quantityLimits";
 
-const TOAST_BY_STATE = {
-  success: "장바구니를 비웠어요",
-  "quantity-changed": "수량이 변경되었습니다",
-  "option-updated": "옵션이 수정되었습니다",
-  "item-deleted": "메뉴를 삭제했습니다",
-};
+function enrichCartItem(item) {
+  return {
+    ...item,
+    lineTotal:
+      item.lineTotal ??
+      priceCalculation({
+        unitPrice: item.unitPrice,
+        optionItems: item.optionItems,
+        quantity: item.quantity,
+      }),
+    kcal: item.kcal ?? item.baseKcal,
+    optionSummary:
+      item.optionSummary ??
+      item.optionItems?.map((option) => option.name).join(", "),
+  };
+}
 
-export default function CartPage({ viewState = "default" } = {}) {
+export default function CartPage() {
   const navigate = useNavigate();
   const storedItems = useCartStore((state) => state.items);
   const updateItemQuantity = useCartStore((state) => state.updateItemQuantity);
   const removeItem = useCartStore((state) => state.removeItem);
-  const isPreview = viewState !== "default";
-  const empty = isPreview && (viewState === "empty" || viewState === "success");
-  const sourceItems = isPreview ? (empty ? [] : STATIC_CART.items) : storedItems;
-  const items = sourceItems.map((item) => ({
-    ...item,
-    lineTotal: item.lineTotal ?? priceCalculation({
-      unitPrice: item.unitPrice,
-      optionItems: item.optionItems,
-      quantity: item.quantity,
-    }),
-    kcal: item.kcal ?? item.baseKcal,
-    optionSummary: item.optionSummary ?? item.optionItems?.map((option) => option.name).join(", "),
-  }));
-  const itemCount = isPreview ? (empty ? 0 : STATIC_CART.itemCount) : items.length;
-  const totalPrice = isPreview ? (empty ? 0 : STATIC_CART.totalPrice) : calculateCartTotal(items);
-  const quantityTotal = isPreview ? (empty ? 0 : STATIC_CART.quantityTotal) : getCartTotalQuantity(items);
-  const showClearConfirm = viewState === "confirm" || viewState === "clear-confirm";
-  const showDeleteConfirm = viewState === "delete-confirm";
-  const toastMessage = TOAST_BY_STATE[viewState] ?? null;
+  const clearItems = useCartStore((state) => state.clearItems);
+
+  const [showClearConfirm, setShowClearConfirm] = useState(false);
+
+  const items = storedItems.map(enrichCartItem);
+  const empty = items.length === 0;
+  const itemCount = items.length;
+  const totalPrice = calculateCartTotal(items);
+  const quantityTotal = getCartTotalQuantity(items);
 
   const handleIncrease = (item) => {
-    const result = canIncreaseCartItemQuantity({ items, menuId: item.menuId });
+    const result = canIncreaseCartItemQuantity({
+      items,
+      menuId: item.menuId,
+    });
     if (result.allowed) {
       updateItemQuantity(item.cartItemId, item.quantity + 1);
     }
@@ -59,8 +61,17 @@ export default function CartPage({ viewState = "default" } = {}) {
     }
   };
 
+  const handleDelete = (cartItemId) => {
+    removeItem(cartItemId);
+  };
+
+  const handleClearConfirm = () => {
+    clearItems();
+    setShowClearConfirm(false);
+  };
+
   return (
-    <div className="cart-page" data-figma-node="134:7835" data-view-state={viewState}>
+    <div className="cart-page">
       <Header />
 
       <main className="cart-page__content">
@@ -75,7 +86,11 @@ export default function CartPage({ viewState = "default" } = {}) {
 
         <div className="cart-page__toolbar">
           <span>{itemCount}개 항목</span>
-          <button type="button" disabled>
+          <button
+            type="button"
+            disabled={empty}
+            onClick={() => setShowClearConfirm(true)}
+          >
             장바구니 비우기
           </button>
         </div>
@@ -91,7 +106,7 @@ export default function CartPage({ viewState = "default" } = {}) {
                     item={item}
                     onDecrease={() => handleDecrease(item)}
                     onIncrease={() => handleIncrease(item)}
-                    onDelete={() => removeItem(item.cartItemId)}
+                    onDelete={() => handleDelete(item.cartItemId)}
                   />
                 </li>
               ))}
@@ -102,12 +117,12 @@ export default function CartPage({ viewState = "default" } = {}) {
                 <span>합계</span>
                 <div className="cart-page__summary-values">
                   <span>{quantityTotal}개</span>
-                  <b>{formatWon(totalPrice)}</b>
+                  <b>{formatCurrency(totalPrice)}</b>
                 </div>
               </div>
               <div className="cart-page__summary-total">
                 <span>총 금액 결제</span>
-                <strong>{formatWon(totalPrice)}</strong>
+                <strong>{formatCurrency(totalPrice)}</strong>
               </div>
             </section>
           </>
@@ -124,14 +139,9 @@ export default function CartPage({ viewState = "default" } = {}) {
           onClick={() => navigate("/payment")}
           className="is-primary"
         >
-          주문하기 · {formatWon(totalPrice)}
+          주문하기 · {formatCurrency(totalPrice)}
         </button>
       </footer>
-
-      <KioskToast
-        message={toastMessage}
-        tone={viewState === "success" || viewState === "item-deleted" ? "success" : "warning"}
-      />
 
       {showClearConfirm ? (
         <KioskConfirmDialog
@@ -140,16 +150,8 @@ export default function CartPage({ viewState = "default" } = {}) {
           secondaryLabel="취소"
           primaryLabel="모두 비우기"
           tone="danger"
-        />
-      ) : null}
-
-      {showDeleteConfirm ? (
-        <KioskConfirmDialog
-          title="이 메뉴를 삭제할까요?"
-          description="선택한 메뉴가 장바구니에서 제거됩니다."
-          secondaryLabel="취소"
-          primaryLabel="삭제"
-          tone="danger"
+          onSecondary={() => setShowClearConfirm(false)}
+          onPrimary={handleClearConfirm}
         />
       ) : null}
     </div>

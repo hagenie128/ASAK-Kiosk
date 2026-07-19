@@ -1,37 +1,47 @@
-// SCR-007 / Payment — Figma 134:7861 계열
-/**
- * [FIGMA-AI] Figma 결제 프레임, 결제 수단·에셋·상태별 레이아웃을 옮긴 화면입니다.
- * [AI-LOGIC] viewState 분기는 selected/loading/processing/error QA 미리보기용입니다.
- * 실제 결제 API, 결제수단 선택 저장, 주문 확정은 아직 연결하지 않은 상태입니다.
- */
+// SCR-007 / Payment — Figma 134:7861
+// UI 뼈대: 결제수단 카드 selected/disabled · BottomCTA · 로딩/오류 레이아웃
+// 연결 예정: 결제수단 선택 저장 · payment API · 중복 결제 방지
+// 금지: 메뉴/주문 JSON 목업, 화면 전체 자동생성 React
 import Header from "@/components/kiosk/Header";
 import cardIcon from "@/assets/figma/icon-kiosk-card.svg";
 import kakaoPayLogo from "@/assets/figma/logo-kakaopay.png";
 import paymentIllustration from "@/assets/figma/payment-processing-illustration.png";
-import { formatWon, STATIC_CART, STATIC_PAYMENT } from "@/data/staticUi";
+import { useCartStore } from "@/store/cartStore";
+import { formatCurrency } from "@/utils/currency";
+import { calculateCartTotal } from "@/utils/priceCalculation";
+import { getCartTotalQuantity } from "@/utils/quantityLimits";
 
 const METHODS = [
-  [cardIcon, "카드/삼성페이 결제", "신용·체크카드", "payment-page__method-icon--card"],
-  [kakaoPayLogo, "카카오페이 결제", "모바일 간편결제", "payment-page__method-icon--kakao"],
+  {
+    id: "card",
+    icon: cardIcon,
+    title: "카드/삼성페이 결제",
+    description: "신용·체크카드",
+    tone: "payment-page__method-icon--card",
+  },
+  {
+    id: "kakao",
+    icon: kakaoPayLogo,
+    title: "카카오페이 결제",
+    description: "모바일 간편결제",
+    tone: "payment-page__method-icon--kakao",
+  },
 ];
 
-export default function PaymentPage({ viewState = "default" } = {}) {
-  const selected =
-    viewState === "selected" ||
-    viewState === "selection" ||
-    viewState === "expanded" ||
-    viewState === "processing" ||
-    viewState === "progress";
-  const expanded = viewState === "expanded";
-  const processing = viewState === "processing" || viewState === "progress";
-  const loading = viewState === "loading";
-  const disabledAll = viewState === "disabled";
-  const networkError = viewState === "error" || viewState === "network-error" || viewState === "load-error";
-  const canPay = selected && !processing && !disabledAll && !loading && !networkError;
+export default function PaymentPage() {
+  const items = useCartStore((state) => state.items);
+  const totalPrice = calculateCartTotal(items);
+  const itemCount = getCartTotalQuantity(items);
+  // UI 상태만 — 결제 API 연결 전 기본 뼈대
+  const selectedMethodId = null;
+  const processing = false;
+  const loading = false;
+  const networkError = false;
+  const canPay = Boolean(selectedMethodId) && items.length > 0 && !processing;
 
   if (loading) {
     return (
-      <div className="payment-page" data-figma-node="134:8091" data-view-state={viewState}>
+      <div className="payment-page">
         <Header />
         <main className="payment-page__content payment-page__content--loading">
           <div className="kiosk-step-indicator" aria-label="주문 4단계 중 결제">
@@ -42,7 +52,7 @@ export default function PaymentPage({ viewState = "default" } = {}) {
           </div>
           <p className="payment-page__loading">결제 수단을 불러오는 중…</p>
         </main>
-        <footer className="payment-page__footer" style={{ opacity: 0.4 }}>
+        <footer className="payment-page__footer">
           <button type="button" disabled>
             뒤로가기
           </button>
@@ -56,7 +66,7 @@ export default function PaymentPage({ viewState = "default" } = {}) {
 
   if (networkError) {
     return (
-      <div className="payment-page" data-figma-node="226:6374" data-view-state={viewState}>
+      <div className="payment-page">
         <Header />
         <main className="payment-page__content payment-page__content--error">
           <div className="kiosk-step-indicator" aria-label="주문 4단계 중 결제">
@@ -81,7 +91,7 @@ export default function PaymentPage({ viewState = "default" } = {}) {
           <button type="button" disabled>
             뒤로가기
           </button>
-          <button type="button" disabled className="is-primary" style={{ opacity: 0.4 }}>
+          <button type="button" disabled className="is-primary">
             결제하기
           </button>
         </footer>
@@ -90,11 +100,7 @@ export default function PaymentPage({ viewState = "default" } = {}) {
   }
 
   return (
-    <div
-      className={`payment-page${processing ? " is-processing" : ""}${expanded ? " is-expanded" : ""}`}
-      data-figma-node={processing ? "134:7889" : expanded ? "134:7875" : selected ? "226:4014" : "134:7861"}
-      data-view-state={viewState}
-    >
+    <div className={`payment-page${processing ? " is-processing" : ""}`}>
       <Header />
       <main className="payment-page__content">
         <div className="kiosk-step-indicator" aria-label="주문 4단계 중 결제">
@@ -105,7 +111,7 @@ export default function PaymentPage({ viewState = "default" } = {}) {
         </div>
         <section className="payment-page__hero">
           <span>총 결제금액</span>
-          <strong>{formatWon(STATIC_PAYMENT.totalPrice)}</strong>
+          <strong>{formatCurrency(totalPrice)}</strong>
           <p>
             {processing ? (
               <>
@@ -126,56 +132,47 @@ export default function PaymentPage({ viewState = "default" } = {}) {
         ) : (
           <>
             <div className="payment-page__methods" aria-label="결제 수단">
-              {METHODS.map(([icon, title, description, tone], index) => (
+              {METHODS.map((method) => (
                 <button
-                  key={title}
+                  key={method.id}
                   type="button"
                   disabled
-                  className={selected && index === 0 ? "is-selected" : ""}
-                  style={disabledAll ? { opacity: 0.45 } : undefined}
+                  className={selectedMethodId === method.id ? "is-selected" : ""}
                 >
-                  <img className={`payment-page__method-icon ${tone}`} alt="" src={icon} />
+                  <img
+                    className={`payment-page__method-icon ${method.tone}`}
+                    alt=""
+                    src={method.icon}
+                  />
                   <span>
-                    <strong>{title}</strong>
-                    <small>{description}</small>
+                    <strong>{method.title}</strong>
+                    <small>{method.description}</small>
                   </span>
                 </button>
               ))}
             </div>
-            <section
-              className={`payment-page__summary${expanded ? " is-expanded" : ""}`}
-              aria-label="주문 정보 미리보기"
-              aria-expanded={expanded}
-            >
+            <section className="payment-page__summary" aria-label="주문 정보">
               <div className="payment-page__summary-head">
                 <strong>주문정보 확인</strong>
                 <span className="payment-page__summary-meta">
-                  {STATIC_PAYMENT.itemCount}개 메뉴 / 총 {formatWon(STATIC_PAYMENT.totalPrice).replace("원", "")} 원
+                  {itemCount}개 메뉴 / 총 {formatCurrency(totalPrice)}
                   <i className="payment-page__summary-chevron" aria-hidden="true" />
                 </span>
               </div>
-              {expanded ? (
-                <ul className="payment-page__summary-lines">
-                  {STATIC_CART.items.map((item) => (
-                    <li key={item.cartItemId}>
-                      <span>
-                        {item.menuName} ×{item.quantity}
-                      </span>
-                      <b>{formatWon(item.lineTotal)}</b>
-                    </li>
-                  ))}
-                </ul>
-              ) : null}
             </section>
           </>
         )}
       </main>
-      <footer className="payment-page__footer" style={processing || disabledAll ? { opacity: 0.3 } : undefined}>
+      <footer className="payment-page__footer">
         <button type="button" disabled>
           뒤로가기
         </button>
-        <button type="button" disabled className={`is-primary${canPay ? " is-ready" : ""}`}>
-          {processing ? "결제하기" : "결제하기"}
+        <button
+          type="button"
+          disabled
+          className={`is-primary${canPay ? " is-ready" : ""}`}
+        >
+          결제하기
         </button>
       </footer>
     </div>

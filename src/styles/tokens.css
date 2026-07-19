@@ -1,54 +1,112 @@
-/* ASAK Kiosk design tokens — Figma 01-C / D1 방향 기준 (완성 Variable bind 전 근사값) */
+/**
+ * ASAK Kiosk design tokens
+ * 정본: Figma 0718 `yHhvn5RKjBd91U8BJUQz7F` — ASAK / Primitive + ASAK / Semantic
+ * (근사값 제거 · Variable 실측값. JSX·store·가격 로직은 건드리지 않음)
+ */
 :root {
-  /* Surface */
-  --asak-bg-canvas: #d3d3d3;
-  --asak-bg-kiosk: #ffffff;
-  --asak-surface: #ffffff;
-  --asak-surface-muted: #f0eee6;
-  --asak-surface-lime: #f3f9e8;
-  --asak-surface-soldout: #f5f0ee;
-  --asak-surface-allergy: #fff5ed;
+  /* ——— Color · Surface ——— */
+  --asak-bg-canvas: #d3d3d3; /* 뷰포트 바깥(구현용) */
+  --asak-bg-kiosk: #ffffff; /* Semantic/BG/Admin · White */
+  --asak-bg-page-soft: #fbfbfb; /* SCR-003 화면 실측(Variable 미바인딩) */
+  --asak-surface: #ffffff; /* Color/White */
+  --asak-surface-muted: #f5f5f5; /* Semantic/BG/Subtle · Neutral/100 */
+  --asak-surface-elevated: #383d42; /* Semantic/BG/Elevated · Surface/50 */
+  --asak-surface-lime: #f5fbe0; /* Semantic/Brand/Subtle · Green/50 */
+  --asak-surface-soldout: #fff0eb; /* Semantic/Status/ErrorBG · Red/50 */
+  --asak-surface-allergy: #fffbeb; /* Semantic/Status/WarningBG · Yellow/50 */
+  --asak-surface-success: #ebf5eb; /* Semantic/Status/SuccessBG */
 
-  /* Text */
-  --asak-text: #1a1a1a;
-  --asak-text-secondary: #5c5c5c;
-  --asak-text-muted: #8a8a8a;
-  --asak-text-on-primary: #1a1a1a;
+  /* ——— Color · Text ——— */
+  --asak-text: #1a1a1a; /* Semantic/Text/Kiosk/Primary · Surface/600 */
+  --asak-text-strong: #292d30; /* Semantic/Text/Inverse · Surface/200 (카드 제목) */
+  --asak-text-secondary: #888888; /* Semantic/Text/Secondary · Neutral/500 */
+  --asak-text-muted: #808080; /* Semantic/Text/Kiosk/Muted · Neutral/450 */
+  --asak-text-tertiary: #737373; /* Semantic/Text/Tertiary · Neutral/600 */
+  --asak-text-price: #6c9700; /* MenuCard 실측 Semantic/Brand/Secondary (Green/550 #4a7a00는 보조) */
+  --asak-text-price-alt: #4a7a00; /* Semantic/Text/Price · Green/550 */
+  --asak-text-on-primary: #1a1a1a; /* CTA 위 본문(대비 유지) */
+  --asak-text-on-brand-dark: #243300; /* Semantic/Brand/OnPrimary · Green/700 */
 
-  /* Accent — Brand Primary #B5E30F (Figma 0718 Semantic/Brand/Primary) */
-  --asak-lime: #b5e30f;
-  --asak-lime-strong: #a4cc0d;
-  --asak-lime-border: #9fc92e;
+  /* ——— Color · Brand / Interactive ——— */
+  --asak-lime: #b5e30f; /* Semantic/Brand/Primary · Green/300 */
+  --asak-lime-hover: #b3e500; /* Semantic/Interactive/Hover · Lime/500 */
+  --asak-lime-strong: #9cc600; /* Semantic/Interactive/Pressed · Green/400 */
+  --asak-lime-border: #6c9700; /* Semantic/Brand/Secondary · Green/500 */
 
-  /* Neutral / Border */
-  --asak-border: #e4e0d6;
-  --asak-border-strong: #cfc9bb;
-  --asak-divider: #ebe7de;
+  /* ——— Color · Neutral / Border ——— */
+  --asak-border: #e5e7eb; /* Semantic/Border/Default · CoolGray/200 */
+  --asak-border-card: #e6e6e6; /* Color/Neutral/175 (메뉴 카드 실측) */
+  --asak-border-strong: #737373; /* Semantic/Border/Strong */
+  --asak-divider: #f5f5f5; /* Semantic/Border/Subtle · Neutral/100 */
+  --asak-disabled-fill: #d4d4d4; /* BottomCTA disabled · Color/Neutral/300 */
+  --asak-disabled-text: #6b7280; /* Semantic/Text/Disabled · CoolGray/700 */
+  --asak-cta-loading-bg: #f5fbe0; /* Brand/Subtle — BottomCTA loading */
 
-  /* Status */
-  --asak-danger: #d64545;
-  --asak-danger-soft: #fce8e8;
-  --asak-allergy-border: #d97326;
-  --asak-warning: #d97326;
+  /* ——— Color · Status ——— */
+  --asak-danger: #ef4444; /* Semantic/Status/Error · Red/400 */
+  --asak-danger-soft: #fff0eb; /* Semantic/Status/ErrorBG */
+  --asak-danger-text: #994d4d; /* Semantic/Status/DangerText · Red/600 */
+  --asak-warning: #fbbf24; /* Semantic/Status/Warning · Yellow/400 */
+  --asak-warning-text: #92400e; /* Semantic/Status/WarningText · Amber/800 */
+  --asak-success: #5da45d; /* Semantic/Status/Success */
+  --asak-allergy-border: #fbbf24;
+  --asak-overlay-scrim: rgba(0, 0, 0, 0.45); /* Confirm 실측 */
+  --asak-overlay-home: rgba(0, 0, 0, 0.39); /* Home dark-overlay 실측 */
 
-  /* Layout (1080×1920) */
+  /* ——— Layout (1080×1920) ——— */
   --asak-kiosk-w: 1080px;
   --asak-kiosk-h: 1920px;
-  --asak-page-pad-x: 84px;
-  --asak-header-h: 96px;
-  --asak-bottom-cta-h: 180px;
-  --asak-radius-sm: 8px;
-  --asak-radius-md: 12px;
-  --asak-radius-lg: 20px;
-  --asak-radius-card: 24px;
+  --asak-page-pad-x: 48px; /* Number/Spacing/48 · 카테고리/CTA 패딩 */
+  --asak-page-pad-menu: 60px; /* 메뉴 그리드 좌우 실측 */
+  --asak-header-h: 140px; /* Header py 36 + content ~68 */
+  --asak-bottom-cta-h: 180px; /* BottomCTA 실측 */
 
-  /* Option card grid (D1-B) */
+  /* ——— Radius (Semantic + Number) ——— */
+  --asak-radius-xs: 4px; /* Semantic/Radius/SM */
+  --asak-radius-sm: 8px; /* Semantic/Radius/MD · Number/Radius/8 */
+  --asak-radius-md: 12px; /* Number/Radius/12 */
+  --asak-radius-lg: 16px; /* Semantic/Radius/LG · CTA */
+  --asak-radius-xl: 20px; /* Number/Radius/20 */
+  --asak-radius-card: 24px; /* Semantic/Radius/XL · MenuCard */
+  --asak-radius-home-card: 32px; /* Number/Radius/32 · Home action */
+  --asak-radius-pill: 9999px; /* Semantic/Radius/Full */
+
+  /* ——— Spacing scale ——— */
+  --asak-space-1: 4px; /* Semantic/Spacing/XS */
+  --asak-space-2: 8px; /* Semantic/Spacing/SM */
+  --asak-space-3: 12px;
+  --asak-space-4: 16px; /* Semantic/Spacing/MD */
+  --asak-space-5: 20px;
+  --asak-space-6: 24px; /* Semantic/Spacing/LG */
+  --asak-space-7: 32px; /* Semantic/Spacing/XL */
+  --asak-space-8: 40px;
+  --asak-space-9: 48px; /* Semantic/Spacing/XXL */
+  --asak-touch-min: 48px; /* Number/TouchTarget/Min */
+
+  /* ——— Option card grid (D1-B / 유지) ——— */
   --asak-option-grid-w: 912px;
   --asak-option-card-w: 292px;
   --asak-option-card-h: 128px;
   --asak-option-gap-col: 18px;
   --asak-option-gap-row: 16px;
 
-  /* Type */
+  /* ——— Type (Figma 실측 · Pretendard Variable) ——— */
   --asak-font: "Pretendard Variable", Pretendard, sans-serif;
+  --asak-fs-caption: 16px; /* MenuCard kcal · lh 24 */
+  --asak-lh-caption: 24px;
+  --asak-fs-body: 22px; /* BottomCTA cart count · lh 28 */
+  --asak-lh-body: 28px;
+  --asak-fs-card-name: 30px; /* MenuCard name Medium · lh 38 */
+  --asak-lh-card-name: 38px;
+  --asak-fs-category: 32px; /* CategoryTab Medium · lh 40 */
+  --asak-lh-category: 40px;
+  --asak-fs-cta: 34px; /* BottomCTA Bold · lh 44 */
+  --asak-lh-cta: 44px;
+  --asak-fs-price: 38px; /* MenuCard/CTA price Bold · lh 46 */
+  --asak-lh-price: 46px;
+  --asak-fs-home-headline: 64px; /* Home Medium · lh 76 */
+  --asak-lh-home-headline: 76px;
+  --asak-fw-regular: 400;
+  --asak-fw-medium: 500;
+  --asak-fw-bold: 700;
 }

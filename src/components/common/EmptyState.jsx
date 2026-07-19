@@ -1,1 +1,2 @@
-// 학습용 자리표시자: 주문·메뉴 목록이 비었을 때 보여 주는 공통 UI입니다.
+// 학습용 자리표시자: Empty — Figma Shared/Empty
+// 메뉴·장바구니 비었을 때 title / description / optional CTA.

@@ -1,6 +1,6 @@
 // 메뉴 카드 — Figma Kiosk/MenuCard 150:678
-// 클릭은 선택 표시만. 상세 이동·store 없음.
-import { formatWon } from "@/data/staticUi";
+// onSelect(menuId)로 상세 페이지 이동.
+import { formatCurrency } from "@/utils/currency";
 
 export default function MenuCard({ menu, isSelected, onSelect }) {
   if (!menu) return null;
@@ -27,11 +27,11 @@ export default function MenuCard({ menu, isSelected, onSelect }) {
       }}
       disabled={isUnorderable}
     >
-      {isUnorderable ? <span className="soldOutBadge">SOLD OUT</span> : null}
-      <img src={imageUrl} alt="" />
+      {isUnorderable ? <span className="soldOutBadge">품절</span> : null}
+      <img src={imageUrl} alt={name} />
       <div className="menu-card__info">
         <p className="menuName">{name}</p>
-        <p className="menuPrice">{formatWon(price)}</p>
+        <p className="menuPrice">{formatCurrency(price)}</p>
         <p className="menuKcal">{baseKcal} kcal</p>
       </div>
       {!isUnorderable && soldOutBadges.length > 0 ? (

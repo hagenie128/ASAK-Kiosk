@@ -1,18 +1,14 @@
 // SCR-014 / Accessibility — Figma 134:7972
-/**
- * [FIGMA-AI] Figma 접근성 설정 화면과 고대비 상태 레이아웃을 옮긴 화면입니다.
- * [AI-LOGIC] viewState는 default/high-contrast/reverted 상태를 보여 주는 QA 미리보기용입니다.
- * 실제 접근성 설정 저장과 전역 테마 적용은 아직 연결하지 않은 상태입니다.
- */
-export default function AccessibilityPage({ viewState = "default" } = {}) {
-  const highContrast = viewState === "high-contrast" || viewState === "selection";
-  const reverted = viewState === "reverted" || viewState === "success";
-
+// UI 뼈대: 글자 크기 is-selected · 고대비 토글 is-on · 미리보기 영역
+// 연결 예정: 설정 저장 · 전역 테마 적용
+// 금지: 미리보기용 메뉴명·가격 하드코딩, 화면 전체 자동생성 React
+export default function AccessibilityPage({
+  fontSize = "default",
+  highContrast = false,
+} = {}) {
   return (
     <main
-      className={`accessibility-page${highContrast ? " is-high-contrast" : ""}${reverted ? " is-reverted" : ""}`}
-      data-figma-node={highContrast ? "134:8005" : reverted ? "134:8038" : "134:7972"}
-      data-view-state={viewState}
+      className={`accessibility-page${highContrast ? " is-high-contrast" : ""}`}
     >
       <header className="accessibility-page__header">
         <span aria-hidden="true">←</span>
@@ -24,13 +20,25 @@ export default function AccessibilityPage({ viewState = "default" } = {}) {
           <h2>글자 크기</h2>
           <p>화면의 글자 크기를 조절합니다.</p>
           <div>
-            <button type="button" disabled className="is-selected">
+            <button
+              type="button"
+              disabled
+              className={fontSize === "default" ? "is-selected" : ""}
+            >
               기본
             </button>
-            <button type="button" disabled>
+            <button
+              type="button"
+              disabled
+              className={fontSize === "large" ? "is-selected" : ""}
+            >
               크게
             </button>
-            <button type="button" disabled>
+            <button
+              type="button"
+              disabled
+              className={fontSize === "xlarge" ? "is-selected" : ""}
+            >
               아주 크게
             </button>
           </div>
@@ -54,9 +62,9 @@ export default function AccessibilityPage({ viewState = "default" } = {}) {
         <section className="accessibility-page__preview">
           <h2>미리보기</h2>
           <p>
-            로스트닭다리살 샐러드
+            메뉴 이름
             <br />
-            9,900원
+            0원
           </p>
         </section>
       </section>

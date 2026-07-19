@@ -300,16 +300,16 @@ body {
 .menu-card.isSelected {
   border-color: var(--asak-lime-border);
   border-width: 2px;
-  box-shadow: 0 0 0 2px rgba(198, 232, 74, 0.35);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--asak-lime) 35%, transparent);
 }
 
 .menu-card.isSoldOut {
-  opacity: 0.72;
-  background: var(--asak-surface-muted);
+  background: var(--asak-surface);
 }
 
 .menu-card.isSoldOut img {
-  filter: grayscale(0.35);
+  opacity: 0.35;
+  filter: grayscale(0.2);
 }
 
 .menu-card img {
@@ -340,39 +340,42 @@ body {
 }
 
 .menu-card .menuName {
-  font-size: 30px;
-  line-height: 38px;
-  font-weight: 500;
-  color: #292d30;
+  font-size: var(--asak-fs-card-name);
+  line-height: var(--asak-lh-card-name);
+  font-weight: var(--asak-fw-medium);
+  color: var(--asak-text-strong);
 }
 
 .menu-card .menuPrice {
-  color: #4a7a00;
-  font-size: 38px;
-  line-height: 46px;
-  font-weight: 700;
+  color: var(--asak-text-price);
+  font-size: var(--asak-fs-price);
+  line-height: var(--asak-lh-price);
+  font-weight: var(--asak-fw-bold);
   letter-spacing: -0.57px;
 }
 
 .menu-card .menuKcal {
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-  color: #888888;
+  font-size: var(--asak-fs-caption);
+  line-height: var(--asak-lh-caption);
+  font-weight: var(--asak-fw-regular);
+  color: var(--asak-text-secondary);
 }
 
+/* Figma Kiosk/SoldOutBadge — 이미지 영역 중앙, label "품절" */
 .menu-card .soldOutBadge {
   position: absolute;
-  top: 14px;
-  left: 14px;
+  top: 110px;
+  left: 50%;
   z-index: 1;
-  padding: 4px 10px;
-  border-radius: 6px;
+  transform: translateX(-50%);
+  padding: 6px 12px;
+  border-radius: var(--asak-radius-sm);
   background: var(--asak-danger);
   color: #fff;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 700;
+  font-size: var(--asak-fs-body);
+  line-height: var(--asak-lh-body);
+  font-weight: var(--asak-fw-bold);
+  white-space: nowrap;
 }
 
 .menu-card .sold-out-notice {
@@ -577,18 +580,20 @@ body {
 }
 
 .quantity-stepper__btn--minus {
-  background: var(--asak-surface-muted, #f5f5f5);
-  color: #888888;
+  background: var(--asak-surface-muted);
+  color: var(--asak-text-secondary);
 }
 
-/* Figma는 lime 위 + 기호에 회색 토큰을 물려 두었지만 대비가 부족해 어두운 색으로 대체한다. */
 .quantity-stepper__btn--plus {
-  background: #b5e30f;
-  color: #1a1a1a;
+  background: var(--asak-lime);
+  color: var(--asak-text);
 }
 
 .quantity-stepper__btn:disabled {
-  opacity: 0.4;
+  background: var(--asak-disabled-fill);
+  color: var(--asak-disabled-text);
+  cursor: not-allowed;
+  opacity: 1;
 }
 
 .quantity-stepper__value {
@@ -984,19 +989,25 @@ body {
 .menu-list-footer__cta {
   flex: 1;
   border: none;
-  border-radius: 16px;
+  border-radius: var(--asak-radius-lg);
   background: var(--asak-lime);
-  color: var(--asak-text);
-  font-size: 34px;
-  line-height: 44px;
-  font-weight: 800;
+  color: var(--asak-text-on-primary);
+  font-size: var(--asak-fs-cta);
+  line-height: var(--asak-lh-cta);
+  font-weight: var(--asak-fw-bold);
   letter-spacing: -0.02em;
   cursor: pointer;
 }
 
+.menu-list-footer__cta.is-loading {
+  background: var(--asak-cta-loading-bg);
+  color: var(--asak-text-strong);
+  cursor: wait;
+}
+
 .menu-list-footer__cta:disabled {
-  background: var(--asak-border-strong);
-  color: var(--asak-text-muted);
+  background: var(--asak-disabled-fill);
+  color: var(--asak-disabled-text);
   cursor: not-allowed;
 }
 
@@ -1019,18 +1030,25 @@ body {
 .menu-detail-footer button {
   width: 100%;
   border: none;
-  border-radius: 16px;
+  border-radius: var(--asak-radius-lg);
   background: var(--asak-lime);
-  color: var(--asak-text);
-  font-size: 34px;
-  line-height: 44px;
-  font-weight: 800;
+  color: var(--asak-text-strong);
+  font-size: var(--asak-fs-cta);
+  line-height: var(--asak-lh-cta);
+  font-weight: var(--asak-fw-bold);
   letter-spacing: -0.02em;
 }
 
+.menu-detail-footer button.is-loading {
+  background: var(--asak-cta-loading-bg);
+  color: var(--asak-text-strong);
+  cursor: wait;
+}
+
 .menu-detail-footer button:disabled {
-  background: var(--asak-border-strong);
-  color: var(--asak-text-muted);
+  background: var(--asak-disabled-fill);
+  color: var(--asak-disabled-text);
+  cursor: not-allowed;
 }
 
 .menu-detail-footer button:not(:disabled):active {
@@ -1245,17 +1263,17 @@ body {
   width: 52px;
   height: 52px;
   padding: 0;
-  border: 2px solid #6c9700;
-  border-radius: 12px;
-  background: #fff;
-  color: #737373;
+  border: 2px solid var(--asak-lime-border);
+  border-radius: var(--asak-radius-md);
+  background: var(--asak-surface);
+  color: var(--asak-text-tertiary);
 }
 
 .cart-item__step.is-disabled,
 .cart-item__step:disabled.is-disabled {
-  border-color: #e5e7eb;
-  background: #383d42;
-  color: #f5f5f5;
+  border-color: var(--asak-border);
+  background: var(--asak-surface-elevated);
+  color: var(--asak-surface-muted);
 }
 
 .cart-item__step img {
@@ -1279,7 +1297,7 @@ body {
   gap: 16px;
   height: 80px;
   padding: 0 40px;
-  background: #f5fbe0;
+  background: var(--asak-surface-lime);
 }
 
 .cart-item__actions {
@@ -1659,8 +1677,8 @@ body {
   align-items: center;
   justify-content: center;
   gap: 32px;
-  border: 4px solid #e5e7eb;
-  border-radius: 24px;
+  border: 4px solid var(--asak-border);
+  border-radius: var(--asak-radius-card);
   background: var(--asak-surface);
   color: var(--asak-text);
   text-align: left;
@@ -1670,6 +1688,17 @@ body {
 
 .payment-page__methods button:disabled {
   color: var(--asak-text);
+}
+
+.payment-page__methods button.is-selected {
+  border-color: var(--asak-lime);
+  box-shadow: inset 0 0 0 2px var(--asak-lime);
+}
+
+.payment-page__methods button.is-disabled,
+.payment-page__methods button:disabled.is-disabled {
+  opacity: 0.45;
+  border-color: var(--asak-disabled-fill);
 }
 
 .payment-page__methods button > span:last-child {
@@ -1713,23 +1742,28 @@ body {
   width: 100%;
   height: 100px;
   border: 0;
-  border-radius: 16px;
-  background: #d9dee0;
-  color: #99a1a6;
-  font-size: 34px;
-  font-weight: 800;
+  border-radius: var(--asak-radius-lg);
+  background: var(--asak-disabled-fill);
+  color: var(--asak-disabled-text);
+  font-size: var(--asak-fs-cta);
+  font-weight: var(--asak-fw-bold);
 }
 
 .payment-page__footer button:first-child {
-  border: 2px solid #e5e7eb;
-  background: #fff;
-  color: var(--asak-text);
+  border: 2px solid var(--asak-border);
+  background: var(--asak-surface);
+  color: var(--asak-text-strong);
 }
 
-.payment-page__footer button:last-child {
+.payment-page__footer button:last-child,
+.payment-page__footer .is-primary {
   background: var(--asak-lime);
-  color: var(--asak-text);
+  color: var(--asak-text-strong);
   opacity: 0.4;
+}
+
+.payment-page__footer .is-primary.is-ready {
+  opacity: 1;
 }
 
 /* ----------------------- Order Complete SCR-008 (0718 134:7926 ← 0714 레이아웃) ----------------------- */
@@ -2050,10 +2084,10 @@ body {
 
 .accessibility-page__font button {
   min-height: 100px;
-  border: 2px solid #d4d4d4;
-  border-radius: 12px;
-  background: #fff;
-  color: var(--asak-text-primary);
+  border: 2px solid var(--asak-disabled-fill);
+  border-radius: var(--asak-radius-md);
+  background: var(--asak-surface);
+  color: var(--asak-text);
   font: inherit;
   font-size: 28px;
   font-weight: 700;
@@ -2084,12 +2118,12 @@ body {
   flex: 0 0 120px;
   padding: 4px;
   border: 0;
-  border-radius: 999px;
-  background: #d4d4d4;
+  border-radius: var(--asak-radius-pill);
+  background: var(--asak-disabled-fill);
 }
 
 .accessibility-page__contrast button.is-on {
-  background: var(--asak-lime);
+  background: var(--asak-lime-border);
 }
 
 .accessibility-page__contrast button.is-on::after {
@@ -2692,8 +2726,8 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  border-radius: 12px;
-  background: #fff;
+  border-radius: var(--asak-radius-md);
+  background: var(--asak-surface);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   transform: translateX(-50%);
 }
@@ -2701,24 +2735,27 @@ body {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #fbbf24;
+  background: var(--asak-warning);
   flex: 0 0 auto;
 }
 .kiosk-toast--success .kiosk-toast__mark {
-  background: #5da45d;
+  background: var(--asak-success);
+}
+.kiosk-toast--error .kiosk-toast__mark {
+  background: var(--asak-danger);
 }
 .kiosk-toast p {
   margin: 0;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: var(--asak-fs-caption);
+  line-height: var(--asak-lh-caption);
   font-weight: 600;
-  color: #292d30;
+  color: var(--asak-text-strong);
 }
 .kiosk-confirm-overlay {
   position: absolute;
   inset: 0;
   z-index: 9;
-  background: rgba(0, 0, 0, 0.45);
+  background: var(--asak-overlay-scrim);
 }
 .kiosk-confirm {
   position: absolute;
@@ -2731,8 +2768,8 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 24px;
-  border-radius: 16px;
-  background: #fff;
+  border-radius: var(--asak-radius-lg);
+  background: var(--asak-surface);
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06), 0 10px 14px rgba(0, 0, 0, 0.12);
   transform: translate(-50%, -50%);
   box-sizing: border-box;

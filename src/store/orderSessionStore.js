@@ -52,8 +52,9 @@ export const useOrderSession = create((set) => ({
     })),
 
   // TODO(학습): updateItem(cartItemId, nextItemFields) — 옵션/제외재료 수정용. addItem과 경로를 섞지 말 것.
-  // TODO(학습): clearItems() — 장바구니 전체 비우기. 개별 removeItem과 목적을 구분할 것.
   // TODO(학습): 품절이 된 뒤에도 자동 remove 하지 말 것. 결제 차단 + 수정/삭제 UI만 제공한다.
+
+  clearItems: () => set({ items: [] }),
 
   removeItem: (cartItemId) =>
     set((state) => ({

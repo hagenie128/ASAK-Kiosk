@@ -1,5 +1,5 @@
-// SCR-001 Home 주문 방식 카드 — Figma KioskHomeActionButton (150:719 / 150:727)
-// 네비게이션·store 연결 없음. UI 표시 전용.
+// SCR-001 Home 주문 방식 카드 — Figma KioskHomeActionButton
+// 선택 시 orderType 저장 후 /menu로 이동.
 import iconEatIn from "../../assets/figma/icon-home-eatin.svg";
 import iconTakeOut from "../../assets/figma/icon-home-takeout.svg";
 import { useNavigate } from "react-router-dom";
@@ -26,7 +26,9 @@ export default function OrderTypeSelector() {
           key={option.id}
           type="button"
           className="order-type-selector__btn"
-          onClick={() => handleSelect(option.id === "eat-in" ? "EAT_IN" : "TAKE_OUT")}
+          onClick={() =>
+            handleSelect(option.id === "eat-in" ? "EAT_IN" : "TAKE_OUT")
+          }
         >
           <span className="order-type-selector__icon" aria-hidden="true">
             <img src={option.icon} alt="" width={80} height={80} />

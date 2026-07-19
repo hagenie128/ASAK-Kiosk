@@ -1,6 +1,7 @@
 // Kiosk/CartItemCard — Figma 150:404 / SCR-005
-// 수량·옵션 수정·삭제는 표시만. store/API 없음.
-import { formatWon } from "@/data/staticUi";
+// 수량·삭제는 부모(CartPage) 핸들러로 store에 반영한다.
+import { formatCurrency } from "@/utils/currency";
+import { priceCalculation } from "@/utils/priceCalculation";
 
 function MinusIcon() {
   return (
@@ -21,27 +22,39 @@ function PlusIcon() {
 export default function CartItem({ item, onDecrease, onIncrease, onDelete }) {
   if (!item) return null;
 
+  const lineTotal =
+    item.lineTotal ??
+    priceCalculation({
+      unitPrice: item.unitPrice,
+      optionItems: item.optionItems,
+      quantity: item.quantity,
+    });
+  const kcal = item.kcal ?? item.baseKcal;
+  const optionSummary =
+    item.optionSummary ??
+    item.optionItems?.map((option) => option.name).join(", ");
+
   return (
     <article className="cart-item">
       <div className="cart-item__main">
         <div className="cart-item__image-wrap">
-          <img className="cart-item__image" src={item.imageUrl} alt="" />
+          <img className="cart-item__image" src={item.imageUrl} alt={item.menuName} />
         </div>
 
         <div className="cart-item__body">
           <div className="cart-item__title-row">
             <p className="cart-item__name">{item.menuName}</p>
-            <strong className="cart-item__price">{formatWon(item.unitPrice)}</strong>
+            <strong className="cart-item__price">{formatCurrency(item.unitPrice)}</strong>
           </div>
 
-          {item.optionSummary ? <p className="cart-item__summary">{item.optionSummary}</p> : null}
+          {optionSummary ? <p className="cart-item__summary">{optionSummary}</p> : null}
 
           <div className="cart-item__quantity">
             <span>수량</span>
             <div className="cart-item__stepper">
               <button
                 type="button"
-                className={`cart-item__step${item.minusDisabled ? " is-disabled" : ""}`}
+                className={`cart-item__step${item.quantity <= 1 ? " is-disabled" : ""}`}
                 disabled={item.quantity <= 1}
                 onClick={onDecrease}
                 aria-label="수량 감소"
@@ -49,7 +62,12 @@ export default function CartItem({ item, onDecrease, onIncrease, onDelete }) {
                 <MinusIcon />
               </button>
               <span className="cart-item__qty">{item.quantity}</span>
-              <button type="button" className="cart-item__step" onClick={onIncrease} aria-label="수량 증가">
+              <button
+                type="button"
+                className="cart-item__step"
+                onClick={onIncrease}
+                aria-label="수량 증가"
+              >
                 <PlusIcon />
               </button>
             </div>
@@ -69,9 +87,9 @@ export default function CartItem({ item, onDecrease, onIncrease, onDelete }) {
         <div className="cart-item__total">
           <span className="cart-item__total-label">상품별 합계</span>
           <div className="cart-item__total-values">
-            <b>{formatWon(item.lineTotal)}</b>
+            <b>{formatCurrency(lineTotal)}</b>
             <i aria-hidden="true" />
-            <span>{item.kcal}kcal</span>
+            <span>{kcal}kcal</span>
           </div>
         </div>
       </footer>

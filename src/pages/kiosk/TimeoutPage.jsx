@@ -1,45 +1,23 @@
-// SCR-013 / Timeout — Figma 134:7913 계열
-/**
- * [FIGMA-AI] Figma 주문 타임아웃 안내·확인 모달 상태를 옮긴 화면입니다.
- * [AI-LOGIC] COPY, ALIAS, viewState는 timeout QA 미리보기용 상태 제어입니다.
- * 실제 카운트다운·세션 초기화·연장 요청은 아직 연결하지 않은 상태입니다.
- */
+// SCR-013 / Timeout — Figma 134:7913
+// UI 뼈대: 무조작 타임아웃 Confirm (경고/만료)
+// 연결 예정: 카운트다운 · 세션 초기화 · 연장
+// 금지: 금액 목업, 화면 전체 자동생성 React
 import Header from "@/components/kiosk/Header";
-import { formatWon, STATIC_PAYMENT } from "@/data/staticUi";
+import { useCartStore } from "@/store/cartStore";
+import { formatCurrency } from "@/utils/currency";
+import { calculateCartTotal } from "@/utils/priceCalculation";
 
-const COPY = {
-  expired: {
-    title: "시간 초과",
-    lines: ["일정 시간 동안 조작이 없어", "주문이 취소되었습니다."],
-    secondary: "처음으로",
-    primary: "확인",
-  },
-  warning: {
-    title: "곧 시간이 종료됩니다",
-    lines: ["30초 안에 조작이 없으면", "주문이 취소됩니다."],
-    secondary: "종료",
-    primary: "계속하기",
-  },
-  continue: {
-    title: "주문을 이어갈까요?",
-    lines: ["이어서 주문하시려면", "계속하기를 눌러 주세요."],
-    secondary: "처음으로",
-    primary: "계속하기",
-  },
-};
-
-const ALIAS = {
-  error: "expired",
-  confirm: "warning",
-  progress: "continue",
-};
-
-export default function TimeoutPage({ viewState = "expired" } = {}) {
-  const resolved = ALIAS[viewState] ?? viewState;
-  const copy = COPY[resolved] ?? COPY.expired;
+export default function TimeoutPage({
+  title = "시간 초과",
+  lines = ["일정 시간 동안 조작이 없어", "주문이 취소되었습니다."],
+  secondaryLabel = "처음으로",
+  primaryLabel = "확인",
+} = {}) {
+  const items = useCartStore((state) => state.items);
+  const totalPrice = calculateCartTotal(items);
 
   return (
-    <div className="kiosk-modal-page" data-figma-node="134:7913" data-view-state={resolved}>
+    <div className="kiosk-modal-page">
       <Header />
       <main className="kiosk-modal-page__content">
         <div className="kiosk-step-indicator" aria-label="주문 단계">
@@ -50,7 +28,7 @@ export default function TimeoutPage({ viewState = "expired" } = {}) {
         </div>
         <section className="kiosk-modal-page__hero">
           <span>총 결제금액</span>
-          <strong>{formatWon(STATIC_PAYMENT.totalPrice)}</strong>
+          <strong>{formatCurrency(totalPrice)}</strong>
           <p>
             카드를 투입구에
             <br />
@@ -68,10 +46,15 @@ export default function TimeoutPage({ viewState = "expired" } = {}) {
       </footer>
 
       <div className="kiosk-modal-overlay" aria-hidden="true" />
-      <div className="kiosk-modal" role="dialog" aria-modal="true" aria-labelledby="timeout-title">
-        <h2 id="timeout-title">{copy.title}</h2>
+      <div
+        className="kiosk-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="timeout-title"
+      >
+        <h2 id="timeout-title">{title}</h2>
         <p>
-          {copy.lines.map((line) => (
+          {lines.map((line) => (
             <span key={line}>
               {line}
               <br />
@@ -80,10 +63,10 @@ export default function TimeoutPage({ viewState = "expired" } = {}) {
         </p>
         <div className="kiosk-modal__actions">
           <button type="button" disabled>
-            {copy.secondary}
+            {secondaryLabel}
           </button>
           <button type="button" disabled className="is-primary">
-            {copy.primary}
+            {primaryLabel}
           </button>
         </div>
       </div>
