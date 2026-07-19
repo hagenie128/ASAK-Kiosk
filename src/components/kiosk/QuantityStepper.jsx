@@ -14,7 +14,7 @@ export default function QuantityStepper({
     <div className="quantity-stepper">
       <button
         type="button"
-        className="quantity-stepper__btn"
+        className="quantity-stepper__btn quantity-stepper__btn--minus"
         onClick={onDecrease}
         disabled={isMinusDisabled}
         aria-label="수량 감소"
@@ -24,7 +24,7 @@ export default function QuantityStepper({
       <span className="quantity-stepper__value">{quantity}</span>
       <button
         type="button"
-        className="quantity-stepper__btn"
+        className="quantity-stepper__btn quantity-stepper__btn--plus"
         onClick={onIncrease}
         aria-label="수량 증가"
       >

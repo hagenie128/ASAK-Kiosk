@@ -1,70 +1,61 @@
-// 학습용 자리표시자: SCR-002 메뉴 목록 화면입니다.
-
+// SCR-003 / Menu List / Default — Figma 134:7792
+// 정적 mock만 표시. store 네비게이션·결제 흐름 없음.
+import { useState } from "react";
 import Header from "@/components/kiosk/Header";
 import CategoryTabs from "@/components/kiosk/CategoryTabs";
-import React, { useState } from "react";
-import kioskMock from "../../../public/mocks/kiosk.json";
-import { useSearchParams, useNavigate } from "react-router-dom";
 import MenuCard from "@/components/kiosk/MenuCard";
-import OrderList from "@/components/kiosk/OrderList";
 import MenuListFooter from "@/components/kiosk/MenuListFooter";
-import { useCartStore } from "@/store/cartStore";
-import { getCartTotalQuantity } from "@/utils/quantityLimits";
-import { calculateCartTotal } from "@/utils/priceCalculation";
+import KioskToast from "@/components/kiosk/KioskToast";
+import kioskMock from "../../../public/mocks/kiosk.json";
 
-export default function MenuListPage() {
-  const navigate = useNavigate();
+const TOAST_BY_STATE = {
+  "empty-cart": "장바구니에 메뉴를 담아주세요",
+  "cart-empty": "장바구니에 메뉴를 담아주세요",
+  "item-added": "장바구니에 담았습니다",
+  success: "장바구니에 담았습니다",
+};
 
-  // 카테고리 데이터는 현재 임시 목업만 사용합니다.
+export default function MenuListPage({ viewState = "default" } = {}) {
   const categories = kioskMock.categories.data;
-
-  const [searchParams, setSearchParams] = useSearchParams();
-  const selectedCategoryId =
-    Number(searchParams.get("category")) || categories[0]?.categoryId;
-
-  const menus =
-    kioskMock.menusByCategory[String(selectedCategoryId)]?.data ?? [];
-
+  const [selectedCategoryId, setSelectedCategoryId] = useState(categories[0]?.categoryId);
   const [selectedMenuId, setSelectedMenuId] = useState(null);
 
-  const handleSelectCategory = (categoryId) => {
-    setSearchParams({ category: categoryId });
-  };
+  const menus =
+    viewState === "empty"
+      ? []
+      : (kioskMock.menusByCategory[String(selectedCategoryId)]?.data ?? []);
 
-  const handleSelectMenu = (menuId) => {
-    setSelectedMenuId(menuId);
-    navigate(`/menu/${menuId}?category=${selectedCategoryId}`);
-  };
-
-  const items = useCartStore((state) => state.items);
-  const itemCount = getCartTotalQuantity(items);
-  const totalPrice = calculateCartTotal(items);
-
-  const handleCheckout = () => {
-    navigate("/cart");
-  };
+  const toastMessage = TOAST_BY_STATE[viewState] ?? null;
+  const hasCart = viewState === "with-cart" || viewState === "item-added" || viewState === "success";
 
   return (
-    <div className="menu-list-page">
+    <div className="menu-list-page" data-figma-node="134:7792" data-view-state={viewState}>
       <Header />
 
       <CategoryTabs
         categories={categories}
         selectedCategoryId={selectedCategoryId}
-        onSelectCategory={handleSelectCategory}
+        onSelectCategory={setSelectedCategoryId}
       />
 
       <main className="menu-grid-scroll-area">
-        {menus.length === 0 ? (
+        {viewState === "loading" ? (
+          <p className="empty-state">불러오는 중…</p>
+        ) : viewState === "error" ? (
+          <p className="empty-state">메뉴를 불러오지 못했습니다.</p>
+        ) : menus.length === 0 ? (
           <p className="empty-state">이 카테고리에는 메뉴가 없습니다.</p>
         ) : (
           <ul className="menuGrid">
             {menus.map((menu) => (
               <li key={menu.menuId}>
                 <MenuCard
-                  menu={menu}
+                  menu={{
+                    ...menu,
+                    isSoldOut: viewState === "sold-out" ? true : menu.isSoldOut,
+                  }}
                   isSelected={selectedMenuId === menu.menuId}
-                  onSelect={handleSelectMenu}
+                  onSelect={setSelectedMenuId}
                 />
               </li>
             ))}
@@ -72,12 +63,14 @@ export default function MenuListPage() {
         )}
       </main>
 
-      <OrderList />
-
       <MenuListFooter
-        itemCount={itemCount}
-        totalPrice={totalPrice}
-        onCheckout={handleCheckout}
+        itemCount={hasCart ? 2 : 0}
+        totalPrice={hasCart ? 16800 : 0}
+      />
+
+      <KioskToast
+        message={toastMessage}
+        tone={viewState === "item-added" || viewState === "success" ? "success" : "warning"}
       />
     </div>
   );

@@ -1,17 +1,14 @@
-// 메뉴 디테일 페이지 footer버튼
-import React from "react";
-import { formatCurrency } from "@/utils/currency";
-
-export default function MenuDetailFooter({ disabled, totalPrice, onConfirm }) {
+// 메뉴 디테일 하단 CTA — 표시 전용
+export default function MenuDetailFooter({ disabled = true, totalPrice }) {
   const formatted =
-    typeof totalPrice === "number" && !isNaN(totalPrice)
-      ? formatCurrency(totalPrice)
+    typeof totalPrice === "number" && !Number.isNaN(totalPrice)
+      ? `${Number(totalPrice).toLocaleString("ko-KR")}원`
       : null;
 
   return (
     <footer className="menu-detail-footer">
-      <button type="button" onClick={onConfirm} disabled={disabled}>
-        장바구니에 담기{formatted ? " · " + formatted : ""}
+      <button type="button" disabled={disabled}>
+        장바구니에 담기{formatted ? ` · ${formatted}` : ""}
       </button>
     </footer>
   );

@@ -83,6 +83,12 @@ export default function OrderList() {
     clearLimitMessage(cartItemId);
   };
 
+  // Figma SCR-003에서 Shared/CartFooterBar는 Default(빈 장바구니)에서 hidden이고
+  // Items Added 상태에서만 나타난다. 담긴 메뉴가 없으면 이 영역을 그리지 않는다.
+  if (items.length === 0) {
+    return null;
+  }
+
   return (
     <section
       className="order-list"
@@ -101,37 +107,26 @@ export default function OrderList() {
         </strong>
       </header>
 
-      {items.length === 0 ? (
-        <div className="order-list__empty">
-          <p>담긴 메뉴가 없습니다.</p>
-        </div>
-      ) : (
-        <ul className="order-list__items">
-          {items.map((item) => (
-            <li
-              className="order-list__list-item"
-              key={item.cartItemId}
-            >
-              <OrderListItem
-                item={item}
-                limitReason={
-                  limitMessages[item.cartItemId] ??
-                  null
-                }
-                onDecrease={() =>
-                  handleDecrease(item)
-                }
-                onIncrease={() =>
-                  handleIncrease(item)
-                }
-                onRemove={() =>
-                  handleRemove(item.cartItemId)
-                }
-              />
-            </li>
-          ))}
-        </ul>
-      )}
+      <ul className="order-list__items">
+        {items.map((item) => (
+          <li
+            className="order-list__list-item"
+            key={item.cartItemId}
+          >
+            <OrderListItem
+              item={item}
+              limitReason={
+                limitMessages[item.cartItemId] ?? null
+              }
+              onDecrease={() => handleDecrease(item)}
+              onIncrease={() => handleIncrease(item)}
+              onRemove={() =>
+                handleRemove(item.cartItemId)
+              }
+            />
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

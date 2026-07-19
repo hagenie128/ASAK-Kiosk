@@ -1,27 +1,18 @@
-// 메뉴리스트 footer 컴포넌트
+// Shared/CartFooterBar 요약 — Figma BottomCTA cartSummary
+import { formatWon } from "@/data/staticUi";
 
-import { formatCurrency } from '@/utils/currency';
-import React from 'react'
-
-export default function MenuListFooter({ itemCount, totalPrice, onCheckout }) {
-    const hasItems = itemCount > 0;
-
+export default function MenuListFooter({ itemCount = 0, totalPrice = 0 }) {
+  const hasItems = itemCount > 0;
 
   return (
-    <>
-        <footer className="menu-list-footer">
-            <div>
-                <span>
-                    담은 메뉴 {itemCount}개
-                </span>
-                <span className="menu-list-footer__summary">
-                    {hasItems ? formatCurrency(totalPrice) : "0원"}
-                </span>
-            </div>
-            <button className="menu-list-footer__cta" type="button" disabled={!hasItems} onClick={onCheckout}>
-                결제하기
-            </button>
-        </footer>
-    </>
-  )
+    <footer className="menu-list-footer">
+      <div>
+        <span>담은 메뉴 {itemCount}개</span>
+        <span className="menu-list-footer__summary">{formatWon(hasItems ? totalPrice : 0)}</span>
+      </div>
+      <button className="menu-list-footer__cta" type="button" disabled>
+        결제하기
+      </button>
+    </footer>
+  );
 }
