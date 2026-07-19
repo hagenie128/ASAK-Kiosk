@@ -1698,9 +1698,8 @@ body {
   height: 41px;
 }
 
-/* Figma SCR-007/008의 하단 CTA는 둘 다 버튼 2개를 나란히 둔다. */
-.payment-page__footer,
-.order-complete-page__footer {
+/* Figma SCR-007 하단 CTA */
+.payment-page__footer {
   height: var(--asak-bottom-cta-h);
   padding: 40px 48px;
   display: grid;
@@ -1710,19 +1709,7 @@ body {
   background: var(--asak-surface);
 }
 
-.order-complete-page__footer button:first-child {
-  border: 1px solid var(--asak-border);
-  background: var(--asak-surface);
-  color: var(--asak-text);
-}
-
-.order-complete-page__footer button:last-child {
-  background: var(--asak-lime);
-  color: var(--asak-text);
-}
-
-.payment-page__footer button,
-.order-complete-page__footer button {
+.payment-page__footer button {
   width: 100%;
   height: 100px;
   border: 0;
@@ -1745,47 +1732,191 @@ body {
   opacity: 0.4;
 }
 
+/* ----------------------- Order Complete SCR-008 (0714 정본 2:4877) ----------------------- */
+.order-complete-page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
 .order-complete-page__content {
+  flex: 1;
+  min-height: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 28px 60px 24px;
+  padding: 88px 40px 24px;
   text-align: center;
+  box-sizing: border-box;
 }
 
-.order-complete-page .kiosk-step-indicator {
+.order-complete-page__steps {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 432px;
+  justify-content: center;
+  gap: 76px;
+  width: auto;
   height: 24px;
-  margin: 0 auto 8px;
+  margin: 0 0 72px;
 }
 
-.order-complete-page .kiosk-step-indicator span {
+.order-complete-page__steps span {
   width: 56px;
   height: 16px;
   border-radius: 8px;
-  border: 2px solid #ccc;
+  box-sizing: border-box;
+}
+
+.order-complete-page__steps .is-done {
+  border: 0;
+  background: #b3e500;
+}
+
+.order-complete-page__steps .is-current {
+  border: 2px solid #b3e500;
+  background: #fff;
+}
+
+.order-complete-page h1 {
+  margin: 0;
+  color: #33383d;
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.order-complete-page__label {
+  margin: 96px 0 0;
+  color: #4a4e57;
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.order-complete-page__order-no {
+  margin: 40px 0 0;
+  color: #3f3f3f;
+  font-size: 140px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.order-complete-page__ticket {
+  position: relative;
+  width: 788px;
+  max-width: 100%;
+  margin: 48px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.order-complete-page__rail {
+  display: block;
+  width: 788px;
+  max-width: 100%;
+  height: 42px;
+  border-radius: 200px;
+  background: #b5e30f;
+}
+
+.order-complete-page__ticket-body {
+  position: relative;
+  margin-top: -22px;
+  width: 340px;
+  height: 320px;
+}
+
+.order-complete-page__ticket-shape {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.order-complete-page__ticket-logo {
+  position: absolute;
+  left: 50%;
+  top: 40px;
+  width: 160px;
+  height: 160px;
+  transform: translateX(-50%);
+  object-fit: contain;
+}
+
+.order-complete-page__barcode {
+  position: absolute;
+  left: 50%;
+  bottom: 36px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 3px;
+  width: 260px;
+  height: 56px;
+  transform: translateX(-50%);
+}
+
+.order-complete-page__barcode span {
+  display: block;
+  height: 100%;
+  background: #1a1a1a;
+}
+
+.order-complete-page__hint {
+  margin: 80px 0 0;
+  color: #4a4e57;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 40px;
+}
+
+.order-complete-page__return {
+  margin: 24px 0 0;
+  color: #303030;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 40px;
+}
+
+.order-complete-page__return em {
+  font-style: normal;
+  color: #ff383c;
+  font-weight: 700;
+}
+
+.order-complete-page__footer {
+  height: 200px;
+  padding: 50px 70px 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
   background: #fff;
   box-sizing: border-box;
 }
 
-.order-complete-page .kiosk-step-indicator .is-done {
-  border-color: #b3e500;
-  background: #f5fbe0;
+.order-complete-page__footer button {
+  width: 100%;
+  height: 100px;
+  border: 2px solid #ccc;
+  border-radius: 16px;
+  background: #fff;
+  color: #222;
+  font-family: inherit;
+  font-size: 34px;
+  font-weight: 700;
 }
 
-.order-complete-page .kiosk-step-indicator .is-current {
+.order-complete-page__footer .is-primary {
   border: 0;
-  background: var(--asak-lime);
+  border-radius: 15px;
+  background: #c5ff00;
+  color: #1a1a1a;
 }
 
-.order-complete-page h1 {
-  margin: 0 0 24px;
-  font-size: 56px;
-  line-height: 72px;
-}
+/* legacy receipt-card kept for Receipt page reuse if needed */
 .receipt-card {
   width: 420px;
   padding: 32px 28px 28px;
@@ -1857,59 +1988,6 @@ body {
   color: #888;
   font-size: 12px;
   line-height: 16px;
-}
-.order-complete-page__queue {
-  margin: 20px 0 0 !important;
-  color: #292d30 !important;
-  font-size: 20px !important;
-  line-height: 28px !important;
-}
-.order-complete-page__return {
-  margin: 8px 0 0 !important;
-  color: #737373 !important;
-  font-size: 18px !important;
-  line-height: 24px !important;
-}
-
-.order-complete-page__number {
-  display: grid;
-  gap: 36px;
-  margin-top: 60px;
-}
-
-.order-complete-page__number span {
-  color: #4a4e57;
-  font-size: 56px;
-  font-weight: 800;
-}
-
-.order-complete-page__number strong {
-  color: #3f3f3f;
-  font-size: 140px;
-  line-height: 164px;
-  letter-spacing: -0.06em;
-}
-
-.order-complete-page__amount {
-  display: grid;
-  gap: 10px;
-  margin: 80px 0 auto;
-}
-
-.order-complete-page__amount span {
-  color: #666;
-  font-size: 28px;
-}
-
-.order-complete-page__amount strong {
-  font-size: 36px;
-}
-
-.order-complete-page__content > p {
-  margin: 24px 0 0;
-  color: #4a4e57;
-  font-size: 32px;
-  line-height: 44px;
 }
 
 /* ----------------------- Accessibility (SCR-014) ----------------------- */

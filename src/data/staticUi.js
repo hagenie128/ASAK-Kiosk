@@ -44,7 +44,7 @@ export const STATIC_PAYMENT = {
 };
 
 export const STATIC_COMPLETE = {
-  orderNumber: "A-1325",
+  orderNumber: "1225",
   waitingCount: 3,
   totalPrice: 16800,
   orderType: "포장",
