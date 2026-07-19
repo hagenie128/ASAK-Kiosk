@@ -8,3 +8,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+
+__pycache__/
+*.pyc
+docs/screenshots/qa-*
+docs/screenshots/_figma-*
+
