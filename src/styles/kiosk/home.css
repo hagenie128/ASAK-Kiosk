@@ -1,0 +1,151 @@
+/* ----------------------- Home (SCR-001) ----------------------- */
+/* SCR-001 Home — Figma 134:7721 (1080×1920) */
+.home-page {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 1920px;
+  overflow: hidden;
+  background: #111;
+}
+
+.home-page__hero {
+  position: absolute;
+  left: -124px;
+  top: -79px;
+  width: 1207px;
+  height: 2145px;
+  pointer-events: none;
+}
+
+.home-page__hero-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-page__scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.39);
+}
+
+.home-page__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 1920px;
+}
+
+.home-page__logo {
+  position: absolute;
+  left: 287px;
+  top: 231px;
+  width: 503px;
+  height: 170px;
+  object-fit: contain;
+}
+
+.home-page__headline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 612px;
+  margin: 0;
+  text-align: center;
+  color: #fff;
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 76px;
+  letter-spacing: -0.96px;
+  white-space: nowrap;
+}
+
+.order-type-selector {
+  position: absolute;
+  left: 50%;
+  top: 890px;
+  display: flex;
+  gap: 40px;
+  width: 928px;
+  transform: translateX(-50%);
+}
+
+.order-type-selector__btn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  width: 444px;
+  height: 450px;
+  padding: 60px;
+  border: 1px solid #f5f5f5;
+  border-radius: 32px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  color: #292d30;
+  font-family: inherit;
+  cursor: default;
+  overflow: hidden;
+}
+
+.order-type-selector__btn::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  right: -1px;
+  top: -1px;
+  height: 8px;
+  background: var(--asak-lime);
+}
+
+.order-type-selector__icon {
+  display: block;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+}
+
+.order-type-selector__icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.order-type-selector__label {
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 54px;
+  letter-spacing: -0.66px;
+  white-space: nowrap;
+}
+
+.order-type-selector__en {
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 34px;
+  color: #888;
+  white-space: nowrap;
+}
+
+/* SCR-001 High Contrast — Figma 224:12713 (버튼 top 1200, accent #c5ff00) */
+.home-page.is-high-contrast .order-type-selector {
+  top: 1200px;
+}
+
+.home-page.is-high-contrast .order-type-selector__btn {
+  border-color: #d4d4d4;
+}
+
+.home-page.is-high-contrast .order-type-selector__btn::before {
+  background: #c5ff00;
+}
+
+.home-page.is-high-contrast .order-type-selector__label {
+  color: #000;
+}
+

@@ -1,31 +1,20 @@
-# 학습용 프론트엔드 골격
+# src 폴더 안내 (Kiosk)
 
-이 폴더에는 구현 코드를 넣지 않았습니다. 각 파일은 역할을 알려 주는 자리표시자입니다.
+> 기준일: **2026-07-20** · 자리표시자가 아니라 **실제 구현이 들어가 있는** 폴더입니다.  
+> 처음이면 [STRUCTURE_GUIDE.md](STRUCTURE_GUIDE.md) → 상위 [IMPLEMENTATION_PLAN.md](../IMPLEMENTATION_PLAN.md) 순으로 읽으세요.
 
-처음 구조가 낯설다면 먼저 [STRUCTURE_GUIDE.md](STRUCTURE_GUIDE.md)를 읽습니다. 기존에 배운 `App → pages → components → api` 구조를 현재 Kiosk 폴더에 어떻게 옮기는지, 화면 하나를 만드는 순서로 설명합니다.
+| 경로 | 역할 | 현재 |
+| --- | --- | --- |
+| `apps/kiosk/KioskApp.jsx` | Routes 조립 | 10개 경로 연결 |
+| `pages/kiosk/` | URL 화면 | Home~Cart mock 동작 · Payment 이후 UI shell |
+| `components/kiosk/` | 키오스크 UI | MenuCard, OptionGroup, CartItem 등 |
+| `store/` | 주문 세션·장바구니 | `orderSessionStore` + 호환 export |
+| `utils/priceCalculation.js` | 가격 **단일 기준** | 사용 중 — 복제 금지 |
+| `utils/quantityLimits.js` | 수량 한도 **단일 기준** | 9/30 적용 |
+| `api/`, `adapters/` | HTTP·DTO | 골격 · 페이지는 아직 mock 직접 사용 |
+| `hooks/` | 타임아웃 등 | 일부 stub |
+| `contracts/` | 계약 메모 | Canonical과 충돌 시 Canonical 우선 |
+| `public/mocks/kiosk.json` | mock 정본 | (저장소 `public/`) |
 
-시작 전에는 상위 [`../README.md`](../README.md)의 **먼저 볼 파일** 표와 [`../IMPLEMENTATION_PLAN.md`](../IMPLEMENTATION_PLAN.md)을 먼저 읽습니다. 이 파일은 폴더별 역할을 찾을 때 사용합니다.
-
-- `main.jsx` → React 앱을 브라우저에 연결
-- `App.jsx` → 라우터 또는 최상위 화면 렌더링
-- `api/` → 백엔드 HTTP 요청
-- `components/` → 여러 화면에서 재사용할 UI 조각
-- `layouts/` → 키오스크·관리자 공통 외곽 화면
-- `pages/` → URL 한 개에 대응하는 화면
-- `router/` → URL과 페이지 연결
-- `store/` → 장바구니 등 공유 상태
-- `styles/` → 색상·간격·전역 CSS
-
-추가 기능 폴더도 준비했습니다.
-
-- `hooks/` → 반복되는 화면 로직(로딩, 타임아웃, 데이터 조회)
-- `features/` → 장바구니·주문·품절처럼 여러 파일이 함께 필요한 기능 규칙
-- `utils/` → 금액·날짜·API 오류 변환 같은 순수 함수
-- `types/` → 메뉴·주문·결제 데이터 모양을 적는 JSDoc 기준
-- `mocks/` → 백엔드 연결 전 사용할 화면용 샘플 데이터
-
-처음 구현할 때는 `main.jsx` → `App.jsx` → `router/index.jsx` → `pages/kiosk/HomePage.jsx` 순서로 채우면 됩니다.
-
-기능별로는 `api/`(통신) → `store/` 또는 `features/`(상태·규칙) → `components/`(UI 조각) → `pages/`(화면 조립) 순서로 살펴보면 됩니다.
-
-API 명세와 요구사항에서 합쳐야 하는 데이터는 [contracts/api-data-contract.md](contracts/api-data-contract.md), [contracts/requirements-screen-map.md](contracts/requirements-screen-map.md)에 정리했습니다.
+구현 순서 추천: **페이지 동작 확인 → store/utils → (나중) api/adapter**.  
+Admin 기능은 `ASAK-Admin`에서만 구현합니다.

@@ -35,22 +35,33 @@ npm.cmd run build
 npm.cmd run preview
 ```
 
-## 현재 구현 목표
+## 현재 구현 상태 (2026-07-20)
 
-목표 화면은 `SCR-001`, `SCR-003~005`, `SCR-007`, `SCR-008`, `SCR-012~014`이다. 현재 라우트가 연결된 화면과 목표 화면은 다르므로, 완료 여부는 [Current Implementation Map](../ASAK/docs/planning/CURRENT_IMPLEMENTATION_MAP.md)으로 확인한다.
+| 구간 | 상태 |
+| --- | --- |
+| Home → Menu → Detail → Cart | **mock + store 동작** |
+| Payment / Complete / Error / Timeout | **UI shell** (연결 대기) |
+| `priceCalculation` / `quantityLimits` | **DONE** (단일 기준) |
+| Backend API | 없음 → mock만 |
 
-- 화면/상태 정본: [05-C Kiosk](https://www.figma.com/design/JSrjOy668zhfkiLplCkreh/ASAK-%E2%80%94-Design-System---Product-UI-0715?node-id=134-7720)
-- 상태 QA 정본: [07-C Matrix](https://www.figma.com/design/JSrjOy668zhfkiLplCkreh/ASAK-%E2%80%94-Design-System---Product-UI-0715?node-id=190-2)
-- API는 아직 Backend에 구현되지 않은 목표 계약이다. 화면은 mock으로 시연할 수 있지만, API 연결 완료로 표기하지 않는다.
+- 정본 맵: [Current Implementation Map](../ASAK/docs/planning/CURRENT_IMPLEMENTATION_MAP.md)
+- 구조: [src/STRUCTURE_GUIDE.md](src/STRUCTURE_GUIDE.md)
+- 계획: [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md)
+- Figma **0718** (`yHhvn5RKjBd91U8BJUQz7F`) — 0715 키 사용 금지
+- 핸드오프: [docs/figma-ui-handoff.md](docs/figma-ui-handoff.md)
+- UI 표: [UI-INDEX.md](../UI-INDEX.md)
 
 ## 구조
 
 ```text
 src/
-  apps/kiosk/  키오스크 화면과 라우트
-  api/         키오스크 API 모듈
-  store/       주문 초안·장바구니 상태
-  mocks/       mock API fixture
+  apps/kiosk/   Routes
+  pages/kiosk/  화면
+  components/   UI
+  store/        주문 세션·장바구니
+  utils/        priceCalculation, quantityLimits
+  api/          골격 (페이지는 아직 mock 직접 사용)
+public/mocks/   kiosk.json
 ```
 
 ## Figma · MCP 구현 가이드

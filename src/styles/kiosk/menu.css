@@ -1,0 +1,409 @@
+/* ----------------------- Menu List ----------------------- */
+.menu-list-page {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--asak-bg-kiosk);
+}
+
+/* Figma Kiosk/Category (134:7809): 1080×118, padding 32/48, gap 48.
+   선택 표시는 라벨 아래 8px 간격의 6px 라임 막대다(직선, radius 없음). */
+.category-tabs {
+  display: flex;
+  gap: 48px;
+  align-items: flex-start;
+  height: 118px;
+  padding: 32px 48px;
+  overflow-x: auto;
+  flex-shrink: 0;
+  background: var(--asak-surface);
+  border-bottom: 1px solid var(--asak-divider);
+}
+
+.category-tabs button {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #737373;
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 500;
+}
+
+/* 선택 여부와 무관하게 자리를 잡아 두어야 탭 높이가 흔들리지 않는다. */
+.category-tabs button::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 6px;
+  background: transparent;
+}
+
+.category-tabs button.active::after {
+  background: var(--asak-lime);
+}
+
+.menu-grid-scroll-area {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 42px 60px 24px;
+}
+
+.menuGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  /* 카드 이름이 nowrap이라 1fr(=minmax(auto,1fr))이면 열이 콘텐츠 폭까지 늘어난다. */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 22px;
+  row-gap: 40px;
+}
+
+/* Figma Kiosk/MenuCard (150:678): 305×369 고정, 안쪽 220px 컬럼, 이미지-정보 간격 20px.
+   이름은 줄바꿈하지 않고 잘라내기 때문에 카드 높이가 항상 같다. */
+.menu-card {
+  position: relative;
+  width: 100%;
+  height: 369px;
+  padding: 20px 43px 21px 42px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid transparent;
+  border-radius: var(--asak-radius-card);
+  background: var(--asak-surface);
+  text-align: center;
+  overflow: hidden;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.menu-card.isSelected {
+  border-color: var(--asak-lime-border);
+  border-width: 2px;
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--asak-lime) 35%, transparent);
+}
+
+.menu-card.isSoldOut {
+  background: var(--asak-surface);
+}
+
+.menu-card.isSoldOut img {
+  opacity: 0.35;
+  filter: grayscale(0.2);
+}
+
+.menu-card img {
+  width: 180px;
+  height: 180px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--asak-surface-muted);
+}
+
+.menu-card__info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.menu-card .menuName,
+.menu-card .menuPrice,
+.menu-card .menuKcal {
+  margin: 0;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.menu-card .menuName {
+  font-size: var(--asak-fs-card-name);
+  line-height: var(--asak-lh-card-name);
+  font-weight: var(--asak-fw-medium);
+  color: var(--asak-text-strong);
+}
+
+.menu-card .menuPrice {
+  color: var(--asak-text-price);
+  font-size: var(--asak-fs-price);
+  line-height: var(--asak-lh-price);
+  font-weight: var(--asak-fw-bold);
+  letter-spacing: -0.57px;
+}
+
+.menu-card .menuKcal {
+  font-size: var(--asak-fs-caption);
+  line-height: var(--asak-lh-caption);
+  font-weight: var(--asak-fw-regular);
+  color: var(--asak-text-secondary);
+}
+
+/* Figma Kiosk/SoldOutBadge — 이미지 영역 중앙, label "품절" */
+.menu-card .soldOutBadge {
+  position: absolute;
+  top: 110px;
+  left: 50%;
+  z-index: 1;
+  transform: translateX(-50%);
+  padding: 6px 12px;
+  border-radius: var(--asak-radius-sm);
+  background: var(--asak-danger);
+  color: #fff;
+  font-size: var(--asak-fs-body);
+  line-height: var(--asak-lh-body);
+  font-weight: var(--asak-fw-bold);
+  white-space: nowrap;
+}
+
+.menu-card .sold-out-notice {
+  margin: 12px 18px 0;
+  padding: 0;
+  list-style: none;
+  font-size: 14px;
+  color: var(--asak-warning);
+}
+
+.menu-list-page .empty-state {
+  padding: 80px 24px;
+  text-align: center;
+  color: var(--asak-text-secondary);
+  font-size: 22px;
+}
+
+.empty-state-panel,
+.error-state-panel,
+.loading-state-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 320px;
+  padding: 48px 32px;
+  text-align: center;
+}
+
+.empty-state-panel__title,
+.error-state-panel__title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 36px;
+  color: var(--asak-text);
+}
+
+.empty-state-panel__description,
+.error-state-panel__message,
+.loading-state-panel__label {
+  margin: 0;
+  font-size: 20px;
+  line-height: 28px;
+  color: var(--asak-text-secondary);
+}
+
+.empty-state-panel__action,
+.error-state-panel__retry {
+  margin-top: 12px;
+  min-height: 48px;
+  padding: 12px 28px;
+  border: none;
+  border-radius: var(--asak-radius-md);
+  background: var(--asak-lime);
+  color: var(--asak-text);
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.loading-state-panel__spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid var(--asak-border);
+  border-top-color: var(--asak-lime);
+  border-radius: 50%;
+  animation: asak-spin 0.8s linear infinite;
+}
+
+@keyframes asak-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ----------------------- Order List ----------------------- */
+.order-list {
+  flex-shrink: 0;
+  max-height: 420px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px var(--asak-page-pad-x) 28px;
+  border-top: 1px solid var(--asak-divider);
+  background: var(--asak-surface);
+}
+
+.order-list__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.order-list__title {
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.order-list__count {
+  font-size: 20px;
+  color: var(--asak-text-secondary);
+}
+
+.order-list__empty {
+  padding: 28px;
+  border-radius: var(--asak-radius-md);
+  background: var(--asak-surface-muted);
+  color: var(--asak-text-muted);
+  font-size: 18px;
+  text-align: center;
+}
+
+.order-list__items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.order-list-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 16px;
+  border: 1px solid var(--asak-border);
+  border-radius: var(--asak-radius-md);
+  background: var(--asak-bg-kiosk);
+}
+
+.order-list-item__menu {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.order-list-item__image,
+.order-list-item__image-placeholder {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--asak-radius-sm);
+  object-fit: cover;
+  background: var(--asak-surface-muted);
+  flex-shrink: 0;
+}
+
+.order-list-item__name {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.order-list-item__options {
+  font-size: 15px;
+  color: var(--asak-text-muted);
+  line-height: 1.35;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.order-list-item__price {
+  font-size: 20px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.order-list-item__remove {
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--asak-border);
+  border-radius: var(--asak-radius-sm);
+  background: var(--asak-surface);
+  font-size: 18px;
+}
+
+/* ----------------------- Quantity Stepper ----------------------- */
+/* Figma Kiosk/QuantityStepper (150:166): 145×48 박스. 터치 영역은 정책상 48px을 유지한다. */
+.quantity-stepper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 145px;
+  height: 48px;
+}
+
+.quantity-stepper__btn {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  border: 0;
+  border-radius: 8px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+.quantity-stepper__btn--minus {
+  background: var(--asak-surface-muted);
+  color: var(--asak-text-secondary);
+}
+
+.quantity-stepper__btn--plus {
+  background: var(--asak-lime);
+  color: var(--asak-text);
+}
+
+.quantity-stepper__btn:disabled {
+  background: var(--asak-disabled-fill);
+  color: var(--asak-disabled-text);
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.quantity-stepper__value {
+  width: 49px;
+  flex: 0 0 49px;
+  text-align: center;
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 700;
+}
+
+/* 145×48 박스를 유지하기 위해 안내 문구는 흐름 밖으로 뺀다. */
+.quantity-stepper__alert {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  margin: 0;
+  color: var(--asak-danger);
+  font-size: 14px;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
