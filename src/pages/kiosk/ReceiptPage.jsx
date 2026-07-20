@@ -2,7 +2,7 @@
 // UI 뼈대: 영수증 티켓 · printing/error/success 힌트 · 하단 CTA
 // 연결 예정: 주문 완료 응답 라인 · 프린터 연동
 // 금지: 메뉴명·가격·주문번호 목업, 화면 전체 자동생성 React
-import Header from "@/components/kiosk/Header";
+import Header from "@/components/common/Header";
 import { formatCurrency } from "@/utils/currency";
 
 export default function ReceiptPage({

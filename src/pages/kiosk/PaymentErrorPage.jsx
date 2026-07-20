@@ -2,7 +2,7 @@
 // UI 뼈대: 결제 화면 위 Confirm 모달 (거절/네트워크)
 // 연결 예정: 결제 실패 응답 · 재시도 · 장바구니 복귀
 // 금지: 금액 목업, 화면 전체 자동생성 React
-import Header from "@/components/kiosk/Header";
+import Header from "@/components/common/Header";
 import { useCartStore } from "@/store/cartStore";
 import { formatCurrency } from "@/utils/currency";
 import { calculateCartTotal } from "@/utils/priceCalculation";

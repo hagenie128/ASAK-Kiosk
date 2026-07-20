@@ -2,7 +2,7 @@
 // UI 뼈대: 완료 카피 · 티켓/바코드 에셋 · twoCTA · Toast
 // 연결 예정: 주문 응답(orderNumber) · 홈 복귀 타이머 · 영수증 출력
 // 금지: 주문번호 하드코딩, 화면 전체 자동생성 React
-import Header from "@/components/kiosk/Header";
+import Header from "@/components/common/Header";
 import KioskToast from "@/components/kiosk/KioskToast";
 import ticketShape from "@/assets/figma/order-complete-ticket.svg";
 import asakSLogo from "@/assets/figma/asak-s-logo.svg";

@@ -14,12 +14,12 @@
 /* 스텝퍼 스타일 */
 
 .kiosk-step-indicator {
-    display: flex;
-    align-items: center;
-    gap: 76px;
-    height: 24px;
-    width: max-content;
-    margin: 25px auto 10px;
+  display: flex;
+  align-items: center;
+  gap: 76px;
+  height: 24px;
+  width: max-content;
+  margin: 25px auto 10px;
 }
 
 .kiosk-step-indicator span {
@@ -39,4 +39,56 @@
 .kiosk-step-indicator .is-current {
   border-color: #b3e500;
   background: var(--asak-lime);
+}
+
+/* 페이지별 main 컨텐츠 영역 */
+
+.page_content {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 24px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+/* 페이지별 footer */
+
+.page_footer {
+  height: var(--asak-bottom-cta-h);
+  padding: 40px 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  border-top: 1px solid var(--asak-divider);
+  background: var(--asak-surface);
+}
+
+.page_footer button {
+  width: 100%;
+  height: 100px;
+  border: 0;
+  border-radius: var(--asak-radius-lg);
+  background: var(--asak-disabled-fill);
+  color: var(--asak-disabled-text);
+  font-size: var(--asak-fs-cta);
+  font-weight: var(--asak-fw-bold);
+}
+
+.page_footer button:first-child {
+  border: 2px solid var(--asak-border);
+  background: var(--asak-surface);
+  color: var(--asak-text-strong);
+}
+
+.page_footer button:last-child,
+.page_footer .is-primary {
+  background: var(--asak-lime);
+  color: #292d30;
+}
+
+.page_footer .is-primary.is-ready {
+  opacity: 1;
 }
