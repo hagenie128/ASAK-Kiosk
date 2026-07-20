@@ -8,7 +8,7 @@ import kakaoPayLogo from "@/assets/figma/logo-kakaopay.png";
 import paymentIllustration from "@/assets/figma/payment-processing-illustration.png";
 import { useCartStore } from "@/store/cartStore";
 import { formatCurrency } from "@/utils/currency";
-import { calculateCartTotal } from "@/utils/priceCalculation";
+import { calculateCartTotal, priceCalculation } from "@/utils/priceCalculation";
 import { getCartTotalQuantity } from "@/utils/quantityLimits";
 import { useState } from "react";
 
@@ -176,8 +176,7 @@ export default function PaymentPage() {
 
             {/* 주문정보 보기 아코디언 */}
             <section className="payment-page__summary " aria-label="주문 정보">
-
-            {/* is-expanded 이 클래스  summary-head > icon 위로 애니메이션 */}
+              {/* is-expanded 이 클래스  summary-head > icon 위로 애니메이션 */}
               <button
                 type="button"
                 className="payment-page__summary-head"
@@ -187,24 +186,52 @@ export default function PaymentPage() {
                 <span className="payment-page__summary-meta">
                   {itemCount}개 메뉴 / 총 {formatCurrency(totalPrice)}
                   <i
-                    className="payment-page__summary-chevron"
+                    className={`payment-page__summary-chevron ${isSummaryOpen ? "is-expanded" : ""}`}
                     aria-hidden="true"
                   />
                 </span>
-
-
               </button>
 
               {/* 아코디언 메뉴 리스트 */}
+              <div
+                className={`payment-page__summary-body ${
+                  isSummaryOpen ? "is-open" : ""
+                }`}
+              >
+                {items.map((item) => {
+                  <div
+                    key={item.cartItemId}
+                    className="payment-page__summary-item"
+                  >
+                    <div>
+                      <strong>{item.menuName}</strong>
 
+                      {item.optionItems?.length > 0 && (
+                        <small>
+                          {item.optionItems
+                            .map((option) => option.name)
+                            .join(", ")}
+                        </small>
+                      )}
+                    </div>
 
+                    <div>
+                      <span>x{item.quantity}</span>
 
+                      <strong>
+                        {formatCurrency(
+                          priceCalculation({
+                            unitPrice: item.unitPrice,
+                            optionItems: item.optionItems,
+                            quantity: item.quantity,
+                          }),
+                        )}
+                      </strong>
+                    </div>
+                  </div>;
+                })}
+              </div>
             </section>
-
-
-
-
-
           </>
         )}
       </main>
