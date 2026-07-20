@@ -146,6 +146,7 @@ export default function MenuDetailPage() {
         menu={{
           ...menuDetail,
           isSoldOut,
+          price: expectedPrice,
         }}
         quantity={quantity}
         limitReason={toastMessage}
