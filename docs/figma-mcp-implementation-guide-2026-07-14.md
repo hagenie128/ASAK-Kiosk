@@ -1,7 +1,7 @@
 # Figma Prototype → MCP → Kiosk 구현 가이드
 
 > **디자인 현재 상태:** [`ASAK/docs/design/README.md`](../../ASAK/docs/design/README.md)  
-> 이 문서는 **Kiosk 저장소**에서 MCP→코드 연결용입니다. Admin은 `ASAK-Admin/docs/07-figma-mcp-implementation-guide.md`.
+> 이 문서는 **Kiosk 저장소**에서 MCP→코드 연결용입니다. Admin은 `ASAK-Admin/docs/figma-mcp-implementation-guide-2026-07-14.md`.
 
 ## 목적과 범위
 

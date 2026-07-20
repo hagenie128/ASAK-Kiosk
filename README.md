@@ -48,7 +48,7 @@ npm.cmd run preview
 - 구조: [src/STRUCTURE_GUIDE.md](src/STRUCTURE_GUIDE.md)
 - 계획: [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md)
 - Figma **0718** (`yHhvn5RKjBd91U8BJUQz7F`) — 0715 키 사용 금지
-- 핸드오프: [docs/figma-ui-handoff.md](docs/figma-ui-handoff.md)
+- 핸드오프: [docs/figma-ui-handoff-2026-07-18.md](docs/figma-ui-handoff-2026-07-18.md)
 - UI 표: [UI-INDEX.md](../UI-INDEX.md)
 
 ## 구조
@@ -67,6 +67,6 @@ public/mocks/   kiosk.json
 ## Figma · MCP 구현 가이드
 
 Figma 프로토타입을 MCP로 반영한 뒤의 화면 구현 범위, 주문 상태·API 연결 작업,
-CSS 분리 기준, 화면별 체크리스트는 [docs/figma-mcp-implementation-guide.md](docs/figma-mcp-implementation-guide.md)를 참고합니다.
+CSS 분리 기준, 화면별 체크리스트는 [docs/figma-mcp-implementation-guide-2026-07-14.md](docs/figma-mcp-implementation-guide-2026-07-14.md)를 참고합니다.
 
 주문 생성·결제의 request/response/error와 기존 store adapter 규칙은 [중앙 API 가이드](../ASAK/docs/implementation_guide/04_API_DB_IMPLEMENTATION.md)를 먼저 확인합니다.
