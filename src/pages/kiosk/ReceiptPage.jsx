@@ -5,7 +5,7 @@
 //   status: preview | printing | error | success
 // 데이터 출처 후보: orderSession.order + cart 스냅샷 (결제 직전)
 // 표: public/mocks/README.md §3 (orderNo/totalPrice)
-import Header from "@/components/kiosk/Header";
+import Header from "@/components/common/Header";
 import { formatCurrency } from "@/utils/currency";
 
 export default function ReceiptPage({

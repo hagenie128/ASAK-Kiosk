@@ -1,7 +1,7 @@
 // SCR-004 / Menu Detail — Figma 134:7810
 // Page는 흐름 조립자: 데이터 준비 → draft 상태 → 검증 → Store 저장 → 이동.
 // 가격은 priceCalculation.js, 수량 제한은 quantityLimits.js가 단일 기준.
-import Header from "@/components/kiosk/Header";
+import Header from "@/components/common/Header";
 import MenuDetailSummary from "@/components/kiosk/MenuDetailSummary";
 import OptionGroup from "@/components/kiosk/OptionGroup";
 import MenuDetailFooter from "@/components/kiosk/MenuDetailFooter";

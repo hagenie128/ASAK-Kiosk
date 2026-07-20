@@ -1,7 +1,7 @@
 // SCR-005 / Cart — Figma 134:7835
 // store 장바구니 기준. 가격·수량 제한은 utils 단일 기준.
 import { useState } from "react";
-import Header from "@/components/kiosk/Header";
+import Header from "@/components/common/Header";
 import CartItem from "@/components/kiosk/CartItem";
 import KioskConfirmDialog from "@/components/kiosk/KioskConfirmDialog";
 import { useNavigate } from "react-router-dom";
@@ -12,6 +12,7 @@ import {
   canIncreaseCartItemQuantity,
   getCartTotalQuantity,
 } from "@/utils/quantityLimits";
+import Footer from "@/components/common/Footer";
 
 function enrichCartItem(item) {
   return {
@@ -31,7 +32,18 @@ function enrichCartItem(item) {
 }
 
 export default function CartPage() {
+  // 페이지 이동
   const navigate = useNavigate();
+
+  const handleGoMenuList = () => {
+    navigate("/menu");
+  }
+  const handleGoPayment = () => {
+    navigate("/payment");
+  }
+
+
+
   const storedItems = useCartStore((state) => state.items);
   const updateItemQuantity = useCartStore((state) => state.updateItemQuantity);
   const removeItem = useCartStore((state) => state.removeItem);
@@ -74,12 +86,12 @@ export default function CartPage() {
     <div className="cart-page">
       <Header />
 
-        <div className="kiosk-step-indicator" aria-label="주문 3단계 중 장바구니">
-          <span className="is-current" />
-          <span />
-          <span />
-        </div>
-      <main className="cart-page__content">
+      <div className="kiosk-step-indicator" aria-label="주문 3단계 중 장바구니">
+        <span className="is-current" />
+        <span />
+        <span />
+      </div>
+      <main className="page_content">
 
         <h1 className="cart-page__title">장바구니</h1>
 
@@ -130,19 +142,10 @@ export default function CartPage() {
         </div>
       </section>
 
-      <footer className="cart-page__footer">
-        <button type="button" onClick={() => navigate("/menu")}>
-          + 메뉴 더 담기
-        </button>
-        <button
-          type="button"
-          disabled={items.length === 0}
-          onClick={() => navigate("/payment")}
-          className="is-primary"
-        >
-          주문하기 · {formatCurrency(totalPrice)}
-        </button>
-      </footer>
+      <Footer leftText="+ 메뉴 더 담기"
+        rightText={`주문하기 · ${formatCurrency(totalPrice)}`}
+        onLeftClick={handleGoMenuList}
+        onRightClick={handleGoPayment} />
 
       {showClearConfirm ? (
         <KioskConfirmDialog

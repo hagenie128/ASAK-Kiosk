@@ -11,7 +11,7 @@
 // Props: orderNumber, toastMessage?, toastTone?
 // 추가 후보: totalAmount, waitingOrderCount, returnInSec
 // 금지: 주문번호 하드코딩
-import Header from "@/components/kiosk/Header";
+import Header from "@/components/common/Header";
 import KioskToast from "@/components/kiosk/KioskToast";
 import ticketShape from "@/assets/figma/order-complete-ticket.svg";
 import asakSLogo from "@/assets/svg/logo-S.svg";

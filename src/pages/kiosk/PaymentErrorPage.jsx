@@ -8,7 +8,7 @@
 //
 // Props: title, lines, secondaryLabel?, primaryLabel?
 // 추가 후보: code, onRetry, onBackToCart
-import Header from "@/components/kiosk/Header";
+import Header from "@/components/common/Header";
 import { useCartStore } from "@/store/cartStore";
 import { formatCurrency } from "@/utils/currency";
 import { calculateCartTotal } from "@/utils/priceCalculation";

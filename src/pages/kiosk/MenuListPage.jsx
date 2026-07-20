@@ -2,7 +2,7 @@
 // 나연이 흐름: 카테고리·메뉴 선택·OrderList·장바구니 합계.
 import { useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import Header from "@/components/kiosk/Header";
+import Header from "@/components/common/Header";
 import CategoryTabs from "@/components/kiosk/CategoryTabs";
 import MenuCard from "@/components/kiosk/MenuCard";
 import OrderList from "@/components/kiosk/OrderList";
