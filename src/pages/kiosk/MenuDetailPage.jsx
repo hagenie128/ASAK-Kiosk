@@ -165,7 +165,7 @@ export default function MenuDetailPage() {
           />
         ))}
 
-        <AllergenAccordion allergens={menuDetail.allergens ?? []} />
+        {/* <AllergenAccordion allergens={menuDetail.allergens ?? []} /> */}
       </main>
 
       <MenuDetailFooter

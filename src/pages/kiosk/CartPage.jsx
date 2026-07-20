@@ -76,9 +76,8 @@ export default function CartPage() {
 
       <main className="cart-page__content">
         <div className="kiosk-step-indicator" aria-label="주문 3단계 중 장바구니">
-          <span className="is-done" />
-          <span className="is-done" />
           <span className="is-current" />
+          <span />
           <span />
         </div>
 
@@ -112,22 +111,24 @@ export default function CartPage() {
               ))}
             </ul>
 
-            <section className="cart-page__summary">
-              <div className="cart-page__summary-row">
-                <span>합계</span>
-                <div className="cart-page__summary-values">
-                  <span>{quantityTotal}개</span>
-                  <b>{formatCurrency(totalPrice)}</b>
-                </div>
-              </div>
-              <div className="cart-page__summary-total">
-                <span>총 금액 결제</span>
-                <strong>{formatCurrency(totalPrice)}</strong>
-              </div>
-            </section>
           </>
         )}
       </main>
+
+      {/* 합산 하단 금액창 */}
+      <section className="cart-page__summary">
+        <div className="cart-page__summary-row">
+          <span>합계</span>
+          <div className="cart-page__summary-values">
+            <span>{quantityTotal}개</span>
+            <b>{formatCurrency(totalPrice)}</b>
+          </div>
+        </div>
+        <div className="cart-page__summary-total">
+          <span>총 금액 결제</span>
+          <strong>{formatCurrency(totalPrice)}</strong>
+        </div>
+      </section>
 
       <footer className="cart-page__footer">
         <button type="button" onClick={() => navigate("/menu")}>
