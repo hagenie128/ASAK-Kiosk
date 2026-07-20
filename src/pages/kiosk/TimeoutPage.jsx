@@ -2,7 +2,7 @@
 // UI 뼈대: 무조작 타임아웃 Confirm (경고/만료)
 // 연결 예정: 카운트다운 · 세션 초기화 · 연장
 // 금지: 금액 목업, 화면 전체 자동생성 React
-import Header from "@/components/kiosk/Header";
+import Header from "@/components/common/Header";
 import { useCartStore } from "@/store/cartStore";
 import { formatCurrency } from "@/utils/currency";
 import { calculateCartTotal } from "@/utils/priceCalculation";
