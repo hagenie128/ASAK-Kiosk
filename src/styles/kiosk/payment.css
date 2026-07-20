@@ -96,10 +96,32 @@
   margin-top: -8px;
 }
 
-.payment-page__summary.is-expanded .payment-page__summary-chevron {
+.payment-page__summary-chevron.is-expanded {
   transform: rotate(225deg);
   margin-top: 6px;
 }
+
+/* 아코디언 메뉴 스크롤 스타일 추가 */
+
+.payment-page__summary-body {
+  max-height: 0;
+  overflow: hidden;
+
+  opacity: 0;
+
+  transition:
+    max-height 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.payment-page__summary-body.is-open {
+  max-height: 250px;
+  overflow-y: auto;
+
+  opacity: 1;
+}
+
+
 
 .payment-page__summary-lines {
   list-style: none;
