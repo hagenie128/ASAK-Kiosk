@@ -10,6 +10,9 @@ import { useCartStore } from "@/store/cartStore";
 import { formatCurrency } from "@/utils/currency";
 import { calculateCartTotal } from "@/utils/priceCalculation";
 import { getCartTotalQuantity } from "@/utils/quantityLimits";
+import { useState } from "react";
+
+
 
 const METHODS = [
   {
@@ -29,11 +32,25 @@ const METHODS = [
 ];
 
 export default function PaymentPage() {
+
+  //결제 수단 클릭시 -> 해당 타입 console로 띄우기 (추후 백단으로 해당 타입 전달해주면 됨)
+  const [ selectedMethodId , setSelectedMethodId ] = useState(null);
+
+  const handleMethodSelect = (methodId) => {
+    setSelectedMethodId(methodId);
+
+    console.log("선택한 결제수단:", methodId);
+  };
+
+  //클릭시 아코디언 애니메이션
+  const [ isSummaryOpen, setIsSummaryOpen ] = useState(false);
+
+
+
   const items = useCartStore((state) => state.items);
   const totalPrice = calculateCartTotal(items);
   const itemCount = getCartTotalQuantity(items);
-  // UI 상태만 — 결제 API 연결 전 기본 뼈대
-  const selectedMethodId = null;
+
   const processing = false;
   const loading = false;
   const networkError = false;
@@ -121,7 +138,7 @@ export default function PaymentPage() {
                 잠시만 기다려 주세요
               </>
             ) : (
-              "결제 수단을 확인해주세요"
+              "결제 수단을 선택해주세요"
             )}
           </p>
         </section>
@@ -137,8 +154,12 @@ export default function PaymentPage() {
                 <button
                   key={method.id}
                   type="button"
-                  disabled
-                  className={selectedMethodId === method.id ? "is-selected" : ""}
+                  className={
+                    selectedMethodId === method.id ? "is-selected" : ""
+                  }
+                  onClick={() => {
+                    handleMethodSelect(method.id);
+                  }}
                 >
                   <img
                     className={`payment-page__method-icon ${method.tone}`}
@@ -152,15 +173,38 @@ export default function PaymentPage() {
                 </button>
               ))}
             </div>
-            <section className="payment-page__summary" aria-label="주문 정보">
-              <div className="payment-page__summary-head">
+
+            {/* 주문정보 보기 아코디언 */}
+            <section className="payment-page__summary " aria-label="주문 정보">
+
+            {/* is-expanded 이 클래스  summary-head > icon 위로 애니메이션 */}
+              <button
+                type="button"
+                className="payment-page__summary-head"
+                onClick={() => setIsSummaryOpen((prev) => !prev)}
+              >
                 <strong>주문정보 확인</strong>
                 <span className="payment-page__summary-meta">
                   {itemCount}개 메뉴 / 총 {formatCurrency(totalPrice)}
-                  <i className="payment-page__summary-chevron" aria-hidden="true" />
+                  <i
+                    className="payment-page__summary-chevron"
+                    aria-hidden="true"
+                  />
                 </span>
-              </div>
+
+
+              </button>
+
+              {/* 아코디언 메뉴 리스트 */}
+
+
+
             </section>
+
+
+
+
+
           </>
         )}
       </main>

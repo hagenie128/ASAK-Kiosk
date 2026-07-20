@@ -79,7 +79,7 @@
 .payment-page__summary-meta {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 30px;
   color: #292d30;
   font-size: 28px;
   font-weight: 500;

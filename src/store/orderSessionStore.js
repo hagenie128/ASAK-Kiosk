@@ -14,6 +14,7 @@ const initialState = {
   },
   payment: {
     // API-006 결제 처리 응답:
+    paymentMethod: null, // CARD | KAKAO_PAY
     paymentId: null,
     orderId: null,
     orderNo: null,
