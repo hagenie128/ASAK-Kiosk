@@ -23,31 +23,7 @@
   gap: 32px;
 }
 
-.cart-page .kiosk-step-indicator {
-  display: flex;
-  align-items: center;
-  gap: 76px;
-  height: 24px;
-}
 
-.cart-page .kiosk-step-indicator span {
-  width: 56px;
-  height: 16px;
-  border-radius: 8px;
-  border: 2px solid #ccc;
-  background: #fff;
-  box-sizing: border-box;
-}
-
-.cart-page .kiosk-step-indicator .is-done {
-  border-color: #b3e500;
-  background: #f5fbe0;
-}
-
-.cart-page .kiosk-step-indicator .is-current {
-  border-color: #b3e500;
-  background: var(--asak-lime);
-}
 
 .cart-page__title {
   margin: 0;

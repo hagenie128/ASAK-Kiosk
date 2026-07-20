@@ -24,36 +24,9 @@
   letter-spacing: -0.04em;
 }
 
-.payment-page .kiosk-step-indicator {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 432px;
-  height: 24px;
-  margin: 0 auto;
-}
-
-.payment-page .kiosk-step-indicator span {
-  width: 56px;
-  height: 16px;
-  border-radius: 8px;
-  border: 2px solid #ccc;
-  background: #fff;
-  box-sizing: border-box;
-}
-
-.payment-page .kiosk-step-indicator .is-done {
-  border-color: #b3e500;
-  background: #f5fbe0;
-}
-
-.payment-page .kiosk-step-indicator .is-current {
-  border: 0;
-  background: var(--asak-lime);
-}
 
 .payment-page__hero {
-  margin: 104px 0 72px;
+  margin: 15px 0 72px;
   display: grid;
   justify-items: center;
   gap: 32px;

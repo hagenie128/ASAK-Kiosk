@@ -9,3 +9,34 @@
 @import "./kiosk/feedback.css";
 @import "./kiosk/receipt.css";
 @import "./kiosk/shared.css";
+
+
+/* 스텝퍼 스타일 */
+
+.kiosk-step-indicator {
+    display: flex;
+    align-items: center;
+    gap: 76px;
+    height: 24px;
+    width: max-content;
+    margin: 25px auto 10px;
+}
+
+.kiosk-step-indicator span {
+  width: 56px;
+  height: 16px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.kiosk-step-indicator .is-done {
+  border-color: #b3e500;
+  background: #f5fbe0;
+}
+
+.kiosk-step-indicator .is-current {
+  border-color: #b3e500;
+  background: var(--asak-lime);
+}

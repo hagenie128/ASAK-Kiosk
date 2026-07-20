@@ -133,27 +133,7 @@
   align-items: center;
   gap: 48px;
 }
-.kiosk-modal-page .kiosk-step-indicator {
-  display: flex;
-  gap: 76px;
-  height: 24px;
-}
-.kiosk-modal-page .kiosk-step-indicator span {
-  width: 56px;
-  height: 16px;
-  border-radius: 8px;
-  border: 2px solid #ccc;
-  background: #fff;
-  box-sizing: border-box;
-}
-.kiosk-modal-page .kiosk-step-indicator .is-done {
-  border-color: #b3e500;
-  background: #f5fbe0;
-}
-.kiosk-modal-page .kiosk-step-indicator .is-current {
-  border: 0;
-  background: var(--asak-lime);
-}
+
 .kiosk-modal-page__hero {
   margin-top: 80px;
   text-align: center;

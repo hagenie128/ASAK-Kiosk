@@ -43,13 +43,14 @@ export default function PaymentPage() {
     return (
       <div className="payment-page">
         <Header />
-        <main className="payment-page__content payment-page__content--loading">
-          <div className="kiosk-step-indicator" aria-label="주문 4단계 중 결제">
-            <span className="is-done" />
-            <span className="is-done" />
-            <span className="is-done" />
+          {/* 스텝퍼 */}
+          <div className="kiosk-step-indicator" aria-label="주문 3단계 중 결제">
             <span className="is-current" />
+            <span className="is-current" />
+            <span className="is-done" />
           </div>
+
+        <main className="payment-page__content payment-page__content--loading">
           <p className="payment-page__loading">결제 수단을 불러오는 중…</p>
         </main>
         <footer className="payment-page__footer">
@@ -68,13 +69,13 @@ export default function PaymentPage() {
     return (
       <div className="payment-page">
         <Header />
-        <main className="payment-page__content payment-page__content--error">
-          <div className="kiosk-step-indicator" aria-label="주문 4단계 중 결제">
-            <span className="is-done" />
-            <span className="is-done" />
-            <span className="is-done" />
+          {/* 스텝퍼 */}
+          <div className="kiosk-step-indicator" aria-label="주문 3단계 중 결제">
             <span className="is-current" />
+            <span className="is-current" />
+            <span className="is-done" />
           </div>
+        <main className="payment-page__content payment-page__content--error">
           <section className="payment-page__error-panel" role="alert">
             <h2>결제 수단을 불러오지 못했습니다</h2>
             <p>
@@ -102,13 +103,13 @@ export default function PaymentPage() {
   return (
     <div className={`payment-page${processing ? " is-processing" : ""}`}>
       <Header />
+      {/* 스텝퍼 */}
+      <div className="kiosk-step-indicator" aria-label="주문 3단계 중 결제">
+        <span className="is-current" />
+        <span className="is-current" />
+        <span className="is-done" />
+      </div>
       <main className="payment-page__content">
-        <div className="kiosk-step-indicator" aria-label="주문 4단계 중 결제">
-          <span className="is-done" />
-          <span className="is-done" />
-          <span className="is-done" />
-          <span className="is-current" />
-        </div>
         <section className="payment-page__hero">
           <span>총 결제금액</span>
           <strong>{formatCurrency(totalPrice)}</strong>
