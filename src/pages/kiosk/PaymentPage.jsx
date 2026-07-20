@@ -34,7 +34,7 @@ const METHODS = [
 export default function PaymentPage() {
 
   //결제 수단 클릭시 -> 해당 타입 console로 띄우기 (추후 백단으로 해당 타입 전달해주면 됨)
-  const [ selectedMethodId , setSelectedMethodId ] = useState(null);
+  const [selectedMethodId, setSelectedMethodId] = useState(null);
 
   const handleMethodSelect = (methodId) => {
     setSelectedMethodId(methodId);
@@ -43,9 +43,7 @@ export default function PaymentPage() {
   };
 
   //클릭시 아코디언 애니메이션
-  const [ isSummaryOpen, setIsSummaryOpen ] = useState(false);
-
-
+  const [isSummaryOpen, setIsSummaryOpen] = useState(false);
 
   const items = useCartStore((state) => state.items);
   const totalPrice = calculateCartTotal(items);
@@ -60,12 +58,12 @@ export default function PaymentPage() {
     return (
       <div className="payment-page">
         <Header />
-          {/* 스텝퍼 */}
-          <div className="kiosk-step-indicator" aria-label="주문 3단계 중 결제">
-            <span className="is-current" />
-            <span className="is-current" />
-            <span className="is-done" />
-          </div>
+        {/* 스텝퍼 */}
+        <div className="kiosk-step-indicator" aria-label="주문 3단계 중 결제">
+          <span className="is-current" />
+          <span className="is-current" />
+          <span className="is-done" />
+        </div>
 
         <main className="payment-page__content payment-page__content--loading">
           <p className="payment-page__loading">결제 수단을 불러오는 중…</p>
@@ -86,12 +84,12 @@ export default function PaymentPage() {
     return (
       <div className="payment-page">
         <Header />
-          {/* 스텝퍼 */}
-          <div className="kiosk-step-indicator" aria-label="주문 3단계 중 결제">
-            <span className="is-current" />
-            <span className="is-current" />
-            <span className="is-done" />
-          </div>
+        {/* 스텝퍼 */}
+        <div className="kiosk-step-indicator" aria-label="주문 3단계 중 결제">
+          <span className="is-current" />
+          <span className="is-current" />
+          <span className="is-done" />
+        </div>
         <main className="payment-page__content payment-page__content--error">
           <section className="payment-page__error-panel" role="alert">
             <h2>결제 수단을 불러오지 못했습니다</h2>
@@ -194,31 +192,28 @@ export default function PaymentPage() {
 
               {/* 아코디언 메뉴 리스트 */}
               <div
-                className={`payment-page__summary-body ${
-                  isSummaryOpen ? "is-open" : ""
-                }`}
+                className={`payment-page__summary-body ${isSummaryOpen ? "is-open" : ""
+                  }`}
               >
-                {items.map((item) => {
+                {items.map((item) => (
                   <div
                     key={item.cartItemId}
-                    className="payment-page__summary-item"
+                    className="payment_page__summary_item"
                   >
-                    <div>
-                      <strong>{item.menuName}</strong>
+                    <div className="payment_page__summary_left">
+                      <span className="payment_page__summary_name">{item.menuName}</span>
 
                       {item.optionItems?.length > 0 && (
-                        <small>
+                        <span className="payment_page__summary_option">
                           {item.optionItems
                             .map((option) => option.name)
                             .join(", ")}
-                        </small>
+                        </span>
                       )}
                     </div>
-
-                    <div>
+                    <div className="payment_page__summary_right">
                       <span>x{item.quantity}</span>
-
-                      <strong>
+                      <span>
                         {formatCurrency(
                           priceCalculation({
                             unitPrice: item.unitPrice,
@@ -226,22 +221,23 @@ export default function PaymentPage() {
                             quantity: item.quantity,
                           }),
                         )}
-                      </strong>
+                      </span>
                     </div>
-                  </div>;
-                })}
+
+
+                  </div>
+                ))}
               </div>
             </section>
           </>
         )}
       </main>
       <footer className="payment-page__footer">
-        <button type="button" disabled>
+        <button type="button">
           뒤로가기
         </button>
         <button
           type="button"
-          disabled
           className={`is-primary${canPay ? " is-ready" : ""}`}
         >
           결제하기

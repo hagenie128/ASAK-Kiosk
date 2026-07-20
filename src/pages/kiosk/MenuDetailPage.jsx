@@ -105,6 +105,7 @@ export default function MenuDetailPage() {
       }));
   });
 
+  //옵션 추가 시 예상 가격 변동 확인 메서드
   const expectedPrice = priceCalculation({
     unitPrice: menuDetail.price,
     optionItems: selectedOptionItems,
