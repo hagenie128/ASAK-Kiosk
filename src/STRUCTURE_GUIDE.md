@@ -2,7 +2,7 @@
 
 > 기준일: **2026-07-20** · 실제 코드 기준 (Home→Cart mock 동작 · Payment~Timeout UI shell).  
 > 문서 입구: `ASAK/docs/START_HERE.md`  
-> WBS: `ASAK/docs/wiki/wbs-v2.md` 의 **WBS2-017 ~ WBS2-032** (P3 키오스크)  
+> WBS: `ASAK/docs/wiki/wbs-v2-2026-07-16.md` 의 **WBS2-017 ~ WBS2-032** (P3 키오스크)  
 > 전체 진척: `ASAK/docs/wiki/current-status-baseline.md` · 계획: [`../IMPLEMENTATION_PLAN.md`](../IMPLEMENTATION_PLAN.md)
 
 ## 먼저 결론
@@ -103,9 +103,9 @@ main.jsx
 | 문서 | 위치 |
 | --- | --- |
 | START_HERE | `ASAK/docs/START_HERE.md` |
-| 구현 맵 | `ASAK/docs/planning/CURRENT_IMPLEMENTATION_MAP.md` |
-| WBS 2.0 | `ASAK/docs/wiki/wbs-v2.md` |
+| 구현 맵 | `ASAK/docs/planning/current-implementation-map-2026-07-16.md` |
+| WBS 2.0 | `ASAK/docs/wiki/wbs-v2-2026-07-16.md` |
 | WBS 상태 메모 | `ASAK/docs/wiki/wbs-status-notes.md` |
-| 3일 스프린트 | `ASAK/docs/planning/FRONTEND_WEDNESDAY_WBS_2026-07-20.md` |
-| Canonical 계약 | `ASAK/docs/governance/CANONICAL_CONTRACT_DECISIONS.md` |
+| 3일 스프린트 | `ASAK/docs/planning/frontend-wednesday-wbs-2026-07-20.md` |
+| Canonical 계약 | `ASAK/docs/governance/canonical-contract-decisions-2026-07-16.md` |
 | Mock 안내 | `public/mocks/README.md` |

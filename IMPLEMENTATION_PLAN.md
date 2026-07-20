@@ -3,11 +3,11 @@
 > 기준일: **2026-07-20** · **코드 실측** 반영 (Home→Cart mock · Payment~ UI shell).  
 > 담당 영역: **P3 키오스크** (Admin/P4는 [`ASAK-Admin/IMPLEMENTATION_PLAN.md`](../ASAK-Admin/IMPLEMENTATION_PLAN.md)가 정본 — 이 문서는 Admin 범위를 다루지 않음)  
 > 문서 입구: [`ASAK/docs/START_HERE.md`](../ASAK/docs/START_HERE.md)  
-> 정본 WBS: [`ASAK/docs/wiki/wbs-v2.md`](../ASAK/docs/wiki/wbs-v2.md) **P3 키오스크 · WBS2-017 ~ WBS2-032** (Admin은 P4 · WBS2-033~045)  
+> 정본 WBS: [`ASAK/docs/wiki/wbs-v2-2026-07-16.md`](../ASAK/docs/wiki/wbs-v2-2026-07-16.md) **P3 키오스크 · WBS2-017 ~ WBS2-032** (Admin은 P4 · WBS2-033~045)  
 > 구조: [`src/STRUCTURE_GUIDE.md`](src/STRUCTURE_GUIDE.md)  
-> 구현 맵: [`ASAK/docs/planning/CURRENT_IMPLEMENTATION_MAP.md`](../ASAK/docs/planning/CURRENT_IMPLEMENTATION_MAP.md)  
-> Canonical: [`ASAK/docs/governance/CANONICAL_CONTRACT_DECISIONS.md`](../ASAK/docs/governance/CANONICAL_CONTRACT_DECISIONS.md)  
-> 3일 스프린트: [`ASAK/docs/planning/FRONTEND_WEDNESDAY_WBS_2026-07-20.md`](../ASAK/docs/planning/FRONTEND_WEDNESDAY_WBS_2026-07-20.md)  
+> 구현 맵: [`ASAK/docs/planning/current-implementation-map-2026-07-16.md`](../ASAK/docs/planning/current-implementation-map-2026-07-16.md)  
+> Canonical: [`ASAK/docs/governance/canonical-contract-decisions-2026-07-16.md`](../ASAK/docs/governance/canonical-contract-decisions-2026-07-16.md)  
+> 3일 스프린트: [`ASAK/docs/planning/frontend-wednesday-wbs-2026-07-20.md`](../ASAK/docs/planning/frontend-wednesday-wbs-2026-07-20.md)  
 > 이 문서는 **2026-07-14 최초 상세 계획**(화면 계약·일정·fixture·테스트·브랜치 규칙)을 복원하고, **2026-07-20 코드 실측**(현재 상태)을 함께 담은 통합본이다. 두 기준이 다를 때는 **0~1번(코드 실측)이 우선**이며, 나머지는 참고용 계약·이력이다.
 
 ## 0. 한눈에 보는 현재 상태
@@ -214,7 +214,7 @@ docs(kiosk): align API-005 mock fields with contract
 | 문서 | 경로 |
 | --- | --- |
 | STRUCTURE_GUIDE | [`src/STRUCTURE_GUIDE.md`](src/STRUCTURE_GUIDE.md) |
-| 구현 맵 | [`ASAK/docs/planning/CURRENT_IMPLEMENTATION_MAP.md`](../ASAK/docs/planning/CURRENT_IMPLEMENTATION_MAP.md) |
+| 구현 맵 | [`ASAK/docs/planning/current-implementation-map-2026-07-16.md`](../ASAK/docs/planning/current-implementation-map-2026-07-16.md) |
 | WBS 상태 메모 | [`ASAK/docs/wiki/wbs-status-notes.md`](../ASAK/docs/wiki/wbs-status-notes.md) |
 | Mock | [`public/mocks/README.md`](public/mocks/README.md) |
 | DevCopilot sync | [`ASAK/docs/wiki/devcopilot-sync-report.md`](../ASAK/docs/wiki/devcopilot-sync-report.md) |

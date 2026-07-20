@@ -7,8 +7,8 @@
 - [ASAK docs index](../ASAK/docs/README.md)
 - [Product Bible Pack 12 — Frontend Implementation](../ASAK/docs/product_bible/12_Frontend_Implementation/README.md)
 - [Product Bible Pack 11 — Backend Implementation](../ASAK/docs/product_bible/11_Backend_Implementation/README.md)
-- [Current Implementation Map](../ASAK/docs/planning/CURRENT_IMPLEMENTATION_MAP.md)
-- [Implementation Priority](../ASAK/docs/planning/IMPLEMENTATION_PRIORITY.md)
+- [Current Implementation Map](../ASAK/docs/planning/current-implementation-map-2026-07-16.md)
+- [Implementation Priority](../ASAK/docs/planning/implementation-priority-2026-07-16.md)
 - [Implementation Guide Start](../ASAK/docs/implementation_guide/00_START_HERE.md)
 - [Kiosk Implementation Guide](../ASAK/docs/implementation_guide/02_KIOSK_IMPLEMENTATION.md)
 - [API·Response Guide](../ASAK/docs/implementation_guide/04_API_DB_IMPLEMENTATION.md)
@@ -44,7 +44,7 @@ npm.cmd run preview
 | `priceCalculation` / `quantityLimits` | **DONE** (단일 기준) |
 | Backend API | 없음 → mock만 |
 
-- 정본 맵: [Current Implementation Map](../ASAK/docs/planning/CURRENT_IMPLEMENTATION_MAP.md)
+- 정본 맵: [Current Implementation Map](../ASAK/docs/planning/current-implementation-map-2026-07-16.md)
 - 구조: [src/STRUCTURE_GUIDE.md](src/STRUCTURE_GUIDE.md)
 - 계획: [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md)
 - Figma **0718** (`yHhvn5RKjBd91U8BJUQz7F`) — 0715 키 사용 금지

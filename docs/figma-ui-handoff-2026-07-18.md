@@ -27,4 +27,4 @@
 ## Gap 문서
 
 - [`ASAK/docs/design/FIGMA_0718_PROJECT_GAP.md`](../../ASAK/docs/design/FIGMA_0718_PROJECT_GAP.md)
-- [`ASAK/docs/planning/CURRENT_IMPLEMENTATION_MAP.md`](../../ASAK/docs/planning/CURRENT_IMPLEMENTATION_MAP.md)
+- [`ASAK/docs/planning/current-implementation-map-2026-07-16.md`](../../ASAK/docs/planning/current-implementation-map-2026-07-16.md)
