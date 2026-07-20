@@ -1,7 +1,16 @@
-// SCR-008 / Order Complete — Figma 134:7926
-// UI 뼈대: 완료 카피 · 티켓/바코드 에셋 · twoCTA · Toast
-// 연결 예정: 주문 응답(orderNumber) · 홈 복귀 타이머 · 영수증 출력
-// 금지: 주문번호 하드코딩, 화면 전체 자동생성 React
+// SCR-008 / Order Complete — Figma 134:7926 (WBS2-028)
+// UI OK · 남은 연결: 결제 성공 응답 → 주문번호/금액/대기 · 홈 타이머 · cart reset
+//
+// mock: paymentScenarios.approve.data 또는 orderCompleteSamples[]
+//   orderNo → props orderNumber
+//   amount | totalPrice → 금액 (정본명 totalAmount)
+//   waitingCount → waitingOrderCount
+// store: order.orderNo, payment.amount, paymentStatus=APPROVED 후 clearItems
+// 표: public/mocks/README.md §3
+//
+// Props: orderNumber, toastMessage?, toastTone?
+// 추가 후보: totalAmount, waitingOrderCount, returnInSec
+// 금지: 주문번호 하드코딩
 import Header from "@/components/kiosk/Header";
 import KioskToast from "@/components/kiosk/KioskToast";
 import ticketShape from "@/assets/figma/order-complete-ticket.svg";

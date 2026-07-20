@@ -1,5 +1,18 @@
 import { create } from "zustand";
 
+/**
+ * 키오스크 주문 세션 (cart + order + payment).
+ * Home~Cart 는 사용 중. 아래는 Payment~Complete 연결 시 쓰는 필드.
+ *
+ * order:   API-005 응답 · orderId, orderNo, orderType, totalPrice,
+ *          orderStatus, paymentStatus
+ * payment: API-006 / paymentScenarios · paymentMethod, paymentId,
+ *          orderId, orderNo, amount, paymentStatus, paidAt
+ * paymentError: { code, message, reason? } — SCR-012, cart 유지
+ *
+ * APPROVED → resetSession · FAILED → setPaymentError only
+ * 표: public/mocks/README.md §4
+ */
 const initialState = {
   orderType: null, // 'EAT_IN' | 'TAKE_OUT'
   items: [], // { menuId, menuName, unitPrice, quantity, optionItems[], excludedIngredientIds[] }

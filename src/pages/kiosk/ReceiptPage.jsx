@@ -1,7 +1,10 @@
-// SCR-023 / Receipt — Figma 3014:40926
-// UI 뼈대: 영수증 티켓 · printing/error/success 힌트 · 하단 CTA
-// 연결 예정: 주문 완료 응답 라인 · 프린터 연동
-// 금지: 메뉴명·가격·주문번호 목업, 화면 전체 자동생성 React
+// SCR-023 / Receipt — Future Scope (프린터 실연동 제외 가능)
+// UI 뼈대만. 완료 화면 CTA에서 넘길 props 자리.
+//
+// Props: orderNumber, lines[{ name, quantity, price }], totalPrice, status
+//   status: preview | printing | error | success
+// 데이터 출처 후보: orderSession.order + cart 스냅샷 (결제 직전)
+// 표: public/mocks/README.md §3 (orderNo/totalPrice)
 import Header from "@/components/kiosk/Header";
 import { formatCurrency } from "@/utils/currency";
 

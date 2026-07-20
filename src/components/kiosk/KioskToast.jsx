@@ -1,4 +1,11 @@
-// Shared/Toast — Figma tone=warning 등. 표시 전용.
+/*
+ * Shared/Toast — 표시 전용 (WBS2-024 수량 한도 · 완료 안내)
+ *
+ * Props: message, tone? = "warning" | "success" | "error"
+ * 수량 한도: quantityLimits reason → message, 4초 후 닫기(Page/Hook 소유)
+ * 결제 완료: OrderCompletePage toastMessage
+ * mock JSON 없음 — 문자열만
+ */
 export default function KioskToast({ message, tone = "warning" }) {
   if (!message) return null;
 

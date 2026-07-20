@@ -1,7 +1,16 @@
-// SCR-007 / Payment — Figma 134:7861
-// UI 뼈대: 결제수단 카드 selected/disabled · BottomCTA · 로딩/오류 레이아웃
-// 연결 예정: 결제수단 선택 저장 · payment API · 중복 결제 방지
-// 금지: 메뉴/주문 JSON 목업, 화면 전체 자동생성 React
+// SCR-007 / Payment — Figma 134:7861 (WBS2-026~027)
+// UI OK · 남은 연결: 수단 mock + 결제 승인/실패 분기
+//
+// mock: paymentMethods.data[]
+//   methodId, name, description, isActive, isMaintenance, sortOrder
+// mock: paymentScenarios.approve|declined|network|… → envelope
+//   성공 data: paymentId, orderId, orderNo, amount, paymentStatus=APPROVED, paidAt
+//   실패 data: paymentStatus=FAILED, reason
+// store: orderSession.payment / paymentError · cart는 실패 시 보존
+// 표: public/mocks/README.md §1~2
+//
+// Props/상태 후보: methods, selectedMethodId, isPaying, onPay
+// 금지: 메뉴 JSON 목업으로 결제 흉내, 중복 결제 허용
 import Header from "@/components/kiosk/Header";
 import cardIcon from "@/assets/figma/icon-kiosk-card.svg";
 import kakaoPayLogo from "@/assets/figma/logo-kakaopay.png";

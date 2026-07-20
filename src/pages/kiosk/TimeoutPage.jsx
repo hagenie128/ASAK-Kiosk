@@ -1,7 +1,12 @@
-// SCR-013 / Timeout — Figma 134:7913
-// UI 뼈대: 무조작 타임아웃 Confirm (경고/만료)
-// 연결 예정: 카운트다운 · 세션 초기화 · 연장
-// 금지: 금액 목업, 화면 전체 자동생성 React
+// SCR-013 / Timeout — Figma 134:7913 (WBS2-029~030)
+// UI OK · 남은 연결: useKioskTimeout · 연장/초기화 · PROCESSING 중 정지
+//
+// 타이머: idleMs, enabled=!isPaying, onTimeout → TimeoutPage 또는 모달
+// 확정 시: resetSession (orderFlow TIMEOUT_CONFIRMED)
+// 표: public/mocks/README.md §5 · useKioskTimeout.js
+//
+// Props: title, lines, secondaryLabel?, primaryLabel?
+// 추가 후보: countdownSec, onExtend, onReset
 import Header from "@/components/kiosk/Header";
 import { useCartStore } from "@/store/cartStore";
 import { formatCurrency } from "@/utils/currency";

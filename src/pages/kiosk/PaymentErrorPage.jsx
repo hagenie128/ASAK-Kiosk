@@ -1,7 +1,13 @@
-// SCR-012 / Payment Error — Figma 134:7900
-// UI 뼈대: 결제 화면 위 Confirm 모달 (거절/네트워크)
-// 연결 예정: 결제 실패 응답 · 재시도 · 장바구니 복귀
-// 금지: 금액 목업, 화면 전체 자동생성 React
+// SCR-012 / Payment Error — Figma 134:7900 (WBS2-027)
+// UI OK · 남은 연결: 실패 envelope → 모달 문구 · 재시도 · 장바구니 유지
+//
+// mock: paymentScenarios.declined|network|timeout|… 
+//   code, message, data.reason (DECLINED|NETWORK|TIMEOUT|…)
+// store: paymentError 유지, items[] 지우지 말 것
+// 표: public/mocks/README.md §2 실패
+//
+// Props: title, lines, secondaryLabel?, primaryLabel?
+// 추가 후보: code, onRetry, onBackToCart
 import Header from "@/components/kiosk/Header";
 import { useCartStore } from "@/store/cartStore";
 import { formatCurrency } from "@/utils/currency";

@@ -1,14 +1,25 @@
 /*
- * 역할: 무응답 타이머로 세션 초기화 시점을 Page/Layout에 알린다.
- * 입력: idleMs, enabled(또는 isProcessing), onTimeout 콜백
- * 출력: 타이머 리셋 함수, (선택) 남은 시간
- * 하지 말 것: 결제 API 호출, TTS, 가격 계산, 개별 화면 JSX
+ * 무응답 타이머 (WBS2-029~030) — Page/Layout에 타임아웃만 알린다.
  *
- * 정책 힌트:
- * - Processing(결제 처리 중)에는 Timeout을 비활성화한다.
- * - 타임아웃 시 resetSession으로 개인·주문 초안을 지운다.
+ * Props/인자 후보:
+ *   idleMs          예: 30000 / 경고 20000 / 만료 10000
+ *   enabled         false면 타이머 없음 — 결제 PROCESSING 중 false
+ *   onTimeout       → TimeoutPage 표시 또는 모달
+ *   onTick?(remain) 카운트다운 UI용
  *
- * TODO 1: enabled=false 이면 interval/timeout을 걸지 않는다
- * TODO 2: 사용자 입력마다 타이머를 리셋하는 방법을 Page와 합의한다
- * TODO 3: Payment Processing 플래그와 enabled를 연결한다
+ * 출력 후보: resetTimer()
+ *
+ * 하지 말 것: 결제 API, 가격 계산, TTS, JSX
+ * 확정 시: orderSession.resetSession + orderFlow TIMEOUT_CONFIRMED
+ * 표: public/mocks/README.md §5
+ *
+ * TODO: enabled=false 시 interval 미등록
+ * TODO: 사용자 입력마다 resetTimer (Page와 합의)
+ * TODO: Payment isPaying ↔ enabled 연결
  */
+export function useKioskTimeout(_options = {}) {
+  return {
+    remainingMs: null,
+    resetTimer: () => {},
+  };
+}

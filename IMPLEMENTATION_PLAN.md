@@ -102,6 +102,9 @@ orderStore
 
 ## 3. 구현 순서 (남은 일)
 
+> **필드·props 치트시트 (결제~타임아웃만):** [`public/mocks/README.md`](public/mocks/README.md)  
+> 해당 Page/훅 파일 상단 주석에도 동일 요약이 있다. (Menu/Cart 완료분은 생략)
+
 1. **WBS2-024** — `quantityLimits` reason → `KioskToast` 4초
 2. **WBS2-026** — `PaymentPage` 수단 선택 활성화 + mock 결제 시나리오
 3. **WBS2-027** — 실패 분기·장바구니 유지
