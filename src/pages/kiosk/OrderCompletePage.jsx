@@ -5,7 +5,7 @@
 import Header from "@/components/kiosk/Header";
 import KioskToast from "@/components/kiosk/KioskToast";
 import ticketShape from "@/assets/figma/order-complete-ticket.svg";
-import asakSLogo from "@/assets/figma/asak-s-logo.svg";
+import asakSLogo from "@/assets/svg/logo-S.svg";
 import barcodeMark from "@/assets/figma/order-complete-barcode.svg";
 
 export default function OrderCompletePage({

@@ -9,9 +9,9 @@
 - [Product Bible Pack 11 — Backend Implementation](../ASAK/docs/product_bible/11_Backend_Implementation/README.md)
 - [Current Implementation Map](../ASAK/docs/planning/current-implementation-map-2026-07-16.md)
 - [Implementation Priority](../ASAK/docs/planning/implementation-priority-2026-07-16.md)
-- [Implementation Guide Start](../ASAK/docs/implementation_guide/00_START_HERE.md)
-- [Kiosk Implementation Guide](../ASAK/docs/implementation_guide/02_KIOSK_IMPLEMENTATION.md)
-- [API·Response Guide](../ASAK/docs/implementation_guide/04_API_DB_IMPLEMENTATION.md)
+- [Implementation Guide Start](../ASAK/docs/implementation_guide/00-start-here.md)
+- [Kiosk Implementation Guide](../ASAK/docs/implementation_guide/02-kiosk-implementation.md)
+- [API·Response Guide](../ASAK/docs/implementation_guide/04-api-db-implementation.md)
 
 Customer-facing React JavaScript is owned here. Admin scaffolds here are Legacy Reference; canonical administrator implementation is in `ASAK-Admin`.
 
@@ -49,7 +49,7 @@ npm.cmd run preview
 - 계획: [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md)
 - Figma **0718** (`yHhvn5RKjBd91U8BJUQz7F`) — 0715 키 사용 금지
 - 핸드오프: [docs/figma-ui-handoff-2026-07-18.md](docs/figma-ui-handoff-2026-07-18.md)
-- UI 표: [UI-INDEX.md](../UI-INDEX.md)
+- UI 표: [ui-index.md](../ui-index.md)
 
 ## 구조
 
@@ -69,4 +69,4 @@ public/mocks/   kiosk.json
 Figma 프로토타입을 MCP로 반영한 뒤의 화면 구현 범위, 주문 상태·API 연결 작업,
 CSS 분리 기준, 화면별 체크리스트는 [docs/figma-mcp-implementation-guide-2026-07-14.md](docs/figma-mcp-implementation-guide-2026-07-14.md)를 참고합니다.
 
-주문 생성·결제의 request/response/error와 기존 store adapter 규칙은 [중앙 API 가이드](../ASAK/docs/implementation_guide/04_API_DB_IMPLEMENTATION.md)를 먼저 확인합니다.
+주문 생성·결제의 request/response/error와 기존 store adapter 규칙은 [중앙 API 가이드](../ASAK/docs/implementation_guide/04-api-db-implementation.md)를 먼저 확인합니다.

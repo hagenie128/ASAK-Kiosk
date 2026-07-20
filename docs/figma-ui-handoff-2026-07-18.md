@@ -2,7 +2,7 @@
 
 > 기준일: **2026-07-20**  
 > Figma 정본: `yHhvn5RKjBd91U8BJUQz7F` (0718) — **0715 파일 키 사용 금지**  
-> 화면 표 진입점: [`UI-INDEX.md`](../../UI-INDEX.md)
+> 화면 표 진입점: [`ui-index.md`](../../ui-index.md)
 
 ## 역할
 
@@ -26,5 +26,5 @@
 
 ## Gap 문서
 
-- [`ASAK/docs/design/FIGMA_0718_PROJECT_GAP.md`](../../ASAK/docs/design/FIGMA_0718_PROJECT_GAP.md)
+- [`ASAK/docs/design/figma-0718-project-gap.md`](../../ASAK/docs/design/figma-0718-project-gap.md)
 - [`ASAK/docs/planning/current-implementation-map-2026-07-16.md`](../../ASAK/docs/planning/current-implementation-map-2026-07-16.md)

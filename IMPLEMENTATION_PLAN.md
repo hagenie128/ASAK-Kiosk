@@ -217,7 +217,7 @@ docs(kiosk): align API-005 mock fields with contract
 | 구현 맵 | [`ASAK/docs/planning/current-implementation-map-2026-07-16.md`](../ASAK/docs/planning/current-implementation-map-2026-07-16.md) |
 | WBS 상태 메모 | [`ASAK/docs/wiki/wbs-status-notes.md`](../ASAK/docs/wiki/wbs-status-notes.md) |
 | Mock | [`public/mocks/README.md`](public/mocks/README.md) |
-| DevCopilot sync | [`ASAK/docs/wiki/devcopilot-sync-report.md`](../ASAK/docs/wiki/devcopilot-sync-report.md) |
+| DevCopilot sync | [`ASAK/docs/_archive/wiki-secondary/devcopilot-sync-report.md`](../ASAK/docs/_archive/wiki-secondary/devcopilot-sync-report.md) |
 | Admin 구현 계획 (별도 정본) | [`ASAK-Admin/IMPLEMENTATION_PLAN.md`](../ASAK-Admin/IMPLEMENTATION_PLAN.md) |
 
 ## Documentation status

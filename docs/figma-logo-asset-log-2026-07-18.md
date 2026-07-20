@@ -1,6 +1,36 @@
 # 키오스크 로고·에셋 기록
 
-> 화면 단위 진입점은 워크스페이스 루트의 **[UI-INDEX.md](../../UI-INDEX.md)** 다.
+> 화면 단위 진입점은 워크스페이스 루트의 **[ui-index.md](../../ui-index.md)** 다.
+
+## 브랜드 SVG 로고 팩 — 2026-07-21
+
+프로젝트에 새로 넣은 **정식 브랜드 SVG** 세트. 경로: `src/assets/svg/`.
+
+| 파일 | 역할 | viewBox (대략) | 라이트 | 다크 |
+| --- | --- | --- | --- | --- |
+| `logo-S.svg` / `logo-S-dark.svg` | **S**ymbol — 정사각 마크만 | `0 0 152 152` | 라임 `#b9d440` + 다크 `#282c2f` | 라임 유지, 워드/마크 본색 → `#fff` |
+| `logo-L.svg` / `logo-L-dark.svg` | **L**ogo — 가로 워드마크(마크+ASAK) | `0 0 1396 389` | 동일 | 동일 규칙 |
+| `logo-F.svg` / `logo-F-dark.svg` | **F**ull — 워드마크+부제 등 풀 로고 | `0 0 1396 486` | 동일 | 동일 규칙 |
+
+### 사용 규칙 (권장)
+
+| 화면/상황 | 쓸 파일 |
+| --- | --- |
+| 헤더·작은 자리·완료 티켓 마크 | `logo-S` (± dark) |
+| 공통 키오스크 헤더 워드마크 | `logo-L` (± dark) |
+| 홈·스플래시·넓은 브랜드 영역 | `logo-F` (± dark) |
+| 어두운 배경 / 고대비 | `*-dark.svg` |
+
+### 현재 코드와의 관계
+
+| 화면 | import | 상태 |
+| --- | --- | --- |
+| Home | `assets/svg/logo-F-dark.svg` | **적용됨** (어두운 홈 배경) |
+| Header | `assets/svg/logo-L.svg` | **적용됨** |
+| Order Complete | `assets/svg/logo-S.svg` | **적용됨** |
+
+- 런타임 Figma URL·외부 CDN은 쓰지 않는다. SVG는 저장소에 커밋된 로컬 파일만 쓴다.
+- `assets/figma/asak-logo-home-light.png`, `kiosk-header-logo.svg`, `asak-s-logo.svg`는 **레거시**. 화면이 SVG를 쓰는 동안 삭제하지 말 것(다른 문서·스크린샷 참조용).
 
 ## 완료·접근성 화면 검증 — 2026-07-19
 
