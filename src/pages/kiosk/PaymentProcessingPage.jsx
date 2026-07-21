@@ -7,6 +7,7 @@ import paymentIllustration from '@/assets/figma/payment-processing-illustration.
 import { useNavigate } from 'react-router-dom';
 import { useCartStore } from '@/store/cartStore';
 import { calculateCartTotal } from '@/utils/priceCalculation';
+import Modal from '@/components/common/Modal';
 
 export default function PaymentProcessingPage() {
 
@@ -32,6 +33,7 @@ export default function PaymentProcessingPage() {
     return (
 
         <>
+            <Modal></Modal>
             <Header></Header>
             {/* 스텝퍼 */}
             <div className="kiosk-step-indicator" aria-label="주문 4단계 중 결제">
