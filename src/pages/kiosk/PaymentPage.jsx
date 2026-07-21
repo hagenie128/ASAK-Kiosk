@@ -76,8 +76,8 @@ export default function PaymentPage() {
       <Header />
       {/* 스텝퍼 */}
       <div className="kiosk-step-indicator" aria-label="주문 4단계 중 결제">
-        <span className="is-current" />
         <span className="is-done" />
+        <span className="is-current" />
         <span />
         <span />
       </div>
