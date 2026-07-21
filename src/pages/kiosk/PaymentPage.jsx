@@ -72,7 +72,7 @@ export default function PaymentPage() {
 
 
   return (
-    <div>
+    <>
       <Header />
       {/* 스텝퍼 */}
       <div className="kiosk-step-indicator" aria-label="주문 4단계 중 결제">
@@ -182,6 +182,6 @@ export default function PaymentPage() {
         onLeftClick={handleGoCart}
         onRightClick={handleGoPayConfirm} />
 
-    </div>
+    </>
   );
 }

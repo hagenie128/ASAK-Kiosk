@@ -11,35 +11,59 @@
 // Props: orderNumber, toastMessage?, toastTone?
 // 추가 후보: totalAmount, waitingOrderCount, returnInSec
 // 금지: 주문번호 하드코딩
+
+// --- 해당 페이지는 백단에서 데이터를 받은 후 orderId만 연결해서 화면 출력 예정 (임시 주문 번호 삽입)
 import Header from "@/components/common/Header";
-import KioskToast from "@/components/kiosk/KioskToast";
 import ticketShape from "@/assets/figma/order-complete-ticket.svg";
 import asakSLogo from "@/assets/svg/logo-S.svg";
 import barcodeMark from "@/assets/figma/order-complete-barcode.svg";
+import Footer from "@/components/common/Footer";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function OrderCompletePage({
-  orderNumber = null,
-  toastMessage = null,
-  toastTone = "success",
-} = {}) {
+export default function OrderCompletePage() {
+
+  const [countdown, setCountdown] = useState(5);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+
+    if (countdown <= 0) {
+      navigate("/");
+      return;
+    }
+
+    const timer = setTimeout(() => {
+      setCountdown((prev) => prev - 1)
+    }, 1000);
+
+    return () => clearTimeout(timer);
+
+
+  }, [countdown, navigate]);
+
+
+
+
   return (
-    <div className="order-complete-page">
+    <>
       <Header />
-      <main className="order-complete-page__content">
-        <div
-          className="kiosk-step-indicator order-complete-page__steps"
-          aria-label="주문 4단계 중 완료"
-        >
-          <span className="is-done" />
-          <span className="is-done" />
-          <span className="is-done" />
-          <span className="is-current" />
-        </div>
+      <div
+        className="kiosk-step-indicator"
+        aria-label="주문 4단계 중 완료"
+      >
+        <span className="is-done" />
+        <span className="is-done" />
+        <span className="is-done" />
+        <span className="is-current" />
+      </div>
+
+      <main className="page_content_emptyArea order_complete_contents">
 
         <h1>주문이 완료되었습니다!</h1>
 
         <p className="order-complete-page__label">주문번호</p>
-        <p className="order-complete-page__order-no">{orderNumber ?? "—"}</p>
+        <p className="order-complete-page__order-no">1225</p>
 
         <div className="order-complete-page__ticket" aria-hidden="true">
           <i className="order-complete-page__rail" />
@@ -54,20 +78,16 @@ export default function OrderCompletePage({
           영수증이 필요하신 경우 하단 출력 버튼을 눌러주세요
         </p>
         <p className="order-complete-page__return">
-          <em>5</em> 초 후 초기화면으로 돌아갑니다
+          <span>{countdown}</span> 초 후 초기화면으로 돌아갑니다
         </p>
       </main>
 
-      <footer className="order-complete-page__footer">
-        <button type="button" disabled>
-          주문 번호만 출력
-        </button>
-        <button type="button" disabled className="is-primary">
-          영수증 출력
-        </button>
-      </footer>
 
-      <KioskToast message={toastMessage} tone={toastTone} />
-    </div>
+      {/* 결제하기 하단  */}
+      <Footer
+        leftText="주문 번호만 출력"
+        rightText="영수증 출력" />
+
+    </>
   );
 }
