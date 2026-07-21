@@ -1,0 +1,7 @@
+.footer_design {
+    height: var(--asak-bottom-cta-h);
+    padding: 40px 48px;
+    border-top: 1px solid var(--asak-divider);
+    background: var(--asak-surface);
+    text-align: center;
+}

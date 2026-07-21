@@ -4,6 +4,7 @@
 @import "./kiosk/menu-detail.css";
 @import "./kiosk/cart.css";
 @import "./kiosk/payment.css";
+@import "./kiosk/paymentProcessing.css";
 @import "./kiosk/complete.css";
 @import "./kiosk/accessibility.css";
 @import "./kiosk/feedback.css";
@@ -53,6 +54,7 @@
   align-items: center;
   gap: 32px;
 }
+
 
 /* 페이지별 footer */
 
