@@ -2,18 +2,19 @@
 
 import Header from '@/components/common/Header'
 import { formatCurrency } from '@/utils/currency';
-import React from 'react'
+import React, { useState } from 'react'
 import paymentIllustration from '@/assets/figma/payment-processing-illustration.png'
 import { useNavigate } from 'react-router-dom';
 import { useCartStore } from '@/store/cartStore';
 import { calculateCartTotal } from '@/utils/priceCalculation';
 import Modal from '@/components/common/Modal';
+import { PAYMENT_MODAL_CONFIG } from '@/utils/paymentModalConfig';
 
 export default function PaymentProcessingPage() {
 
     //결제 실패 & 성공 분기처리 (팝업 모달의 유무를 위한 변수)
-    //true = 성공, false = 실패
-    const isSuccess = true;
+    const [modalType, setModalType] = useState("PROCESSING");
+    const [testResult, setTestResult] = useState(true);
 
     // 페이지 이동
     const navigate = useNavigate();
@@ -28,12 +29,37 @@ export default function PaymentProcessingPage() {
     );
     const totalPrice = calculateCartTotal(items);
 
+    //모달
+    const currentModal = PAYMENT_MODAL_CONFIG[modalType];
+
+    const startPaymentTest = (result) => {
+        setTestResult(result);
+
+        // 결제중 모달
+        setModalType("PROCESSING");
+
+        setTimeout(() => {
+            if (result) {
+                setModalType("SUCCESS");
+            } else {
+                setModalType("FAILED");
+            }
+        }, 3000);
+    };
 
 
     return (
 
         <>
-            <Modal></Modal>
+            <Modal
+                icon={currentModal.icon}
+                modal_title={currentModal.title}
+                modal_content={currentModal.content}
+                leftText={currentModal.leftText}
+                rightText={currentModal.rightText}
+                onLeftClick={handleLeftClick}
+                onRightClick={handleRightClick}
+            />
             <Header></Header>
             {/* 스텝퍼 */}
             <div className="kiosk-step-indicator" aria-label="주문 4단계 중 결제">
