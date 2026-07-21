@@ -1,7 +1,39 @@
-.footer_design {
+.paymentProcess_footer {
+    flex-shrink: 0;
     height: var(--asak-bottom-cta-h);
-    padding: 40px 48px;
-    border-top: 1px solid var(--asak-divider);
+    padding: 28px var(--asak-page-pad-x) 36px;
+    display: flex;
+    align-items: stretch;
     background: var(--asak-surface);
-    text-align: center;
+    border-top: 1px solid var(--asak-divider);
+    box-sizing: border-box;
+}
+
+.paymentProcess_footer button {
+    width: 100%;
+    border: 2px solid var(--asak-border-strong);
+    background: transparent;
+    border-radius: var(--asak-radius-lg);
+    color: var(--asak-text-strong);
+    font-size: var(--asak-fs-cta);
+    line-height: var(--asak-lh-cta);
+    font-weight: var(--asak-fw-bold);
+    letter-spacing: -0.02em;
+}
+
+.paymentProcess_footer button.is-loading {
+    background: var(--asak-cta-loading-bg);
+    color: var(--asak-text-strong);
+    cursor: wait;
+}
+
+.paymentProcess_footer button:disabled {
+    background: var(--asak-disabled-fill);
+    color: var(--asak-disabled-text);
+    cursor: not-allowed;
+}
+
+.paymentProcess_footer button:not(:disabled):active {
+    background: var(--asak-lime-strong);
+    border-color: var(--asak-lime);
 }

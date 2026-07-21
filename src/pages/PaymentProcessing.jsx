@@ -1,16 +1,31 @@
 // 결제 진행하는 페이지
 
 import Header from '@/components/common/Header'
-import { useOrderStore } from '@/store/orderStore'
 import { formatCurrency } from '@/utils/currency';
 import React from 'react'
+import paymentIllustration from '@/assets/figma/payment-processing-illustration.png'
+import { useNavigate } from 'react-router-dom';
+import { useCartStore } from '@/store/cartStore';
+import { calculateCartTotal } from '@/utils/priceCalculation';
 
 export default function PaymentProcessing() {
 
-    //결제 실패 & 성공 분기처리 (추후 필요시 추가 예정)
-    // const [paymentStatus, setPaymentStatus] = useState("processing");
+    //결제 실패 & 성공 분기처리 (팝업 모달의 유무를 위한 변수)
+    //true = 성공, false = 실패
+    const isSuccess = true;
 
-    const totalPrice = useOrderStore((state) => state.order.totalPrice);
+    // 페이지 이동
+    const navigate = useNavigate();
+    const handlerCancellBack = () => {
+        navigate(-1)
+    }
+
+    // 결제금액 불러오기(화면에 보여지기용으로만, 현재)
+
+    const items = useCartStore(
+        (state) => state.items
+    );
+    const totalPrice = calculateCartTotal(items);
 
 
 
@@ -25,7 +40,7 @@ export default function PaymentProcessing() {
                 <span className="is-done" />
                 <span />
             </div>
-            <main className='page_content'>
+            <main className='page_content_emptyArea'>
 
                 <section className="payment-page__hero">
                     <span>총 결제금액</span>
@@ -34,12 +49,15 @@ export default function PaymentProcessing() {
                         카드를 투입구에 끝까지 넣어주세요
                     </p>
                 </section>
-
+                <div className='payment_page__insert_card'>
+                    <img src={paymentIllustration} alt="카드결제아이콘" />
+                </div>
 
 
             </main>
-            <div className='footer_design'>
-                <button>취소</button>
+
+            <div className='paymentProcess_footer'>
+                <button onClick={handlerCancellBack}>취소</button>
             </div>
         </>
     )
