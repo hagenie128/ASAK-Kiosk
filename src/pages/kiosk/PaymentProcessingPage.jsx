@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { useCartStore } from '@/store/cartStore';
 import { calculateCartTotal } from '@/utils/priceCalculation';
 
-export default function PaymentProcessing() {
+export default function PaymentProcessingPage() {
 
     //결제 실패 & 성공 분기처리 (팝업 모달의 유무를 위한 변수)
     //true = 성공, false = 실패

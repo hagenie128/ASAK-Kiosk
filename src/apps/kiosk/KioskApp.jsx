@@ -13,7 +13,7 @@ import AccessibilityPage from "@/pages/kiosk/AccessibilityPage.jsx";
 import PaymentErrorPage from "@/pages/kiosk/PaymentErrorPage.jsx";
 import TimeoutPage from "@/pages/kiosk/TimeoutPage.jsx";
 import ReceiptPage from "@/pages/kiosk/ReceiptPage.jsx";
-import PaymentProcessingPage from "@/pages/PaymentProcessing.jsx";
+import PaymentProcessingPage from "@/pages/kiosk/PaymentProcessingPage.jsx";
 
 export default function KioskApp() {
   return (
