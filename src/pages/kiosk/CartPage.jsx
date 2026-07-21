@@ -86,8 +86,9 @@ export default function CartPage() {
     <div className="cart-page">
       <Header />
 
-      <div className="kiosk-step-indicator" aria-label="주문 3단계 중 장바구니">
-        <span className="is-current" />
+      <div className="kiosk-step-indicator" aria-label="주문 4단계 중 장바구니">
+        <span className="is-done" />
+        <span />
         <span />
         <span />
       </div>

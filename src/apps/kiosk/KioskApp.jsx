@@ -13,6 +13,7 @@ import AccessibilityPage from "@/pages/kiosk/AccessibilityPage.jsx";
 import PaymentErrorPage from "@/pages/kiosk/PaymentErrorPage.jsx";
 import TimeoutPage from "@/pages/kiosk/TimeoutPage.jsx";
 import ReceiptPage from "@/pages/kiosk/ReceiptPage.jsx";
+import PaymentProcessingPage from "@/pages/PaymentProcessing.jsx";
 
 export default function KioskApp() {
   return (
@@ -23,6 +24,7 @@ export default function KioskApp() {
         <Route path="/menu/:menuId" element={<MenuDetailPage />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="/payment" element={<PaymentPage />} />
+        <Route path="/paymentProcessing" element={<PaymentProcessingPage />} />
         <Route path="/complete" element={<OrderCompletePage />} />
         <Route path="/accessibility" element={<AccessibilityPage />} />
         <Route path="/payment-error" element={<PaymentErrorPage />} />

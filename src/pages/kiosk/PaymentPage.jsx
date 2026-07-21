@@ -48,7 +48,7 @@ export default function PaymentPage() {
     navigate("/cart");
   }
   const handleGoPayConfirm = () => {
-    navigate("/complete");
+    navigate("/paymentProcessing");
   }
 
   //결제 수단 클릭시 -> 해당 타입 console로 띄우기 (추후 백단으로 해당 타입 전달해주면 됨)
@@ -75,10 +75,11 @@ export default function PaymentPage() {
     <div>
       <Header />
       {/* 스텝퍼 */}
-      <div className="kiosk-step-indicator" aria-label="주문 3단계 중 결제">
-        <span className="is-current" />
+      <div className="kiosk-step-indicator" aria-label="주문 4단계 중 결제">
         <span className="is-current" />
         <span className="is-done" />
+        <span />
+        <span />
       </div>
       <main className="payment-page__content">
         <section className="payment-page__hero">
