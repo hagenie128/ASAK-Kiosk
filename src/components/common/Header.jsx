@@ -4,7 +4,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import backIcon from "../../assets/figma/icon-kiosk-back.svg";
 import homeIcon from "../../assets/figma/icon-kiosk-home.svg";
-import headerLogo from "../../assets/figma/kiosk-header-logo.svg";
+import headerLogo from "../../assets/svg/logo-L.svg";
 
 export default function Header() {
     const navigate = useNavigate();

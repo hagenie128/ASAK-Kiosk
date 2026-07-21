@@ -26,11 +26,11 @@
 | 화면 | import | 상태 |
 | --- | --- | --- |
 | Home | `assets/svg/logo-F-dark.svg` | **적용됨** (어두운 홈 배경) |
-| Header | `assets/svg/logo-L.svg` | **적용됨** |
+| Header | `assets/svg/logo-L.svg` (`common/Header.jsx`) | **적용됨** (2026-07-21 머지 롤백 복구) |
 | Order Complete | `assets/svg/logo-S.svg` | **적용됨** |
 
 - 런타임 Figma URL·외부 CDN은 쓰지 않는다. SVG는 저장소에 커밋된 로컬 파일만 쓴다.
-- `assets/figma/asak-logo-home-light.png`, `kiosk-header-logo.svg`, `asak-s-logo.svg`는 **레거시**. 화면이 SVG를 쓰는 동안 삭제하지 말 것(다른 문서·스크린샷 참조용).
+- 레거시 `asak-logo-home-light.png`, `kiosk-header-logo.svg`, `asak-s-logo.svg`는 화면 SVG 전환 후 **삭제함** (2026-07-21).
 
 ## 완료·접근성 화면 검증 — 2026-07-19
 
@@ -50,11 +50,10 @@
 ## 홈 로고 — 2026-07-18
 
 - 프로젝트 담당자가 제공한 원본: `C:\Users\하지니\Downloads\image 2.png`.
-- 최종 로컬 에셋: `src/assets/figma/asak-logo-home-light.png`.
-- 사용처: `src/pages/kiosk/HomePage.jsx` (`SCR-001`).
-- 규칙: 라임 그린 부분은 그대로 두고, 원래 어두운 워드마크·부제·내부 아이콘 부분은 어두운 홈 배경에 맞게 흰색으로 처리한다.
-- 배경: 원본 알파(투명) 채널을 유지했다. 이 에셋은 Figma MCP URL이 아니며 런타임 외부 의존성이 없다.
-- 거부한 임시 결과물: 생성된 버전 중 하나에 진짜 투명이 아닌 체커보드가 보였다. 두 프로젝트 모두에서 제거했으며 참조하지 않는다.
+- **현재** 사용 에셋: `src/assets/svg/logo-F-dark.svg` (`HomePage.jsx` / SCR-001).
+- (과거) `asak-logo-home-light.png` — SVG 전환 후 삭제.
+- 규칙: 라임 그린은 유지, 어두운 워드마크·부제·내부 아이콘은 어두운 홈 배경에 맞게 흰색.
+- 거부한 임시 결과물: 체커보드가 보인 생성본은 제거했으며 참조하지 않는다.
 
 ## 구현 메모
 
@@ -63,10 +62,11 @@
 ## 공통 키오스크 헤더 — 2026-07-18
 
 - Figma 원본: `ASAK — Design System Product UI 0718` 노드 `134:7792` (`SCR-003 / Menu List / Default`).
-- 로컬 에셋: `src/assets/figma/kiosk-header-logo.svg`, `icon-kiosk-back.svg`, `icon-kiosk-home.svg`.
-- 사용처: `src/components/kiosk/Header.jsx`. 메뉴 목록·상세·장바구니·결제 화면이 같은 60px 컨트롤과 200×68 로고를 재사용한다.
-- 유지한 동작: 기존 뒤로가기·홈 라우팅은 바꾸지 않았고, 텍스트 글리프 표현만 로컬 SVG 에셋으로 교체했다.
-- 외부 의존성: 런타임 없음. 임시 Figma MCP URL은 저장소 에셋으로 내려받았으며 앱에서 참조하지 않는다.
+- 로컬 에셋: `src/assets/svg/logo-L.svg`, `icon-kiosk-back.svg`, `icon-kiosk-home.svg`.
+- 사용처: `src/components/common/Header.jsx`. 메뉴 목록·상세·장바구니·결제 등 공통 헤더.
+- (과거) `kiosk/Header.jsx` + `kiosk-header-logo.svg` — common 이동·SVG 전환 후 삭제.
+- 유지한 동작: 뒤로가기·홈 라우팅 유지, 워드마크만 `logo-L.svg`.
+- 외부 의존성: 런타임 없음.
 
 ## 결제 정적 UI — 2026-07-18
 
