@@ -13,7 +13,7 @@ export const PAYMENT_MODAL_CONFIG = {
         icon: loadingIcon,
         title: "결제 진행중",
         content: "결제를 진행하고 있습니다.",
-        leftText: null,
+        leftText: "취소",
         rightText: null,
     },
     // 2. 결제 성공

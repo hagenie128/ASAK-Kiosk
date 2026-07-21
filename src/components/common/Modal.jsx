@@ -14,8 +14,24 @@ export default function Modal({ icon, modal_title, modal_content, leftText, righ
           <p>{modal_content}</p>
         </div>
         <div className="shared-modal__actions">
-          <button type="button" onClick={onLeftClick}>{leftText}</button>
-          <button type="button" onClick={onRightClick} className="is-primary">{rightText}</button>
+          {leftText && (
+            <button
+              type="button"
+              onClick={onLeftClick}
+            >
+              {leftText}
+            </button>
+          )}
+
+          {rightText && (
+            <button
+              type="button"
+              onClick={onRightClick}
+              className="is-primary"
+            >
+              {rightText}
+            </button>
+          )}
         </div>
       </div>
     </div>

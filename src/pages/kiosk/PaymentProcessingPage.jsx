@@ -2,7 +2,7 @@
 
 import Header from '@/components/common/Header'
 import { formatCurrency } from '@/utils/currency';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import paymentIllustration from '@/assets/figma/payment-processing-illustration.png'
 import { useNavigate } from 'react-router-dom';
 import { useCartStore } from '@/store/cartStore';
@@ -14,6 +14,7 @@ export default function PaymentProcessingPage() {
 
     //결제 실패 & 성공 분기처리 (팝업 모달의 유무를 위한 변수)
     const [modalType, setModalType] = useState("PROCESSING");
+    // useState(false) -> 결제 실패  useState(true) -> 결제 성공
     const [testResult, setTestResult] = useState(true);
 
     // 페이지 이동
@@ -23,7 +24,6 @@ export default function PaymentProcessingPage() {
     }
 
     // 결제금액 불러오기(화면에 보여지기용으로만, 현재)
-
     const items = useCartStore(
         (state) => state.items
     );
@@ -31,6 +31,7 @@ export default function PaymentProcessingPage() {
 
     //모달
     const currentModal = PAYMENT_MODAL_CONFIG[modalType];
+    if (!currentModal) return null;
 
     const startPaymentTest = (result) => {
         setTestResult(result);
@@ -41,10 +42,35 @@ export default function PaymentProcessingPage() {
         setTimeout(() => {
             if (result) {
                 setModalType("SUCCESS");
+                setTimeout(() => {
+                    navigate("/complete");
+                }, 2000);
             } else {
                 setModalType("FAILED");
             }
         }, 3000);
+    };
+
+    //랜더링 했을때 1번만 실행을 위해
+    useEffect(() => {
+        startPaymentTest(testResult);
+    }, []);
+
+
+    // 팝업 왼쪽 버튼 클릭시
+    const handleLeftClick = () => {
+        navigate(-1);
+    };
+
+    // 팝업 오른쪽 버튼 클릭시
+    const handleRightClick = () => {
+        if (modalType === "FAILED") {
+            startPaymentTest(testResult);
+        }
+
+        if (modalType === "SUCCESS") {
+            navigate("/complete");
+        }
     };
 
 
