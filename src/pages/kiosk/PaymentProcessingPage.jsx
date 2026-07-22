@@ -76,7 +76,7 @@ export default function PaymentProcessingPage() {
 
     return (
 
-        <>
+        <div className='paymentProcessing_page'>
             <Modal
                 icon={currentModal.icon}
                 modal_title={currentModal.title}
@@ -113,6 +113,6 @@ export default function PaymentProcessingPage() {
             <div className='paymentProcess_footer'>
                 <button onClick={handlerCancellBack}>취소</button>
             </div>
-        </>
+        </div>
     )
 }

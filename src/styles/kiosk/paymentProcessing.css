@@ -1,3 +1,11 @@
+.paymentProcessing_page {
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+
+
 .paymentProcess_footer {
     flex-shrink: 0;
     height: var(--asak-bottom-cta-h);

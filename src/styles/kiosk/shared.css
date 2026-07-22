@@ -7,6 +7,7 @@
   background: #fffbeb;
   box-sizing: border-box;
 }
+
 .allergen-accordion__header {
   width: 100%;
   display: flex;
@@ -19,6 +20,7 @@
   text-align: left;
   cursor: pointer;
 }
+
 .allergen-accordion__icon {
   width: 20px;
   height: 20px;
@@ -26,6 +28,7 @@
   background: #fbbf24;
   flex: 0 0 auto;
 }
+
 .allergen-accordion__title {
   flex: 1 1 auto;
   font-size: 14px;
@@ -33,12 +36,14 @@
   font-weight: 600;
   color: #292d30;
 }
+
 .allergen-accordion__count {
   font-size: 12px;
   line-height: 16px;
   font-weight: 700;
   color: #ef4444;
 }
+
 .allergen-accordion__chevron {
   width: 16px;
   height: 16px;
@@ -47,22 +52,26 @@
   transform: rotate(45deg);
   margin-top: -4px;
 }
+
 .allergen-accordion.is-open .allergen-accordion__chevron {
   transform: rotate(-135deg);
   margin-top: 4px;
 }
+
 .allergen-accordion__body {
   margin-top: 12px;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
+
 .allergen-accordion__body p {
   margin: 0;
   font-size: 14px;
   line-height: 20px;
   color: #888;
 }
+
 .allergen-accordion__tags {
   margin: 0;
   padding: 0;
@@ -71,6 +80,7 @@
   flex-wrap: wrap;
   gap: 6px;
 }
+
 .allergen-accordion__tags li {
   padding: 4px 8px;
   border-radius: 4px;
@@ -99,6 +109,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   transform: translateX(-50%);
 }
+
 .kiosk-toast__mark {
   width: 10px;
   height: 10px;
@@ -106,12 +117,15 @@
   background: var(--asak-warning);
   flex: 0 0 auto;
 }
+
 .kiosk-toast--success .kiosk-toast__mark {
   background: var(--asak-success);
 }
+
 .kiosk-toast--error .kiosk-toast__mark {
   background: var(--asak-danger);
 }
+
 .kiosk-toast p {
   margin: 0;
   font-size: var(--asak-fs-caption);
@@ -119,12 +133,14 @@
   font-weight: 600;
   color: var(--asak-text-strong);
 }
+
 .kiosk-confirm-overlay {
   position: absolute;
   inset: 0;
   z-index: 9;
   background: var(--asak-overlay-scrim);
 }
+
 .kiosk-confirm {
   position: absolute;
   left: 50%;
@@ -142,16 +158,19 @@
   transform: translate(-50%, -50%);
   box-sizing: border-box;
 }
+
 .kiosk-confirm__icon {
   width: 48px;
   height: 48px;
   border-radius: 16px;
   background: #e5e7eb;
 }
+
 .kiosk-confirm__text {
   width: 100%;
   text-align: center;
 }
+
 .kiosk-confirm__text h2 {
   margin: 0;
   font-size: 18px;
@@ -159,18 +178,21 @@
   font-weight: 700;
   color: #111827;
 }
+
 .kiosk-confirm__text p {
   margin: 8px 0 0;
   font-size: 14px;
   line-height: 20px;
   color: #737373;
 }
+
 .kiosk-confirm__actions {
   display: flex;
   justify-content: center;
   gap: 12px;
   width: 100%;
 }
+
 .kiosk-confirm__actions button {
   min-height: 48px;
   padding: 14px 28px;
@@ -182,10 +204,12 @@
   font-size: 18px;
   font-weight: 700;
 }
+
 .kiosk-confirm__actions .is-danger {
   background: #ef4444;
   color: #fff;
 }
+
 .kiosk-confirm__actions .is-warning {
   background: #fbbf24;
   color: #111827;
@@ -193,7 +217,11 @@
 
 /* Figma Shared Modal / Empty / Error / Loading — 로직 연결 전 공통 상태 UI */
 .shared-modal-layer {
-  position: fixed;
+  width: 1080px;
+  height: 1920px;
+  position: absolute;
+  left: 0;
+  top: 0;
   inset: 0;
   z-index: 30;
   display: grid;
@@ -201,6 +229,7 @@
   padding: 24px;
   background: var(--asak-overlay-scrim);
 }
+
 .shared-modal {
   width: min(480px, 100%);
   padding: 28px;
@@ -212,6 +241,7 @@
   background: var(--asak-surface);
   text-align: center;
 }
+
 .shared-modal__icon,
 .empty-state-panel__icon,
 .error-state-panel__icon {
@@ -220,25 +250,37 @@
   border-radius: 50%;
   background: var(--asak-surface-muted);
 }
+
 .shared-modal__icon--paymentError,
 .error-state-panel__icon {
   background: var(--asak-danger-soft);
 }
+
 .shared-modal__icon--timeout {
   background: var(--asak-surface-allergy);
 }
+
 .shared-modal__content h2,
 .shared-modal__content p {
   margin: 0;
 }
-.shared-modal__content h2 { color: var(--asak-text-strong); }
-.shared-modal__content p { margin-top: 8px; color: var(--asak-text-secondary); }
+
+.shared-modal__content h2 {
+  color: var(--asak-text-strong);
+}
+
+.shared-modal__content p {
+  margin-top: 8px;
+  color: var(--asak-text-secondary);
+}
+
 .shared-modal__actions,
 .error-state-panel__actions {
   display: flex;
   justify-content: center;
   gap: 8px;
 }
+
 .shared-modal__actions button,
 .error-state-panel__secondary {
   min-height: 44px;
@@ -249,8 +291,15 @@
   color: var(--asak-text-strong);
   font: inherit;
 }
-.shared-modal__actions .is-primary { background: var(--asak-lime); }
-.empty-state-panel__icon { background: var(--asak-surface-muted); }
+
+.shared-modal__actions .is-primary {
+  background: var(--asak-lime);
+}
+
+.empty-state-panel__icon {
+  background: var(--asak-surface-muted);
+}
+
 .loading-state-panel__spinner {
   width: 36px;
   height: 36px;
@@ -259,12 +308,18 @@
   border-radius: 50%;
   animation: asak-spin 0.8s linear infinite;
 }
+
 .loading-state-panel--button {
   flex-direction: row;
   padding: 0;
   background: transparent;
 }
-@keyframes asak-spin { to { transform: rotate(360deg); } }
+
+@keyframes asak-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 .menu-detail-page,
 .cart-page,
