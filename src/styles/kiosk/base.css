@@ -1,19 +1,34 @@
 /* ASAK Kiosk — 기존 화면에 Figma 방향 CSS 적용 */
 
-/* ----------------------- 캔버스 ----------------------- */
+
+/* ----------------------- 캔버스 _스케일 반영 ----------------------- */
 html,
-body {
+body,
+#root {
+  width: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
+  overflow: hidden;
+  background: var(--asak-bg-canvas);
+}
+
+.kiosk-screen {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
   background: var(--asak-bg-canvas);
 }
 
 .kiosk-viewport {
   width: var(--asak-kiosk-w);
   height: var(--asak-kiosk-h);
-  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
   overflow: hidden;
-  position: relative;
+  transform: translate(-50%, -50%) scale(var(--kiosk-scale, 1));
+  transform-origin: center;
   background: var(--asak-bg-kiosk);
   font-family: var(--asak-font);
   color: var(--asak-text);
@@ -56,4 +71,3 @@ body {
   display: block;
   object-fit: contain;
 }
-
