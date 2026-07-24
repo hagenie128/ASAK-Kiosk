@@ -14,3 +14,9 @@ __pycache__/
 docs/screenshots/qa-*
 docs/screenshots/_figma-*
 
+# Added by code-review-graph
+.code-review-graph/
+
+# Local AI agent MCP settings (machine-specific paths)
+.mcp.json
+.cursor/mcp.json
