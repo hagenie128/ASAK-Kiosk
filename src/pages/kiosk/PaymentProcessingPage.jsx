@@ -27,7 +27,7 @@ export default function PaymentProcessingPage() {
     const items = useCartStore(
         (state) => state.items
     );
-    const totalPrice = calculateCartTotal(items);
+    const totalAmount = calculateCartTotal(items);
 
     //모달
     const currentModal = PAYMENT_MODAL_CONFIG[modalType];
@@ -98,7 +98,7 @@ export default function PaymentProcessingPage() {
 
                 <section className="payment-page__hero">
                     <span>총 결제금액</span>
-                    <strong>{formatCurrency(totalPrice)}</strong>
+                    <strong>{formatCurrency(totalAmount)}</strong>
                     <p>
                         카드를 투입구에 끝까지 넣어주세요
                     </p>

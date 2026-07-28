@@ -4,8 +4,7 @@
  * cart item: menuId, menuName, unitPrice, quantity,
  *            optionItems[{ optionItemId, name, extraPrice, quantity }],
  *            excludedIngredientIds[], cartItemId?
- * order: orderId, orderNo, orderType, totalPrice, orderStatus, paymentStatus
- * complete sample: orderNo, totalPrice, waitingCount, orderType
- * 정본: totalAmount, waitingOrderCount — adapter에서 매핑
+ * order: orderId, orderNo, orderType, totalAmount, orderStatus, paymentStatus
+ * complete sample: orderNo, totalAmount, waitingOrderCount, orderType
  * 표: public/mocks/README.md §3~4
  */

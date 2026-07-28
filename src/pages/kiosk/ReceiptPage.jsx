@@ -1,17 +1,17 @@
 // SCR-023 / Receipt — Future Scope (프린터 실연동 제외 가능)
 // UI 뼈대만. 완료 화면 CTA에서 넘길 props 자리.
 //
-// Props: orderNumber, lines[{ name, quantity, price }], totalPrice, status
+// Props: orderNo, lines[{ name, quantity, price }], totalAmount, status
 //   status: preview | printing | error | success
 // 데이터 출처 후보: orderSession.order + cart 스냅샷 (결제 직전)
-// 표: public/mocks/README.md §3 (orderNo/totalPrice)
+// 표: public/mocks/README.md §3 (orderNo/totalAmount)
 import Header from "@/components/common/Header";
 import { formatCurrency } from "@/utils/currency";
 
 export default function ReceiptPage({
-  orderNumber = null,
+  orderNo = null,
   lines = [],
-  totalPrice = 0,
+  totalAmount = 0,
   status = "preview",
 } = {}) {
   const statusLabel =
@@ -37,7 +37,7 @@ export default function ReceiptPage({
         <article className={`receipt-ticket${status === "printing" ? " is-printing" : ""}`}>
           <i className="receipt-ticket__hang" aria-hidden="true" />
           <span>주문번호</span>
-          <strong>{orderNumber ?? "—"}</strong>
+          <strong>{orderNo ?? "—"}</strong>
           <hr />
           <ul>
             {lines.length === 0 ? (
@@ -57,7 +57,7 @@ export default function ReceiptPage({
           <hr />
           <p className="receipt-ticket__total">
             <span>합계</span>
-            <b>{formatCurrency(totalPrice)}</b>
+            <b>{formatCurrency(totalAmount)}</b>
           </p>
           <div className="receipt-ticket__barcode" aria-hidden="true">
             {Array.from({ length: 24 }, (_, i) => (

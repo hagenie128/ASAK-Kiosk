@@ -64,7 +64,7 @@ export default function PaymentPage() {
   const [isSummaryOpen, setIsSummaryOpen] = useState(false);
 
   const items = useCartStore((state) => state.items);
-  const totalPrice = calculateCartTotal(items);
+  const totalAmount = calculateCartTotal(items);
   const itemCount = getCartTotalQuantity(items);
 
   const processing = false;
@@ -84,7 +84,7 @@ export default function PaymentPage() {
       <main className="payment-page__content">
         <section className="payment-page__hero">
           <span>총 결제금액</span>
-          <strong>{formatCurrency(totalPrice)}</strong>
+          <strong>{formatCurrency(totalAmount)}</strong>
           <p>
             결제 수단을 선택해주세요
           </p>
@@ -125,7 +125,7 @@ export default function PaymentPage() {
           >
             <strong>주문정보 확인</strong>
             <span className="payment-page__summary-meta">
-              {itemCount}개 메뉴 / 총 {formatCurrency(totalPrice)}
+              {itemCount}개 메뉴 / 총 {formatCurrency(totalAmount)}
               <i
                 className={`payment-page__summary-chevron ${isSummaryOpen ? "is-expanded" : ""}`}
                 aria-hidden="true"

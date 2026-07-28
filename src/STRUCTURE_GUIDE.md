@@ -71,7 +71,7 @@ main.jsx
 4. Canonical API 경로(문서): `GET /api/kiosk/menuList`, `GET /api/kiosk/menuDetail/{menuId}`, `POST /api/kiosk/orders`, `POST /api/kiosk/payments`  
    → 코드 상수는 아직 legacy. `DECIDED_PENDING_CODE_CHANGE`.
 5. 응답 정본 필드: `totalAmount`, `approvedAmount`, `approvedAt`, `waitingOrderCount`  
-   → store는 당분간 `totalPrice` 등 유지, adapter에서 매핑 (WBS2-057).
+   → store는 당분간 `totalAmount` 등 유지, adapter에서 매핑 (WBS2-057).
 
 ## 화면 하나를 만드는 쉬운 순서
 

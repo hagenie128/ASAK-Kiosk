@@ -106,7 +106,7 @@ export default function MenuDetailPage() {
   });
 
   //옵션 추가 시 예상 가격 변동 확인 메서드
-  const expectedPrice = priceCalculation({
+  const expectedAmount = priceCalculation({
     unitPrice: menuDetail.price,
     optionItems: selectedOptionItems,
     quantity,
@@ -147,7 +147,7 @@ export default function MenuDetailPage() {
         menu={{
           ...menuDetail,
           isSoldOut,
-          price: expectedPrice,
+          price: expectedAmount,
         }}
         quantity={quantity}
         limitReason={toastMessage}
@@ -172,7 +172,7 @@ export default function MenuDetailPage() {
 
       <MenuDetailFooter
         disabled={!isRequiredSatisfied || isSoldOut}
-        totalPrice={expectedPrice}
+        totalAmount={expectedAmount}
         onConfirm={handleConfirm}
       />
     </div>

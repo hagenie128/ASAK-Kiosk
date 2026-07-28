@@ -5,9 +5,9 @@
 | 주문유형 선택 | `HomePage` | `orderType` | MVP |
 | 카테고리·메뉴 조회 | `MenuListPage` | category, menu card, 품절 뱃지 | MVP |
 | 메뉴 옵션·재료 제외 | `MenuDetailPage` | ingredients, allergens, option groups, 추천·품절 상태 | MVP |
-| 장바구니 수량·삭제 | `CartPage` | cart items, options, exclusions, totalPrice | MVP |
-| 가상 결제·실패 안내 | `PaymentPage` | orderId, paymentMethod, amount, error code | MVP |
-| 주문번호·영수증 | `OrderCompletePage` | orderNo, paidAt, paymentStatus | MVP/확장 |
+| 장바구니 수량·삭제 | `CartPage` | cart items, options, exclusions, totalAmount | MVP |
+| 가상 결제·실패 안내 | `PaymentPage` | orderId, paymentMethodCode, approvedAmount, error code | MVP |
+| 주문번호·영수증 | `OrderCompletePage` | orderNo, approvedAt, paymentStatus | MVP/확장 |
 | 관리자 주문·상태 변경 | `OrderListPage`, `OrderDetailPage` | order list, item/options/exclusions, orderStatus | MVP 이후 |
 | 판매 항목 품절 | `SoldOutManagePage` | target type/id, isSoldOut, reason | 옵션 |
 | 메뉴·결제수단·매출 | 관리자 관리 화면 | menu form, payment methods, daily sales | 확장 |

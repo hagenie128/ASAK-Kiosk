@@ -23,7 +23,7 @@ export default function MenuListPage() {
 
   const items = useCartStore((state) => state.items);
   const itemCount = getCartTotalQuantity(items);
-  const totalPrice = calculateCartTotal(items);
+  const totalAmount = calculateCartTotal(items);
 
   const menus = kioskMock.menusByCategory[String(selectedCategoryId)]?.data ?? [];
 
@@ -72,7 +72,7 @@ export default function MenuListPage() {
 
       <MenuListFooter
         itemCount={itemCount}
-        totalPrice={totalPrice}
+        totalAmount={totalAmount}
         onCheckout={handleCheckout}
       />
     </div>
