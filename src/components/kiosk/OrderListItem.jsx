@@ -21,7 +21,7 @@ export default function OrderListItem({
     optionItems = [],
   } = item;
 
-  const itemTotalPrice = priceCalculation({
+  const lineAmount = priceCalculation({
     unitPrice,
     optionItems,
     quantity,
@@ -72,7 +72,7 @@ export default function OrderListItem({
         className="order-list-item__price"
         aria-live="polite"
       >
-        {formatCurrency(itemTotalPrice)}
+        {formatCurrency(lineAmount)}
       </strong>
 
       <button

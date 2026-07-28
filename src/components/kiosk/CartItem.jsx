@@ -22,8 +22,8 @@ function PlusIcon() {
 export default function CartItem({ item, onDecrease, onIncrease, onDelete }) {
   if (!item) return null;
 
-  const lineTotal =
-    item.lineTotal ??
+  const lineAmount =
+    item.lineAmount ??
     priceCalculation({
       unitPrice: item.unitPrice,
       optionItems: item.optionItems,
@@ -87,7 +87,7 @@ export default function CartItem({ item, onDecrease, onIncrease, onDelete }) {
         <div className="cart-item__total">
           <span className="cart-item__total-label">상품별 합계</span>
           <div className="cart-item__total-values">
-            <b>{formatCurrency(lineTotal)}</b>
+            <b>{formatCurrency(lineAmount)}</b>
             <i aria-hidden="true" />
             <span>{kcal}kcal</span>
           </div>

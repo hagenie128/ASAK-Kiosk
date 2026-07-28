@@ -2,13 +2,13 @@
 // UI OK · 남은 연결: 결제 성공 응답 → 주문번호/금액/대기 · 홈 타이머 · cart reset
 //
 // mock: paymentScenarios.approve.data 또는 orderCompleteSamples[]
-//   orderNo → props orderNumber
-//   amount | totalPrice → 금액 (정본명 totalAmount)
-//   waitingCount → waitingOrderCount
-// store: order.orderNo, payment.amount, paymentStatus=APPROVED 후 clearItems
+//   orderNo → props orderNo
+//   amount | totalAmount → 금액 (정본명 totalAmount)
+//   waitingOrderCount → waitingOrderCount
+// store: order.orderNo, payment.approvedAmount, paymentStatus=APPROVED 후 clearItems
 // 표: public/mocks/README.md §3
 //
-// Props: orderNumber, toastMessage?, toastTone?
+// Props: orderNo, toastMessage?, toastTone?
 // 추가 후보: totalAmount, waitingOrderCount, returnInSec
 // 금지: 주문번호 하드코딩
 

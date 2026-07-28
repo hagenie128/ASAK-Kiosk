@@ -22,8 +22,8 @@
 | `API-002` `GET /api/menus?categoryId` | `menuId`, `categoryId`, `name`, `price`, `imageUrl`, `baseKcal`, `isSoldOut`, `hasSoldOutIngredient`, `soldOutBadges` | `api/menu.js`, `MenuCard.jsx`, `MenuListPage.jsx` | `FWD-MENU-006`, 품절 표시 |
 | `API-003` `GET /api/menus/{menuId}` | 메뉴 기본정보 + `description`, `ingredients[{ingredientId,name,canRemove,isSoldOut}]`, `allergens`, `allergyText`, `isOrderable`, `soldOutReason` | `MenuDetailPage.jsx`, `types/menu.js` | 재료 제외·알레르기·품절 |
 | `API-004` `GET /api/menus/{menuId}/options` | `optionGroupId`, `name`, `selectType`, `minSelect`, `maxSelect`, `isRequired`, `items[{optionItemId,ingredientId,name,extraPrice,extraKcal,isSoldOut,isRecommended}]` | `OptionGroup.jsx`, `cartRules.js` | `FWD-MENU-012`, `FWD-MENU-015` |
-| `API-005` `POST /api/orders` | 요청: `orderType`, `items[{menuId,quantity,optionItems[{optionItemId,quantity}],excludedIngredientIds}]` → 응답: `orderId`, `orderNo`, `orderStatus`, `totalPrice` | `api/order.js`, `cartStore.js`, `orderFlow.js` | `DEV-ORDER-001`, 장바구니 수량/삭제 |
-| `API-006` `POST /api/payments` | 요청: `orderId`, `paymentMethod`, `amount` → 응답: `paymentId`, `orderId`, `orderNo`, `amount`, `paymentStatus`, `paidAt` | `api/payment.js`, `PaymentPage.jsx`, `OrderCompletePage.jsx` | `DEV-PAY-001`, `FWD-PAY-001`, `FWD-PAY-002` |
+| `API-005` `POST /api/kiosk/orders` | request: `orderType`, `items[{menuId,quantity,optionItems[{optionItemId,quantity}],excludedIngredientIds}]` → response: `orderId`, `orderNo`, `orderStatus`, `paymentStatus`, `totalAmount`, `waitingOrderCount` | `api/order.js`, `cartStore.js`, `orderFlow.js` | DEV-ORDER-001 |
+| `API-006` `POST /api/kiosk/payments` | request: `orderId`, `paymentMethodCode`, `idempotencyKey` → response: `paymentId`, `orderId`, `orderNo`, `approvedAmount`, `paymentStatus`, `approvedAt`, `waitingOrderCount` | `api/payment.js`, `PaymentPage.jsx`, `OrderCompletePage.jsx` | DEV-PAY-001 |
 
 ### 장바구니에서 반드시 보관할 데이터
 
@@ -42,7 +42,7 @@ items[]: menuId, menuName, unitPrice, quantity,
 
 | API | 요청 → 응답 핵심 데이터 | 연결 파일 | 요구사항 |
 | --- | --- | --- | --- |
-| `API-007` `GET /api/admin/orders?status` | `content[]`의 `orderId`, `orderNo`, `orderType`, `orderStatus`, `paymentStatus`, `totalPrice`, `createdAt`, `items`, `selectedOptions`, `excludedIngredients` | `api/admin.js`, `OrderTable.jsx`, `OrderDetailPage.jsx` | `LMIS-ORDER-001`~`003` |
+| `API-007` `GET /api/admin/orders?status` | `content[]`: `orderId`, `orderNo`, `orderType`, `orderStatus`, `paymentStatus`, `totalAmount`, `createdAt`, `items`, `selectedOptions`, `excludedIngredients` | `api/admin.js`, `OrderTable.jsx`, `OrderDetailPage.jsx` | LMIS-ORDER-001~003 |
 | `API-008` `PATCH /api/admin/orders/{orderId}/status` | 요청 `orderStatus` → `orderId`, `orderNo`, `orderStatus` | `OrderStatusBadge.jsx` | 주문 상태 변경 |
 | `API-009` `PATCH /api/admin/sold-out-items` | 요청 `targetType(MENU/INGREDIENT/OPTION_ITEM)`, `targetId`, `isSoldOut` → `name`, `isSoldOut` | `SoldOutToggle.jsx`, `soldOutPolicy.js` | `LMIS-MENU-001`, `LMIS-MENU-002` |
 | `API-010` `GET /api/admin/sold-out-items` | Query `targetType`, `keyword` → `targetType`, `targetId`, `name`, `isSoldOut`, `reasonType` | `SoldOutManagePage.jsx` | 품절 관리 확장 |
@@ -69,8 +69,8 @@ items[]: menuId, menuName, unitPrice, quantity,
 
 ## Canonical contract relationship
 
-- Status: Conflict — this document records current Frontend expected shape, not the canonical API contract.
+- Status: Canonical field names aligned. This document does not claim that every endpoint is implemented.
 - Canonical paths and response fields: [Canonical Contract Decisions](../../../ASAK/docs/governance/canonical-contract-decisions-2026-07-16.md).
-- Differences include `/api/kiosk/...` paths and `totalAmount`, `approvedAmount`, `approvedAt`, `waitingOrderCount`.
-- Adapter required: yes. Preserve current store fields (`totalPrice`, `amount`, `paidAt`) and map at the API adapter boundary.
-- Actual implementation requires final Backend DTO confirmation before code changes.
+- Canonical fields: `/api/kiosk/...`, `totalAmount`, `approvedAmount`, `approvedAt`, `waitingOrderCount`.
+- Adapter TODO: map any remaining legacy fixture fields only at the API adapter boundary; do not add an API flow until the backend endpoint is implemented.
+- Actual API wiring requires backend endpoint and DTO confirmation before code changes.

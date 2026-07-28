@@ -1,7 +1,7 @@
 /**
  * 주문·결제 상태 상수 (남은 결제 분기용)
  *
- * orderStatus:   RECEIVED | PREPARING | COMPLETED | CANCELLED
+ * orderStatus:   RECEIVED | PREPARING | COMPLETED | CANCELED
  * paymentStatus: READY | APPROVED | FAILED
  * payment reason (mock): DECLINED | INSUFFICIENT | NETWORK | TIMEOUT |
  *                        DUPLICATE | METHOD_DISABLED
@@ -18,5 +18,5 @@ export const ORDER_STATUS = Object.freeze({
   RECEIVED: "RECEIVED",
   PREPARING: "PREPARING",
   COMPLETED: "COMPLETED",
-  CANCELLED: "CANCELLED",
+  CANCELED: "CANCELED",
 });

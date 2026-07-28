@@ -13,6 +13,9 @@
  */
 export function toPaymentResultView(envelope) {
   if (!envelope) return null;
-  // TODO(WBS2-026): 성공/실패 분기 매핑 구현
+  // TODO(API-006, real API wiring only): legacy mock amount→approvedAmount,
+  // paidAt→approvedAt를 이 경계에서만 변환한다. 요청은 orderId,
+  // paymentMethodCode, idempotencyKey만 전송하며 승인 금액은 서버 정본이다.
+  // 지금은 mock envelope를 그대로 유지한다.
   return envelope;
 }

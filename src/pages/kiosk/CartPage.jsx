@@ -17,8 +17,8 @@ import Footer from "@/components/common/Footer";
 function enrichCartItem(item) {
   return {
     ...item,
-    lineTotal:
-      item.lineTotal ??
+    lineAmount:
+      item.lineAmount ??
       priceCalculation({
         unitPrice: item.unitPrice,
         optionItems: item.optionItems,
@@ -54,7 +54,7 @@ export default function CartPage() {
   const items = storedItems.map(enrichCartItem);
   const empty = items.length === 0;
   const itemCount = items.length;
-  const totalPrice = calculateCartTotal(items);
+  const totalAmount = calculateCartTotal(items);
   const quantityTotal = getCartTotalQuantity(items);
 
   const handleIncrease = (item) => {
@@ -134,17 +134,17 @@ export default function CartPage() {
           <span>합계</span>
           <div className="cart-page__summary-values">
             <span>{quantityTotal}개</span>
-            <b>{formatCurrency(totalPrice)}</b>
+            <b>{formatCurrency(totalAmount)}</b>
           </div>
         </div>
         <div className="cart-page__summary-total">
           <span>총 금액 결제</span>
-          <strong>{formatCurrency(totalPrice)}</strong>
+          <strong>{formatCurrency(totalAmount)}</strong>
         </div>
       </section>
 
       <Footer leftText="+ 메뉴 더 담기"
-        rightText={`주문하기 · ${formatCurrency(totalPrice)}`}
+        rightText={`주문하기 · ${formatCurrency(totalAmount)}`}
         onLeftClick={handleGoMenuList}
         onRightClick={handleGoPayment} />
 

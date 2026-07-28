@@ -1,7 +1,7 @@
 // 메뉴리스트 footer — Figma Shared/CartFooterBar
 import { formatCurrency } from "@/utils/currency";
 
-export default function MenuListFooter({ itemCount = 0, totalPrice = 0, onCheckout }) {
+export default function MenuListFooter({ itemCount = 0, totalAmount = 0, onCheckout }) {
   const hasItems = itemCount > 0;
 
   return (
@@ -9,7 +9,7 @@ export default function MenuListFooter({ itemCount = 0, totalPrice = 0, onChecko
       <div>
         <span>담은 메뉴 {itemCount}개</span>
         <span className="menu-list-footer__summary">
-          {formatCurrency(hasItems ? totalPrice : 0)}
+          {formatCurrency(hasItems ? totalAmount : 0)}
         </span>
       </div>
       <button
