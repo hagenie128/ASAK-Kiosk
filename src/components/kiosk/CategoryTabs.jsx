@@ -15,7 +15,7 @@ export default function CategoryTabs({
           className={selectedCategoryId === category.categoryId ? "active" : ""}
           onClick={() => onSelectCategory(category.categoryId)}
         >
-          {category.name}
+          {category.categoryName}
         </button>
       ))}
     </div>

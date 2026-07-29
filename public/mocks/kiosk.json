@@ -7,42 +7,42 @@
     "data": [
       {
         "categoryId": 231,
-        "name": "신메뉴",
+        "categoryName": "신메뉴",
         "sortOrder": 0
       },
       {
         "categoryId": 236,
-        "name": "샌드위치",
+        "categoryName": "샌드위치",
         "sortOrder": 1
       },
       {
         "categoryId": 233,
-        "name": "샐러디·볼",
+        "categoryName": "샐러디·볼",
         "sortOrder": 2
       },
       {
         "categoryId": 235,
-        "name": "랩",
+        "categoryName": "랩",
         "sortOrder": 3
       },
       {
         "categoryId": 234,
-        "name": "프로틴",
+        "categoryName": "프로틴",
         "sortOrder": 5
       },
       {
         "categoryId": 232,
-        "name": "기타",
+        "categoryName": "기타",
         "sortOrder": 8
       },
       {
         "categoryId": 239,
-        "name": "시즌오프",
+        "categoryName": "시즌오프",
         "sortOrder": 9
       },
       {
         "categoryId": 240,
-        "name": "사이드·음료",
+        "categoryName": "사이드·음료",
         "sortOrder": 10
       }
     ]
