@@ -27,18 +27,18 @@
   width: 56px;
   height: 16px;
   border-radius: 8px;
-  border: 2px solid #ccc;
-  background: #fff;
+  border: 2px solid #ccc; /* Figma는 legacy Gray/300 바인딩 · Semantic 없음 */
+  background: var(--asak-surface);
   box-sizing: border-box;
 }
 
 .kiosk-step-indicator .is-done {
-  border-color: #b3e500;
-  background: #f5fbe0;
+  border-color: #b3e500; /* Figma는 Color/Lime/500 직접 바인딩 · 값은 Interactive/Hover와 같으나 hover 상태 아님 */
+  background: var(--asak-surface-lime);
 }
 
 .kiosk-step-indicator .is-current {
-  border-color: #b3e500;
+  border-color: #b3e500; /* Figma는 Color/Lime/500 직접 바인딩 · 값은 Interactive/Hover와 같으나 hover 상태 아님 */
   background: var(--asak-lime);
 }
 
@@ -49,11 +49,11 @@
   flex: 1;
   min-height: 0;
   overflow-y: auto;
-  padding: 24px 60px;
+  padding: var(--asak-space-6) var(--asak-page-pad);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
+  gap: var(--asak-space-7);
 }
 
 /* 하단 컨텐츠 없는 경우 height값 지정해서 레이아웃 유지 */
@@ -61,11 +61,11 @@
   height: 1540px;
   min-height: 0;
   overflow-y: auto;
-  padding: 24px 60px;
+  padding: var(--asak-space-6) var(--asak-page-pad);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
+  gap: var(--asak-space-7);
 }
 
 
@@ -73,10 +73,10 @@
 
 .page_footer {
   height: var(--asak-bottom-cta-h);
-  padding: 40px 48px;
+  padding: var(--asak-space-8) var(--asak-space-9);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 32px;
+  gap: var(--asak-space-7);
   border-top: 1px solid var(--asak-divider);
   background: var(--asak-surface);
 }
@@ -101,7 +101,7 @@
 .page_footer button:last-child,
 .page_footer .is-primary {
   background: var(--asak-lime);
-  color: #292d30;
+  color: var(--asak-text-strong);
 }
 
 .page_footer .is-primary.is-ready {

@@ -2,9 +2,9 @@
 .allergen-accordion {
   width: 960px;
   margin: 0 auto;
-  padding: 16px 24px;
+  padding: var(--asak-space-4) var(--asak-space-6);
   border-radius: 8px;
-  background: #fffbeb;
+  background: var(--asak-surface-allergy);
   box-sizing: border-box;
 }
 
@@ -12,7 +12,7 @@
   width: 100%;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--asak-space-2);
   padding: 0;
   border: 0;
   background: transparent;
@@ -25,7 +25,7 @@
   width: 20px;
   height: 20px;
   border-radius: 10px;
-  background: #fbbf24;
+  background: var(--asak-warning);
   flex: 0 0 auto;
 }
 
@@ -34,19 +34,20 @@
   font-size: 14px;
   line-height: 20px;
   font-weight: 600;
-  color: #292d30;
+  color: var(--asak-text-strong);
 }
 
 .allergen-accordion__count {
   font-size: 12px;
   line-height: 16px;
   font-weight: 700;
-  color: #ef4444;
+  color: var(--asak-danger);
 }
 
 .allergen-accordion__chevron {
   width: 16px;
   height: 16px;
+  /* 값은 Border/Strong·Text/Tertiary 둘 다 #737373 · 고대비에서 갈라짐(#ffffff vs #9ca3af) → 디자인 확인 필요 */
   border-right: 2px solid #737373;
   border-bottom: 2px solid #737373;
   transform: rotate(45deg);
@@ -55,21 +56,21 @@
 
 .allergen-accordion.is-open .allergen-accordion__chevron {
   transform: rotate(-135deg);
-  margin-top: 4px;
+  margin-top: var(--asak-space-1);
 }
 
 .allergen-accordion__body {
-  margin-top: 12px;
+  margin-top: var(--asak-space-3);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--asak-space-3);
 }
 
 .allergen-accordion__body p {
   margin: 0;
   font-size: 14px;
   line-height: 20px;
-  color: #888;
+  color: var(--asak-text-secondary);
 }
 
 .allergen-accordion__tags {
@@ -82,13 +83,13 @@
 }
 
 .allergen-accordion__tags li {
-  padding: 4px 8px;
+  padding: var(--asak-space-1) var(--asak-space-2);
   border-radius: 4px;
-  background: #fffbeb;
+  background: var(--asak-surface-allergy);
   font-size: 12px;
   line-height: 16px;
   font-weight: 600;
-  color: #ef4444;
+  color: var(--asak-danger);
 }
 
 /* ----------------------- Shared Toast / Confirm ----------------------- */
@@ -147,11 +148,11 @@
   top: 50%;
   z-index: 10;
   width: 440px;
-  padding: 40px;
+  padding: var(--asak-space-8);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: var(--asak-space-6);
   border-radius: var(--asak-radius-lg);
   background: var(--asak-surface);
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.06), 0 10px 14px rgba(0, 0, 0, 0.12);
@@ -163,7 +164,7 @@
   width: 48px;
   height: 48px;
   border-radius: 16px;
-  background: #e5e7eb;
+  background: #e5e7eb; /* Border/Default를 채움색으로 사용 · 대응 surface 토큰 없음 */
 }
 
 .kiosk-confirm__text {
@@ -176,20 +177,20 @@
   font-size: 18px;
   line-height: 24px;
   font-weight: 700;
-  color: #111827;
+  color: #111827; /* Figma는 Text/Admin/Primary 바인딩 · Kiosk Semantic 없음 */
 }
 
 .kiosk-confirm__text p {
-  margin: 8px 0 0;
+  margin: var(--asak-space-2) 0 0;
   font-size: 14px;
   line-height: 20px;
-  color: #737373;
+  color: var(--asak-text-tertiary);
 }
 
 .kiosk-confirm__actions {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: var(--asak-space-3);
   width: 100%;
 }
 
@@ -198,21 +199,21 @@
   padding: 14px 28px;
   border: 0;
   border-radius: 8px;
-  background: #f5f5f5;
-  color: #404040;
+  background: var(--asak-surface-muted);
+  color: #404040; /* Figma는 Color/Neutral/800 바인딩 · Kiosk Semantic 없음 */
   font-family: inherit;
   font-size: 18px;
   font-weight: 700;
 }
 
 .kiosk-confirm__actions .is-danger {
-  background: #ef4444;
-  color: #fff;
+  background: var(--asak-danger);
+  color: var(--asak-text-on-dark);
 }
 
 .kiosk-confirm__actions .is-warning {
-  background: #fbbf24;
-  color: #111827;
+  background: var(--asak-warning);
+  color: #111827; /* Figma는 Text/Admin/Primary 바인딩 · Kiosk Semantic 없음 */
 }
 
 /* Figma Shared Modal / Empty / Error / Loading — 로직 연결 전 공통 상태 UI */
@@ -226,7 +227,7 @@
   z-index: 30;
   display: grid;
   place-items: center;
-  padding: 24px;
+  padding: var(--asak-space-6);
   background: var(--asak-overlay-scrim);
 }
 
@@ -236,7 +237,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: var(--asak-space-4);
   border-radius: var(--asak-radius-lg);
   background: var(--asak-surface);
   text-align: center;
@@ -270,7 +271,7 @@
 }
 
 .shared-modal__content p {
-  margin-top: 8px;
+  margin-top: var(--asak-space-2);
   color: var(--asak-text-secondary);
 }
 
@@ -278,7 +279,7 @@
 .error-state-panel__actions {
   display: flex;
   justify-content: center;
-  gap: 8px;
+  gap: var(--asak-space-2);
 }
 
 .shared-modal__actions button,

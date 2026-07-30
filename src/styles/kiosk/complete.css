@@ -3,7 +3,7 @@
 
 .order_complete_contents h1 {
   margin: 0;
-  color: #33383d;
+  color: #33383d; /* Figma 직접값 · Variable 미바인딩 */
   font-size: 56px;
   font-weight: 700;
   line-height: 1;
@@ -11,15 +11,15 @@
 
 .order-complete-page__label {
   margin: 84px 0 0;
-  color: #4a4e57;
+  color: #4a4e57; /* Figma 직접값 · Variable 미바인딩 */
   font-size: 40px;
   font-weight: 600;
   line-height: 1;
 }
 
 .order-complete-page__order-no {
-  margin: 24px 0 0;
-  color: #3f3f3f;
+  margin: var(--asak-space-6) 0 0;
+  color: #3f3f3f; /* Figma 직접값 · Variable 미바인딩 */
   font-size: 140px;
   font-weight: 700;
   line-height: 1;
@@ -42,7 +42,7 @@
   max-width: 100%;
   height: 42px;
   border-radius: 200px;
-  background: #b5e30f;
+  background: var(--asak-lime);
 }
 
 .order-complete-page__ticket-body {
@@ -82,15 +82,15 @@
 .order-complete-page__hint {
   margin: 120px 0 0;
   max-width: 800px;
-  color: #4a4e57;
+  color: #4a4e57; /* Figma 직접값 · Variable 미바인딩 */
   font-size: 32px;
   font-weight: 500;
   line-height: 1.25;
 }
 
 .order-complete-page__return {
-  margin: 20px 0 0;
-  color: #303030;
+  margin: var(--asak-space-5) 0 0;
+  color: #303030; /* Figma 직접값 · Variable 미바인딩 */
   font-size: 32px;
   font-weight: 500;
   line-height: 1.25;
@@ -98,20 +98,20 @@
 
 .order-complete-page__return span {
   font-style: normal;
-  color: #ff383c;
+  color: #ff383c; /* Figma 직접값 · Variable 미바인딩 */
   font-weight: 500;
 }
 
 .order-complete-page__footer {
   height: 180px;
   min-height: 180px;
-  padding: 40px 48px;
+  padding: var(--asak-space-8) var(--asak-space-9);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 32px;
+  gap: var(--asak-space-7);
   align-items: center;
-  background: #fff;
-  border-top: 1px solid #e6e6e6;
+  background: var(--asak-surface);
+  border-top: 1px solid var(--asak-border-card);
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.06);
   box-sizing: border-box;
 }
@@ -119,10 +119,10 @@
 .order-complete-page__footer button {
   width: 100%;
   height: 100px;
-  border: 2px solid #e5e7eb;
+  border: 2px solid var(--asak-border);
   border-radius: 16px;
-  background: #fff;
-  color: #292d30;
+  background: var(--asak-surface);
+  color: var(--asak-text-strong);
   font-family: inherit;
   font-size: 34px;
   font-weight: 700;
@@ -131,8 +131,8 @@
 
 .order-complete-page__footer .is-primary {
   border-color: transparent;
-  background: #b5e30f;
-  color: #292d30;
+  background: var(--asak-lime);
+  color: var(--asak-text-strong);
 }
 
 /* legacy receipt-card kept for Receipt page reuse if needed */
@@ -141,11 +141,11 @@
   padding: 32px 28px 28px;
   display: grid;
   justify-items: center;
-  gap: 16px;
-  border: 1px solid #e5e7eb;
+  gap: var(--asak-space-4);
+  border: 1px solid var(--asak-border);
   border-radius: 4px;
-  background: #fff;
-  color: #292d30;
+  background: var(--asak-surface);
+  color: var(--asak-text-strong);
 }
 
 .receipt-card>i {
@@ -156,7 +156,7 @@
 }
 
 .receipt-card>span {
-  color: #888;
+  color: var(--asak-text-secondary);
   font-size: 20px;
   line-height: 28px;
 }
@@ -171,7 +171,7 @@
   width: 100%;
   margin: 0;
   border: 0;
-  border-top: 1px solid #e5e7eb;
+  border-top: 1px solid var(--asak-border);
 }
 
 .receipt-card ul {
@@ -190,7 +190,7 @@
   margin: 0;
   display: flex;
   justify-content: space-between;
-  gap: 8px;
+  gap: var(--asak-space-2);
 }
 
 .receipt-card p {
@@ -204,14 +204,14 @@
   height: 48px;
   display: block;
   background: repeating-linear-gradient(90deg,
-      #292d30 0 3px,
+      var(--asak-text-strong) 0 3px,
       transparent 3px 6px,
-      #292d30 6px 8px,
+      var(--asak-text-strong) 6px 8px,
       transparent 8px 11px);
 }
 
 .receipt-card small {
-  color: #888;
+  color: var(--asak-text-secondary);
   font-size: 12px;
   line-height: 16px;
 }

@@ -16,12 +16,12 @@
 .menu-detail-summary {
   flex-shrink: 0;
   height: 320px;
-  padding: 32px 60px;
+  padding: var(--asak-space-7) var(--asak-page-pad);
   display: flex;
-  gap: 32px;
+  gap: var(--asak-space-7);
   align-items: flex-start;
-  border-bottom: 1px solid #ededed;
-  background: #ffffff;
+  border-bottom: 1px solid #ededed; /* Figma 직접값 · Border/Default(#e5e7eb)와 근사값 중복 */
+  background: var(--asak-surface);
 }
 
 .menu-detail-summary__image {
@@ -30,7 +30,7 @@
   flex-shrink: 0;
   border-radius: 16px;
   object-fit: cover;
-  background: #ebebeb;
+  background: #ebebeb; /* Figma 직접값 · 이미지 자리표시자 */
 }
 
 .menu-detail-summary__content {
@@ -45,7 +45,7 @@
 .menu-detail-summary__top {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--asak-space-3);
   align-items: flex-start;
 }
 
@@ -54,7 +54,7 @@
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 8px;
+  gap: var(--asak-space-2);
 }
 
 .menu-badge {
@@ -66,23 +66,23 @@
 }
 
 .menu-badge--best {
-  background: #ffe6e7;
-  color: #ff0004;
+  background: var(--asak-badge-best-bg);
+  color: var(--asak-badge-best-text);
 }
 
 .menu-badge--new {
-  background: #ffff80;
-  color: #0d0d0d;
+  background: var(--asak-badge-new-bg);
+  color: #0d0d0d; /* Figma는 legacy Gray/1600 바인딩 · Semantic 없음 */
 }
 
 .menu-badge--vegan {
-  background: #ebf5eb;
-  color: #077e40;
+  background: #ebf5eb; /* Figma 직접값 · Badge/VeganBG 토큰 없음 (값은 Status/SuccessBG와 같음) */
+  color: var(--asak-status-vegan);
 }
 
 .menu-badge--neutral {
   background: var(--asak-surface-muted, #f5f5f5);
-  color: #808080;
+  color: var(--asak-text-muted);
 }
 
 .menu-detail-summary__name {
@@ -92,7 +92,7 @@
   line-height: 44px;
   font-weight: 700;
   letter-spacing: -0.54px;
-  color: #1a1a1a;
+  color: var(--asak-text);
 }
 
 .menu-detail-summary__desc {
@@ -103,7 +103,7 @@
   font-size: 20px;
   line-height: 28px;
   font-weight: 400;
-  color: #808080;
+  color: var(--asak-text-muted);
 }
 
 .menu-detail-summary__kcal {
@@ -111,7 +111,7 @@
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
-  color: #808080;
+  color: var(--asak-text-muted);
 }
 
 .menu-detail-summary__bottom {
@@ -127,12 +127,12 @@
   line-height: 58px;
   font-weight: 700;
   letter-spacing: -0.72px;
-  color: #1a1a1a;
+  color: var(--asak-text);
 }
 
 .menu-detail-page>[role="alert"] {
   margin: 0 var(--asak-page-pad-x);
-  padding: 12px 16px;
+  padding: var(--asak-space-3) var(--asak-space-4);
   border-radius: var(--asak-radius-sm);
   background: var(--asak-danger-soft);
   color: var(--asak-danger);
@@ -144,7 +144,7 @@
   flex: 1;
   min-height: 0;
   overflow-y: auto;
-  padding: 32px 60px 24px;
+  padding: var(--asak-space-7) var(--asak-page-pad) var(--asak-space-6);
   display: flex;
   flex-direction: column;
   gap: 36px;
@@ -154,7 +154,7 @@
    Figma에서 그룹 자체에는 면(fill)이 없다. 카드만 흰색이고 그룹은 페이지 배경 위에 놓인다. */
 .option-group {
   width: 100%;
-  padding: 16px 24px;
+  padding: var(--asak-space-4) var(--asak-space-6);
   background: none;
 }
 
@@ -162,9 +162,9 @@
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  column-gap: 12px;
-  row-gap: 12px;
-  margin-bottom: 12px;
+  column-gap: var(--asak-space-3);
+  row-gap: var(--asak-space-3);
+  margin-bottom: var(--asak-space-3);
 }
 
 .option-group__title {
@@ -253,7 +253,7 @@
 .option-item__top {
   display: flex;
   align-items: flex-start;
-  gap: 8px;
+  gap: var(--asak-space-2);
 }
 
 .option-item__info {
@@ -275,7 +275,7 @@
 }
 
 .option-item__description {
-  margin-top: 4px;
+  margin-top: var(--asak-space-1);
   font-size: 16px;
   line-height: 22px;
   color: var(--asak-text-muted);
@@ -295,7 +295,7 @@
   display: inline-flex;
   align-items: center;
   height: 24px;
-  padding: 0 8px;
+  padding: 0 var(--asak-space-2);
   border-radius: 6px;
   font-size: 14px;
   font-weight: 600;
@@ -304,13 +304,13 @@
 
 .option-item__badge--recommended {
   background: var(--asak-surface-lime);
-  color: #4a6b10;
+  color: #4a6b10; /* Figma 직접값 · Variable 미바인딩 */
   border: 1px solid var(--asak-lime-border);
 }
 
 .option-item__badge--sold-out {
   background: var(--asak-danger);
-  color: #fff;
+  color: var(--asak-text-on-dark);
 }
 
 /* Bottom CTA — 메뉴 목록 (Figma Kiosk/BottomCTA 1080×180) */
@@ -320,7 +320,7 @@
   padding: 28px var(--asak-page-pad-x) 36px;
   display: flex;
   align-items: stretch;
-  gap: 24px;
+  gap: var(--asak-space-6);
   background: var(--asak-surface);
   border-top: 1px solid var(--asak-divider);
   box-sizing: border-box;
@@ -330,7 +330,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 4px;
+  gap: var(--asak-space-1);
   min-width: 200px;
 }
 
@@ -338,7 +338,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 4px;
+  gap: var(--asak-space-1);
   min-width: 200px;
 }
 
@@ -441,7 +441,7 @@
 /* 레거시 클래스 호환 */
 .flexBoxWrap {
   display: flex;
-  gap: 32px;
+  gap: var(--asak-space-7);
   align-items: flex-start;
   justify-content: space-between;
 }

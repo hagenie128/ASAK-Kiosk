@@ -8,11 +8,11 @@
 
 .accessibility-page__header {
   min-height: 120px;
-  padding: 0 40px;
+  padding: 0 var(--asak-space-8);
   display: grid;
   grid-template-columns: 60px 1fr 60px;
   align-items: center;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5; /* Figma 직접값 · Border/Default(#e5e7eb)와 근사값 중복 */
 }
 
 .accessibility-page__header h1 {
@@ -28,10 +28,10 @@
 
 .accessibility-page__content {
   flex: 1;
-  padding: 80px 60px;
+  padding: 80px var(--asak-page-pad);
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 60px; /* 세로 섹션 간격 · 페이지 여백 아님 */
 }
 
 .accessibility-page__content h2,
@@ -40,24 +40,24 @@
 }
 
 .accessibility-page__content h2 {
-  color: var(--asak-text-primary);
+  color: var(--asak-text);
   font-size: 40px;
   line-height: 48px;
 }
 
 .accessibility-page__font > p,
 .accessibility-page__contrast p {
-  margin-top: 32px;
+  margin-top: var(--asak-space-7);
   color: var(--asak-text-secondary);
   font-size: 28px;
   line-height: 36px;
 }
 
 .accessibility-page__font > div {
-  margin-top: 32px;
+  margin-top: var(--asak-space-7);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: var(--asak-space-6);
 }
 
 .accessibility-page__font button {
@@ -87,14 +87,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: var(--asak-space-6);
 }
 
 .accessibility-page__contrast button {
   width: 120px;
   height: 64px;
   flex: 0 0 120px;
-  padding: 4px;
+  padding: var(--asak-space-1);
   border: 0;
   border-radius: var(--asak-radius-pill);
   background: var(--asak-disabled-fill);
@@ -113,15 +113,15 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: #fff;
+  background: var(--asak-surface);
   content: "";
 }
 
 .accessibility-page__preview {
-  padding: 48px;
-  border: 1px solid #e5e5e5;
+  padding: var(--asak-space-9);
+  border: 1px solid #e5e5e5; /* Figma 직접값 · Border/Default(#e5e7eb)와 근사값 중복 */
   border-radius: 12px;
-  background: #f3f6f6;
+  background: #f3f6f6; /* Figma 직접값 · Variable 미바인딩 */
 }
 
 .accessibility-page__preview h2 {
@@ -131,28 +131,28 @@
 }
 
 .accessibility-page__preview p {
-  margin-top: 32px;
-  color: var(--asak-text-primary);
+  margin-top: var(--asak-space-7);
+  color: var(--asak-text);
   font-size: 28px;
   font-weight: 600;
   line-height: 36px;
 }
 
 .accessibility-page__footer {
-  padding: 32px 60px 64px;
+  padding: var(--asak-space-7) var(--asak-page-pad) 64px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  border-top: 1px solid #e5e5e5;
-  background: #fff;
+  gap: var(--asak-space-6);
+  border-top: 1px solid #e5e5e5; /* Figma 직접값 · Border/Default(#e5e7eb)와 근사값 중복 */
+  background: var(--asak-surface);
 }
 
 .accessibility-page__footer button {
   min-height: 112px;
-  border: 2px solid #d4d4d4;
+  border: 2px solid var(--asak-disabled-fill);
   border-radius: 12px;
-  background: #fff;
-  color: var(--asak-text-primary);
+  background: var(--asak-surface);
+  color: var(--asak-text);
   font: inherit;
   font-size: 32px;
   font-weight: 700;

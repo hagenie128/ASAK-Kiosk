@@ -17,7 +17,7 @@
 
 .payment-page h1 {
   margin: 0 0 54px;
-  color: #33383d;
+  color: #33383d; /* Figma 직접값 · Variable 미바인딩 */
   text-align: center;
   font-size: 48px;
   line-height: 58px;
@@ -29,7 +29,7 @@
   margin: 15px 0 72px;
   display: grid;
   justify-items: center;
-  gap: 32px;
+  gap: var(--asak-space-7);
   text-align: center;
 }
 
@@ -57,8 +57,8 @@
   display: flex;
   flex-direction: column;
   margin: 72px 0 0;
-  padding: 0 32px;
-  border: 1.5px solid #f5f5f5;
+  padding: 0 var(--asak-space-7);
+  border: 1.5px solid var(--asak-divider);
   border-radius: 16px;
   background: rgba(245, 251, 224, 0.2);
 }
@@ -82,7 +82,7 @@
   display: inline-flex;
   align-items: center;
   gap: 30px;
-  color: #292d30;
+  color: var(--asak-text-strong);
   font-size: 28px;
   font-weight: 500;
   line-height: 36px;
@@ -134,7 +134,7 @@
 }
 
 .payment_page__summary_right {
-  padding-right: 20px;
+  padding-right: var(--asak-space-5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -154,11 +154,11 @@
 
 .payment-page__summary-lines {
   list-style: none;
-  margin: 0 0 24px;
+  margin: 0 0 var(--asak-space-6);
   padding: 0 5px 16px;
   border-top: 1px solid #eef2d8;
   display: grid;
-  gap: 16px;
+  gap: var(--asak-space-4);
 }
 
 .payment-page__summary-lines li {
@@ -175,7 +175,7 @@
 }
 */
 .payment-page__illustration {
-  margin: 24px auto 0;
+  margin: var(--asak-space-6) auto 0;
   width: 720px;
   max-width: 100%;
 }
@@ -187,7 +187,7 @@
 }
 
 .payment-page.is-processing .payment-page__hero {
-  margin-bottom: 24px;
+  margin-bottom: var(--asak-space-6);
 }
 
 .payment-page__loading,
@@ -203,13 +203,13 @@
 }
 
 .payment-page__error-panel h2 {
-  margin: 0 0 24px;
+  margin: 0 0 var(--asak-space-6);
   font-size: 44px;
   line-height: 54px;
 }
 
 .payment-page__error-panel p {
-  margin: 0 0 48px;
+  margin: 0 0 var(--asak-space-9);
   color: var(--asak-text-secondary);
   font-size: 30px;
   line-height: 42px;
@@ -221,7 +221,7 @@
   border: 0;
   border-radius: 16px;
   background: var(--asak-lime);
-  color: #292d30;
+  color: var(--asak-text-strong);
   font-size: 34px;
   font-weight: 700;
 }
@@ -233,11 +233,11 @@
 
 .payment-page__methods button {
   min-height: 240px;
-  padding: 40px;
+  padding: var(--asak-space-8);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 32px;
+  gap: var(--asak-space-7);
   border: 4px solid var(--asak-border);
   border-radius: var(--asak-radius-card);
   background: var(--asak-surface);
@@ -264,7 +264,7 @@
 
 .payment-page__methods button>span:last-child {
   display: grid;
-  gap: 8px;
+  gap: var(--asak-space-2);
 }
 
 .payment-page__methods strong {
@@ -273,7 +273,7 @@
 }
 
 .payment-page__methods small {
-  color: #737373;
+  color: var(--asak-text-tertiary);
   font-size: 20px;
 }
 

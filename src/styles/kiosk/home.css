@@ -6,7 +6,7 @@
   height: 100%;
   min-height: 1920px;
   overflow: hidden;
-  background: #111;
+  background: #111; /* Figma 직접값 · Variable 미바인딩 (히어로 이미지 뒤 바탕) */
 }
 
 .home-page__hero {
@@ -54,7 +54,7 @@
   top: 612px;
   margin: 0;
   text-align: center;
-  color: #fff;
+  color: var(--asak-text-on-dark);
   font-size: 64px;
   font-weight: 500;
   line-height: 76px;
@@ -67,7 +67,7 @@
   left: 50%;
   top: 890px;
   display: flex;
-  gap: 40px;
+  gap: var(--asak-space-8);
   width: 928px;
   transform: translateX(-50%);
 }
@@ -78,15 +78,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 24px;
+  gap: var(--asak-space-6);
   width: 444px;
   height: 450px;
-  padding: 60px;
-  border: 1px solid #f5f5f5;
+  padding: 60px; /* 버튼 내부 여백 · 페이지 여백 아님 */
+  border: 1px solid var(--asak-divider);
   border-radius: 32px;
-  background: #fff;
+  background: var(--asak-surface);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-  color: #292d30;
+  color: var(--asak-text-strong);
   font-family: inherit;
   cursor: default;
   overflow: hidden;
@@ -128,7 +128,7 @@
   font-size: 26px;
   font-weight: 400;
   line-height: 34px;
-  color: #888;
+  color: var(--asak-text-secondary);
   white-space: nowrap;
 }
 

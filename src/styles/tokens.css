@@ -11,6 +11,7 @@
   --asak-surface: #ffffff; /* Color/White */
   --asak-surface-muted: #f5f5f5; /* Semantic/BG/Subtle · Neutral/100 */
   --asak-surface-elevated: #383d42; /* Semantic/BG/Elevated · Surface/50 */
+  --asak-toast-bg: #383d42; /* Semantic/Overlay/Toast · Surface/50 — HC에서 BG/Elevated와 갈라짐 */
   --asak-surface-lime: #f5fbe0; /* Semantic/Brand/Subtle · Green/50 */
   --asak-surface-soldout: #fff0eb; /* Semantic/Status/ErrorBG · Red/50 */
   --asak-surface-allergy: #fffbeb; /* Semantic/Status/WarningBG · Yellow/50 */
@@ -25,6 +26,7 @@
   --asak-text-price: #6c9700; /* MenuCard 실측 Semantic/Brand/Secondary (Green/550 #4a7a00는 보조) */
   --asak-text-price-alt: #4a7a00; /* Semantic/Text/Price · Green/550 */
   --asak-text-on-primary: #1a1a1a; /* CTA 위 본문(대비 유지) */
+  --asak-text-on-dark: #ffffff; /* Semantic/Text/Primary · White — 어두운 면/이미지 위 본문 */
   --asak-text-on-brand-dark: #243300; /* Semantic/Brand/OnPrimary · Green/700 */
 
   /* ——— Color · Brand / Interactive ——— */
@@ -49,15 +51,23 @@
   --asak-warning: #fbbf24; /* Semantic/Status/Warning · Yellow/400 */
   --asak-warning-text: #92400e; /* Semantic/Status/WarningText · Amber/800 */
   --asak-success: #5da45d; /* Semantic/Status/Success */
+  --asak-status-vegan: #077e40; /* Semantic/Status/Vegan · Success/700 */
   --asak-allergy-border: #fbbf24;
   --asak-overlay-scrim: rgba(0, 0, 0, 0.45); /* Confirm 실측 */
   --asak-overlay-home: rgba(0, 0, 0, 0.39); /* Home dark-overlay 실측 */
+
+  /* ——— Badge / Category / Payment ——— */
+  --asak-badge-best-bg: #ffe6e7; /* Semantic/Badge/BestBG · Red/100 */
+  --asak-badge-best-text: #ff0004; /* Semantic/Badge/BestText · Red/700 */
+  --asak-badge-new-bg: #ffff80; /* Semantic/Badge/NewBG · Yellow/200 */
+  --asak-category-side: #ff8d28; /* Semantic/Category/Side · Orange/400 */
+  --asak-pay-naver: #03c75a; /* Semantic/Payment/Naver/Primary */
 
   /* ——— Layout (1080×1920) ——— */
   --asak-kiosk-w: 1080px;
   --asak-kiosk-h: 1920px;
   --asak-page-pad-x: 48px; /* Number/Spacing/48 · 카테고리/CTA 패딩 */
-  --asak-page-pad-menu: 60px; /* 메뉴 그리드 좌우 실측 */
+  --asak-page-pad: 60px; /* 화면 콘텐츠 좌우 여백 (메뉴·상세·영수증·모달 공통 실측) */
   --asak-header-h: 140px; /* Header py 36 + content ~68 */
   --asak-bottom-cta-h: 180px; /* BottomCTA 실측 */
 
@@ -70,6 +80,10 @@
   --asak-radius-card: 24px; /* Semantic/Radius/XL · MenuCard */
   --asak-radius-home-card: 32px; /* Number/Radius/32 · Home action */
   --asak-radius-pill: 9999px; /* Semantic/Radius/Full */
+
+  /* ——— Border width (Semantic/Border/Width) ——— */
+  --asak-border-w: 1px; /* Border/Width/Default · Number/Border/Thin */
+  --asak-border-w-strong: 1.5px; /* Border/Width/Strong · Number/Border/Medium */
 
   /* ——— Spacing scale ——— */
   --asak-space-1: 4px; /* Semantic/Spacing/XS */

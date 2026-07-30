@@ -22,7 +22,7 @@
   line-height: 58px;
   font-weight: 700;
   letter-spacing: -0.72px;
-  color: #33383d;
+  color: #33383d; /* Figma 직접값 · Variable 미바인딩 */
 }
 
 .cart-page__toolbar {
@@ -36,15 +36,15 @@
   font-size: 22px;
   line-height: 28px;
   font-weight: 700;
-  color: #666;
+  color: #666; /* Figma 직접값 · Variable 미바인딩 */
 }
 
 .cart-page__toolbar button {
   min-height: 48px;
-  padding: 12px;
+  padding: var(--asak-space-3);
   border: 0;
   background: none;
-  color: #994d4d;
+  color: var(--asak-danger-text);
   font-family: inherit;
   font-size: 22px;
   font-weight: 500;
@@ -65,22 +65,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: var(--asak-space-6);
 }
 
 /* Kiosk/CartItemCard — Figma 150:404 */
 .cart-item {
   width: 960px;
-  border: 2px solid #f5f5f5;
+  border: 2px solid var(--asak-divider);
   border-radius: 24px;
-  background: #fff;
+  background: var(--asak-surface);
   overflow: hidden;
 }
 
 .cart-item__main {
   display: flex;
   align-items: flex-start;
-  gap: 24px;
+  gap: var(--asak-space-6);
   padding: 36px 32px 20px;
 }
 
@@ -104,14 +104,14 @@
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--asak-space-4);
 }
 
 .cart-item__title-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: var(--asak-space-4);
   height: 44px;
   overflow: hidden;
 }
@@ -123,7 +123,7 @@
   line-height: 44px;
   font-weight: 700;
   letter-spacing: -0.54px;
-  color: #292d30;
+  color: var(--asak-text-strong);
   white-space: nowrap;
 }
 
@@ -132,7 +132,7 @@
   font-size: 22px;
   line-height: 28px;
   font-weight: 700;
-  color: #292d30;
+  color: var(--asak-text-strong);
 }
 
 .cart-item__quantity {
@@ -147,13 +147,13 @@
   line-height: 36px;
   font-weight: 700;
   letter-spacing: -0.14px;
-  color: #292d30;
+  color: var(--asak-text-strong);
 }
 
 .cart-item__stepper {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: var(--asak-space-5);
   height: 56px;
 }
 
@@ -188,31 +188,31 @@
   line-height: 36px;
   font-weight: 700;
   letter-spacing: -0.14px;
-  color: #292d30;
+  color: var(--asak-text-strong);
 }
 
 .cart-item__footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  gap: var(--asak-space-4);
   height: 80px;
-  padding: 0 40px;
+  padding: 0 var(--asak-space-8);
   background: var(--asak-surface-lime);
 }
 
 .cart-item__actions {
   display: flex;
-  gap: 8px;
+  gap: var(--asak-space-2);
 }
 
 .cart-item__actions button {
   min-height: 48px;
-  padding: 8px 16px;
+  padding: var(--asak-space-2) var(--asak-space-4);
   border: 0;
   border-radius: 6px;
-  background: #f5f5f5;
-  color: #292d30;
+  background: var(--asak-surface-muted);
+  color: var(--asak-text-strong);
   font-family: inherit;
   font-size: 14px;
   font-weight: 600;
@@ -221,8 +221,8 @@
 
 .cart-item__actions .is-delete {
   min-width: 64px;
-  background: #fff0eb;
-  color: #ef4444;
+  background: var(--asak-danger-soft);
+  color: var(--asak-danger);
 }
 
 .cart-item__total {
@@ -237,34 +237,34 @@
   font-size: 26px;
   line-height: 34px;
   font-weight: 700;
-  color: #292d30;
+  color: var(--asak-text-strong);
 }
 
 .cart-item__total-values {
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: var(--asak-space-8);
 }
 
 .cart-item__total-values b {
   font-size: 32px;
   line-height: 40px;
   font-weight: 700;
-  color: #292d30;
+  color: var(--asak-text-strong);
 }
 
 .cart-item__total-values i {
   display: block;
   width: 1px;
   height: 30px;
-  background: #737373;
+  background: var(--asak-border-strong);
 }
 
 .cart-item__total-values span {
   font-size: 26px;
   line-height: 34px;
   font-weight: 500;
-  color: #292d30;
+  color: var(--asak-text-strong);
 }
 
 /* 합계 카드 — Figma summary-card */
@@ -273,10 +273,10 @@
   min-height: 354px;
   margin-top: 0;
   padding: 40px 49px;
-  border: 2px solid #eee;
+  border: 2px solid #eee; /* Figma 직접값 · Variable 미바인딩 */
   border-bottom: 0;
   border-radius: 30px 30px 0 0;
-  background: #fff;
+  background: var(--asak-surface);
   box-sizing: border-box;
   margin: auto;
 }
@@ -288,7 +288,7 @@
   font-size: 30px;
   line-height: 38px;
   font-weight: 700;
-  color: #282828;
+  color: #282828; /* Figma 직접값 · Variable 미바인딩 */
 }
 
 .cart-page__summary-values {
@@ -301,14 +301,14 @@
 .cart-page__summary-row b {
   font-size: 30px;
   font-weight: 700;
-  color: #282828;
+  color: #282828; /* Figma 직접값 · Variable 미바인딩 */
 }
 
 .cart-page__summary-total {
-  margin-top: 24px;
-  padding: 0 24px;
+  margin-top: var(--asak-space-6);
+  padding: 0 var(--asak-space-6);
   height: 130px;
-  border-top: 1px solid #e6e6e6;
+  border-top: 1px solid var(--asak-border-card);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -318,7 +318,7 @@
   font-size: 30px;
   line-height: 38px;
   font-weight: 700;
-  color: #282828;
+  color: #282828; /* Figma 직접값 · Variable 미바인딩 */
 }
 
 .cart-page__summary-total strong {
@@ -326,20 +326,20 @@
   line-height: 65px;
   font-weight: 800;
   letter-spacing: -0.72px;
-  color: #0d0d0d;
+  color: #0d0d0d; /* Figma 직접값 · legacy Gray/1600, Semantic 없음 */
 }
 
 /* BottomCTA — Figma 134:7859 */
 .cart-page__footer {
   height: var(--asak-bottom-cta-h);
   min-height: 180px;
-  padding: 40px 48px;
+  padding: var(--asak-space-8) var(--asak-space-9);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  border: 1px solid #e6e6e6;
+  gap: var(--asak-space-7);
+  border: 1px solid var(--asak-border-card);
   border-radius: 16px;
-  background: #fff;
+  background: var(--asak-surface);
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.06);
   box-sizing: border-box;
 }
@@ -347,10 +347,10 @@
 .cart-page__footer button {
   width: 100%;
   height: 100px;
-  border: 2px solid #e5e7eb;
+  border: 2px solid var(--asak-border);
   border-radius: 16px;
-  background: #fff;
-  color: #292d30;
+  background: var(--asak-surface);
+  color: var(--asak-text-strong);
   font-family: inherit;
   font-size: 34px;
   font-weight: 700;
