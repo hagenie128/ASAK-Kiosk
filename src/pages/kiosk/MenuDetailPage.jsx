@@ -5,40 +5,106 @@ import Header from "@/components/common/Header";
 import MenuDetailSummary from "@/components/kiosk/MenuDetailSummary";
 import OptionGroup from "@/components/kiosk/OptionGroup";
 import MenuDetailFooter from "@/components/kiosk/MenuDetailFooter";
-import AllergenAccordion from "@/components/kiosk/AllergenAccordion";
-import kioskMock from "../../../public/mocks/kiosk.json";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useCartStore } from "@/store/cartStore";
 import { TOAST_MESSAGES, canIncreaseQuantity } from "@/utils/quantityLimits";
 import { priceCalculation } from "@/utils/priceCalculation";
+import { getMenu } from "@/api/menu";
+
+
+function createInitialSelectedOptions (optionGroups = []){
+
+  //최초 기본 선택 결과를 만드는 임시 객체
+  const initialOptions  = {};
+
+  optionGroups.forEach((group)=>{
+
+    const defaultItem = (group.items ?? []).filter((item)=>item.isDefault && !item.isSoldOut);
+
+    if(defaultItem.length === 0) return;
+
+    initialOptions[group.optionGroupId] = group.selectType === "SINGLE" ? 
+    defaultItem[0].optionItemId : defaultItem.map((item)=>item.optionItemId);
+
+
+  })
+  return initialOptions;
+}
+
+
+
 
 export default function MenuDetailPage() {
+
+  //페이지 이동을 위한 변수
   const { menuId } = useParams();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const categoryId = searchParams.get("category");
 
+  //메뉴디테일 api 연결
+  const [menuDetail, setMenuDetail ] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError]= useState(null);
+  const [selectedOptions, setSelectedOptions ] = useState({});
+
+  const optionGroups = menuDetail?.optionGroups ?? [];
+
+  useEffect(()=>{
+
+    if(!menuId) return;
+
+    //연속 응답에 대한 처리
+    let ignore = false;
+
+    const fetchMenuDetail = async ()=>{
+
+      try{
+        setIsLoading(true);
+        setError(null);
+
+        const data = await getMenu(Number(menuId));
+
+        if(ignore) return;
+
+        setMenuDetail(data);
+        setSelectedOptions(
+          createInitialSelectedOptions(data.optionGroupId)
+        );
+
+      }catch(error){
+        setError(error);
+        setMenuDetail(null);
+        setSelectedOptions({});
+      }finally{
+        if(!ignore){
+          setIsLoading(false);
+        }
+      }
+
+    }
+
+    fetchMenuDetail();
+
+    return ()=>{
+      ignore = true
+    };
+
+  },[menuId])
+
+  
+
+
+  //장바구니 추가를 위한 변수
   const items = useCartStore((state) => state.items);
   const addItem = useCartStore((state) => state.addItem);
 
-  const menuDetail = menuId ? kioskMock.menuDetail[menuId]?.data : null;
-  const optionGroups = menuId ? (kioskMock.menuOptions[menuId]?.data ?? []) : [];
 
   const [quantity, setQuantity] = useState(1);
   const [toastMessage, setToastMessage] = useState(null);
-  const [selectedOptions, setSelectedOptions] = useState(() => {
-    const initial = {};
-    optionGroups.forEach((group) => {
-      const defaultItem = group.items.find((item) => item.isDefault);
-      if (!defaultItem) return;
-      initial[group.optionGroupId] =
-        group.selectType === "SINGLE"
-          ? defaultItem.optionItemId
-          : [defaultItem.optionItemId];
-    });
-    return initial;
-  });
+
+
 
   if (!menuDetail) {
     return (
@@ -114,6 +180,7 @@ export default function MenuDetailPage() {
 
   const isSoldOut = Boolean(menuDetail.isSoldOut);
 
+  //장바구니에 저장하는 로직
   const handleConfirm = () => {
     if (!isRequiredSatisfied || isSoldOut || !menuDetail) return;
 
@@ -167,7 +234,6 @@ export default function MenuDetailPage() {
           />
         ))}
 
-        {/* <AllergenAccordion allergens={menuDetail.allergens ?? []} /> */}
       </main>
 
       <MenuDetailFooter
