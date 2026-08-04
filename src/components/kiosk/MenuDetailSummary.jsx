@@ -5,7 +5,7 @@ import QuantityStepper from "./QuantityStepper";
 import { formatCurrency } from "@/utils/currency";
 
 // Figma badges 프레임(136:3956)의 3종 색상. 값이 없는 배지는 중립 스타일로 떨어진다.
-const BADGE_MODIFIERS = {
+const TAG_MODIFIERS = {
   BEST: "best",
   NEW: "new",
   VEGAN: "vegan",
@@ -18,7 +18,7 @@ export default function MenuDetailSummary({
   onDecrease,
   onIncrease,
 }) {
-  const { name, price, imageUrl, description, baseKcal, badges = [] } = menu;
+  const { name, price, imageUrl, description, baseKcal, tags = [] } = menu;
 
   return (
     <section className="menu-detail-summary">
@@ -26,14 +26,14 @@ export default function MenuDetailSummary({
 
       <div className="menu-detail-summary__content">
         <div className="menu-detail-summary__top">
-          {badges.length > 0 && (
+          {tags.length > 0 && (
             <ul className="menu-detail-summary__badges">
-              {badges.map((badge) => (
+              {tags.map((tag) => (
                 <li
-                  key={badge}
-                  className={`menu-badge menu-badge--${BADGE_MODIFIERS[badge.toUpperCase()] ?? "neutral"}`}
+                  key={tag}
+                  className={`menu-badge menu-badge--${TAG_MODIFIERS[tag.toUpperCase()] ?? "neutral"}`}
                 >
-                  {badge}
+                  {tag}
                 </li>
               ))}
             </ul>

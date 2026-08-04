@@ -10,7 +10,7 @@ export default function MenuCard({ menu, isSelected, onSelect }) {
     name,
     price,
     imageUrl,
-    baseKcal,
+    kcal,
     isSoldOut,
     hasSoldOutIngredient,
     soldOutBadges = [],
@@ -32,7 +32,7 @@ export default function MenuCard({ menu, isSelected, onSelect }) {
       <div className="menu-card__info">
         <p className="menuName">{name}</p>
         <p className="menuPrice">{formatCurrency(price)}</p>
-        <p className="menuKcal">{baseKcal} kcal</p>
+        <p className="menuKcal">{kcal} kcal</p>
       </div>
       {!isUnorderable && soldOutBadges.length > 0 ? (
         <ul className="sold-out-notice">
