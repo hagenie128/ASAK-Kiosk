@@ -48,6 +48,55 @@ export default function MenuDetailPage() {
 
   const optionGroups = menuDetail?.optionGroups ?? [];
 
+  //메뉴에 대한 제외 재료처리
+  const [excludedIngredientIds, setExcludedIngredientIds] = useState([]);
+
+  const removableIngredients = menuDetail?.ingredients?.filter((ingredient)=>
+    ingredient.isDefault && ingredient.canRemove
+  ) ?? [];
+
+  //메뉴 제외 형식 그룹옵션 형식으로 필터링
+  const removableIngredientGroup =
+  removableIngredients.length > 0 ? {
+        optionGroupId: "REMOVABLE_INGREDIENTS",
+        name: "제외할 재료",
+        groupType: "INGREDIENT_EXCLUSION",
+        selectType: "MULTI",
+        minSelect: 0,
+        maxSelect: removableIngredients.length,
+        sortOrder: 0,
+        isRequired: false,
+        items : removableIngredients.map((ingredient)=>({
+
+          optionItemId: ingredient.ingredientId,
+          name: ingredient.ingName,
+          role: ingredient.role,
+          unit: ingredient.unit,
+          extraPrice: 0,
+          isRecommended: false,
+          isSoldOut: false,
+        })),
+  }
+  : null;
+
+  //제외 재료 선택 토글 함수
+  const handleToggleIngredient = (ingredientId)=>{
+
+    setExcludedIngredientIds((prev)=>{
+
+      const isAlreadyExcluded = prev.includes(ingredientId);
+
+      if(isAlreadyExcluded){
+        return prev.filter((id)=> id !== ingredientId);
+      }
+
+      return [...prev , ingredientId];
+
+    });
+
+  };
+
+  //api-003 처리
   useEffect(()=>{
 
     if(!menuId) return;
@@ -70,10 +119,13 @@ export default function MenuDetailPage() {
           createInitialSelectedOptions(data.optionGroups)
         );
 
+        setExcludedIngredientIds([]);
+
       }catch(error){
         setError(error);
         setMenuDetail(null);
         setSelectedOptions({});
+        setExcludedIngredientIds([]);
       }finally{
         if(!ignore){
           setIsLoading(false);
@@ -197,7 +249,7 @@ export default function MenuDetailPage() {
         extraPrice: Number(item.extraPrice ?? 0),
         quantity: 1,
       })),
-      excludedIngredientIds: [],
+      excludedIngredientIds,
     });
 
     const menuListPath = categoryId ? `/menu?category=${categoryId}` : "/menu";
@@ -222,6 +274,8 @@ export default function MenuDetailPage() {
       {toastMessage ? <p role="alert">{toastMessage}</p> : null}
 
       <main className="menu-detail-options">
+
+        {/* 일반 옵션 그룹 */}
         {optionGroups.map((group) => (
           <OptionGroup
             key={group.optionGroupId}
@@ -230,6 +284,19 @@ export default function MenuDetailPage() {
             onSelectItem={(optionItemId) => handleSelectOption(group, optionItemId)}
           />
         ))}
+
+        {/* 제외 가능한 기본 재료 */}
+        {
+          removableIngredientGroup && (
+
+            <OptionGroup 
+              key={removableIngredientGroup.optionGroupId}
+              group={removableIngredientGroup}
+              selectedValue={excludedIngredientIds}
+              onSelectItem={handleToggleIngredient}
+            />
+          )}
+
 
       </main>
 
