@@ -32,9 +32,6 @@ function createInitialSelectedOptions (optionGroups = []){
   return initialOptions;
 }
 
-
-
-
 export default function MenuDetailPage() {
 
   //페이지 이동을 위한 변수
@@ -70,7 +67,7 @@ export default function MenuDetailPage() {
 
         setMenuDetail(data);
         setSelectedOptions(
-          createInitialSelectedOptions(data.optionGroupId)
+          createInitialSelectedOptions(data.optionGroups)
         );
 
       }catch(error){
