@@ -11,6 +11,9 @@ import { useCartStore } from "@/store/cartStore";
 import { TOAST_MESSAGES, canIncreaseQuantity } from "@/utils/quantityLimits";
 import { priceCalculation } from "@/utils/priceCalculation";
 import { getMenu } from "@/api/menu";
+import LoadingSpinner from "@/components/common/LoadingSpinner";
+import ErrorMessage from "@/components/common/ErrorMessage";
+import EmptyState from "@/components/common/EmptyState";
 
 
 function createInitialSelectedOptions (optionGroups = []){
@@ -222,12 +225,28 @@ export default function MenuDetailPage() {
 
     });
   };
-
+  //데이터 상태값에 따른 UI화면 출력 조건
+    if(isLoading){
+      return (
+        <div className="menu-detail-page">
+          <Header />
+          <LoadingSpinner/>
+        </div>
+      );
+    }
+    if(error){
+      return(
+        <div className="menu-detail-page">
+          <Header/>
+          <ErrorMessage/>
+        </div>
+      )
+    }
     if (!menuDetail) {
       return (
         <div className="menu-detail-page">
           <Header />
-          <p className="empty-state">메뉴를 불러오지 못했습니다.</p>
+          <EmptyState/>
         </div>
       );
     }
@@ -298,8 +317,11 @@ export default function MenuDetailPage() {
 
 
   return (
+
     <div className="menu-detail-page">
       <Header />
+
+
       <MenuDetailSummary
         menu={{
           ...menuDetail,

@@ -49,6 +49,14 @@
   background: var(--asak-lime);
 }
 
+/* 카테고리 로딩 & 에러 & db정보 없을때의 api 스타일 */
+.category_dbLoding, .category_dbError ,.category_dbempty{
+    text-align: center;
+    padding: 40px 0;
+    font-size: 30px;
+    display: block;
+}
+
 .menu-grid-scroll-area {
   flex: 1;
   min-height: 0;
@@ -195,6 +203,7 @@
   min-height: 320px;
   padding: var(--asak-space-9) var(--asak-space-7);
   text-align: center;
+  height: 100%;
 }
 
 .empty-state-panel__title,

@@ -12,6 +12,9 @@ import { getCartTotalQuantity } from "@/utils/quantityLimits";
 import { calculateCartTotal } from "@/utils/priceCalculation";
 import { getCategories } from "@/api/category";
 import { getMenus } from "@/api/menu";
+import LoadingSpinner from "@/components/common/LoadingSpinner";
+import ErrorMessage from "@/components/common/ErrorMessage";
+import EmptyState from "@/components/common/EmptyState";
 
 export default function MenuListPage() {
   const navigate = useNavigate();
@@ -125,11 +128,11 @@ export default function MenuListPage() {
       <Header />
 
       {isCategoryLoading ? (
-        <p>카테고리를 불러오는 중입니다.</p>
+        <p className="category_dbLoding">카테고리를 불러오는 중입니다.</p>
       ) : categoryError ? (
-        <p>{categoryError.message || "카테고리를 불러오지 못했습니다."}</p>
+        <p className="category_dbError">{categoryError.message || "카테고리를 불러오지 못했습니다."}</p>
       ) : categories.length === 0 ? (
-        <p>표시할 카테고리가 없습니다.</p>
+        <p className="category_dbempty">표시할 카테고리가 없습니다.</p>
       ) : (
         <CategoryTabs
           categories={categories}
@@ -140,11 +143,11 @@ export default function MenuListPage() {
 
       <main className="menu-grid-scroll-area">
         {isMenuLoading ? (
-          <p>메뉴를 불러오는 중입니다.</p>
+          <LoadingSpinner/>
         ) : menuError ? (
-          <p>{menuError.message || "메뉴를 불러오지 못했습니다."}</p>
+          <ErrorMessage/>
         ) : menus.length === 0 ? (
-          <p className="empty-state">이 카테고리에는 메뉴가 없습니다.</p>
+          <EmptyState/>
         ) : (
           <ul className="menuGrid">
             {menus.map((menu) => (
