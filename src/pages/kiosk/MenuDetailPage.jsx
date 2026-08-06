@@ -23,11 +23,9 @@ function createInitialSelectedOptions (optionGroups = []){
     const defaultItem = (group.items ?? []).filter((item)=>item.isDefault && !item.isSoldOut);
 
     if(defaultItem.length === 0) return;
-
+    
     initialOptions[group.optionGroupId] = group.selectType === "SINGLE" ? 
     defaultItem[0].optionItemId : defaultItem.map((item)=>item.optionItemId);
-
-
   })
   return initialOptions;
 }
@@ -59,9 +57,9 @@ export default function MenuDetailPage() {
   const removableIngredientGroup =
   removableIngredients.length > 0 ? {
         optionGroupId: "REMOVABLE_INGREDIENTS",
-        name: "제외할 재료",
+        name: "재료 빼기",
         groupType: "INGREDIENT_EXCLUSION",
-        selectType: "MULTI",
+        selectType: "MULTIPLE",
         minSelect: 0,
         maxSelect: removableIngredients.length,
         sortOrder: 0,
@@ -74,7 +72,7 @@ export default function MenuDetailPage() {
           unit: ingredient.unit,
           extraPrice: 0,
           isRecommended: false,
-          isSoldOut: false,
+          isSoldOut: Boolean(ingredient.isSoldOut),
         })),
   }
   : null;
@@ -142,7 +140,6 @@ export default function MenuDetailPage() {
 
   },[menuId])
 
-  
 
 
   //장바구니 추가를 위한 변수
@@ -153,17 +150,7 @@ export default function MenuDetailPage() {
   const [quantity, setQuantity] = useState(1);
   const [toastMessage, setToastMessage] = useState(null);
 
-
-
-  if (!menuDetail) {
-    return (
-      <div className="menu-detail-page">
-        <Header />
-        <p className="empty-state">메뉴를 불러오지 못했습니다.</p>
-      </div>
-    );
-  }
-
+  //주문 메뉴 수량 증가
   const handleIncreaseQuantity = () => {
     const result = canIncreaseQuantity({
       items,
@@ -175,29 +162,78 @@ export default function MenuDetailPage() {
       setToastMessage(TOAST_MESSAGES[result.reason]);
       return;
     }
-
+    
     setToastMessage(null);
     setQuantity((q) => q + 1);
   };
-
+  
+  //주문 메뉴 수량 감소
   const handleDecreaseQuantity = () => {
     setToastMessage(null);
     setQuantity((q) => Math.max(1, q - 1));
   };
 
+  //옵션 아이템 선택·해제 및 maxSelect 제한
   const handleSelectOption = (group, optionItemId) => {
+
     setSelectedOptions((prev) => {
+
+      // SINGLE(단수 선택시)
       if (group.selectType === "SINGLE") {
-        return { ...prev, [group.optionGroupId]: optionItemId };
+        return { 
+          ...prev, 
+          [group.optionGroupId]: optionItemId
+         };
       }
-      const current = prev[group.optionGroupId] ?? [];
-      const next = current.includes(optionItemId)
-        ? current.filter((id) => id !== optionItemId)
-        : [...current, optionItemId];
-      return { ...prev, [group.optionGroupId]: next };
+
+      // MULTIPLE(복수 선택시)
+      if(group.selectType === "MULTIPLE"){
+
+        const current = prev[group.optionGroupId] ?? [];
+        const isAlreadySelected = current.includes(optionItemId)
+
+        //이미 선택된 아이템 토글시 선택 해제
+        if(isAlreadySelected){
+          return {
+            ...prev,
+            [group.optionGroupId]: current.filter((id)=>id !== optionItemId)
+          }
+        }
+        //최대 수량 선택시
+        if(current.length >= group.maxSelect){
+          return {
+            ...prev,
+            [group.optionGroupId]: [
+              ...current.slice(0,-1), optionItemId,
+            ]
+          }
+        }
+        //최대 수량 도달하지 x 새 아이템 추가
+        return{
+          ...prev,
+          [group.optionGroupId]: 
+          [
+            ...current ,
+             optionItemId
+            ],
+        }
+      }
+      return prev;
+
     });
   };
 
+    if (!menuDetail) {
+      return (
+        <div className="menu-detail-page">
+          <Header />
+          <p className="empty-state">메뉴를 불러오지 못했습니다.</p>
+        </div>
+      );
+    }
+
+
+  //필수 옵션의 minSelect 충족 여부 검사
   const isRequiredSatisfied = optionGroups
     .filter((group) => group.isRequired)
     .every((group) => {
@@ -206,6 +242,7 @@ export default function MenuDetailPage() {
       return (selected?.length ?? 0) >= group.minSelect;
     });
 
+  //선택된 ID를 가격·장바구니에 사용할 옵션 객체 배열로 변환
   const selectedOptionItems = optionGroups.flatMap((group) => {
     const selected = selectedOptions[group.optionGroupId];
     if (!selected) return [];
@@ -219,6 +256,8 @@ export default function MenuDetailPage() {
         optionGroupName: group.name,
       }));
   });
+
+
 
   //옵션 추가 시 예상 가격 변동 확인 메서드
   const expectedAmount = priceCalculation({
@@ -255,6 +294,8 @@ export default function MenuDetailPage() {
     const menuListPath = categoryId ? `/menu?category=${categoryId}` : "/menu";
     navigate(menuListPath, { replace: true });
   };
+
+
 
   return (
     <div className="menu-detail-page">
