@@ -10,8 +10,6 @@ import { create } from "zustand";
  *          orderId, orderNo, approvedAmount, paymentStatus, approvedAt
  * paymentError: { code, message, reason? } — SCR-012, cart 유지
  *
- * APPROVED → resetSession · FAILED → setPaymentError only
- * 표: public/mocks/README.md §4
  */
 const initialState = {
   orderType: null, // 'EAT_IN' | 'TAKE_OUT'
@@ -35,7 +33,10 @@ const initialState = {
     paymentStatus: null,
     approvedAt: null,
   },
-  paymentError: null, // 실패 code/message (SCR-012용)
+  paymentError: null, // 실패 code/message 
+  // 장바구니 로직 검증용
+  validatedTotalAmount: null,
+  validatedItems: null,
 };
 
 // cartItemId
@@ -76,6 +77,11 @@ export const useOrderSession = create((set) => ({
         (item) => item.cartItemId !== cartItemId,
       ),
     })),
+
+  setCartValidation: ({totalAmount, items}) => set({
+    validatedTotalAmount : totalAmount,
+    validatedItems: items,
+  }),
 
   setOrder: (order) => set({ order }),
 

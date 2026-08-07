@@ -13,7 +13,9 @@ import {
   getCartTotalQuantity,
 } from "@/utils/quantityLimits";
 import Footer from "@/components/common/Footer";
+import { validateCart } from "@/api/cart";
 
+//UI 표시용 매핑 함수
 function enrichCartItem(item) {
   return {
     ...item,
@@ -32,22 +34,16 @@ function enrichCartItem(item) {
 }
 
 export default function CartPage() {
+
   // 페이지 이동
   const navigate = useNavigate();
-
-  const handleGoMenuList = () => {
-    navigate("/menu");
-  }
-  const handleGoPayment = () => {
-    navigate("/payment");
-  }
-
-
 
   const storedItems = useCartStore((state) => state.items);
   const updateItemQuantity = useCartStore((state) => state.updateItemQuantity);
   const removeItem = useCartStore((state) => state.removeItem);
   const clearItems = useCartStore((state) => state.clearItems);
+  const setCartValidation = useCartStore((state)=>state.setCartValidation);
+
 
   const [showClearConfirm, setShowClearConfirm] = useState(false);
 
@@ -56,6 +52,39 @@ export default function CartPage() {
   const itemCount = items.length;
   const totalAmount = calculateCartTotal(items);
   const quantityTotal = getCartTotalQuantity(items);
+
+    //장바구니 api-004 request매핑
+  const requestItems = storedItems.map((item) =>({
+    clientCartItemId:item.cartItemId,
+    menuId: item.menuId,
+    quantity: item.quantity,
+    optionItems: (item.optionItems ?? []).map((option)=>({
+      optionItemId: option.optionItemId,
+      quantity:option.quantity ?? 1,
+    })),
+    excludedIngredientIds: item.excludedIngredientIds ?? [],
+  }))
+
+  
+  // async로 바꿔서 validateCart({ items: requestItems })성공시 이동 로직 수정
+  const handleGoPayment = async () => {
+    
+    try{
+      if(empty) return;
+
+      const result = await validateCart({items : requestItems});
+      setCartValidation(result);
+      navigate("/payment");
+
+    }catch(error){
+      console.error(error);
+    }
+    
+  }
+
+  const handleGoMenuList = () => {
+    navigate("/menu");
+  };
 
   const handleIncrease = (item) => {
     const result = canIncreaseCartItemQuantity({
@@ -81,6 +110,8 @@ export default function CartPage() {
     clearItems();
     setShowClearConfirm(false);
   };
+
+
 
   return (
     <div className="cart-page">
