@@ -12,7 +12,7 @@
   display: grid;
   grid-template-columns: 60px 1fr 60px;
   align-items: center;
-  border-bottom: 1px solid #e5e5e5; /* Figma 직접값 · Border/Default(#e5e7eb)와 근사값 중복 */
+  border-bottom: var(--asak-border-w) solid var(--asak-border-soft); /* Figma 직접값 · Border/Default(#e5e7eb)와 근사값 중복 */
 }
 
 .accessibility-page__header h1 {
@@ -119,15 +119,15 @@
 
 .accessibility-page__preview {
   padding: var(--asak-space-9);
-  border: 1px solid #e5e5e5; /* Figma 직접값 · Border/Default(#e5e7eb)와 근사값 중복 */
+  border: var(--asak-border-w) solid var(--asak-border-soft); /* Figma 직접값 · Border/Default(#e5e7eb)와 근사값 중복 */
   border-radius: 12px;
   background: #f3f6f6; /* Figma 직접값 · Variable 미바인딩 */
 }
 
 .accessibility-page__preview h2 {
   color: var(--asak-text-secondary);
-  font-size: 32px;
-  line-height: 40px;
+  font-size: var(--asak-fs-category);
+  line-height: var(--asak-lh-category);
 }
 
 .accessibility-page__preview p {
@@ -143,7 +143,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--asak-space-6);
-  border-top: 1px solid #e5e5e5; /* Figma 직접값 · Border/Default(#e5e7eb)와 근사값 중복 */
+  border-top: var(--asak-border-w) solid var(--asak-border-soft); /* Figma 직접값 · Border/Default(#e5e7eb)와 근사값 중복 */
   background: var(--asak-surface);
 }
 
@@ -154,7 +154,7 @@
   background: var(--asak-surface);
   color: var(--asak-text);
   font: inherit;
-  font-size: 32px;
+  font-size: var(--asak-fs-category);
   font-weight: 700;
 }
 

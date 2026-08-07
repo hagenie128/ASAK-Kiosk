@@ -7,11 +7,10 @@
   /* ——— Color · Surface ——— */
   --asak-bg-canvas: #d3d3d3; /* 뷰포트 바깥(구현용) */
   --asak-bg-kiosk: #ffffff; /* Semantic/BG/Admin · White */
-  --asak-bg-page-soft: #fbfbfb; /* SCR-003 화면 실측(Variable 미바인딩) */
   --asak-surface: #ffffff; /* Color/White */
   --asak-surface-muted: #f5f5f5; /* Semantic/BG/Subtle · Neutral/100 */
   --asak-surface-elevated: #383d42; /* Semantic/BG/Elevated · Surface/50 */
-  --asak-toast-bg: #383d42; /* Semantic/Overlay/Toast · Surface/50 — HC에서 BG/Elevated와 갈라짐 */
+  --asak-toast-bg: #383d42; /* Semantic/Overlay/Toast · Surface/50 — 미사용이지만 HC에서 BG/Elevated와 갈라지므로 삭제 금지 */
   --asak-surface-lime: #f5fbe0; /* Semantic/Brand/Subtle · Green/50 */
   --asak-surface-soldout: #fff0eb; /* Semantic/Status/ErrorBG · Red/50 */
   --asak-surface-allergy: #fffbeb; /* Semantic/Status/WarningBG · Yellow/50 */
@@ -23,11 +22,16 @@
   --asak-text-secondary: #888888; /* Semantic/Text/Secondary · Neutral/500 */
   --asak-text-muted: #808080; /* Semantic/Text/Kiosk/Muted · Neutral/450 */
   --asak-text-tertiary: #737373; /* Semantic/Text/Tertiary · Neutral/600 */
-  --asak-text-price: #6c9700; /* MenuCard 실측 Semantic/Brand/Secondary (Green/550 #4a7a00는 보조) */
-  --asak-text-price-alt: #4a7a00; /* Semantic/Text/Price · Green/550 */
+  --asak-text-price: #6c9700; /* Semantic/Brand/Secondary · Color/Green/500 — MenuCard 가격 실측 */
+  --asak-text-price-alt: #4a7a00; /* Semantic/Text/Price · Color/Green/550 */
   --asak-text-on-primary: #1a1a1a; /* CTA 위 본문(대비 유지) */
   --asak-text-on-dark: #ffffff; /* Semantic/Text/Primary · White — 어두운 면/이미지 위 본문 */
-  --asak-text-on-brand-dark: #243300; /* Semantic/Brand/OnPrimary · Green/700 */
+  --asak-text-on-brand-dark: #243300; /* Semantic/Brand/OnPrimary · Green/700 — 미사용, Figma 대응 유지 */
+  --asak-text-heading: #33383d; /* Color/Surface/100 — 화면 제목(장바구니·결제·주문완료 h1) */
+  --asak-text-emphasis: #0d0d0d; /* Color/Surface/700 — 합계 금액·NEW 배지 등 최강조 */
+  --asak-text-modal: #111827; /* Color/CoolGray/950 — 모달·확인창 제목/주요 버튼 */
+  --asak-text-button: #404040; /* Color/Neutral/800 — 모달 보조 버튼 라벨 */
+  --asak-text-placeholder: #9ca3af; /* Color/CoolGray/400 */
 
   /* ——— Color · Brand / Interactive ——— */
   --asak-lime: #b5e30f; /* Semantic/Brand/Primary · Green/300 */
@@ -40,28 +44,35 @@
   --asak-border-card: #e6e6e6; /* Color/Neutral/175 (메뉴 카드 실측) */
   --asak-border-strong: #737373; /* Semantic/Border/Strong */
   --asak-divider: #f5f5f5; /* Semantic/Border/Subtle · Neutral/100 */
+  --asak-border-muted: #cccccc; /* Color/Neutral/250 — step indicator */
   --asak-disabled-fill: #d4d4d4; /* BottomCTA disabled · Color/Neutral/300 */
   --asak-disabled-text: #6b7280; /* Semantic/Text/Disabled · CoolGray/700 */
   --asak-cta-loading-bg: #f5fbe0; /* Brand/Subtle — BottomCTA loading */
+
+  /* ——— 코드 전용 (Figma Primitive에 없는 화면 실측값) ———
+     Figma에 대응 Variable이 없으므로 Figma식 이름(Neutral/xxx 등)을 쓰지 않는다.
+     숫자가 클수록 어둡다. Variable로 치환하지 말 것. */
+  --asak-ink-900: #111111; /* 영수증 본문·홈 배경 */
+  --asak-ink-800: #282828; /* 장바구니 합계 행 */
+  --asak-ink-600: #4a4e57; /* 주문완료 보조 라벨 */
+  --asak-border-soft: #e5e5e5; /* 접근성 화면 구분선 */
 
   /* ——— Color · Status ——— */
   --asak-danger: #ef4444; /* Semantic/Status/Error · Red/400 */
   --asak-danger-soft: #fff0eb; /* Semantic/Status/ErrorBG */
   --asak-danger-text: #994d4d; /* Semantic/Status/DangerText · Red/600 */
   --asak-warning: #fbbf24; /* Semantic/Status/Warning · Yellow/400 */
-  --asak-warning-text: #92400e; /* Semantic/Status/WarningText · Amber/800 */
+  --asak-warning-text: #92400e; /* Semantic/Status/WarningText · Amber/800 — 미사용, Figma 대응 유지 */
   --asak-success: #5da45d; /* Semantic/Status/Success */
   --asak-status-vegan: #077e40; /* Semantic/Status/Vegan · Success/700 */
-  --asak-allergy-border: #fbbf24;
   --asak-overlay-scrim: rgba(0, 0, 0, 0.45); /* Confirm 실측 */
-  --asak-overlay-home: rgba(0, 0, 0, 0.39); /* Home dark-overlay 실측 */
 
   /* ——— Badge / Category / Payment ——— */
   --asak-badge-best-bg: #ffe6e7; /* Semantic/Badge/BestBG · Red/100 */
   --asak-badge-best-text: #ff0004; /* Semantic/Badge/BestText · Red/700 */
   --asak-badge-new-bg: #ffff80; /* Semantic/Badge/NewBG · Yellow/200 */
-  --asak-category-side: #ff8d28; /* Semantic/Category/Side · Orange/400 */
-  --asak-pay-naver: #03c75a; /* Semantic/Payment/Naver/Primary */
+  --asak-category-side: #ff8d28; /* Semantic/Category/Side · Orange/400 — 미사용, Figma 대응 유지 */
+  --asak-pay-naver: #03c75a; /* Semantic/Payment/Naver/Primary — 미사용, 네이버페이 구현 시 사용 */
 
   /* ——— Layout (1080×1920) ——— */
   --asak-kiosk-w: 1080px;
@@ -116,7 +127,7 @@
   --asak-lh-category: 40px;
   --asak-fs-cta: 34px; /* BottomCTA Bold · lh 44 */
   --asak-lh-cta: 44px;
-  --asak-fs-price: 38px; /* MenuCard/CTA price Bold · lh 46 */
+  --asak-fs-price: 38px; /* Bold · lh 46 — 쓰이는 곳: MenuCard 가격, BottomCTA 금액 */
   --asak-lh-price: 46px;
   --asak-fs-home-headline: 64px; /* Home Medium · lh 76 */
   --asak-lh-home-headline: 76px;

@@ -22,7 +22,7 @@
   line-height: 58px;
   font-weight: 700;
   letter-spacing: -0.72px;
-  color: #33383d; /* Figma 직접값 · Variable 미바인딩 */
+  color: var(--asak-text-heading); /* Figma 직접값 · Variable 미바인딩 */
 }
 
 .cart-page__toolbar {
@@ -40,7 +40,7 @@
 }
 
 .cart-page__toolbar button {
-  min-height: 48px;
+  min-height: var(--asak-touch-min);
   padding: var(--asak-space-3);
   border: 0;
   background: none;
@@ -207,7 +207,7 @@
 }
 
 .cart-item__actions button {
-  min-height: 48px;
+  min-height: var(--asak-touch-min);
   padding: var(--asak-space-2) var(--asak-space-4);
   border: 0;
   border-radius: 6px;
@@ -247,8 +247,8 @@
 }
 
 .cart-item__total-values b {
-  font-size: 32px;
-  line-height: 40px;
+  font-size: var(--asak-fs-category);
+  line-height: var(--asak-lh-category);
   font-weight: 700;
   color: var(--asak-text-strong);
 }
@@ -288,7 +288,7 @@
   font-size: 30px;
   line-height: 38px;
   font-weight: 700;
-  color: #282828; /* Figma 직접값 · Variable 미바인딩 */
+  color: var(--asak-ink-800); /* Figma 직접값 · Variable 미바인딩 */
 }
 
 .cart-page__summary-values {
@@ -301,14 +301,14 @@
 .cart-page__summary-row b {
   font-size: 30px;
   font-weight: 700;
-  color: #282828; /* Figma 직접값 · Variable 미바인딩 */
+  color: var(--asak-ink-800); /* Figma 직접값 · Variable 미바인딩 */
 }
 
 .cart-page__summary-total {
   margin-top: var(--asak-space-6);
   padding: 0 var(--asak-space-6);
   height: 130px;
-  border-top: 1px solid var(--asak-border-card);
+  border-top: var(--asak-border-w) solid var(--asak-border-card);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -318,7 +318,7 @@
   font-size: 30px;
   line-height: 38px;
   font-weight: 700;
-  color: #282828; /* Figma 직접값 · Variable 미바인딩 */
+  color: var(--asak-ink-800); /* Figma 직접값 · Variable 미바인딩 */
 }
 
 .cart-page__summary-total strong {
@@ -326,7 +326,7 @@
   line-height: 65px;
   font-weight: 800;
   letter-spacing: -0.72px;
-  color: #0d0d0d; /* Figma 직접값 · legacy Gray/1600, Semantic 없음 */
+  color: var(--asak-text-emphasis); /* Figma 직접값 · legacy Gray/1600, Semantic 없음 */
 }
 
 /* BottomCTA — Figma 134:7859 */
@@ -337,7 +337,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--asak-space-7);
-  border: 1px solid var(--asak-border-card);
+  border: var(--asak-border-w) solid var(--asak-border-card);
   border-radius: 16px;
   background: var(--asak-surface);
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.06);

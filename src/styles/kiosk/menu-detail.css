@@ -20,7 +20,7 @@
   display: flex;
   gap: var(--asak-space-7);
   align-items: flex-start;
-  border-bottom: 1px solid #ededed; /* Figma 직접값 · Border/Default(#e5e7eb)와 근사값 중복 */
+  border-bottom: var(--asak-border-w) solid #ededed; /* Figma 직접값 · Border/Default(#e5e7eb)와 근사값 중복 */
   background: var(--asak-surface);
 }
 
@@ -59,7 +59,7 @@
 
 .menu-badge {
   padding: 2px 8px;
-  border-radius: 4px;
+  border-radius: var(--asak-radius-xs);
   font-size: 16px;
   line-height: 24px;
   font-weight: 500;
@@ -72,16 +72,16 @@
 
 .menu-badge--new {
   background: var(--asak-badge-new-bg);
-  color: #0d0d0d; /* Figma는 legacy Gray/1600 바인딩 · Semantic 없음 */
+  color: var(--asak-text-emphasis); /* Figma는 legacy Gray/1600 바인딩 · Semantic 없음 */
 }
 
 .menu-badge--vegan {
-  background: #ebf5eb; /* Figma 직접값 · Badge/VeganBG 토큰 없음 (값은 Status/SuccessBG와 같음) */
+  background: var(--asak-surface-success); /* Figma 직접값 · Badge/VeganBG 토큰 없음 (값은 Status/SuccessBG와 같음) */
   color: var(--asak-status-vegan);
 }
 
 .menu-badge--neutral {
-  background: var(--asak-surface-muted, #f5f5f5);
+  background: var(--asak-surface-muted, var(--asak-surface-muted));
   color: var(--asak-text-muted);
 }
 
@@ -210,7 +210,7 @@
   width: var(--asak-option-card-w);
   height: var(--asak-option-card-h);
   padding: 16px 18px;
-  border: 1px solid var(--asak-border);
+  border: var(--asak-border-w) solid var(--asak-border);
   border-radius: var(--asak-radius-md);
   background: var(--asak-surface);
   box-sizing: border-box;
@@ -306,7 +306,7 @@
 .option-item__badge--recommended {
   background: var(--asak-surface-lime);
   color: #4a6b10; /* Figma 직접값 · Variable 미바인딩 */
-  border: 1px solid var(--asak-lime-border);
+  border: var(--asak-border-w) solid var(--asak-lime-border);
 }
 
 .option-item__badge--sold-out {
@@ -323,7 +323,7 @@
   align-items: stretch;
   gap: var(--asak-space-6);
   background: var(--asak-surface);
-  border-top: 1px solid var(--asak-divider);
+  border-top: var(--asak-border-w) solid var(--asak-divider);
   box-sizing: border-box;
 }
 
@@ -407,7 +407,7 @@
   display: flex;
   align-items: stretch;
   background: var(--asak-surface);
-  border-top: 1px solid var(--asak-divider);
+  border-top: var(--asak-border-w) solid var(--asak-divider);
   box-sizing: border-box;
 }
 

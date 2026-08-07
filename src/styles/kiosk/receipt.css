@@ -19,7 +19,7 @@
   font-size: 28px;
   line-height: 38px;
   font-weight: 700;
-  color: #0d0d0d; /* Figma 직접값 · Variable 미바인딩 */
+  color: var(--asak-text-emphasis); /* Figma 직접값 · Variable 미바인딩 */
 }
 .receipt-page__hint {
   margin: var(--asak-space-3) 0 0;
@@ -35,8 +35,8 @@
   flex-direction: column;
   align-items: center;
   gap: 18px;
-  border: 1px solid var(--asak-border);
-  border-radius: 4px;
+  border: var(--asak-border-w) solid var(--asak-border);
+  border-radius: var(--asak-radius-xs);
   background: var(--asak-surface);
 }
 .receipt-ticket__hang {
@@ -56,13 +56,13 @@
   font-size: 74px;
   line-height: 83px;
   font-weight: 700;
-  color: #111; /* Figma 직접값 · Variable 미바인딩 */
+  color: var(--asak-ink-900); /* Figma 직접값 · Variable 미바인딩 */
 }
 .receipt-ticket hr {
   width: 100%;
   margin: 0;
   border: 0;
-  border-top: 1px solid var(--asak-border);
+  border-top: var(--asak-border-w) solid var(--asak-border);
 }
 .receipt-ticket ul {
   width: 100%;
@@ -79,7 +79,7 @@
   gap: 9px;
   font-size: 18px;
   line-height: 28px;
-  color: #111; /* Figma 직접값 · Variable 미바인딩 */
+  color: var(--asak-ink-900); /* Figma 직접값 · Variable 미바인딩 */
 }
 .receipt-ticket__total {
   width: 100%;
@@ -88,7 +88,7 @@
   justify-content: space-between;
   font-size: 23px;
   line-height: 32px;
-  color: #111; /* Figma 직접값 · Variable 미바인딩 */
+  color: var(--asak-ink-900); /* Figma 직접값 · Variable 미바인딩 */
 }
 .receipt-ticket__barcode {
   display: flex;
@@ -100,7 +100,7 @@
 .receipt-ticket__barcode span {
   display: block;
   width: 2px;
-  background: #111; /* Figma 직접값 · Variable 미바인딩 */
+  background: var(--asak-ink-900); /* Figma 직접값 · Variable 미바인딩 */
 }
 .receipt-ticket small {
   font-size: 14px;
@@ -110,7 +110,7 @@
 .receipt-page__footer {
   height: 180px;
   padding: var(--asak-space-8) var(--asak-space-9);
-  border-top: 1px solid var(--asak-border-card);
+  border-top: var(--asak-border-w) solid var(--asak-border-card);
   background: var(--asak-surface);
   box-sizing: border-box;
 }
@@ -144,7 +144,7 @@
 }
 
 .receipt-page__hint.is-success {
-  color: #4a7a00; /* Figma 직접값 · Variable 미바인딩 (값은 Text/Price와 같으나 역할이 다름) */
+  color: var(--asak-text-price-alt); /* Figma 직접값 · Variable 미바인딩 (값은 Text/Price와 같으나 역할이 다름) */
 }
 
 .receipt-ticket.is-printing {
@@ -181,6 +181,6 @@
 }
 
 .accessibility-page.is-reverted .accessibility-page__contrast button.is-on {
-  background: #d4d4d4;
+  background: var(--asak-disabled-fill);
 }
 

@@ -42,7 +42,7 @@ body,
   align-items: center;
   justify-content: space-between;
   background: var(--asak-bg-kiosk);
-  border-bottom: 1px solid var(--asak-divider);
+  border-bottom: var(--asak-border-w) solid var(--asak-divider);
   flex-shrink: 0;
 }
 

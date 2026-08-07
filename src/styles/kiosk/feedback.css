@@ -13,11 +13,11 @@
   align-items: center;
   justify-content: space-between;
   background: var(--asak-surface);
-  border-bottom: 1px solid var(--asak-divider);
+  border-bottom: var(--asak-border-w) solid var(--asak-divider);
 }
 
 .kiosk-state-preview > header span {
-  color: #4a7a00; /* Figma 직접값 · Variable 미바인딩 */
+  color: var(--asak-text-price-alt); /* Figma 직접값 · Variable 미바인딩 */
   font-size: 44px;
   font-weight: 900;
   letter-spacing: -0.08em;
@@ -51,7 +51,7 @@
   justify-items: center;
   align-content: center;
   gap: var(--asak-space-5);
-  border: 1px solid var(--asak-border);
+  border: var(--asak-border-w) solid var(--asak-border);
   border-radius: 24px;
   background: var(--asak-surface);
   text-align: center;
@@ -74,7 +74,7 @@
   padding: 6px 12px;
   border-radius: 999px;
   background: var(--asak-surface-muted);
-  color: #6b7280; /* Figma 직접값 · 값은 Text/Disabled와 같으나 역할이 다름 */
+  color: var(--asak-disabled-text); /* Figma 직접값 · 값은 Text/Disabled와 같으나 역할이 다름 */
   font-size: 14px;
 }
 .kiosk-state-card__mark {
@@ -108,10 +108,10 @@
 .kiosk-state-card__actions button {
   flex: 1;
   height: 56px;
-  border: 1px solid var(--asak-border);
+  border: var(--asak-border-w) solid var(--asak-border);
   border-radius: 12px;
   background: var(--asak-surface-muted);
-  color: #9ca3af; /* Figma 직접값 · Variable 미바인딩 */
+  color: var(--asak-text-placeholder); /* Figma 직접값 · Variable 미바인딩 */
   font: inherit;
   font-weight: 700;
 }
@@ -140,8 +140,8 @@
 }
 .kiosk-modal-page__hero span {
   display: block;
-  font-size: 32px;
-  line-height: 40px;
+  font-size: var(--asak-fs-category);
+  line-height: var(--asak-lh-category);
   color: var(--asak-text-secondary);
 }
 .kiosk-modal-page__hero strong {
@@ -154,7 +154,7 @@
 }
 .kiosk-modal-page__hero p {
   margin: 68px 0 0;
-  font-size: 32px;
+  font-size: var(--asak-fs-category);
   line-height: 46px;
   font-weight: 700;
   color: var(--asak-text-tertiary);
@@ -165,7 +165,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--asak-space-7);
-  border-top: 1px solid var(--asak-border-card);
+  border-top: var(--asak-border-w) solid var(--asak-border-card);
   background: var(--asak-surface);
   box-sizing: border-box;
 }
@@ -209,7 +209,7 @@
   font-size: 22px;
   line-height: 28px;
   font-weight: 700;
-  color: #111827; /* Figma는 Text/Admin/Primary 바인딩 · Kiosk Semantic 없음 */
+  color: var(--asak-text-modal); /* Figma는 Text/Admin/Primary 바인딩 · Kiosk Semantic 없음 */
 }
 .kiosk-modal p {
   margin: 0;
@@ -227,13 +227,13 @@
   border: 0;
   border-radius: 8px;
   background: var(--asak-surface-muted);
-  color: #404040; /* Figma는 Color/Neutral/800 바인딩 · Kiosk Semantic 없음 */
+  color: var(--asak-text-button); /* Figma는 Color/Neutral/800 바인딩 · Kiosk Semantic 없음 */
   font-family: inherit;
   font-size: 16px;
   font-weight: 500;
 }
 .kiosk-modal__actions .is-primary {
   background: var(--asak-lime);
-  color: #111827; /* Figma는 Text/Admin/Primary 바인딩 · Kiosk Semantic 없음 */
+  color: var(--asak-text-modal); /* Figma는 Text/Admin/Primary 바인딩 · Kiosk Semantic 없음 */
 }
 
