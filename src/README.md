@@ -13,7 +13,7 @@
 | `utils/quantityLimits.js` | 수량 한도 **단일 기준** | 9/30 적용 |
 | `api/`, `adapters/` | HTTP·DTO | 골격 · 페이지는 아직 mock 직접 사용 |
 | `hooks/` | 타임아웃 등 | 일부 stub |
-| `contracts/` | 계약 메모 | Canonical과 충돌 시 Canonical 우선 |
+| `contracts/` | 계약 메모 | 정본과 충돌 시 정본 우선 |
 | `public/mocks/kiosk.json` | mock 정본 | (저장소 `public/`) |
 
 구현 순서 추천: **페이지 동작 확인 → store/utils → (나중) api/adapter**.  

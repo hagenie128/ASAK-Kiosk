@@ -48,7 +48,7 @@ npm.cmd run preview
 - 구조: [src/STRUCTURE_GUIDE.md](src/STRUCTURE_GUIDE.md)
 - 계획: [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md)
 - Figma **0718** (`yHhvn5RKjBd91U8BJUQz7F`) — 0715 키 사용 금지
-- 핸드오프: [docs/figma-ui-handoff-2026-07-18.md](docs/figma-ui-handoff-2026-07-18.md)
+- 넘김: [docs/figma-ui-handoff-2026-07-18.md](docs/figma-ui-handoff-2026-07-18.md)
 - UI 표: [ui-index.md](../ui-index.md)
 
 ## 구조
