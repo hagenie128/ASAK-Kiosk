@@ -67,10 +67,10 @@ items[]: menuId, menuName, unitPrice, quantity,
 3. `pages/`에서 로딩·빈 상태·오류 상태를 모두 연결한다.
 4. 품절, 필수 옵션, 결제 실패는 성공 화면으로 이동시키지 않는다.
 
-## Canonical contract relationship
+## 정본 계약과의 관계
 
-- Status: Canonical field names aligned. This document does not claim that every endpoint is implemented.
-- Canonical paths and response fields: [Canonical Contract Decisions](../../../ASAK/docs/governance/canonical-contract-decisions-2026-07-16.md).
-- Canonical fields: `/api/kiosk/...`, `totalAmount`, `approvedAmount`, `approvedAt`, `waitingOrderCount`.
-- Adapter TODO: map any remaining legacy fixture fields only at the API adapter boundary; do not add an API flow until the backend endpoint is implemented.
-- Actual API wiring requires backend endpoint and DTO confirmation before code changes.
+- 상태: 정본 필드명 정렬됨. 이 문서는 모든 엔드포인트가 구현됐다고 주장하지 않는다.
+- 정본 경로·응답 필드: [정본 계약 결정](../../../ASAK/docs/governance/canonical-contract-decisions-2026-07-16.md).
+- 정본 필드: `/api/kiosk/...`, `totalAmount`, `approvedAmount`, `approvedAt`, `waitingOrderCount`.
+- Adapter TODO: 남은 레거시 테스트용 데이터 필드는 API adapter 경계에서만 매핑한다. 백엔드 엔드포인트가 구현되기 전에는 API 흐름을 추가하지 않는다.
+- 실제 API 연결은 백엔드 엔드포인트·DTO 확인 후에만 코드에 반영한다.

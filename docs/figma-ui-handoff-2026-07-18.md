@@ -1,4 +1,4 @@
-# 키오스크 Figma UI 핸드오프
+# 키오스크 Figma UI 넘김
 
 > 기준일: **2026-07-20**  
 > Figma 정본: `yHhvn5RKjBd91U8BJUQz7F` (0718) — **0715 파일 키 사용 금지**  
@@ -6,7 +6,7 @@
 
 ## 역할
 
-이 문서는 키오스크 **화면 ↔ 코드 ↔ 데이터 상태**의 짧은 핸드오프다.  
+이 문서는 키오스크 **화면 ↔ 코드 ↔ 데이터 상태**의 짧은 넘김다.  
 상세 라우트·WBS는 [`src/STRUCTURE_GUIDE.md`](../src/STRUCTURE_GUIDE.md), [`IMPLEMENTATION_PLAN.md`](../IMPLEMENTATION_PLAN.md)를 본다.
 
 ## 데이터 상태 요약

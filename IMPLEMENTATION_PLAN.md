@@ -6,9 +6,9 @@
 > 정본 WBS: [`ASAK/docs/wiki/wbs-v2-2026-07-16.md`](../ASAK/docs/wiki/wbs-v2-2026-07-16.md) **P3 키오스크 · WBS2-017 ~ WBS2-032** (Admin은 P4 · WBS2-033~045)  
 > 구조: [`src/STRUCTURE_GUIDE.md`](src/STRUCTURE_GUIDE.md)  
 > 구현 맵: [`ASAK/docs/planning/current-implementation-map-2026-07-16.md`](../ASAK/docs/planning/current-implementation-map-2026-07-16.md)  
-> Canonical: [`ASAK/docs/governance/canonical-contract-decisions-2026-07-16.md`](../ASAK/docs/governance/canonical-contract-decisions-2026-07-16.md)  
+> 정본: [`ASAK/docs/governance/canonical-contract-decisions-2026-07-16.md`](../ASAK/docs/governance/canonical-contract-decisions-2026-07-16.md)  
 > 3일 스프린트: [`ASAK/docs/planning/frontend-wednesday-wbs-2026-07-20.md`](../ASAK/docs/planning/frontend-wednesday-wbs-2026-07-20.md)  
-> 이 문서는 **2026-07-14 최초 상세 계획**(화면 계약·일정·fixture·테스트·브랜치 규칙)을 복원하고, **2026-07-20 코드 실측**(현재 상태)을 함께 담은 통합본이다. 두 기준이 다를 때는 **0~1번(코드 실측)이 우선**이며, 나머지는 참고용 계약·이력이다.
+> 이 문서는 **2026-07-14 최초 상세 계획**(화면 계약·일정·테스트용 데이터·테스트·브랜치 규칙)을 복원하고, **2026-07-20 코드 실측**(현재 상태)을 함께 담은 통합본이다. 두 기준이 다를 때는 **0~1번(코드 실측)이 우선**이며, 나머지는 참고용 계약·이력이다.
 
 ## 0. 한눈에 보는 현재 상태
 
@@ -66,7 +66,7 @@
 | 수량 | **`utils/quantityLimits.js`만** (동일 메뉴 9 · 장바구니 30) |
 | Envelope | `{ success, status, code, message, data }` — `api/client.js`에서만 unwrap |
 | Mock 원본 | `public/mocks/kiosk.json` |
-| Canonical API (문서) | `/api/kiosk/menuList`, `/api/kiosk/menuDetail/{menuId}`, `/api/kiosk/orders`, `/api/kiosk/payments` |
+| 정본 API (문서) | `/api/kiosk/menuList`, `/api/kiosk/menuDetail/{menuId}`, `/api/kiosk/orders`, `/api/kiosk/payments` |
 | 코드 상수 | 아직 legacy `/api/menus` 등 → `DECIDED_PENDING_CODE_CHANGE` |
 | 정본 응답 필드 | `totalAmount`, `approvedAmount`, `approvedAt`, `waitingOrderCount` — store는 당분간 `totalPrice` 등 유지, adapter 매핑 (WBS2-057) |
 
@@ -111,7 +111,7 @@ orderStore
 4. **WBS2-028** — complete에 `orderNo` / 금액 / `waitingOrderCount`
 5. **WBS2-029~030** — `useKioskTimeout` 실제 연결
 6. **WBS2-031~032** — 상태 UI·터치 QA
-7. (이후) adapter + Canonical path 상수 정렬 → P6 연동
+7. (이후) adapter + 정본 경로 상수 정렬 → P6 연동
 
 ## 4. 화면별 구현 계약 (2026-07-14 최초 계약, 참고)
 
@@ -144,9 +144,9 @@ orderStore
 | 옵션 품절 | 회색 처리와 `SOLD OUT` | 선택 불가, 필수 옵션 최소 선택 수 계산에서도 제외 |
 | 주문 직전 품절 | `MENU_SOLD_OUT` 등 API 오류 | 장바구니를 유지하고 영향을 받은 항목을 안내한다 |
 
-## 6. Mock API와 실패 fixture (2026-07-14 최초 계약, 참고)
+## 6. Mock API와 실패용 테스트 데이터 (2026-07-14 최초 계약, 참고)
 
-> 아래 `API-001`~`API-006` ID는 최초 설계 시 문서 표기이며, 현재 Canonical 문서 경로는 위 2번 표의 `/api/kiosk/...` 표기를 따른다. 코드 상수는 아직 legacy 경로를 쓰므로 fixture를 새로 만들 때는 실제 코드 경로 기준으로 맞춘다.
+> 아래 `API-001`~`API-006` ID는 최초 설계 시 문서 표기이며, 현재 정본 문서 경로는 위 2번 표의 `/api/kiosk/...` 표기를 따른다. 코드 상수는 아직 legacy 경로를 쓰므로 테스트용 데이터를 새로 만들 때는 실제 코드 경로 기준으로 맞춘다.
 
 | API | 정상 mock | 실패/경계 mock | 화면 영향 |
 | --- | --- | --- | --- |
@@ -166,8 +166,8 @@ orderStore
 | 날짜 | 주문·메뉴 담당 | 장바구니·결제 담당 | UI·통합 담당 | 당일 완료 조건 |
 | --- | --- | --- | --- | --- |
 | 7/14 | `orderType`, menu/option 필드와 품절 규칙 확정 | 주문·결제 상태 전이와 실패 코드 확정 | 라우트, envelope, store 경계 확인 | 화면/API/TC ID 및 공통 필드 합의 |
-| 7/15 | `SCR-001`, `API-001/002` fixture, 메뉴 진입 | `API-005` 요청·응답 mock 준비 | 공통 레이아웃, loading, 버튼 상태 | 주문 유형 선택 뒤 메뉴 진입 가능 |
-| 7/16 | `SCR-003`, `SCR-004`, 옵션·재료 제외 | 장바구니 계산 규칙과 항목 스냅샷 리뷰 | menu/option fixture 검증 | 옵션 포함 항목이 계약 형태로 store에 저장 |
+| 7/15 | `SCR-001`, `API-001/002` 테스트용 데이터, 메뉴 진입 | `API-005` 요청·응답 mock 준비 | 공통 레이아웃, loading, 버튼 상태 | 주문 유형 선택 뒤 메뉴 진입 가능 |
+| 7/16 | `SCR-003`, `SCR-004`, 옵션·재료 제외 | 장바구니 계산 규칙과 항목 스냅샷 리뷰 | menu/option 테스트용 데이터 검증 | 옵션 포함 항목이 계약 형태로 store에 저장 |
 | 7/17 | 필수 옵션·품절·알레르기 예외 | `SCR-005`, 확인 모달, 주문 생성 | empty/error와 키보드 모달 점검 | 수량·삭제·총액·주문 확인 흐름 완료 |
 | 7/18 | 메뉴 재진입과 장바구니 상태 검증 | `SCR-007`, `SCR-008`, `SCR-012` | 결제 대기·오류·포커스 UI | 성공·실패 mock 모두 시연 |
 | 7/19 | 주문 시작~상세 smoke | 결제 실패 복구 smoke | `TC-K01/K02` 결과 기록 | 전체 주문 흐름 1회 통과 |
@@ -227,5 +227,5 @@ docs(kiosk): align API-005 mock fields with contract
 
 - Status: **Current (2026-07-20 code audit) + 2026-07-14 최초 계약 복원본**
 - 이전 07-14 계획은 UI·Cart를 "미구현"으로 적어 **과소평가**되어 있었음 → 0·1번 표는 실측으로 대체.
-- 단, 07-14 계획의 화면 계약(4번)·품절 규칙(5번)·fixture(6번)·일정(7번, 이력)·테스트(8번)·브랜치 규칙(9번)은 **삭제하지 않고 이 문서에 유지**한다 (2026-07-20 사용자 피드백: "기존에 있던 내용이 빠졌다" 반영).
+- 단, 07-14 계획의 화면 계약(4번)·품절 규칙(5번)·테스트용 데이터(6번)·일정(7번, 이력)·테스트(8번)·브랜치 규칙(9번)은 **삭제하지 않고 이 문서에 유지**한다 (2026-07-20 사용자 피드백: "기존에 있던 내용이 빠졌다" 반영).
 - Product Bible: Pack 12 Frontend Implementation (정책 참고).

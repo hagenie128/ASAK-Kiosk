@@ -15,9 +15,9 @@
 
 중복 요구사항은 구현하지 않는다. 예를 들어 `FWD-CART-003`은 제외된 중복 항목이므로 `FWD-CART-002`만 구현·테스트 기준으로 사용한다.
 
-## Canonical contract relationship
+## 정본 계약과의 관계
 
-- Status: Needs Review — current Frontend screen expectation map.
-- Canonical Screen/API decisions: [ASAK docs](../../../ASAK/docs/README.md) and [Canonical Contract Decisions](../../../ASAK/docs/governance/canonical-contract-decisions-2026-07-16.md).
-- Current Admin references in this Kiosk contract are Legacy Reference; administrator implementation is canonical in ASAK-Admin.
+- 상태: 검토 필요 — 현재 프론트 화면 기대 매핑.
+- 정본 화면·API 결정: [ASAK docs](../../../ASAK/docs/README.md) · [정본 계약 결정](../../../ASAK/docs/governance/canonical-contract-decisions-2026-07-16.md).
+- 이 키오스크 계약에 남은 Admin 언급은 레거시 참고용이다. 관리자 구현 정본은 ASAK-Admin이다.
 - Actual implementation requires Screen Registry/route confirmation before code changes.

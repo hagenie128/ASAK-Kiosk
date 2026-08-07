@@ -60,7 +60,7 @@ main.jsx
 | `store` | 화면 이동 후에도 유지 | `orderSessionStore` + `cartStore` 호환 export |
 | `hooks` | 반복 로직 | `useKioskTimeout` 등 stub 포함 |
 | `utils` | 순수 계산 | **`priceCalculation.js` · `quantityLimits.js` = 단일 기준 (건드리지 말 것)** |
-| `contracts` | 화면↔API 계약 문서 | 참고용; Canonical과 충돌 시 Canonical 우선 |
+| `contracts` | 화면↔API 계약 문서 | 참고용; 정본과 충돌 시 정본 우선 |
 | `constants` | API 경로 상수 | 아직 legacy `/api/menus` 등 — Target은 `/api/kiosk/*` |
 
 ## 핵심 규칙 (ASAK)
@@ -68,7 +68,7 @@ main.jsx
 1. **가격**은 `utils/priceCalculation.js`만 사용한다.
 2. **수량 한도**(동일 메뉴 9 · 장바구니 30)는 `utils/quantityLimits.js`만 사용한다.
 3. 페이지에서 axios를 직접 치지 않는다. 나중에 `api/*` + `adapters/*`로 연결한다.
-4. Canonical API 경로(문서): `GET /api/kiosk/menuList`, `GET /api/kiosk/menuDetail/{menuId}`, `POST /api/kiosk/orders`, `POST /api/kiosk/payments`  
+4. 정본 API 경로(문서): `GET /api/kiosk/menuList`, `GET /api/kiosk/menuDetail/{menuId}`, `POST /api/kiosk/orders`, `POST /api/kiosk/payments`  
    → 코드 상수는 아직 legacy. `DECIDED_PENDING_CODE_CHANGE`.
 5. 응답 정본 필드: `totalAmount`, `approvedAmount`, `approvedAt`, `waitingOrderCount`  
    → store는 당분간 `totalAmount` 등 유지, adapter에서 매핑 (WBS2-057).
@@ -107,5 +107,5 @@ main.jsx
 | WBS 2.0 | `ASAK/docs/wiki/wbs-v2-2026-07-16.md` |
 | WBS 상태 메모 | `ASAK/docs/wiki/wbs-status-notes.md` |
 | 3일 스프린트 | `ASAK/docs/planning/frontend-wednesday-wbs-2026-07-20.md` |
-| Canonical 계약 | `ASAK/docs/governance/canonical-contract-decisions-2026-07-16.md` |
+| 정본 계약 | `ASAK/docs/governance/canonical-contract-decisions-2026-07-16.md` |
 | Mock 안내 | `public/mocks/README.md` |

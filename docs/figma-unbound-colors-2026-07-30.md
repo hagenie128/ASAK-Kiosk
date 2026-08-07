@@ -160,7 +160,7 @@ hover가 아니다. 값이 같다는 이유로 묶으면 나중에 hover 색만 
 
 `#0d0d0d`는 Figma에서 `Gray/1600`에 바인딩되어 있다. `Gray/*`는 `Color/Neutral/*`과
 중복되는 레거시 컬렉션이라 export되는 `ASAK / Primitive`에 포함되지 않는다.
-Semantic으로 승격하거나 `Color/Neutral/*`으로 옮겨야 코드에서 토큰으로 쓸 수 있다.
+Semantic으로 올리거나 `Color/Neutral/*`으로 옮겨야 코드에서 토큰으로 쓸 수 있다.
 
 ## 진행 현황
 
