@@ -6,7 +6,7 @@
 
 ## 역할
 
-이 문서는 키오스크 **화면 ↔ 코드 ↔ 데이터 상태**의 짧은 넘김다.  
+이 문서는 키오스크 **화면 ↔ 코드 ↔ 데이터 상태**의 짧은 넘김 문서다.  
 상세 라우트·WBS는 [`src/STRUCTURE_GUIDE.md`](../src/STRUCTURE_GUIDE.md), [`IMPLEMENTATION_PLAN.md`](../IMPLEMENTATION_PLAN.md)를 본다.
 
 ## 데이터 상태 요약
