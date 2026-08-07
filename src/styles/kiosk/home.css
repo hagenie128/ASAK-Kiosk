@@ -6,7 +6,7 @@
   height: 100%;
   min-height: 1920px;
   overflow: hidden;
-  background: #111; /* Figma 직접값 · Variable 미바인딩 (히어로 이미지 뒤 바탕) */
+  background: var(--asak-ink-900); /* Figma 직접값 · Variable 미바인딩 (히어로 이미지 뒤 바탕) */
 }
 
 .home-page__hero {
@@ -55,9 +55,9 @@
   margin: 0;
   text-align: center;
   color: var(--asak-text-on-dark);
-  font-size: 64px;
+  font-size: var(--asak-fs-home-headline);
   font-weight: 500;
-  line-height: 76px;
+  line-height: var(--asak-lh-home-headline);
   letter-spacing: -0.96px;
   white-space: nowrap;
 }
@@ -82,8 +82,8 @@
   width: 444px;
   height: 450px;
   padding: 60px; /* 버튼 내부 여백 · 페이지 여백 아님 */
-  border: 1px solid var(--asak-divider);
-  border-radius: 32px;
+  border: var(--asak-border-w) solid var(--asak-divider);
+  border-radius: var(--asak-radius-home-card);
   background: var(--asak-surface);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
   color: var(--asak-text-strong);

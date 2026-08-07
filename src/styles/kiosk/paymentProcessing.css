@@ -13,7 +13,7 @@
     display: flex;
     align-items: stretch;
     background: var(--asak-surface);
-    border-top: 1px solid var(--asak-divider);
+    border-top: var(--asak-border-w) solid var(--asak-divider);
     box-sizing: border-box;
 }
 

@@ -27,18 +27,18 @@
   width: 56px;
   height: 16px;
   border-radius: 8px;
-  border: 2px solid #ccc; /* Figma는 legacy Gray/300 바인딩 · Semantic 없음 */
+  border: 2px solid var(--asak-border-muted); /* Figma는 legacy Gray/300 바인딩 · Semantic 없음 */
   background: var(--asak-surface);
   box-sizing: border-box;
 }
 
 .kiosk-step-indicator .is-done {
-  border-color: #b3e500; /* Figma는 Color/Lime/500 직접 바인딩 · 값은 Interactive/Hover와 같으나 hover 상태 아님 */
+  border-color: var(--asak-lime-hover); /* Figma는 Color/Lime/500 직접 바인딩 · 값은 Interactive/Hover와 같으나 hover 상태 아님 */
   background: var(--asak-surface-lime);
 }
 
 .kiosk-step-indicator .is-current {
-  border-color: #b3e500; /* Figma는 Color/Lime/500 직접 바인딩 · 값은 Interactive/Hover와 같으나 hover 상태 아님 */
+  border-color: var(--asak-lime-hover); /* Figma는 Color/Lime/500 직접 바인딩 · 값은 Interactive/Hover와 같으나 hover 상태 아님 */
   background: var(--asak-lime);
 }
 
@@ -77,7 +77,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--asak-space-7);
-  border-top: 1px solid var(--asak-divider);
+  border-top: var(--asak-border-w) solid var(--asak-divider);
   background: var(--asak-surface);
 }
 

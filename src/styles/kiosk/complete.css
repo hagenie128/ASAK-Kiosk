@@ -3,7 +3,7 @@
 
 .order_complete_contents h1 {
   margin: 0;
-  color: #33383d; /* Figma 직접값 · Variable 미바인딩 */
+  color: var(--asak-text-heading); /* Figma 직접값 · Variable 미바인딩 */
   font-size: 56px;
   font-weight: 700;
   line-height: 1;
@@ -11,7 +11,7 @@
 
 .order-complete-page__label {
   margin: 84px 0 0;
-  color: #4a4e57; /* Figma 직접값 · Variable 미바인딩 */
+  color: var(--asak-ink-600); /* Figma 직접값 · Variable 미바인딩 */
   font-size: 40px;
   font-weight: 600;
   line-height: 1;
@@ -82,8 +82,8 @@
 .order-complete-page__hint {
   margin: 120px 0 0;
   max-width: 800px;
-  color: #4a4e57; /* Figma 직접값 · Variable 미바인딩 */
-  font-size: 32px;
+  color: var(--asak-ink-600); /* Figma 직접값 · Variable 미바인딩 */
+  font-size: var(--asak-fs-category);
   font-weight: 500;
   line-height: 1.25;
 }
@@ -91,7 +91,7 @@
 .order-complete-page__return {
   margin: var(--asak-space-5) 0 0;
   color: #303030; /* Figma 직접값 · Variable 미바인딩 */
-  font-size: 32px;
+  font-size: var(--asak-fs-category);
   font-weight: 500;
   line-height: 1.25;
 }
@@ -111,7 +111,7 @@
   gap: var(--asak-space-7);
   align-items: center;
   background: var(--asak-surface);
-  border-top: 1px solid var(--asak-border-card);
+  border-top: var(--asak-border-w) solid var(--asak-border-card);
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.06);
   box-sizing: border-box;
 }
@@ -142,8 +142,8 @@
   display: grid;
   justify-items: center;
   gap: var(--asak-space-4);
-  border: 1px solid var(--asak-border);
-  border-radius: 4px;
+  border: var(--asak-border-w) solid var(--asak-border);
+  border-radius: var(--asak-radius-xs);
   background: var(--asak-surface);
   color: var(--asak-text-strong);
 }
@@ -162,7 +162,7 @@
 }
 
 .receipt-card>strong {
-  font-size: 64px;
+  font-size: var(--asak-fs-home-headline);
   line-height: 72px;
   letter-spacing: -0.04em;
 }
@@ -171,7 +171,7 @@
   width: 100%;
   margin: 0;
   border: 0;
-  border-top: 1px solid var(--asak-border);
+  border-top: var(--asak-border-w) solid var(--asak-border);
 }
 
 .receipt-card ul {
