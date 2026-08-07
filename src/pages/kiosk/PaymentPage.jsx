@@ -51,6 +51,8 @@ export default function PaymentPage() {
     navigate("/paymentProcessing");
   }
 
+
+
   //결제 수단 클릭시 -> 해당 타입 console로 띄우기 (추후 백단으로 해당 타입 전달해주면 됨)
   const [selectedMethodId, setSelectedMethodId] = useState(null);
 
@@ -64,8 +66,17 @@ export default function PaymentPage() {
   const [isSummaryOpen, setIsSummaryOpen] = useState(false);
 
   const items = useCartStore((state) => state.items);
-  const totalAmount = calculateCartTotal(items);
+
   const itemCount = getCartTotalQuantity(items);
+
+  // api-004로부터 검증받은 db의 totalAmount(총가격) & items
+  const validatedTotalAmount  = useCartStore((state) => state.validatedTotalAmount);
+
+  const expectedTotalAmount = calculateCartTotal(items);
+  const totalAmount = validatedTotalAmount ?? expectedTotalAmount;
+
+  const validatedItems = useCartStore((state) => state.validatedItems);
+
 
   const processing = false;
 
@@ -138,38 +149,43 @@ export default function PaymentPage() {
             className={`payment-page__summary-body ${isSummaryOpen ? "is-open" : ""
               }`}
           >
-            {items.map((item) => (
-              <div
-                key={item.cartItemId}
-                className="payment_page__summary_item"
-              >
-                <div className="payment_page__summary_left">
-                  <span className="payment_page__summary_name">{item.menuName}</span>
+            {items.map((item) => {
+              const validatedItem = validatedItems?.find(
+                (serverItem) =>
+                  serverItem.clientCartItemId === item.cartItemId,
+              );
 
-                  {item.optionItems?.length > 0 && (
-                    <span className="payment_page__summary_option">
-                      {item.optionItems
-                        .map((option) => option.name)
-                        .join(", ")}
-                    </span>
-                  )}
-                </div>
-                <div className="payment_page__summary_right">
-                  <span>x{item.quantity}</span>
-                  <span>
-                    {formatCurrency(
-                      priceCalculation({
-                        unitPrice: item.unitPrice,
-                        optionItems: item.optionItems,
-                        quantity: item.quantity,
-                      }),
+              const itemTotalAmount = validatedItem
+                ? validatedItem.unitPrice * validatedItem.quantity
+                : priceCalculation({
+                    unitPrice: item.unitPrice,
+                    optionItems: item.optionItems,
+                    quantity: item.quantity,
+                  });
+
+              return (
+                <div
+                  key={item.cartItemId}
+                  className="payment_page__summary_item"
+                >
+                  <div className="payment_page__summary_left">
+                    <span className="payment_page__summary_name">{item.menuName}</span>
+
+                    {item.optionItems?.length > 0 && (
+                      <span className="payment_page__summary_option">
+                        {item.optionItems
+                          .map((option) => option.name)
+                          .join(", ")}
+                      </span>
                     )}
-                  </span>
+                  </div>
+                  <div className="payment_page__summary_right">
+                    <span>x{item.quantity}</span>
+                    <span>{formatCurrency(itemTotalAmount)}</span>
+                  </div>
                 </div>
-
-
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
 
