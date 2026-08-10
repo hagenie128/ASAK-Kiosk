@@ -55,8 +55,7 @@ main.jsx
 | `pages/kiosk` | URL로 열리는 한 화면 | 핵심 페이지 구현됨 |
 | `components/kiosk` | 키오스크 UI 조각 | MenuCard, OptionGroup, CartItem 등 사용 중 |
 | `components/common` | 공통 UI | LoadingSpinner, EmptyState 등 |
-| `api` | HTTP 요청 | 골격만; **페이지는 `public/mocks/kiosk.json` 직접 import** |
-| `adapters` | API/mock → 화면 DTO | stub / 미연결 (WBS2-018~019, WBS2-057) |
+| `api` | HTTP 요청·공통 응답 처리 | `client.js`를 통해 요청하고, 페이지/훅이 응답을 직접 사용 |
 | `store` | 화면 이동 후에도 유지 | `orderSessionStore` + `cartStore` 호환 export |
 | `hooks` | 반복 로직 | `useKioskTimeout` 등 stub 포함 |
 | `utils` | 순수 계산 | **`priceCalculation.js` · `quantityLimits.js` = 단일 기준 (건드리지 말 것)** |
@@ -67,18 +66,18 @@ main.jsx
 
 1. **가격**은 `utils/priceCalculation.js`만 사용한다.
 2. **수량 한도**(동일 메뉴 9 · 장바구니 30)는 `utils/quantityLimits.js`만 사용한다.
-3. 페이지에서 axios를 직접 치지 않는다. 나중에 `api/*` + `adapters/*`로 연결한다.
+3. 페이지에서 axios를 직접 호출하지 않는다. `api/*` 함수를 호출하고, 페이지·훅에서 응답을 화면과 store에 직접 반영한다.
 4. Canonical API 경로(문서): `GET /api/kiosk/menuList`, `GET /api/kiosk/menuDetail/{menuId}`, `POST /api/kiosk/orders`, `POST /api/kiosk/payments`  
    → 코드 상수는 아직 legacy. `DECIDED_PENDING_CODE_CHANGE`.
 5. 응답 정본 필드: `totalAmount`, `approvedAmount`, `approvedAt`, `waitingOrderCount`  
-   → store는 당분간 `totalAmount` 등 유지, adapter에서 매핑 (WBS2-057).
+   → API 응답의 정본 필드명을 페이지·훅과 store에서 그대로 사용한다.
 
 ## 화면 하나를 만드는 쉬운 순서
 
 1. `pages/kiosk`에 뼈대
 2. `KioskApp.jsx`의 `<Routes>`에 URL 연결
 3. 반복 UI만 `components/kiosk`로 분리
-4. 데이터는 처음엔 mock → 이후 `api` + `adapter`
+4. 데이터는 처음엔 mock → 이후 `api/*` 호출 결과를 페이지·훅에서 직접 사용
 5. 여러 화면이 쓰는 값만 `store`
 
 ## 지금 스프린트에서 할 일 / 하지 말 일
@@ -94,7 +93,7 @@ main.jsx
 
 - URL 하나 화면인가? → `pages`
 - 두 곳 이상 UI인가? → `components`
-- 서버/mock 요청인가? → `api` (+ 나중 `adapters`)
+- 서버/mock 요청인가? → `api` (HTTP 요청) + 페이지·훅 (응답 처리)
 - 화면 이동 후도 살아 있어야 하나? → `store`
 - 금액/수량인가? → `utils` (위 두 파일만)
 

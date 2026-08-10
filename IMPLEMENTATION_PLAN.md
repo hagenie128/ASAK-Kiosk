@@ -17,7 +17,7 @@
 | UI (Figma 이식) | **완료** | 페이지·컴포넌트·CSS 존재. 통째 재이식 금지 |
 | Home → Menu → Detail → Cart | **mock 동작** | store / `priceCalculation` / `quantityLimits` 적용 |
 | Payment → Complete / Error / Timeout | **UI만** | 수단 선택·결제·타이머 **미연결** |
-| API adapter / 실서버 | **미연결** | 페이지가 `public/mocks/kiosk.json` 직접 사용 |
+| API 직접 연결 / 실서버 | **미연결** | 페이지가 `public/mocks/kiosk.json` 직접 사용; 연결 시 `api/*` 응답을 페이지·훅에서 직접 처리 |
 | Backend 연동 (P6) | **BLOCKED** | `ASAK-back` business API 없음 |
 
 ### 라우트 실측 (`apps/kiosk/KioskApp.jsx`)
@@ -46,7 +46,7 @@
 | P0 | 결제 실패 → cart 보존 | WBS2-027 | `/payment-error` 또는 overlay, 장바구니 유지 |
 | P1 | 타임아웃 30/20/10초 | WBS2-029~030 | PROCESSING 중 타이머 정지 |
 | P1 | loading/empty/error 보강 | WBS2-031 | 메뉴·장바구니·결제 핵심 흐름 |
-| P2 | menu adapter 정리 | WBS2-018~019 | 페이지에서 JSON 직접 import 제거 (점진) |
+| P2 | 메뉴 API 직접 연결 | WBS2-018~019 | 페이지에서 JSON 직접 import를 제거하고 `api/menu.js` 응답을 직접 사용 |
 
 ### 하지 않는 것
 
@@ -68,7 +68,7 @@
 | Mock 원본 | `public/mocks/kiosk.json` |
 | Canonical API (문서) | `/api/kiosk/menuList`, `/api/kiosk/menuDetail/{menuId}`, `/api/kiosk/orders`, `/api/kiosk/payments` |
 | 코드 상수 | 아직 legacy `/api/menus` 등 → `DECIDED_PENDING_CODE_CHANGE` |
-| 정본 응답 필드 | `totalAmount`, `approvedAmount`, `approvedAt`, `waitingOrderCount` — store는 당분간 `totalPrice` 등 유지, adapter 매핑 (WBS2-057) |
+| 정본 응답 필드 | `totalAmount`, `approvedAmount`, `approvedAt`, `waitingOrderCount` — 페이지·훅과 store에서도 동일한 필드명을 사용 |
 
 ### 상태 store 필드 구조 (2026-07-14 최초 계약, 참고)
 
@@ -111,7 +111,7 @@ orderStore
 4. **WBS2-028** — complete에 `orderNo` / 금액 / `waitingOrderCount`
 5. **WBS2-029~030** — `useKioskTimeout` 실제 연결
 6. **WBS2-031~032** — 상태 UI·터치 QA
-7. (이후) adapter + Canonical path 상수 정렬 → P6 연동
+7. (이후) Canonical path 상수와 API 응답 필드 정렬 → P6 연동
 
 ## 4. 화면별 구현 계약 (2026-07-14 최초 계약, 참고)
 
