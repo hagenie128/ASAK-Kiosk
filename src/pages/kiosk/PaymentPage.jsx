@@ -21,6 +21,9 @@ import { getCartTotalQuantity } from "@/utils/quantityLimits";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "@/components/common/Footer";
+import { createOrder } from "@/api/order";
+import Modal from "@/components/common/Modal";
+import failIcon from "@/assets/modal_icon/order_fail.svg";
 
 
 
@@ -47,14 +50,76 @@ export default function PaymentPage() {
   const handleGoCart = () => {
     navigate("/cart");
   }
-  const handleGoPayConfirm = () => {
-    navigate("/paymentProcessing");
-  }
-
-
 
   //결제 수단 클릭시 -> 해당 타입 console로 띄우기 (추후 백단으로 해당 타입 전달해주면 됨)
   const [selectedMethodId, setSelectedMethodId] = useState(null);
+
+  // api-005 연결(주문생성)
+  const orderType = useCartStore((state)=>state.orderType);
+  const items = useCartStore((state)=>state.items);
+  const setOrder = useCartStore((state)=>state.setOrder);
+
+  const [isSubmitting, setIsSubmitting ] = useState(false);
+  const [orderError, setOrderError] = useState(null);
+
+  const handleGoPayConfirm = async () => {
+
+    if(!selectedMethodId || !orderType || items.length === 0 || isSubmitting){
+      return;
+    }
+
+    const requestItems = items.map((item)=>({
+      menuId : item.menuId,
+      quantity: item.quantity,
+      optionItems : (item.optionItems ?? []).map((option) => ({
+        optionItemId: option.optionItemId,
+        quantity : option.quantity ?? 1,
+      })),
+      excludedIngredientIds: item.excludedIngredientIds ?? [],
+    }));
+
+    try{
+      setIsSubmitting(true)
+      setOrderError(null)
+
+      const result = await createOrder({
+        orderType,
+        items : requestItems,
+      })
+
+      //백엔드 api-005 응답 확인
+      // console.log("[api-005 응답] : " ,result);
+
+      setOrder(result);
+
+      //zustand에 실제로 저장된 값 확인
+      // console.log("[zustand order]", 
+      //   structuredClone(useCartStore.getState().order),
+      // );
+
+      navigate("/paymentProcessing");
+    }catch(error){
+      setOrderError(error);
+      console.error("주문 생성 실패 :", error);
+    }finally{
+      setIsSubmitting(false);
+    }
+  }
+
+  // api-005의 에러 상태
+  const errorCode =
+    orderError?.code ??
+    orderError?.response?.data?.code;
+
+  const isSoldOutError = errorCode === "MENU_SOLD_OUT";
+
+  const errorTitle = isSoldOutError
+    ? "품절된 메뉴가 있습니다"
+    : "주문을 생성할 수 없습니다";
+
+  const errorMessage = isSoldOutError
+    ? "장바구니에서 품절된 메뉴를 확인해주세요."
+    : "일시적인 오류가 발생했습니다. 잠시 후 다시 시도해주세요.";
 
   const handleMethodSelect = (methodId) => {
     setSelectedMethodId(methodId);
@@ -64,8 +129,6 @@ export default function PaymentPage() {
 
   //클릭시 아코디언 애니메이션
   const [isSummaryOpen, setIsSummaryOpen] = useState(false);
-
-  const items = useCartStore((state) => state.items);
 
   const itemCount = getCartTotalQuantity(items);
 
@@ -78,12 +141,22 @@ export default function PaymentPage() {
   const validatedItems = useCartStore((state) => state.validatedItems);
 
 
-  const processing = false;
-
-
-
   return (
     <>
+      {orderError && (
+        <Modal
+          icon={failIcon}
+          modal_title={errorTitle}
+          modal_content={errorMessage}
+          leftText="닫기"
+          rightText={isSoldOutError ? "장바구니 확인" : null}
+          onLeftClick={() => setOrderError(null)}
+          onRightClick={() => {
+            setOrderError(null);
+            navigate("/cart");
+          }}
+        />
+      )}
       <Header />
       {/* 스텝퍼 */}
       <div className="kiosk-step-indicator" aria-label="주문 4단계 중 결제">

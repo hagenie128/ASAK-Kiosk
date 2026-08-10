@@ -4,6 +4,7 @@ import iconEatIn from "../../assets/figma/icon-home-eatin.svg";
 import iconTakeOut from "../../assets/figma/icon-home-takeout.svg";
 import { useNavigate } from "react-router-dom";
 import { useOrderStore } from "@/store/orderStore";
+import { ORDER_TYPE } from "@/constants/order";
 
 const OPTIONS = [
   { id: "eat-in", label: "매장에서 먹기", en: "Eat In", icon: iconEatIn },
@@ -27,7 +28,7 @@ export default function OrderTypeSelector() {
           type="button"
           className="order-type-selector__btn"
           onClick={() =>
-            handleSelect(option.id === "eat-in" ? "EAT_IN" : "TAKE_OUT")
+            handleSelect(option.id === "eat-in" ? ORDER_TYPE.EAT_IN : ORDER_TYPE.TAKE_OUT)
           }
         >
           <span className="order-type-selector__icon" aria-hidden="true">

@@ -18,7 +18,6 @@ const initialState = {
     // API-005 주문 생성 응답:
     orderId: null,
     orderNo: null,
-    orderType: null,
     totalAmount: 0,
     orderStatus: null, // RECEIVED | PREPARING | COMPLETED
     paymentStatus: null, // READY | APPROVED | FAILED
