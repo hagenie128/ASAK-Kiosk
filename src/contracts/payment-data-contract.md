@@ -6,8 +6,8 @@
 
 | 경계 | 파일 | 책임 |
 | --- | --- | --- |
-| 결제 DTO | `types/payment.js` | 서버 필드 이름 보존 |
-| 결제 응답 가공 | `adapters/paymentAdapter.js` | 화면 모델 변환 |
+| 결제 API 데이터 | `api/payment.js` | 서버 응답의 정본 필드를 요청·응답 경계에서 사용 |
+| 결제 응답 사용 | `hooks/usePayment.js`, `pages/kiosk/PaymentPage.jsx` | API 응답의 정본 필드를 화면·store에 직접 반영 |
 | 결제 화면 흐름 | `hooks/usePayment.js` | 선택·진행·성공·실패 상태 조합 |
 
 ## 정본 필드

@@ -11,10 +11,10 @@
 | `store/` | 주문 세션·장바구니 | `orderSessionStore` + 호환 export |
 | `utils/priceCalculation.js` | 가격 **단일 기준** | 사용 중 — 복제 금지 |
 | `utils/quantityLimits.js` | 수량 한도 **단일 기준** | 9/30 적용 |
-| `api/`, `adapters/` | HTTP·DTO | 골격 · 페이지는 아직 mock 직접 사용 |
+| `api/` | HTTP 요청·응답 처리 | 페이지·훅이 API 응답을 직접 화면과 상태에 반영 |
 | `hooks/` | 타임아웃 등 | 일부 stub |
 | `contracts/` | 계약 메모 | 정본과 충돌 시 정본 우선 |
 | `public/mocks/kiosk.json` | mock 정본 | (저장소 `public/`) |
 
-구현 순서 추천: **페이지 동작 확인 → store/utils → (나중) api/adapter**.  
+구현 순서 추천: **페이지 동작 확인 → store/utils → `api/*` 직접 연결**.
 Admin 기능은 `ASAK-Admin`에서만 구현합니다.

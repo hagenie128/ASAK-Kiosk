@@ -69,4 +69,4 @@ public/mocks/   kiosk.json
 Figma 프로토타입을 MCP로 반영한 뒤의 화면 구현 범위, 주문 상태·API 연결 작업,
 CSS 분리 기준, 화면별 체크리스트는 [docs/figma-mcp-implementation-guide-2026-07-14.md](docs/figma-mcp-implementation-guide-2026-07-14.md)를 참고합니다.
 
-주문 생성·결제의 request/response/error와 기존 store adapter 규칙은 [중앙 API 가이드](../ASAK/docs/implementation_guide/04-api-db-implementation.md)를 먼저 확인합니다.
+주문 생성·결제의 request/response/error와 기존 store 필드 규칙은 [중앙 API 가이드](../ASAK/docs/implementation_guide/04-api-db-implementation.md)를 먼저 확인합니다.
