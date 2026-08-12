@@ -87,7 +87,7 @@
       "iconPath": "icons/by-id/75.svg",
       "iconUrl": "/assets/ingredients/icons/75.svg",
       "photoPath": "photos/by-id/75.jpg",
-      "photoUrl": "/assets/ingredients/photos/75.jpg",
+      "photoUrl": "/assets/ingredients/photos/75.png",
       "hasPhoto": true,
       "kcal": 218.8,
       "isSoldOut": false
@@ -115,7 +115,7 @@
       "iconPath": "icons/by-id/83.svg",
       "iconUrl": "/assets/ingredients/icons/83.svg",
       "photoPath": "photos/by-id/83.jpg",
-      "photoUrl": "/assets/ingredients/photos/83.jpg",
+      "photoUrl": "/assets/ingredients/photos/83.png",
       "hasPhoto": true,
       "kcal": 124.0,
       "isSoldOut": false
@@ -367,7 +367,7 @@
       "iconPath": "icons/by-id/125.svg",
       "iconUrl": "/assets/ingredients/icons/125.svg",
       "photoPath": "photos/by-id/125.jpg",
-      "photoUrl": "/assets/ingredients/photos/125.jpg",
+      "photoUrl": "/assets/ingredients/photos/125.png",
       "hasPhoto": true,
       "kcal": 64.3,
       "isSoldOut": false
@@ -381,7 +381,7 @@
       "iconPath": "icons/by-id/127.svg",
       "iconUrl": "/assets/ingredients/icons/127.svg",
       "photoPath": "photos/by-id/127.jpg",
-      "photoUrl": "/assets/ingredients/photos/127.jpg",
+      "photoUrl": "/assets/ingredients/photos/127.png",
       "hasPhoto": true,
       "kcal": 99.1,
       "isSoldOut": false
@@ -409,7 +409,7 @@
       "iconPath": "icons/by-id/134.svg",
       "iconUrl": "/assets/ingredients/icons/134.svg",
       "photoPath": "photos/by-id/134.jpg",
-      "photoUrl": "/assets/ingredients/photos/134.jpg",
+      "photoUrl": "/assets/ingredients/photos/134.png",
       "hasPhoto": true,
       "kcal": 108.0,
       "isSoldOut": false
@@ -423,7 +423,7 @@
       "iconPath": "icons/by-id/138.svg",
       "iconUrl": "/assets/ingredients/icons/138.svg",
       "photoPath": "photos/by-id/138.jpg",
-      "photoUrl": "/assets/ingredients/photos/138.jpg",
+      "photoUrl": "/assets/ingredients/photos/138.png",
       "hasPhoto": true,
       "kcal": 161.1,
       "isSoldOut": false
@@ -437,7 +437,7 @@
       "iconPath": "icons/by-id/143.svg",
       "iconUrl": "/assets/ingredients/icons/143.svg",
       "photoPath": "photos/by-id/143.jpg",
-      "photoUrl": "/assets/ingredients/photos/143.jpg",
+      "photoUrl": "/assets/ingredients/photos/143.png",
       "hasPhoto": true,
       "kcal": 66.3,
       "isSoldOut": false
@@ -465,7 +465,7 @@
       "iconPath": "icons/by-id/149.svg",
       "iconUrl": "/assets/ingredients/icons/149.svg",
       "photoPath": "photos/by-id/149.jpg",
-      "photoUrl": "/assets/ingredients/photos/149.jpg",
+      "photoUrl": "/assets/ingredients/photos/149.png",
       "hasPhoto": true,
       "kcal": 72.5,
       "isSoldOut": false
@@ -479,7 +479,7 @@
       "iconPath": "icons/by-id/151.svg",
       "iconUrl": "/assets/ingredients/icons/151.svg",
       "photoPath": "photos/by-id/151.jpg",
-      "photoUrl": "/assets/ingredients/photos/151.jpg",
+      "photoUrl": "/assets/ingredients/photos/151.png",
       "hasPhoto": true,
       "kcal": 100.0,
       "isSoldOut": false
@@ -535,7 +535,7 @@
       "iconPath": "icons/by-id/164.svg",
       "iconUrl": "/assets/ingredients/icons/164.svg",
       "photoPath": "photos/by-id/164.jpg",
-      "photoUrl": "/assets/ingredients/photos/164.jpg",
+      "photoUrl": "/assets/ingredients/photos/164.png",
       "hasPhoto": true,
       "kcal": 31.5,
       "isSoldOut": false
@@ -549,7 +549,7 @@
       "iconPath": "icons/by-id/165.svg",
       "iconUrl": "/assets/ingredients/icons/165.svg",
       "photoPath": "photos/by-id/165.jpg",
-      "photoUrl": "/assets/ingredients/photos/165.jpg",
+      "photoUrl": "/assets/ingredients/photos/165.png",
       "hasPhoto": true,
       "kcal": 6.7,
       "isSoldOut": false
@@ -563,7 +563,7 @@
       "iconPath": "icons/by-id/166.svg",
       "iconUrl": "/assets/ingredients/icons/166.svg",
       "photoPath": "photos/by-id/166.jpg",
-      "photoUrl": "/assets/ingredients/photos/166.jpg",
+      "photoUrl": "/assets/ingredients/photos/166.png",
       "hasPhoto": true,
       "kcal": 59.1,
       "isSoldOut": false
@@ -577,7 +577,7 @@
       "iconPath": "icons/by-id/168.svg",
       "iconUrl": "/assets/ingredients/icons/168.svg",
       "photoPath": "photos/by-id/168.jpg",
-      "photoUrl": "/assets/ingredients/photos/168.jpg",
+      "photoUrl": "/assets/ingredients/photos/168.png",
       "hasPhoto": true,
       "kcal": 19.5,
       "isSoldOut": false
@@ -591,7 +591,7 @@
       "iconPath": "icons/by-id/169.svg",
       "iconUrl": "/assets/ingredients/icons/169.svg",
       "photoPath": "photos/by-id/169.jpg",
-      "photoUrl": "/assets/ingredients/photos/169.jpg",
+      "photoUrl": "/assets/ingredients/photos/169.png",
       "hasPhoto": true,
       "kcal": 8.7,
       "isSoldOut": false
@@ -605,7 +605,7 @@
       "iconPath": "icons/by-id/170.svg",
       "iconUrl": "/assets/ingredients/icons/170.svg",
       "photoPath": "photos/by-id/170.jpg",
-      "photoUrl": "/assets/ingredients/photos/170.jpg",
+      "photoUrl": "/assets/ingredients/photos/170.png",
       "hasPhoto": true,
       "kcal": 7.6,
       "isSoldOut": false
@@ -619,7 +619,7 @@
       "iconPath": "icons/by-id/172.svg",
       "iconUrl": "/assets/ingredients/icons/172.svg",
       "photoPath": "photos/by-id/172.jpg",
-      "photoUrl": "/assets/ingredients/photos/172.jpg",
+      "photoUrl": "/assets/ingredients/photos/172.png",
       "hasPhoto": true,
       "kcal": 27.7,
       "isSoldOut": false
@@ -647,7 +647,7 @@
       "iconPath": "icons/by-id/175.svg",
       "iconUrl": "/assets/ingredients/icons/175.svg",
       "photoPath": "photos/by-id/175.jpg",
-      "photoUrl": "/assets/ingredients/photos/175.jpg",
+      "photoUrl": "/assets/ingredients/photos/175.png",
       "hasPhoto": true,
       "kcal": 44.7,
       "isSoldOut": false
@@ -689,7 +689,7 @@
       "iconPath": "icons/by-id/182.svg",
       "iconUrl": "/assets/ingredients/icons/182.svg",
       "photoPath": "photos/by-id/182.jpg",
-      "photoUrl": "/assets/ingredients/photos/182.jpg",
+      "photoUrl": "/assets/ingredients/photos/182.png",
       "hasPhoto": true,
       "kcal": 90.7,
       "isSoldOut": false
@@ -703,7 +703,7 @@
       "iconPath": "icons/by-id/184.svg",
       "iconUrl": "/assets/ingredients/icons/184.svg",
       "photoPath": "photos/by-id/184.jpg",
-      "photoUrl": "/assets/ingredients/photos/184.jpg",
+      "photoUrl": "/assets/ingredients/photos/184.png",
       "hasPhoto": true,
       "kcal": 75.0,
       "isSoldOut": false
@@ -717,7 +717,7 @@
       "iconPath": "icons/by-id/186.svg",
       "iconUrl": "/assets/ingredients/icons/186.svg",
       "photoPath": "photos/by-id/186.jpg",
-      "photoUrl": "/assets/ingredients/photos/186.jpg",
+      "photoUrl": "/assets/ingredients/photos/186.png",
       "hasPhoto": true,
       "kcal": 55.1,
       "isSoldOut": false
@@ -731,7 +731,7 @@
       "iconPath": "icons/by-id/188.svg",
       "iconUrl": "/assets/ingredients/icons/188.svg",
       "photoPath": "photos/by-id/188.jpg",
-      "photoUrl": "/assets/ingredients/photos/188.jpg",
+      "photoUrl": "/assets/ingredients/photos/188.png",
       "hasPhoto": true,
       "kcal": 31.4,
       "isSoldOut": false
@@ -745,7 +745,7 @@
       "iconPath": "icons/by-id/189.svg",
       "iconUrl": "/assets/ingredients/icons/189.svg",
       "photoPath": "photos/by-id/189.jpg",
-      "photoUrl": "/assets/ingredients/photos/189.jpg",
+      "photoUrl": "/assets/ingredients/photos/189.png",
       "hasPhoto": true,
       "kcal": 65.0,
       "isSoldOut": false
@@ -787,7 +787,7 @@
       "iconPath": "icons/by-id/195.svg",
       "iconUrl": "/assets/ingredients/icons/195.svg",
       "photoPath": "photos/by-id/195.jpg",
-      "photoUrl": "/assets/ingredients/photos/195.jpg",
+      "photoUrl": "/assets/ingredients/photos/195.png",
       "hasPhoto": true,
       "kcal": 122.5,
       "isSoldOut": false
@@ -801,7 +801,7 @@
       "iconPath": "icons/by-id/199.svg",
       "iconUrl": "/assets/ingredients/icons/199.svg",
       "photoPath": "photos/by-id/199.jpg",
-      "photoUrl": "/assets/ingredients/photos/199.jpg",
+      "photoUrl": "/assets/ingredients/photos/199.png",
       "hasPhoto": true,
       "kcal": 126.0,
       "isSoldOut": false
@@ -815,7 +815,7 @@
       "iconPath": "icons/by-id/204.svg",
       "iconUrl": "/assets/ingredients/icons/204.svg",
       "photoPath": "photos/by-id/204.jpg",
-      "photoUrl": "/assets/ingredients/photos/204.jpg",
+      "photoUrl": "/assets/ingredients/photos/204.png",
       "hasPhoto": true,
       "kcal": 58.6,
       "isSoldOut": false
@@ -829,7 +829,7 @@
       "iconPath": "icons/by-id/205.svg",
       "iconUrl": "/assets/ingredients/icons/205.svg",
       "photoPath": "photos/by-id/205.jpg",
-      "photoUrl": "/assets/ingredients/photos/205.jpg",
+      "photoUrl": "/assets/ingredients/photos/205.png",
       "hasPhoto": true,
       "kcal": 23.2,
       "isSoldOut": false
@@ -843,7 +843,7 @@
       "iconPath": "icons/by-id/208.svg",
       "iconUrl": "/assets/ingredients/icons/208.svg",
       "photoPath": "photos/by-id/208.jpg",
-      "photoUrl": "/assets/ingredients/photos/208.jpg",
+      "photoUrl": "/assets/ingredients/photos/208.png",
       "hasPhoto": true,
       "kcal": 119.0,
       "isSoldOut": false
@@ -884,9 +884,9 @@
       "iconKey": "bottle",
       "iconPath": "icons/by-id/219.svg",
       "iconUrl": "/assets/ingredients/icons/219.svg",
-      "photoPath": null,
-      "photoUrl": null,
-      "hasPhoto": false,
+      "photoPath": "photos/by-id/219.png",
+      "photoUrl": "/assets/ingredients/photos/219.png",
+      "hasPhoto": true,
       "kcal": null,
       "isSoldOut": false
     },
@@ -898,9 +898,9 @@
       "iconKey": "bottle",
       "iconPath": "icons/by-id/222.svg",
       "iconUrl": "/assets/ingredients/icons/222.svg",
-      "photoPath": null,
-      "photoUrl": null,
-      "hasPhoto": false,
+      "photoPath": "photos/by-id/222.png",
+      "photoUrl": "/assets/ingredients/photos/222.png",
+      "hasPhoto": true,
       "kcal": null,
       "isSoldOut": false
     },
@@ -912,9 +912,9 @@
       "iconKey": "bottle",
       "iconPath": "icons/by-id/223.svg",
       "iconUrl": "/assets/ingredients/icons/223.svg",
-      "photoPath": null,
-      "photoUrl": null,
-      "hasPhoto": false,
+      "photoPath": "photos/by-id/223.png",
+      "photoUrl": "/assets/ingredients/photos/223.png",
+      "hasPhoto": true,
       "kcal": 240.0,
       "isSoldOut": false
     },
@@ -926,9 +926,9 @@
       "iconKey": "bottle",
       "iconPath": "icons/by-id/228.svg",
       "iconUrl": "/assets/ingredients/icons/228.svg",
-      "photoPath": null,
-      "photoUrl": null,
-      "hasPhoto": false,
+      "photoPath": "photos/by-id/228.png",
+      "photoUrl": "/assets/ingredients/photos/228.png",
+      "hasPhoto": true,
       "kcal": 192.0,
       "isSoldOut": false
     },
@@ -1123,7 +1123,7 @@
       "iconPath": "icons/by-id/3799.svg",
       "iconUrl": "/assets/ingredients/icons/3799.svg",
       "photoPath": "photos/by-id/3799.jpg",
-      "photoUrl": "/assets/ingredients/photos/3799.jpg",
+      "photoUrl": "/assets/ingredients/photos/3799.png",
       "hasPhoto": true,
       "kcal": null,
       "isSoldOut": false
@@ -1137,7 +1137,7 @@
       "iconPath": "icons/by-id/3929.svg",
       "iconUrl": "/assets/ingredients/icons/3929.svg",
       "photoPath": "photos/by-id/3929.jpg",
-      "photoUrl": "/assets/ingredients/photos/3929.jpg",
+      "photoUrl": "/assets/ingredients/photos/3929.png",
       "hasPhoto": true,
       "kcal": null,
       "isSoldOut": false
