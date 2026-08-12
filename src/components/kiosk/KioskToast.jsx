@@ -6,12 +6,16 @@
  * 결제 완료: OrderCompletePage toastMessage
  * mock JSON 없음 — 문자열만
  */
+import KioskFeedbackIcon from "./KioskFeedbackIcon";
+
 export default function KioskToast({ message, tone = "warning" }) {
   if (!message) return null;
 
   return (
     <div className={`kiosk-toast kiosk-toast--${tone}`} role="status">
-      <span className="kiosk-toast__mark" aria-hidden="true" />
+      <span className="kiosk-toast__icon">
+        <KioskFeedbackIcon tone={tone} />
+      </span>
       <p>{message}</p>
     </div>
   );
