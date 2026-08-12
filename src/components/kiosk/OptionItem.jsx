@@ -2,13 +2,7 @@
 import React from "react";
 import { formatCurrency } from "@/utils/currency";
 
-export default function OptionItem({
-  item,
-  groupName,
-  isSelected,
-  isSingleSelect,
-  onSelect,
-}) {
+export default function OptionItem({ item, groupName, isSelected, isSingleSelect, onSelect }) {
   const {
     optionItemId,
     name,
@@ -17,7 +11,6 @@ export default function OptionItem({
     servingAmount,
     servingUnit,
     proteinG,
-    iconUrl,
     ingredientId,
     isRecommended,
     isSoldOut,
@@ -31,18 +24,17 @@ export default function OptionItem({
     .filter(Boolean)
     .join(" ");
 
-  const hasSecondary =
-    servingAmount != null || extraKcal != null || proteinG != null;
-  const imageUrl =
-    iconUrl ??
-    (ingredientId ? `/assets/ingredients/icons/${ingredientId}.svg` : null);
+  const hasSecondary = servingAmount != null || extraKcal != null || proteinG != null;
+  const iconUrl = `/assets/ingredients/photos/${ingredientId}.png`
+    ? `/assets/ingredients/photos/${ingredientId}.png`
+    : `/assets/ingredients/icons/${ingredientId}.svg`;
 
   return (
     <label className={optionItemClassName}>
-      {imageUrl ? (
+      {iconUrl ? (
         <img
           className="option-item__image"
-          src={imageUrl}
+          src={iconUrl}
           alt=""
           onError={(event) => {
             event.currentTarget.hidden = true;
@@ -70,8 +62,7 @@ export default function OptionItem({
             <p className="option-item__name">{name}</p>
             {hasSecondary && (
               <p className="option-item__description">
-                {servingAmount != null &&
-                  `${servingAmount}${servingUnit ?? ""}`}
+                {servingAmount != null && `${servingAmount}${servingUnit ?? ""}`}
                 {extraKcal != null && ` · ${extraKcal}kcal`}
                 {proteinG != null && ` · 단백질 ${proteinG}g`}
               </p>
@@ -79,20 +70,14 @@ export default function OptionItem({
           </div>
 
           {isRecommended && !isSoldOut && (
-            <span className="option-item__badge option-item__badge--recommended">
-              추천
-            </span>
+            <span className="option-item__badge option-item__badge--recommended">추천</span>
           )}
           {isSoldOut && (
-            <span className="option-item__badge option-item__badge--sold-out">
-              품절
-            </span>
+            <span className="option-item__badge option-item__badge--sold-out">품절</span>
           )}
         </div>
 
-        {extraPrice > 0 && (
-          <p className="option-item__price">+{formatCurrency(extraPrice)}</p>
-        )}
+        {extraPrice > 0 && <p className="option-item__price">+{formatCurrency(extraPrice)}</p>}
       </div>
     </label>
   );
