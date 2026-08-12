@@ -111,21 +111,23 @@
   transform: translateX(-50%);
 }
 
-.kiosk-toast__mark {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--asak-warning);
+.kiosk-toast__icon {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
   flex: 0 0 auto;
 }
 
-.kiosk-toast--success .kiosk-toast__mark {
-  background: var(--asak-success);
+.kiosk-feedback-icon {
+  width: 100%;
+  height: 100%;
 }
 
-.kiosk-toast--error .kiosk-toast__mark {
-  background: var(--asak-danger);
-}
+.kiosk-feedback-icon--success { color: var(--asak-success); }
+.kiosk-feedback-icon--error { color: var(--asak-danger); }
+.kiosk-feedback-icon--warning { color: var(--asak-warning); }
+.kiosk-feedback-icon--info { color: var(--asak-text-secondary); }
 
 .kiosk-toast p {
   margin: 0;
@@ -164,7 +166,10 @@
   width: 48px;
   height: 48px;
   border-radius: 16px;
-  background: var(--asak-border); /* Border/Default를 채움색으로 사용 · 대응 surface 토큰 없음 */
+  display: grid;
+  place-items: center;
+  padding: 10px;
+  background: var(--asak-surface-muted);
 }
 
 .kiosk-confirm__text {
@@ -250,6 +255,13 @@
   height: 48px;
   border-radius: 50%;
   background: var(--asak-surface-muted);
+}
+
+.shared-modal__icon img,
+.shared-modal__icon .kiosk-feedback-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .shared-modal__icon--paymentError,

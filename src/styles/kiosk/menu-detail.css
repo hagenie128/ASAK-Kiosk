@@ -29,7 +29,8 @@
   height: 260px;
   flex-shrink: 0;
   border-radius: 16px;
-  object-fit: cover;
+  object-fit: contain;
+  padding: var(--asak-space-2);
   background: #ebebeb; /* Figma 직접값 · 이미지 자리표시자 */
 }
 
@@ -205,7 +206,8 @@
 .option-item {
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
   width: var(--asak-option-card-w);
   height: var(--asak-option-card-h);
@@ -231,8 +233,14 @@
 }
 
 .option-item__image {
-  display: none;
-  /* Figma OptionCard는 아이콘 없이 텍스트 중심. 있으면 숨겨 레이아웃 유지 */
+  width: 64px;
+  height: 64px;
+  flex: 0 0 64px;
+  margin-right: var(--asak-space-3);
+  object-fit: contain;
+  border-radius: var(--asak-radius-sm);
+  background: var(--asak-surface-muted);
+  /* API 또는 재료 카탈로그의 SVG를 카드 안에서 잘리지 않게 표시 */
 }
 
 .option-item__input {
@@ -244,6 +252,7 @@
 }
 
 .option-item__content {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

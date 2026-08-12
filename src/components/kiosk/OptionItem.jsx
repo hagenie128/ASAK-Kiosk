@@ -18,6 +18,7 @@ export default function OptionItem({
     servingUnit,
     proteinG,
     iconUrl,
+    ingredientId,
     isRecommended,
     isSoldOut,
   } = item;
@@ -32,11 +33,21 @@ export default function OptionItem({
 
   const hasSecondary =
     servingAmount != null || extraKcal != null || proteinG != null;
+  const imageUrl =
+    iconUrl ??
+    (ingredientId ? `/assets/ingredients/icons/${ingredientId}.svg` : null);
 
   return (
     <label className={optionItemClassName}>
-      {iconUrl ? (
-        <img className="option-item__image" src={iconUrl} alt="" />
+      {imageUrl ? (
+        <img
+          className="option-item__image"
+          src={imageUrl}
+          alt=""
+          onError={(event) => {
+            event.currentTarget.hidden = true;
+          }}
+        />
       ) : null}
 
       <input

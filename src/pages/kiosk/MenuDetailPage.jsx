@@ -14,6 +14,7 @@ import { getMenu } from "@/api/menu";
 import LoadingSpinner from "@/components/common/LoadingSpinner";
 import ErrorMessage from "@/components/common/ErrorMessage";
 import EmptyState from "@/components/common/EmptyState";
+import KioskToast from "@/components/kiosk/KioskToast";
 
 
 function createInitialSelectedOptions (optionGroups = []){
@@ -70,12 +71,18 @@ export default function MenuDetailPage() {
         items : removableIngredients.map((ingredient)=>({
 
           optionItemId: ingredient.ingredientId,
+          ingredientId: ingredient.ingredientId,
           name: ingredient.ingName,
           role: ingredient.role,
           unit: ingredient.unit,
           extraPrice: 0,
           isRecommended: false,
           isSoldOut: Boolean(ingredient.isSoldOut),
+          iconUrl:
+            ingredient.iconUrl ??
+            (ingredient.ingredientId
+              ? `/assets/ingredients/icons/${ingredient.ingredientId}.svg`
+              : null),
         })),
   }
   : null;
@@ -334,7 +341,7 @@ export default function MenuDetailPage() {
         onIncrease={handleIncreaseQuantity}
       />
 
-      {toastMessage ? <p role="alert">{toastMessage}</p> : null}
+      <KioskToast message={toastMessage} tone="warning" />
 
       <main className="menu-detail-options">
 
