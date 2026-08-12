@@ -14,26 +14,27 @@ import { getMenu } from "@/api/menu";
 import LoadingSpinner from "@/components/common/LoadingSpinner";
 import ErrorMessage from "@/components/common/ErrorMessage";
 import EmptyState from "@/components/common/EmptyState";
-import KioskToast from "@/components/kiosk/KioskToast";
 
-function createInitialSelectedOptions(optionGroups = []) {
+
+function createInitialSelectedOptions (optionGroups = []){
+
   //최초 기본 선택 결과를 만드는 임시 객체
-  const initialOptions = {};
+  const initialOptions  = {};
 
-  optionGroups.forEach((group) => {
-    const defaultItem = (group.items ?? []).filter((item) => item.isDefault && !item.isSoldOut);
+  optionGroups.forEach((group)=>{
 
-    if (defaultItem.length === 0) return;
+    const defaultItem = (group.items ?? []).filter((item)=>item.isDefault && !item.isSoldOut);
 
-    initialOptions[group.optionGroupId] =
-      group.selectType === "SINGLE"
-        ? defaultItem[0].optionItemId
-        : defaultItem.map((item) => item.optionItemId);
-  });
+    if(defaultItem.length === 0) return;
+    
+    initialOptions[group.optionGroupId] = group.selectType === "SINGLE" ? 
+    defaultItem[0].optionItemId : defaultItem.map((item)=>item.optionItemId);
+  })
   return initialOptions;
 }
 
 export default function MenuDetailPage() {
+
   //페이지 이동을 위한 변수
   const { menuId } = useParams();
   const navigate = useNavigate();
@@ -41,102 +42,113 @@ export default function MenuDetailPage() {
   const categoryId = searchParams.get("category");
 
   //메뉴디테일 api 연결
-  const [menuDetail, setMenuDetail] = useState(null);
+  const [menuDetail, setMenuDetail ] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [selectedOptions, setSelectedOptions] = useState({});
+  const [error, setError]= useState(null);
+  const [selectedOptions, setSelectedOptions ] = useState({});
 
   const optionGroups = menuDetail?.optionGroups ?? [];
 
   //메뉴에 대한 제외 재료처리
   const [excludedIngredientIds, setExcludedIngredientIds] = useState([]);
 
-  const removableIngredients =
-    menuDetail?.ingredients?.filter((ingredient) => ingredient.isDefault && ingredient.canRemove) ??
-    [];
+  const removableIngredients = menuDetail?.ingredients?.filter((ingredient)=>
+    ingredient.isDefault && ingredient.canRemove
+  ) ?? [];
 
   //메뉴 제외 형식 그룹옵션 형식으로 필터링
   const removableIngredientGroup =
-    removableIngredients.length > 0
-      ? {
-          optionGroupId: "REMOVABLE_INGREDIENTS",
-          name: "재료 빼기",
-          groupType: "INGREDIENT_EXCLUSION",
-          selectType: "MULTIPLE",
-          minSelect: 0,
-          maxSelect: removableIngredients.length,
-          sortOrder: 0,
-          isRequired: false,
-          items: removableIngredients.map((ingredient) => ({
-            optionItemId: ingredient.ingredientId,
-            name: ingredient.ingName,
-            role: ingredient.role,
-            unit: ingredient.unit,
-            extraPrice: 0,
-            isRecommended: false,
-            isSoldOut: Boolean(ingredient.isSoldOut),
-            iconUrl: `/assets/ingredients/photos/${ingredient.ingredientId}.png`
-              ? `/assets/ingredients/photos/${ingredient.ingredientId}.png`
-              : `/assets/ingredients/icons/${ingredient.ingredientId}.svg`,
-          })),
-        }
-      : null;
+  removableIngredients.length > 0 ? {
+        optionGroupId: "REMOVABLE_INGREDIENTS",
+        name: "재료 빼기",
+        groupType: "INGREDIENT_EXCLUSION",
+        selectType: "MULTIPLE",
+        minSelect: 0,
+        maxSelect: removableIngredients.length,
+        sortOrder: 0,
+        isRequired: false,
+        items : removableIngredients.map((ingredient)=>({
+
+          optionItemId: ingredient.ingredientId,
+          name: ingredient.ingName,
+          role: ingredient.role,
+          unit: ingredient.unit,
+          extraPrice: 0,
+          isRecommended: false,
+          isSoldOut: Boolean(ingredient.isSoldOut),
+        })),
+  }
+  : null;
 
   //제외 재료 선택 토글 함수
-  const handleToggleIngredient = (ingredientId) => {
-    setExcludedIngredientIds((prev) => {
+  const handleToggleIngredient = (ingredientId)=>{
+
+    setExcludedIngredientIds((prev)=>{
+
       const isAlreadyExcluded = prev.includes(ingredientId);
 
-      if (isAlreadyExcluded) {
-        return prev.filter((id) => id !== ingredientId);
+      if(isAlreadyExcluded){
+        return prev.filter((id)=> id !== ingredientId);
       }
 
-      return [...prev, ingredientId];
+      return [...prev , ingredientId];
+
     });
+
   };
 
   //api-003 처리
-  useEffect(() => {
-    if (!menuId) return;
+  useEffect(()=>{
+
+    if(!menuId) return;
 
     //연속 응답에 대한 처리
     let ignore = false;
 
-    const fetchMenuDetail = async () => {
-      try {
+    const fetchMenuDetail = async ()=>{
+
+      try{
         setIsLoading(true);
         setError(null);
 
         const data = await getMenu(Number(menuId));
 
-        if (ignore) return;
+        if(ignore) return;
 
         setMenuDetail(data);
-        setSelectedOptions(createInitialSelectedOptions(data.optionGroups));
+        setSelectedOptions(
+          createInitialSelectedOptions(data.optionGroups)
+        );
 
         setExcludedIngredientIds([]);
-      } catch (error) {
+
+      }catch(error){
         setError(error);
         setMenuDetail(null);
         setSelectedOptions({});
         setExcludedIngredientIds([]);
-      } finally {
-        if (!ignore) {
+      }finally{
+        if(!ignore){
           setIsLoading(false);
         }
       }
-    };
+
+    }
 
     fetchMenuDetail();
 
-    return () => {
-      ignore = true;
+    return ()=>{
+      ignore = true
     };
-  }, [menuId]);
+
+  },[menuId])
+
+
 
   //장바구니 추가를 위한 변수
   const items = useCartStore((state) => state.items);
   const addItem = useCartStore((state) => state.addItem);
+
 
   const [quantity, setQuantity] = useState(1);
   const [toastMessage, setToastMessage] = useState(null);
@@ -153,11 +165,11 @@ export default function MenuDetailPage() {
       setToastMessage(TOAST_MESSAGES[result.reason]);
       return;
     }
-
+    
     setToastMessage(null);
     setQuantity((q) => q + 1);
   };
-
+  
   //주문 메뉴 수량 감소
   const handleDecreaseQuantity = () => {
     setToastMessage(null);
@@ -166,68 +178,79 @@ export default function MenuDetailPage() {
 
   //옵션 아이템 선택·해제 및 maxSelect 제한
   const handleSelectOption = (group, optionItemId) => {
+
     setSelectedOptions((prev) => {
+
       // SINGLE(단수 선택시)
       if (group.selectType === "SINGLE") {
-        return {
-          ...prev,
-          [group.optionGroupId]: optionItemId,
-        };
+        return { 
+          ...prev, 
+          [group.optionGroupId]: optionItemId
+         };
       }
 
       // MULTIPLE(복수 선택시)
-      if (group.selectType === "MULTIPLE") {
+      if(group.selectType === "MULTIPLE"){
+
         const current = prev[group.optionGroupId] ?? [];
-        const isAlreadySelected = current.includes(optionItemId);
+        const isAlreadySelected = current.includes(optionItemId)
 
         //이미 선택된 아이템 토글시 선택 해제
-        if (isAlreadySelected) {
+        if(isAlreadySelected){
           return {
             ...prev,
-            [group.optionGroupId]: current.filter((id) => id !== optionItemId),
-          };
+            [group.optionGroupId]: current.filter((id)=>id !== optionItemId)
+          }
         }
         //최대 수량 선택시
-        if (current.length >= group.maxSelect) {
+        if(current.length >= group.maxSelect){
           return {
             ...prev,
-            [group.optionGroupId]: [...current.slice(0, -1), optionItemId],
-          };
+            [group.optionGroupId]: [
+              ...current.slice(0,-1), optionItemId,
+            ]
+          }
         }
         //최대 수량 도달하지 x 새 아이템 추가
-        return {
+        return{
           ...prev,
-          [group.optionGroupId]: [...current, optionItemId],
-        };
+          [group.optionGroupId]: 
+          [
+            ...current ,
+             optionItemId
+            ],
+        }
       }
       return prev;
+
     });
   };
   //데이터 상태값에 따른 UI화면 출력 조건
-  if (isLoading) {
-    return (
-      <div className="menu-detail-page">
-        <Header />
-        <LoadingSpinner />
-      </div>
-    );
-  }
-  if (error) {
-    return (
-      <div className="menu-detail-page">
-        <Header />
-        <ErrorMessage />
-      </div>
-    );
-  }
-  if (!menuDetail) {
-    return (
-      <div className="menu-detail-page">
-        <Header />
-        <EmptyState />
-      </div>
-    );
-  }
+    if(isLoading){
+      return (
+        <div className="menu-detail-page">
+          <Header />
+          <LoadingSpinner/>
+        </div>
+      );
+    }
+    if(error){
+      return(
+        <div className="menu-detail-page">
+          <Header/>
+          <ErrorMessage/>
+        </div>
+      )
+    }
+    if (!menuDetail) {
+      return (
+        <div className="menu-detail-page">
+          <Header />
+          <EmptyState/>
+        </div>
+      );
+    }
+
 
   //필수 옵션의 minSelect 충족 여부 검사
   const isRequiredSatisfied = optionGroups
@@ -252,6 +275,8 @@ export default function MenuDetailPage() {
         optionGroupName: group.name,
       }));
   });
+
+
 
   //옵션 추가 시 예상 가격 변동 확인 메서드
   const expectedAmount = priceCalculation({
@@ -289,9 +314,13 @@ export default function MenuDetailPage() {
     navigate(menuListPath, { replace: true });
   };
 
+
+
   return (
+
     <div className="menu-detail-page">
       <Header />
+
 
       <MenuDetailSummary
         menu={{
@@ -305,9 +334,10 @@ export default function MenuDetailPage() {
         onIncrease={handleIncreaseQuantity}
       />
 
-      <KioskToast message={toastMessage} tone="warning" />
+      {toastMessage ? <p role="alert">{toastMessage}</p> : null}
 
       <main className="menu-detail-options">
+
         {/* 일반 옵션 그룹 */}
         {optionGroups.map((group) => (
           <OptionGroup
@@ -319,14 +349,18 @@ export default function MenuDetailPage() {
         ))}
 
         {/* 제외 가능한 기본 재료 */}
-        {removableIngredientGroup && (
-          <OptionGroup
-            key={removableIngredientGroup.optionGroupId}
-            group={removableIngredientGroup}
-            selectedValue={excludedIngredientIds}
-            onSelectItem={handleToggleIngredient}
-          />
-        )}
+        {
+          removableIngredientGroup && (
+
+            <OptionGroup 
+              key={removableIngredientGroup.optionGroupId}
+              group={removableIngredientGroup}
+              selectedValue={excludedIngredientIds}
+              onSelectItem={handleToggleIngredient}
+            />
+          )}
+
+
       </main>
 
       <MenuDetailFooter

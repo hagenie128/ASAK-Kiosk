@@ -1,6 +1,4 @@
 // Shared/ConfirmDialog — Figma 272:19520 계열
-import KioskFeedbackIcon from "./KioskFeedbackIcon";
-
 export default function KioskConfirmDialog({
   title,
   description,
@@ -19,9 +17,7 @@ export default function KioskConfirmDialog({
         aria-modal="true"
         aria-labelledby="kiosk-confirm-title"
       >
-        <span className="kiosk-confirm__icon">
-          <KioskFeedbackIcon tone={tone} />
-        </span>
+        <span className="kiosk-confirm__icon" aria-hidden="true" />
         <div className="kiosk-confirm__text">
           <h2 id="kiosk-confirm-title">{title}</h2>
           {description ? <p>{description}</p> : null}
