@@ -7,5 +7,6 @@ export const API_ENDPOINTS = Object.freeze({
   menu: (menuId) => `${API_BASE_PATH}/menuDetail/${menuId}`,
   carts: `${API_BASE_PATH}/cart/validate`,
   orders: `${API_BASE_PATH}/orders`,
+  paymentMethods:`${API_BASE_PATH}/payment-methods`,
   payments: "/payments",
 });

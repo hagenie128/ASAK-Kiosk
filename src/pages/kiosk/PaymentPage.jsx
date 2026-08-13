@@ -18,12 +18,13 @@ import { useCartStore } from "@/store/cartStore";
 import { formatCurrency } from "@/utils/currency";
 import { calculateCartTotal, priceCalculation } from "@/utils/priceCalculation";
 import { getCartTotalQuantity } from "@/utils/quantityLimits";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Footer from "@/components/common/Footer";
 import { createOrder } from "@/api/order";
 import Modal from "@/components/common/Modal";
 import failIcon from "@/assets/modal_icon/order_fail.svg";
+import { getPaymenMethods } from "@/api/paymentList";
 
 
 
@@ -51,10 +52,41 @@ export default function PaymentPage() {
     navigate("/cart");
   }
 
-  //결제 수단 클릭시 -> 해당 타입 console로 띄우기 (추후 백단으로 해당 타입 전달해주면 됨)
+  //결제 수단 클릭시 "선택 상태"
   const [selectedMethodId, setSelectedMethodId] = useState(null);
 
-  // api-005 연결(주문생성)
+  // api-014 결제수단 조회 연결
+  const [paymentMethod , setPaymentMethod] = useState([]);
+  const [isPaymentMethodLoading, setIsPaymentMethodLoading] = useState(true);
+  const [paymentMethodError, setPaymentMethodError] = useState(null);
+
+
+  useEffect(()=> {
+
+    const fetchPaymentMethods = async () =>{
+
+      try{
+
+        setIsPaymentMethodLoading(true);
+        setPaymentMethodError(null);
+
+        const methodData = await getPaymenMethods();
+        setPaymentMethod(methodData);
+
+      }catch(error){
+        setPaymentMethodError(error);
+
+      }finally{
+        setIsPaymentMethodLoading(false);
+      }
+    };
+
+    fetchPaymentMethods();
+
+  }, [])
+
+
+  // api-005 주문 생성 연결
   const orderType = useCartStore((state)=>state.orderType);
   const items = useCartStore((state)=>state.items);
   const setOrder = useCartStore((state)=>state.setOrder);
@@ -175,12 +207,12 @@ export default function PaymentPage() {
         </section>
 
         <div className="payment-page__methods" aria-label="결제 수단">
-          {METHODS.map((method) => (
+          {paymentMethod.map((method) => (
             <button
               key={method.id}
               type="button"
               className={
-                selectedMethodId === method.id ? "is-selected" : ""
+                paymentMethod === method.id ? "is-selected" : ""
               }
               onClick={() => {
                 handleMethodSelect(method.id);
