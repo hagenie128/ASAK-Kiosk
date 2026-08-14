@@ -3,7 +3,7 @@
 > 기준일: **2026-07-20** · **코드 실측** 반영 (Home→Cart mock · Payment~ UI shell).  
 > 담당 영역: **P3 키오스크** (Admin/P4는 [`ASAK-Admin/IMPLEMENTATION_PLAN.md`](../ASAK-Admin/IMPLEMENTATION_PLAN.md)가 정본 — 이 문서는 Admin 범위를 다루지 않음)  
 > 문서 입구: [`ASAK/docs/START_HERE.md`](../ASAK/docs/START_HERE.md)  
-> 정본 WBS: [`ASAK/docs/wiki/wbs-v2-2026-07-16.md`](../ASAK/docs/wiki/wbs-v2-2026-07-16.md) **P3 키오스크 · WBS2-017 ~ WBS2-032** (Admin은 P4 · WBS2-033~045)  
+> 정본 WBS: [`ASAK/docs/wiki/wbs.md`](../ASAK/docs/wiki/wbs.md) **P3 키오스크 · WBS2-017 ~ WBS2-032** (Admin은 P4 · WBS2-033~045)
 > 구조: [`src/STRUCTURE_GUIDE.md`](src/STRUCTURE_GUIDE.md)  
 > 구현 맵: [`ASAK/docs/planning/current-implementation-map-2026-07-16.md`](../ASAK/docs/planning/current-implementation-map-2026-07-16.md)  
 > 정본: [`ASAK/docs/governance/canonical-contract-decisions-2026-07-16.md`](../ASAK/docs/governance/canonical-contract-decisions-2026-07-16.md)  
@@ -17,7 +17,7 @@
 | UI (Figma 이식) | **완료** | 페이지·컴포넌트·CSS 존재. 통째 재이식 금지 |
 | Home → Menu → Detail → Cart | **mock 동작** | store / `priceCalculation` / `quantityLimits` 적용 |
 | Payment → Complete / Error / Timeout | **UI만** | 수단 선택·결제·타이머 **미연결** |
-| API 직접 연결 / 실서버 | **미연결** | 페이지가 `public/mocks/kiosk.json` 직접 사용; 연결 시 `api/*` 응답을 페이지·훅에서 직접 처리 |
+| API 직접 연결 / 실서버 | 메뉴·장바구니·주문 생성 연결 | 결제 시나리오 예시는 `public/mocks/payment-scenarios.sample.json`; 전체 과거 mock는 `ASAK/asak-data/archive/frontend-mocks/kiosk.json` |
 | Backend 연동 (P6) | **BLOCKED** | `ASAK-back` business API 없음 |
 
 ### 라우트 실측 (`apps/kiosk/KioskApp.jsx`)
@@ -65,7 +65,7 @@
 | 가격 | **`utils/priceCalculation.js`만** |
 | 수량 | **`utils/quantityLimits.js`만** (동일 메뉴 9 · 장바구니 30) |
 | Envelope | `{ success, status, code, message, data }` — `api/client.js`에서만 unwrap |
-| Mock 원본 | `public/mocks/kiosk.json` |
+| Mock 참고 | `public/mocks/payment-scenarios.sample.json` · 전체 보관본 `ASAK/asak-data/archive/frontend-mocks/kiosk.json` |
 | 정본 API (문서) | `/api/kiosk/menuList`, `/api/kiosk/menuDetail/{menuId}`, `/api/kiosk/orders`, `/api/kiosk/payments` |
 | 코드 상수 | 아직 legacy `/api/menus` 등 → `DECIDED_PENDING_CODE_CHANGE` |
 | 정본 응답 필드 | `totalAmount`, `approvedAmount`, `approvedAt`, `waitingOrderCount` — 페이지·훅과 store에서도 동일한 필드명을 사용 |

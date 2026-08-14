@@ -13,7 +13,7 @@
 
 | 구간 | UI | 데이터 |
 | --- | --- | --- |
-| Home → Menu → Detail → Cart | 이식됨 | **mock + store 동작** (`public/mocks/kiosk.json`) |
+| Home → Menu → Detail → Cart | 이식됨 | **실 API + store 동작** (과거 mock은 `ASAK/asak-data/archive/frontend-mocks/kiosk.json`) |
 | Payment → Complete / Error / Timeout | 이식됨 | **미연결** (수단 선택·결제·타이머) |
 | Receipt | 이식됨 | Future Scope (SCR-023) |
 | Accessibility | 이식됨 | 전역 고대비 등 부분 |
