@@ -15,9 +15,11 @@ export default defineConfig({
         short_name: "ASAK Kiosk",
         description: "ASAK Smart Kiosk",
 
+        id: "/asak-kiosk",
         start_url: "/",
         scope: "/",
 
+        display_override: ["fullscreen", "standalone"],
         display: "fullscreen",
         orientation: "portrait",
 
@@ -29,7 +31,7 @@ export default defineConfig({
             src: "/pwa-192x192.png",
             sizes: "192x192",
             type: "image/png",
-            purpose: "any",
+            purpose: "any maskable",
           },
           {
             src: "/pwa-512x512.png",
@@ -53,6 +55,7 @@ export default defineConfig({
     },
   },
   server: {
+    host: "0.0.0.0",
     port: 5173,
     proxy: {
       "/api": {
