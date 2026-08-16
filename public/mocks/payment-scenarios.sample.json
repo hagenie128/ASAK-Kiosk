@@ -1,0 +1,205 @@
+{
+  "meta": {
+    "purpose": "payment scenario sample for local reference",
+    "fullArchive": "../../../ASAK/asak-data/archive/frontend-mocks/kiosk.json"
+  },
+  "paymentMethods": {
+    "success": true,
+    "status": 200,
+    "code": "PAYMENT_METHOD_LIST_SUCCESS",
+    "message": "결제수단 목록 조회 성공",
+    "data": [
+      {
+        "methodId": "card",
+        "name": "카드/삼성페이",
+        "description": "신용·체크카드",
+        "isActive": true,
+        "isMaintenance": false,
+        "sortOrder": 1
+      },
+      {
+        "methodId": "kakao",
+        "name": "카카오페이",
+        "description": "모바일 간편결제",
+        "isActive": true,
+        "isMaintenance": false,
+        "sortOrder": 2
+      },
+      {
+        "methodId": "naver",
+        "name": "네이버페이",
+        "description": "간편결제",
+        "isActive": true,
+        "isMaintenance": false,
+        "sortOrder": 3
+      },
+      {
+        "methodId": "toss",
+        "name": "토스페이",
+        "description": "간편결제",
+        "isActive": true,
+        "isMaintenance": false,
+        "sortOrder": 4
+      },
+      {
+        "methodId": "payco",
+        "name": "페이코",
+        "description": "점검 중",
+        "isActive": true,
+        "isMaintenance": true,
+        "sortOrder": 5
+      },
+      {
+        "methodId": "apple",
+        "name": "애플페이",
+        "description": "준비 중",
+        "isActive": false,
+        "isMaintenance": false,
+        "sortOrder": 6
+      },
+      {
+        "methodId": "cash",
+        "name": "현금",
+        "description": "카운터 결제",
+        "isActive": false,
+        "isMaintenance": false,
+        "sortOrder": 7
+      },
+      {
+        "methodId": "zero",
+        "name": "제로페이",
+        "description": "비활성",
+        "isActive": false,
+        "isMaintenance": true,
+        "sortOrder": 8
+      }
+    ]
+  },
+  "paymentScenarios": {
+    "approve": {
+      "success": true,
+      "status": 200,
+      "code": "PAYMENT_APPROVED",
+      "message": "가상 결제가 승인되었습니다.",
+      "data": {
+        "paymentId": 9001,
+        "orderId": 1,
+        "orderNo": "ASAK-20260720-001",
+        "amount": 8900,
+        "paymentStatus": "APPROVED",
+        "approvedAt": "2026-07-20T12:00:00"
+      }
+    },
+    "approveHigh": {
+      "success": true,
+      "status": 200,
+      "code": "PAYMENT_APPROVED",
+      "message": "가상 결제가 승인되었습니다.",
+      "data": {
+        "paymentId": 9002,
+        "orderId": 2,
+        "orderNo": "ASAK-20260720-099",
+        "amount": 128800,
+        "paymentStatus": "APPROVED",
+        "approvedAt": "2026-07-20T12:05:00"
+      }
+    },
+    "declined": {
+      "success": false,
+      "status": 402,
+      "code": "PAYMENT_DECLINED",
+      "message": "카드사에서 결제를 거절했습니다.",
+      "data": {
+        "paymentStatus": "FAILED",
+        "reason": "DECLINED"
+      }
+    },
+    "insufficient": {
+      "success": false,
+      "status": 402,
+      "code": "PAYMENT_INSUFFICIENT_FUNDS",
+      "message": "잔액이 부족합니다.",
+      "data": {
+        "paymentStatus": "FAILED",
+        "reason": "INSUFFICIENT"
+      }
+    },
+    "network": {
+      "success": false,
+      "status": 503,
+      "code": "PAYMENT_NETWORK_ERROR",
+      "message": "결제 서버에 연결할 수 없습니다.",
+      "data": {
+        "paymentStatus": "FAILED",
+        "reason": "NETWORK"
+      }
+    },
+    "timeout": {
+      "success": false,
+      "status": 504,
+      "code": "PAYMENT_TIMEOUT",
+      "message": "결제 응답 시간이 초과되었습니다.",
+      "data": {
+        "paymentStatus": "FAILED",
+        "reason": "TIMEOUT"
+      }
+    },
+    "duplicate": {
+      "success": false,
+      "status": 409,
+      "code": "PAYMENT_DUPLICATE",
+      "message": "이미 처리 중인 결제가 있습니다.",
+      "data": {
+        "paymentStatus": "FAILED",
+        "reason": "DUPLICATE"
+      }
+    },
+    "methodDisabled": {
+      "success": false,
+      "status": 400,
+      "code": "PAYMENT_METHOD_DISABLED",
+      "message": "선택할 수 없는 결제수단입니다.",
+      "data": {
+        "paymentStatus": "FAILED",
+        "reason": "METHOD_DISABLED"
+      }
+    }
+  },
+  "orderCompleteSamples": [
+    {
+      "orderNo": "ASAK-20260720-001",
+      "totalAmount": 1500,
+      "waitingOrderCount": 0,
+      "orderType": "EAT_IN"
+    },
+    {
+      "orderNo": "ASAK-20260720-002",
+      "totalAmount": 5200,
+      "waitingOrderCount": 1,
+      "orderType": "TAKE_OUT"
+    }
+  ],
+  "errorSamples": {
+    "menuList": {
+      "success": false,
+      "status": 500,
+      "code": "MENU_LIST_ERROR",
+      "message": "메뉴 목록을 불러오지 못했습니다.",
+      "data": null
+    },
+    "menuDetail": {
+      "success": false,
+      "status": 500,
+      "code": "MENU_DETAIL_ERROR",
+      "message": "메뉴 상세를 불러오지 못했습니다.",
+      "data": null
+    },
+    "menuNotFound": {
+      "success": false,
+      "status": 404,
+      "code": "MENU_NOT_FOUND",
+      "message": "메뉴를 찾을 수 없습니다.",
+      "data": null
+    }
+  }
+}
