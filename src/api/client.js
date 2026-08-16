@@ -3,7 +3,11 @@ import axios from "axios";
 
 export const apiClient = axios.create({
   // client.js
-  baseURL: import.meta.env.VITE_API_BASE_URL ?? "",
+  /*
+  [ vite proxy 사용 -> 아이패드 및 유연한 네트워크 연결 테스트 ]
+   baseURL: import.meta.env.VITE_API_BASE_URL ?? "",
+  */
+  baseURL: "",
   headers: { Accept: "application/json" },
 });
 
