@@ -2,13 +2,14 @@
 
 import Header from '@/components/common/Header'
 import { formatCurrency } from '@/utils/currency';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import paymentIllustration from '@/assets/figma/payment-processing-illustration.png'
 import { useNavigate } from 'react-router-dom';
 import { useCartStore } from '@/store/cartStore';
 import { calculateCartTotal } from '@/utils/priceCalculation';
 import Modal from '@/components/common/Modal';
 import { PAYMENT_MODAL_CONFIG } from '@/utils/paymentModalConfig';
+import { createOrderForPayment } from '@/features/order/orderFlow';
 
 export default function PaymentProcessingPage() {
 
@@ -16,6 +17,7 @@ export default function PaymentProcessingPage() {
     const [modalType, setModalType] = useState("PROCESSING");
     // useState(false) -> 결제 실패  useState(true) -> 결제 성공
     const [testResult, setTestResult] = useState(true);
+    const hasStartedRef = useRef(false);
 
     // 페이지 이동
     const navigate = useNavigate();
@@ -26,6 +28,11 @@ export default function PaymentProcessingPage() {
     // 결제금액 불러오기(화면에 보여지기용으로만, 현재)
     const items = useCartStore(
         (state) => state.items
+    );
+    const orderType = useCartStore((state) => state.orderType);
+    const setOrder = useCartStore((state) => state.setOrder);
+    const selectedPaymentMethod = useCartStore(
+        (state) => state.selectedPaymentMethod,
     );
     const totalAmount = calculateCartTotal(items);
 
@@ -53,7 +60,26 @@ export default function PaymentProcessingPage() {
 
     //랜더링 했을때 1번만 실행을 위해
     useEffect(() => {
-        startPaymentTest(testResult);
+        if (hasStartedRef.current) return;
+        hasStartedRef.current = true;
+
+        const createOrderBeforePayment = async () => {
+            if (!orderType || items.length === 0 || !selectedPaymentMethod?.methodCode) {
+                setModalType("FAILED");
+                return;
+            }
+
+            try {
+                const order = await createOrderForPayment({ orderType, items });
+                setOrder(order);
+                startPaymentTest(testResult);
+            } catch (error) {
+                console.error("주문 생성 실패:", error);
+                setModalType("FAILED");
+            }
+        };
+
+        createOrderBeforePayment();
     }, []);
 
 

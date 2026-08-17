@@ -36,6 +36,8 @@ const initialState = {
   // 장바구니 로직 검증용
   validatedTotalAmount: null,
   validatedItems: null,
+  //결제 수단
+  selectedPaymentMethod:null,
 };
 
 // cartItemId
@@ -83,6 +85,10 @@ export const useOrderSession = create((set) => ({
   }),
 
   setOrder: (order) => set({ order }),
+
+  setSelectedPaymentMethod: (method)=> set({
+    selectedPaymentMethod: method,
+  }),
 
   setPayment: (payment) =>
     set({
