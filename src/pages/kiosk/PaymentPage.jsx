@@ -25,6 +25,7 @@ export default function PaymentPage() {
   //결제 수단 클릭시 "선택 상태"
   const [selectedMethod, setSelectedMethod] = useState(null);
 
+  //팝업
   const [validationModal , setValidationModal ] = useState(null);
 
   // api-014 결제수단 조회 연결
