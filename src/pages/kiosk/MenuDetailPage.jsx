@@ -14,6 +14,7 @@ import { getMenu } from "@/api/menu";
 import LoadingSpinner from "@/components/common/LoadingSpinner";
 import ErrorMessage from "@/components/common/ErrorMessage";
 import EmptyState from "@/components/common/EmptyState";
+import { v4 as uuidv4 } from 'uuid';
 
 
 function createInitialSelectedOptions (optionGroups = []){
@@ -292,7 +293,7 @@ export default function MenuDetailPage() {
     if (!isRequiredSatisfied || isSoldOut || !menuDetail) return;
 
     addItem({
-      cartItemId: crypto.randomUUID(),
+      cartItemId: uuidv4(),
       menuId: menuDetail.menuId,
       menuName: menuDetail.name,
       imageUrl: menuDetail.imageUrl,
