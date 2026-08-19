@@ -16,7 +16,7 @@ export default function PaymentProcessingPage() {
     //결제 실패 & 성공 분기처리 (팝업 모달의 유무를 위한 변수)
     const [modalType, setModalType] = useState("PROCESSING");
     // useState(false) -> 결제 실패  useState(true) -> 결제 성공
-    const [testResult, setTestResult] = useState(true);
+    const [testResult, setTestResult] = useState(false);
     const hasStartedRef = useRef(false);
 
     // 페이지 이동
