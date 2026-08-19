@@ -30,6 +30,7 @@ const initialState = {
     approvedAmount: 0,
     paymentStatus: null,
     approvedAt: null,
+    waitingOrderCount: 0,
   },
   paymentError: null, // 실패 code/message 
   // 장바구니 로직 검증용

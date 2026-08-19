@@ -29,9 +29,9 @@ export const PAYMENT_MODAL_CONFIG = {
     FAILED: {
         icon: failIcon,
         title: "결제 실패",
-        content: "결제에 실패했습니다.",
+        content: "결제에 실패했습니다. 다른 결제 수단을 선택해 주세요.",
         leftText: "취소",
-        rightText: "다시 시도",
+        rightText: "결제수단 변경",
     },
 
     // 4. 타임 아웃

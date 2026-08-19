@@ -20,15 +20,19 @@ import barcodeMark from "@/assets/figma/order-complete-barcode.svg";
 import Footer from "@/components/common/Footer";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useCartStore } from "@/store/cartStore";
 
 export default function OrderCompletePage() {
 
   const [countdown, setCountdown] = useState(5);
   const navigate = useNavigate();
+  const payment = useCartStore((state) => state.payment);
+  const resetSession = useCartStore((state) => state.resetSession);
 
   useEffect(() => {
 
     if (countdown <= 0) {
+      resetSession();
       navigate("/");
       return;
     }
@@ -40,7 +44,7 @@ export default function OrderCompletePage() {
     return () => clearTimeout(timer);
 
 
-  }, [countdown, navigate]);
+  }, [countdown, navigate, resetSession]);
 
 
 
@@ -62,8 +66,12 @@ export default function OrderCompletePage() {
 
         <h1>주문이 완료되었습니다!</h1>
 
-        <p className="order-complete-page__label">주문번호</p>
-        <p className="order-complete-page__order-no">1225</p>
+        <p className="order-complete-page__label">주문 대기번호</p>
+        <p className="order-complete-page__order-no">
+          {payment.paymentStatus === "APPROVED"
+            ? payment.waitingOrderCount
+            : "-"}
+        </p>
 
         <div className="order-complete-page__ticket" aria-hidden="true">
           <i className="order-complete-page__rail" />
