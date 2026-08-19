@@ -11,7 +11,7 @@
 | 값 | 화면 의미 |
 | --- | --- |
 | 주문 유형 `EAT_IN`, `TAKE_OUT` | 매장 식사, 포장 |
-| 주문 상태 `RECEIVED`, `PREPARING`, `COMPLETED` | 접수, 준비중, 완료 |
+| 주문 상태 `READY`, `RECEIVED`, `PREPARING`, `COMPLETED`, `CANCELED` | 주문 생성, 접수, 준비중, 완료, 취소 |
 | 결제 상태 `READY`, `APPROVED`, `FAILED` | 대기, 승인, 실패 |
 
 ## MVP 고객 주문 흐름
@@ -22,8 +22,8 @@
 | `API-002` `GET /api/menus?categoryId` | `menuId`, `categoryId`, `name`, `price`, `imageUrl`, `baseKcal`, `isSoldOut`, `hasSoldOutIngredient`, `soldOutBadges` | `api/menu.js`, `MenuCard.jsx`, `MenuListPage.jsx` | `FWD-MENU-006`, 품절 표시 |
 | `API-003` `GET /api/menus/{menuId}` | 메뉴 기본정보 + `description`, `ingredients[{ingredientId,name,canRemove,isSoldOut}]`, `allergens`, `allergyText`, `isOrderable`, `soldOutReason` | `api/menu.js`, `MenuDetailPage.jsx` | 재료 제외·알레르기·품절 |
 | `API-004` `GET /api/menus/{menuId}/options` | `optionGroupId`, `name`, `selectType`, `minSelect`, `maxSelect`, `isRequired`, `items[{optionItemId,ingredientId,name,extraPrice,extraKcal,isSoldOut,isRecommended}]` | `OptionGroup.jsx`, `cartRules.js` | `FWD-MENU-012`, `FWD-MENU-015` |
-| `API-005` `POST /api/kiosk/orders` | request: `orderType`, `items[{menuId,quantity,optionItems[{optionItemId,quantity}],excludedIngredientIds}]` → response: `orderId`, `orderNo`, `orderStatus`, `paymentStatus`, `totalAmount`, `waitingOrderCount` | `api/order.js`, `cartStore.js`, `orderFlow.js` | DEV-ORDER-001 |
-| `API-006` `POST /api/kiosk/payments` | request: `orderId`, `paymentMethodCode`, `idempotencyKey` → response: `paymentId`, `orderId`, `orderNo`, `approvedAmount`, `paymentStatus`, `approvedAt`, `waitingOrderCount` | `api/payment.js`, `PaymentPage.jsx`, `OrderCompletePage.jsx` | DEV-PAY-001 |
+| `API-005` `POST /api/kiosk/orders` | request: `orderType`, `items[{menuId,quantity,optionItems[{optionItemId,quantity}],excludedIngredientIds}]` → response: `orderId`, `orderNo`, `totalAmount`, `orderStatus: READY` | `api/order.js`, `cartStore.js`, `orderFlow.js` | DEV-ORDER-001 |
+| `API-006` `POST /api/kiosk/payments` | request: `orderId`, `paymentMethodCode`, `idempotencyKey`, `orderStatus: RECEIVED` → response: `paymentId`, `orderId`, `orderNo`, `paymentStatus: APPROVED`, `approvedAmount`, `approvedAt`, `waitingOrderCount` | `api/payment.js`, `PaymentPage.jsx`, `OrderCompletePage.jsx` | DEV-PAY-001 |
 
 ### 장바구니에서 반드시 보관할 데이터
 

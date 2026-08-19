@@ -19,7 +19,7 @@ const initialState = {
     orderId: null,
     orderNo: null,
     totalAmount: 0,
-    orderStatus: null, // READY | RECEIVED | PREPARING | COMPLETED | CANCELED
+    orderStatus: null, // API-005 응답에서 READY로 설정
   },
   payment: {
     // API-006 결제 처리 응답:
