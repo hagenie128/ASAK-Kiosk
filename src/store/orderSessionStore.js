@@ -23,12 +23,13 @@ const initialState = {
   },
   payment: {
     // API-006 결제 처리 응답:
-    paymentMethod: null, // CARD | KAKAO_PAY
+    paymentMethodCode: null, // CARD | KAKAO_PAY
     paymentId: null,
     orderId: null,
     orderNo: null,
-    approvedAmount: 0,
     paymentStatus: null,
+    orderStatus: null,
+    approvedAmount: 0,
     approvedAt: null,
     waitingOrderCount: 0,
   },
