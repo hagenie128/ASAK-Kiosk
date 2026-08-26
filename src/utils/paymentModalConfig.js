@@ -39,7 +39,7 @@ export const PAYMENT_MODAL_CONFIG = {
         icon: timeoutIcon,
         title: "시간 초과",
         content: "초기 화면으로 돌아갑니다.",
-        leftText: null,
+        leftText: "취소",
         rightText: "확인",
     },
 

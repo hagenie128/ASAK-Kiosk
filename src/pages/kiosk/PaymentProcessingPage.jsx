@@ -206,6 +206,19 @@ export default function PaymentProcessingPage() {
         navigate("/payment");
     };
 
+    //결제 완료시, 팝업 타임아웃
+    useEffect(()=>{
+
+        if(modalType !== "SUCCESS") return;
+
+        const timer = setTimeout(()=>{
+            navigate("/complete");
+        }, 2000);
+
+        return () => clearTimeout(timer);
+
+    }, [modalType, navigate]);
+
     const handleRightClick = () => {
         if (modalType === "SUCCESS") {
             navigate("/complete");

@@ -5,9 +5,16 @@ import { Link, useNavigate } from "react-router-dom";
 import backIcon from "../../assets/figma/icon-kiosk-back.svg";
 import homeIcon from "../../assets/figma/icon-kiosk-home.svg";
 import headerLogo from "../../assets/svg/logo-L.svg";
+import { useCartStore } from "@/store/cartStore";
 
 export default function Header() {
     const navigate = useNavigate();
+
+    const resetSession = useCartStore((state) => state.resetSession);
+
+    const handHomeClick = () =>{
+        resetSession();
+    }
 
     return (
         <header className="kiosk-header">
@@ -20,7 +27,11 @@ export default function Header() {
                 <img alt="" src={backIcon} />
             </button>
             <img className="kiosk-header__logo" alt="ASAK" src={headerLogo} />
-            <Link className="kiosk-header__home" to="/" aria-label="홈으로 이동">
+            <Link className="kiosk-header__home" 
+                   to="/" 
+                   onClick={handHomeClick}
+                   replace
+                   aria-label="홈으로 이동">
                 <img alt="" src={homeIcon} />
             </Link>
         </header>
