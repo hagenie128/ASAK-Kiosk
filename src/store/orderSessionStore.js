@@ -58,38 +58,46 @@ export const useOrderSession = create((set) => ({
       items: [...state.items, item],
     })),
 
-  // [학습] 수량만 바꾼다. 옵션·제외재료 수정은 별도 updateItem(cartItemId, patch)가 필요하다.
+  // 수량만 변경.
   updateItemQuantity: (cartItemId, quantity) =>
     set((state) => ({
       items: state.items.map((item) =>
-        item.cartItemId === cartItemId
-          ? { ...item, quantity }
-          : item,
+        item.cartItemId === cartItemId ? { ...item, quantity } : item,
       ),
     })),
 
-  // TODO(학습): updateItem(cartItemId, nextItemFields) — 옵션/제외재료 수정용. addItem과 경로를 섞지 말 것.
+  //수정한 데이터를 store에 실제로 저장하는 함수
+  updateItem: (cartItemId, patch) =>
+    set((state) => ({
+      items: state.items.map((item) =>
+        item.cartItemId === cartItemId ? { ...item, ...patch } : item,
+      ),
+    })),
+
+    //수정할 아이템 찾기
+    
+
   // TODO(학습): 품절이 된 뒤에도 자동 remove 하지 말 것. 결제 차단 + 수정/삭제 UI만 제공한다.
 
   clearItems: () => set({ items: [] }),
 
   removeItem: (cartItemId) =>
     set((state) => ({
-      items: state.items.filter(
-        (item) => item.cartItemId !== cartItemId,
-      ),
+      items: state.items.filter((item) => item.cartItemId !== cartItemId),
     })),
 
-  setCartValidation: ({totalAmount, items}) => set({
-    validatedTotalAmount : totalAmount,
-    validatedItems: items,
-  }),
+  setCartValidation: ({ totalAmount, items }) =>
+    set({
+      validatedTotalAmount: totalAmount,
+      validatedItems: items,
+    }),
 
   setOrder: (order) => set({ order }),
 
-  setSelectedPaymentMethod: (method)=> set({
-    selectedPaymentMethod: method,
-  }),
+  setSelectedPaymentMethod: (method) =>
+    set({
+      selectedPaymentMethod: method,
+    }),
 
   setPayment: (payment) =>
     set({
@@ -97,8 +105,7 @@ export const useOrderSession = create((set) => ({
       paymentError: null,
     }),
 
-  setPaymentError: (paymentError) =>
-    set({ paymentError }),
+  setPaymentError: (paymentError) => set({ paymentError }),
 
   resetSession: () => set(initialState),
 }));

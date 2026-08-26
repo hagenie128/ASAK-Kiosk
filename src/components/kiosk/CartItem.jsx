@@ -19,7 +19,7 @@ function PlusIcon() {
   );
 }
 
-export default function CartItem({ item, onDecrease, onIncrease, onDelete }) {
+export default function CartItem({ item, onDecrease, onIncrease, onDelete, onEdit }) {
   if (!item) return null;
 
   const lineAmount =
@@ -77,7 +77,7 @@ export default function CartItem({ item, onDecrease, onIncrease, onDelete }) {
 
       <footer className="cart-item__footer">
         <div className="cart-item__actions">
-          <button type="button" disabled>
+          <button type="button" onClick={onEdit}>
             옵션 수정
           </button>
           <button type="button" onClick={onDelete} className="is-delete">

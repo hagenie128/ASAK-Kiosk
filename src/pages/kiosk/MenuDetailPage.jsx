@@ -5,7 +5,7 @@ import Header from "@/components/common/Header";
 import MenuDetailSummary from "@/components/kiosk/MenuDetailSummary";
 import OptionGroup from "@/components/kiosk/OptionGroup";
 import MenuDetailFooter from "@/components/kiosk/MenuDetailFooter";
-import { useNavigate, useParams, useSearchParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useCartStore } from "@/store/cartStore";
 import { TOAST_MESSAGES, canIncreaseQuantity } from "@/utils/quantityLimits";
@@ -17,11 +17,39 @@ import EmptyState from "@/components/common/EmptyState";
 import { v4 as uuidv4 } from 'uuid';
 
 
-function createInitialSelectedOptions (optionGroups = []){
+function createInitialSelectedOptions (optionGroups = [], editingItem,){
 
   //최초 기본 선택 결과를 만드는 임시 객체
   const initialOptions  = {};
 
+  // 옵션 수정으로 진입한 경우:
+  // store에 저장된 기존 optionItems를 화면의 선택 상태로 변환한다.
+  if(editingItem){
+
+    (editingItem.optionItems ?? []).forEach((item)=>{
+      const optionGroup = optionGroups.find((group)=>
+      group.optionGroupId === item.optionGroupId)
+
+      if(!optionGroup) return;
+
+      if(optionGroup.selectType === "SINGLE"){
+        initialOptions[item.optionGroupId] = item.optionItemId;
+        return;
+      }
+
+      initialOptions[item.optionGroupId] = [...(initialOptions[item.optionGroupId]??[]), item.optionItemId,]
+
+    })
+
+    return initialOptions;
+    
+
+
+  }
+
+
+  // 신규 메뉴 담기인 경우:
+  // 현재처럼 메뉴 상세 API의 기본 옵션을 선택한다.
   optionGroups.forEach((group)=>{
 
     const defaultItem = (group.items ?? []).filter((item)=>item.isDefault && !item.isSoldOut);
@@ -118,10 +146,12 @@ export default function MenuDetailPage() {
 
         setMenuDetail(data);
         setSelectedOptions(
-          createInitialSelectedOptions(data.optionGroups)
+          createInitialSelectedOptions(data.optionGroups, editingItem,)
         );
 
-        setExcludedIngredientIds([]);
+        setExcludedIngredientIds(editingItem?.excludedIngredientIds ?? []);
+
+        setQuantity(editingItem?.quantity ?? 1);
 
       }catch(error){
         setError(error);
@@ -145,11 +175,18 @@ export default function MenuDetailPage() {
   },[menuId])
 
 
-
+  
   //장바구니 추가를 위한 변수
   const items = useCartStore((state) => state.items);
   const addItem = useCartStore((state) => state.addItem);
 
+  // 옵션 수정을 위한 변수
+  const updateItem = useCartStore((state)=>state.updateItem);
+  const location = useLocation();
+  const editCartItemId = location.state?.editCartItemId;
+  
+  //수정(업데이트)할 객체 찾기
+  const editingItem = items.find((item)=>item.cartItemId === editCartItemId);
 
   const [quantity, setQuantity] = useState(1);
   const [toastMessage, setToastMessage] = useState(null);
@@ -291,6 +328,29 @@ export default function MenuDetailPage() {
   //장바구니에 저장하는 로직
   const handleConfirm = () => {
     if (!isRequiredSatisfied || isSoldOut || !menuDetail) return;
+
+
+    //옵션 수정하는 부분
+  const updateFields = {
+    baseKcal: menuDetail.baseKcal,
+    quantity,
+    optionItems: selectedOptionItems.map((item) => ({
+      optionItemId: item.optionItemId,
+      optionGroupId: item.optionGroupId,
+      optionGroupName: item.optionGroupName,
+      name: item.name,
+      extraPrice: Number(item.extraPrice ?? 0),
+      quantity: 1,
+    })),
+    excludedIngredientIds,
+  };
+
+    //옵션 수정할때는
+    if(editCartItemId){
+      updateItem(editCartItemId, updateFields);
+      navigate("/cart", {replace:true});
+      return;
+    }
 
     addItem({
       cartItemId: uuidv4(),

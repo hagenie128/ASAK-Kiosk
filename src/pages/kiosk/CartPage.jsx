@@ -98,6 +98,7 @@ export default function CartPage() {
     navigate("/menu");
   };
 
+  //수량 추가
   const handleIncrease = (item) => {
     const result = canIncreaseCartItemQuantity({
       items,
@@ -108,16 +109,25 @@ export default function CartPage() {
     }
   };
 
+  // 수량 감소
   const handleDecrease = (item) => {
     if (item.quantity > 1) {
       updateItemQuantity(item.cartItemId, item.quantity - 1);
     }
   };
 
+  // 메뉴 삭제
   const handleDelete = (cartItemId) => {
     removeItem(cartItemId);
   };
 
+  // 옵션 수정
+  const handleEdit = (item)=>{
+    navigate(`/menu/${item.menuId}`, {
+      state : { editCartItemId : item.cartItemId},
+    } )
+
+  };
 
 
 
@@ -197,6 +207,7 @@ export default function CartPage() {
                       onDecrease={() => handleDecrease(item)}
                       onIncrease={() => handleIncrease(item)}
                       onDelete={() => handleDelete(item.cartItemId)}
+                      onEdit={()=>handleEdit(item)}
                     />
                   </li>
                 ))}
