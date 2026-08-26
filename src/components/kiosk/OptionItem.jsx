@@ -13,10 +13,10 @@ export default function OptionItem({
     optionItemId,
     name,
     extraPrice,
-    extraKcal,
+    kcal,
     servingAmount,
     servingUnit,
-    proteinG,
+    protein,
     iconUrl,
     isRecommended,
     isSoldOut,
@@ -31,7 +31,7 @@ export default function OptionItem({
     .join(" ");
 
   const hasSecondary =
-    servingAmount != null || extraKcal != null || proteinG != null;
+    servingAmount != null || kcal != null || protein != null;
 
   return (
     <label className={optionItemClassName}>
@@ -61,8 +61,8 @@ export default function OptionItem({
               <p className="option-item__description">
                 {servingAmount != null &&
                   `${servingAmount}${servingUnit ?? ""}`}
-                {extraKcal != null && ` · ${extraKcal}kcal`}
-                {proteinG != null && ` · 단백질 ${proteinG}g`}
+                {kcal != null && ` · ${kcal}kcal`}
+                {protein != null && ` · 단백질 ${protein}g`}
               </p>
             )}
           </div>

@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { useCartStore } from "@/store/cartStore";
 import { formatCurrency } from "@/utils/currency";
 import { calculateCartTotal, priceCalculation } from "@/utils/priceCalculation";
+import { calculateItemKcal } from "@/utils/nutritionCalculation";
 import {
   canIncreaseCartItemQuantity,
   getCartTotalQuantity,
@@ -28,7 +29,11 @@ function enrichCartItem(item) {
         optionItems: item.optionItems,
         quantity: item.quantity,
       }),
-    kcal: item.kcal ?? item.baseKcal,
+    totalKcal: calculateItemKcal({
+      baseKcal: item.baseKcal,
+      optionItems: item.optionItems,
+      quantity: item.quantity,
+    }),
     optionSummary:
       item.optionSummary ??
       item.optionItems?.map((option) => option.name).join(", "),

@@ -19,7 +19,7 @@ function PlusIcon() {
   );
 }
 
-export default function CartItem({ item, onDecrease, onIncrease, onDelete, onEdit }) {
+export default function CartItem({ item, onDecrease, onIncrease, onDelete, onEdit,}) {
   if (!item) return null;
 
   const lineAmount =
@@ -29,7 +29,7 @@ export default function CartItem({ item, onDecrease, onIncrease, onDelete, onEdi
       optionItems: item.optionItems,
       quantity: item.quantity,
     });
-  const kcal = item.kcal ?? item.baseKcal;
+  const kcal = item.totalKcal;
   const optionSummary =
     item.optionSummary ??
     item.optionItems?.map((option) => option.name).join(", ");

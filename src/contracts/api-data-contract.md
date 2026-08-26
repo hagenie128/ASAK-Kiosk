@@ -20,7 +20,7 @@
 | --- | --- | --- | --- |
 | `API-001` `GET /api/categories` | `categoryId`, `name`, `sortOrder` | `api/category.js`, `CategoryTabs.jsx`, `useMenu.js` | `FWD-MENU-006` |
 | `API-002` `GET /api/menus?categoryId` | `menuId`, `categoryId`, `name`, `price`, `imageUrl`, `baseKcal`, `isSoldOut`, `hasSoldOutIngredient`, `soldOutBadges` | `api/menu.js`, `MenuCard.jsx`, `MenuListPage.jsx` | `FWD-MENU-006`, 품절 표시 |
-| `API-003` `GET /api/menus/{menuId}` | 메뉴 기본정보 + `description`, `ingredients[{ingredientId,name,canRemove,isSoldOut}]`, `allergens`, `allergyText`, `isOrderable`, `soldOutReason` | `api/menu.js`, `MenuDetailPage.jsx` | 재료 제외·알레르기·품절 |
+| `API-003` `GET /api/menus/{menuId}` | 메뉴 기본정보 + `baseKcal`, `description`, `ingredients[{ingredientId,name,canRemove,isSoldOut}]`, `optionGroups[].items[{optionItemId,name,extraPrice,kcal}]`, `allergens`, `allergyText`, `isOrderable`, `soldOutReason` | `api/menu.js`, `MenuDetailPage.jsx` | 재료 제외·알레르기·품절 |
 | `API-004` `GET /api/menus/{menuId}/options` | `optionGroupId`, `name`, `selectType`, `minSelect`, `maxSelect`, `isRequired`, `items[{optionItemId,ingredientId,name,extraPrice,extraKcal,isSoldOut,isRecommended}]` | `OptionGroup.jsx`, `cartRules.js` | `FWD-MENU-012`, `FWD-MENU-015` |
 | `API-005` `POST /api/kiosk/orders` | request: `orderType`, `items[{menuId,quantity,optionItems[{optionItemId,quantity}],excludedIngredientIds}]` → response: `orderId`, `orderNo`, `totalAmount`, `orderStatus: READY` | `api/order.js`, `cartStore.js`, `orderFlow.js` | DEV-ORDER-001 |
 | `API-006` `POST /api/kiosk/payments` | request: `orderId`, `paymentMethodCode`, `idempotencyKey`, `orderStatus: RECEIVED` → response: `paymentId`, `orderId`, `orderNo`, `paymentStatus: APPROVED`, `approvedAmount`, `approvedAt`, `waitingOrderCount` | `api/payment.js`, `PaymentPage.jsx`, `OrderCompletePage.jsx` | DEV-PAY-001 |
@@ -31,12 +31,12 @@
 
 ```text
 orderType
-items[]: menuId, menuName, unitPrice, quantity,
-         optionItems[]: optionItemId, name, extraPrice, quantity,
+items[]: menuId, menuName, unitPrice, baseKcal, quantity,
+         optionItems[]: optionItemId, name, extraPrice, kcal, quantity,
          excludedIngredientIds[]
 ```
 
-총액은 `unitPrice + 선택 옵션 extraPrice`에 수량을 반영해 표시한다. 주문 직전에는 `API-016`(확장) 또는 `API-005` 오류 `MENU_SOLD_OUT`을 처리한다.
+총액은 `unitPrice + 선택 옵션 extraPrice`에 수량을 반영해 표시한다. 칼로리는 `(baseKcal + 선택 옵션 kcal 합계) × 수량`으로 표시한다. 주문 직전에는 `API-016`(확장) 또는 `API-005` 오류 `MENU_SOLD_OUT`을 처리한다.
 
 ## 관리자·품절 데이터
 

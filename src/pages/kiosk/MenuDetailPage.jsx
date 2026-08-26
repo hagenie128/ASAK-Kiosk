@@ -97,11 +97,11 @@ export default function MenuDetailPage() {
         sortOrder: 0,
         isRequired: false,
         items : removableIngredients.map((ingredient)=>({
-
           optionItemId: ingredient.ingredientId,
           name: ingredient.ingName,
           role: ingredient.role,
           unit: ingredient.unit,
+          kcal: ingredient.kcal,
           extraPrice: 0,
           isRecommended: false,
           isSoldOut: Boolean(ingredient.isSoldOut),
@@ -340,6 +340,7 @@ export default function MenuDetailPage() {
       optionGroupName: item.optionGroupName,
       name: item.name,
       extraPrice: Number(item.extraPrice ?? 0),
+      kcal: Number(item.kcal ?? 0),
       quantity: 1,
     })),
     excludedIngredientIds,
@@ -357,7 +358,7 @@ export default function MenuDetailPage() {
       menuId: menuDetail.menuId,
       menuName: menuDetail.name,
       imageUrl: menuDetail.imageUrl,
-      baseKcal: menuDetail.baseKcal,
+      baseKcal: Number(menuDetail.baseKcal ?? 0),
       unitPrice: Number(menuDetail.price ?? 0),
       quantity,
       optionItems: selectedOptionItems.map((item) => ({
@@ -366,6 +367,7 @@ export default function MenuDetailPage() {
         optionGroupName: item.optionGroupName,
         name: item.name,
         extraPrice: Number(item.extraPrice ?? 0),
+        kcal: Number(item.kcal ?? 0),
         quantity: 1,
       })),
       excludedIngredientIds,
