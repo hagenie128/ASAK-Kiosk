@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import HomePage from "../../pages/kiosk/HomePage.jsx";
 import MenuListPage from "../../pages/kiosk/MenuListPage.jsx";
 import "../../styles/tokens.css";
@@ -12,7 +12,12 @@ import OrderCompletePage from "@/pages/kiosk/OrderCompletePage.jsx";
 import AccessibilityPage from "@/pages/kiosk/AccessibilityPage.jsx";
 import ReceiptPage from "@/pages/kiosk/ReceiptPage.jsx";
 import PaymentProcessingPage from "@/pages/kiosk/PaymentProcessingPage.jsx";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { useCartStore } from "@/store/cartStore.js";
+import { useKioskTimeout } from "@/hooks/useKioskTimeout.js";
+import{ KIOSK_IDLE_MS ,KIOSK_TIMEOUT_MODAL_MS,KIOSK_TIMEOUT_MODAL  } from "@/utils/kioskTimeout.js"
+import Modal from "@/components/common/Modal.jsx";
+
 
 export default function KioskApp() {
 
@@ -39,6 +44,33 @@ export default function KioskApp() {
     };
   }, []);
 
+  const location = useLocation();
+  const navigate = useNavigate();
+  const resetSession = useCartStore((state)=>state.resetSession);
+
+  const handleTimeoutExpired = useCallback(()=>{
+    resetSession();
+    navigate("/", {replace:true});
+  }, [navigate , resetSession ]);
+
+
+  const {
+    isTimeoutOpen,
+    remainingSeconds,
+    dismissTimeout
+  } = useKioskTimeout({
+    enable :
+        location.pathname !== "/" &&
+        location.pathname !== "/paymentProcessing"
+     ,
+    idleMs : KIOSK_IDLE_MS,
+    modalMs : KIOSK_TIMEOUT_MODAL_MS,
+    onExpired : handleTimeoutExpired,
+  });
+
+  const handleTimeoutConfirm = () =>{
+    dismissTimeout();
+  }
 
 
   return (
@@ -58,7 +90,24 @@ export default function KioskApp() {
           {/* <Route path="/receipt" element={<ReceiptPage />} /> */}
           {/* /ui-preview 는 AI QA용 — 라우트 제거. 파일은 힌트만 유지 */}
         </Routes>
+
+        {
+          isTimeoutOpen && (
+            <Modal 
+              icon ={KIOSK_TIMEOUT_MODAL.icon}
+              modal_title={KIOSK_TIMEOUT_MODAL.title}
+              modal_content={KIOSK_TIMEOUT_MODAL.content(remainingSeconds)}
+              leftText={KIOSK_TIMEOUT_MODAL.leftText}
+              rightText={KIOSK_TIMEOUT_MODAL.rightText}
+              onRightClick={handleTimeoutConfirm}
+            />
+          )
+        }
+
+
       </div>
     </div>
+
+
   );
 }

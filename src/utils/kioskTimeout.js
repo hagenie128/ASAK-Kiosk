@@ -9,13 +9,14 @@
 
 import timeoutIcon from "@/assets/modal_icon/time_out_img.svg"
 
+
 export const KIOSK_IDLE_MS = 30_000; //미작동시 30초
 export const KIOSK_TIMEOUT_MODAL_MS = 10_000; //팝업 후 10초
 
 export const KIOSK_TIMEOUT_MODAL = {
     icon: timeoutIcon,
     title: "시간 초과",
-    content: "10초 후 초기 화면으로 돌아갑니다.",
+    content: (seconds) => `${seconds}초 후 초기 화면으로 돌아갑니다.`,
     leftText: null,
     rightText: "확인",
 };

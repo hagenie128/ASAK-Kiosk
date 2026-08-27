@@ -33,13 +33,13 @@ export function useKioskTimeout({
 
   //30초 자동 타이머 지우는 함수
   const clearIdleTimer = useCallback(() => {
-    clearTimer(idleTimerRef.current);
+    clearTimeout(idleTimerRef.current);
     idleTimerRef.current = null;
   }, []);
 
   //모달 표시 타이머 지우는 함수
   const clearModalTimers = useCallback(() => {
-    clearTimer(modalTimerRef.current);
+    clearTimeout(modalTimerRef.current);
     clearInterval(countdownTimerRef.current);
     modalTimerRef.current = null;
     countdownTimerRef.current = null;
@@ -78,14 +78,14 @@ export function useKioskTimeout({
 
     return () => {
       clearIdleTimer();
-      window.addEventListener("pointerdown", handleActivity);
-      window.addEventListener("keydown", handleActivity);
+      window.removeEventListener("pointerdown", handleActivity);
+      window.removeEventListener("keydown", handleActivity);
     };
   }, [clearIdleTimer, enable, isTimeoutOpen, startIdleTimer]);
 
   //팝업이 열린 뒤 10초 동안 카운트다운하고, 끝나면 부모에 초기화를 요청
   useEffect(() => {
-    //isTimeoutOpen : true -> 팝업 닫힘 / false -> 팝업 열림
+    //isTimeoutOpen : true -> 팝업 열림 / false -> 팝업 닫힘
     if (!isTimeoutOpen) return;
 
     modalTimerRef.current = setTimeout(() => {
