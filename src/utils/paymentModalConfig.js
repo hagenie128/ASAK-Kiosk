@@ -2,7 +2,6 @@
 
 import loadingIcon from "@/assets/modal_icon/payment_loading_icon_4.svg"
 import failIcon from "@/assets/modal_icon/payment_fail_img.svg"
-import timeoutIcon from "@/assets/modal_icon/time_out_img.svg"
 import successIcon from "@/assets/modal_icon/success_icon.svg"
 
 
@@ -32,16 +31,6 @@ export const PAYMENT_MODAL_CONFIG = {
         content: "결제에 실패했습니다. 다른 결제 수단을 선택해 주세요.",
         leftText: "취소",
         rightText: "결제수단 변경",
-    },
-
-    // 4. 타임 아웃
-    TIMEOUT: {
-        icon: timeoutIcon,
-        title: "시간 초과",
-        content: "초기 화면으로 돌아갑니다.",
-        leftText: "취소",
-        rightText: "확인",
-    },
-
+    }
 
 }
