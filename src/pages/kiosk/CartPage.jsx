@@ -18,6 +18,9 @@ import Modal from "@/components/common/Modal";
 import failIcon from "@/assets/modal_icon/order_fail.svg";
 import deleteIcon from "@/assets/modal_icon/delete_img.svg";
 
+// 장바구니 검증(api-004) 실패 시 품절 관련 에러코드 → 안내 문구
+const SOLD_OUT_ERROR_CODES = new Set(["MENU_SOLD_OUT", "OPTION_ITEM_SOLD_OUT"]);
+
 //UI 표시용 매핑 함수
 function enrichCartItem(item) {
   return {
@@ -85,6 +88,7 @@ export default function CartPage() {
           modal_title: "장바구니가 비어있습니다.",
           modal_content : "메뉴를 담은 후 주문해주세요.",
           rightText : "메뉴 담기",
+          onConfirm: () => navigate("/menu"),
         })
         return;
       }
@@ -95,6 +99,22 @@ export default function CartPage() {
 
     }catch(error){
       console.error(error);
+      const code = error.response?.data?.code;
+      const message = error.response?.data?.message;
+      setValidationModal(
+        SOLD_OUT_ERROR_CODES.has(code)
+          ? {
+              modal_title: "품절된 항목이 있습니다.",
+              modal_content:
+                message || "장바구니에서 품절된 항목을 수정하거나 삭제한 뒤 다시 주문해주세요.",
+              rightText: "확인",
+            }
+          : {
+              modal_title: "주문을 진행할 수 없습니다.",
+              modal_content: message || "잠시 후 다시 시도해주세요.",
+              rightText: "확인",
+            },
+      );
     }
     
   }
@@ -148,8 +168,9 @@ export default function CartPage() {
             rightText={validationModal.rightText}
             onLeftClick={() => setValidationModal(null)}
             onRightClick={()=>{
-              setValidationModal(null)
-              navigate("/menu");
+              const onConfirm = validationModal.onConfirm;
+              setValidationModal(null);
+              onConfirm?.();
             }}
           />
 
