@@ -69,7 +69,7 @@ export default function OrderCompletePage() {
         <p className="order-complete-page__label">주문 대기번호</p>
         <p className="order-complete-page__order-no">
           {payment.paymentStatus === "APPROVED"
-            ? payment.waitingOrderCount
+            ? payment.waitingOrderNo
             : "-"}
         </p>
 
