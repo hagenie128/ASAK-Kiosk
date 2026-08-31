@@ -9,4 +9,7 @@ export const API_ENDPOINTS = Object.freeze({
   orders: `${API_BASE_PATH}/orders`,
   paymentMethods:`${API_BASE_PATH}/payment-methods`,
   payments: `${API_BASE_PATH}/payments`,
+  orderReceipt : (orderId)=> `${API_BASE_PATH}/orders/${orderId}/receipt-print`,
+  orderNoReceipt : (orderId)=> `${API_BASE_PATH}/orders/${orderId}/waiting-number-print`,
+  deviceEvent : (eventId) => `${API_BASE_PATH}/orders/device-events/${eventId}`,
 });
