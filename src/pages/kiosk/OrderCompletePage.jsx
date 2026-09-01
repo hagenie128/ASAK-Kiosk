@@ -104,7 +104,7 @@ export default function OrderCompletePage() {
         orderId: payment.orderId,
       })
       
-      const deviceEvent = await getDeviceEvent(printReponse.eventId);
+      const deviceEvent = getDeviceEvent(printReponse.eventId);
       
       handleDeviceEventResult(deviceEvent);
     } catch(error){
