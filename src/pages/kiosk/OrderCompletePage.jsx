@@ -1,18 +1,6 @@
 // SCR-008 / Order Complete — Figma 134:7926 (WBS2-028)
-// UI OK · 남은 연결: 결제 성공 응답 → 주문번호/금액/대기 · 홈 타이머 · cart reset
-//
-// mock: paymentScenarios.approve.data 또는 orderCompleteSamples[]
-//   orderNo → props orderNo
-//   amount | totalAmount → 금액 (정본명 totalAmount)
-//   waitingOrderCount → waitingOrderCount
-// store: order.orderNo, payment.approvedAmount, paymentStatus=APPROVED 후 clearItems
-// 표: public/mocks/README.md §3
-//
 // Props: orderNo, toastMessage?, toastTone?
-// 추가 후보: totalAmount, waitingOrderCount, returnInSec
-// 금지: 주문번호 하드코딩
 
-// --- 해당 페이지는 백단에서 데이터를 받은 후 orderId만 연결해서 화면 출력 예정 (임시 주문 번호 삽입)
 import Header from "@/components/common/Header";
 import ticketShape from "@/assets/figma/order-complete-ticket.svg";
 import asakSLogo from "@/assets/svg/logo-S.svg";
@@ -21,6 +9,8 @@ import Footer from "@/components/common/Footer";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCartStore } from "@/store/cartStore";
+import { requestReceiptPrint, requestWaitingNumberPrint , getDeviceEvent} from "@/api/receipt";
+import KioskToast from "@/components/kiosk/KioskToast";
 
 export default function OrderCompletePage() {
 
@@ -28,6 +18,8 @@ export default function OrderCompletePage() {
   const navigate = useNavigate();
   const payment = useCartStore((state) => state.payment);
   const resetSession = useCartStore((state) => state.resetSession);
+  const [ toastMessage , setToastMessage ] = useState(null);
+  const [ toastTone , setToastTone ] = useState("success")
 
   useEffect(() => {
 
@@ -46,7 +38,82 @@ export default function OrderCompletePage() {
 
   }, [countdown, navigate, resetSession]);
 
+  // 영수증 출력 관련 결과 유무
+  const handleDeviceEventResult = (deviceEvent) => {
 
+    const {eventType , status } = deviceEvent;
+
+    if(status === "COMPLETED"){
+      setToastTone("success")
+
+      if(eventType === "PRINT_RECEIPT"){
+        setToastMessage("영수증 출력 완료");
+        return;
+      }
+      if(eventType === "PRINT_WAITING_NUMBER"){
+        setToastMessage("주문 번호 출력 완료");
+        return;
+      }
+
+    }
+
+    if(status === "FAILED"){
+       setToastTone("error");
+
+      if (eventType === "PRINT_RECEIPT") {
+        setToastMessage("영수증 출력에 실패했습니다.");
+        return;
+      }
+
+      if (eventType === "PRINT_WAITING_NUMBER") {
+        setToastMessage("주문번호 출력에 실패했습니다.");
+      }
+    }
+
+  }
+
+
+  // 영수증 출력 & 주문번호 출력
+  const handleReceiptPrint = async () =>{
+
+    try{
+      setToastMessage(null);
+      
+      const printResoinse = await requestReceiptPrint({
+        orderId : payment.orderId,
+        receiptPayload,
+      });
+
+      const deviceEvent = await getDeviceEvent(printResoinse.eventId);
+      
+      handleDeviceEventResult(deviceEvent);
+
+    }catch(error){
+      setToastTone("error")
+      setToastMessage("영수증 출력 요청을 실패했습니다.");
+    }
+    
+  }
+  
+  const handleWaitingNumberPrint  = async () =>{
+    
+    try{
+      setToastMessage(null);
+      
+      const printReponse = await requestWaitingNumberPrint({
+        orderId: payment.orderId,
+      })
+      
+      const deviceEvent = await getDeviceEvent(printReponse.eventId);
+      
+      handleDeviceEventResult(deviceEvent);
+    } catch(error){
+
+      setToastTone("error")
+      setToastMessage("주문번호 출력 요청을 실패했습니다.")
+    }
+
+  }
 
 
   return (
@@ -73,6 +140,8 @@ export default function OrderCompletePage() {
             : "-"}
         </p>
 
+
+
         <div className="order-complete-page__ticket" aria-hidden="true">
           <i className="order-complete-page__rail" />
           <div className="order-complete-page__ticket-body">
@@ -90,11 +159,22 @@ export default function OrderCompletePage() {
         </p>
       </main>
 
+        {
+          toastMessage && (
+            <KioskToast
+              message={toastMessage}
+              tone={toastTone}
+            />
+          )
+        }
 
       {/* 결제하기 하단  */}
       <Footer
         leftText="주문 번호만 출력"
-        rightText="영수증 출력" />
+        rightText="영수증 출력" 
+        onLeftClick = {handleWaitingNumberPrint}
+        onRightClick = {handleReceiptPrint}
+        />
 
     </>
   );
