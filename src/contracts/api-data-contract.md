@@ -23,7 +23,7 @@
 | `API-003` `GET /api/menus/{menuId}` | 메뉴 기본정보 + `baseKcal`, `description`, `ingredients[{ingredientId,name,canRemove,isSoldOut}]`, `optionGroups[].items[{optionItemId,name,extraPrice,kcal}]`, `allergens`, `allergyText`, `isOrderable`, `soldOutReason` | `api/menu.js`, `MenuDetailPage.jsx` | 재료 제외·알레르기·품절 |
 | `API-004` `GET /api/menus/{menuId}/options` | `optionGroupId`, `name`, `selectType`, `minSelect`, `maxSelect`, `isRequired`, `items[{optionItemId,ingredientId,name,extraPrice,extraKcal,isSoldOut,isRecommended}]` | `OptionGroup.jsx`, `cartRules.js` | `FWD-MENU-012`, `FWD-MENU-015` |
 | `API-005` `POST /api/kiosk/orders` | request: `orderType`, `items[{menuId,quantity,optionItems[{optionItemId,quantity}],excludedIngredientIds}]` → response: `orderId`, `orderNo`, `totalAmount`, `orderStatus: READY` | `api/order.js`, `cartStore.js`, `orderFlow.js` | DEV-ORDER-001 |
-| `API-006` `POST /api/kiosk/payments` | request: `orderId`, `paymentMethodCode`, `idempotencyKey`, `orderStatus: RECEIVED` → response: `paymentId`, `orderId`, `orderNo`, `paymentStatus: APPROVED`, `approvedAmount`, `approvedAt`, `waitingOrderCount` | `api/payment.js`, `PaymentPage.jsx`, `OrderCompletePage.jsx` | DEV-PAY-001 |
+| `API-006` `POST /api/kiosk/payments` | request: `orderId`, `paymentMethodCode`, `idempotencyKey`, `orderStatus: RECEIVED` → response: `paymentId`, `orderId`, `orderNo`, `paymentStatus: APPROVED`, `approvedAmount`, `approvedAt`, `waitingOrderNo` | `api/payment.js`, `PaymentPage.jsx`, `OrderCompletePage.jsx` | DEV-PAY-001 |
 
 ### 장바구니에서 반드시 보관할 데이터
 
@@ -71,6 +71,7 @@ items[]: menuId, menuName, unitPrice, baseKcal, quantity,
 
 - 상태: 정본 필드명이 정렬되어 있다. 이 문서는 모든 엔드포인트가 구현되었다고 뜻하지 않는다.
 - 정본 경로와 응답 필드: [정본 계약 결정](../../../ASAK/docs/governance/canonical-contract-decisions-2026-07-16.md).
-- 정본 필드: `/api/kiosk/...`, `totalAmount`, `approvedAmount`, `approvedAt`, `waitingOrderCount`.
+- 정본 필드: `/api/kiosk/...`, `totalAmount`, `approvedAmount`, `approvedAt`, `waitingOrderNo`.
+  - `waitingOrderNo`: BE `ApprovePaymentResponse`·`OrderCompletePage`와 동일. 구 초안 `waitingOrderCount`는 미사용.
 - API 응답은 `api/*`에서 요청한 뒤 페이지·훅이 직접 사용한다. 레거시 테스트용 데이터 필드는 API 연결 전에 정본 필드명으로 맞추며, 별도 adapter 계층은 두지 않는다.
 - 실제 API 연결은 백엔드 엔드포인트와 DTO를 확인한 뒤에만 코드에 반영한다.

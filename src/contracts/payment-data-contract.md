@@ -15,6 +15,6 @@
 - `totalAmount`
 - `approvedAmount`
 - `approvedAt`
-- `waitingOrderCount`
+- `waitingOrderNo` — API-006 결제 승인 응답·완료 화면 필드. (7/16 회의 초안명 `waitingOrderCount`는 사용하지 않음 — 일별 고정 대기번호 의미)
 
 화면의 정적 값은 추후 동일한 DTO 이름의 mock/API 데이터로 교체한다.

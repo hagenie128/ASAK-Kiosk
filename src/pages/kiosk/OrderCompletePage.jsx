@@ -134,6 +134,7 @@ export default function OrderCompletePage() {
         <h1>주문이 완료되었습니다!</h1>
 
         <p className="order-complete-page__label">주문 대기번호</p>
+        {/* API-006 waitingOrderNo — orders.waiting_order_no (일별 고정 번호). waitingOrderCount 아님 */}
         <p className="order-complete-page__order-no">
           {payment.paymentStatus === "APPROVED"
             ? payment.waitingOrderNo
