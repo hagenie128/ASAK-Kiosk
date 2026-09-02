@@ -69,8 +69,8 @@ main.jsx
 3. 페이지에서 axios를 직접 호출하지 않는다. `api/*` 함수를 호출하고, 페이지·훅에서 응답을 화면과 store에 직접 반영한다.
 4. 정본 API 경로(문서): `GET /api/kiosk/menuList`, `GET /api/kiosk/menuDetail/{menuId}`, `POST /api/kiosk/orders`, `POST /api/kiosk/payments`
    → 코드 상수는 아직 legacy. `DECIDED_PENDING_CODE_CHANGE`.
-5. 응답 정본 필드: `totalAmount`, `approvedAmount`, `approvedAt`, `waitingOrderCount`  
-   → API 응답의 정본 필드명을 페이지·훅과 store에서 그대로 사용한다.
+5. 응답 정본 필드: `totalAmount`, `approvedAmount`, `approvedAt`, `waitingOrderNo`  
+   → API-006 `ApprovePaymentResponse`와 동일. (구 회의 초안 `waitingOrderCount`는 키오스크에서 쓰지 않음)
 
 ## 화면 하나를 만드는 쉬운 순서
 

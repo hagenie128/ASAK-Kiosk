@@ -11,6 +11,7 @@ import { getCartTotalQuantity } from "@/utils/quantityLimits";
 import { calculateCartTotal } from "@/utils/priceCalculation";
 import { getCategories } from "@/api/category";
 import { getMenus } from "@/api/menu";
+import { menuBelongsToCategory } from "@/utils/menuCategoryFilter";
 import LoadingSpinner from "@/components/common/LoadingSpinner";
 import ErrorMessage from "@/components/common/ErrorMessage";
 import EmptyState from "@/components/common/EmptyState";
@@ -78,7 +79,9 @@ export default function MenuListPage() {
 
         if(!ignore){
           setMenus(
-            menuList.filter((menu) => menu.categoryId === selectedCategoryId),
+            menuList.filter((menu) =>
+              menuBelongsToCategory(menu, selectedCategoryId, categories),
+            ),
           );
         }
 
@@ -99,7 +102,7 @@ export default function MenuListPage() {
       ignore = true;
     };
 
-  },[selectedCategoryId]);
+  },[selectedCategoryId, categories]);
 
   //url의 category 생성되는 함수
   const handleSelectCategory = (categoryId) => {

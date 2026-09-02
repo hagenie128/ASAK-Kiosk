@@ -7,7 +7,8 @@ import { create } from "zustand";
  * order:   API-005 응답 · orderId, orderNo, orderType, totalAmount,
  *          orderStatus, paymentStatus
  * payment: API-006 / paymentScenarios · paymentMethod, paymentId,
- *          orderId, orderNo, approvedAmount, paymentStatus, approvedAt
+ *          orderId, orderNo, approvedAmount, paymentStatus, approvedAt,
+ *          waitingOrderNo — 결제 승인 응답의 일별 고정 대기번호 (구 초안명 waitingOrderCount 아님)
  * paymentError: { code, message, reason? } — SCR-012, cart 유지
  *
  */
@@ -31,6 +32,7 @@ const initialState = {
     orderStatus: null,
     approvedAmount: 0,
     approvedAt: null,
+    // API-006 응답 필드명. BE ApprovePaymentResponse.waitingOrderNo 와 동일.
     waitingOrderNo: 1,
   },
   paymentError: null, // 실패 code/message 
